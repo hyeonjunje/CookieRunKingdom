@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
-  m_Name: cookie0001_Atlas
+  m_Name: building_castle_5_Atlas
   m_EditorClassIdentifier: 
-  atlasFile: {fileID: 4900000, guid: 8ab453382648f744eb1b0b9d9420fd81, type: 3}
+  atlasFile: {fileID: 4900000, guid: cd69d4b7e3fc2b2459751b0a76020777, type: 3}
   materials:
-  - {fileID: 2100000, guid: b3f0b2f836698c3479c4475346448506, type: 2}
+  - {fileID: 2100000, guid: 0a14da88d6091ee4b84870f0dca8c709, type: 2}
