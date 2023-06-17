@@ -1,0 +1,53 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -2901457832400520951
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 803187770610367623
+  },
+  "m_Name": "",
+  "_targetImage": {
+    "m_FileID": 0,
+    "m_PathID": 4949712740499176923
+  },
+  "_localizationImageInfos": [
+    {
+      "_gameLanguage": 2,
+      "_image": {
+        "m_FileID": 0,
+        "m_PathID": 291462719236463335
+      }
+    },
+    {
+      "_gameLanguage": 1,
+      "_image": {
+        "m_FileID": 0,
+        "m_PathID": 3193999223695899495
+      }
+    },
+    {
+      "_gameLanguage": 3,
+      "_image": {
+        "m_FileID": 0,
+        "m_PathID": 7070159435961425714
+      }
+    },
+    {
+      "_gameLanguage": 5,
+      "_image": {
+        "m_FileID": 0,
+        "m_PathID": -5102955917422607316
+      }
+    },
+    {
+      "_gameLanguage": 10,
+      "_image": {
+        "m_FileID": 0,
+        "m_PathID": 3618374034109055881
+      }
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+
+m10202.png
+size: 300,772
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: true
+  xy: 2, 117
+  size: 111, 125
+  orig: 111, 125
+  offset: 0, 0
+  index: -1
+eye1_1
+  rotate: false
+  xy: 129, 77
+  size: 49, 37
+  orig: 49, 37
+  offset: 0, 0
+  index: -1
+eye1_2
+  rotate: false
+  xy: 129, 116
+  size: 53, 41
+  orig: 53, 41
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 2, 68
+  size: 72, 47
+  orig: 72, 47
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 185, 181
+  size: 112, 99
+  orig: 112, 99
+  offset: 0, 0
+  index: -1
+jaw_1
+  rotate: false
+  xy: 184, 106
+  size: 99, 73
+  orig: 99, 73
+  offset: 0, 0
+  index: -1
+jaw_2
+  rotate: false
+  xy: 194, 354
+  size: 104, 67
+  orig: 104, 67
+  offset: 0, 0
+  index: -1
+legL1_1
+  rotate: false
+  xy: 129, 29
+  size: 48, 46
+  orig: 48, 46
+  offset: 0, 0
+  index: -1
+legL1_2
+  rotate: true
+  xy: 246, 2
+  size: 58, 43
+  orig: 58, 43
+  offset: 0, 0
+  index: -1
+legL1_3
+  rotate: false
+  xy: 246, 62
+  size: 48, 42
+  orig: 48, 42
+  offset: 0, 0
+  index: -1
+legR1_1
+  rotate: false
+  xy: 129, 159
+  size: 53, 69
+  orig: 53, 69
+  offset: 0, 0
+  index: -1
+legR1_2
+  rotate: false
+  xy: 179, 20
+  size: 64, 36
+  orig: 64, 36
+  offset: 0, 0
+  index: -1
+legR1_3
+  rotate: false
+  xy: 2, 34
+  size: 66, 32
+  orig: 66, 32
+  offset: 0, 0
+  index: -1
+legR2_1
+  rotate: false
+  xy: 76, 57
+  size: 51, 58
+  orig: 51, 58
+  offset: 0, 0
+  index: -1
+legR2_2
+  rotate: false
+  xy: 180, 58
+  size: 64, 46
+  orig: 64, 46
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 194, 282
+  size: 103, 70
+  orig: 103, 70
+  offset: 0, 0
+  index: -1
+tail
+  rotate: true
+  xy: 213, 626
+  size: 141, 84
+  orig: 141, 84
+  offset: 0, 0
+  index: -1
+tooth
+  rotate: false
+  xy: 213, 560
+  size: 82, 64
+  orig: 82, 64
+  offset: 0, 0
+  index: -1
+waffle1
+  rotate: false
+  xy: 200, 423
+  size: 96, 135
+  orig: 96, 135
+  offset: 0, 0
+  index: -1
+waffleL_1
+  rotate: true
+  xy: 2, 348
+  size: 126, 190
+  orig: 126, 190
+  offset: 0, 0
+  index: -1
+waffleL_2
+  rotate: true
+  xy: 2, 230
+  size: 116, 181
+  orig: 116, 181
+  offset: 0, 0
+  index: -1
+waffleR_1
+  rotate: true
+  xy: 2, 612
+  size: 155, 209
+  orig: 155, 209
+  offset: 0, 0
+  index: -1
+waffleR_2
+  rotate: true
+  xy: 2, 476
+  size: 134, 196
+  orig: 134, 196
+  offset: 0, 0
+  index: -1

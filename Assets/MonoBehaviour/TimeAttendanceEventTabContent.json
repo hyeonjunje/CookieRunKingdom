@@ -1,0 +1,70 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -590589326072585660
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2198567596253312574
+  },
+  "m_Name": "",
+  "_titleText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_summaryText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_descriptionText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_durationTimeText": {
+    "m_FileID": 0,
+    "m_PathID": -7280900037397631093
+  },
+  "_useRemainTimeFormat": 1,
+  "_remainTimeFormatStringKey": "",
+  "_remainTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startPageObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startButton": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_goalTexts": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -1362310111159037435
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 3101992647039495107
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -2905897044340250653
+    }
+  ],
+  "_timeCells": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 55656696662308650
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -7809417520911370046
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -1104595420967290089
+    }
+  ]
+}

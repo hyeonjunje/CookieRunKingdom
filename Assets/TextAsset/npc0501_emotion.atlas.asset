@@ -1,0 +1,41 @@
+
+npc0501_emotion.png
+size: 688,832
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0501_emotion_serious_body1
+  rotate: false
+  xy: 2, 3
+  size: 326, 221
+  orig: 664, 626
+  offset: 115, 130
+  index: -1
+npc0501_emotion_serious_body2
+  rotate: false
+  xy: 2, 225
+  size: 464, 606
+  orig: 664, 626
+  offset: 100, 3
+  index: -1
+npc0501_emotion_serious_eye01
+  rotate: false
+  xy: 329, 4
+  size: 218, 220
+  orig: 664, 626
+  offset: 223, 258
+  index: -1
+npc0501_emotion_serious_eyebrow
+  rotate: false
+  xy: 466, 226
+  size: 218, 220
+  orig: 664, 626
+  offset: 223, 258
+  index: -1
+npc0501_emotion_serious_mouth01
+  rotate: false
+  xy: 466, 447
+  size: 217, 111
+  orig: 664, 626
+  offset: 245, 223
+  index: -1

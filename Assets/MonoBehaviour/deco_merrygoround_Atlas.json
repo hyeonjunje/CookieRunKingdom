@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "deco_merrygoround_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": 8009823530321183946
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 4859982648353897974
+    }
+  ]
+}

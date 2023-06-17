@@ -1,0 +1,125 @@
+
+deco_merrygoround.png
+size: 256,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: true
+  xy: 196, 85
+  size: 64, 44
+  orig: 64, 44
+  offset: 0, 0
+  index: -1
+ear
+  rotate: false
+  xy: 99, 6
+  size: 16, 18
+  orig: 16, 18
+  offset: 0, 0
+  index: -1
+face_back
+  rotate: true
+  xy: 196, 17
+  size: 37, 27
+  orig: 37, 27
+  offset: 0, 0
+  index: -1
+face_front
+  rotate: true
+  xy: 225, 17
+  size: 37, 27
+  orig: 37, 27
+  offset: 0, 0
+  index: -1
+floor
+  rotate: false
+  xy: 2, 151
+  size: 249, 148
+  orig: 249, 148
+  offset: 0, 0
+  index: -1
+horse_eye
+  rotate: false
+  xy: 83, 16
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+horse_foot
+  rotate: true
+  xy: 59, 11
+  size: 13, 11
+  orig: 13, 11
+  offset: 0, 0
+  index: -1
+horse_mouth
+  rotate: false
+  xy: 78, 2
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+horse_tail
+  rotate: false
+  xy: 117, 9
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+jelly
+  rotate: false
+  xy: 196, 56
+  size: 51, 27
+  orig: 51, 27
+  offset: 0, 0
+  index: -1
+light
+  rotate: true
+  xy: 91, 6
+  size: 8, 6
+  orig: 8, 6
+  offset: 0, 0
+  index: -1
+root
+  rotate: false
+  xy: 2, 301
+  size: 248, 220
+  orig: 248, 220
+  offset: 0, 0
+  index: -1
+root_shadow
+  rotate: false
+  xy: 2, 26
+  size: 192, 123
+  orig: 192, 123
+  offset: 0, 0
+  index: -1
+saddle_null
+  rotate: true
+  xy: 2, 6
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1
+stick
+  rotate: true
+  xy: 28, 2
+  size: 7, 48
+  orig: 7, 48
+  offset: 0, 0
+  index: -1
+stick_mirror
+  rotate: true
+  xy: 72, 12
+  size: 12, 9
+  orig: 12, 9
+  offset: 0, 0
+  index: -1
+stick_ul
+  rotate: true
+  xy: 28, 11
+  size: 13, 29
+  orig: 13, 29
+  offset: 0, 0
+  index: -1

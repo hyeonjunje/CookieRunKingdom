@@ -1,0 +1,19 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -780207732073658248
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 3987045222613821120
+  },
+  "m_Name": "",
+  "_reservedItemType": 0,
+  "_itemDataId": 1229316288,
+  "_itemStringId": "복주머니",
+  "_itemThumbnail": {
+    "m_FileID": 0,
+    "m_PathID": -3557519180419974948
+  }
+}

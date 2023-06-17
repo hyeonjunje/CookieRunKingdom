@@ -1,0 +1,111 @@
+
+npc0029_emotion.png
+size: 180,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 378
+  size: 148, 141
+  orig: 148, 141
+  offset: 0, 0
+  index: -1
+cap
+  rotate: true
+  xy: 152, 378
+  size: 117, 24
+  orig: 117, 24
+  offset: 0, 0
+  index: -1
+dot
+  rotate: false
+  xy: 2, 3
+  size: 65, 25
+  orig: 65, 25
+  offset: 0, 0
+  index: -1
+eye01
+  rotate: 270
+  xy: 147, 6
+  size: 44, 31
+  orig: 44, 31
+  offset: 0, 0
+  index: -1
+eye02
+  rotate: false
+  xy: 72, 9
+  size: 52, 26
+  orig: 52, 26
+  offset: 0, 0
+  index: -1
+goggle1
+  rotate: false
+  xy: 2, 197
+  size: 131, 63
+  orig: 131, 63
+  offset: 0, 0
+  index: -1
+goggle2
+  rotate: false
+  xy: 2, 30
+  size: 68, 41
+  orig: 68, 41
+  offset: 0, 0
+  index: -1
+hat
+  rotate: false
+  xy: 2, 262
+  size: 162, 114
+  orig: 162, 114
+  offset: 0, 0
+  index: -1
+hatL
+  rotate: false
+  xy: 117, 121
+  size: 60, 118
+  orig: 60, 118
+  offset: 0, 0
+  index: -1
+hatR
+  rotate: true
+  xy: 2, 123
+  size: 72, 113
+  orig: 72, 113
+  offset: 0, 0
+  index: -1
+mouth01
+  rotate: false
+  xy: 147, 75
+  size: 27, 18
+  orig: 27, 19
+  offset: 0, 1
+  index: -1
+mouth02
+  rotate: false
+  xy: 147, 95
+  size: 28, 17
+  orig: 28, 17
+  offset: 0, 0
+  index: -1
+tail
+  rotate: 180
+  xy: 105, 23
+  size: 68, 51
+  orig: 68, 51
+  offset: 0, 0
+  index: -1
+wingL
+  rotate: false
+  xy: 76, 62
+  size: 70, 56
+  orig: 70, 56
+  offset: 0, 0
+  index: -1
+wingR
+  rotate: 180
+  xy: 2, 73
+  size: 72, 63
+  orig: 72, 63
+  offset: 0, 0
+  index: -1

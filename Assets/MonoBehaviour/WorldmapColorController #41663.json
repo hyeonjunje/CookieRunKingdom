@@ -1,0 +1,36 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 644189262343619303
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4609628938744764974
+  },
+  "m_Name": "",
+  "_MaterialList": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -2043269184897159225
+    }
+  ],
+  "_Hue": 30.0,
+  "_Saturation": 5.0,
+  "_Lightness": -5.0,
+  "_Contrast": 2.0,
+  "_Invert": 0.0,
+  "_ColorBlending": 1.0,
+  "_FrontColor": {
+    "r": 1.0,
+    "g": 0.8066038,
+    "b": 0.9309299,
+    "a": 1.0
+  },
+  "_PostColor": {
+    "r": 1.0,
+    "g": 0.7216981,
+    "b": 0.858987331,
+    "a": 1.0
+  }
+}

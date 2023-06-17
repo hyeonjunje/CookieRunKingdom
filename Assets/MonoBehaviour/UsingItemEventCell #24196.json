@@ -1,0 +1,37 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -4361490866014819792
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -2164986457329031361
+  },
+  "m_Name": "",
+  "_index": 0,
+  "_titleText": [],
+  "_descriptionText": [],
+  "_rewards": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 3785241498139206880
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 7819649354209503991
+    }
+  ],
+  "_effectStartTransform": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_missionStateBlock": {
+    "m_FileID": 0,
+    "m_PathID": 9069223598587304858
+  },
+  "_tipButton": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  }
+}

@@ -1,0 +1,153 @@
+
+npc0026_emotion.png
+size: 1492,292
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0026_emotion_default_armL
+  rotate: false
+  xy: 1055, 129
+  size: 132, 160
+  orig: 132, 160
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_armR_1
+  rotate: false
+  xy: 1055, 30
+  size: 157, 97
+  orig: 157, 97
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_armR_2
+  rotate: true
+  xy: 1188, 130
+  size: 109, 88
+  orig: 109, 88
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_armR_3
+  rotate: true
+  xy: 1352, 181
+  size: 86, 69
+  orig: 86, 69
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_body
+  rotate: false
+  xy: 2, 44
+  size: 305, 245
+  orig: 305, 245
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_eye01
+  rotate: false
+  xy: 2, 7
+  size: 34, 36
+  orig: 34, 36
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_eye01_2
+  rotate: false
+  xy: 71, 3
+  size: 22, 40
+  orig: 22, 40
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_eye02
+  rotate: false
+  xy: 37, 8
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_hat01
+  rotate: true
+  xy: 524, 12
+  size: 277, 182
+  orig: 277, 182
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_hat02
+  rotate: true
+  xy: 837, 66
+  size: 223, 89
+  orig: 224, 89
+  offset: 1, 0
+  index: -1
+npc0026_emotion_default_hat03
+  rotate: true
+  xy: 708, 87
+  size: 202, 127
+  orig: 202, 127
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_head
+  rotate: true
+  xy: 308, 32
+  size: 258, 214
+  orig: 258, 214
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_jacket1
+  rotate: true
+  xy: 928, 36
+  size: 253, 125
+  orig: 253, 125
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_legL
+  rotate: true
+  xy: 1278, 168
+  size: 112, 72
+  orig: 112, 72
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_legR
+  rotate: false
+  xy: 708, 2
+  size: 107, 83
+  orig: 107, 83
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_mouth01
+  rotate: true
+  xy: 1428, 23
+  size: 68, 55
+  orig: 68, 55
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_mouth02
+  rotate: false
+  xy: 1423, 181
+  size: 65, 74
+  orig: 65, 74
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_mouth03
+  rotate: false
+  xy: 817, 16
+  size: 103, 48
+  orig: 103, 48
+  offset: 0, 0
+  index: -1
+npc0026_emotion_default_mustache
+  rotate: true
+  xy: 1264, 15
+  size: 152, 73
+  orig: 152, 73
+  offset: 0, 0
+  index: -1
+npc0026_emotion_ear01
+  rotate: true
+  xy: 1352, 93
+  size: 86, 85
+  orig: 86, 85
+  offset: 0, 0
+  index: -1
+npc0026_emotion_ear02
+  rotate: true
+  xy: 1339, 4
+  size: 88, 87
+  orig: 88, 87
+  offset: 0, 0
+  index: -1

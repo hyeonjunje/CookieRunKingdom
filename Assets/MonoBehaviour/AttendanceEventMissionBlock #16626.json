@@ -1,0 +1,40 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -5759140734266126585
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 2741141514804169446
+  },
+  "m_Name": "",
+  "_missionNameText": {
+    "m_FileID": 0,
+    "m_PathID": -5367332333320573463
+  },
+  "_itemThumbnail": {
+    "m_FileID": 0,
+    "m_PathID": -6631399299092825606
+  },
+  "_cookieImage": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_cookieNameText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_rewardEffectPosition": {
+    "m_FileID": 0,
+    "m_PathID": -4088590277302053918
+  },
+  "_cookieSpeechText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_missionStateBlock": {
+    "m_FileID": 0,
+    "m_PathID": 4556483476441523096
+  }
+}

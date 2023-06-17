@@ -1,0 +1,19 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -6408081743456748781
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 6149856320679708645
+  },
+  "m_Name": "",
+  "_missionIndex": 0,
+  "_goalText": {
+    "m_FileID": 0,
+    "m_PathID": 8990403498988191224
+  },
+  "_currentTextFormat": "UIStringList.Text.GameEvent.BurningWishtree.CountFormat",
+  "_width": 90.0
+}

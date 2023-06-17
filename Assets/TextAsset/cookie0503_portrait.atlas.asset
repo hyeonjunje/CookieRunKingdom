@@ -1,0 +1,111 @@
+
+cookie0503_portrait.png
+size: 2016,688
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_left
+  rotate: false
+  xy: 435, 150
+  size: 439, 248
+  orig: 472, 469
+  offset: 33, 23
+  index: -1
+arm_r
+  rotate: false
+  xy: 1217, 28
+  size: 330, 237
+  orig: 568, 253
+  offset: 238, 16
+  index: -1
+belt
+  rotate: false
+  xy: 647, 53
+  size: 186, 95
+  orig: 186, 95
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 876, 100
+  size: 298, 339
+  orig: 346, 339
+  offset: 38, 0
+  index: -1
+eye
+  rotate: false
+  xy: 941, 2
+  size: 98, 96
+  orig: 127, 130
+  offset: 29, 0
+  index: -1
+eye_shadow
+  rotate: false
+  xy: 647, 23
+  size: 64, 28
+  orig: 64, 28
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 1727, 343
+  size: 342, 286
+  orig: 342, 298
+  offset: 0, 12
+  index: -1
+hat
+  rotate: false
+  xy: 1236, 267
+  size: 489, 418
+  orig: 489, 418
+  offset: 0, 0
+  index: -1
+hat_acc
+  rotate: true
+  xy: 435, 15
+  size: 133, 210
+  orig: 133, 210
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 1727, 36
+  size: 305, 270
+  orig: 308, 282
+  offset: 2, 1
+  index: -1
+mouth
+  rotate: false
+  xy: 1041, 38
+  size: 84, 60
+  orig: 84, 61
+  offset: 0, 1
+  index: -1
+skull_b
+  rotate: true
+  xy: 835, 3
+  size: 95, 104
+  orig: 95, 104
+  offset: 0, 0
+  index: -1
+skull_f
+  rotate: true
+  xy: 1549, 24
+  size: 241, 166
+  orig: 241, 166
+  offset: 0, 0
+  index: -1
+staff_b
+  rotate: false
+  xy: 435, 400
+  size: 799, 285
+  orig: 953, 321
+  offset: 0, 36
+  index: -1
+staff_f
+  rotate: false
+  xy: 2, 8
+  size: 431, 677
+  orig: 431, 677
+  offset: 0, 0
+  index: -1

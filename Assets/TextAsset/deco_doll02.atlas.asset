@@ -1,0 +1,13 @@
+
+deco_doll02.png
+size: 76,120
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+deco_doll02
+  rotate: false
+  xy: 2, 2
+  size: 72, 115
+  orig: 90, 122
+  offset: 11, 7
+  index: -1

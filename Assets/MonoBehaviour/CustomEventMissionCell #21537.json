@@ -1,0 +1,48 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -8661866830501189595
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4975432838193298782
+  },
+  "m_Name": "",
+  "_index": 0,
+  "_titleText": [],
+  "_descriptionText": [],
+  "_rewards": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 8713665910780554556
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4427242935018087598
+    }
+  ],
+  "_effectStartTransform": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_missionStateBlock": {
+    "m_FileID": 0,
+    "m_PathID": 1493904291209593073
+  },
+  "_tipButton": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_requirementImage": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_cookieThumbnails": [],
+  "_cutSceneButtonObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_simpleGauges": [],
+  "_gaugeTextFormat": ""
+}

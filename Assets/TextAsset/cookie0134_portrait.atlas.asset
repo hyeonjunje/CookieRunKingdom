@@ -1,0 +1,125 @@
+
+cookie0134_portrait.png
+size: 1520,1048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: false
+  xy: 550, 164
+  size: 337, 316
+  orig: 337, 316
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: false
+  xy: 304, 158
+  size: 244, 429
+  orig: 244, 429
+  offset: 0, 0
+  index: -1
+belt
+  rotate: false
+  xy: 2, 17
+  size: 182, 70
+  orig: 182, 70
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 894, 748
+  size: 314, 298
+  orig: 314, 298
+  offset: 0, 0
+  index: -1
+body_side1
+  rotate: false
+  xy: 304, 29
+  size: 143, 127
+  orig: 143, 127
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 550, 18
+  size: 265, 144
+  orig: 265, 144
+  offset: 0, 0
+  index: -1
+eye_shadow
+  rotate: false
+  xy: 889, 79
+  size: 246, 99
+  orig: 246, 99
+  offset: 0, 0
+  index: -1
+face_tatoo
+  rotate: true
+  xy: 1233, 118
+  size: 200, 202
+  orig: 200, 202
+  offset: 0, 0
+  index: -1
+hair_1
+  rotate: false
+  xy: 2, 589
+  size: 547, 457
+  orig: 547, 457
+  offset: 0, 0
+  index: -1
+hair_2
+  rotate: true
+  xy: 1233, 320
+  size: 322, 283
+  orig: 322, 297
+  offset: 0, 14
+  index: -1
+hair_3
+  rotate: true
+  xy: 894, 506
+  size: 240, 295
+  orig: 240, 295
+  offset: 0, 0
+  index: -1
+hair_light
+  rotate: false
+  xy: 817, 82
+  size: 69, 80
+  orig: 71, 83
+  offset: 1, 2
+  index: -1
+head
+  rotate: false
+  xy: 889, 180
+  size: 342, 300
+  orig: 342, 300
+  offset: 0, 0
+  index: -1
+leg
+  rotate: true
+  xy: 1210, 644
+  size: 402, 286
+  orig: 402, 286
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 449, 2
+  size: 154, 58
+  orig: 155, 58
+  offset: 0, 0
+  index: -1
+shoulder
+  rotate: true
+  xy: 2, 89
+  size: 498, 300
+  orig: 498, 300
+  offset: 0, 0
+  index: -1
+weapon
+  rotate: false
+  xy: 551, 482
+  size: 341, 564
+  orig: 464, 564
+  offset: 0, 0
+  index: -1

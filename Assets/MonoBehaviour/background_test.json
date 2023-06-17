@@ -1,0 +1,23 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -8718294100589375857
+  },
+  "m_Name": "background_test",
+  "Backgrounds": [
+    {
+      "Sprites": [
+        {
+          "m_FileID": 0,
+          "m_PathID": 8664774329073811085
+        }
+      ],
+      "MoveFactor": 0.5
+    }
+  ]
+}

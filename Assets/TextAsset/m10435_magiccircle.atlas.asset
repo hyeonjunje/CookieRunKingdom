@@ -1,0 +1,97 @@
+
+m10435_magiccircle.png
+size: 1412,528
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+skill1_circle1
+  rotate: true
+  xy: 1164, 392
+  size: 132, 141
+  orig: 132, 141
+  offset: 0, 0
+  index: -1
+skill1_circle2
+  rotate: false
+  xy: 1274, 249
+  size: 132, 141
+  orig: 132, 141
+  offset: 0, 0
+  index: -1
+skill1_circle3
+  rotate: true
+  xy: 1143, 88
+  size: 141, 132
+  orig: 141, 132
+  offset: 0, 0
+  index: -1
+skill1_circle4
+  rotate: false
+  xy: 1023, 387
+  size: 139, 137
+  orig: 139, 137
+  offset: 0, 0
+  index: -1
+skill1_circle5
+  rotate: false
+  xy: 521, 24
+  size: 500, 500
+  orig: 500, 500
+  offset: 0, 0
+  index: -1
+skill2_circle1
+  rotate: false
+  xy: 2, 7
+  size: 517, 517
+  orig: 517, 517
+  offset: 0, 0
+  index: -1
+skill2_circle11
+  rotate: false
+  xy: 1023, 2
+  size: 100, 70
+  orig: 100, 70
+  offset: 0, 0
+  index: -1
+skill2_circle12
+  rotate: false
+  xy: 1307, 408
+  size: 62, 116
+  orig: 62, 116
+  offset: 0, 0
+  index: -1
+skill2_circle13
+  rotate: false
+  xy: 1277, 28
+  size: 97, 76
+  orig: 97, 76
+  offset: 0, 0
+  index: -1
+skill2_circle2
+  rotate: false
+  xy: 1023, 74
+  size: 118, 155
+  orig: 118, 155
+  offset: 0, 0
+  index: -1
+skill2_circle3
+  rotate: true
+  xy: 1023, 231
+  size: 154, 120
+  orig: 154, 120
+  offset: 0, 0
+  index: -1
+skill2_circle4
+  rotate: false
+  xy: 1145, 239
+  size: 127, 146
+  orig: 127, 146
+  offset: 0, 0
+  index: -1
+skill2_circle8
+  rotate: true
+  xy: 1277, 106
+  size: 141, 131
+  orig: 141, 131
+  offset: 0, 0
+  index: -1

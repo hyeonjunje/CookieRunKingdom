@@ -1,0 +1,121 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_m10216",
+  "CharacterResourceKey": "m10216",
+  "EffectEvents": [
+    {
+      "AnimationName": "skill3",
+      "EffectPath": "fx_m10216_skill03",
+      "Frame": 18,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.0,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2_loop",
+      "EffectPath": "fx_m10216_skill02_loop",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 1,
+      "LifeTime": 1.2,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": [
+    {
+      "BoneFollowerId": 0,
+      "FollowerType": 0,
+      "Name": "pipe_smoke_top",
+      "AnimationName": "global",
+      "BoneName": "bone7",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10216_pipe_smoke_01",
+      "StartFrame": -1,
+      "EndFrame": -1,
+      "IsLoop": 1,
+      "PositionZ": 1.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [
+        "die",
+        "skill2_loop"
+      ],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 1,
+      "FollowerType": 0,
+      "Name": "pipe_smoke_bottom",
+      "AnimationName": "global",
+      "BoneName": "bone9",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10216_pipe_smoke_02",
+      "StartFrame": -1,
+      "EndFrame": -1,
+      "IsLoop": 1,
+      "PositionZ": 2.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [
+        "die",
+        "skill2_loop"
+      ],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 2,
+      "FollowerType": 0,
+      "Name": "pipe_fire_top",
+      "AnimationName": "skill2_loop",
+      "BoneName": "bone7",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10216_skill02_fire_01",
+      "StartFrame": -1,
+      "EndFrame": -1,
+      "IsLoop": 1,
+      "PositionZ": 1.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 3,
+      "FollowerType": 0,
+      "Name": "pipe_fire_bottom",
+      "AnimationName": "skill2_loop",
+      "BoneName": "bone9",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10216_skill02_fire_02",
+      "StartFrame": -1,
+      "EndFrame": -1,
+      "IsLoop": 1,
+      "PositionZ": 2.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    }
+  ]
+}

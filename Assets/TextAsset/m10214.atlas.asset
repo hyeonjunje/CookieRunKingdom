@@ -1,0 +1,195 @@
+
+m10214.png
+size: 160,708
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 110, 70
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+armR
+  rotate: false
+  xy: 59, 28
+  size: 43, 43
+  orig: 43, 43
+  offset: 0, 0
+  index: -1
+bag
+  rotate: true
+  xy: 2, 558
+  size: 146, 151
+  orig: 146, 151
+  offset: 0, 0
+  index: -1
+bag1
+  rotate: false
+  xy: 133, 2
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+bag2
+  rotate: false
+  xy: 2, 41
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+bag3
+  rotate: false
+  xy: 29, 41
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+bag4
+  rotate: false
+  xy: 2, 14
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+bag5
+  rotate: false
+  xy: 2, 180
+  size: 72, 62
+  orig: 72, 62
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 244
+  size: 95, 93
+  orig: 95, 93
+  offset: 0, 0
+  index: -1
+earL
+  rotate: true
+  xy: 2, 125
+  size: 53, 71
+  orig: 53, 71
+  offset: 0, 0
+  index: -1
+earR
+  rotate: true
+  xy: 108, 299
+  size: 78, 50
+  orig: 78, 50
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 99, 211
+  size: 57, 41
+  orig: 57, 41
+  offset: 0, 0
+  index: -1
+eyeball
+  rotate: true
+  xy: 104, 29
+  size: 39, 41
+  orig: 39, 41
+  offset: 0, 0
+  index: -1
+eyebrow
+  rotate: false
+  xy: 99, 254
+  size: 57, 43
+  orig: 57, 43
+  offset: 0, 0
+  index: -1
+footR2
+  rotate: true
+  xy: 104, 4
+  size: 23, 27
+  orig: 23, 27
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 2, 68
+  size: 55, 55
+  orig: 55, 55
+  offset: 0, 0
+  index: -1
+legR1
+  rotate: false
+  xy: 59, 73
+  size: 49, 40
+  orig: 49, 40
+  offset: 0, 0
+  index: -1
+legR1_2
+  rotate: false
+  xy: 76, 220
+  size: 20, 22
+  orig: 20, 22
+  offset: 0, 0
+  index: -1
+legR1_3
+  rotate: false
+  xy: 29, 17
+  size: 23, 22
+  orig: 23, 22
+  offset: 0, 0
+  index: -1
+mask
+  rotate: false
+  xy: 2, 339
+  size: 104, 65
+  orig: 104, 65
+  offset: 0, 0
+  index: -1
+mask2
+  rotate: false
+  xy: 122, 512
+  size: 36, 44
+  orig: 36, 44
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 75, 115
+  size: 64, 42
+  orig: 64, 42
+  offset: 0, 0
+  index: -1
+weapon
+  rotate: false
+  xy: 117, 379
+  size: 41, 75
+  orig: 41, 76
+  offset: 0, 0
+  index: -1
+weapon_skill1
+  rotate: false
+  xy: 2, 406
+  size: 113, 69
+  orig: 113, 69
+  offset: 0, 0
+  index: -1
+weapon_skill2_1
+  rotate: true
+  xy: 76, 159
+  size: 50, 72
+  orig: 50, 72
+  offset: 0, 0
+  index: -1
+weapon_skill2_2
+  rotate: false
+  xy: 122, 456
+  size: 35, 54
+  orig: 35, 54
+  offset: 0, 0
+  index: -1
+weapon_skill2_3
+  rotate: false
+  xy: 2, 477
+  size: 118, 79
+  orig: 118, 79
+  offset: 0, 0
+  index: -1

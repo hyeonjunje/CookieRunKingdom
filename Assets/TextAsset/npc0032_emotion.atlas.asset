@@ -1,0 +1,132 @@
+
+npc0032_emotion.png
+size: 2036,568
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc00032_emotion_default_body
+  rotate: false
+  xy: 2, 125
+  size: 289, 442
+  orig: 651, 551
+  offset: 181, 27
+  index: -1
+npc00032_emotion_default_eye01
+  rotate: true
+  xy: 1892, 169
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_default_eye02
+  rotate: false
+  xy: 1732, 30
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_default_mouth
+  rotate: 270
+  xy: 1447, 347
+  size: 219, 194
+  orig: 651, 551
+  offset: 241, 45
+  index: -1
+npc00032_emotion_happy_body
+  rotate: false
+  xy: 291, 125
+  size: 289, 442
+  orig: 651, 551
+  offset: 181, 27
+  index: -1
+npc00032_emotion_happy_eye01
+  rotate: false
+  xy: 1412, 30
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_happy_mouth
+  rotate: true
+  xy: 1642, 347
+  size: 219, 194
+  orig: 651, 551
+  offset: 241, 45
+  index: -1
+npc00032_emotion_pain_body
+  rotate: false
+  xy: 580, 125
+  size: 289, 442
+  orig: 651, 551
+  offset: 181, 27
+  index: -1
+npc00032_emotion_pain_eye01
+  rotate: false
+  xy: 201, 3
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_pain_mouth
+  rotate: 180
+  xy: 1671, 153
+  size: 219, 194
+  orig: 651, 551
+  offset: 241, 45
+  index: -1
+npc00032_emotion_sad_body
+  rotate: false
+  xy: 869, 125
+  size: 289, 442
+  orig: 651, 551
+  offset: 181, 27
+  index: -1
+npc00032_emotion_sad_eye01
+  rotate: false
+  xy: 490, 3
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_sad_eye02
+  rotate: false
+  xy: 780, 3
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_sad_mouth
+  rotate: false
+  xy: 1451, 153
+  size: 219, 194
+  orig: 651, 551
+  offset: 241, 45
+  index: -1
+npc00032_emotion_worry_body
+  rotate: false
+  xy: 1158, 125
+  size: 289, 442
+  orig: 651, 551
+  offset: 181, 27
+  index: -1
+npc00032_emotion_worry_eye01
+  rotate: false
+  xy: 1069, 3
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_worry_eye02
+  rotate: false
+  xy: 2, 3
+  size: 178, 121
+  orig: 651, 551
+  offset: 250, 161
+  index: -1
+npc00032_emotion_worry_mouth
+  rotate: true
+  xy: 1837, 347
+  size: 219, 194
+  orig: 651, 551
+  offset: 241, 45
+  index: -1

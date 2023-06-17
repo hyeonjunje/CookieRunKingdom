@@ -1,0 +1,15 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_m10330",
+  "CharacterResourceKey": "m10330",
+  "EffectEvents": [],
+  "BoneFollowers": []
+}

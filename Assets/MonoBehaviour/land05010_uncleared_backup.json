@@ -1,0 +1,1104 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1330960622541637097
+  },
+  "m_Name": "land05010_uncleared_backup",
+  "ClearCondition": 0,
+  "GoalPositionInfo": {
+    "StageNumber": 0,
+    "AreaIndex": 0,
+    "LocalX": 0.0
+  },
+  "ClearCutSceneGroupId": 0,
+  "RecommendLevel": 33,
+  "GameSpeed": 1.0,
+  "StageInfos": [
+    {
+      "Number": 1,
+      "StageCount": 1,
+      "BGM": "",
+      "StagePlacementDatas": [
+        {
+          "Id": 101,
+          "Length": 55,
+          "Floor": {
+            "m_FileID": 1,
+            "m_PathID": -2373300552965004080
+          },
+          "Background": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "AreaDatas": [
+            {
+              "StartX": 0,
+              "Length": 20,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -20,
+              "Length": 10,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup0",
+                  "UniqueId": 1,
+                  "Monsters": [
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -22.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 1,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -23.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 2,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -24.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 3,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -24.5,
+                        "Y": 1.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 8,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -26.5,
+                        "Y": -1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 4,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310310,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -26.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 9,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -26.5,
+                        "Y": 2.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 7,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -28.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 5,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -29.5,
+                        "Y": 1.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 6,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -30,
+              "Length": 25,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup4",
+                  "UniqueId": 5,
+                  "Monsters": [
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -45.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 41,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -46.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 43,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -47.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 42,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -47.5,
+                        "Y": 1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 45,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -48.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 44,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -49.5,
+                        "Y": -1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 46,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -49.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 47,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310310,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -52.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 39,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310310,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -52.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 40,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310313,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -54.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 35,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310313,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -54.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 36,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Number": 2,
+      "StageCount": 1,
+      "BGM": "",
+      "StagePlacementDatas": [
+        {
+          "Id": 201,
+          "Length": 61,
+          "Floor": {
+            "m_FileID": 1,
+            "m_PathID": -2373300552965004080
+          },
+          "Background": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "AreaDatas": [
+            {
+              "StartX": 0,
+              "Length": 30,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -30,
+              "Length": 10,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup0",
+                  "UniqueId": 1,
+                  "Monsters": [
+                    {
+                      "Id": 1310302,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -35.0,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 184,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310302,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -37.5,
+                        "Y": -1.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 185,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310302,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -39.0,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 186,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -40,
+              "Length": 21,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup3",
+                  "UniqueId": 9,
+                  "Monsters": [
+                    {
+                      "Id": 1310302,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -50.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 196,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310302,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -52.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 197,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310310,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -55.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 201,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310312,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -56.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 171,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310312,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -57.5,
+                        "Y": 1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 173,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310312,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -58.5,
+                        "Y": -3.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 170,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310312,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -59.5,
+                        "Y": -1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 172,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Number": 3,
+      "StageCount": 1,
+      "BGM": "",
+      "StagePlacementDatas": [
+        {
+          "Id": 301,
+          "Length": 71,
+          "Floor": {
+            "m_FileID": 1,
+            "m_PathID": -2373300552965004080
+          },
+          "Background": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "AreaDatas": [
+            {
+              "StartX": 0,
+              "Length": 10,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -10,
+              "Length": 30,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup2",
+                  "UniqueId": 3,
+                  "Monsters": [
+                    {
+                      "Id": 1310301,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -16.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 38,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310301,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -17.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 40,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310301,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -17.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 41,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310302,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -29.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 43,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310302,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -30.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 42,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310310,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -32.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 19,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310314,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -35.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 35,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -40,
+              "Length": 16,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup3",
+                  "UniqueId": 4,
+                  "Monsters": [
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -46.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 26,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -47.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 25,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -50.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 24,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310309,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -51.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 23,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310310,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -52.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 29,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310310,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -52.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 31,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310301,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -55.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 27,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310301,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -55.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 28,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -56,
+              "Length": 15,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": [
+                {
+                  "Id": 1,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -67.5,
+                    "Y": 0.0,
+                    "Z": 1.5
+                  },
+                  "ZOrder": 0,
+                  "MagicStats": [],
+                  "Size": {
+                    "X": 1.0,
+                    "Y": 4.0,
+                    "Z": 3.0
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

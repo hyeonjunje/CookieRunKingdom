@@ -1,0 +1,19 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -5981573165464453130
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 6149856320679708645
+  },
+  "m_Name": "",
+  "_missionIndex": 2,
+  "_goalText": {
+    "m_FileID": 0,
+    "m_PathID": 5589047528573689758
+  },
+  "_currentTextFormat": "",
+  "_width": 600.0
+}

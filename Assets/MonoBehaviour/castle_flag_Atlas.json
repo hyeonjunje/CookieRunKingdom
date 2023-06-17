@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "castle_flag_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": -9158970272349870128
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 7978756474764037158
+    }
+  ]
+}

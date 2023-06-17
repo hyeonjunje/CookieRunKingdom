@@ -1,0 +1,94 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_cookie0135",
+  "CharacterResourceKey": "cookie0135",
+  "EffectEvents": [
+    {
+      "AnimationName": "skill1_back",
+      "EffectPath": "fx_cookie0135_skill01",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 1,
+      "LifeTime": 1.0,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill4_back",
+      "EffectPath": "fx_cookie0135_skill04",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 1,
+      "LifeTime": 1.9,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2_end_trans_back",
+      "EffectPath": "fx_cookie0135_skill02_trans",
+      "Frame": 13,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 1,
+      "LifeTime": 0.6,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill1",
+      "EffectPath": "fx_cookie0135_front_skill01",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.0,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2_end_trans",
+      "EffectPath": "fx_cookie0135_front_skill02_trans",
+      "Frame": 13,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 0.6,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill4",
+      "EffectPath": "fx_cookie0135_front_skill04",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.9,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": []
+}

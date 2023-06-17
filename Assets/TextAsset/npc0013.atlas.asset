@@ -1,0 +1,153 @@
+
+npc0013.png
+size: 468,112
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TownCookieShadow
+  rotate: true
+  xy: 165, 31
+  size: 79, 51
+  orig: 82, 53
+  offset: 0, 2
+  index: -1
+npc0013_arm_l
+  rotate: false
+  xy: 249, 3
+  size: 29, 30
+  orig: 29, 30
+  offset: 0, 0
+  index: -1
+npc0013_arm_l_back
+  rotate: false
+  xy: 215, 2
+  size: 32, 27
+  orig: 32, 27
+  offset: 0, 0
+  index: -1
+npc0013_arm_r
+  rotate: false
+  xy: 408, 9
+  size: 34, 25
+  orig: 34, 25
+  offset: 0, 0
+  index: -1
+npc0013_arm_r_back
+  rotate: false
+  xy: 179, 2
+  size: 34, 27
+  orig: 34, 27
+  offset: 0, 0
+  index: -1
+npc0013_body
+  rotate: false
+  xy: 339, 2
+  size: 67, 39
+  orig: 67, 39
+  offset: 0, 0
+  index: -1
+npc0013_body_back
+  rotate: true
+  xy: 307, 43
+  size: 67, 42
+  orig: 67, 42
+  offset: 0, 0
+  index: -1
+npc0013_body_shadow
+  rotate: false
+  xy: 142, 4
+  size: 35, 20
+  orig: 35, 20
+  offset: 0, 0
+  index: -1
+npc0013_eye_close
+  rotate: true
+  xy: 2, 3
+  size: 16, 9
+  orig: 16, 9
+  offset: 0, 0
+  index: -1
+npc0013_eye_l
+  rotate: true
+  xy: 35, 5
+  size: 14, 20
+  orig: 14, 20
+  offset: 0, 0
+  index: -1
+npc0013_eye_r
+  rotate: true
+  xy: 13, 4
+  size: 15, 20
+  orig: 15, 20
+  offset: 0, 0
+  index: -1
+npc0013_hair
+  rotate: false
+  xy: 408, 36
+  size: 50, 32
+  orig: 50, 32
+  offset: 0, 0
+  index: -1
+npc0013_hair_back
+  rotate: true
+  xy: 262, 39
+  size: 71, 43
+  orig: 71, 43
+  offset: 0, 0
+  index: -1
+npc0013_hair_r
+  rotate: true
+  xy: 85, 2
+  size: 22, 24
+  orig: 22, 24
+  offset: 0, 0
+  index: -1
+npc0013_hat
+  rotate: false
+  xy: 85, 26
+  size: 78, 84
+  orig: 78, 84
+  offset: 0, 0
+  index: -1
+npc0013_hat_back
+  rotate: false
+  xy: 2, 21
+  size: 81, 89
+  orig: 81, 92
+  offset: 0, 3
+  index: -1
+npc0013_hat_ul
+  rotate: true
+  xy: 218, 35
+  size: 75, 42
+  orig: 75, 42
+  offset: 0, 0
+  index: -1
+npc0013_head
+  rotate: false
+  xy: 351, 53
+  size: 55, 57
+  orig: 55, 57
+  offset: 0, 0
+  index: -1
+npc0013_mouth
+  rotate: false
+  xy: 111, 3
+  size: 29, 21
+  orig: 29, 21
+  offset: 0, 0
+  index: -1
+npc0013_neck
+  rotate: false
+  xy: 280, 3
+  size: 57, 34
+  orig: 57, 40
+  offset: 0, 0
+  index: -1
+npc0013_neck_back
+  rotate: false
+  xy: 408, 70
+  size: 58, 40
+  orig: 58, 40
+  offset: 0, 0
+  index: -1

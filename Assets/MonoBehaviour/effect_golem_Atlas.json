@@ -1,0 +1,30 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "effect_golem_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": 499381265935251950
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -8611712076942073609
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4505973118157051260
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 6499844120947200172
+    }
+  ]
+}

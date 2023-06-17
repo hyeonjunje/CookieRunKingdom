@@ -1,0 +1,42 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -8593768332750670790
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 3811597449548343998
+  },
+  "m_Name": "",
+  "_itemThumbnail": {
+    "m_FileID": 0,
+    "m_PathID": 7223420965891905128
+  },
+  "_commonBackground": {
+    "m_FileID": 0,
+    "m_PathID": 3943611082267070464
+  },
+  "_rareBackground": {
+    "m_FileID": 0,
+    "m_PathID": 4517543750022979162
+  },
+  "_rewardedStateObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 3587910249983192378
+    }
+  ],
+  "_selectedEffectObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -2659083263542880710
+    }
+  ],
+  "_unselectedEffectObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 8159049109739350549
+    }
+  ]
+}

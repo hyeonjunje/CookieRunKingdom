@@ -1,0 +1,127 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -8770629545185483738
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -5237941738448416525
+  },
+  "m_Name": "",
+  "_zSortingRectTransforms": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 2381790884442364422
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4556662691523585570
+    }
+  ],
+  "_contactRectTransform": {
+    "m_FileID": 0,
+    "m_PathID": 7450284527037230938
+  },
+  "_contactLookPivot": {
+    "x": 1.0,
+    "y": 0.0
+  },
+  "_uiAreaRectTransform": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_showUnsatisfiedBlock": {
+    "m_FileID": 0,
+    "m_PathID": 2381790884442364422
+  },
+  "_showSatisfiedBlock": {
+    "m_FileID": 0,
+    "m_PathID": -4556662691523585570
+  },
+  "_nodeColorTargets": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 5817609878036163348
+    }
+  ],
+  "_iconRenderer": {
+    "m_FileID": 0,
+    "m_PathID": -6806057535356576206
+  },
+  "_normalActiveEffectBlock": {
+    "m_FileID": 0,
+    "m_PathID": -8488585436409919955
+  },
+  "_bossActiveEffectBlock": {
+    "m_FileID": 0,
+    "m_PathID": -7157387452349531168
+  },
+  "_bossEffectAuraBlock": {
+    "m_FileID": 0,
+    "m_PathID": -1195876340146102697
+  },
+  "_landObjectSkeletonAnimation": {
+    "m_FileID": 0,
+    "m_PathID": -3898868921336809337
+  },
+  "_landObjectMeshRenderer": {
+    "m_FileID": 0,
+    "m_PathID": 9096904312137870030
+  },
+  "_worldMapLandStar": {
+    "m_FileID": 0,
+    "m_PathID": 4862434704760203297
+  },
+  "_starImages": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 1658060849598889228
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -3373254474568962275
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1867303406420780563
+    }
+  ],
+  "_starSimpleSpriteSet": {
+    "_keyData": [
+      7600,
+      7601
+    ],
+    "_valueData": [
+      {
+        "m_FileID": 2,
+        "m_PathID": 4138972136597098437
+      },
+      {
+        "m_FileID": 2,
+        "m_PathID": 9020944178686280055
+      }
+    ]
+  },
+  "_nameText": {
+    "m_FileID": 0,
+    "m_PathID": -3232832496552711491
+  },
+  "_rewardBalloonPivot": {
+    "m_FileID": 0,
+    "m_PathID": 5910604758145260375
+  },
+  "_isUseLandObjectRewardBalloonPivot": 1,
+  "_landIconSpriteSet": {
+    "m_FileID": 2,
+    "m_PathID": 2981246416988274895
+  },
+  "_buttonMarker": {
+    "m_FileID": 0,
+    "m_PathID": -6862631348800740029
+  },
+  "_animatorWrapper": {
+    "m_FileID": 0,
+    "m_PathID": -6915617835350037934
+  }
+}

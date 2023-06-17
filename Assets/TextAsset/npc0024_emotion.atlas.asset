@@ -1,0 +1,83 @@
+
+npc0024_emotion.png
+size: 808,472
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0024_emotion_default_arm_R
+  rotate: false
+  xy: 635, 157
+  size: 154, 210
+  orig: 154, 210
+  offset: 0, 0
+  index: -1
+npc0024_emotion_default_body
+  rotate: false
+  xy: 2, 10
+  size: 456, 461
+  orig: 456, 461
+  offset: 0, 0
+  index: -1
+npc0024_emotion_default_eyes
+  rotate: 180
+  xy: 398, 9
+  size: 88, 58
+  orig: 90, 59
+  offset: 0, 1
+  index: -1
+npc0024_emotion_default_eyes_closed
+  rotate: false
+  xy: 2, 6
+  size: 97, 29
+  orig: 97, 58
+  offset: 0, 0
+  index: -1
+npc0024_emotion_default_hair
+  rotate: 180
+  xy: 650, 4
+  size: 154, 151
+  orig: 154, 151
+  offset: 0, 0
+  index: -1
+npc0024_emotion_default_hand_L
+  rotate: false
+  xy: 459, 37
+  size: 203, 217
+  orig: 203, 217
+  offset: 0, 0
+  index: -1
+npc0024_emotion_default_horn
+  rotate: 180
+  xy: 408, 252
+  size: 244, 219
+  orig: 518, 219
+  offset: 274, 0
+  index: -1
+npc0024_emotion_default_mouth
+  rotate: false
+  xy: 2, 400
+  size: 122, 70
+  orig: 126, 74
+  offset: 2, 2
+  index: -1
+npc0024_emotion_default_mouth2
+  rotate: false
+  xy: 653, 368
+  size: 149, 63
+  orig: 153, 67
+  offset: 2, 2
+  index: -1
+npc0024_emotion_default_toungue
+  rotate: false
+  xy: 2, 333
+  size: 64, 65
+  orig: 64, 65
+  offset: 0, 0
+  index: -1
+npc0024_emotion_default_toungue 2
+  rotate: false
+  xy: 320, 407
+  size: 85, 64
+  orig: 85, 64
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,19 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -7719712339962765734
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 6149856320679708645
+  },
+  "m_Name": "",
+  "_missionIndex": 3,
+  "_goalText": {
+    "m_FileID": 0,
+    "m_PathID": 4285333490628918217
+  },
+  "_currentTextFormat": "UIStringList.Text.GameEvent.FriendInvite.CountFormat",
+  "_width": 894.0
+}

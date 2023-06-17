@@ -1,0 +1,109 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 108253494260400493
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4463929431004266083
+  },
+  "m_Name": "",
+  "_titleText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_summaryText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_descriptionText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_durationTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_useRemainTimeFormat": 1,
+  "_remainTimeFormatStringKey": "UIStringList.Text.GameEvent.RemainTimeFormat.ItalianType",
+  "_remainTimeText": {
+    "m_FileID": 0,
+    "m_PathID": -8281228961378173475
+  },
+  "_startPageObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startButton": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_eventGaugeType": 2,
+  "_useMaxIsGaugeInfoLast": 1,
+  "_currentTexts": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 2099741471085337434
+    }
+  ],
+  "_currentTextFormat": "UIStringList.Text.GameEvent.BurningWishtree.CountFormat",
+  "_maxTexts": [],
+  "_currentMaxTexts": [],
+  "_simpleGaugeJointHelper": {
+    "m_FileID": 0,
+    "m_PathID": 6172389127122324723
+  },
+  "_gaugeInfos": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -6256974109344264988
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 4944056194396346368
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 6059191655205549771
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6522178515050862876
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 5481740682766210448
+    }
+  ],
+  "_itemThumbnailObjects": [],
+  "_shortCutButtonType": 0,
+  "_gameEventDataId": 0,
+  "_gameEventStringId": "",
+  "_shortcutType": 0,
+  "_shortcutDataId": 0,
+  "_shortcutDataStringId": "",
+  "_shortcutStringData": "",
+  "_missionCells": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 8641515487953128254
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 3028192876260000894
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -2492417817874844173
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -433403159144246899
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 4536108352635524403
+    }
+  ]
+}

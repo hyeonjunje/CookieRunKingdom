@@ -1,0 +1,146 @@
+
+cookie0002_portrait.png
+size: 640,1060
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+port_cookie0002_000
+  rotate: false
+  xy: 402, 730
+  size: 228, 326
+  orig: 228, 326
+  offset: 0, 0
+  index: -1
+port_cookie0002_001
+  rotate: false
+  xy: 2, 409
+  size: 259, 249
+  orig: 259, 249
+  offset: 0, 0
+  index: -1
+port_cookie0002_002
+  rotate: false
+  xy: 2, 2
+  size: 175, 157
+  orig: 175, 157
+  offset: 0, 0
+  index: -1
+port_cookie0002_003
+  rotate: false
+  xy: 381, 28
+  size: 111, 172
+  orig: 111, 172
+  offset: 0, 0
+  index: -1
+port_cookie0002_004
+  rotate: false
+  xy: 263, 494
+  size: 134, 164
+  orig: 134, 164
+  offset: 0, 0
+  index: -1
+port_cookie0002_005
+  rotate: false
+  xy: 494, 106
+  size: 105, 94
+  orig: 105, 94
+  offset: 0, 0
+  index: -1
+port_cookie0002_006
+  rotate: false
+  xy: 585, 581
+  size: 48, 147
+  orig: 48, 147
+  offset: 0, 0
+  index: -1
+port_cookie0002_007
+  rotate: false
+  xy: 2, 161
+  size: 256, 246
+  orig: 256, 246
+  offset: 0, 0
+  index: -1
+port_cookie0002_008
+  rotate: false
+  xy: 250, 3
+  size: 57, 78
+  orig: 57, 78
+  offset: 0, 0
+  index: -1
+port_cookie0002_009
+  rotate: false
+  xy: 2, 660
+  size: 398, 396
+  orig: 398, 396
+  offset: 0, 0
+  index: -1
+port_cookie0002_010
+  rotate: false
+  xy: 494, 20
+  size: 69, 84
+  orig: 69, 84
+  offset: 0, 0
+  index: -1
+port_cookie0002_011
+  rotate: true
+  xy: 402, 453
+  size: 275, 181
+  orig: 275, 181
+  offset: 0, 0
+  index: -1
+port_cookie0002_012
+  rotate: true
+  xy: 260, 167
+  size: 107, 119
+  orig: 107, 119
+  offset: 0, 0
+  index: -1
+port_cookie0002_013
+  rotate: true
+  xy: 260, 276
+  size: 92, 123
+  orig: 92, 123
+  offset: 0, 0
+  index: -1
+port_cookie0002_014
+  rotate: false
+  xy: 263, 370
+  size: 123, 122
+  orig: 123, 122
+  offset: 0, 0
+  index: -1
+port_cookie0002_015
+  rotate: false
+  xy: 388, 307
+  size: 249, 144
+  orig: 249, 144
+  offset: 0, 0
+  index: -1
+port_cookie0002_016
+  rotate: true
+  xy: 179, 15
+  size: 144, 69
+  orig: 144, 69
+  offset: 0, 0
+  index: -1
+port_cookie0002_017
+  rotate: false
+  xy: 385, 202
+  size: 241, 103
+  orig: 241, 103
+  offset: 0, 0
+  index: -1
+port_cookie0002_018
+  rotate: true
+  xy: 260, 83
+  size: 82, 106
+  orig: 82, 106
+  offset: 0, 0
+  index: -1
+port_cookie0002_019
+  rotate: false
+  xy: 309, 4
+  size: 67, 77
+  orig: 67, 77
+  offset: 0, 0
+  index: -1

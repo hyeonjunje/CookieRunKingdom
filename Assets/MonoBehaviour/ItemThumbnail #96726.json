@@ -1,0 +1,65 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 2789939352308335775
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1048009569009610989
+  },
+  "m_Name": "",
+  "_cookieThumbnail": {
+    "m_FileID": 0,
+    "m_PathID": -8724925416687942287
+  },
+  "_profileImageItemThumbnail": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_itemThumbnailMainObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_imageIcon": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_textContent": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_contentType": 7,
+  "_contentFitType": 0,
+  "_maxQuantity": 0,
+  "_contentCustomFormat": "x{0}",
+  "_textContent2": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_contentType2": 0,
+  "_contentFitType2": 0,
+  "_maxQuantity2": 0,
+  "_contentCustomFormat2": "x{0}",
+  "_rarityImage": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_raritySpriteSet": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_itemTrackingAddon": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_isShopReward": 0,
+  "_itemDataId": 0,
+  "_dimmedTargetImages": [],
+  "_dimmedColor": {
+    "r": 0.5,
+    "g": 0.5,
+    "b": 0.5,
+    "a": 0.9019608
+  }
+}

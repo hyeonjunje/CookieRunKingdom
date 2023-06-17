@@ -1,0 +1,119 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -3024032211342399375
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -9013996699676979090
+  },
+  "m_Name": "",
+  "_touchArea": {
+    "m_FileID": 0,
+    "m_PathID": 424000616431685316
+  },
+  "_weatherManager": {
+    "m_FileID": 0,
+    "m_PathID": 4076352988373341159
+  },
+  "_intensityInfos": [
+    {
+      "StageDifficulty": 2,
+      "IntensityController": {
+        "m_FileID": 0,
+        "m_PathID": 1795828603298063439
+      },
+      "AnimationCurve": {
+        "m_Curve": [
+          {
+            "time": 0.0,
+            "value": 0.0,
+            "inSlope": 0.215212077,
+            "outSlope": 0.215212077,
+            "weightedMode": 0,
+            "inWeight": 0.0,
+            "outWeight": 0.264684081
+          },
+          {
+            "time": 0.230815381,
+            "value": 0.07361889,
+            "inSlope": 0.958715737,
+            "outSlope": 0.958715737,
+            "weightedMode": 0,
+            "inWeight": 0.333333343,
+            "outWeight": 0.166642353
+          },
+          {
+            "time": 0.6091765,
+            "value": 0.6740538,
+            "inSlope": 1.72278416,
+            "outSlope": 1.72278416,
+            "weightedMode": 0,
+            "inWeight": 0.333333343,
+            "outWeight": 0.333333343
+          },
+          {
+            "time": 1.0,
+            "value": 1.0,
+            "inSlope": 0.415620446,
+            "outSlope": 0.415620446,
+            "weightedMode": 0,
+            "inWeight": 0.246479616,
+            "outWeight": 0.0
+          }
+        ],
+        "m_PreInfinity": 2,
+        "m_PostInfinity": 2,
+        "m_RotationOrder": 4
+      },
+      "Duration": 1.2,
+      "NodeColor": {
+        "r": 1.0,
+        "g": 0.745098054,
+        "b": 0.6666667,
+        "a": 1.0
+      }
+    }
+  ],
+  "_activeInfos": [
+    {
+      "StageDifficulty": 1,
+      "ActiveGameObjects": [
+        {
+          "m_FileID": 0,
+          "m_PathID": -5066581150448355001
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": -2572940294976960676
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 3846165665539183587
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": 4159482767132802062
+        }
+      ]
+    },
+    {
+      "StageDifficulty": 2,
+      "ActiveGameObjects": [
+        {
+          "m_FileID": 0,
+          "m_PathID": -6063215500444623387
+        },
+        {
+          "m_FileID": 0,
+          "m_PathID": -2147581785008751825
+        }
+      ]
+    }
+  ],
+  "_pathDictionary": {
+    "_keyData": [],
+    "_valueData": []
+  }
+}

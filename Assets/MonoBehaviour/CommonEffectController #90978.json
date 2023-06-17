@@ -1,0 +1,105 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 1208932201260991537
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4041792273756664202
+  },
+  "m_Name": "",
+  "SpriteSheet": 0,
+  "MainTexTiles": {
+    "x": 1.0,
+    "y": 1.0
+  },
+  "MainTexFrame": 0.0,
+  "UseMainTexture": 1,
+  "MainTextureTiling": {
+    "x": 0.3,
+    "y": 7.0
+  },
+  "MainTextureOffset": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "MainTextureFlowSpeedX": 0.0,
+  "MainTextureFlowSpeedY": 0.5,
+  "MainTextureColor": {
+    "r": 0.9806103,
+    "g": 1.1947397,
+    "b": 1.41421354,
+    "a": 0.784313738
+  },
+  "UseSubTexture": 1,
+  "SubTextureTiling": {
+    "x": 1.0,
+    "y": 0.8
+  },
+  "SubTextureOffset": {
+    "x": 0.0,
+    "y": 0.26
+  },
+  "SubTextureMix": 1.0,
+  "SubTextureFlowSpeedX": 0.0,
+  "SubTextureFlowSpeedY": 0.0,
+  "SubTextureColor": {
+    "r": 1.15842819,
+    "g": 0.0,
+    "b": 4.0,
+    "a": 0.9411765
+  },
+  "UseAlphaTexture": 1,
+  "AlphaTextureTiling": {
+    "x": 1.0,
+    "y": 1.0
+  },
+  "AlphaTextureOffset": {
+    "x": 0.0,
+    "y": -0.1
+  },
+  "AlphaTextureIntensity": 1.0,
+  "AlphaTextureFlowSpeedX": 0.0,
+  "AlphaTextureFlowSpeedY": 0.0,
+  "UseDistortionTexture": 1,
+  "DistortionTextureTiling": {
+    "x": 0.1,
+    "y": 5.0
+  },
+  "DistortionTextureOffset": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "DistortionIntensity": 0.25,
+  "DistortionSubTextureIntensity": 0.25,
+  "DistortionTextureFlowSpeedX": 1.0,
+  "DistortionTextureFlowSpeedY": 0.5,
+  "UseDissolveTexture": 1,
+  "DissolveTextureTiling": {
+    "x": 0.15,
+    "y": 1.0
+  },
+  "DissolveTextureOffset": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "DissolveIntensity": 0.0,
+  "DissolveEdgeRange": 0.08,
+  "DissolveEdgeMultiplier": -10.0,
+  "DissolveEdgeColor": {
+    "r": 37.137394,
+    "g": 1.19314492,
+    "b": 113.945114,
+    "a": 1.0
+  },
+  "DissolveTextureFlowSpeedX": 0.01,
+  "DissolveTextureFlowSpeedY": -0.1,
+  "UseFadeAlpha": 1,
+  "AutoRotate": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "_AutoRotateUseDeltaTime": 0
+}

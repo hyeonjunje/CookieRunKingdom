@@ -1,0 +1,160 @@
+
+m10431.png
+size: 284,760
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+berry1
+  rotate: true
+  xy: 192, 372
+  size: 108, 80
+  orig: 108, 80
+  offset: 0, 0
+  index: -1
+berry2
+  rotate: true
+  xy: 140, 360
+  size: 55, 35
+  orig: 55, 35
+  offset: 0, 0
+  index: -1
+berry3
+  rotate: true
+  xy: 196, 482
+  size: 123, 85
+  orig: 123, 85
+  offset: 0, 0
+  index: -1
+creamL1
+  rotate: true
+  xy: 174, 81
+  size: 73, 104
+  orig: 73, 104
+  offset: 0, 0
+  index: -1
+creamL2
+  rotate: true
+  xy: 162, 5
+  size: 74, 85
+  orig: 74, 85
+  offset: 0, 0
+  index: -1
+creamL3
+  rotate: false
+  xy: 120, 303
+  size: 55, 55
+  orig: 55, 55
+  offset: 0, 0
+  index: -1
+creamR1
+  rotate: false
+  xy: 2, 12
+  size: 84, 84
+  orig: 84, 84
+  offset: 0, 0
+  index: -1
+creamR2
+  rotate: false
+  xy: 2, 98
+  size: 96, 74
+  orig: 96, 74
+  offset: 0, 0
+  index: -1
+creamR3
+  rotate: true
+  xy: 120, 247
+  size: 54, 55
+  orig: 54, 55
+  offset: 0, 0
+  index: -1
+cross
+  rotate: true
+  xy: 2, 174
+  size: 75, 106
+  orig: 75, 106
+  offset: 0, 0
+  index: -1
+cross2
+  rotate: false
+  xy: 100, 38
+  size: 60, 99
+  orig: 60, 99
+  offset: 0, 0
+  index: -1
+crown1
+  rotate: false
+  xy: 2, 473
+  size: 188, 114
+  orig: 188, 114
+  offset: 0, 0
+  index: -1
+crown2
+  rotate: false
+  xy: 2, 365
+  size: 136, 106
+  orig: 136, 106
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 140, 417
+  size: 54, 39
+  orig: 54, 39
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 251
+  size: 116, 112
+  orig: 116, 112
+  offset: 0, 0
+  index: -1
+neck1
+  rotate: true
+  xy: 196, 607
+  size: 151, 83
+  orig: 151, 83
+  offset: 0, 0
+  index: -1
+neck2
+  rotate: true
+  xy: 110, 139
+  size: 106, 62
+  orig: 106, 62
+  offset: 0, 0
+  index: -1
+neck3
+  rotate: true
+  xy: 2, 589
+  size: 169, 192
+  orig: 169, 192
+  offset: 0, 0
+  index: -1
+neck4
+  rotate: false
+  xy: 177, 250
+  size: 95, 120
+  orig: 95, 120
+  offset: 0, 0
+  index: -1
+neck5
+  rotate: false
+  xy: 177, 156
+  size: 105, 92
+  orig: 105, 92
+  offset: 0, 0
+  index: -1
+neck6
+  rotate: false
+  xy: 249, 38
+  size: 32, 41
+  orig: 32, 41
+  offset: 0, 0
+  index: -1
+neck7
+  rotate: true
+  xy: 88, 2
+  size: 34, 52
+  orig: 34, 52
+  offset: 0, 0
+  index: -1

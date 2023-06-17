@@ -1,0 +1,189 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -1975921841984460356
+  },
+  "m_Name": "tile_brick_asset",
+  "_type": 1,
+  "_waterTileMaterial": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_tileDistortionFactor": 0.0,
+  "_waveDistortionFactor": 0.0,
+  "_data": [
+    {
+      "SpriteType": 0,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick00",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 110,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 3,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick01",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 1,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick02",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 2,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick03",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 11,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick04",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 10,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick05",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 9,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick06",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 7,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick07",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 5,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick08",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 6,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick09",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 8,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick10",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    },
+    {
+      "SpriteType": 4,
+      "Data": [
+        {
+          "SpriteKey": "tile_brick11",
+          "Offset": {
+            "x": 0.01,
+            "y": 0.01
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    }
+  ]
+}

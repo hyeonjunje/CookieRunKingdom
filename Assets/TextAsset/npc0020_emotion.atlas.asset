@@ -1,0 +1,111 @@
+
+npc0020_emotion.png
+size: 1940,248
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0020_emotion_default_arm_L
+  rotate: true
+  xy: 754, 53
+  size: 194, 251
+  orig: 651, 551
+  offset: 269, 34
+  index: -1
+npc0020_emotion_default_arm_R
+  rotate: 180
+  xy: 1003, 13
+  size: 162, 234
+  orig: 651, 551
+  offset: 203, 41
+  index: -1
+npc0020_emotion_default_body
+  rotate: false
+  xy: 2, 20
+  size: 509, 227
+  orig: 651, 551
+  offset: 92, 0
+  index: -1
+npc0020_emotion_default_eyes
+  rotate: true
+  xy: 1166, 9
+  size: 238, 122
+  orig: 651, 551
+  offset: 199, 259
+  index: -1
+npc0020_emotion_default_eyes_closed
+  rotate: true
+  xy: 1289, 9
+  size: 238, 122
+  orig: 651, 551
+  offset: 199, 259
+  index: -1
+npc0020_emotion_default_hair_L
+  rotate: true
+  xy: 1411, 81
+  size: 166, 278
+  orig: 651, 551
+  offset: 111, 121
+  index: -1
+npc0020_emotion_default_hair_R
+  rotate: 270
+  xy: 1653, 47
+  size: 154, 283
+  orig: 651, 551
+  offset: 387, 117
+  index: -1
+npc0020_emotion_default_head
+  rotate: false
+  xy: 511, 21
+  size: 242, 227
+  orig: 651, 551
+  offset: 208, 251
+  index: -1
+npc0020_emotion_default_headacc
+  rotate: false
+  xy: 2, 20
+  size: 174, 112
+  orig: 651, 551
+  offset: 243, 346
+  index: -1
+npc0020_emotion_default_headacc2
+  rotate: false
+  xy: 416, 21
+  size: 70, 109
+  orig: 651, 551
+  offset: 411, 361
+  index: -1
+npc0020_emotion_default_mouth1
+  rotate: false
+  xy: 2, 136
+  size: 52, 49
+  orig: 651, 551
+  offset: 295, 275
+  index: -1
+npc0020_emotion_default_mouth2
+  rotate: false
+  xy: 94, 97
+  size: 52, 49
+  orig: 651, 551
+  offset: 295, 275
+  index: -1
+npc0020_emotion_default_mouth3
+  rotate: false
+  xy: 754, 16
+  size: 52, 49
+  orig: 651, 551
+  offset: 295, 275
+  index: -1
+npc0020_emotion_default_stick
+  rotate: 180
+  xy: 1453, 3
+  size: 237, 140
+  orig: 651, 551
+  offset: 115, 180
+  index: -1
+npc0020_emotion_default_stick01
+  rotate: false
+  xy: 333, 18
+  size: 82, 109
+  orig: 651, 551
+  offset: 107, 142
+  index: -1

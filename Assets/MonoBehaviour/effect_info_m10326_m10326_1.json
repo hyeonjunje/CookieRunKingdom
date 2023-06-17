@@ -1,0 +1,190 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_m10326_m10326_1",
+  "CharacterResourceKey": "m10326",
+  "EffectEvents": [
+    {
+      "AnimationName": "phase_change_1",
+      "EffectPath": "fx_m10323_phase_change_01",
+      "Frame": 5,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "phase_change_2",
+      "EffectPath": "fx_m10323_phase_change_01",
+      "Frame": 5,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "phase_change_3",
+      "EffectPath": "fx_m10323_phase_change_01",
+      "Frame": 5,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "phase_change_4",
+      "EffectPath": "fx_m10323_phase_change_01",
+      "Frame": 5,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "phase_change_5",
+      "EffectPath": "fx_m10323_phase_change_01",
+      "Frame": 5,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": [
+    {
+      "BoneFollowerId": 0,
+      "FollowerType": 0,
+      "Name": "bone5",
+      "AnimationName": "phase_change_1",
+      "BoneName": "bone5",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10323_phase_change_bone_01",
+      "StartFrame": 6,
+      "EndFrame": 80,
+      "IsLoop": 0,
+      "PositionZ": -5.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 1,
+      "FollowerType": 0,
+      "Name": "bone6",
+      "AnimationName": "phase_change_2",
+      "BoneName": "bone6",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10323_phase_change_bone_01",
+      "StartFrame": 6,
+      "EndFrame": 80,
+      "IsLoop": 0,
+      "PositionZ": -5.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 2,
+      "FollowerType": 0,
+      "Name": "bone4",
+      "AnimationName": "phase_change_3",
+      "BoneName": "bone4",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10323_phase_change_bone_01",
+      "StartFrame": -1,
+      "EndFrame": -1,
+      "IsLoop": 1,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 3,
+      "FollowerType": 0,
+      "Name": "bone7",
+      "AnimationName": "phase_change_4",
+      "BoneName": "bone7",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10323_phase_change_bone_01",
+      "StartFrame": 6,
+      "EndFrame": 80,
+      "IsLoop": 0,
+      "PositionZ": -5.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 4,
+      "FollowerType": 0,
+      "Name": "bone3",
+      "AnimationName": "phase_change_5",
+      "BoneName": "bone3",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10323_phase_change_bone_01",
+      "StartFrame": 6,
+      "EndFrame": 80,
+      "IsLoop": 0,
+      "PositionZ": -5.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 5,
+      "FollowerType": 0,
+      "Name": "New Bone Follower",
+      "AnimationName": "skill1",
+      "BoneName": "bone43",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10323_skill01",
+      "StartFrame": 0,
+      "EndFrame": 60,
+      "IsLoop": 0,
+      "PositionZ": -2.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 3518300534218853778
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4938826634205237873
+  },
+  "m_Name": "",
+  "_zSortingRectTransforms": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -1794207104584977208
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4508551268277185662
+    }
+  ],
+  "_contactRectTransform": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_contactLookPivot": {
+    "x": 0.5,
+    "y": 0.5
+  },
+  "_uiAreaRectTransform": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_showUnsatisfiedBlock": {
+    "m_FileID": 0,
+    "m_PathID": -1794207104584977208
+  },
+  "_showSatisfiedBlock": {
+    "m_FileID": 0,
+    "m_PathID": -4508551268277185662
+  },
+  "_nodeColorTargets": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 6580369127366413415
+    }
+  ],
+  "_nameText": {
+    "m_FileID": 0,
+    "m_PathID": 6055748939526686361
+  }
+}

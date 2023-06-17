@@ -1,0 +1,138 @@
+
+m10439.png
+size: 112,80
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+m10440/mini_acc
+  rotate: false
+  xy: 74, 20
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+m10440/mini_body_back
+  rotate: false
+  xy: 45, 51
+  size: 37, 27
+  orig: 37, 27
+  offset: 0, 0
+  index: -1
+m10440/mini_body_inside
+  rotate: true
+  xy: 45, 25
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+m10440/mini_body_left
+  rotate: true
+  xy: 84, 47
+  size: 31, 26
+  orig: 32, 27
+  offset: 1, 1
+  index: -1
+m10440/mini_body_right
+  rotate: false
+  xy: 2, 6
+  size: 39, 32
+  orig: 39, 32
+  offset: 0, 0
+  index: -1
+m10440/mini_ear_left
+  rotate: false
+  xy: 86, 3
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+m10440/mini_ear_right
+  rotate: false
+  xy: 70, 2
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+m10440/mini_head
+  rotate: false
+  xy: 2, 40
+  size: 41, 38
+  orig: 41, 39
+  offset: 0, 1
+  index: -1
+m10440/mini_mouth
+  rotate: false
+  xy: 43, 5
+  size: 25, 18
+  orig: 25, 18
+  offset: 0, 0
+  index: -1
+
+m104392.png
+size: 108,80
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+m10439/mini_acc
+  rotate: false
+  xy: 45, 20
+  size: 25, 23
+  orig: 25, 24
+  offset: 0, 1
+  index: -1
+m10439/mini_body_back
+  rotate: false
+  xy: 72, 50
+  size: 32, 28
+  orig: 32, 28
+  offset: 0, 0
+  index: -1
+m10439/mini_body_inside
+  rotate: true
+  xy: 72, 24
+  size: 24, 28
+  orig: 24, 28
+  offset: 0, 0
+  index: -1
+m10439/mini_body_left
+  rotate: true
+  xy: 43, 45
+  size: 33, 27
+  orig: 33, 27
+  offset: 0, 0
+  index: -1
+m10439/mini_body_right
+  rotate: false
+  xy: 2, 2
+  size: 41, 32
+  orig: 41, 32
+  offset: 0, 0
+  index: -1
+m10439/mini_ear_left
+  rotate: false
+  xy: 45, 2
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+m10439/mini_ear_right
+  rotate: false
+  xy: 61, 2
+  size: 14, 16
+  orig: 14, 16
+  offset: 0, 0
+  index: -1
+m10439/mini_head
+  rotate: true
+  xy: 2, 36
+  size: 42, 39
+  orig: 42, 39
+  offset: 0, 0
+  index: -1
+m10439/mini_mouth
+  rotate: false
+  xy: 77, 5
+  size: 26, 17
+  orig: 26, 18
+  offset: 0, 1
+  index: -1

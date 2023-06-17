@@ -1,0 +1,222 @@
+
+m10903.png
+size: 952,100
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+m10904/m10904_gem
+  rotate: false
+  xy: 831, 43
+  size: 39, 54
+  orig: 39, 55
+  offset: 0, 1
+  index: -1
+m10904/m10904_head1
+  rotate: true
+  xy: 2, 6
+  size: 91, 113
+  orig: 92, 113
+  offset: 1, 0
+  index: -1
+m10904/m10904_head2
+  rotate: true
+  xy: 444, 12
+  size: 85, 116
+  orig: 85, 118
+  offset: 0, 1
+  index: -1
+m10904/m10904_head3
+  rotate: true
+  xy: 117, 6
+  size: 91, 112
+  orig: 92, 113
+  offset: 1, 1
+  index: -1
+m10904/m10904_weapon_bottom
+  rotate: true
+  xy: 759, 12
+  size: 85, 70
+  orig: 85, 70
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_bottom_2
+  rotate: true
+  xy: 759, 12
+  size: 85, 70
+  orig: 85, 70
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle
+  rotate: true
+  xy: 231, 2
+  size: 95, 105
+  orig: 95, 105
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle_2
+  rotate: true
+  xy: 338, 2
+  size: 95, 104
+  orig: 95, 105
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle_acc1
+  rotate: false
+  xy: 831, 3
+  size: 46, 38
+  orig: 46, 38
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle_acc1_2
+  rotate: false
+  xy: 831, 3
+  size: 46, 38
+  orig: 46, 38
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle_acc2
+  rotate: false
+  xy: 872, 56
+  size: 40, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle_acc2_2
+  rotate: false
+  xy: 872, 56
+  size: 40, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle_acc3
+  rotate: false
+  xy: 879, 9
+  size: 33, 45
+  orig: 34, 45
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_middle_acc3_2
+  rotate: false
+  xy: 914, 54
+  size: 33, 43
+  orig: 34, 45
+  offset: 0, 2
+  index: -1
+m10904/m10904_weapon_top1
+  rotate: false
+  xy: 562, 12
+  size: 108, 85
+  orig: 108, 86
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_top1_2
+  rotate: false
+  xy: 562, 12
+  size: 108, 85
+  orig: 108, 86
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_top2
+  rotate: false
+  xy: 672, 9
+  size: 85, 88
+  orig: 85, 88
+  offset: 0, 0
+  index: -1
+m10904/m10904_weapon_top2_2
+  rotate: false
+  xy: 672, 9
+  size: 85, 88
+  orig: 85, 88
+  offset: 0, 0
+  index: -1
+
+m109032.png
+size: 632,120
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+m10903/m10093_gem
+  rotate: false
+  xy: 566, 58
+  size: 42, 59
+  orig: 42, 60
+  offset: 0, 1
+  index: -1
+m10903/m10093_head_1
+  rotate: false
+  xy: 138, 13
+  size: 96, 104
+  orig: 96, 104
+  offset: 0, 0
+  index: -1
+m10903/m10093_head_2
+  rotate: false
+  xy: 334, 16
+  size: 94, 101
+  orig: 94, 101
+  offset: 0, 0
+  index: -1
+m10903/m10093_head_3
+  rotate: false
+  xy: 236, 13
+  size: 96, 104
+  orig: 96, 104
+  offset: 0, 0
+  index: -1
+m10903/m10093_weapon_bottom_1
+  rotate: false
+  xy: 519, 10
+  size: 60, 43
+  orig: 62, 45
+  offset: 1, 1
+  index: -1
+m10903/m10093_weapon_bottom_1_2
+  rotate: true
+  xy: 519, 55
+  size: 62, 45
+  orig: 62, 45
+  offset: 0, 0
+  index: -1
+m10903/m10093_weapon_bottom_2
+  rotate: false
+  xy: 581, 4
+  size: 46, 52
+  orig: 48, 54
+  offset: 1, 1
+  index: -1
+m10903/m10093_weapon_bottom_2_2
+  rotate: false
+  xy: 581, 4
+  size: 46, 52
+  orig: 48, 54
+  offset: 1, 1
+  index: -1
+m10903/m10093_weapon_middle
+  rotate: false
+  xy: 430, 15
+  size: 87, 102
+  orig: 88, 103
+  offset: 0, 1
+  index: -1
+m10903/m10093_weapon_middle_2
+  rotate: false
+  xy: 430, 15
+  size: 87, 102
+  orig: 88, 103
+  offset: 0, 1
+  index: -1
+m10903/m10093_weapon_top
+  rotate: false
+  xy: 2, 2
+  size: 134, 115
+  orig: 134, 115
+  offset: 0, 0
+  index: -1
+m10903/m10093_weapon_top_2
+  rotate: false
+  xy: 2, 2
+  size: 134, 115
+  orig: 134, 115
+  offset: 0, 0
+  index: -1

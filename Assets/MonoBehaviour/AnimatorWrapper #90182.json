@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -3398605826886959531
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 7274619643752066988
+  },
+  "m_Name": "",
+  "_animator": {
+    "m_FileID": 0,
+    "m_PathID": 6563172793275484816
+  },
+  "_speed": 1.0,
+  "_useSynchronizedStart": 0,
+  "_autoDestroy": 0,
+  "_autoStop": 0,
+  "_autoPause": 0,
+  "_autoInit": 0
+}

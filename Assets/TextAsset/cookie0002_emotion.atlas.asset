@@ -1,0 +1,167 @@
+
+cookie0002_emotion.png
+size: 2040,764
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cookie0002_emotion_default_body
+  rotate: false
+  xy: 437, 298
+  size: 403, 465
+  orig: 651, 551
+  offset: 191, 11
+  index: -1
+cookie0002_emotion_default_eye01
+  rotate: true
+  xy: 1924, 328
+  size: 217, 111
+  orig: 651, 551
+  offset: 217, 220
+  index: -1
+cookie0002_emotion_default_eye02
+  rotate: false
+  xy: 1816, 216
+  size: 217, 111
+  orig: 651, 551
+  offset: 217, 220
+  index: -1
+cookie0002_emotion_default_eyebrow
+  rotate: false
+  xy: 1514, 712
+  size: 70, 51
+  orig: 651, 551
+  offset: 242, 289
+  index: -1
+cookie0002_emotion_feared_body
+  rotate: false
+  xy: 1575, 292
+  size: 348, 471
+  orig: 650, 550
+  offset: 162, 12
+  index: -1
+cookie0002_emotion_feared_eye00
+  rotate: false
+  xy: 1407, 195
+  size: 145, 80
+  orig: 650, 550
+  offset: 228, 309
+  index: -1
+cookie0002_emotion_feared_eye01
+  rotate: false
+  xy: 1132, 102
+  size: 218, 220
+  orig: 650, 550
+  offset: 216, 220
+  index: -1
+cookie0002_emotion_feared_eye02
+  rotate: true
+  xy: 1899, 546
+  size: 218, 129
+  orig: 650, 550
+  offset: 216, 220
+  index: -1
+cookie0002_emotion_feared_eyebrow
+  rotate: false
+  xy: 1144, 692
+  size: 158, 72
+  orig: 651, 551
+  offset: 226, 318
+  index: -1
+cookie0002_emotion_happy_body
+  rotate: 180
+  xy: 1203, 275
+  size: 377, 488
+  orig: 651, 551
+  offset: 190, 11
+  index: -1
+cookie0002_emotion_happy_eye01
+  rotate: false
+  xy: 1351, 60
+  size: 218, 110
+  orig: 650, 550
+  offset: 216, 220
+  index: -1
+cookie0002_emotion_sad_body
+  rotate: 180
+  xy: 815, 315
+  size: 400, 448
+  orig: 650, 550
+  offset: 174, 11
+  index: -1
+cookie0002_emotion_sad_body1
+  rotate: true
+  xy: 437, 98
+  size: 230, 109
+  orig: 650, 550
+  offset: 218, 122
+  index: -1
+cookie0002_emotion_sad_eye01
+  rotate: false
+  xy: 702, 682
+  size: 188, 81
+  orig: 650, 550
+  offset: 266, 215
+  index: -1
+cookie0002_emotion_sad_eye02
+  rotate: false
+  xy: 956, 47
+  size: 177, 53
+  orig: 650, 550
+  offset: 271, 212
+  index: -1
+cookie0002_emotion_sad_eyebrow
+  rotate: false
+  xy: 1026, 245
+  size: 66, 70
+  orig: 650, 550
+  offset: 299, 273
+  index: -1
+cookie0002_emotion_shy_body01
+  rotate: false
+  xy: 1544, 3
+  size: 363, 363
+  orig: 651, 551
+  offset: 199, 35
+  index: -1
+cookie0002_emotion_shy_body02
+  rotate: false
+  xy: 2, 212
+  size: 435, 551
+  orig: 651, 551
+  offset: 108, 0
+  index: -1
+cookie0002_emotion_shy_eye01
+  rotate: false
+  xy: 2, 101
+  size: 217, 111
+  orig: 651, 551
+  offset: 217, 220
+  index: -1
+cookie0002_emotion_worry_body
+  rotate: 270
+  xy: 570, 57
+  size: 355, 469
+  orig: 651, 551
+  offset: 162, 16
+  index: -1
+cookie0002_emotion_worry_effect
+  rotate: false
+  xy: 1215, 366
+  size: 86, 87
+  orig: 651, 551
+  offset: 442, 185
+  index: -1
+cookie0002_emotion_worry_eye01
+  rotate: false
+  xy: 220, 101
+  size: 217, 111
+  orig: 651, 551
+  offset: 217, 220
+  index: -1
+cookie0002_emotion_worry_eyebrow
+  rotate: false
+  xy: 743, 636
+  size: 85, 45
+  orig: 651, 551
+  offset: 325, 275
+  index: -1

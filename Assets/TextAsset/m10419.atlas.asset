@@ -1,0 +1,167 @@
+
+m10419.png
+size: 160,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bottle
+  rotate: false
+  xy: 2, 358
+  size: 127, 163
+  orig: 127, 163
+  offset: 0, 0
+  index: -1
+bottle_1
+  rotate: true
+  xy: 85, 121
+  size: 20, 10
+  orig: 20, 10
+  offset: 0, 0
+  index: -1
+bottle_2
+  rotate: true
+  xy: 125, 306
+  size: 20, 32
+  orig: 20, 32
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 110, 188
+  size: 46, 39
+  orig: 46, 39
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 109, 144
+  size: 49, 42
+  orig: 49, 42
+  offset: 0, 0
+  index: -1
+eye3
+  rotate: false
+  xy: 110, 229
+  size: 48, 43
+  orig: 48, 43
+  offset: 0, 0
+  index: -1
+highlight1
+  rotate: true
+  xy: 125, 274
+  size: 30, 31
+  orig: 32, 32
+  offset: 1, 1
+  index: -1
+highlight2
+  rotate: true
+  xy: 131, 328
+  size: 29, 24
+  orig: 29, 24
+  offset: 0, 0
+  index: -1
+ink
+  rotate: false
+  xy: 2, 210
+  size: 106, 68
+  orig: 118, 74
+  offset: 3, 6
+  index: -1
+ink drop
+  rotate: false
+  xy: 89, 143
+  size: 11, 11
+  orig: 14, 15
+  offset: 1, 2
+  index: -1
+ink1
+  rotate: false
+  xy: 2, 2
+  size: 41, 59
+  orig: 41, 59
+  offset: 0, 0
+  index: -1
+ink2
+  rotate: true
+  xy: 2, 154
+  size: 54, 85
+  orig: 54, 85
+  offset: 0, 0
+  index: -1
+ink3
+  rotate: true
+  xy: 102, 104
+  size: 38, 51
+  orig: 38, 51
+  offset: 0, 0
+  index: -1
+ink_spark1
+  rotate: true
+  xy: 45, 4
+  size: 57, 40
+  orig: 57, 40
+  offset: 0, 0
+  index: -1
+ink_spark2
+  rotate: true
+  xy: 105, 24
+  size: 78, 44
+  orig: 78, 44
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: false
+  xy: 85, 111
+  size: 9, 8
+  orig: 9, 8
+  offset: 0, 0
+  index: -1
+mouth2
+  rotate: true
+  xy: 89, 179
+  size: 29, 18
+  orig: 29, 18
+  offset: 0, 0
+  index: -1
+mouth3
+  rotate: false
+  xy: 89, 156
+  size: 13, 21
+  orig: 13, 22
+  offset: 0, 1
+  index: -1
+smoke
+  rotate: false
+  xy: 2, 280
+  size: 121, 76
+  orig: 125, 76
+  offset: 2, 0
+  index: -1
+smoke1
+  rotate: false
+  xy: 131, 359
+  size: 25, 162
+  orig: 25, 163
+  offset: 0, 1
+  index: -1
+smoke2
+  rotate: false
+  xy: 83, 78
+  size: 20, 24
+  orig: 24, 29
+  offset: 2, 3
+  index: -1
+smoke_spark1
+  rotate: false
+  xy: 2, 110
+  size: 81, 42
+  orig: 81, 42
+  offset: 0, 0
+  index: -1
+smoke_spark2
+  rotate: false
+  xy: 2, 63
+  size: 79, 45
+  orig: 79, 45
+  offset: 0, 0
+  index: -1

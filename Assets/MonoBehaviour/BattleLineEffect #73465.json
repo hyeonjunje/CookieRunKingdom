@@ -1,0 +1,53 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 4108066644972799042
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -4212003393149855664
+  },
+  "m_Name": "",
+  "IsRecyclable": 0,
+  "TimeScale": 0.0,
+  "lineEffectRenderers": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 8293088142145426307
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 6714839724106826741
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4098472336823595106
+    }
+  ],
+  "lineStart": {
+    "m_FileID": 0,
+    "m_PathID": -4428080435594281023
+  },
+  "lineCenter": {
+    "m_FileID": 0,
+    "m_PathID": 4869582583198823218
+  },
+  "lineEnd": {
+    "m_FileID": 0,
+    "m_PathID": -4940630274725631411
+  },
+  "startEffectWrapper": {
+    "m_FileID": 0,
+    "m_PathID": -1607871791474294164
+  },
+  "centerEffectWrapper": {
+    "m_FileID": 0,
+    "m_PathID": 2191794676700343041
+  },
+  "endEffectWrapper": {
+    "m_FileID": 0,
+    "m_PathID": -4497499985576397244
+  },
+  "distanceParticles": []
+}

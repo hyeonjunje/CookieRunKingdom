@@ -1,0 +1,76 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 606715487730822763
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6552266983465943814
+  },
+  "m_Name": "",
+  "m_Material": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Color": {
+    "r": 0.4,
+    "g": 0.433333337,
+    "b": 0.5,
+    "a": 1.0
+  },
+  "m_RaycastTarget": 0,
+  "m_Maskable": 1,
+  "m_OnCullStateChanged": {
+    "m_PersistentCalls": {
+      "m_Calls": []
+    }
+  },
+  "m_FontData": {
+    "m_Font": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_FontSize": 30,
+    "m_FontStyle": 0,
+    "m_BestFit": 0,
+    "m_MinSize": 2,
+    "m_MaxSize": 40,
+    "m_Alignment": 0,
+    "m_AlignByGeometry": 0,
+    "m_RichText": 1,
+    "m_HorizontalOverflow": 0,
+    "m_VerticalOverflow": 0,
+    "m_LineSpacing": 1.1
+  },
+  "m_Text": "친구 초대 이벤트에 참여하면 선착순으로 카카오톡 이모티콘 <color=#2e2e2e>\"지나치게 용감한 쿠키티콘\"</color>을 받을 수 있습니다.\n\n이모티콘은 10만 개의 한정수량만 준비되어 있으며, 이 수량이 소진되면 별도의 안내 없이 이벤트가 종료될 수 있습니다.",
+  "_isAutoSizeFit": 0,
+  "_maxFitWidth": 0.0,
+  "_shadowEffect": {
+    "IsUse": 0,
+    "EffectDistance": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "EffectColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0,
+      "a": 1.0
+    }
+  },
+  "_outlineEffect": {
+    "IsUse": 0,
+    "EffectDistance": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "EffectColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0,
+      "a": 1.0
+    },
+    "IsElaborate": 0
+  }
+}

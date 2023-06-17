@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "deco_cherrybombcannon_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": 2087412795236341530
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 2974513022252614562
+    }
+  ]
+}

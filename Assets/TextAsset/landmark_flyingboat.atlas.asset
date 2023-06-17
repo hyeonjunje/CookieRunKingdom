@@ -1,0 +1,146 @@
+
+landmark_flyingboat.png
+size: 996,1036
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+building
+  rotate: true
+  xy: 2, 314
+  size: 720, 374
+  orig: 720, 374
+  offset: 0, 0
+  index: -1
+door
+  rotate: false
+  xy: 853, 6
+  size: 90, 75
+  orig: 119, 102
+  offset: 14, 15
+  index: -1
+floorline_01
+  rotate: true
+  xy: 118, 18
+  size: 82, 88
+  orig: 111, 117
+  offset: 16, 15
+  index: -1
+floorline_02
+  rotate: true
+  xy: 459, 25
+  size: 45, 140
+  orig: 76, 172
+  offset: 16, 16
+  index: -1
+floorline_03
+  rotate: false
+  xy: 378, 319
+  size: 79, 110
+  orig: 111, 139
+  offset: 15, 16
+  index: -1
+hata
+  rotate: true
+  xy: 378, 431
+  size: 117, 82
+  orig: 148, 113
+  offset: 16, 15
+  index: -1
+hune_01
+  rotate: true
+  xy: 378, 550
+  size: 484, 378
+  orig: 484, 378
+  offset: 0, 0
+  index: -1
+hune_02
+  rotate: true
+  xy: 467, 72
+  size: 476, 384
+  orig: 476, 384
+  offset: 0, 0
+  index: -1
+hune_ueline_01
+  rotate: true
+  xy: 758, 555
+  size: 242, 183
+  orig: 242, 196
+  offset: 0, 6
+  index: -1
+kaidang_01
+  rotate: true
+  xy: 758, 799
+  size: 235, 209
+  orig: 235, 209
+  offset: 0, 0
+  index: -1
+kaidang_02
+  rotate: false
+  xy: 853, 413
+  size: 135, 140
+  orig: 162, 162
+  offset: 15, 11
+  index: -1
+kaidang_03
+  rotate: true
+  xy: 853, 83
+  size: 131, 112
+  orig: 148, 141
+  offset: 9, 15
+  index: -1
+kaidang_04
+  rotate: true
+  xy: 2, 2
+  size: 98, 114
+  orig: 131, 141
+  offset: 16, 14
+  index: -1
+light
+  rotate: true
+  xy: 943, 741
+  size: 56, 51
+  orig: 56, 51
+  offset: 0, 0
+  index: -1
+nimotsu
+  rotate: true
+  xy: 853, 216
+  size: 195, 116
+  orig: 195, 116
+  offset: 0, 0
+  index: -1
+propeller_b
+  rotate: true
+  xy: 208, 21
+  size: 79, 223
+  orig: 79, 223
+  offset: 0, 0
+  index: -1
+propeller_b_center
+  rotate: false
+  xy: 433, 45
+  size: 24, 27
+  orig: 24, 27
+  offset: 0, 0
+  index: -1
+propeller_s
+  rotate: false
+  xy: 943, 608
+  size: 50, 131
+  orig: 50, 131
+  offset: 0, 0
+  index: -1
+propeller_s_center
+  rotate: false
+  xy: 433, 74
+  size: 25, 26
+  orig: 25, 26
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 102
+  size: 463, 210
+  orig: 463, 210
+  offset: 0, 0
+  index: -1

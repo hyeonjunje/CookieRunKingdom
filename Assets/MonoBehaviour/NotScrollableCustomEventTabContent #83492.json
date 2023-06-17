@@ -1,0 +1,157 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -6154771418436540023
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4463929431004266083
+  },
+  "m_Name": "",
+  "_titleText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_summaryText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_descriptionText": {
+    "m_FileID": 0,
+    "m_PathID": 5196270093439898165
+  },
+  "_durationTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_useRemainTimeFormat": 1,
+  "_remainTimeFormatStringKey": "UIStringList.Text.GameEvent.RemainTimeFormat.ItalianType",
+  "_remainTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startPageObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startButton": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_eventGaugeType": 2,
+  "_useMaxIsGaugeInfoLast": 1,
+  "_currentTexts": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -4843789115432724893
+    }
+  ],
+  "_currentTextFormat": "",
+  "_maxTexts": [],
+  "_currentMaxTexts": [],
+  "_simpleGaugeJointHelper": {
+    "m_FileID": 0,
+    "m_PathID": -7937962414443982503
+  },
+  "_gaugeInfos": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 7137552449042540096
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -8163946417275617214
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -330217567451816494
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6356936322194840142
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -8236187257059221410
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 170134490428466483
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -3871951754190995290
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 8155446111151434536
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4348726614750334150
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -2092389512988494932
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6653637030799671318
+    }
+  ],
+  "_itemThumbnailObjects": [],
+  "_shortCutButtonType": 0,
+  "_gameEventDataId": 0,
+  "_gameEventStringId": "",
+  "_shortcutType": 0,
+  "_shortcutDataId": 0,
+  "_shortcutDataStringId": "",
+  "_shortcutStringData": "",
+  "_missionCells": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -1829987937026248622
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -2056364026062661860
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -1237518024363213555
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -357136059468207649
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4618631475956630623
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -719300811711973754
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1437993860690591273
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -8945510307880470088
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 2884242357064991176
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -225642565486521487
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4012626191414934549
+    }
+  ]
+}

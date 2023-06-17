@@ -1,0 +1,55 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_m10119_m10120",
+  "CharacterResourceKey": "m10119",
+  "EffectEvents": [
+    {
+      "AnimationName": "skill2",
+      "EffectPath": "fx_m10120_skill02",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.9,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill1",
+      "EffectPath": "fx_m10120_skill01",
+      "Frame": 14,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 0.9,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2_end",
+      "EffectPath": "fx_m10120_skill02_end",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.4,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": []
+}

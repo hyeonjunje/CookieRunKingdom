@@ -1,0 +1,51 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 5205205913035998364
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -7396295067816475631
+  },
+  "m_Name": "",
+  "m_Material": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Color": {
+    "r": 1.0,
+    "g": 1.0,
+    "b": 1.0,
+    "a": 1.0
+  },
+  "m_RaycastTarget": 1,
+  "m_Maskable": 1,
+  "m_OnCullStateChanged": {
+    "m_PersistentCalls": {
+      "m_Calls": []
+    }
+  },
+  "m_IsTrail": 0,
+  "m_IgnoreCanvasScaler": 0,
+  "m_Scale": 1.0,
+  "m_AnimatableProperties": [],
+  "m_Particles": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 6980444877700974075
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 54121536926974721
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 8509821813177715441
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -7248241322883534964
+    }
+  ]
+}

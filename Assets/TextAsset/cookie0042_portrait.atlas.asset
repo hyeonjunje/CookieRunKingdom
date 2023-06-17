@@ -1,0 +1,174 @@
+
+cookie0042_portrait.png
+size: 1056,1028
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: false
+  xy: 2, 2
+  size: 230, 106
+  orig: 230, 106
+  offset: 0, 0
+  index: -1
+arm_R1
+  rotate: false
+  xy: 928, 433
+  size: 120, 96
+  orig: 120, 96
+  offset: 0, 0
+  index: -1
+arm_R2
+  rotate: false
+  xy: 919, 139
+  size: 76, 65
+  orig: 77, 67
+  offset: 1, 1
+  index: -1
+bang
+  rotate: false
+  xy: 823, 833
+  size: 219, 193
+  orig: 219, 193
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 919, 206
+  size: 111, 91
+  orig: 111, 91
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 717, 447
+  size: 209, 115
+  orig: 209, 115
+  offset: 0, 0
+  index: -1
+fire_1
+  rotate: false
+  xy: 910, 299
+  size: 97, 132
+  orig: 97, 156
+  offset: 0, 12
+  index: -1
+fire_2
+  rotate: false
+  xy: 310, 157
+  size: 137, 212
+  orig: 148, 228
+  offset: 6, 8
+  index: -1
+gem
+  rotate: false
+  xy: 310, 113
+  size: 25, 42
+  orig: 27, 42
+  offset: 1, 0
+  index: -1
+ghost_2
+  rotate: false
+  xy: 449, 173
+  size: 256, 202
+  orig: 256, 202
+  offset: 0, 0
+  index: -1
+ghost_3
+  rotate: false
+  xy: 717, 564
+  size: 241, 238
+  orig: 241, 238
+  offset: 0, 0
+  index: -1
+hair2
+  rotate: false
+  xy: 395, 539
+  size: 320, 263
+  orig: 320, 263
+  offset: 0, 0
+  index: -1
+hair_b
+  rotate: false
+  xy: 2, 606
+  size: 391, 420
+  orig: 397, 435
+  offset: 6, 15
+  index: -1
+hat
+  rotate: false
+  xy: 708, 252
+  size: 200, 193
+  orig: 200, 193
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 110
+  size: 306, 259
+  orig: 308, 259
+  offset: 1, 0
+  index: -1
+lamp
+  rotate: false
+  xy: 234, 7
+  size: 160, 101
+  orig: 161, 106
+  offset: 1, 4
+  index: -1
+leg_R
+  rotate: false
+  xy: 960, 531
+  size: 91, 133
+  orig: 91, 133
+  offset: 0, 0
+  index: -1
+ler_L
+  rotate: false
+  xy: 960, 666
+  size: 91, 165
+  orig: 91, 165
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 725, 24
+  size: 189, 69
+  orig: 189, 69
+  offset: 0, 0
+  index: -1
+skirt1
+  rotate: false
+  xy: 449, 19
+  size: 274, 152
+  orig: 274, 152
+  offset: 0, 0
+  index: -1
+skirt2
+  rotate: false
+  xy: 395, 377
+  size: 311, 160
+  orig: 311, 160
+  offset: 0, 0
+  index: -1
+skirt3
+  rotate: false
+  xy: 2, 371
+  size: 391, 233
+  orig: 391, 233
+  offset: 0, 0
+  index: -1
+skirt5
+  rotate: false
+  xy: 395, 804
+  size: 426, 222
+  orig: 426, 227
+  offset: 0, 5
+  index: -1
+skirt6
+  rotate: false
+  xy: 725, 95
+  size: 192, 155
+  orig: 192, 155
+  offset: 0, 0
+  index: -1

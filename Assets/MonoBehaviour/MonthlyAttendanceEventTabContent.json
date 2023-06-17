@@ -1,0 +1,94 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 7034222040061464188
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -493350256536262286
+  },
+  "m_Name": "",
+  "_titleText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_summaryText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_descriptionText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_durationTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 3265919720032507938
+  },
+  "_useRemainTimeFormat": 1,
+  "_remainTimeFormatStringKey": "",
+  "_remainTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startPageObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startButton": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_weekText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_weekImages": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 4868697769575872218
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -2226311805493726872
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 2175450191616229066
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -9101148917662679034
+    }
+  ],
+  "_missionBlocks": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 4366048851632930199
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 3456060597064291449
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -5986976870914149871
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 5317149383134890122
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6996893682025265408
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -1717158388808691270
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -3200867541929284271
+    }
+  ]
+}

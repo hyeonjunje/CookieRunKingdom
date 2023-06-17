@@ -1,0 +1,37 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 1790172298082769733
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4917985105967563126
+  },
+  "m_Name": "",
+  "_touchArea": {
+    "m_FileID": 0,
+    "m_PathID": 5306839998347431992
+  },
+  "_charactersRoot": {
+    "m_FileID": 0,
+    "m_PathID": -9033627355402666300
+  },
+  "_distantViewRoot": {
+    "m_FileID": 0,
+    "m_PathID": 6656161655545032793
+  },
+  "_bgmPlayer": {
+    "m_FileID": 0,
+    "m_PathID": -3762401869445882449
+  },
+  "_cameraInitPosition": {
+    "m_FileID": 0,
+    "m_PathID": -8783903986496787790
+  },
+  "_cameraInitSize": 900.0,
+  "_cameraMinMaxSize": {
+    "x": 580.0,
+    "y": 1080.0
+  }
+}

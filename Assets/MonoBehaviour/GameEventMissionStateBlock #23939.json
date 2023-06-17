@@ -1,0 +1,54 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 4388152748055785942
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 6631733874144873996
+  },
+  "m_Name": "",
+  "_completeStateObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 2311360338721661640
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6247728809266216486
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 6716017448815470361
+    }
+  ],
+  "_normalStateObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -2391295284429426386
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6247728809266216486
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 8585178128645881524
+    }
+  ],
+  "_rewardedStateObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 3170013264406848737
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 3582383937290794311
+    }
+  ],
+  "_button": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  }
+}

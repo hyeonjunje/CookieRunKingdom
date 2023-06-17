@@ -1,0 +1,160 @@
+
+m10306.png
+size: 220,864
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body1
+  rotate: false
+  xy: 2, 716
+  size: 214, 146
+  orig: 214, 146
+  offset: 0, 0
+  index: -1
+body2
+  rotate: true
+  xy: 2, 398
+  size: 169, 118
+  orig: 169, 118
+  offset: 0, 0
+  index: -1
+body3
+  rotate: true
+  xy: 2, 291
+  size: 105, 109
+  orig: 105, 109
+  offset: 0, 0
+  index: -1
+eyes1
+  rotate: false
+  xy: 2, 83
+  size: 71, 56
+  orig: 71, 56
+  offset: 0, 0
+  index: -1
+eyes2
+  rotate: true
+  xy: 152, 555
+  size: 76, 62
+  orig: 76, 62
+  offset: 0, 0
+  index: -1
+eyes_inactive
+  rotate: true
+  xy: 152, 633
+  size: 81, 64
+  orig: 81, 64
+  offset: 0, 0
+  index: -1
+head1
+  rotate: true
+  xy: 122, 405
+  size: 148, 91
+  orig: 148, 91
+  offset: 0, 0
+  index: -1
+head2
+  rotate: true
+  xy: 2, 569
+  size: 145, 148
+  orig: 145, 148
+  offset: 0, 0
+  index: -1
+head_jem
+  rotate: true
+  xy: 2, 6
+  size: 39, 41
+  orig: 39, 41
+  offset: 0, 0
+  index: -1
+horn1
+  rotate: true
+  xy: 2, 47
+  size: 34, 68
+  orig: 34, 68
+  offset: 0, 0
+  index: -1
+horn1_2
+  rotate: true
+  xy: 163, 29
+  size: 31, 46
+  orig: 31, 46
+  offset: 0, 0
+  index: -1
+horn2
+  rotate: true
+  xy: 115, 29
+  size: 31, 46
+  orig: 31, 46
+  offset: 0, 0
+  index: -1
+horn2_2
+  rotate: true
+  xy: 142, 62
+  size: 34, 68
+  orig: 34, 68
+  offset: 0, 0
+  index: -1
+leaf1
+  rotate: true
+  xy: 2, 141
+  size: 69, 94
+  orig: 69, 94
+  offset: 0, 0
+  index: -1
+leaf2
+  rotate: false
+  xy: 173, 98
+  size: 41, 95
+  orig: 41, 95
+  offset: 0, 0
+  index: -1
+mouth_attack1
+  rotate: false
+  xy: 72, 38
+  size: 41, 40
+  orig: 41, 40
+  offset: 0, 0
+  index: -1
+mouth_attack2
+  rotate: true
+  xy: 45, 2
+  size: 34, 40
+  orig: 34, 40
+  offset: 0, 0
+  index: -1
+necklace
+  rotate: true
+  xy: 122, 264
+  size: 139, 93
+  orig: 139, 93
+  offset: 0, 0
+  index: -1
+tail_1
+  rotate: true
+  xy: 75, 80
+  size: 42, 65
+  orig: 42, 65
+  offset: 0, 0
+  index: -1
+tail_2
+  rotate: true
+  xy: 2, 212
+  size: 77, 97
+  orig: 77, 97
+  offset: 0, 0
+  index: -1
+tail_jem
+  rotate: false
+  xy: 98, 124
+  size: 73, 69
+  orig: 73, 69
+  offset: 0, 0
+  index: -1
+tongue
+  rotate: true
+  xy: 101, 195
+  size: 67, 106
+  orig: 67, 106
+  offset: 0, 0
+  index: -1

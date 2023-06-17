@@ -1,0 +1,48 @@
+
+deco_straw.png
+size: 120,84
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+deco_straw
+  rotate: false
+  xy: 2, 2
+  size: 90, 78
+  orig: 90, 78
+  offset: 0, 0
+  index: -1
+deco_straw_bird
+  rotate: true
+  xy: 94, 51
+  size: 29, 23
+  orig: 32, 24
+  offset: 3, 1
+  index: -1
+deco_straw_bird_eye
+  rotate: true
+  xy: 100, 19
+  size: 3, 4
+  orig: 3, 4
+  offset: 0, 0
+  index: -1
+deco_straw_bird_eye_close
+  rotate: false
+  xy: 94, 18
+  size: 4, 4
+  orig: 4, 4
+  offset: 0, 0
+  index: -1
+deco_straw_bird_mouth
+  rotate: false
+  xy: 94, 24
+  size: 11, 10
+  orig: 32, 24
+  offset: 0, 7
+  index: -1
+deco_straw_bird_wing
+  rotate: true
+  xy: 94, 36
+  size: 13, 11
+  orig: 32, 24
+  offset: 13, 1
+  index: -1

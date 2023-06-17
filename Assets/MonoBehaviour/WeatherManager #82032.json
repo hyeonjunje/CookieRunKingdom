@@ -1,0 +1,726 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -7740304545527180008
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4357481718373833821
+  },
+  "m_Name": "",
+  "play": 1,
+  "CameraZoomFactor": 0.0,
+  "CameraZoomCheckRatio": 0.7,
+  "ScreenEffect": {
+    "m_FileID": 0,
+    "m_PathID": -1875400022289817713
+  },
+  "CameraFollower": {
+    "m_FileID": 0,
+    "m_PathID": 1826809984508301283
+  },
+  "EffectCanvas": {
+    "m_FileID": 0,
+    "m_PathID": 1301294899860449279
+  },
+  "CloudCreateAreaCollider": {
+    "m_FileID": 0,
+    "m_PathID": 2699554994620881123
+  },
+  "CloudSizeRange": {
+    "x": 1000.0,
+    "y": 2000.0
+  },
+  "CloudLifeTimeRange": {
+    "x": 10.0,
+    "y": 20.0
+  },
+  "CloudSpeedRange": {
+    "x": 50.0,
+    "y": 150.0
+  },
+  "CloudDistanceFactor": {
+    "x": -0.15,
+    "y": 0.45
+  },
+  "CloudShadowColor": {
+    "r": 0.08904414,
+    "g": 0.108726732,
+    "b": 0.216981113,
+    "a": 0.203921571
+  },
+  "Cloud": [
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 6665551782189183707
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": 2216217724832058532
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": 7335106548858002459
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": -5569207459200559040
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 107.6398,
+      "LifeTime": 17.7908382,
+      "Alpha": 0.250670463,
+      "DissolveRandomSeed": -2.05484676
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -8299336946487431457
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": 4963186524635459864
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": -1049679461943873877
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": -4029694120046203287
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 51.6688576,
+      "LifeTime": 9.119752,
+      "Alpha": 1.0027045,
+      "DissolveRandomSeed": -2.954277
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -4073768260311602642
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": -21444277554876362
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": 313970804896356855
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": 3193829157820966004
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 97.64828,
+      "LifeTime": 19.80711,
+      "Alpha": 0.594110966,
+      "DissolveRandomSeed": 3.51468086
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 2882297185393512465
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": 6164874834794228543
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": -7781480126006414093
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": -3366572288801853876
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 131.324432,
+      "LifeTime": 4.98720264,
+      "Alpha": 1.00074708,
+      "DissolveRandomSeed": 3.44033146
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 4120025454828509207
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": 613682249037556430
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": 628983244048987189
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": -3184572165283240597
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 132.189484,
+      "LifeTime": 16.58775,
+      "Alpha": 0.873537838,
+      "DissolveRandomSeed": 0.294500828
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -7849192184055593178
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": -84273420080884507
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": 8255662308869474820
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": -1822794795684874964
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 70.90272,
+      "LifeTime": 7.422267,
+      "Alpha": 1.00181723,
+      "DissolveRandomSeed": 1.02737892
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -65533807541859241
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": 6207428607198515099
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": -414855585873192474
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": -1321115497507609735
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 55.93003,
+      "LifeTime": 17.074955,
+      "Alpha": 0.09628033,
+      "DissolveRandomSeed": 3.03286457
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -5824809180137366796
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": -1265236706476223769
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": -8444910138668492710
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": -2879107434327826548
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 137.052078,
+      "LifeTime": 11.2578268,
+      "Alpha": 0.405146748,
+      "DissolveRandomSeed": 0.598891735
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -3139434336710707611
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": 1176661166546611097
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": -2808453315696316462
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": 7948138687665004936
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 119.291557,
+      "LifeTime": 19.8740044,
+      "Alpha": 0.6625359,
+      "DissolveRandomSeed": 3.81743717
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -4686497859413546254
+      },
+      "moveTargetTransform": {
+        "m_FileID": 0,
+        "m_PathID": -2647994168053615751
+      },
+      "effCtrl": {
+        "m_FileID": 0,
+        "m_PathID": 4600741396820543911
+      },
+      "renderer": {
+        "m_FileID": 0,
+        "m_PathID": 3590861835006725891
+      },
+      "DistanceToLand": 0.0,
+      "Speed": 86.48857,
+      "LifeTime": -0.00417265855,
+      "Alpha": 0.8649024,
+      "DissolveRandomSeed": 0.223047733
+    }
+  ],
+  "LightCreateAreaCollider": {
+    "m_FileID": 0,
+    "m_PathID": -8672641022961297469
+  },
+  "LightSizeRange": {
+    "x": 0.2,
+    "y": 0.6
+  },
+  "LightLifeTimeRange": {
+    "x": 2.0,
+    "y": 4.0
+  },
+  "LightDistanceFactor": {
+    "x": -0.2,
+    "y": 0.4
+  },
+  "LightColor0": {
+    "r": 1.0,
+    "g": 0.8866931,
+    "b": 0.23113209,
+    "a": 0.509803951
+  },
+  "LightColor1": {
+    "r": 0.9052632,
+    "g": 1.0,
+    "b": 0.0,
+    "a": 0.403921574
+  },
+  "LightRayAlphaLimit": 0.4,
+  "Light": [
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 2582643666096999510
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": 6789878958813104096
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": 3841029287931038216
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": -5675597894333712372
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": 6312826133190054366
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": 8197361778125885405
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 2228641443114704977
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": 2741452829648364654
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": 2824775955861674836
+      },
+      "LifeTime": -0.00722891837,
+      "Alpha": 0.4288735,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 4942778840678687496
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": 8084803223071145335
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": 6402890810949505681
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": 1258329193132691717
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": 5330312810032399640
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": -7047118653033469534
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 6787448015773882499
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": -7457801387831216545
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": -799341920529055781
+      },
+      "LifeTime": 4.167724,
+      "Alpha": 1.001091,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -6264327524338367473
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": 8100419385735528177
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": 5495324039777039213
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": -7006001560153293637
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": 3920399370653293621
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": -6614912831322782912
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 243902205236091930
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": -5067555629527231298
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": 6864452783387453693
+      },
+      "LifeTime": -0.009663995,
+      "Alpha": 0.1744165,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 6301465795058678392
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": -4050971093480918695
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": -2472988027615605932
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": 9024986300642215073
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": 202509721927535763
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": -6010844822456340217
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 2992119567730165312
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": 7751465427561882140
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": 1804525598096800526
+      },
+      "LifeTime": 2.1734612,
+      "Alpha": 1.04670441,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 1046598333475063425
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": 1942851633348337891
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": 8120641034192281180
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": 2149535559811647456
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": -3557221948268976569
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": 6055897641316827354
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 4574535766634505208
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": -7689647108809837409
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": -6401191562113414641
+      },
+      "LifeTime": -0.00311125629,
+      "Alpha": 0.134901837,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 2497657196980178380
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": -5449044139025742982
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": 1345019022675910416
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": 1683440293447027090
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": -8072677230191159580
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": 5433198779996129917
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": -6668741383281934336
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": -5270251853208089014
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": -6387599925767967041
+      },
+      "LifeTime": 5.007773,
+      "Alpha": 1.001834,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -5625371676025644204
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": 1044452598397956682
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": -4186001210796684112
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": -7634956484589998378
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": -2748841243480330240
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": 7989481328994187540
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 3914125494236656612
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": 2046178324376169983
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": -9194641094534731815
+      },
+      "LifeTime": 0.916946352,
+      "Alpha": 1.00526047,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 86992253189136186
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": -4770858757534774386
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": -6877271212260028346
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": 5999078446222707524
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": -7299582483489254571
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": 8173371668409241161
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 8194869226027246699
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": -3970944010727197945
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": -5943217650566310703
+      },
+      "LifeTime": -0.002777325,
+      "Alpha": 0.8427722,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": 7423760808386611254
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": 7495097698603297582
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": -2264816708010984027
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": 6792472762804913725
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": -8325550779987335828
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": 7995277087575867986
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": -5738305840362572766
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": 4685840204268699113
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": -1245940906699210669
+      },
+      "LifeTime": 1.25602651,
+      "Alpha": 1.00181139,
+      "CloudCoveringAlpha": 1.0
+    },
+    {
+      "transform": {
+        "m_FileID": 0,
+        "m_PathID": -2847229282886011974
+      },
+      "GroundLightTransform": {
+        "m_FileID": 0,
+        "m_PathID": 352142100102451799
+      },
+      "RayObject": {
+        "m_FileID": 0,
+        "m_PathID": 4102568257865139798
+      },
+      "ParticleObject": {
+        "m_FileID": 0,
+        "m_PathID": -6846664638019869553
+      },
+      "RayEffectScript": {
+        "m_FileID": 0,
+        "m_PathID": -2285122880332529992
+      },
+      "LightScript": {
+        "m_FileID": 0,
+        "m_PathID": 7682739301249201968
+      },
+      "ParticleRenderer": {
+        "m_FileID": 0,
+        "m_PathID": 4583070568950683568
+      },
+      "ParticleSystem": {
+        "m_FileID": 0,
+        "m_PathID": 1158716215291758053
+      },
+      "LightCollider": {
+        "m_FileID": 0,
+        "m_PathID": 7163528778365258308
+      },
+      "LifeTime": -0.0168475751,
+      "Alpha": 0.5761457,
+      "CloudCoveringAlpha": 1.0
+    }
+  ]
+}

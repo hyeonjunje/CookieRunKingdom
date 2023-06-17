@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "cookie0001_portrait_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": 6556686156921064995
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -1436766578177184196
+    }
+  ]
+}

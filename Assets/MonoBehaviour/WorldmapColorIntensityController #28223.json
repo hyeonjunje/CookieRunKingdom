@@ -1,0 +1,41 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -941274122748661902
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 6086430653330037337
+  },
+  "m_Name": "",
+  "_ComponentList": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -7017502680546140991
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6200804580533310203
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 299393467262061464
+    }
+  ],
+  "_MaterialList": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -4504086246681200450
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -5643871992293664420
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 6493785660401827356
+    }
+  ],
+  "_AllMaterialColorAdjustIntensity": 0.0
+}

@@ -1,0 +1,28 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 6263135885339650718
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 8613826533998544721
+  },
+  "m_Name": "",
+  "_characterAnimation": {
+    "m_FileID": 0,
+    "m_PathID": 8755725840655888049
+  },
+  "_meshRenderer": {
+    "m_FileID": 0,
+    "m_PathID": 3425511620950019849
+  },
+  "_shadowRectTransform": {
+    "m_FileID": 0,
+    "m_PathID": -2590093189440447617
+  },
+  "_smokeRunEffect": {
+    "m_FileID": 0,
+    "m_PathID": 4680397511190624052
+  }
+}

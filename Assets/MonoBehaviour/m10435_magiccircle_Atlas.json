@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "m10435_magiccircle_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": -5499275412316610349
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 775009861121603302
+    }
+  ]
+}

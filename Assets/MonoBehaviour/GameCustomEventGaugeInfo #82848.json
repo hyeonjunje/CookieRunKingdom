@@ -1,0 +1,19 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 6453970818757492930
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 6149856320679708645
+  },
+  "m_Name": "",
+  "_missionIndex": 9,
+  "_goalText": {
+    "m_FileID": 0,
+    "m_PathID": 7699873091152189263
+  },
+  "_currentTextFormat": "UIStringList.Text.LevelUpAllEvent.CountFormat",
+  "_width": 2507.0
+}

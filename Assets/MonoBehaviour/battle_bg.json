@@ -1,0 +1,54 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -3352145299845168605
+  },
+  "m_Name": "battle_bg",
+  "Rows": [
+    {
+      "Left": [
+        {
+          "m_FileID": 8,
+          "m_PathID": 6372405236421989865
+        },
+        {
+          "m_FileID": 8,
+          "m_PathID": 6372405236421989865
+        }
+      ],
+      "Center": {
+        "m_FileID": 8,
+        "m_PathID": 6372405236421989865
+      },
+      "Right": [
+        {
+          "m_FileID": 8,
+          "m_PathID": 6372405236421989865
+        }
+      ]
+    },
+    {
+      "Left": [
+        {
+          "m_FileID": 8,
+          "m_PathID": 6372405236421989865
+        }
+      ],
+      "Center": {
+        "m_FileID": 8,
+        "m_PathID": 6372405236421989865
+      },
+      "Right": [
+        {
+          "m_FileID": 8,
+          "m_PathID": 6372405236421989865
+        }
+      ]
+    }
+  ]
+}

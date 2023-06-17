@@ -1,0 +1,291 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_cookie0034",
+  "CharacterResourceKey": "cookie0034",
+  "EffectEvents": [
+    {
+      "AnimationName": "skill3_back",
+      "EffectPath": "fx_cookie0034_skill03",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill4_back",
+      "EffectPath": "fx_cookie0034_skill04",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.9,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill5_back",
+      "EffectPath": "fx_cookie0034_skill05",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.9,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill1",
+      "EffectPath": "fx_cookie0034_front_skill01",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 2.0,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2",
+      "EffectPath": "fx_cookie0034_front_skill02",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 2.4,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill1_back",
+      "EffectPath": "fx_cookie0034_skill01",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 2.0,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill3",
+      "EffectPath": "fx_cookie0034_front_skill03",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill4",
+      "EffectPath": "fx_cookie0034_front_skill04",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 2.0,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill5",
+      "EffectPath": "fx_cookie0034_front_skill05",
+      "Frame": 10,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.9,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2_back",
+      "EffectPath": "fx_cookie0034_skill02",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 2.0,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": [
+    {
+      "BoneFollowerId": 0,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill1",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle",
+      "StartFrame": 10,
+      "EndFrame": 40,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 1,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill1_back",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle",
+      "StartFrame": 10,
+      "EndFrame": 30,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 2,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill3",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle",
+      "StartFrame": 10,
+      "EndFrame": 40,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 3,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill4",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle2",
+      "StartFrame": 10,
+      "EndFrame": 30,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 4,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill4_back",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle2",
+      "StartFrame": 10,
+      "EndFrame": 40,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 5,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill5",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle2",
+      "StartFrame": 10,
+      "EndFrame": 40,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 6,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill3_back",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle",
+      "StartFrame": 10,
+      "EndFrame": 40,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 7,
+      "FollowerType": 0,
+      "Name": "fx",
+      "AnimationName": "skill5_back",
+      "BoneName": "bone2",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_cookie0034_skill_particle2",
+      "StartFrame": 10,
+      "EndFrame": 40,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 4073948675009440633
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 7239201057689084039
+  },
+  "m_Name": "",
+  "_isMaxSizeUseUIWidth": 0,
+  "_maxSize": 1196.0,
+  "_minSize": 0.0,
+  "_gaugeImage": {
+    "m_FileID": 0,
+    "m_PathID": 240649923738071654
+  },
+  "_extraGaugeImage": [],
+  "_gaugeText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  }
+}

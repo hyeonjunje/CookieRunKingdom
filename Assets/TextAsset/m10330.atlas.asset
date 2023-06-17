@@ -1,0 +1,55 @@
+
+m10330.png
+size: 208,472
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+highlight
+  rotate: true
+  xy: 175, 236
+  size: 36, 30
+  orig: 36, 30
+  offset: 0, 0
+  index: -1
+jem
+  rotate: true
+  xy: 2, 2
+  size: 86, 96
+  orig: 86, 96
+  offset: 0, 0
+  index: -1
+light
+  rotate: true
+  xy: 2, 274
+  size: 193, 196
+  orig: 195, 197
+  offset: 1, 1
+  index: -1
+vineL_1
+  rotate: true
+  xy: 100, 19
+  size: 64, 106
+  orig: 64, 106
+  offset: 0, 0
+  index: -1
+vineL_2
+  rotate: true
+  xy: 2, 201
+  size: 71, 171
+  orig: 71, 171
+  offset: 0, 0
+  index: -1
+vineR_1
+  rotate: false
+  xy: 113, 85
+  size: 90, 114
+  orig: 90, 114
+  offset: 0, 0
+  index: -1
+vineR_2
+  rotate: false
+  xy: 2, 90
+  size: 109, 109
+  orig: 109, 109
+  offset: 0, 0
+  index: -1

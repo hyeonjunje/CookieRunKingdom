@@ -1,0 +1,318 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5049516850339535090
+  },
+  "m_Name": "MagicJelly",
+  "ObjectDatas": [
+    {
+      "Id": 1,
+      "Scale": 1.0,
+      "Size": {
+        "X": 2.0,
+        "Y": 10.0,
+        "Z": 2.0
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "jelly_life",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400001,
+          "Values": [
+            0.7
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 2,
+      "Scale": 0.5,
+      "Size": {
+        "X": 2.0,
+        "Y": 10.0,
+        "Z": 2.0
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "jelly_blast_back",
+        "RightFrontSpriteName": "jelly_blast",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400003,
+          "Values": [
+            3.5
+          ]
+        },
+        {
+          "Type": 400007,
+          "Values": [
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 3,
+      "Scale": 1.0,
+      "Size": {
+        "X": 0.4,
+        "Y": 10.0,
+        "Z": 0.4
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "jelly_jellybean_small",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400008,
+          "Values": [
+            0.1
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 4,
+      "Scale": 1.0,
+      "Size": {
+        "X": 0.4,
+        "Y": 10.0,
+        "Z": 0.4
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "jelly_giant",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 0
+      },
+      "MagicStats": [
+        {
+          "Type": 400009,
+          "Values": [
+            5.0
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 5,
+      "Scale": 1.0,
+      "Size": {
+        "X": 0.4,
+        "Y": 10.0,
+        "Z": 0.4
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "jelly_bear",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400008,
+          "Values": [
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 6,
+      "Scale": 1.0,
+      "Size": {
+        "X": 0.4,
+        "Y": 10.0,
+        "Z": 0.4
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "coin_silver",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400010,
+          "Values": [
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 7,
+      "Scale": 1.0,
+      "Size": {
+        "X": 0.4,
+        "Y": 10.0,
+        "Z": 0.4
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "coin_gold",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400010,
+          "Values": [
+            10.0
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 8,
+      "Scale": 1.0,
+      "Size": {
+        "X": 1.0,
+        "Y": 10.0,
+        "Z": 1.0
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "coin_big",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400010,
+          "Values": [
+            100.0
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 9,
+      "Scale": 1.0,
+      "Size": {
+        "X": 0.3,
+        "Y": 10.0,
+        "Z": 1.2
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "cookie0001_idle_back",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": []
+    },
+    {
+      "Id": 10,
+      "Scale": 1.0,
+      "Size": {
+        "X": 1.0,
+        "Y": 10.0,
+        "Z": 0.2
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "cookie0001_slide",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": []
+    },
+    {
+      "Id": 11,
+      "Scale": 1.0,
+      "Size": {
+        "X": 1.0,
+        "Y": 10.0,
+        "Z": 1.0
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "jelly_life_small",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400001,
+          "Values": [
+            0.1
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "Scale": 1.0,
+      "Size": {
+        "X": 0.4,
+        "Y": 10.0,
+        "Z": 0.4
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "jelly_jellybean",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 1
+      },
+      "MagicStats": [
+        {
+          "Type": 400008,
+          "Values": [
+            1.0
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 132001,
+      "Scale": 1.0,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "ResourceData": {
+        "RightBackSpriteName": "",
+        "RightFrontSpriteName": "carrot",
+        "LeftBackSpriteName": "",
+        "LeftFrontSpriteName": "",
+        "IsPossibleToRotate": 0
+      },
+      "MagicStats": [
+        {
+          "Type": 400001,
+          "Values": [
+            0.05
+          ]
+        }
+      ]
+    }
+  ]
+}

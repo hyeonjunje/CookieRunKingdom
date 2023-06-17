@@ -1,0 +1,83 @@
+
+m10906.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bubble
+  rotate: false
+  xy: 145, 88
+  size: 37, 37
+  orig: 43, 43
+  offset: 3, 3
+  index: -1
+cone_bottom
+  rotate: false
+  xy: 209, 154
+  size: 85, 100
+  orig: 91, 106
+  offset: 3, 3
+  index: -1
+cone_l
+  rotate: false
+  xy: 296, 162
+  size: 79, 92
+  orig: 85, 98
+  offset: 3, 3
+  index: -1
+cone_r
+  rotate: false
+  xy: 212, 12
+  size: 99, 65
+  orig: 105, 71
+  offset: 3, 3
+  index: -1
+cone_top_1
+  rotate: true
+  xy: 209, 79
+  size: 73, 91
+  orig: 79, 97
+  offset: 3, 3
+  index: -1
+cone_top_2
+  rotate: false
+  xy: 2, 78
+  size: 96, 176
+  orig: 102, 182
+  offset: 3, 3
+  index: -1
+cone_top_3
+  rotate: true
+  xy: 99, 16
+  size: 60, 111
+  orig: 66, 118
+  offset: 3, 4
+  index: -1
+gem
+  rotate: true
+  xy: 2, 2
+  size: 74, 95
+  orig: 74, 95
+  offset: 0, 0
+  index: -1
+icecream_1
+  rotate: true
+  xy: 100, 127
+  size: 127, 107
+  orig: 133, 113
+  offset: 3, 3
+  index: -1
+icecream_2
+  rotate: false
+  xy: 100, 80
+  size: 43, 45
+  orig: 47, 46
+  offset: 2, 1
+  index: -1
+jemshadow
+  rotate: true
+  xy: 302, 80
+  size: 80, 70
+  orig: 90, 78
+  offset: 5, 4
+  index: -1

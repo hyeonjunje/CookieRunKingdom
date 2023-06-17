@@ -1,0 +1,23 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -8718294100589375857
+  },
+  "m_Name": "ep02_bgDback",
+  "Backgrounds": [
+    {
+      "Sprites": [
+        {
+          "m_FileID": 8,
+          "m_PathID": -3132167504455976043
+        }
+      ],
+      "MoveFactor": 0.5
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "cookie0103_emotion_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": 3361990159096119145
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -7228004950255269338
+    }
+  ]
+}

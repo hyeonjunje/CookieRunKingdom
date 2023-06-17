@@ -1,0 +1,62 @@
+
+npc0099.png
+size: 184,156
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+efx_star
+  rotate: false
+  xy: 90, 8
+  size: 22, 26
+  orig: 22, 26
+  offset: 0, 0
+  index: -1
+juweel_00
+  rotate: false
+  xy: 123, 91
+  size: 56, 61
+  orig: 56, 61
+  offset: 0, 0
+  index: -1
+juweel_01
+  rotate: false
+  xy: 2, 36
+  size: 119, 116
+  orig: 121, 118
+  offset: 1, 1
+  index: -1
+juweel_03
+  rotate: false
+  xy: 36, 7
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+juweel_04
+  rotate: false
+  xy: 65, 8
+  size: 23, 26
+  orig: 23, 27
+  offset: 0, 1
+  index: -1
+juweel_05
+  rotate: true
+  xy: 123, 41
+  size: 48, 58
+  orig: 48, 58
+  offset: 0, 0
+  index: -1
+juweel_06
+  rotate: false
+  xy: 2, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+juweel_07
+  rotate: false
+  xy: 123, 2
+  size: 55, 37
+  orig: 56, 38
+  offset: 0, 1
+  index: -1

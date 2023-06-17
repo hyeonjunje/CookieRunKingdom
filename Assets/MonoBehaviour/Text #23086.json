@@ -1,0 +1,76 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": -1819393465050585669
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6552266983465943814
+  },
+  "m_Name": "",
+  "m_Material": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Color": {
+    "r": 0.9529412,
+    "g": 0.9076533,
+    "b": 0.8,
+    "a": 1.0
+  },
+  "m_RaycastTarget": 0,
+  "m_Maskable": 1,
+  "m_OnCullStateChanged": {
+    "m_PersistentCalls": {
+      "m_Calls": []
+    }
+  },
+  "m_FontData": {
+    "m_Font": {
+      "m_FileID": 0,
+      "m_PathID": 0
+    },
+    "m_FontSize": 30,
+    "m_FontStyle": 0,
+    "m_BestFit": 1,
+    "m_MinSize": 2,
+    "m_MaxSize": 30,
+    "m_Alignment": 4,
+    "m_AlignByGeometry": 0,
+    "m_RichText": 1,
+    "m_HorizontalOverflow": 0,
+    "m_VerticalOverflow": 0,
+    "m_LineSpacing": 1.0
+  },
+  "m_Text": "현재",
+  "_isAutoSizeFit": 0,
+  "_maxFitWidth": 0.0,
+  "_shadowEffect": {
+    "IsUse": 0,
+    "EffectDistance": {
+      "x": 0.0,
+      "y": 0.0
+    },
+    "EffectColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0,
+      "a": 1.0
+    }
+  },
+  "_outlineEffect": {
+    "IsUse": 1,
+    "EffectDistance": {
+      "x": 3.0,
+      "y": 3.0
+    },
+    "EffectColor": {
+      "r": 0.0,
+      "g": 0.0,
+      "b": 0.0,
+      "a": 0.5019608
+    },
+    "IsElaborate": 1
+  }
+}

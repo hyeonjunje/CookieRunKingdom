@@ -1,0 +1,146 @@
+
+m10307.png
+size: 136,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: false
+  xy: 2, 256
+  size: 77, 48
+  orig: 77, 48
+  offset: 0, 0
+  index: -1
+armR
+  rotate: true
+  xy: 81, 224
+  size: 71, 52
+  orig: 71, 52
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 374
+  size: 124, 133
+  orig: 124, 133
+  offset: 0, 0
+  index: -1
+eye
+  rotate: true
+  xy: 50, 42
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+eye_inactive
+  rotate: true
+  xy: 103, 334
+  size: 38, 29
+  orig: 38, 29
+  offset: 0, 0
+  index: -1
+fingerL_1
+  rotate: true
+  xy: 103, 297
+  size: 35, 29
+  orig: 35, 29
+  offset: 0, 0
+  index: -1
+fingerL_2
+  rotate: true
+  xy: 75, 2
+  size: 24, 30
+  orig: 24, 30
+  offset: 0, 0
+  index: -1
+fingerL_3
+  rotate: true
+  xy: 103, 93
+  size: 34, 29
+  orig: 34, 29
+  offset: 0, 0
+  index: -1
+fingerR_1
+  rotate: true
+  xy: 103, 59
+  size: 32, 29
+  orig: 32, 29
+  offset: 0, 0
+  index: -1
+fingerR_2
+  rotate: true
+  xy: 100, 28
+  size: 29, 32
+  orig: 29, 32
+  offset: 0, 0
+  index: -1
+fingerR_3
+  rotate: true
+  xy: 41, 13
+  size: 27, 32
+  orig: 27, 32
+  offset: 0, 0
+  index: -1
+handL
+  rotate: false
+  xy: 2, 107
+  size: 46, 46
+  orig: 46, 46
+  offset: 0, 0
+  index: -1
+handR
+  rotate: false
+  xy: 2, 155
+  size: 57, 47
+  orig: 57, 47
+  offset: 0, 0
+  index: -1
+horn
+  rotate: true
+  xy: 2, 306
+  size: 66, 99
+  orig: 66, 99
+  offset: 0, 0
+  index: -1
+leafL
+  rotate: true
+  xy: 2, 204
+  size: 50, 67
+  orig: 50, 67
+  offset: 0, 0
+  index: -1
+leafR
+  rotate: false
+  xy: 71, 172
+  size: 55, 50
+  orig: 55, 50
+  offset: 0, 0
+  index: -1
+legL
+  rotate: false
+  xy: 50, 86
+  size: 51, 41
+  orig: 51, 41
+  offset: 0, 0
+  index: -1
+legR
+  rotate: true
+  xy: 2, 60
+  size: 45, 46
+  orig: 45, 46
+  offset: 0, 0
+  index: -1
+leg_front1
+  rotate: false
+  xy: 2, 8
+  size: 37, 50
+  orig: 37, 50
+  offset: 0, 0
+  index: -1
+leg_front2
+  rotate: true
+  xy: 61, 129
+  size: 41, 55
+  orig: 41, 55
+  offset: 0, 0
+  index: -1

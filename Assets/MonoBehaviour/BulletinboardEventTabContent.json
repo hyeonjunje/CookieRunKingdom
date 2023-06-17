@@ -1,0 +1,197 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 2325943848356995053
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5366517620826257360
+  },
+  "m_Name": "",
+  "_titleText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_summaryText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_descriptionText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_durationTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 8886638199372455174
+  },
+  "_useRemainTimeFormat": 1,
+  "_remainTimeFormatStringKey": "UIStringList.Text.GameEvent.RemainTimeFormat.ItalianType",
+  "_remainTimeText": {
+    "m_FileID": 0,
+    "m_PathID": 5788260973980868322
+  },
+  "_startPageObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_startButton": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_eventGaugeType": 0,
+  "_useMaxIsGaugeInfoLast": 1,
+  "_currentTexts": [],
+  "_currentTextFormat": "",
+  "_maxTexts": [],
+  "_currentMaxTexts": [],
+  "_simpleGaugeJointHelper": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_gaugeInfos": [],
+  "_itemThumbnailObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -3186850150882307709
+    }
+  ],
+  "_shortCutButtonType": 0,
+  "_gameEventDataId": 0,
+  "_gameEventStringId": "",
+  "_shortcutType": 0,
+  "_shortcutDataId": 0,
+  "_shortcutDataStringId": "",
+  "_shortcutStringData": "",
+  "_keyRewardBlock": {
+    "m_FileID": 0,
+    "m_PathID": 9209352544742284725
+  },
+  "_normalRewardBlocks": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -1108510754832286460
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 4484362212140510014
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 4564051305746212538
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 2127846619020003261
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 299195972455170520
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 9067507365144927599
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 1666372894267144657
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 632278037151651152
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -4724996572703258544
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -1065160187380691580
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 8069353292771506963
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 2683034487539969901
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -1774577014882148337
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6744382082264831021
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 7720260872444412084
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -9177242753850561966
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 4024697902140700093
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -3396026978693040917
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -3899655834020400745
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -1202673002898977014
+    }
+  ],
+  "_keyRewardNameText": {
+    "m_FileID": 0,
+    "m_PathID": -3848704565270328294
+  },
+  "_buttonPrice": {
+    "m_FileID": 0,
+    "m_PathID": -7378015830370004699
+  },
+  "_onWhenEffectOngoingBlocks": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -3112934183824992613
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -6647183654685770232
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": -3100444851882190718
+    }
+  ],
+  "_offWhenReceivedSlotFoundBlocks": [],
+  "_offWhenEffectOngoingBlocks": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 280501488585889207
+    }
+  ],
+  "_skipBulletinEffectButton": {
+    "m_FileID": 0,
+    "m_PathID": -3100444851882190718
+  },
+  "_keyRewardEffect": {
+    "m_FileID": 0,
+    "m_PathID": -7731069695171324137
+  },
+  "_normalRewardEffect": {
+    "m_FileID": 0,
+    "m_PathID": 8390120575154649925
+  },
+  "_effectDuration": 7.0,
+  "_effectDurationExponentialFactor": 6.0,
+  "_effectCount": 45,
+  "_isBlockingBulletinEffectSkip": 0
+}

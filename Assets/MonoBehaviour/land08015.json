@@ -1,0 +1,5075 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1330960622541637097
+  },
+  "m_Name": "land08015",
+  "ClearCondition": 0,
+  "GoalPositionInfo": {
+    "StageNumber": 0,
+    "AreaIndex": 0,
+    "LocalX": 0.0
+  },
+  "ClearCutSceneGroupId": 0,
+  "RecommendLevel": 50,
+  "GameSpeed": 1.0,
+  "StageInfos": [
+    {
+      "Number": 1,
+      "StageCount": 1,
+      "BGM": "",
+      "StagePlacementDatas": [
+        {
+          "Id": 101,
+          "Length": 75,
+          "Floor": {
+            "m_FileID": 1,
+            "m_PathID": -763417059460211424
+          },
+          "Background": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "AreaDatas": [
+            {
+              "StartX": 0,
+              "Length": 30,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -2.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 48,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -4.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -4.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 47,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -5.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -6.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -10.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -10.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 50,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -11.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -11.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -14.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -15.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -16.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -18.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 50,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -18.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -18.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -21.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -22.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 50,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -24.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -25.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -26.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 47,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -26.0,
+                    "Y": 5.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -27.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 120,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -29.0,
+                    "Y": -5.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -30.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -30,
+              "Length": 15,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -34.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -34.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 48,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -36.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -37.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 47,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": -5.0,
+                    "Z": 1.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -39.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -41.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -42.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -42.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -43.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup0",
+                  "UniqueId": 1,
+                  "Monsters": [
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -39.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 233,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -39.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 234,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310429,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -43.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 223,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -45,
+              "Length": 15,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -47.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -48.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -49.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -50.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 48,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -50.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 47,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -52.0,
+                    "Y": -5.0,
+                    "Z": 1.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -54.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -56.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 48,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -56.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -56.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -58.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -60,
+              "Length": 15,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -62.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -63.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -63.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -63.0,
+                    "Y": 13.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -66.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 126,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -66.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -68.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -69.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -70.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -70.0,
+                    "Y": 13.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.5331849,
+                    "g": 0.4298683,
+                    "b": 0.5660378,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -73.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -74.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup0",
+                  "UniqueId": 1,
+                  "Monsters": [
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -66.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 236,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -66.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 235,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -71.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 237,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -71.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 238,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                },
+                {
+                  "Name": "MonsterGroup1",
+                  "UniqueId": 4,
+                  "Monsters": [
+                    {
+                      "Id": 1310428,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -68.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 228,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310429,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -73.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 227,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 0,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Number": 2,
+      "StageCount": 1,
+      "BGM": "",
+      "StagePlacementDatas": [
+        {
+          "Id": 201,
+          "Length": 65,
+          "Floor": {
+            "m_FileID": 1,
+            "m_PathID": -763417059460211424
+          },
+          "Background": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "AreaDatas": [
+            {
+              "StartX": 0,
+              "Length": 10,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -2.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -6.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -7.0,
+                    "Y": 11.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.6954787,
+                    "g": 0.622374535,
+                    "b": 0.6981132,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -8.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -10.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -10,
+              "Length": 55,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -13.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -14.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -14.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -16.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -16.0,
+                    "Y": 11.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.6954787,
+                    "g": 0.622374535,
+                    "b": 0.6981132,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -18.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -21.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -22.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -22.0,
+                    "Y": 8.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -23.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -24.0,
+                    "Y": 11.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.6954787,
+                    "g": 0.622374535,
+                    "b": 0.6981132,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -26.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -28.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -30.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -31.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -31.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -32.0,
+                    "Y": 11.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.6954787,
+                    "g": 0.622374535,
+                    "b": 0.6981132,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -34.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": 8.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -40.0,
+                    "Y": 11.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.6954787,
+                    "g": 0.622374535,
+                    "b": 0.6981132,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -42.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -43.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -46.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -46.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -46.0,
+                    "Y": 8.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -48.0,
+                    "Y": 11.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.6954787,
+                    "g": 0.622374535,
+                    "b": 0.6981132,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -50.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -52.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -54.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -54.0,
+                    "Y": 8.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -55.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -56.0,
+                    "Y": 10.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.6954787,
+                    "g": 0.622374535,
+                    "b": 0.6981132,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -58.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 127,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -61.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 0.6455589,
+                    "g": 0.7357783,
+                    "b": 0.8396226,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -62.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -64.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -13.0,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -13.3999939,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -13.8000031,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -14.1999969,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -14.6000061,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -15.0,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -15.3999939,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -15.8000031,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -16.1999969,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -16.6000061,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -17.0,
+                    "Y": 0.0,
+                    "Z": 1.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -17.3999939,
+                    "Y": 0.0,
+                    "Z": 2.00000024
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -17.8000031,
+                    "Y": 0.0,
+                    "Z": 3.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -18.1999969,
+                    "Y": 0.0,
+                    "Z": 3.89999986
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -18.6000061,
+                    "Y": 0.0,
+                    "Z": 4.4
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 8,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -19.4,
+                    "Y": 0.0,
+                    "Z": 4.8
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -20.1999969,
+                    "Y": 0.0,
+                    "Z": 4.4
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -20.6000061,
+                    "Y": 0.0,
+                    "Z": 3.89999986
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -21.0,
+                    "Y": 0.0,
+                    "Z": 3.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -21.3999939,
+                    "Y": 0.0,
+                    "Z": 2.00000024
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -21.8000031,
+                    "Y": 0.0,
+                    "Z": 0.9999999
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -22.2000122,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -22.6000061,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -23.0,
+                    "Y": 0.0,
+                    "Z": 1.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -23.3999939,
+                    "Y": 0.0,
+                    "Z": 2.00000024
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -23.8000031,
+                    "Y": 0.0,
+                    "Z": 3.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -24.1999969,
+                    "Y": 0.0,
+                    "Z": 3.89999986
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -24.6000061,
+                    "Y": 0.0,
+                    "Z": 4.4
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 8,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -25.4,
+                    "Y": 0.0,
+                    "Z": 4.8
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -26.1999969,
+                    "Y": 0.0,
+                    "Z": 4.4
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -26.6000061,
+                    "Y": 0.0,
+                    "Z": 3.89999986
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -27.0,
+                    "Y": 0.0,
+                    "Z": 3.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -27.3999939,
+                    "Y": 0.0,
+                    "Z": 2.00000024
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -27.8000031,
+                    "Y": 0.0,
+                    "Z": 0.9999999
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -28.2000122,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -28.6000061,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -29.0,
+                    "Y": 0.0,
+                    "Z": 1.30000007
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -29.3999939,
+                    "Y": 0.0,
+                    "Z": 1.80000007
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 8,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -30.4,
+                    "Y": 0.0,
+                    "Z": 2.2
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -31.3999939,
+                    "Y": 0.0,
+                    "Z": 1.8
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -31.8000031,
+                    "Y": 0.0,
+                    "Z": 1.3
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -32.2000122,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -32.6000061,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -33.3999939,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.4,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.4,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.4,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.4,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.4,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.8000031,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.8000031,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.8000031,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.8000031,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.8000031,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -33.8000031,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.2,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.2,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.2,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.2,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.2,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.2,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.6000023,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.6000023,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.6000023,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.6000023,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.6000023,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -34.6000023,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.0,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.4,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.4,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.4,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.4,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.4,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.4,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.8000031,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.8000031,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.8000031,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.8000031,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.8000031,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -35.8000031,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -36.3999939,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.4,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.4,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.4,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.4,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.4,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.8000031,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.8000031,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.8000031,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.8000031,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.8000031,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -36.8000031,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.2,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.2,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.2,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.2,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.2,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.2,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.6000023,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.6000023,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.6000023,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.6000023,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.6000023,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -37.6000023,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.0,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.4,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.4,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.4,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.4,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 7,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.4,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.4,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.8000031,
+                    "Y": 0.0,
+                    "Z": 0.59999907
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.8000031,
+                    "Y": 0.0,
+                    "Z": 0.9999997
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.8000031,
+                    "Y": 0.0,
+                    "Z": 1.39999938
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.8000031,
+                    "Y": 0.0,
+                    "Z": 1.79999948
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.8000031,
+                    "Y": 0.0,
+                    "Z": 2.19999933
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -38.8000031,
+                    "Y": 0.0,
+                    "Z": 2.59999943
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -39.8000031,
+                    "Y": 0.0,
+                    "Z": 1.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -40.2000046,
+                    "Y": 0.0,
+                    "Z": 2.00000024
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -40.6000023,
+                    "Y": 0.0,
+                    "Z": 3.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -41.0000038,
+                    "Y": 0.0,
+                    "Z": 3.89999986
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -41.4,
+                    "Y": 0.0,
+                    "Z": 4.4
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 8,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -42.2,
+                    "Y": 0.0,
+                    "Z": 4.8
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -43.0000038,
+                    "Y": 0.0,
+                    "Z": 4.4
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -43.4,
+                    "Y": 0.0,
+                    "Z": 3.89999986
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -43.8000031,
+                    "Y": 0.0,
+                    "Z": 3.0
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -44.2000046,
+                    "Y": 0.0,
+                    "Z": 2.00000024
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -44.6000023,
+                    "Y": 0.0,
+                    "Z": 0.9999999
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -45.0,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -45.4,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -45.8,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -46.2,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -46.6000023,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -47.0,
+                    "Y": 0.0,
+                    "Z": 1.30000007
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -47.4,
+                    "Y": 0.0,
+                    "Z": 1.80000007
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 8,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -48.4,
+                    "Y": 0.0,
+                    "Z": 2.4
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -49.4,
+                    "Y": 0.0,
+                    "Z": 1.8
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -49.8000031,
+                    "Y": 0.0,
+                    "Z": 1.3
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -50.2,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -50.6000023,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -51.0,
+                    "Y": 0.0,
+                    "Z": 1.30000007
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -51.4,
+                    "Y": 0.0,
+                    "Z": 1.80000007
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 8,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -52.4,
+                    "Y": 0.0,
+                    "Z": 2.2
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -53.4,
+                    "Y": 0.0,
+                    "Z": 1.8
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -53.8000031,
+                    "Y": 0.0,
+                    "Z": 1.3
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -54.2,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -54.6000023,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 6,
+                  "Rotation": 2,
+                  "Position": {
+                    "X": -55.0,
+                    "Y": 0.0,
+                    "Z": 0.6
+                  },
+                  "ZOrder": 0
+                },
+                {
+                  "Id": 1,
+                  "Rotation": 6,
+                  "Position": {
+                    "X": -57.6000061,
+                    "Y": 0.0,
+                    "Z": 0.8
+                  },
+                  "ZOrder": 0
+                }
+              ],
+              "EventCubeDatas": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Number": 3,
+      "StageCount": 1,
+      "BGM": "",
+      "StagePlacementDatas": [
+        {
+          "Id": 301,
+          "Length": 60,
+          "Floor": {
+            "m_FileID": 1,
+            "m_PathID": -763417059460211424
+          },
+          "Background": {
+            "m_FileID": 0,
+            "m_PathID": 0
+          },
+          "AreaDatas": [
+            {
+              "StartX": 0,
+              "Length": 10,
+              "AreaEndCondition": 0,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -2.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -3.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.44348523,
+                    "g": 0.4780097,
+                    "b": 0.6226415,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -4.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -6.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -9.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -9.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -10.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -10.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.44348523,
+                    "g": 0.4780097,
+                    "b": 0.6226415,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -10,
+              "Length": 20,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -12.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 126,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -14.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 48,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -14.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -16.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -17.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.44348523,
+                    "g": 0.4780097,
+                    "b": 0.6226415,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -18.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 50,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -19.0,
+                    "Y": 6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 50,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -19.0,
+                    "Y": 10.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -20.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 147,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -23.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -24.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 47,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -25.0,
+                    "Y": 9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -25.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.44348523,
+                    "g": 0.4780097,
+                    "b": 0.6226415,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -27.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -28.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 120,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -28.0,
+                    "Y": 5.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup0",
+                  "UniqueId": 1,
+                  "Monsters": [
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -15.0,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 128,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -16.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 130,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -16.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 131,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -18.0,
+                        "Y": -1.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 136,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -18.0,
+                        "Y": 1.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 135,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310429,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -22.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 212,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 4,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            },
+            {
+              "StartX": -30,
+              "Length": 30,
+              "AreaEndCondition": 1,
+              "CookieRunSpeedRate": 0.0,
+              "GameSpeed": 0.0,
+              "GeographicObjectDatas": [
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -32.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -33.0,
+                    "Y": 8.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -34.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -34.0,
+                    "Y": 15.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.44348523,
+                    "g": 0.4780097,
+                    "b": 0.6226415,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -36.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -36.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 50,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -39.0,
+                    "Y": 5.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -39.0,
+                    "Y": 11.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -40.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 147,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -41.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -44.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 49,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -44.0,
+                    "Y": 7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -44.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.44348523,
+                    "g": 0.4780097,
+                    "b": 0.6226415,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -45.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -48.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 126,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -49.0,
+                    "Y": -7.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 47,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -51.0,
+                    "Y": 6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.5,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -52.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -53.0,
+                    "Y": -6.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 136,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -53.0,
+                    "Y": 14.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 1.5,
+                  "MultiplicativeColor": {
+                    "r": 0.44348523,
+                    "g": 0.4780097,
+                    "b": 0.6226415,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -56.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                },
+                {
+                  "Id": 111,
+                  "Rotation": 4,
+                  "Position": {
+                    "X": -60.0,
+                    "Y": -9.0,
+                    "Z": 0.0
+                  },
+                  "ZOrder": 0,
+                  "EpisodeId": 7,
+                  "Scale": 2.0,
+                  "MultiplicativeColor": {
+                    "r": 1.0,
+                    "g": 1.0,
+                    "b": 1.0,
+                    "a": 1.0
+                  },
+                  "IsBackgroundObject": 0
+                }
+              ],
+              "MonsterGroupDatas": [
+                {
+                  "Name": "MonsterGroup1",
+                  "UniqueId": 18,
+                  "Monsters": [
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -47.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 217,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -48.5,
+                        "Y": -0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 214,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310426,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -48.5,
+                        "Y": 0.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 215,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310428,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -51.5,
+                        "Y": -1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 210,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310428,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -51.5,
+                        "Y": 1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 211,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310431,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -53.5,
+                        "Y": 0.0,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 213,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    },
+                    {
+                      "Id": 1310429,
+                      "Rotation": 6,
+                      "Position": {
+                        "X": -54.5,
+                        "Y": 1.5,
+                        "Z": 0.0
+                      },
+                      "ZOrder": 0,
+                      "UniqueId": 216,
+                      "Level": 1,
+                      "Scale": 1.0,
+                      "FindTargetRadiusRate": 1.0,
+                      "DropItemPriority": 0,
+                      "ResponseTime": 0.0,
+                      "RunSpeed": 0.0
+                    }
+                  ],
+                  "Settings": {
+                    "EnterBattleCondition": 2,
+                    "EnterBattleReaction": 4,
+                    "BattleDistance": 15.0,
+                    "ResponseTime": 0.0,
+                    "GridPosition": {
+                      "X": 0.0,
+                      "Y": 0.0,
+                      "Z": 0.0
+                    },
+                    "BossInGameId": -1,
+                    "BossAlertDistance": 0.0
+                  },
+                  "DropItemPriority": 0
+                }
+              ],
+              "MagicJellyDatas": [],
+              "EventCubeDatas": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

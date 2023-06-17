@@ -1,0 +1,128 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -3352145299845168605
+  },
+  "m_Name": "ep01_bgA",
+  "Rows": [
+    {
+      "Left": [
+        {
+          "m_FileID": 5,
+          "m_PathID": 8278828656366799041
+        },
+        {
+          "m_FileID": 5,
+          "m_PathID": 7010893365389343386
+        }
+      ],
+      "Center": {
+        "m_FileID": 5,
+        "m_PathID": -90879314577780190
+      },
+      "Right": [
+        {
+          "m_FileID": 5,
+          "m_PathID": -106563057578956730
+        },
+        {
+          "m_FileID": 5,
+          "m_PathID": -8278649788125982888
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": -7523159519209195355
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": 2008446292556109752
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": -4634893804039117131
+        }
+      ]
+    },
+    {
+      "Left": [
+        {
+          "m_FileID": 5,
+          "m_PathID": -7768611488979584122
+        },
+        {
+          "m_FileID": 5,
+          "m_PathID": -37665166601977340
+        }
+      ],
+      "Center": {
+        "m_FileID": 5,
+        "m_PathID": 4861577278999316764
+      },
+      "Right": [
+        {
+          "m_FileID": 5,
+          "m_PathID": -2368776017312677531
+        },
+        {
+          "m_FileID": 5,
+          "m_PathID": -264067674227858206
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": 2434782575269040052
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": 561738722715383608
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": 7018971432583810501
+        }
+      ]
+    },
+    {
+      "Left": [
+        {
+          "m_FileID": 5,
+          "m_PathID": -5451916253125382224
+        },
+        {
+          "m_FileID": 5,
+          "m_PathID": -8918576741892758639
+        }
+      ],
+      "Center": {
+        "m_FileID": 5,
+        "m_PathID": 7729580195218204867
+      },
+      "Right": [
+        {
+          "m_FileID": 5,
+          "m_PathID": -5770416433395994207
+        },
+        {
+          "m_FileID": 5,
+          "m_PathID": 5064188296052705516
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": 6160624705688198474
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": 6062982796624942236
+        },
+        {
+          "m_FileID": 2,
+          "m_PathID": -8158364723653436904
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_cookie0506",
+  "CharacterResourceKey": "cookie0506",
+  "EffectEvents": [
+    {
+      "AnimationName": "skill1_back",
+      "EffectPath": "fx_cookie0506_skill01",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 1,
+      "LifeTime": 2.3,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2_back",
+      "EffectPath": "fx_cookie0506_skill02",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 1,
+      "LifeTime": 4.2,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": []
+}

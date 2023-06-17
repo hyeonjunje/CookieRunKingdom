@@ -1,0 +1,76 @@
+
+m10437.png
+size: 480,160
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 293, 7
+  size: 87, 56
+  orig: 87, 56
+  offset: 0, 0
+  index: -1
+earL
+  rotate: false
+  xy: 423, 9
+  size: 52, 52
+  orig: 52, 52
+  offset: 0, 0
+  index: -1
+earR
+  rotate: false
+  xy: 247, 6
+  size: 44, 57
+  orig: 44, 57
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 382, 14
+  size: 39, 53
+  orig: 39, 53
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 423, 63
+  size: 53, 37
+  orig: 53, 37
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 78, 4
+  size: 152, 167
+  orig: 153, 169
+  offset: 0, 2
+  index: -1
+head
+  rotate: true
+  xy: 247, 65
+  size: 91, 87
+  orig: 91, 88
+  offset: 0, 1
+  index: -1
+neck
+  rotate: true
+  xy: 336, 69
+  size: 87, 47
+  orig: 87, 47
+  offset: 0, 0
+  index: -1
+neck2
+  rotate: false
+  xy: 385, 102
+  size: 85, 54
+  orig: 85, 55
+  offset: 0, 1
+  index: -1
+weapon
+  rotate: false
+  xy: 2, 2
+  size: 74, 154
+  orig: 74, 154
+  offset: 0, 0
+  index: -1

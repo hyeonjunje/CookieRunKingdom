@@ -1,0 +1,59 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 2789939352308335775
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -7538944207570275587
+  },
+  "m_Name": "",
+  "_frameImage": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_cookieImage": {
+    "m_FileID": 0,
+    "m_PathID": -4891433797327109326
+  },
+  "_cookieImageType": 1,
+  "_nameText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_levelText": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_cookieLevelFormat": 0,
+  "_cookieRarityTag": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_roleImage": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_gradeImage": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_gradeLayoutGroup": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_gradeObjects": [],
+  "_frameSpriteSet": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_roleSpriteSet": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_gradeSpriteSet": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  }
+}

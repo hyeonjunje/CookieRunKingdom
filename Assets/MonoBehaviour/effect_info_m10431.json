@@ -1,0 +1,61 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_m10431",
+  "CharacterResourceKey": "m10431",
+  "EffectEvents": [
+    {
+      "AnimationName": "die",
+      "EffectPath": "fx_m10430_die",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill1",
+      "EffectPath": "fx_m10431_skill01",
+      "Frame": 16,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 1.5,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": [
+    {
+      "BoneFollowerId": 0,
+      "FollowerType": 0,
+      "Name": "cross_glow",
+      "AnimationName": "skill1",
+      "BoneName": "bone8",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10431_skill01_bone",
+      "StartFrame": 0,
+      "EndFrame": 100,
+      "IsLoop": 0,
+      "PositionZ": -10.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    }
+  ]
+}

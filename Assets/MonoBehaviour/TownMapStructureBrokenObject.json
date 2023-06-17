@@ -1,0 +1,24 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 9132718739405899435
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1525592494053709906
+  },
+  "m_Name": "",
+  "_mapObjects": [
+    {
+      "m_FileID": 0,
+      "m_PathID": 3190474884007343907
+    },
+    {
+      "m_FileID": 0,
+      "m_PathID": 0
+    }
+  ],
+  "_skipRuntimeResourceSetting": 1,
+  "_animationKey": ""
+}

@@ -1,0 +1,22 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 1008803689438726606
+  },
+  "m_Name": "npc0018_emotion_spine_Atlas",
+  "atlasFile": {
+    "m_FileID": 0,
+    "m_PathID": -1280872531329839329
+  },
+  "materials": [
+    {
+      "m_FileID": 0,
+      "m_PathID": -8191596538592279920
+    }
+  ]
+}

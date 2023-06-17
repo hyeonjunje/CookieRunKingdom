@@ -1,0 +1,104 @@
+
+m10312.png
+size: 176,504
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beack
+  rotate: true
+  xy: 94, 24
+  size: 53, 64
+  orig: 53, 64
+  offset: 0, 0
+  index: -1
+eyes
+  rotate: true
+  xy: 20, 17
+  size: 55, 60
+  orig: 55, 60
+  offset: 0, 0
+  index: -1
+eyes_2
+  rotate: false
+  xy: 107, 222
+  size: 67, 57
+  orig: 67, 57
+  offset: 0, 0
+  index: -1
+hair
+  rotate: false
+  xy: 103, 144
+  size: 70, 76
+  orig: 70, 76
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 2, 304
+  size: 118, 104
+  orig: 118, 104
+  offset: 0, 0
+  index: -1
+head_2
+  rotate: false
+  xy: 2, 2
+  size: 16, 20
+  orig: 16, 20
+  offset: 0, 0
+  index: -1
+wingL_1
+  rotate: true
+  xy: 123, 442
+  size: 58, 50
+  orig: 58, 50
+  offset: 0, 0
+  index: -1
+wingL_2
+  rotate: true
+  xy: 94, 79
+  size: 63, 76
+  orig: 63, 76
+  offset: 0, 0
+  index: -1
+wingL_3
+  rotate: true
+  xy: 2, 246
+  size: 56, 103
+  orig: 56, 103
+  offset: 0, 0
+  index: -1
+wingL_b
+  rotate: false
+  xy: 2, 410
+  size: 119, 90
+  orig: 119, 90
+  offset: 0, 0
+  index: -1
+wingR_1
+  rotate: true
+  xy: 122, 281
+  size: 62, 42
+  orig: 62, 42
+  offset: 0, 0
+  index: -1
+wingR_2
+  rotate: true
+  xy: 123, 345
+  size: 95, 47
+  orig: 95, 47
+  offset: 0, 0
+  index: -1
+wingR_3
+  rotate: false
+  xy: 2, 74
+  size: 90, 69
+  orig: 90, 69
+  offset: 0, 0
+  index: -1
+wingR_b
+  rotate: false
+  xy: 2, 145
+  size: 99, 99
+  orig: 99, 99
+  offset: 0, 0
+  index: -1

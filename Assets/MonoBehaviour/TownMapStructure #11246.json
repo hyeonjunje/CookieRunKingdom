@@ -1,0 +1,89 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 5361475427387074555
+  },
+  "m_Enabled": 0,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 4682336587471946932
+  },
+  "m_Name": "",
+  "_disableFenceAnimation": 0,
+  "_constructionSitePositionOffset": {
+    "x": 0.0,
+    "y": 0.0,
+    "z": 0.0
+  },
+  "_floorCollider": {
+    "m_FileID": 0,
+    "m_PathID": -3636318561062029532
+  },
+  "_greenTileSprite": {
+    "m_FileID": 0,
+    "m_PathID": -330487170626428853
+  },
+  "_redTileSprite": {
+    "m_FileID": 0,
+    "m_PathID": -1241078805108315454
+  },
+  "_mapObjectParent": {
+    "m_FileID": 0,
+    "m_PathID": 3017302495393887162
+  },
+  "_cookieRidingPointParent": {
+    "m_FileID": 0,
+    "m_PathID": 3437952354601019763
+  },
+  "_dropAnimation": {
+    "m_FileID": 0,
+    "m_PathID": -6302073031448389794
+  },
+  "_quarterViewObjectResourceData": {
+    "RightBackSpriteName": "",
+    "RightFrontSpriteName": "landmark_seasonpass02",
+    "LeftBackSpriteName": "",
+    "LeftFrontSpriteName": "",
+    "IsPossibleToRotate": 1
+  },
+  "_townMapStructureRotatingPartResourceData": [
+    {
+      "RightBackSpriteName": "",
+      "RightFrontSpriteName": "landmark_fountain_SkeletonData",
+      "LeftBackSpriteName": "",
+      "LeftFrontSpriteName": "",
+      "IsPossibleToRotate": 1,
+      "RightFrontLocalPosition": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    }
+  ],
+  "_cookieRidingPointDatas": [],
+  "_entryPointData": {
+    "FrontSideOpend": 1,
+    "RightSideOpened": 0,
+    "BackSideOpened": 0,
+    "LeftSideOpened": 0
+  },
+  "_worldPositionOverridingObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_townMapUIOffsetFromTop": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "_townMapUIOffsetFromBottom": {
+    "x": 0.0,
+    "y": 0.0
+  },
+  "_disableFocusTween": 0,
+  "_hideTiles": 0,
+  "_checkAvailableCookieRidingPointBeforeActivity": 0,
+  "_isUnreachableForCookieAi": 0,
+  "_isFixedStructure": 0,
+  "_soundEventPath": "",
+  "_soundEventDelay": 0.0
+}

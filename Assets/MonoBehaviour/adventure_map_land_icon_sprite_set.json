@@ -1,0 +1,43 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -6514733636481289376
+  },
+  "m_Name": "adventure_map_land_icon_sprite_set",
+  "_spriteSet": [],
+  "_datas": [
+    {
+      "Enum": 7100,
+      "Sprite": {
+        "m_FileID": 0,
+        "m_PathID": -6650942045645391384
+      }
+    },
+    {
+      "Enum": 7101,
+      "Sprite": {
+        "m_FileID": 0,
+        "m_PathID": 2025382487758761010
+      }
+    },
+    {
+      "Enum": 7102,
+      "Sprite": {
+        "m_FileID": 0,
+        "m_PathID": -737838861850688202
+      }
+    },
+    {
+      "Enum": 7103,
+      "Sprite": {
+        "m_FileID": 0,
+        "m_PathID": -2336714379950267699
+      }
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+
+npc0025_emotion.png
+size: 168,444
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Liborn_R
+  rotate: false
+  xy: 96, 123
+  size: 62, 93
+  orig: 64, 94
+  offset: 0, 0
+  index: -1
+LineR
+  rotate: 180
+  xy: 2, 5
+  size: 59, 32
+  orig: 60, 32
+  offset: 1, 0
+  index: -1
+blueberry_body
+  rotate: false
+  xy: 2, 287
+  size: 149, 153
+  orig: 149, 153
+  offset: 0, 0
+  index: -1
+blueberry_body_line
+  rotate: true
+  xy: 2, 217
+  size: 69, 142
+  orig: 69, 142
+  offset: 0, 0
+  index: -1
+blueberry_eye01
+  rotate: 180
+  xy: 65, 33
+  size: 53, 30
+  orig: 55, 30
+  offset: 0, 0
+  index: -1
+blueberry_rail
+  rotate: 180
+  xy: 2, 33
+  size: 63, 59
+  orig: 63, 71
+  offset: 0, 1
+  index: -1
+blueberry_wing_L
+  rotate: false
+  xy: 2, 89
+  size: 71, 50
+  orig: 72, 50
+  offset: 0, 0
+  index: -1
+blueberry_wing_R
+  rotate: 270
+  xy: 72, 68
+  size: 54, 63
+  orig: 54, 79
+  offset: 0, 16
+  index: -1
+blueberryeye02
+  rotate: false
+  xy: 107, 4
+  size: 47, 38
+  orig: 47, 38
+  offset: 0, 0
+  index: -1
+buri
+  rotate: true
+  xy: 62, 3
+  size: 30, 45
+  orig: 30, 45
+  offset: 0, 0
+  index: -1
+liborn_L
+  rotate: false
+  xy: 2, 133
+  size: 95, 82
+  orig: 96, 82
+  offset: 0, 0
+  index: -1
+lienL
+  rotate: true
+  xy: 116, 43
+  size: 72, 39
+  orig: 72, 39
+  offset: 0, 0
+  index: -1
+linetop
+  rotate: true
+  xy: 141, 106
+  size: 26, 23
+  orig: 26, 23
+  offset: 0, 0
+  index: -1

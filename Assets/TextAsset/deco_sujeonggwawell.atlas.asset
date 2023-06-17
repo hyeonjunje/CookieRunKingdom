@@ -1,0 +1,132 @@
+
+deco_sujeonggwawell.png
+size: 468,192
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cuo_ol
+  rotate: true
+  xy: 258, 4
+  size: 186, 58
+  orig: 225, 74
+  offset: 0, 16
+  index: -1
+fish
+  rotate: false
+  xy: 419, 5
+  size: 29, 17
+  orig: 32, 21
+  offset: 2, 2
+  index: -1
+fish2_body
+  rotate: false
+  xy: 446, 39
+  size: 16, 18
+  orig: 20, 22
+  offset: 2, 2
+  index: -1
+fish2_eye
+  rotate: false
+  xy: 7, 2
+  size: 2, 4
+  orig: 6, 7
+  offset: 2, 2
+  index: -1
+fish_eye
+  rotate: true
+  xy: 2, 2
+  size: 4, 3
+  orig: 8, 8
+  offset: 2, 3
+  index: -1
+fish_underwater
+  rotate: false
+  xy: 428, 59
+  size: 21, 11
+  orig: 25, 15
+  offset: 2, 2
+  index: -1
+fishw_tail
+  rotate: false
+  xy: 451, 59
+  size: 12, 11
+  orig: 13, 13
+  offset: 0, 1
+  index: -1
+jujube_1
+  rotate: false
+  xy: 385, 58
+  size: 41, 31
+  orig: 83, 31
+  offset: 42, 0
+  index: -1
+jujube_2
+  rotate: false
+  xy: 422, 97
+  size: 41, 31
+  orig: 45, 35
+  offset: 2, 2
+  index: -1
+jujube_3
+  rotate: true
+  xy: 419, 24
+  size: 32, 25
+  orig: 36, 29
+  offset: 2, 2
+  index: -1
+jujube_water_1
+  rotate: false
+  xy: 385, 91
+  size: 35, 37
+  orig: 39, 41
+  offset: 2, 2
+  index: -1
+jujube_water_2
+  rotate: false
+  xy: 428, 72
+  size: 23, 23
+  orig: 34, 27
+  offset: 7, 2
+  index: -1
+ul
+  rotate: false
+  xy: 2, 8
+  size: 254, 182
+  orig: 259, 221
+  offset: 2, 2
+  index: -1
+ul_branch_01
+  rotate: false
+  xy: 318, 4
+  size: 63, 50
+  orig: 64, 51
+  offset: 1, 0
+  index: -1
+ul_branch_02
+  rotate: false
+  xy: 385, 130
+  size: 60, 60
+  orig: 63, 63
+  offset: 2, 1
+  index: -1
+ul_branch_03
+  rotate: true
+  xy: 383, 9
+  size: 45, 34
+  orig: 46, 35
+  offset: 1, 0
+  index: -1
+water
+  rotate: true
+  xy: 318, 56
+  size: 134, 65
+  orig: 134, 65
+  offset: 0, 0
+  index: -1
+water_drop
+  rotate: true
+  xy: 446, 24
+  size: 13, 17
+  orig: 13, 17
+  offset: 0, 0
+  index: -1

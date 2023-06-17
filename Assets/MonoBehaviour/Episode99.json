@@ -1,0 +1,300 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 967918625927831776
+  },
+  "m_Name": "Episode99",
+  "ObjectDatas": [
+    {
+      "Id": 1,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "grid_mapbackground_64_32",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 2,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_candle1",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 3,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_candle2",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 4,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_candle3",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 5,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_candle4",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 6,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_cookie1",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 7,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_cookie2",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 8,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_cookie3",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 9,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_pillar1",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 10,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_pillar2",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 11,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_pillar3",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 12,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_window1",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 13,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_window2",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 14,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_window3",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 15,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_fire",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 16,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_fork",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 17,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_fire2",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 18,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "ep99_obj_fire3",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 19,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "epg_boss",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 20,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "epg_obj_statue1",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 21,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "epg_obj_statue2",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    },
+    {
+      "Id": 22,
+      "Size": {
+        "X": 1.0,
+        "Y": 1.0,
+        "Z": 1.0
+      },
+      "MagicStats": [],
+      "SpriteKey": "epg_obj_statue3",
+      "SkeletonDataAssetKey": "",
+      "SkinName": "",
+      "AnimationName": ""
+    }
+  ]
+}

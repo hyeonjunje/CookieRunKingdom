@@ -1,0 +1,13 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 4115515244352928798
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -4180774511739971864
+  },
+  "m_Name": "",
+  "_key": "UIStringList.Text.GameEvent.Receive"
+}

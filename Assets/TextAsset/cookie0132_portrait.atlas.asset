@@ -1,0 +1,167 @@
+
+cookie0132_portrait.png
+size: 952,1028
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_l
+  rotate: false
+  xy: 602, 324
+  size: 170, 137
+  orig: 170, 137
+  offset: 0, 0
+  index: -1
+arm_r
+  rotate: true
+  xy: 774, 413
+  size: 169, 135
+  orig: 328, 168
+  offset: 0, 0
+  index: -1
+belt
+  rotate: false
+  xy: 733, 6
+  size: 212, 67
+  orig: 212, 67
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 450, 802
+  size: 221, 201
+  orig: 221, 201
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 636, 584
+  size: 216, 179
+  orig: 216, 179
+  offset: 0, 0
+  index: -1
+hair_front
+  rotate: true
+  xy: 658, 75
+  size: 247, 117
+  orig: 247, 117
+  offset: 0, 0
+  index: -1
+hair_front_2
+  rotate: false
+  xy: 653, 837
+  size: 71, 55
+  orig: 71, 57
+  offset: 0, 1
+  index: -1
+hair_l
+  rotate: false
+  xy: 450, 463
+  size: 184, 337
+  orig: 184, 337
+  offset: 0, 0
+  index: -1
+hair_r
+  rotate: true
+  xy: 2, 10
+  size: 277, 355
+  orig: 277, 355
+  offset: 0, 0
+  index: -1
+hairacc_l
+  rotate: false
+  xy: 777, 205
+  size: 131, 135
+  orig: 131, 135
+  offset: 0, 0
+  index: -1
+hairacc_r
+  rotate: true
+  xy: 777, 75
+  size: 128, 130
+  orig: 128, 130
+  offset: 0, 0
+  index: -1
+hand_l
+  rotate: true
+  xy: 817, 701
+  size: 145, 106
+  orig: 199, 106
+  offset: 0, 0
+  index: -1
+hand_r
+  rotate: true
+  xy: 817, 597
+  size: 102, 122
+  orig: 102, 122
+  offset: 0, 0
+  index: -1
+hat1
+  rotate: true
+  xy: 792, 848
+  size: 175, 127
+  orig: 175, 127
+  offset: 0, 0
+  index: -1
+hat2
+  rotate: false
+  xy: 653, 894
+  size: 137, 129
+  orig: 137, 129
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 359, 13
+  size: 297, 274
+  orig: 297, 274
+  offset: 0, 0
+  index: -1
+i
+  rotate: true
+  xy: 636, 479
+  size: 103, 128
+  orig: 103, 128
+  offset: 0, 0
+  index: -1
+leg_l
+  rotate: true
+  xy: 450, 323
+  size: 138, 150
+  orig: 138, 150
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 774, 342
+  size: 104, 69
+  orig: 104, 69
+  offset: 0, 0
+  index: -1
+pocket
+  rotate: true
+  xy: 658, 2
+  size: 71, 73
+  orig: 71, 73
+  offset: 0, 0
+  index: -1
+shoulder_l
+  rotate: false
+  xy: 880, 344
+  size: 67, 67
+  orig: 67, 67
+  offset: 0, 0
+  index: -1
+shouler_r
+  rotate: false
+  xy: 909, 138
+  size: 41, 65
+  orig: 43, 66
+  offset: 2, 1
+  index: -1
+stick
+  rotate: true
+  xy: 2, 289
+  size: 734, 446
+  orig: 734, 446
+  offset: 0, 0
+  index: -1

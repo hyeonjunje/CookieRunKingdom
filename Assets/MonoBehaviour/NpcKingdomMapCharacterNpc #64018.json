@@ -1,0 +1,31 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 4885530003565460319
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 2461642830386148818
+  },
+  "m_Name": "",
+  "_initState": 1,
+  "_initRotation": 6,
+  "_characterAnimation": {
+    "m_FileID": 0,
+    "m_PathID": 1403423696621383893
+  },
+  "_meshRenderer": {
+    "m_FileID": 0,
+    "m_PathID": -3477817186341881746
+  },
+  "_collider": {
+    "m_FileID": 0,
+    "m_PathID": 7885139747947145676
+  },
+  "_shadowRectTransform": {
+    "m_FileID": 0,
+    "m_PathID": 4586119520972091022
+  },
+  "_npcDataId": 1510400564
+}

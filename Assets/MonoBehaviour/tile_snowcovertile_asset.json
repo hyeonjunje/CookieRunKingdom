@@ -1,0 +1,35 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": -1975921841984460356
+  },
+  "m_Name": "tile_snowcovertile_asset",
+  "_type": 0,
+  "_waterTileMaterial": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "_tileDistortionFactor": 0.0,
+  "_waveDistortionFactor": 0.0,
+  "_data": [
+    {
+      "SpriteType": 0,
+      "Data": [
+        {
+          "SpriteKey": "tile_snowcovertile",
+          "Offset": {
+            "x": 0.0,
+            "y": 0.0
+          },
+          "SortingOrder": 113,
+          "IsWaterTile": 0
+        }
+      ]
+    }
+  ]
+}

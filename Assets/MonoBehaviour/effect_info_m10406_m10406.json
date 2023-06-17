@@ -1,0 +1,79 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 0
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 5674279853346781965
+  },
+  "m_Name": "effect_info_m10406_m10406",
+  "CharacterResourceKey": "m10406",
+  "EffectEvents": [
+    {
+      "AnimationName": "skill2_loop",
+      "EffectPath": "fx_m10406_skill02_loop",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 1,
+      "LifeTime": 1.1,
+      "RemoveOnSkillEnd": 0
+    },
+    {
+      "AnimationName": "skill2_end",
+      "EffectPath": "fx_m10406_skill02_fire",
+      "Frame": 0,
+      "Position": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "SetChild": 0,
+      "LifeTime": 0.5,
+      "RemoveOnSkillEnd": 0
+    }
+  ],
+  "BoneFollowers": [
+    {
+      "BoneFollowerId": 0,
+      "FollowerType": 0,
+      "Name": "eye_beam",
+      "AnimationName": "skill2_end",
+      "BoneName": "bone17",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "",
+      "StartFrame": -1,
+      "EndFrame": -1,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    },
+    {
+      "BoneFollowerId": 1,
+      "FollowerType": 0,
+      "Name": "body",
+      "AnimationName": "skill2",
+      "BoneName": "bone",
+      "SlotName": "",
+      "PointName": "",
+      "EffectPath": "fx_m10406_skill02_start",
+      "StartFrame": -1,
+      "EndFrame": -1,
+      "IsLoop": 0,
+      "PositionZ": 0.0,
+      "SortingOrder": 0,
+      "IgnoreRotation": 0,
+      "GlobalBlackList": [],
+      "GlobalWhiteList": []
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "m_GameObject": {
+    "m_FileID": 0,
+    "m_PathID": 2273056924705286862
+  },
+  "m_Enabled": 1,
+  "m_Script": {
+    "m_FileID": 0,
+    "m_PathID": 9205242574641257140
+  },
+  "m_Name": "",
+  "lineRenderer": {
+    "m_FileID": 0,
+    "m_PathID": -8230611135826253928
+  },
+  "commonEffectController": {
+    "m_FileID": 0,
+    "m_PathID": -9193457301614193734
+  },
+  "useMainTiling": 1,
+  "mainTileRate": 0.1,
+  "useSubTiling": 1,
+  "subTileRate": 1.0,
+  "useAlphaTiling": 0,
+  "alphaTileRate": 1.0,
+  "useDistortionTiling": 1,
+  "distortionTileRate": 0.1,
+  "positionZ": 0.0
+}

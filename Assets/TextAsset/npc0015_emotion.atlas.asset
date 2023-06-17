@@ -1,0 +1,41 @@
+
+npc0015_emotion.png
+size: 572,540
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0015_emotion_default_body
+  rotate: false
+  xy: 2, 17
+  size: 442, 521
+  orig: 600, 600
+  offset: 134, 36
+  index: -1
+npc0015_emotion_default_eye01
+  rotate: true
+  xy: 446, 2
+  size: 167, 65
+  orig: 600, 600
+  offset: 240, 286
+  index: -1
+npc0015_emotion_default_mouth01
+  rotate: false
+  xy: 446, 417
+  size: 121, 121
+  orig: 600, 600
+  offset: 257, 225
+  index: -1
+npc0015_emotion_default_mouth02
+  rotate: false
+  xy: 446, 294
+  size: 121, 121
+  orig: 600, 600
+  offset: 257, 225
+  index: -1
+npc0015_emotion_default_mouth03
+  rotate: false
+  xy: 446, 171
+  size: 121, 121
+  orig: 600, 600
+  offset: 257, 225
+  index: -1
