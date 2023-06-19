@@ -1,0 +1,167 @@
+
+cookie0103_portrait.png
+size: 1632,800
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm
+  rotate: false
+  xy: 645, 443
+  size: 363, 141
+  orig: 363, 141
+  offset: 0, 0
+  index: -1
+L_leg
+  rotate: false
+  xy: 647, 33
+  size: 178, 134
+  orig: 184, 134
+  offset: 0, 0
+  index: -1
+L_sholder
+  rotate: true
+  xy: 1419, 528
+  size: 270, 211
+  orig: 270, 211
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: false
+  xy: 1169, 118
+  size: 249, 182
+  orig: 249, 182
+  offset: 0, 0
+  index: -1
+R_hand
+  rotate: false
+  xy: 1010, 535
+  size: 52, 49
+  orig: 53, 50
+  offset: 0, 1
+  index: -1
+R_leg
+  rotate: false
+  xy: 1420, 34
+  size: 209, 214
+  orig: 209, 214
+  offset: 0, 0
+  index: -1
+R_sholder
+  rotate: false
+  xy: 1169, 302
+  size: 239, 222
+  orig: 239, 222
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 935, 169
+  size: 272, 232
+  orig: 272, 232
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 827, 5
+  size: 162, 166
+  orig: 162, 166
+  offset: 0, 0
+  index: -1
+face_shadow
+  rotate: true
+  xy: 462, 2
+  size: 122, 125
+  orig: 122, 125
+  offset: 0, 0
+  index: -1
+hair_1
+  rotate: false
+  xy: 1079, 526
+  size: 338, 272
+  orig: 338, 272
+  offset: 0, 0
+  index: -1
+hair_2
+  rotate: true
+  xy: 2, 2
+  size: 70, 247
+  orig: 70, 247
+  offset: 0, 0
+  index: -1
+hair_3
+  rotate: false
+  xy: 1420, 250
+  size: 184, 276
+  orig: 184, 276
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 647, 169
+  size: 286, 272
+  orig: 286, 272
+  offset: 0, 0
+  index: -1
+hood_1
+  rotate: false
+  xy: 645, 586
+  size: 432, 212
+  orig: 660, 251
+  offset: 0, 39
+  index: -1
+hood_2
+  rotate: true
+  xy: 2, 74
+  size: 355, 458
+  orig: 355, 458
+  offset: 0, 0
+  index: -1
+hood_3
+  rotate: false
+  xy: 2, 431
+  size: 641, 367
+  orig: 641, 367
+  offset: 0, 0
+  index: -1
+sword_back
+  rotate: false
+  xy: 1135, 17
+  size: 126, 99
+  orig: 266, 99
+  offset: 140, 0
+  index: -1
+sword_blade
+  rotate: false
+  xy: 462, 126
+  size: 183, 303
+  orig: 183, 303
+  offset: 0, 0
+  index: -1
+sword_front
+  rotate: false
+  xy: 995, 40
+  size: 138, 127
+  orig: 138, 127
+  offset: 0, 0
+  index: -1
+sword_gem
+  rotate: false
+  xy: 1263, 38
+  size: 83, 78
+  orig: 83, 78
+  offset: 0, 0
+  index: -1
+sword_handle1
+  rotate: true
+  xy: 251, 2
+  size: 70, 61
+  orig: 70, 61
+  offset: 0, 0
+  index: -1
+sword_handle2
+  rotate: true
+  xy: 1263, 2
+  size: 34, 51
+  orig: 36, 53
+  offset: 1, 1
+  index: -1

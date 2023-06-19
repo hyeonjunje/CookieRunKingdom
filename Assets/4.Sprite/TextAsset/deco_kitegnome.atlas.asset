@@ -1,0 +1,62 @@
+
+deco_kitegnome.png
+size: 124,80
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gnome_arm
+  rotate: false
+  xy: 110, 22
+  size: 11, 11
+  orig: 11, 11
+  offset: 0, 0
+  index: -1
+gnome_body
+  rotate: true
+  xy: 31, 30
+  size: 48, 47
+  orig: 48, 47
+  offset: 0, 0
+  index: -1
+kite_body
+  rotate: false
+  xy: 80, 35
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+kite_handle
+  rotate: false
+  xy: 110, 12
+  size: 8, 8
+  orig: 8, 8
+  offset: 0, 0
+  index: -1
+kite_line
+  rotate: false
+  xy: 2, 6
+  size: 27, 72
+  orig: 27, 72
+  offset: 0, 0
+  index: -1
+kite_ribbon
+  rotate: true
+  xy: 68, 7
+  size: 21, 40
+  orig: 21, 40
+  offset: 0, 0
+  index: -1
+kite_tail1
+  rotate: false
+  xy: 31, 2
+  size: 16, 26
+  orig: 30, 26
+  offset: 14, 0
+  index: -1
+kite_tail2
+  rotate: false
+  xy: 49, 3
+  size: 17, 25
+  orig: 17, 25
+  offset: 0, 0
+  index: -1

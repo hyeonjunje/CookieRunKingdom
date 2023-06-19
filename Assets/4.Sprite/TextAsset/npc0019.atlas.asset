@@ -1,0 +1,181 @@
+
+npc0019.png
+size: 572,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TownCookieShadow
+  rotate: true
+  xy: 323, 62
+  size: 79, 51
+  orig: 82, 53
+  offset: 0, 2
+  index: -1
+npc0019_acc_01
+  rotate: false
+  xy: 492, 7
+  size: 15, 32
+  orig: 15, 32
+  offset: 0, 0
+  index: -1
+npc0019_acc_01_back
+  rotate: false
+  xy: 324, 13
+  size: 14, 32
+  orig: 14, 32
+  offset: 0, 0
+  index: -1
+npc0019_acc_02
+  rotate: false
+  xy: 148, 4
+  size: 60, 35
+  orig: 90, 67
+  offset: 15, 15
+  index: -1
+npc0019_acc_02_back
+  rotate: true
+  xy: 391, 2
+  size: 66, 29
+  orig: 97, 60
+  offset: 16, 15
+  index: -1
+npc0019_arm_L
+  rotate: true
+  xy: 422, 15
+  size: 53, 68
+  orig: 80, 97
+  offset: 15, 12
+  index: -1
+npc0019_arm_R_01
+  rotate: false
+  xy: 261, 60
+  size: 60, 81
+  orig: 95, 114
+  offset: 18, 17
+  index: -1
+npc0019_arm_R_02
+  rotate: true
+  xy: 340, 3
+  size: 57, 49
+  orig: 87, 81
+  offset: 14, 16
+  index: -1
+npc0019_body
+  rotate: true
+  xy: 90, 41
+  size: 100, 81
+  orig: 123, 113
+  offset: 7, 15
+  index: -1
+npc0019_body_back
+  rotate: true
+  xy: 173, 47
+  size: 94, 86
+  orig: 118, 118
+  offset: 8, 15
+  index: -1
+npc0019_cloth_back
+  rotate: true
+  xy: 2, 31
+  size: 110, 86
+  orig: 125, 116
+  offset: 3, 15
+  index: -1
+npc0019_eyes
+  rotate: false
+  xy: 258, 5
+  size: 64, 40
+  orig: 64, 40
+  offset: 0, 0
+  index: -1
+npc0019_hair_01
+  rotate: false
+  xy: 519, 93
+  size: 48, 48
+  orig: 48, 48
+  offset: 0, 0
+  index: -1
+npc0019_hair_01_back
+  rotate: false
+  xy: 519, 44
+  size: 47, 47
+  orig: 47, 47
+  offset: 0, 0
+  index: -1
+npc0019_hair_02
+  rotate: true
+  xy: 2, 2
+  size: 27, 71
+  orig: 27, 71
+  offset: 0, 0
+  index: -1
+npc0019_hair_02_back
+  rotate: true
+  xy: 75, 2
+  size: 27, 71
+  orig: 27, 71
+  offset: 0, 0
+  index: -1
+npc0019_hairtie
+  rotate: true
+  xy: 492, 41
+  size: 27, 22
+  orig: 27, 22
+  offset: 0, 0
+  index: -1
+npc0019_hairtie_back
+  rotate: true
+  xy: 509, 12
+  size: 27, 22
+  orig: 27, 22
+  offset: 0, 0
+  index: -1
+npc0019_head
+  rotate: false
+  xy: 448, 70
+  size: 69, 71
+  orig: 69, 71
+  offset: 0, 0
+  index: -1
+npc0019_head_back
+  rotate: true
+  xy: 376, 70
+  size: 71, 70
+  orig: 71, 70
+  offset: 0, 0
+  index: -1
+npc0019_mouth
+  rotate: true
+  xy: 90, 31
+  size: 8, 5
+  orig: 8, 5
+  offset: 0, 0
+  index: -1
+npc0019_stick
+  rotate: false
+  xy: 210, 4
+  size: 46, 41
+  orig: 46, 41
+  offset: 0, 0
+  index: -1
+npc0019_stick_acc_01
+  rotate: true
+  xy: 533, 26
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1
+npc0019_stick_acc_02
+  rotate: true
+  xy: 552, 28
+  size: 14, 15
+  orig: 14, 15
+  offset: 0, 0
+  index: -1
+npc0019_stick_acc_03
+  rotate: false
+  xy: 323, 47
+  size: 15, 13
+  orig: 15, 13
+  offset: 0, 0
+  index: -1

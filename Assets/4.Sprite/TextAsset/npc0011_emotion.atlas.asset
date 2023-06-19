@@ -1,0 +1,76 @@
+
+npc0011_emotion.png
+size: 392,1064
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0011_emotion_default_cape
+  rotate: true
+  xy: 207, 46
+  size: 277, 168
+  orig: 650, 650
+  offset: 154, 137
+  index: -1
+npc0011_emotion_default_cape2
+  rotate: 270
+  xy: 133, 4
+  size: 252, 120
+  orig: 650, 650
+  offset: 181, 209
+  index: -1
+npc0011_emotion_default_hair
+  rotate: true
+  xy: 131, 281
+  size: 329, 252
+  orig: 650, 650
+  offset: 174, 198
+  index: -1
+npc0011_emotion_default_hair2
+  rotate: false
+  xy: 290, 948
+  size: 95, 112
+  orig: 650, 650
+  offset: 122, 85
+  index: -1
+npc0011_emotion_default_hat
+  rotate: false
+  xy: 2, 496
+  size: 386, 565
+  orig: 650, 650
+  offset: 115, 64
+  index: -1
+npc0011_emotion_default_hat2
+  rotate: 270
+  xy: 2, 96
+  size: 401, 179
+  orig: 650, 650
+  offset: 114, 230
+  index: -1
+npc0011_emotion_default_mouth1
+  rotate: false
+  xy: 2, 610
+  size: 98, 82
+  orig: 650, 650
+  offset: 279, 222
+  index: -1
+npc0011_emotion_default_mouth2
+  rotate: false
+  xy: 2, 13
+  size: 98, 82
+  orig: 650, 650
+  offset: 279, 222
+  index: -1
+npc0011_emotion_default_mouth3
+  rotate: true
+  xy: 303, 606
+  size: 98, 82
+  orig: 650, 650
+  offset: 279, 222
+  index: -1
+npc0011_emotion_default_stick
+  rotate: false
+  xy: 2, 924
+  size: 53, 136
+  orig: 650, 650
+  offset: 424, 77
+  index: -1

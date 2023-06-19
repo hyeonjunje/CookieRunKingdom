@@ -1,0 +1,146 @@
+
+npc0104.png
+size: 208,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TownCookieShadow
+  rotate: true
+  xy: 2, 62
+  size: 79, 51
+  orig: 82, 53
+  offset: 0, 2
+  index: -1
+npc0104_back_goggles
+  rotate: true
+  xy: 106, 12
+  size: 50, 38
+  orig: 50, 38
+  offset: 0, 0
+  index: -1
+npc0104_back_goggles_back
+  rotate: true
+  xy: 55, 80
+  size: 61, 32
+  orig: 61, 32
+  offset: 0, 0
+  index: -1
+npc0104_back_hat
+  rotate: true
+  xy: 2, 2
+  size: 58, 57
+  orig: 58, 57
+  offset: 0, 0
+  index: -1
+npc0104_back_head
+  rotate: true
+  xy: 61, 4
+  size: 57, 43
+  orig: 57, 43
+  offset: 0, 0
+  index: -1
+npc0104_back_right_wing
+  rotate: true
+  xy: 182, 74
+  size: 26, 22
+  orig: 26, 22
+  offset: 0, 0
+  index: -1
+npc0104_back_sidehat_left
+  rotate: false
+  xy: 146, 11
+  size: 25, 41
+  orig: 25, 41
+  offset: 0, 0
+  index: -1
+npc0104_back_sidehat_right
+  rotate: false
+  xy: 182, 102
+  size: 22, 39
+  orig: 22, 39
+  offset: 0, 0
+  index: -1
+npc0104_beak
+  rotate: false
+  xy: 190, 9
+  size: 13, 10
+  orig: 13, 10
+  offset: 0, 0
+  index: -1
+npc0104_eye
+  rotate: true
+  xy: 192, 21
+  size: 15, 14
+  orig: 15, 15
+  offset: 0, 1
+  index: -1
+npc0104_eye2
+  rotate: false
+  xy: 173, 10
+  size: 15, 13
+  orig: 15, 15
+  offset: 0, 1
+  index: -1
+npc0104_face
+  rotate: false
+  xy: 92, 64
+  size: 27, 20
+  orig: 27, 20
+  offset: 0, 0
+  index: -1
+npc0104_goggles
+  rotate: true
+  xy: 145, 93
+  size: 48, 35
+  orig: 48, 35
+  offset: 0, 0
+  index: -1
+npc0104_goggles_tie
+  rotate: false
+  xy: 55, 63
+  size: 18, 15
+  orig: 18, 15
+  offset: 0, 0
+  index: -1
+npc0104_hat_acc1
+  rotate: true
+  xy: 173, 25
+  size: 11, 17
+  orig: 11, 17
+  offset: 0, 0
+  index: -1
+npc0104_hat_acc2
+  rotate: false
+  xy: 75, 63
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+npc0104_head
+  rotate: false
+  xy: 89, 86
+  size: 54, 55
+  orig: 54, 55
+  offset: 0, 0
+  index: -1
+npc0104_sidehat_left
+  rotate: false
+  xy: 147, 54
+  size: 26, 37
+  orig: 26, 37
+  offset: 0, 0
+  index: -1
+npc0104_sidehat_right
+  rotate: false
+  xy: 175, 38
+  size: 26, 34
+  orig: 26, 34
+  offset: 0, 0
+  index: -1
+npc0104_tail
+  rotate: true
+  xy: 121, 66
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,27 @@
+
+npc0036_emotion.png
+size: 412,520
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0036_emotion_default_body
+  rotate: false
+  xy: 2, 3
+  size: 408, 514
+  orig: 408, 514
+  offset: 0, 0
+  index: -1
+npc0036_emotion_default_eye01
+  rotate: true
+  xy: 2, 27
+  size: 123, 27
+  orig: 123, 27
+  offset: 0, 0
+  index: -1
+npc0036_emotion_default_eye02
+  rotate: false
+  xy: 285, 488
+  size: 124, 28
+  orig: 124, 28
+  offset: 0, 0
+  index: -1

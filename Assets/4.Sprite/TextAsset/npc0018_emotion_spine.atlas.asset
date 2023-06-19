@@ -1,0 +1,111 @@
+
+npc0018_emotion_spine.png
+size: 1484,632
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0018_emotion__default_legs
+  rotate: true
+  xy: 623, 81
+  size: 549, 272
+  orig: 549, 272
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_back_body
+  rotate: 180
+  xy: 1141, 282
+  size: 218, 349
+  orig: 265, 613
+  offset: 47, 0
+  index: -1
+npc0018_emotion_default_body
+  rotate: false
+  xy: 886, 19
+  size: 267, 157
+  orig: 271, 161
+  offset: 2, 2
+  index: -1
+npc0018_emotion_default_ear_L
+  rotate: 270
+  xy: 616, 14
+  size: 107, 125
+  orig: 107, 125
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_ear_R
+  rotate: true
+  xy: 1354, 3
+  size: 107, 125
+  orig: 107, 125
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_eyes
+  rotate: false
+  xy: 2, 63
+  size: 147, 101
+  orig: 147, 101
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_eyes _closed
+  rotate: false
+  xy: 468, 56
+  size: 147, 86
+  orig: 147, 86
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_head
+  rotate: 270
+  xy: 880, 178
+  size: 353, 273
+  orig: 353, 273
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_horn_L
+  rotate: false
+  xy: 1356, 352
+  size: 106, 140
+  orig: 106, 140
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_horn_R
+  rotate: true
+  xy: 1338, 525
+  size: 106, 140
+  orig: 106, 140
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_mane
+  rotate: false
+  xy: 2, 78
+  size: 620, 553
+  orig: 620, 553
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_mouth
+  rotate: false
+  xy: 743, 14
+  size: 136, 66
+  orig: 136, 66
+  offset: 0, 0
+  index: -1
+npc0018_emotion_default_mouth2
+  rotate: false
+  xy: 522, 582
+  size: 68, 48
+  orig: 72, 52
+  offset: 2, 2
+  index: -1
+npc0018_emotion_default_wing
+  rotate: true
+  xy: 1180, 35
+  size: 320, 294
+  orig: 818, 294
+  offset: 498, 0
+  index: -1
+npc0018_emotiongem
+  rotate: false
+  xy: 2, 567
+  size: 65, 64
+  orig: 65, 64
+  offset: 0, 0
+  index: -1

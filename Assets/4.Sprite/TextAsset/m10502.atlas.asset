@@ -1,0 +1,139 @@
+
+m10502.png
+size: 428,272
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+berry_1_01
+  rotate: false
+  xy: 309, 69
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+berry_1_02
+  rotate: true
+  xy: 105, 21
+  size: 34, 49
+  orig: 34, 49
+  offset: 0, 0
+  index: -1
+berry_2_01
+  rotate: false
+  xy: 360, 2
+  size: 25, 23
+  orig: 25, 23
+  offset: 0, 0
+  index: -1
+berry_2_02
+  rotate: true
+  xy: 156, 26
+  size: 29, 46
+  orig: 29, 46
+  offset: 0, 0
+  index: -1
+cream_1
+  rotate: false
+  xy: 109, 57
+  size: 97, 77
+  orig: 97, 77
+  offset: 0, 0
+  index: -1
+cream_2
+  rotate: false
+  xy: 360, 27
+  size: 55, 69
+  orig: 55, 69
+  offset: 0, 0
+  index: -1
+die_effect
+  rotate: false
+  xy: 2, 7
+  size: 101, 101
+  orig: 101, 101
+  offset: 0, 0
+  index: -1
+effect01
+  rotate: false
+  xy: 109, 136
+  size: 105, 134
+  orig: 105, 134
+  offset: 0, 0
+  index: -1
+effect02
+  rotate: false
+  xy: 216, 159
+  size: 105, 111
+  orig: 105, 111
+  offset: 0, 0
+  index: -1
+effect03
+  rotate: false
+  xy: 2, 110
+  size: 105, 160
+  orig: 105, 160
+  offset: 0, 0
+  index: -1
+head_1
+  rotate: false
+  xy: 208, 2
+  size: 77, 62
+  orig: 77, 62
+  offset: 0, 0
+  index: -1
+head_2
+  rotate: true
+  xy: 287, 2
+  size: 62, 71
+  orig: 62, 71
+  offset: 0, 0
+  index: -1
+jaw
+  rotate: false
+  xy: 323, 98
+  size: 82, 79
+  orig: 82, 79
+  offset: 0, 0
+  index: -1
+leg1
+  rotate: false
+  xy: 407, 153
+  size: 18, 24
+  orig: 18, 24
+  offset: 0, 0
+  index: -1
+leg2
+  rotate: true
+  xy: 387, 7
+  size: 18, 25
+  orig: 18, 25
+  offset: 0, 0
+  index: -1
+leg3
+  rotate: false
+  xy: 407, 131
+  size: 18, 20
+  orig: 18, 20
+  offset: 0, 0
+  index: -1
+leg4
+  rotate: true
+  xy: 338, 77
+  size: 19, 20
+  orig: 19, 20
+  offset: 0, 0
+  index: -1
+tail
+  rotate: false
+  xy: 323, 179
+  size: 91, 91
+  orig: 91, 91
+  offset: 0, 0
+  index: -1
+tongue
+  rotate: false
+  xy: 216, 66
+  size: 91, 91
+  orig: 91, 91
+  offset: 0, 0
+  index: -1

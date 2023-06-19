@@ -1,0 +1,118 @@
+
+cookie0044_portrait.png
+size: 1308,1020
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: false
+  xy: 1099, 19
+  size: 157, 121
+  orig: 157, 121
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: true
+  xy: 2, 21
+  size: 186, 206
+  orig: 186, 209
+  offset: 0, 3
+  index: -1
+body
+  rotate: true
+  xy: 1060, 142
+  size: 217, 197
+  orig: 217, 197
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 210, 35
+  size: 244, 172
+  orig: 244, 172
+  offset: 0, 0
+  index: -1
+hair
+  rotate: true
+  xy: 2, 209
+  size: 456, 460
+  orig: 456, 460
+  offset: 0, 0
+  index: -1
+hair_pepper
+  rotate: false
+  xy: 851, 2
+  size: 246, 138
+  orig: 246, 138
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 938, 670
+  size: 347, 337
+  orig: 347, 337
+  offset: 0, 0
+  index: -1
+hood1
+  rotate: false
+  xy: 2, 667
+  size: 934, 350
+  orig: 934, 350
+  offset: 0, 0
+  index: -1
+hood2
+  rotate: true
+  xy: 1214, 361
+  size: 307, 92
+  orig: 307, 92
+  offset: 0, 0
+  index: -1
+leg_L
+  rotate: false
+  xy: 464, 57
+  size: 235, 188
+  orig: 235, 188
+  offset: 0, 0
+  index: -1
+leg_R
+  rotate: true
+  xy: 701, 57
+  size: 188, 148
+  orig: 188, 148
+  offset: 0, 0
+  index: -1
+neck1
+  rotate: true
+  xy: 854, 421
+  size: 66, 45
+  orig: 68, 48
+  offset: 1, 1
+  index: -1
+neck2
+  rotate: true
+  xy: 854, 489
+  size: 176, 65
+  orig: 176, 65
+  offset: 0, 0
+  index: -1
+shawl1
+  rotate: true
+  xy: 464, 247
+  size: 418, 388
+  orig: 418, 388
+  offset: 0, 0
+  index: -1
+shawl2
+  rotate: true
+  xy: 854, 156
+  size: 229, 204
+  orig: 229, 204
+  offset: 0, 0
+  index: -1
+shawl3
+  rotate: false
+  xy: 938, 387
+  size: 274, 281
+  orig: 274, 281
+  offset: 0, 0
+  index: -1

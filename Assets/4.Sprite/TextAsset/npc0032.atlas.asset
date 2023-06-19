@@ -1,0 +1,160 @@
+
+npc0032.png
+size: 176,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TownCookieShadow
+  rotate: true
+  xy: 2, 63
+  size: 79, 51
+  orig: 82, 53
+  offset: 0, 2
+  index: -1
+armL
+  rotate: false
+  xy: 105, 11
+  size: 16, 17
+  orig: 20, 21
+  offset: 2, 2
+  index: -1
+armR
+  rotate: true
+  xy: 145, 2
+  size: 16, 17
+  orig: 20, 21
+  offset: 2, 2
+  index: -1
+back_footL
+  rotate: true
+  xy: 123, 12
+  size: 28, 20
+  orig: 32, 25
+  offset: 2, 3
+  index: -1
+back_footR
+  rotate: true
+  xy: 151, 71
+  size: 27, 21
+  orig: 31, 25
+  offset: 2, 2
+  index: -1
+body
+  rotate: false
+  xy: 120, 100
+  size: 51, 42
+  orig: 55, 46
+  offset: 2, 2
+  index: -1
+creamL
+  rotate: false
+  xy: 120, 42
+  size: 28, 26
+  orig: 32, 30
+  offset: 2, 2
+  index: -1
+creamR
+  rotate: false
+  xy: 120, 70
+  size: 29, 28
+  orig: 33, 32
+  offset: 2, 2
+  index: -1
+eyes1_1
+  rotate: false
+  xy: 70, 2
+  size: 7, 7
+  orig: 11, 11
+  offset: 2, 2
+  index: -1
+eyes1_2
+  rotate: false
+  xy: 79, 2
+  size: 7, 7
+  orig: 11, 11
+  offset: 2, 2
+  index: -1
+eyes2_1
+  rotate: true
+  xy: 55, 63
+  size: 9, 7
+  orig: 13, 11
+  offset: 2, 2
+  index: -1
+eyes2_2
+  rotate: false
+  xy: 88, 2
+  size: 7, 7
+  orig: 11, 11
+  offset: 2, 2
+  index: -1
+eyes3_1
+  rotate: false
+  xy: 97, 2
+  size: 7, 7
+  orig: 11, 11
+  offset: 2, 2
+  index: -1
+eyes3_2
+  rotate: false
+  xy: 106, 2
+  size: 7, 7
+  orig: 11, 11
+  offset: 2, 2
+  index: -1
+footL
+  rotate: false
+  xy: 145, 20
+  size: 28, 20
+  orig: 32, 25
+  offset: 2, 3
+  index: -1
+footR
+  rotate: true
+  xy: 151, 42
+  size: 27, 21
+  orig: 31, 25
+  offset: 2, 2
+  index: -1
+hammer_1
+  rotate: false
+  xy: 106, 44
+  size: 12, 28
+  orig: 16, 32
+  offset: 2, 2
+  index: -1
+hammer_2
+  rotate: true
+  xy: 64, 11
+  size: 61, 39
+  orig: 63, 41
+  offset: 1, 2
+  index: -1
+hat
+  rotate: false
+  xy: 55, 74
+  size: 63, 68
+  orig: 63, 69
+  offset: 0, 1
+  index: -1
+head
+  rotate: true
+  xy: 2, 6
+  size: 55, 52
+  orig: 59, 56
+  offset: 2, 2
+  index: -1
+highlight
+  rotate: true
+  xy: 56, 2
+  size: 7, 12
+  orig: 11, 16
+  offset: 2, 2
+  index: -1
+nose
+  rotate: false
+  xy: 106, 30
+  size: 12, 12
+  orig: 16, 16
+  offset: 2, 2
+  index: -1

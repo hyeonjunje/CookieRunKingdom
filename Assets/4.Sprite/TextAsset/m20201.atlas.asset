@@ -1,0 +1,181 @@
+
+m20201.png
+size: 1728,1048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+CaveBroken1
+  rotate: true
+  xy: 1115, 456
+  size: 99, 76
+  orig: 99, 76
+  offset: 0, 0
+  index: -1
+CaveBroken2
+  rotate: true
+  xy: 264, 4
+  size: 317, 251
+  orig: 317, 251
+  offset: 0, 0
+  index: -1
+CaveBroken3
+  rotate: false
+  xy: 1619, 665
+  size: 106, 84
+  orig: 106, 84
+  offset: 0, 0
+  index: -1
+CaveBroken4
+  rotate: true
+  xy: 2, 323
+  size: 722, 433
+  orig: 722, 433
+  offset: 0, 0
+  index: -1
+CaveBroken5
+  rotate: true
+  xy: 1272, 37
+  size: 351, 92
+  orig: 351, 92
+  offset: 0, 0
+  index: -1
+CaveDamage_B1
+  rotate: false
+  xy: 1193, 390
+  size: 83, 70
+  orig: 83, 70
+  offset: 0, 0
+  index: -1
+CaveDamage_B3
+  rotate: false
+  xy: 1197, 463
+  size: 420, 286
+  orig: 420, 286
+  offset: 0, 0
+  index: -1
+CaveDamage_F1
+  rotate: false
+  xy: 437, 425
+  size: 78, 101
+  orig: 78, 101
+  offset: 0, 0
+  index: -1
+CaveDamage_F2
+  rotate: false
+  xy: 978, 385
+  size: 93, 81
+  orig: 93, 81
+  offset: 0, 0
+  index: -1
+CaveDamage_F3
+  rotate: false
+  xy: 1126, 404
+  size: 61, 50
+  orig: 61, 50
+  offset: 0, 0
+  index: -1
+CaveDamage_F3_2
+  rotate: false
+  xy: 978, 468
+  size: 135, 87
+  orig: 135, 87
+  offset: 0, 0
+  index: -1
+CaveDamage_F4
+  rotate: false
+  xy: 1619, 462
+  size: 101, 101
+  orig: 101, 101
+  offset: 0, 0
+  index: -1
+CaveDamage_F5
+  rotate: true
+  xy: 978, 23
+  size: 360, 292
+  orig: 360, 292
+  offset: 0, 0
+  index: -1
+CaveDamage_F6
+  rotate: true
+  xy: 517, 17
+  size: 509, 459
+  orig: 509, 459
+  offset: 0, 0
+  index: -1
+Cave_B1
+  rotate: true
+  xy: 901, 557
+  size: 488, 294
+  orig: 488, 294
+  offset: 0, 0
+  index: -1
+Cave_B2
+  rotate: false
+  xy: 1459, 97
+  size: 83, 83
+  orig: 83, 83
+  offset: 0, 0
+  index: -1
+Cave_B3
+  rotate: false
+  xy: 1197, 751
+  size: 488, 294
+  orig: 488, 294
+  offset: 0, 0
+  index: -1
+Cave_F1
+  rotate: true
+  xy: 437, 349
+  size: 74, 78
+  orig: 74, 78
+  offset: 0, 0
+  index: -1
+Cave_F2
+  rotate: false
+  xy: 1366, 88
+  size: 91, 92
+  orig: 91, 92
+  offset: 0, 0
+  index: -1
+Cave_F3
+  rotate: false
+  xy: 1073, 393
+  size: 51, 61
+  orig: 51, 61
+  offset: 0, 0
+  index: -1
+Cave_F3_2
+  rotate: true
+  xy: 1619, 565
+  size: 98, 103
+  orig: 98, 103
+  offset: 0, 0
+  index: -1
+Cave_F4
+  rotate: true
+  xy: 1366, 3
+  size: 83, 91
+  orig: 83, 91
+  offset: 0, 0
+  index: -1
+Cave_F5
+  rotate: true
+  xy: 2, 2
+  size: 319, 260
+  orig: 319, 260
+  offset: 0, 0
+  index: -1
+Cave_F6
+  rotate: true
+  xy: 437, 528
+  size: 517, 462
+  orig: 517, 462
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 1366, 182
+  size: 346, 278
+  orig: 346, 278
+  offset: 0, 0
+  index: -1

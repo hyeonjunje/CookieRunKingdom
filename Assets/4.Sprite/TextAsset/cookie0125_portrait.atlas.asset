@@ -1,0 +1,188 @@
+
+cookie0125_portrait.png
+size: 2020,696
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Butterfly
+  rotate: true
+  xy: 1021, 216
+  size: 66, 62
+  orig: 66, 62
+  offset: 0, 0
+  index: -1
+Butterfly_light
+  rotate: false
+  xy: 1619, 197
+  size: 151, 148
+  orig: 151, 148
+  offset: 0, 0
+  index: -1
+arm_L
+  rotate: true
+  xy: 1596, 16
+  size: 179, 99
+  orig: 179, 109
+  offset: 0, 10
+  index: -1
+arm_R
+  rotate: false
+  xy: 1424, 335
+  size: 193, 124
+  orig: 210, 124
+  offset: 17, 0
+  index: -1
+body_1
+  rotate: true
+  xy: 1018, 10
+  size: 200, 256
+  orig: 200, 256
+  offset: 0, 0
+  index: -1
+body_2
+  rotate: true
+  xy: 111, 14
+  size: 45, 177
+  orig: 45, 177
+  offset: 0, 0
+  index: -1
+body_3
+  rotate: false
+  xy: 1775, 175
+  size: 190, 181
+  orig: 190, 181
+  offset: 0, 0
+  index: -1
+eyes1
+  rotate: false
+  xy: 769, 212
+  size: 250, 70
+  orig: 250, 113
+  offset: 0, 43
+  index: -1
+eyes2
+  rotate: false
+  xy: 1085, 212
+  size: 200, 113
+  orig: 200, 113
+  offset: 0, 0
+  index: -1
+eyeshadow
+  rotate: false
+  xy: 2, 2
+  size: 107, 57
+  orig: 220, 57
+  offset: 0, 0
+  index: -1
+hair_back
+  rotate: true
+  xy: 2, 61
+  size: 633, 466
+  orig: 633, 466
+  offset: 0, 0
+  index: -1
+hair_back2
+  rotate: true
+  xy: 1424, 461
+  size: 233, 180
+  orig: 609, 333
+  offset: 0, 0
+  index: -1
+hand_L
+  rotate: true
+  xy: 1697, 61
+  size: 112, 78
+  orig: 112, 78
+  offset: 0, 0
+  index: -1
+hand_R
+  rotate: true
+  xy: 1777, 62
+  size: 111, 85
+  orig: 111, 85
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 1287, 4
+  size: 321, 307
+  orig: 321, 307
+  offset: 0, 0
+  index: -1
+hood_L
+  rotate: true
+  xy: 1798, 358
+  size: 155, 214
+  orig: 155, 214
+  offset: 0, 0
+  index: -1
+hood_R
+  rotate: true
+  xy: 769, 284
+  size: 410, 312
+  orig: 410, 312
+  offset: 0, 0
+  index: -1
+hood_back
+  rotate: true
+  xy: 470, 207
+  size: 487, 297
+  orig: 487, 297
+  offset: 0, 0
+  index: -1
+horn_L
+  rotate: true
+  xy: 470, 2
+  size: 203, 393
+  orig: 204, 393
+  offset: 1, 0
+  index: -1
+horn_R
+  rotate: false
+  xy: 1083, 327
+  size: 339, 367
+  orig: 339, 368
+  offset: 0, 0
+  index: -1
+leaf_L
+  rotate: true
+  xy: 1619, 347
+  size: 118, 154
+  orig: 118, 155
+  offset: 0, 1
+  index: -1
+leaf_L2
+  rotate: false
+  xy: 1606, 467
+  size: 190, 227
+  orig: 190, 227
+  offset: 0, 0
+  index: -1
+leaf_R
+  rotate: true
+  xy: 1864, 94
+  size: 79, 96
+  orig: 167, 97
+  offset: 87, 0
+  index: -1
+leaf_R2
+  rotate: true
+  xy: 1798, 515
+  size: 179, 219
+  orig: 179, 219
+  offset: 0, 0
+  index: -1
+leg
+  rotate: false
+  xy: 865, 9
+  size: 151, 201
+  orig: 151, 287
+  offset: 0, 0
+  index: -1
+neck
+  rotate: true
+  xy: 1864, 2
+  size: 90, 79
+  orig: 90, 79
+  offset: 0, 0
+  index: -1

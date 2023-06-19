@@ -1,0 +1,132 @@
+
+m10428.png
+size: 316,280
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body
+  rotate: false
+  xy: 2, 31
+  size: 88, 122
+  orig: 88, 122
+  offset: 0, 0
+  index: -1
+cream
+  rotate: false
+  xy: 172, 219
+  size: 109, 59
+  orig: 109, 59
+  offset: 0, 0
+  index: -1
+cream_back
+  rotate: false
+  xy: 2, 2
+  size: 88, 27
+  orig: 88, 27
+  offset: 0, 0
+  index: -1
+earL
+  rotate: false
+  xy: 283, 192
+  size: 29, 34
+  orig: 29, 34
+  offset: 0, 0
+  index: -1
+earR
+  rotate: true
+  xy: 257, 8
+  size: 37, 33
+  orig: 37, 33
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 92, 97
+  size: 67, 57
+  orig: 67, 57
+  offset: 0, 0
+  index: -1
+eye1
+  rotate: false
+  xy: 260, 47
+  size: 50, 32
+  orig: 50, 32
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: false
+  xy: 191, 73
+  size: 67, 53
+  orig: 67, 53
+  offset: 0, 0
+  index: -1
+eyebrowUp
+  rotate: false
+  xy: 191, 73
+  size: 67, 53
+  orig: 67, 53
+  offset: 0, 0
+  index: -1
+eyeball
+  rotate: false
+  xy: 161, 97
+  size: 15, 29
+  orig: 15, 29
+  offset: 0, 0
+  index: -1
+eyebrowDown
+  rotate: true
+  xy: 283, 228
+  size: 50, 31
+  orig: 50, 32
+  offset: 0, 1
+  index: -1
+eyeclose
+  rotate: true
+  xy: 273, 127
+  size: 63, 41
+  orig: 63, 41
+  offset: 0, 0
+  index: -1
+hair1
+  rotate: false
+  xy: 92, 3
+  size: 97, 92
+  orig: 97, 92
+  offset: 0, 0
+  index: -1
+hair2
+  rotate: false
+  xy: 191, 7
+  size: 64, 64
+  orig: 64, 64
+  offset: 0, 0
+  index: -1
+hair3
+  rotate: true
+  xy: 260, 81
+  size: 44, 50
+  orig: 44, 50
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 172, 128
+  size: 89, 99
+  orig: 89, 99
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 82, 156
+  size: 88, 122
+  orig: 88, 122
+  offset: 0, 0
+  index: -1
+stool
+  rotate: true
+  xy: 2, 155
+  size: 123, 78
+  orig: 123, 78
+  offset: 0, 0
+  index: -1

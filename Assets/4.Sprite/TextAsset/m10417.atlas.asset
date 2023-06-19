@@ -1,0 +1,181 @@
+
+m10417.png
+size: 484,524
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armL
+  rotate: true
+  xy: 388, 240
+  size: 113, 80
+  orig: 113, 80
+  offset: 0, 0
+  index: -1
+armL_drop1
+  rotate: true
+  xy: 451, 57
+  size: 35, 29
+  orig: 35, 29
+  offset: 0, 0
+  index: -1
+armL_drop2
+  rotate: false
+  xy: 132, 146
+  size: 39, 49
+  orig: 39, 50
+  offset: 0, 1
+  index: -1
+armL_drop3
+  rotate: false
+  xy: 346, 347
+  size: 40, 67
+  orig: 40, 67
+  offset: 0, 0
+  index: -1
+armR_1
+  rotate: true
+  xy: 280, 16
+  size: 84, 95
+  orig: 84, 95
+  offset: 0, 0
+  index: -1
+armR_2
+  rotate: true
+  xy: 322, 102
+  size: 85, 53
+  orig: 85, 53
+  offset: 0, 0
+  index: -1
+armR_drop1
+  rotate: false
+  xy: 280, 126
+  size: 38, 41
+  orig: 38, 41
+  offset: 0, 0
+  index: -1
+armR_drop2
+  rotate: false
+  xy: 346, 285
+  size: 37, 60
+  orig: 37, 60
+  offset: 0, 0
+  index: -1
+arm_drop
+  rotate: false
+  xy: 451, 4
+  size: 25, 25
+  orig: 25, 25
+  offset: 0, 0
+  index: -1
+body1
+  rotate: true
+  xy: 377, 2
+  size: 90, 72
+  orig: 90, 72
+  offset: 0, 0
+  index: -1
+body2
+  rotate: false
+  xy: 217, 6
+  size: 55, 62
+  orig: 55, 62
+  offset: 0, 0
+  index: -1
+cloth1
+  rotate: true
+  xy: 393, 355
+  size: 165, 85
+  orig: 165, 85
+  offset: 0, 0
+  index: -1
+cloth2
+  rotate: false
+  xy: 198, 288
+  size: 146, 126
+  orig: 146, 126
+  offset: 0, 0
+  index: -1
+cloth3L
+  rotate: true
+  xy: 174, 169
+  size: 117, 146
+  orig: 117, 146
+  offset: 0, 0
+  index: -1
+cloth3R
+  rotate: true
+  xy: 2, 197
+  size: 103, 170
+  orig: 103, 170
+  offset: 0, 0
+  index: -1
+cream
+  rotate: false
+  xy: 322, 189
+  size: 59, 94
+  orig: 59, 94
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 57, 15
+  size: 59, 50
+  orig: 59, 50
+  offset: 0, 0
+  index: -1
+eye2
+  rotate: true
+  xy: 2, 9
+  size: 56, 53
+  orig: 56, 53
+  offset: 0, 0
+  index: -1
+hat_bottom
+  rotate: false
+  xy: 2, 302
+  size: 194, 112
+  orig: 194, 112
+  offset: 0, 0
+  index: -1
+hat_top
+  rotate: false
+  xy: 383, 94
+  size: 95, 144
+  orig: 95, 144
+  offset: 0, 0
+  index: -1
+head
+  rotate: false
+  xy: 173, 70
+  size: 105, 97
+  orig: 105, 97
+  offset: 0, 0
+  index: -1
+weapon
+  rotate: true
+  xy: 2, 416
+  size: 104, 389
+  orig: 104, 389
+  offset: 0, 0
+  index: -1
+weapon_2
+  rotate: true
+  xy: 451, 31
+  size: 24, 28
+  orig: 28, 32
+  offset: 2, 2
+  index: -1
+weapon_3
+  rotate: true
+  xy: 132, 8
+  size: 60, 83
+  orig: 60, 83
+  offset: 0, 0
+  index: -1
+weapon_fire_light
+  rotate: false
+  xy: 2, 67
+  size: 128, 128
+  orig: 132, 132
+  offset: 2, 2
+  index: -1

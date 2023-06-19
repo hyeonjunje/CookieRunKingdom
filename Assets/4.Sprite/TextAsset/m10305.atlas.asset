@@ -1,0 +1,146 @@
+
+m10305.png
+size: 388,144
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+body1_1
+  rotate: false
+  xy: 230, 7
+  size: 52, 41
+  orig: 52, 41
+  offset: 0, 0
+  index: -1
+body1_2
+  rotate: true
+  xy: 215, 50
+  size: 92, 64
+  orig: 92, 64
+  offset: 0, 0
+  index: -1
+body_2
+  rotate: true
+  xy: 144, 50
+  size: 92, 69
+  orig: 92, 69
+  offset: 0, 0
+  index: -1
+face1_1
+  rotate: false
+  xy: 334, 14
+  size: 25, 34
+  orig: 25, 34
+  offset: 0, 0
+  index: -1
+face1_2
+  rotate: true
+  xy: 38, 3
+  size: 39, 21
+  orig: 39, 21
+  offset: 0, 0
+  index: -1
+face2_1
+  rotate: false
+  xy: 361, 38
+  size: 25, 32
+  orig: 25, 32
+  offset: 0, 0
+  index: -1
+face2_2
+  rotate: true
+  xy: 61, 3
+  size: 39, 21
+  orig: 39, 21
+  offset: 0, 0
+  index: -1
+face3
+  rotate: true
+  xy: 2, 2
+  size: 40, 34
+  orig: 40, 34
+  offset: 0, 0
+  index: -1
+head1
+  rotate: true
+  xy: 281, 72
+  size: 70, 51
+  orig: 70, 51
+  offset: 0, 0
+  index: -1
+head2
+  rotate: true
+  xy: 334, 72
+  size: 70, 51
+  orig: 70, 51
+  offset: 0, 0
+  index: -1
+jem1
+  rotate: true
+  xy: 284, 7
+  size: 41, 48
+  orig: 41, 48
+  offset: 0, 0
+  index: -1
+jem2
+  rotate: false
+  xy: 84, 6
+  size: 32, 36
+  orig: 32, 36
+  offset: 0, 0
+  index: -1
+leaf1
+  rotate: false
+  xy: 177, 2
+  size: 51, 46
+  orig: 51, 46
+  offset: 0, 0
+  index: -1
+leaf2
+  rotate: true
+  xy: 118, 2
+  size: 41, 57
+  orig: 41, 57
+  offset: 0, 0
+  index: -1
+neck1
+  rotate: true
+  xy: 2, 44
+  size: 98, 88
+  orig: 98, 88
+  offset: 0, 0
+  index: -1
+neck2
+  rotate: false
+  xy: 92, 45
+  size: 50, 97
+  orig: 50, 97
+  offset: 0, 0
+  index: -1
+tongue1_1
+  rotate: false
+  xy: 281, 50
+  size: 28, 20
+  orig: 28, 20
+  offset: 0, 0
+  index: -1
+tongue1_2
+  rotate: false
+  xy: 334, 4
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+tongue2_2
+  rotate: false
+  xy: 334, 4
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+tongue2_1
+  rotate: false
+  xy: 311, 50
+  size: 28, 20
+  orig: 28, 20
+  offset: 0, 0
+  index: -1

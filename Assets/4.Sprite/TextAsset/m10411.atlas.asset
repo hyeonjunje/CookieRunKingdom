@@ -1,0 +1,132 @@
+
+m10411.png
+size: 760,84
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Pupils
+  rotate: true
+  xy: 464, 6
+  size: 14, 27
+  orig: 14, 27
+  offset: 0, 0
+  index: -1
+Pupils right
+  rotate: false
+  xy: 445, 2
+  size: 17, 18
+  orig: 17, 18
+  offset: 0, 0
+  index: -1
+blueberry back
+  rotate: true
+  xy: 2, 2
+  size: 80, 81
+  orig: 80, 81
+  offset: 0, 0
+  index: -1
+blueberry left
+  rotate: true
+  xy: 85, 2
+  size: 80, 81
+  orig: 80, 81
+  offset: 0, 0
+  index: -1
+blueberry right
+  rotate: false
+  xy: 168, 4
+  size: 85, 78
+  orig: 85, 78
+  offset: 0, 0
+  index: -1
+eye die
+  rotate: true
+  xy: 714, 46
+  size: 36, 44
+  orig: 36, 44
+  offset: 0, 0
+  index: -1
+eye inactive
+  rotate: true
+  xy: 488, 25
+  size: 57, 49
+  orig: 57, 49
+  offset: 0, 0
+  index: -1
+eye left
+  rotate: false
+  xy: 575, 27
+  size: 52, 55
+  orig: 52, 55
+  offset: 0, 0
+  index: -1
+eyeball
+  rotate: false
+  xy: 376, 15
+  size: 67, 67
+  orig: 67, 68
+  offset: 0, 1
+  index: -1
+eyelashes
+  rotate: false
+  xy: 322, 7
+  size: 52, 75
+  orig: 52, 75
+  offset: 0, 0
+  index: -1
+eyelashes right
+  rotate: true
+  xy: 629, 34
+  size: 48, 42
+  orig: 48, 42
+  offset: 0, 0
+  index: -1
+leaf 1
+  rotate: false
+  xy: 255, 7
+  size: 65, 75
+  orig: 65, 75
+  offset: 0, 0
+  index: -1
+leaf 2
+  rotate: false
+  xy: 445, 22
+  size: 41, 60
+  orig: 41, 60
+  offset: 0, 0
+  index: -1
+twig 1
+  rotate: true
+  xy: 629, 3
+  size: 29, 82
+  orig: 29, 82
+  offset: 0, 0
+  index: -1
+twig 2
+  rotate: false
+  xy: 714, 3
+  size: 41, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+twig 3
+  rotate: false
+  xy: 539, 26
+  size: 34, 56
+  orig: 34, 56
+  offset: 0, 0
+  index: -1
+twig 4
+  rotate: false
+  xy: 673, 35
+  size: 39, 47
+  orig: 39, 47
+  offset: 0, 0
+  index: -1
+twig 5
+  rotate: true
+  xy: 539, 2
+  size: 22, 54
+  orig: 22, 54
+  offset: 0, 0
+  index: -1

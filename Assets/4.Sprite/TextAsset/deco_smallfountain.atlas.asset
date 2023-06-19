@@ -1,0 +1,75 @@
+
+deco_smallfountain.png
+size: 468,140
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+smallfountain_00
+  rotate: false
+  xy: 2, 3
+  size: 228, 133
+  orig: 232, 137
+  offset: 2, 2
+  index: -1
+smallfountain_01
+  rotate: false
+  xy: 232, 62
+  size: 127, 74
+  orig: 131, 78
+  offset: 2, 2
+  index: -1
+smallfountain_02
+  rotate: false
+  xy: 232, 16
+  size: 74, 44
+  orig: 78, 48
+  offset: 2, 2
+  index: -1
+smallfountain_03
+  rotate: false
+  xy: 361, 67
+  size: 103, 69
+  orig: 107, 73
+  offset: 2, 2
+  index: -1
+smallfountain_04
+  rotate: false
+  xy: 361, 2
+  size: 63, 63
+  orig: 67, 67
+  offset: 2, 2
+  index: -1
+smallfountain_06
+  rotate: false
+  xy: 319, 34
+  size: 7, 7
+  orig: 11, 11
+  offset: 2, 2
+  index: -1
+smallfountain_07
+  rotate: false
+  xy: 308, 26
+  size: 9, 15
+  orig: 13, 18
+  offset: 2, 1
+  index: -1
+smallfountain_08
+  rotate: false
+  xy: 308, 43
+  size: 10, 17
+  orig: 13, 18
+  offset: 2, 1
+  index: -1
+
+deco_smallfountain2.png
+size: 24,292
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+water/water
+  rotate: false
+  xy: 2, 2
+  size: 18, 286
+  orig: 18, 286
+  offset: 0, 0
+  index: -1

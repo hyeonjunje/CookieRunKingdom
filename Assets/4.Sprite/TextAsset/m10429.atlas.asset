@@ -1,0 +1,48 @@
+
+m10429.png
+size: 296,260
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+berry
+  rotate: true
+  xy: 215, 188
+  size: 69, 67
+  orig: 69, 67
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 2, 139
+  size: 118, 211
+  orig: 118, 211
+  offset: 0, 0
+  index: -1
+cream
+  rotate: true
+  xy: 215, 66
+  size: 120, 62
+  orig: 120, 62
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 179, 98
+  size: 34, 39
+  orig: 34, 39
+  offset: 0, 0
+  index: -1
+head_cream
+  rotate: true
+  xy: 2, 5
+  size: 132, 175
+  orig: 132, 175
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 179, 2
+  size: 115, 62
+  orig: 115, 62
+  offset: 0, 0
+  index: -1

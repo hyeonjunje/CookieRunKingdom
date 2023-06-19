@@ -1,0 +1,167 @@
+
+cookie0040_portrait.png
+size: 1844,932
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: false
+  xy: 1632, 567
+  size: 199, 71
+  orig: 199, 71
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: false
+  xy: 1629, 106
+  size: 186, 169
+  orig: 186, 169
+  offset: 0, 0
+  index: -1
+body
+  rotate: true
+  xy: 1632, 640
+  size: 288, 210
+  orig: 288, 210
+  offset: 0, 0
+  index: -1
+eye_L
+  rotate: true
+  xy: 297, 27
+  size: 116, 106
+  orig: 116, 106
+  offset: 0, 0
+  index: -1
+eye_R
+  rotate: false
+  xy: 1629, 22
+  size: 79, 82
+  orig: 79, 82
+  offset: 0, 0
+  index: -1
+flower
+  rotate: false
+  xy: 135, 6
+  size: 160, 137
+  orig: 169, 137
+  offset: 9, 0
+  index: -1
+flower_leaf
+  rotate: false
+  xy: 405, 34
+  size: 99, 109
+  orig: 99, 109
+  offset: 0, 0
+  index: -1
+hair_front
+  rotate: false
+  xy: 1082, 23
+  size: 347, 237
+  orig: 365, 237
+  offset: 0, 0
+  index: -1
+hair_light
+  rotate: true
+  xy: 1227, 536
+  size: 64, 88
+  orig: 64, 88
+  offset: 0, 0
+  index: -1
+hairt_back
+  rotate: true
+  xy: 647, 262
+  size: 666, 372
+  orig: 666, 384
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 1632, 277
+  size: 288, 195
+  orig: 288, 195
+  offset: 0, 0
+  index: -1
+lance
+  rotate: true
+  xy: 417, 217
+  size: 711, 228
+  orig: 711, 228
+  offset: 0, 0
+  index: -1
+leg
+  rotate: false
+  xy: 717, 7
+  size: 363, 253
+  orig: 363, 253
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 417, 148
+  size: 67, 57
+  orig: 67, 57
+  offset: 0, 0
+  index: -1
+tiger_arm_01
+  rotate: false
+  xy: 1317, 279
+  size: 313, 321
+  orig: 313, 321
+  offset: 0, 0
+  index: -1
+tiger_arm_02
+  rotate: true
+  xy: 506, 2
+  size: 213, 209
+  orig: 213, 209
+  offset: 0, 0
+  index: -1
+tiger_body
+  rotate: true
+  xy: 2, 145
+  size: 783, 413
+  orig: 783, 413
+  offset: 0, 0
+  index: -1
+tiger_ear
+  rotate: false
+  xy: 2, 5
+  size: 131, 138
+  orig: 131, 138
+  offset: 0, 0
+  index: -1
+tiger_face
+  rotate: false
+  xy: 1464, 736
+  size: 152, 192
+  orig: 152, 192
+  offset: 0, 0
+  index: -1
+tiger_leg_01
+  rotate: false
+  xy: 1227, 602
+  size: 235, 326
+  orig: 235, 326
+  offset: 0, 0
+  index: -1
+tiger_leg_02
+  rotate: false
+  xy: 1431, 2
+  size: 196, 275
+  orig: 196, 275
+  offset: 0, 0
+  index: -1
+tiger_pattern
+  rotate: true
+  xy: 1021, 534
+  size: 394, 204
+  orig: 394, 204
+  offset: 0, 0
+  index: -1
+tiger_tail
+  rotate: false
+  xy: 1021, 262
+  size: 279, 270
+  orig: 279, 270
+  offset: 0, 0
+  index: -1

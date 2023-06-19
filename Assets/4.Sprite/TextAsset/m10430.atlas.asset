@@ -1,0 +1,118 @@
+
+m10430.png
+size: 648,296
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+back
+  rotate: false
+  xy: 333, 128
+  size: 152, 165
+  orig: 152, 165
+  offset: 0, 0
+  index: -1
+berry1
+  rotate: true
+  xy: 205, 11
+  size: 63, 60
+  orig: 63, 60
+  offset: 0, 0
+  index: -1
+berry2
+  rotate: true
+  xy: 267, 35
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+berry3
+  rotate: true
+  xy: 325, 35
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+berry4
+  rotate: true
+  xy: 487, 128
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+berry5
+  rotate: true
+  xy: 545, 128
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+berry6
+  rotate: true
+  xy: 586, 234
+  size: 59, 56
+  orig: 59, 56
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 2, 5
+  size: 129, 288
+  orig: 129, 288
+  offset: 0, 0
+  index: -1
+crown
+  rotate: false
+  xy: 133, 2
+  size: 70, 66
+  orig: 70, 66
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 586, 190
+  size: 52, 42
+  orig: 53, 42
+  offset: 1, 0
+  index: -1
+head
+  rotate: true
+  xy: 544, 24
+  size: 102, 101
+  orig: 102, 101
+  offset: 0, 0
+  index: -1
+melt
+  rotate: true
+  xy: 487, 189
+  size: 104, 97
+  orig: 104, 97
+  offset: 0, 0
+  index: -1
+melt_back
+  rotate: true
+  xy: 201, 76
+  size: 18, 56
+  orig: 18, 56
+  offset: 0, 0
+  index: -1
+neck
+  rotate: false
+  xy: 383, 2
+  size: 159, 124
+  orig: 159, 124
+  offset: 0, 0
+  index: -1
+wingL
+  rotate: false
+  xy: 133, 70
+  size: 66, 223
+  orig: 66, 223
+  offset: 0, 0
+  index: -1
+wingR
+  rotate: false
+  xy: 201, 96
+  size: 130, 197
+  orig: 130, 197
+  offset: 0, 0
+  index: -1

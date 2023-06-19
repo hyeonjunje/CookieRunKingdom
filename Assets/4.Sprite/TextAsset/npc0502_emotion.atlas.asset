@@ -1,0 +1,13 @@
+
+npc0502_emotion.png
+size: 520,556
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+npc0502_emotion_hardmode_silhouette
+  rotate: false
+  xy: 2, 3
+  size: 515, 550
+  orig: 650, 550
+  offset: 82, 0
+  index: -1

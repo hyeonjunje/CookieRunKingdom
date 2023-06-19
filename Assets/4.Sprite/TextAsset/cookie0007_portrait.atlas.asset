@@ -1,0 +1,125 @@
+
+cookie0007_portrait.png
+size: 2016,400
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm1_1
+  rotate: false
+  xy: 1909, 155
+  size: 102, 110
+  orig: 103, 110
+  offset: 0, 0
+  index: -1
+arm1_2
+  rotate: false
+  xy: 812, 5
+  size: 109, 119
+  orig: 109, 120
+  offset: 0, 0
+  index: -1
+arm2_1
+  rotate: true
+  xy: 1909, 267
+  size: 131, 102
+  orig: 131, 102
+  offset: 0, 0
+  index: -1
+arm2_2
+  rotate: false
+  xy: 1526, 9
+  size: 193, 163
+  orig: 193, 163
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 353, 41
+  size: 317, 357
+  orig: 317, 357
+  offset: 0, 0
+  index: -1
+dagger
+  rotate: false
+  xy: 1721, 30
+  size: 216, 123
+  orig: 216, 123
+  offset: 0, 0
+  index: -1
+dagger_2
+  rotate: true
+  xy: 1687, 174
+  size: 224, 220
+  orig: 224, 221
+  offset: 0, 0
+  index: -1
+dagger_3
+  rotate: true
+  xy: 1464, 174
+  size: 224, 221
+  orig: 224, 221
+  offset: 0, 0
+  index: -1
+dagger_4
+  rotate: false
+  xy: 2, 15
+  size: 83, 18
+  orig: 83, 18
+  offset: 0, 0
+  index: -1
+eyes
+  rotate: false
+  xy: 923, 6
+  size: 235, 118
+  orig: 235, 118
+  offset: 0, 0
+  index: -1
+eyes_close
+  rotate: true
+  xy: 1226, 156
+  size: 242, 125
+  orig: 242, 125
+  offset: 0, 0
+  index: -1
+head
+  rotate: true
+  xy: 2, 35
+  size: 363, 349
+  orig: 363, 349
+  offset: 0, 0
+  index: -1
+lag_1
+  rotate: false
+  xy: 1160, 8
+  size: 148, 116
+  orig: 148, 116
+  offset: 0, 0
+  index: -1
+lag_2
+  rotate: true
+  xy: 672, 2
+  size: 122, 138
+  orig: 122, 138
+  offset: 0, 0
+  index: -1
+ribon_1
+  rotate: true
+  xy: 1310, 6
+  size: 148, 214
+  orig: 148, 214
+  offset: 0, 0
+  index: -1
+ribon_2
+  rotate: false
+  xy: 1353, 159
+  size: 109, 239
+  orig: 109, 239
+  offset: 0, 0
+  index: -1
+stick
+  rotate: true
+  xy: 672, 126
+  size: 272, 552
+  orig: 272, 552
+  offset: 0, 0
+  index: -1

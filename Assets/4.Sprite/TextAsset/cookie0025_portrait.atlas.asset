@@ -1,0 +1,146 @@
+
+cookie0025_portrait.png
+size: 2020,1088
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+L_arm
+  rotate: false
+  xy: 671, 33
+  size: 231, 148
+  orig: 231, 148
+  offset: 0, 0
+  index: -1
+L_hand
+  rotate: false
+  xy: 1925, 273
+  size: 84, 81
+  orig: 84, 81
+  offset: 0, 0
+  index: -1
+R_arm
+  rotate: true
+  xy: 1614, 36
+  size: 192, 144
+  orig: 192, 144
+  offset: 0, 0
+  index: -1
+R_hand
+  rotate: false
+  xy: 1925, 356
+  size: 88, 63
+  orig: 88, 63
+  offset: 0, 0
+  index: -1
+back_hat
+  rotate: false
+  xy: 2, 3
+  size: 321, 178
+  orig: 321, 178
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 1614, 806
+  size: 398, 279
+  orig: 398, 279
+  offset: 0, 0
+  index: -1
+eye
+  rotate: false
+  xy: 1760, 162
+  size: 72, 72
+  orig: 72, 72
+  offset: 0, 0
+  index: -1
+face
+  rotate: true
+  xy: 1344, 777
+  size: 308, 266
+  orig: 308, 266
+  offset: 0, 0
+  index: -1
+hair_01
+  rotate: false
+  xy: 1760, 621
+  size: 246, 183
+  orig: 246, 183
+  offset: 0, 0
+  index: -1
+hair_02
+  rotate: false
+  xy: 1925, 134
+  size: 78, 137
+  orig: 78, 137
+  offset: 0, 0
+  index: -1
+hat_01
+  rotate: true
+  xy: 1344, 230
+  size: 545, 303
+  orig: 545, 303
+  offset: 0, 0
+  index: -1
+hat_02
+  rotate: false
+  xy: 1649, 236
+  size: 274, 326
+  orig: 274, 326
+  offset: 0, 0
+  index: -1
+hood_01
+  rotate: false
+  xy: 325, 19
+  size: 344, 162
+  orig: 344, 162
+  offset: 0, 0
+  index: -1
+hood_02
+  rotate: true
+  xy: 1649, 564
+  size: 240, 109
+  orig: 240, 109
+  offset: 0, 0
+  index: -1
+stick_2
+  rotate: true
+  xy: 904, 21
+  size: 193, 708
+  orig: 193, 708
+  offset: 0, 0
+  index: -1
+stick_3
+  rotate: true
+  xy: 1925, 421
+  size: 95, 90
+  orig: 95, 90
+  offset: 0, 0
+  index: -1
+stick_4
+  rotate: false
+  xy: 1925, 518
+  size: 91, 101
+  orig: 91, 101
+  offset: 0, 0
+  index: -1
+thunder
+  rotate: true
+  xy: 694, 216
+  size: 869, 648
+  orig: 869, 648
+  offset: 0, 0
+  index: -1
+thunder_2
+  rotate: false
+  xy: 1760, 2
+  size: 104, 130
+  orig: 104, 130
+  offset: 0, 0
+  index: -1
+thunder_light
+  rotate: true
+  xy: 2, 183
+  size: 902, 690
+  orig: 902, 690
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,97 @@
+
+cookie0058_portrait.png
+size: 1064,1028
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arm_L
+  rotate: true
+  xy: 915, 157
+  size: 289, 123
+  orig: 289, 123
+  offset: 0, 0
+  index: -1
+arm_R
+  rotate: false
+  xy: 194, 127
+  size: 73, 73
+  orig: 111, 197
+  offset: 0, 124
+  index: -1
+doll_body
+  rotate: false
+  xy: 2, 202
+  size: 283, 367
+  orig: 283, 367
+  offset: 0, 0
+  index: -1
+doll_head
+  rotate: true
+  xy: 915, 2
+  size: 153, 140
+  orig: 153, 140
+  offset: 0, 0
+  index: -1
+face
+  rotate: false
+  xy: 287, 65
+  size: 236, 148
+  orig: 236, 148
+  offset: 0, 0
+  index: -1
+hair_01
+  rotate: false
+  xy: 2, 571
+  size: 580, 452
+  orig: 580, 570
+  offset: 0, 0
+  index: -1
+hair_02
+  rotate: true
+  xy: 584, 448
+  size: 575, 475
+  orig: 575, 475
+  offset: 0, 0
+  index: -1
+hair_shadow
+  rotate: true
+  xy: 525, 2
+  size: 100, 151
+  orig: 161, 200
+  offset: 61, 49
+  index: -1
+head
+  rotate: false
+  xy: 560, 104
+  size: 353, 342
+  orig: 353, 342
+  offset: 0, 0
+  index: -1
+mouth
+  rotate: true
+  xy: 194, 56
+  size: 69, 43
+  orig: 69, 43
+  offset: 0, 0
+  index: -1
+skirt_01
+  rotate: true
+  xy: 2, 19
+  size: 181, 190
+  orig: 181, 190
+  offset: 0, 0
+  index: -1
+skirt_02
+  rotate: true
+  xy: 287, 215
+  size: 354, 271
+  orig: 354, 271
+  offset: 0, 0
+  index: -1
+tear
+  rotate: false
+  xy: 525, 178
+  size: 32, 35
+  orig: 32, 35
+  offset: 0, 0
+  index: -1
