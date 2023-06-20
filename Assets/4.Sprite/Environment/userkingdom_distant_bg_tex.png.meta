@@ -391,48 +391,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: userkingdom_distant_bg_tex_7
-      rect:
-        serializedVersion: 2
-        x: 1084
-        y: 1760
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4bbf5371451796cd0800000000000000
-      internalID: -2564393906830181452
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: userkingdom_distant_bg_tex_8
-      rect:
-        serializedVersion: 2
-        x: 1088
-        y: 1752
-        width: 12
-        height: 20
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47e0076e758af3ad0800000000000000
-      internalID: -2720270554426765708
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: userkingdom_distant_bg_tex_9
       rect:
         serializedVersion: 2
@@ -449,27 +407,6 @@ TextureImporter:
       bones: []
       spriteID: f090aec87f6e4a870800000000000000
       internalID: 8693327131627358479
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: userkingdom_distant_bg_tex_10
-      rect:
-        serializedVersion: 2
-        x: 1044
-        y: 1733
-        width: 10
-        height: 14
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59d763284c90975c0800000000000000
-      internalID: -4217328836452909675
       vertices: []
       indices: 
       edges: []
@@ -622,27 +559,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: userkingdom_distant_bg_tex_18
-      rect:
-        serializedVersion: 2
-        x: 931
-        y: 1174
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84bc1a7df80b89390800000000000000
-      internalID: -7811299421829608632
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: userkingdom_distant_bg_tex_19
       rect:
         serializedVersion: 2
@@ -727,27 +643,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: userkingdom_distant_bg_tex_23
-      rect:
-        serializedVersion: 2
-        x: 854
-        y: 1092
-        width: 5
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9267b499292a3fa90800000000000000
-      internalID: -7281297422007175639
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: userkingdom_distant_bg_tex_24
       rect:
         serializedVersion: 2
@@ -827,27 +722,6 @@ TextureImporter:
       bones: []
       spriteID: f10e1bf767a17daf0800000000000000
       internalID: -371799347983949793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: userkingdom_distant_bg_tex_28
-      rect:
-        serializedVersion: 2
-        x: 1264
-        y: 880
-        width: 4
-        height: 4
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f16351a8a5c06400800000000000000
-      internalID: 315469301967708663
       vertices: []
       indices: 
       edges: []
@@ -1113,7 +987,7 @@ TextureImporter:
         width: 147
         height: 261
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1134,7 +1008,7 @@ TextureImporter:
         width: 141
         height: 376
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
