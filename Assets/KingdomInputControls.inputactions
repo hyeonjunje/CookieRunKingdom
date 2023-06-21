@@ -1,0 +1,121 @@
+{
+    "name": "KingdomInputControls",
+    "maps": [
+        {
+            "name": "New action map",
+            "id": "26141461-2228-4a51-8c83-470671d063a5",
+            "actions": [
+                {
+                    "name": "Touch0Contact",
+                    "type": "Value",
+                    "id": "7d0248a5-1170-4c24-8a70-b1af5d9b3bbc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Touch1Contact",
+                    "type": "Value",
+                    "id": "ce08273c-f98d-4bc4-92d8-fda8e8321a4b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Touch0Pos",
+                    "type": "Value",
+                    "id": "2eba8a1b-1d52-469d-8dbf-3443cb58914d",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Touch1Pos",
+                    "type": "Value",
+                    "id": "aedd85a1-0885-451f-8659-61931e7fc479",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Wheel",
+                    "type": "Value",
+                    "id": "1966e07b-0c43-4140-8564-abfdd8fdc0f2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "DragPC",
+                    "type": "Value",
+                    "id": "e1832357-00ec-400c-b4bf-e017b8953640",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TouchPC",
+                    "type": "Value",
+                    "id": "56fa4d56-2625-42f2-a0aa-7c33f0cea65e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "07a8e386-8bc2-42fe-bc9c-29d135957b54",
+                    "path": "",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch0Contact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fcf5b9a7-5f02-4cf7-b7f8-785fee305a78",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Wheel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "33aa76a7-a2e7-40a2-9a59-27c35d9f98e7",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "DragPC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "066dff01-b17b-4e9b-a9c1-47d31c40a137",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPC",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
