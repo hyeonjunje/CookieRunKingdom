@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: GridLower
+    uniqueID: 2048013629
+    locked: 0
+  - name: Grid
+    uniqueID: 2986532279
+    locked: 0
+  - name: GridUpper
+    uniqueID: 2405615477
+    locked: 0
