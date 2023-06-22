@@ -14,22 +14,30 @@ public class KingdomCameraController : MonoBehaviour
     [SerializeField] private float cameraZoomMin = 10f, cameraZoomMax = 20f;
     [SerializeField] private Vector4 cameraBorder = new Vector4(-9, 70, -40, 30);  // 하상좌우
 
-    /*[SerializeField] private float cameraMoveSpeed = 10f;
-    [SerializeField] private float cameraZoomSpeed = 0.1f;*/
-
     private int touchCount = 0;
     private Vector2 prevPos = Vector2.zero;
     private Camera cam;
+
+    // 카메라 이동 활성화 비활성화
+    private bool isActive = true;
 
     private void Awake()
     {
         cam = Camera.main;
     }
 
+    public void IsActive(bool flag)
+    {
+        isActive = flag;
+    }
+
     #region PC
 
     public void OnWheel(InputAction.CallbackContext value)
     {
+        if (!isActive)
+            return;
+
         if(value.performed)
         {
             float increment = value.ReadValue<Vector2>().y * cameraZoomSpeed;
@@ -52,7 +60,10 @@ public class KingdomCameraController : MonoBehaviour
 
     public void OnDragPC(InputAction.CallbackContext value)
     {
-        if(value.performed)
+        if (!isActive)
+            return;
+
+        if (value.performed)
         {
             if (touchCount < 1)
                 return;
@@ -158,9 +169,4 @@ public class KingdomCameraController : MonoBehaviour
         }
     }
     #endregion
-
-    private void Update()
-    {
-        // Debug.Log(touchCount);
-    }
 }
