@@ -5,20 +5,25 @@ using UnityEngine.InputSystem;
 
 public class PlacementSystem : MonoBehaviour
 {
+    [Header("LayerMask")]
     [SerializeField] private LayerMask placementLayermask;
     [SerializeField] private LayerMask buildingLayermask;
+
+    [Header("컴포넌트")]
     [SerializeField] private Grid grid;
-    [SerializeField] private Transform parent;
-    [SerializeField] private Transform buildingSelectUI;
     [SerializeField] private KingdomCameraController cameraController;
 
-    private Vector2 mousePosition = Vector2.zero;
-
-    private GameObject currentObject = null;
-    private Vector3 lastPosition;
-    private Camera cam;
+    [Header("트랜스폼")]
+    [SerializeField] private Transform parent;
+    [SerializeField] private Transform buildingSelectUI;
 
     private int touchCount = 0;
+
+    private Vector2 mousePosition = Vector2.zero;
+    private Vector3 lastPosition;
+    private GameObject currentObject = null;
+    private Camera cam;
+
 
     private void Awake()
     {
@@ -34,16 +39,8 @@ public class PlacementSystem : MonoBehaviour
             // 오브젝트가 선택되었다면
             if(currentObject != null && touchCount == 1)
             {
-                Vector3 mousePos = new Vector3(mousePosition.x, mousePosition.y, cam.nearClipPlane);
-                Ray ray = cam.ScreenPointToRay(mousePos);
-
-                Vector3 targetPos = Vector3.zero;
-                if (Physics.Raycast(ray, out RaycastHit hit, 100, placementLayermask))
-                {
-                    targetPos = hit.point;
-                }
-
-                Vector3Int gridPosition = grid.WorldToCell(targetPos);
+                Vector2 pos = cam.ScreenToWorldPoint(mousePosition);
+                Vector3Int gridPosition = grid.WorldToCell(pos);
                 currentObject.transform.localPosition = grid.CellToWorld(gridPosition);
                 lastPosition = currentObject.transform.localPosition;
             }
@@ -56,7 +53,6 @@ public class PlacementSystem : MonoBehaviour
         if (value.started)
         {
             cameraController.IsActive(true);
-
             touchCount++;
 
             Vector2 pos = cam.ScreenToWorldPoint(mousePosition);
@@ -71,7 +67,6 @@ public class PlacementSystem : MonoBehaviour
                 buildingSelectUI.SetParent(hit.transform);
                 buildingSelectUI.localPosition = Vector3.zero;
                 buildingSelectUI.localRotation = Quaternion.identity;
-
                 buildingSelectUI.localScale = Vector3.one * (cam.orthographicSize) / 10;
 
                 currentObject = hit.transform.gameObject;
@@ -85,13 +80,7 @@ public class PlacementSystem : MonoBehaviour
         else if(value.canceled)
         {
             cameraController.IsActive(true);
-
             touchCount--;
         }
-    }
-
-    private void Update()
-    {
-        Debug.Log(touchCount);
     }
 }

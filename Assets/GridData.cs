@@ -2,17 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridData : MonoBehaviour
+public class GridData
 {
-    // Start is called before the first frame update
-    void Start()
+    private int[,] gridData;
+
+    public GridData(int[,] gridData)
     {
-        
+        this.gridData = gridData;
     }
 
-    // Update is called once per frame
-    void Update()
+    public int CheckGrid(int x, int y)
     {
-        
+        return gridData[y, x];
     }
 }
+
