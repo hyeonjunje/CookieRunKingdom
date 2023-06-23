@@ -11,6 +11,9 @@ public class Tilemap : MonoBehaviour
     // Order in Layer
     public int order { get; private set; }
 
+    // 비어있는지
+    public bool isEmpty = true;
+
 
     private SpriteRenderer spriteRenderer;
 
@@ -25,6 +28,7 @@ public class Tilemap : MonoBehaviour
         this.x = x;
         this.y = y;
         this.order = order;
+        isEmpty = true;
 
         transform.localPosition = new Vector3(x, y, 0);
         transform.localRotation = Quaternion.identity;

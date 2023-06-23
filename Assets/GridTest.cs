@@ -43,9 +43,9 @@ public class GridTest : MonoBehaviour
         // 놓기
         if(value.performed)
         {
-            UnityEngine.Debug.Log("OnClick 중입니다.");
-
-            Instantiate(go, pos, Quaternion.identity);
+            // UnityEngine.Debug.Log("OnClick 중입니다.");
+            GameObject g = Instantiate(go, pos, Quaternion.identity);
+            UnityEngine.Debug.Log(grid.WorldToCell(g.transform.position).x + "  " + grid.WorldToCell(g.transform.position).y);
         }
     }
 

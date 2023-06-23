@@ -15,13 +15,13 @@ public class PlacementSystem : MonoBehaviour
 
     [Header("Æ®·£½ºÆû")]
     [SerializeField] private Transform parent;
-    [SerializeField] private Transform buildingSelectUI;
+    [SerializeField] private BuildingSelectUI buildingSelectUI;
 
     private int touchCount = 0;
 
     private Vector2 mousePosition = Vector2.zero;
     private Vector3 lastPosition;
-    private GameObject currentObject = null;
+    private Building currentObject = null;
     private Camera cam;
 
 
@@ -43,6 +43,8 @@ public class PlacementSystem : MonoBehaviour
                 Vector3Int gridPosition = grid.WorldToCell(pos);
                 currentObject.transform.localPosition = grid.CellToWorld(gridPosition);
                 lastPosition = currentObject.transform.localPosition;
+
+                currentObject.UpdatePreviewTile();
             }
         }
     }
@@ -62,14 +64,16 @@ public class PlacementSystem : MonoBehaviour
             if (hit.collider != null)
             {
                 cameraController.IsActive(false);
+                currentObject = hit.transform.gameObject.GetComponent<Building>();
 
                 buildingSelectUI.gameObject.SetActive(true);
-                buildingSelectUI.SetParent(hit.transform);
-                buildingSelectUI.localPosition = Vector3.zero;
-                buildingSelectUI.localRotation = Quaternion.identity;
-                buildingSelectUI.localScale = Vector3.one * (cam.orthographicSize) / 10;
+                buildingSelectUI.transform.SetParent(hit.transform);
+                buildingSelectUI.transform.localPosition = Vector3.zero;
+                buildingSelectUI.transform.localRotation = Quaternion.identity;
+                buildingSelectUI.transform.localScale = Vector3.one * (cam.orthographicSize) / 10;
+                buildingSelectUI.SetBuilding(currentObject);
 
-                currentObject = hit.transform.gameObject;
+                currentObject.OnClick();
             }
             else
             {
