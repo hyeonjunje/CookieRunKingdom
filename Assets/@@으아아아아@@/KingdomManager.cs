@@ -10,7 +10,8 @@ public class KingdomManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject _kingdomManagerUI;
     [SerializeField] private GameObject _kingdomEditUI;
-    
+    [SerializeField] private GameObject _kingdomCraftUI;
+
     [Header("ÄÄÆ÷³ÍÆ®")]
     [SerializeField] private BuildingSelectUI _buildingSelectUI;
     [SerializeField] private Grid _grid;

@@ -10,6 +10,8 @@ public class CameraControllData : ScriptableObject
     [SerializeField] private float _cameraZoomSpeed = 0.01f;
     [SerializeField] private float _cameraZoomMin = 10f, _cameraZoomMax = 20f;
     [SerializeField] private Vector4 _cameraBorder = new Vector4(-9, 70, -40, 30);
+    [SerializeField] private float _cameraBuildingZoom = 4.5f;
+    [SerializeField] private Vector3 _cameraBuildingZoomOffset = new Vector3(1, -0.5f, -10f);
 
 
     // 프로퍼티
