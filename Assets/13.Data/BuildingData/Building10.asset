@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: "\uB864\uCF00\uC774\uD06C \uACF5\uC791\uC18C"
   buildingSize: {x: 3, y: 3}
-  items:
-  - {fileID: 11400000, guid: 43df9081674c2344aab31c6154c15041, type: 2}
-  - {fileID: 11400000, guid: 447b750950aae954ab26c18727d1a645, type: 2}
-  - {fileID: 11400000, guid: 4ce1bc1f7f362dc4d87c45166d3c9a59, type: 2}
-  - {fileID: 11400000, guid: e69f27e7ca1939b4086c475d7fcea669, type: 2}
+  craftItems:
+  - {fileID: 11400000, guid: 3797439caf208c74eb2e73562cf006c0, type: 2}
+  - {fileID: 11400000, guid: 93090aae31fd1a348977f53f3030c508, type: 2}
+  - {fileID: 11400000, guid: fd8bc0c46be0c794ba74d22439f226fc, type: 2}
+  - {fileID: 11400000, guid: b617c04005eb0ec40811abc9a74f2532, type: 2}
