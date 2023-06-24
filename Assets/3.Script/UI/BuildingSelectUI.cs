@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class BuildingSelectUI : MonoBehaviour
 {
-    private Building currentBuilding;
+    private Building _currentBuilding;
+
+    [SerializeField] private GameObject buttonsParent;
 
     [Header("MyButtons")]
     [SerializeField] private MyButton exitButton;
@@ -24,20 +26,26 @@ public class BuildingSelectUI : MonoBehaviour
         infoButton.AddListener(ShowInfo);
     }
 
-    public void SetBuilding(Building currentBuilding)
+    public void SetBuilding(Building currentBuilding, Transform parent, float cameraOrthographicSize = 10f)
     {
-        this.currentBuilding = currentBuilding;
+        _currentBuilding = currentBuilding;
+
+        buttonsParent.SetActive(true);
+        transform.SetParent(parent);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        transform.localScale = Vector3.one * (cameraOrthographicSize) / 10;
     }
 
     public void ShowInfo()
     {
-        Debug.Log(currentBuilding.name);
+        Debug.Log(_currentBuilding.name);
     }
 
     public void ExitUI()
     {
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
-        gameObject.SetActive(false);
+        buttonsParent.SetActive(false);
     }
 
     public void StoreBuilding()
@@ -57,6 +65,6 @@ public class BuildingSelectUI : MonoBehaviour
 
     public void CheckBuilding()
     {
-        currentBuilding.PutBuilding();
+        _currentBuilding.PutBuilding();
     }
 }

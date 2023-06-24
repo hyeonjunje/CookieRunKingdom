@@ -25,7 +25,8 @@ public class InputHandler : MonoBehaviour
         if(rayHit.transform.gameObject.layer == LayerMask.NameToLayer("UI"))
         {
             MyButton button = rayHit.transform.GetComponent<MyButton>();
-            button.OnClick();
+            if(button != null)
+                button.OnClick();
         }
     }
 }
