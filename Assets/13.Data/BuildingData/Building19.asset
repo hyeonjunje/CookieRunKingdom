@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 467e03254e97021468009c4a075941dd, type: 3}
+  m_Name: Building19
+  m_EditorClassIdentifier: 
+  buildingName: "\uD401 \uB4DC \uD30C\uD2F0\uC138\uB9AC"
+  buildingSize: {x: 3, y: 3}
+  items:
+  - {fileID: 11400000, guid: 9343c1f769feb5c40aca5b6b929ffbe6, type: 2}
+  - {fileID: 11400000, guid: 2e7d939ef6017bd4f8538e34cbfe427f, type: 2}
+  - {fileID: 11400000, guid: 918d9712304c42340be7af90c2b4de90, type: 2}
