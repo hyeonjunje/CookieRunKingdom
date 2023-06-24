@@ -37,6 +37,11 @@ public class BuildingSelectUI : MonoBehaviour
         transform.localScale = Vector3.one * (cameraOrthographicSize) / 10;
     }
 
+    public void HideUI()
+    {
+        buttonsParent.SetActive(false);
+    }
+
     public void ShowInfo()
     {
         Debug.Log(_currentBuilding.name);

@@ -20,4 +20,6 @@ public class CameraControllData : ScriptableObject
     public float CameraZoomMin => _cameraZoomMin;
     public float CameraZoomMax => _cameraZoomMax;
     public Vector4 CameraBorder => _cameraBorder;
+    public float CameraBuildingZoom => _cameraBuildingZoom;
+    public Vector3 CameraBuildingZoomOffset => _cameraBuildingZoomOffset;
 }

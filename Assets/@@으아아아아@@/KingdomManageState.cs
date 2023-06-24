@@ -7,8 +7,10 @@ public class KingdomManageState : KingdomBaseState
 {
     private Building _currentBuilding = null;
 
+
     public KingdomManageState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
     {
+
     }
 
     private void Init()
@@ -21,12 +23,12 @@ public class KingdomManageState : KingdomBaseState
     public override void Enter()
     {
         Init();
-        _manager.KingdomManagerUI.SetActive(true);
+        UIManager.instance.PushUI(_manager.KingdomManagerUI);
     }
 
     public override void Exit()
     {
-        _manager.KingdomManagerUI.SetActive(false);
+        UIManager.instance.ClearUI();
     }
 
     public override void OnClick(InputAction.CallbackContext value)
@@ -47,6 +49,10 @@ public class KingdomManageState : KingdomBaseState
 
             if (_currentBuilding == null)
                 return;
+
+
+            _factory.kingdomCraftState.SetBuilding(_currentBuilding);
+            _factory.ChangeState(EKingdomState.Craft);
         }
 
         else if (value.canceled)

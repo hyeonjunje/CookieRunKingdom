@@ -5,7 +5,8 @@ using UnityEngine;
 public enum EKingdomState
 {
     Manage,
-    Edit
+    Edit,
+    Craft
 }
 
 public class KingdomStateFactory
@@ -14,13 +15,19 @@ public class KingdomStateFactory
 
     public KingdomBaseState CurrentKingdomState { get; private set; }
 
+    public KingdomManageState kingdomManageState { get; private set; }
+    public KingdomEditState kingdomEditState { get; private set; }
+    public KingdomCraftState kingdomCraftState { get; private set; }
+
     public KingdomStateFactory(KingdomManager kingdomManager)
     {
-        KingdomBaseState kingdomManageState = new KingdomManageState(this, kingdomManager);
-        KingdomBaseState kingdomEditState = new KingdomEditState(this, kingdomManager);
+        kingdomManageState = new KingdomManageState(this, kingdomManager);
+        kingdomEditState = new KingdomEditState(this, kingdomManager);
+        kingdomCraftState = new KingdomCraftState(this, kingdomManager);
 
         _dictionary[EKingdomState.Manage] = kingdomManageState;
         _dictionary[EKingdomState.Edit] = kingdomEditState;
+        _dictionary[EKingdomState.Craft] = kingdomCraftState;
 
         // 처음에는 관리 상태로 초기화
         ChangeState(EKingdomState.Manage);

@@ -10,6 +10,7 @@ public class KingdomManager : MonoBehaviour
     [Header("UI")]
     [SerializeField] private GameObject _kingdomManagerUI;
     [SerializeField] private GameObject _kingdomEditUI;
+    [SerializeField] private GameObject _backGroundUI;
     [SerializeField] private GameObject _kingdomCraftUI;
 
     [Header("컴포넌트")]
@@ -22,6 +23,8 @@ public class KingdomManager : MonoBehaviour
     // 프로퍼티
     public GameObject KingdomManagerUI => _kingdomManagerUI;
     public GameObject KingdomEditUI => _kingdomEditUI;
+    public GameObject KingdomBackGroundUI => _backGroundUI;
+    public GameObject KingdomCraftUI => _kingdomCraftUI;
     public BuildingSelectUI BuildingSelectUI => _buildingSelectUI;
     public Grid Grid => _grid;
     public CameraControllData CameraControllData => _cameraControllData;
