@@ -11,7 +11,7 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private GameObject _kingdomManagerUI;
     [SerializeField] private GameObject _kingdomEditUI;
     [SerializeField] private GameObject _backGroundUI;
-    [SerializeField] private GameObject _kingdomCraftUI;
+    [SerializeField] private CraftUI _kingdomCraftUI;
 
     [Header("ÄÄÆ÷³ÍÆ®")]
     [SerializeField] private BuildingSelectUI _buildingSelectUI;
@@ -24,7 +24,7 @@ public class KingdomManager : MonoBehaviour
     public GameObject KingdomManagerUI => _kingdomManagerUI;
     public GameObject KingdomEditUI => _kingdomEditUI;
     public GameObject KingdomBackGroundUI => _backGroundUI;
-    public GameObject KingdomCraftUI => _kingdomCraftUI;
+    public CraftUI KingdomCraftUI => _kingdomCraftUI;
     public BuildingSelectUI BuildingSelectUI => _buildingSelectUI;
     public Grid Grid => _grid;
     public CameraControllData CameraControllData => _cameraControllData;

@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    [SerializeField] private Vector2Int size;
+    [SerializeField] private BuildingData buildingData;
+    
     private List<SpriteRenderer> buildingPreviewTiles;
-
+    
     private Grid grid => GridManager.instance.Grid;
 
+    public BuildingData Data => buildingData;
+
     // 클릭 시 buildingPreviewTiles가 정해짐
-    public void OnClick()
+    public void OnClickEditMode()
     {
-        buildingPreviewTiles = BuildingPreviewTileObjectPool.instance.GetPreviewTile(size, transform);
+        buildingPreviewTiles = BuildingPreviewTileObjectPool.instance.GetPreviewTile(buildingData.BuildingSize, transform);
         RelocationTile();
         UpdatePreviewTile();
     }
@@ -38,7 +41,7 @@ public class Building : MonoBehaviour
         }
     }
 
-
+    // 건물 설치
     public void PutBuilding()
     {
         for(int i = 0; i < buildingPreviewTiles.Count; i++)
@@ -58,11 +61,11 @@ public class Building : MonoBehaviour
         float tileX = buildingPreviewTiles[0].transform.localScale.x / 2;
         float tileY = buildingPreviewTiles[0].transform.localScale.y / 4;
 
-        for (int y = 0; y < size.y; y++)
+        for (int y = 0; y < buildingData.BuildingSize.y; y++)
         {
-            for(int x = 0; x < size.x; x++)
+            for(int x = 0; x < buildingData.BuildingSize.x; x++)
             {
-                int index = x + size.y * y;
+                int index = x + buildingData.BuildingSize.y * y;
                 buildingPreviewTiles[index].transform.localPosition = offset + new Vector3(tileX * x, -tileY * x, 0f);
             }
             offset -= new Vector3(tileX, tileY, 0);

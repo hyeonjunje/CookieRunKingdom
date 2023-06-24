@@ -16,6 +16,7 @@ public class KingdomCraftState : KingdomBaseState
     public void SetBuilding(Building building)
     {
         _building = building;
+        _manager.KingdomCraftUI.SetCraft(building);
     }
 
     public override void Enter()
@@ -28,7 +29,7 @@ public class KingdomCraftState : KingdomBaseState
             .OnComplete(() =>
             {
                 _manager.KingdomBackGroundUI.SetActive(true);
-                UIManager.instance.PushUI(_manager.KingdomCraftUI);
+                UIManager.instance.PushUI(_manager.KingdomCraftUI.gameObject);
             });
     }
 
