@@ -11,9 +11,12 @@ public class ItemSlot : MonoBehaviour
     [SerializeField] private Image itemImage;
     [SerializeField] private TextMeshProUGUI itemCountText;
 
-    public void FillSlot()
+    public void FillSlot(ItemData item, int count)
     {
         itemUI.SetActive(true);
+
+        itemImage.sprite = item.ItemImage;
+        itemCountText.text = count.ToString();
     }
 
     public void ClearSlot()

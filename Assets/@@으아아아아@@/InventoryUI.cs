@@ -47,9 +47,10 @@ public class InventoryUI : BaseUI
         // 데이터베이스에서 가져와서 인벤토리에 적용해줘..
 
         // Test
-        for (int i = 0; i < 10; i++)
+        int index = 0;
+        foreach(var data in DataBaseManager.instance.MyDataBase.itemDataBase)
         {
-            inventoryItems[i].FillSlot();
+            inventoryItems[index++].FillSlot(data.Key, data.Value);
         }
     }
 }

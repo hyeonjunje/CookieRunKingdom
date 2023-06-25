@@ -10,9 +10,9 @@ public class CraftTypeResourceUI : CraftTypeUI
     [SerializeField] private TextMeshProUGUI craftResultAmount;
     [SerializeField] private TextMeshProUGUI craftCostText;
 
-    public override void Init(CraftData craftData)
+    public override void Init(CraftData craftData, System.Action<CraftData> action = null)
     {
-        base.Init(craftData);
+        base.Init(craftData, action);
 
         craftResultImage.sprite = craftData.CraftResult.ingredientItem.ItemImage;
         craftResultAmount.text = craftData.CraftResult.count.ToString();

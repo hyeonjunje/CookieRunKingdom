@@ -7,9 +7,9 @@ public class CraftTypeProductUI : CraftTypeUI
     [SerializeField] private CraftInGredientUI _craftInGredientUI;
     [SerializeField] private Transform _ingredientParent;
 
-    public override void Init(CraftData craftData)
+    public override void Init(CraftData craftData, System.Action<CraftData> action = null)
     {
-        base.Init(craftData);
+        base.Init(craftData, action);
 
         _ingredientParent.DestroyAllChild();
 

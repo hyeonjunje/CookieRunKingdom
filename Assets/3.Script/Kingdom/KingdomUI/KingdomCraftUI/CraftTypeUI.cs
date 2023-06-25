@@ -10,15 +10,20 @@ public class CraftTypeUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI craftItemName;
     [SerializeField] private TextMeshProUGUI craftTime;
 
-    public virtual void Init(CraftData craftData)
+    [SerializeField] private Button craftButton;
+
+    public virtual void Init(CraftData craftData, System.Action<CraftData> action = null)
     {
         craftItemImage.sprite = craftData.CraftImage;
         craftItemName.text = craftData.CraftName;
 
-        craftTime.text = GetTimeText(craftData.CraftTime);
+        craftTime.text = Utils.GetTimeText(craftData.CraftTime);
+
+        craftButton.onClick.RemoveAllListeners();
+        craftButton.onClick.AddListener(() => action?.Invoke(craftData));
     }
 
-    private string GetTimeText(float time)
+    /*private string GetTimeText(float time)
     {
         float hour = (int)time / 3600;
         time %= 3600;
@@ -36,5 +41,5 @@ public class CraftTypeUI : MonoBehaviour
         result += sec + "√ ";
 
         return result;
-    }
+    }*/
 }

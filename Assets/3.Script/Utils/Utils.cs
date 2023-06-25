@@ -37,4 +37,29 @@ public static class Utils
             }
         }
     }
+
+    /// <summary>
+    /// 초를 넣으면 시간 문자열로 반환해주는 메소드
+    /// </summary>
+    /// <param name="time">초</param>
+    /// <returns>초를 변환한 시간 문자열</returns>
+    public static string GetTimeText(float time)
+    {
+        float hour = (int)time / 3600;
+        time %= 3600;
+        float min = (int)time / 60;
+        time %= 60;
+        float sec = time;
+
+        string result = "";
+
+        if (hour != 0)
+            result += hour + "시간 ";
+        if (min != 0)
+            result += min + "분 ";
+
+        result += sec + "초";
+
+        return result;
+    }
 }

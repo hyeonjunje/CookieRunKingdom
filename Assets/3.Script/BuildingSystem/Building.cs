@@ -7,11 +7,13 @@ using Spine;
 public class Building : MonoBehaviour
 {
     [SerializeField] private BuildingData buildingData;
-    
+    [SerializeField] private List<CraftingItemData> craftingItemData = new List<CraftingItemData>();
+
     private List<SpriteRenderer> buildingPreviewTiles;
     
+    // 프로퍼티
     private Grid grid => GridManager.instance.Grid;
-
+    public List<CraftingItemData> CraftingItemData => craftingItemData;
     public BuildingData Data => buildingData;
 
     public void Highlighgt(bool flag)
