@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class CraftUI : MonoBehaviour
+public class CraftUI : BaseUI
 {
     [Header("Right")]
     [SerializeField] private Transform craftTypeParent;

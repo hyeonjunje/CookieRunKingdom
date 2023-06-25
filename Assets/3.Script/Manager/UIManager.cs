@@ -18,15 +18,32 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    private Stack<GameObject> uiStack = new Stack<GameObject>();
+    private Stack<BaseUI> uiStack = new Stack<BaseUI>();
 
-    public void PushUI(GameObject ui)
+    public void ShowPopUpUI(BaseUI ui)
+    {
+        uiStack.Push(ui);
+        uiStack.Peek().gameObject.SetActive(true);
+        uiStack.Peek().Show();
+    }
+
+    public void ExitPopUpUI()
     {
         if (uiStack.Count != 0)
-            uiStack.Peek().gameObject.SetActive(false);
+        {
+            uiStack.Peek().Hide();
+            uiStack.Pop();
+        }
+    }
+
+    public void PushUI(BaseUI ui)
+    {
+        if (uiStack.Count != 0)
+            uiStack.Peek().Hide();
 
         uiStack.Push(ui);
         uiStack.Peek().gameObject.SetActive(true);
+        uiStack.Peek().Show();
     }
 
     public void PopUI()
@@ -37,12 +54,13 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        uiStack.Peek().SetActive(false);
+        uiStack.Peek().Hide();
         uiStack.Pop();
 
         if(uiStack.Count != 0)
         {
-            uiStack.Peek().SetActive(true);
+            uiStack.Peek().gameObject.SetActive(true);
+            uiStack.Peek().Show();
         }
     }
 
@@ -50,7 +68,7 @@ public class UIManager : MonoBehaviour
     {
         while(uiStack.Count != 0)
         {
-            uiStack.Peek().SetActive(false);
+            uiStack.Peek().Hide();
             uiStack.Pop();
         }
     }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
+using Spine;
 
 public class Building : MonoBehaviour
 {
@@ -11,6 +13,12 @@ public class Building : MonoBehaviour
     private Grid grid => GridManager.instance.Grid;
 
     public BuildingData Data => buildingData;
+
+    public void Highlighgt(bool flag)
+    {
+        GetComponent<MeshRenderer>().sortingLayerID = flag ? 
+            SortingLayer.NameToID("GridUpper") : SortingLayer.NameToID("Default");
+    }
 
     // 클릭 시 buildingPreviewTiles가 정해짐
     public void OnClickEditMode()

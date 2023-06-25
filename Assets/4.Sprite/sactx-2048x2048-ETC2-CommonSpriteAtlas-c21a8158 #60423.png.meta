@@ -2204,12 +2204,12 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1475
-        y: 1336
+        y: 1342
         width: 96
-        height: 84
+        height: 73
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 29, y: 33, z: 28, w: 34}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -2602,13 +2602,13 @@ TextureImporter:
       name: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_99
       rect:
         serializedVersion: 2
-        x: 1519
-        y: 576
-        width: 431
-        height: 732
+        x: 1689
+        y: 586
+        width: 171
+        height: 171
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 47, y: 46, z: 41, w: 39}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -2854,13 +2854,13 @@ TextureImporter:
       name: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_111
       rect:
         serializedVersion: 2
-        x: 292
-        y: 474
-        width: 1204
-        height: 630
+        x: 1009
+        y: 527
+        width: 237
+        height: 146
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 58, y: 53, z: 53, w: 55}
       outline: []
       physicsShape: []
       tessellationDetail: 0
