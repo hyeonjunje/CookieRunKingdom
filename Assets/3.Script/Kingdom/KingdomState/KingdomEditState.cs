@@ -43,21 +43,47 @@ public class KingdomEditState : KingdomBaseState
 
         if (value.started)
         {
-            var rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
-            
-            if (!rayHit.collider)
+            // 현재 선택된 하우징 아이템이 있으면 그걸 설치해야 함
+            if(_manager.KingdomEditUI.CurrentHousingItemData)
             {
                 _currentBuilding = null;
-                return;
+
+                var rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Ground"));
+
+                if (!rayHit.collider)
+                    return;
+
+                // 선택된 하우징 아이템이 타일이라면
+                if(_manager.KingdomEditUI.CurrentHousingItemData.IsTile)
+                {
+                    Tilemap tile = rayHit.transform.GetComponent<Tilemap>();
+                    tile.SetSprite(_manager.KingdomEditUI.CurrentHousingItemData.HousingItemImage);
+                }
+                else
+                {
+                    Debug.Log("나중에 할 일~~");
+                }
             }
+            // 현재 선택된 하우징 아이템이 없다면
+            else
+            {
+                // 왕국에 설치된 빌딩을 눌렀을 때
+                var rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
 
-            _currentBuilding = rayHit.transform.GetComponent<Building>();
+                if (!rayHit.collider)
+                {
+                    _currentBuilding = null;
+                    return;
+                }
 
-            if (_currentBuilding == null)
-                return;
+                _currentBuilding = rayHit.transform.GetComponent<Building>();
 
-            _currentBuilding.OnClickEditMode();
-            _manager.BuildingSelectUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
+                if (_currentBuilding == null)
+                    return;
+
+                _currentBuilding.OnClickEditMode();
+                _manager.BuildingSelectUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
+            }
         }
 
         else if(value.canceled)
