@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Train : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class Train : MonoBehaviour
     {
         foreach(TrainCar trainCar in trainCars)
         {
-            trainCar.Init();
+            trainCar.Init(this);
         }
     }
 

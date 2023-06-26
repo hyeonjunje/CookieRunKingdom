@@ -10,13 +10,15 @@ public class TrainCar : MonoBehaviour
     [SerializeField] private Image trainCarImage;
     [SerializeField] private TextMeshProUGUI trainCarCapacity;
 
+    private Train _train;
     private ItemData _currentItemData = null;
     private int _amount = 0;
 
     public bool IsDone { get; private set; } = false;
 
-    public void Init()
+    public void Init(Train train)
     {
+        _train = train;
         _currentItemData = DataBaseManager.instance.AllItemData[Random.Range(0, DataBaseManager.instance.AllItemData.Length)];
         _amount = Random.Range(1, 5);
 
@@ -35,6 +37,8 @@ public class TrainCar : MonoBehaviour
             // 아이템 개수 빼주고
             DataBaseManager.instance.AddItem(_currentItemData, -_amount);
             trainCarImage.sprite = checkSprite;
+
+            _train.TrySendTrain();
         }
     }
 
