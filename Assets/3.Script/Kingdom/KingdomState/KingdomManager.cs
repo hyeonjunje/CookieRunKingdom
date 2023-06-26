@@ -12,7 +12,6 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private BaseUI _kingdomEditUI;
     [SerializeField] private GameObject _backGroundUI;
     [SerializeField] private CraftUI _kingdomCraftUI;
-    [SerializeField] private InventoryUI _inventoryUI;
 
     [Header("ÄÄÆ÷³ÍÆ®")]
     [SerializeField] private BuildingSelectUI _buildingSelectUI;

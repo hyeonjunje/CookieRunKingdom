@@ -8,6 +8,15 @@ TextureImporter:
   - first:
       213: -3223787600909741395
     second: sactx-2048x2048-ETC2-TownMapTileSprite-e541a0ae_1
+  - first:
+      213: -9115903687798562918
+    second: sactx-2048x2048-ETC2-TownMapTileSprite-e541a0ae_2
+  - first:
+      213: -2028797671115328891
+    second: sactx-2048x2048-ETC2-TownMapTileSprite-e541a0ae_3
+  - first:
+      213: 3418174783552970254
+    second: sactx-2048x2048-ETC2-TownMapTileSprite-e541a0ae_4
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -150,7 +159,7 @@ TextureImporter:
         width: 256
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,6 +167,69 @@ TextureImporter:
       bones: []
       spriteID: da25770e14ec243d0800000000000000
       internalID: -3223787600909741395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x2048-ETC2-TownMapTileSprite-e541a0ae_2
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 1435
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9fd712e4edcd7180800000000000000
+      internalID: -9115903687798562918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x2048-ETC2-TownMapTileSprite-e541a0ae_3
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 941
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582f704644348d3e0800000000000000
+      internalID: -2028797671115328891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x2048-ETC2-TownMapTileSprite-e541a0ae_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1158
+        width: 256
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e5fd9fadbcf6f20800000000000000
+      internalID: 3418174783552970254
       vertices: []
       indices: 
       edges: []
