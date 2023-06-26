@@ -13,6 +13,8 @@ public class TrainCar : MonoBehaviour
     private ItemData _currentItemData = null;
     private int _amount = 0;
 
+    public bool IsDone { get; private set; } = false;
+
     public void Init()
     {
         _currentItemData = DataBaseManager.instance.AllItemData[Random.Range(0, DataBaseManager.instance.AllItemData.Length)];
@@ -31,7 +33,7 @@ public class TrainCar : MonoBehaviour
         if(CheckMyItem(_currentItemData) >= _amount)
         {
             // 아이템 개수 빼주고
-            DataBaseManager.instance.AddItem(_currentItemData, -CheckMyItem(_currentItemData));
+            DataBaseManager.instance.AddItem(_currentItemData, -_amount);
             trainCarImage.sprite = checkSprite;
         }
     }

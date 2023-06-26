@@ -165,6 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7bfd40368cf22647a475773f0e6423d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checkSprite: {fileID: 2866642266328164313, guid: 23c2b1916d039924db720b6a0ab12ada, type: 3}
   trainCarImage: {fileID: 4312158491263021635}
   trainCarCapacity: {fileID: 4312158492381178069}
 --- !u!1 &4312158492381178071

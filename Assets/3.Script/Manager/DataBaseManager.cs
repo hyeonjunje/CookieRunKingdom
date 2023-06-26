@@ -26,7 +26,6 @@ public class DataBaseManager : MonoBehaviour
 
     [Header("Test")]
     [SerializeField] private ItemData[] testItem;
-    [SerializeField] private int[] testCount;
 
     public ItemData[] AllItemData => allItemData;
     public DataBase MyDataBase { get; private set; }
@@ -36,7 +35,7 @@ public class DataBaseManager : MonoBehaviour
         Dictionary<ItemData, int> itemDataBase = new Dictionary<ItemData, int>();
         for(int i = 0; i < testItem.Length; i++)
         {
-            itemDataBase[testItem[i]] = testCount[i];
+            itemDataBase[testItem[i]] = 100;
         }
 
         MyDataBase = new DataBase(itemDataBase);
