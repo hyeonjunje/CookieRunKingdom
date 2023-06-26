@@ -12,6 +12,14 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private KingdomEditUI _kingdomEditUI;
     [SerializeField] private GameObject _backGroundUI;
     [SerializeField] private CraftUI _kingdomCraftUI;
+    [SerializeField] private KingdomPlayUI _kingdomPlayUI;
+
+    [SerializeField] private KingdomAdventureUI _kingdomAdventureUI;
+    [SerializeField] private KingdomDailyDungeonUI _kingdomDailyDungeonUI;
+    [SerializeField] private KingdomHotAirBalloonUI _kingdomHotAirBalloonUI;
+    [SerializeField] private KingdomStatueUI _kingdomStatueUI;
+    [SerializeField] private KingdomTrainStationUI _kingdomTrainStationUI;
+    [SerializeField] private KingdomWishTreeUI _kingdomWishTreeUi;
 
     [Header("ÄÄÆ÷³ÍÆ®")]
     [SerializeField] private BuildingSelectUI _buildingSelectUI;
@@ -25,6 +33,15 @@ public class KingdomManager : MonoBehaviour
     public KingdomEditUI KingdomEditUI => _kingdomEditUI;
     public GameObject KingdomBackGroundUI => _backGroundUI;
     public CraftUI KingdomCraftUI => _kingdomCraftUI;
+    public KingdomPlayUI KingdomPlayUI => _kingdomPlayUI;
+
+    public KingdomAdventureUI KingdomAdventureUI => _kingdomAdventureUI;
+    public KingdomDailyDungeonUI KingdomDailyDungeonUI => _kingdomDailyDungeonUI;
+    public KingdomHotAirBalloonUI KingdomHotAirBalloonUI => _kingdomHotAirBalloonUI;
+    public KingdomStatueUI KingdomStatueUI => _kingdomStatueUI;
+    public KingdomTrainStationUI KingdomTrainStationUI => _kingdomTrainStationUI;
+    public KingdomWishTreeUI KingdomWishTreeUI => _kingdomWishTreeUi;
+
     public BuildingSelectUI BuildingSelectUI => _buildingSelectUI;
     public Grid Grid => _grid;
     public CameraControllData CameraControllData => _cameraControllData;
