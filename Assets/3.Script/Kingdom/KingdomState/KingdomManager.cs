@@ -81,5 +81,10 @@ public class KingdomManager : MonoBehaviour
     {
         _factory.ChangeState((EKingdomState)index);
     }
+
+    public void ChangeState(EKingdomState state)
+    {
+        _factory.ChangeState(state);
+    }
     #endregion
 }

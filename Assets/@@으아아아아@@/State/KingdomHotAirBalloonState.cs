@@ -11,12 +11,12 @@ public class KingdomHotAirBalloonState : KingdomBaseState
 
     public override void Enter()
     {
-
+        UIManager.instance.PushUI(_manager.KingdomHotAirBalloonUI);
     }
 
     public override void Exit()
     {
-
+        UIManager.instance.ClearUI();
     }
 
     public override void Update()

@@ -11,12 +11,12 @@ public class KingdomDailyDungeonState : KingdomBaseState
 
     public override void Enter()
     {
-
+        UIManager.instance.PushUI(_manager.KingdomDailyDungeonUI);
     }
 
     public override void Exit()
     {
-
+        UIManager.instance.ClearUI();
     }
 
     public override void Update()

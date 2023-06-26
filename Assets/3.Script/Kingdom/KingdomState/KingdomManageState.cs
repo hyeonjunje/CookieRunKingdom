@@ -45,6 +45,7 @@ public class KingdomManageState : KingdomBaseState
                 return;
             }
 
+            // 제작 건물
             _currentBuilding = rayHit.transform.GetComponent<Building>();
 
             if (_currentBuilding == null)
@@ -62,6 +63,22 @@ public class KingdomManageState : KingdomBaseState
         else if (value.canceled)
         {
             _isActiveCameraControll = true;
+
+            var rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
+
+            if (!rayHit.collider)
+            {
+                _currentBuilding = null;
+                return;
+            }
+
+            // 인터랙션 먼저
+            KingdomInteractionBuilding building = rayHit.transform.GetComponent<KingdomInteractionBuilding>();
+            if (building != null)
+            {
+                building.OnClickKingdomInteractionBuilding();
+                return;
+            }
         }
     }
 

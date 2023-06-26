@@ -11,12 +11,12 @@ public class KingdomTrainStationState : KingdomBaseState
 
     public override void Enter()
     {
-
+        UIManager.instance.PushUI(_manager.KingdomTrainStationUI);
     }
 
     public override void Exit()
     {
-
+        UIManager.instance.ClearUI();
     }
 
     public override void Update()

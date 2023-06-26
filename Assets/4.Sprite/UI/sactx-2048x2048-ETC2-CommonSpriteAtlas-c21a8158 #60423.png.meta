@@ -407,6 +407,9 @@ TextureImporter:
   - first:
       213: -7337789725875018089
     second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_134
+  - first:
+      213: -8181821969003216302
+    second: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_135
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -1200,7 +1203,7 @@ TextureImporter:
         width: 99
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 41, y: 38, z: 33, w: 38}
       outline: []
       physicsShape: []
@@ -3350,6 +3353,27 @@ TextureImporter:
       bones: []
       spriteID: 3da816e6d22e3f940800000000000000
       internalID: 5328851468862720723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_135
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 0
+        width: 265
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2528312b444547e80800000000000000
+      internalID: -8181821969003216302
       vertices: []
       indices: 
       edges: []

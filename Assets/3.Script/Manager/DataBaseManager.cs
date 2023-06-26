@@ -20,10 +20,15 @@ public class DataBaseManager : MonoBehaviour
         }
     }
 
+    [Header("모든 아이템 데이터")]
+    [SerializeField] private ItemData[] allItemData;
+
+
     [Header("Test")]
     [SerializeField] private ItemData[] testItem;
     [SerializeField] private int[] testCount;
 
+    public ItemData[] AllItemData => allItemData;
     public DataBase MyDataBase { get; private set; }
 
     private void Start()
