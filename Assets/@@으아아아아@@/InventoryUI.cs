@@ -18,6 +18,8 @@ public class InventoryUI : BaseUI
             IsInit();
 
         base.Show();
+
+        UpdateInventory();
     }
 
     public void ExpandCapacity(int amount)
@@ -45,10 +47,15 @@ public class InventoryUI : BaseUI
         }
 
         // 데이터베이스에서 가져와서 인벤토리에 적용해줘..
+    }
+
+    private void UpdateInventory()
+    {
+        // 데이터베이스에서 가져와서 인벤토리에 적용해줘..
 
         // Test
         int index = 0;
-        foreach(var data in DataBaseManager.instance.MyDataBase.itemDataBase)
+        foreach (var data in DataBaseManager.instance.MyDataBase.itemDataBase)
         {
             inventoryItems[index++].FillSlot(data.Key, data.Value);
         }

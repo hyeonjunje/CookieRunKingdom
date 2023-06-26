@@ -50,9 +50,13 @@ public class KingdomManageState : KingdomBaseState
             if (_currentBuilding == null)
                 return;
 
+            Debug.Log(_currentBuilding.name + " À» ´©¸¨´Ï´Ù.");
 
-            _factory.kingdomCraftState.SetBuilding(_currentBuilding);
-            _factory.ChangeState(EKingdomState.Craft);
+            if(!_currentBuilding.TryHarvest())
+            {
+                _factory.kingdomCraftState.SetBuilding(_currentBuilding);
+                _factory.ChangeState(EKingdomState.Craft);
+            }
         }
 
         else if (value.canceled)

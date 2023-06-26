@@ -84,33 +84,39 @@ public class CraftUI : BaseUI
 
     private void CraftItem(CraftData craftData)
     {
-        int index = -1;
-
+        int emptyIndex = -1;
+        // 만들 곳
         for(int i = 0; i < currentBuilding.CraftingItemData.Count; i++)
         {
-            if(currentBuilding.CraftingItemData[i].craftData == null)
+            if(currentBuilding.CraftingItemData[i].state == ECraftingState.empty)
             {
-                index = i;
+                emptyIndex = i;
                 break;
             }
         }
 
-        if (index == -1)
+        int makingIndex = 0;
+        for(int i = 0; i < currentBuilding.CraftingItemData.Count; i++)
+            if(currentBuilding.CraftingItemData[i].state == ECraftingState.complete)
+                makingIndex = i + 1;
+
+        if (emptyIndex == -1)
         {
             Debug.Log("대기열이 꽉 찼습니다.");
             return;
         }
 
         // 처음 만드는 거라면
-        if(index == 0)
+        if(emptyIndex == makingIndex)
         {
-            currentBuilding.CraftingItemData[index] = new CraftingItemData(ECraftingState.making, craftData);
+            currentBuilding.CraftingItemData[emptyIndex] = new CraftingItemData(ECraftingState.making, craftData);
             craftProgressBar.SetActive(true);
-            craftProgressBar.transform.SetParent(craftList[index].transform, false);
+            craftProgressBar.transform.SetParent(craftList[emptyIndex].transform, false);
         }
         else
-            currentBuilding.CraftingItemData[index] = new CraftingItemData(ECraftingState.waiting, craftData);
-        craftList[index].UpdateCraft(currentBuilding.CraftingItemData[index]);
+            currentBuilding.CraftingItemData[emptyIndex] = new CraftingItemData(ECraftingState.waiting, craftData);
+
+        craftList[emptyIndex].UpdateCraft(currentBuilding.CraftingItemData[emptyIndex]);
     }
 
 
@@ -128,34 +134,38 @@ public class CraftUI : BaseUI
 
     private void ManageCraftingItemData()
     {
+        // 만들고 있는게 없다면
+        bool isMaking = false;
+        for(int i = 0; i < currentBuilding.CraftingItemData.Count; i++)
+        {
+            if(currentBuilding.CraftingItemData[i].state == ECraftingState.making)
+            {
+                isMaking = true;
+                break;
+            }
+        }
+        if(!isMaking)
+        {
+            craftProgressBar.transform.SetParent(transform, false);
+            craftProgressBar.SetActive(false);
+        }
+
+
         for (int i = 0; i < currentBuilding.CraftingItemData.Count; i++)
         {
             if (currentBuilding.CraftingItemData[i].craftData == null)
                 return;
 
-            // 만들고 있다면
+            // 만들고 있다면  progressbar 갱신
             if (currentBuilding.CraftingItemData[i].state == ECraftingState.making)
             {
-                // 1초씩 더해준다.
-                currentBuilding.CraftingItemData[i].takingTime += 1;
-                craftProgressTime.text = Utils.GetTimeText(currentBuilding.CraftingItemData[i].craftData.CraftTime - currentBuilding.CraftingItemData[i].takingTime);
-
-                // 만약 다 만들었다면
-                if (currentBuilding.CraftingItemData[i].takingTime >= currentBuilding.CraftingItemData[i].craftData.CraftTime)
+                if(!craftProgressBar.transform.parent.Equals(craftList[i]))
                 {
-                    currentBuilding.CraftingItemData[i].state = ECraftingState.complete;
-                    if (i + 1 < currentBuilding.CraftingItemData.Count && currentBuilding.CraftingItemData[i + 1].craftData != null &&
-                        currentBuilding.CraftingItemData[i + 1].state == ECraftingState.waiting)
-                    {
-                        currentBuilding.CraftingItemData[i + 1].state = ECraftingState.making;
-                        craftProgressBar.transform.SetParent(craftList[i + 1].transform, false);
-                    }
-                    else
-                    {
-                        craftProgressBar.SetActive(false);
-                        craftProgressBar.transform.SetParent(transform, false);
-                    }
+                    craftProgressBar.SetActive(true);
+                    craftProgressBar.transform.SetParent(craftList[i].transform, false);
                 }
+
+                craftProgressTime.text = Utils.GetTimeText(currentBuilding.CraftingItemData[i].craftData.CraftTime - currentBuilding.CraftingItemData[i].takingTime);
             }
 
             craftList[i].UpdateCraft(currentBuilding.CraftingItemData[i]);

@@ -36,4 +36,16 @@ public class DataBaseManager : MonoBehaviour
 
         MyDataBase = new DataBase(itemDataBase);
     }
+
+    public void AddItem(ItemData item, int count)
+    {
+        if(MyDataBase.itemDataBase.ContainsKey(item))
+        {
+            MyDataBase.itemDataBase[item] += count;
+        }
+        else
+        {
+            MyDataBase.itemDataBase[item] = count;
+        }
+    }
 }
