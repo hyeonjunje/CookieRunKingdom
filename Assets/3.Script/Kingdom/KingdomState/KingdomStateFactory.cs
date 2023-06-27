@@ -14,6 +14,7 @@ public enum EKingdomState
     WishTree,
     TrainStation,
     AirBalloon,
+    MapSelect,
 }
 
 public class KingdomStateFactory
@@ -33,6 +34,7 @@ public class KingdomStateFactory
     public KingdomWishTreeState kingdomWishTreeState { get; private set; }
     public KingdomTrainStationState kingdomTrainStationState { get; private set; }
     public KingdomHotAirBalloonState kingdomHotAirBalloonState { get; private set; }
+    public KingdomSelectMapState kingdomSelectMapState { get; private set; }
 
     public KingdomStateFactory(KingdomManager kingdomManager)
     {
@@ -47,6 +49,7 @@ public class KingdomStateFactory
         kingdomWishTreeState = new KingdomWishTreeState(this, kingdomManager);
         kingdomTrainStationState = new KingdomTrainStationState(this, kingdomManager);
         kingdomHotAirBalloonState = new KingdomHotAirBalloonState(this, kingdomManager);
+        kingdomSelectMapState = new KingdomSelectMapState(this, kingdomManager);
 
 
         _dictionary[EKingdomState.Manage] = kingdomManageState;
@@ -60,6 +63,7 @@ public class KingdomStateFactory
         _dictionary[EKingdomState.WishTree] = kingdomWishTreeState;
         _dictionary[EKingdomState.TrainStation] = kingdomTrainStationState;
         _dictionary[EKingdomState.AirBalloon] = kingdomHotAirBalloonState;
+        _dictionary[EKingdomState.MapSelect] = kingdomSelectMapState;
 
         // 처음에는 관리 상태로 초기화
         ChangeState(EKingdomState.Manage);

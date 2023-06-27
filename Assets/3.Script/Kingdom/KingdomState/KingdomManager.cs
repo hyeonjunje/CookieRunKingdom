@@ -20,6 +20,7 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private KingdomStatueUI _kingdomStatueUI;
     [SerializeField] private KingdomTrainStationUI _kingdomTrainStationUI;
     [SerializeField] private KingdomWishTreeUI _kingdomWishTreeUi;
+    [SerializeField] private KingdomSelectMapUI _kingdomSelectMapUI;
 
     [Header("ÄÄÆ÷³ÍÆ®")]
     [SerializeField] private BuildingSelectUI _buildingSelectUI;
@@ -41,6 +42,7 @@ public class KingdomManager : MonoBehaviour
     public KingdomStatueUI KingdomStatueUI => _kingdomStatueUI;
     public KingdomTrainStationUI KingdomTrainStationUI => _kingdomTrainStationUI;
     public KingdomWishTreeUI KingdomWishTreeUI => _kingdomWishTreeUi;
+    public KingdomSelectMapUI KingdomSelectMapUI => _kingdomSelectMapUI;
 
     public BuildingSelectUI BuildingSelectUI => _buildingSelectUI;
     public Grid Grid => _grid;
