@@ -135,6 +135,7 @@ MonoBehaviour:
   - {fileID: 4957753725557479256}
   - {fileID: 2054981898328277705}
   - {fileID: 7584932353163431596}
+  deliveryAtOnceObject: {fileID: 6371198909860378554}
 --- !u!114 &3807185435178641546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -696,92 +697,28 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4312158491593480017, guid: f981803c3cd9cd54cad8c71104bb3a0a, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -8181821969003216302, guid: 23c2b1916d039924db720b6a0ab12ada, type: 3}
     - target: {fileID: 4312158491593480019, guid: f981803c3cd9cd54cad8c71104bb3a0a, type: 3}
       propertyPath: m_Name
       value: TrainCar (3)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f981803c3cd9cd54cad8c71104bb3a0a, type: 3}
---- !u!1 &7584932353163431592 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4312158491593480019, guid: f981803c3cd9cd54cad8c71104bb3a0a, type: 3}
-  m_PrefabInstance: {fileID: 5950603680128539131}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7584932353163431595 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4312158491593480016, guid: f981803c3cd9cd54cad8c71104bb3a0a, type: 3}
   m_PrefabInstance: {fileID: 5950603680128539131}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7584932353163431594 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4312158491593480017, guid: f981803c3cd9cd54cad8c71104bb3a0a, type: 3}
-  m_PrefabInstance: {fileID: 5950603680128539131}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7584932353163431592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7584932353163431596 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4312158491593480023, guid: f981803c3cd9cd54cad8c71104bb3a0a, type: 3}
   m_PrefabInstance: {fileID: 5950603680128539131}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7584932353163431592}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7bfd40368cf22647a475773f0e6423d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7505116610205314613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7584932353163431592}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 7584932353163431594}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1001 &6607864521229681283
 PrefabInstance:
   m_ObjectHideFlags: 0
