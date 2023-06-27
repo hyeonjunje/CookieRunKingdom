@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 40442978}
   - component: {fileID: 40442977}
   - component: {fileID: 40442976}
+  - component: {fileID: 40442980}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0050)
   m_TagString: Untagged
@@ -237,12 +238,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 40442975}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.87, y: -1.64, z: 0}
+  m_LocalPosition: {x: 1.34, y: -0.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &40442980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 40442975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &56604730
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,6 +276,7 @@ GameObject:
   - component: {fileID: 56604733}
   - component: {fileID: 56604732}
   - component: {fileID: 56604731}
+  - component: {fileID: 56604735}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0111)
   m_TagString: Untagged
@@ -361,8 +383,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &56604735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56604730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &91631431
 GameObject:
   m_ObjectHideFlags: 0
@@ -375,6 +417,7 @@ GameObject:
   - component: {fileID: 91631434}
   - component: {fileID: 91631433}
   - component: {fileID: 91631432}
+  - component: {fileID: 91631436}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0515)
   m_TagString: Untagged
@@ -477,12 +520,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91631431}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.74, y: -6.62, z: 0}
+  m_LocalPosition: {x: 12.33, y: -4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 46
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &91631436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91631431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &128572417
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +558,7 @@ GameObject:
   - component: {fileID: 128572420}
   - component: {fileID: 128572419}
   - component: {fileID: 128572418}
+  - component: {fileID: 128572422}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0009)
   m_TagString: Untagged
@@ -603,6 +667,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &128572422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128572417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &142300555
 GameObject:
   m_ObjectHideFlags: 0
@@ -615,6 +699,7 @@ GameObject:
   - component: {fileID: 142300558}
   - component: {fileID: 142300557}
   - component: {fileID: 142300556}
+  - component: {fileID: 142300560}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0126)
   m_TagString: Untagged
@@ -721,8 +806,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 30
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &142300560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 142300555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &236921530
 GameObject:
   m_ObjectHideFlags: 0
@@ -735,6 +840,7 @@ GameObject:
   - component: {fileID: 236921533}
   - component: {fileID: 236921532}
   - component: {fileID: 236921531}
+  - component: {fileID: 236921535}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0063)
   m_TagString: Untagged
@@ -837,11 +943,67 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 236921530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.22, y: -1.83, z: 0}
+  m_LocalPosition: {x: -3.35, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &236921535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236921530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
+--- !u!1 &277666202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 277666203}
+  m_Layer: 0
+  m_Name: Anicent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &277666203
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277666202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1069305736}
+  - {fileID: 1988928303}
+  - {fileID: 401677486}
+  - {fileID: 1413882090}
+  - {fileID: 545197225}
+  - {fileID: 2007032393}
+  m_Father: {fileID: 0}
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &370540092
 GameObject:
@@ -855,6 +1017,7 @@ GameObject:
   - component: {fileID: 370540095}
   - component: {fileID: 370540094}
   - component: {fileID: 370540093}
+  - component: {fileID: 370540097}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0007)
   m_TagString: Untagged
@@ -963,6 +1126,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &370540097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 370540092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &393882293
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,6 +1158,7 @@ GameObject:
   - component: {fileID: 393882296}
   - component: {fileID: 393882295}
   - component: {fileID: 393882294}
+  - component: {fileID: 393882298}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0002)
   m_TagString: Untagged
@@ -1083,6 +1267,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &393882298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393882293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &401677482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1196,12 +1400,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401677482}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.1, y: 7.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 39
+  m_Father: {fileID: 277666203}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &460409954
 GameObject:
@@ -1215,6 +1419,7 @@ GameObject:
   - component: {fileID: 460409957}
   - component: {fileID: 460409956}
   - component: {fileID: 460409955}
+  - component: {fileID: 460409959}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0012)
   m_TagString: Untagged
@@ -1323,6 +1528,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &460409959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 460409954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &500245959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,6 +1560,7 @@ GameObject:
   - component: {fileID: 500245962}
   - component: {fileID: 500245961}
   - component: {fileID: 500245960}
+  - component: {fileID: 500245964}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0135)
   m_TagString: Untagged
@@ -1441,8 +1667,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &500245964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 500245959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &545197221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1556,12 +1802,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545197221}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 8.36, y: 7.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 41
+  m_Father: {fileID: 277666203}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &652534644
 GameObject:
@@ -1575,6 +1821,7 @@ GameObject:
   - component: {fileID: 652534647}
   - component: {fileID: 652534646}
   - component: {fileID: 652534645}
+  - component: {fileID: 652534649}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0513)
   m_TagString: Untagged
@@ -1677,12 +1924,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652534644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.31, y: -6.23, z: 0}
+  m_LocalPosition: {x: 1, y: -6.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 44
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &652534649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652534644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &664247551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1695,6 +1962,7 @@ GameObject:
   - component: {fileID: 664247554}
   - component: {fileID: 664247553}
   - component: {fileID: 664247552}
+  - component: {fileID: 664247556}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0512)
   m_TagString: Untagged
@@ -1797,12 +2065,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664247551}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.9, y: -7.2, z: 0}
+  m_LocalPosition: {x: -2.25, y: -7.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 43
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &664247556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664247551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &690618262
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,6 +2103,7 @@ GameObject:
   - component: {fileID: 690618265}
   - component: {fileID: 690618264}
   - component: {fileID: 690618263}
+  - component: {fileID: 690618267}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0042)
   m_TagString: Untagged
@@ -1923,6 +2212,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690618267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690618262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &705350221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1935,6 +2244,7 @@ GameObject:
   - component: {fileID: 705350224}
   - component: {fileID: 705350223}
   - component: {fileID: 705350222}
+  - component: {fileID: 705350226}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0015)
   m_TagString: Untagged
@@ -2043,6 +2353,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &705350226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705350221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2148,6 +2478,7 @@ GameObject:
   - component: {fileID: 711291834}
   - component: {fileID: 711291833}
   - component: {fileID: 711291832}
+  - component: {fileID: 711291836}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0008)
   m_TagString: Untagged
@@ -2256,6 +2587,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &711291836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711291831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &769865482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2268,6 +2619,7 @@ GameObject:
   - component: {fileID: 769865485}
   - component: {fileID: 769865484}
   - component: {fileID: 769865483}
+  - component: {fileID: 769865487}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0134)
   m_TagString: Untagged
@@ -2374,8 +2726,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 33
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &769865487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769865482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &775181604
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,6 +2760,7 @@ GameObject:
   - component: {fileID: 775181607}
   - component: {fileID: 775181606}
   - component: {fileID: 775181605}
+  - component: {fileID: 775181609}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0034)
   m_TagString: Untagged
@@ -2496,6 +2869,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &775181609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775181604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &952258480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2508,6 +2901,7 @@ GameObject:
   - component: {fileID: 952258483}
   - component: {fileID: 952258482}
   - component: {fileID: 952258481}
+  - component: {fileID: 952258485}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0516)
   m_TagString: Untagged
@@ -2610,12 +3004,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952258480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.95, y: -7.2, z: 0}
+  m_LocalPosition: {x: -8.1, y: -1.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 47
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &952258485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952258480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &962328094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2628,6 +3042,7 @@ GameObject:
   - component: {fileID: 962328097}
   - component: {fileID: 962328096}
   - component: {fileID: 962328095}
+  - component: {fileID: 962328099}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0024)
   m_TagString: Untagged
@@ -2736,6 +3151,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &962328099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962328094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +3182,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2787,7 +3223,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -2813,12 +3249,45 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 1.89, y: -0.02, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &963194229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &986588296
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +3300,7 @@ GameObject:
   - component: {fileID: 986588299}
   - component: {fileID: 986588298}
   - component: {fileID: 986588297}
+  - component: {fileID: 986588301}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0025)
   m_TagString: Untagged
@@ -2939,6 +3409,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &986588301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 986588296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &990627390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,6 +3441,7 @@ GameObject:
   - component: {fileID: 990627393}
   - component: {fileID: 990627392}
   - component: {fileID: 990627391}
+  - component: {fileID: 990627395}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0113)
   m_TagString: Untagged
@@ -3057,8 +3548,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &990627395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 990627390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1038783865
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,6 +3582,7 @@ GameObject:
   - component: {fileID: 1038783868}
   - component: {fileID: 1038783867}
   - component: {fileID: 1038783866}
+  - component: {fileID: 1038783870}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0502)
   m_TagString: Untagged
@@ -3177,8 +3689,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 35
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038783870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038783865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1069305732
 GameObject:
   m_ObjectHideFlags: 0
@@ -3292,12 +3824,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1069305732}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.62, y: 6.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_Father: {fileID: 277666203}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1108391354
 GameObject:
@@ -3311,6 +3843,7 @@ GameObject:
   - component: {fileID: 1108391357}
   - component: {fileID: 1108391356}
   - component: {fileID: 1108391355}
+  - component: {fileID: 1108391359}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0058)
   m_TagString: Untagged
@@ -3413,12 +3946,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108391354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.09, y: -1.62, z: 0}
+  m_LocalPosition: {x: -0.99, y: -0.17, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1108391359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108391354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1135837208
 GameObject:
   m_ObjectHideFlags: 0
@@ -3431,6 +3984,7 @@ GameObject:
   - component: {fileID: 1135837211}
   - component: {fileID: 1135837210}
   - component: {fileID: 1135837209}
+  - component: {fileID: 1135837213}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0132)
   m_TagString: Untagged
@@ -3537,8 +4091,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 31
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1135837213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135837208}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1171078852
 GameObject:
   m_ObjectHideFlags: 0
@@ -3551,6 +4125,7 @@ GameObject:
   - component: {fileID: 1171078855}
   - component: {fileID: 1171078854}
   - component: {fileID: 1171078853}
+  - component: {fileID: 1171078857}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0121)
   m_TagString: Untagged
@@ -3657,8 +4232,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 29
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1171078857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171078852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1240390649
 GameObject:
   m_ObjectHideFlags: 0
@@ -3671,6 +4266,7 @@ GameObject:
   - component: {fileID: 1240390652}
   - component: {fileID: 1240390651}
   - component: {fileID: 1240390650}
+  - component: {fileID: 1240390654}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0038)
   m_TagString: Untagged
@@ -3779,6 +4375,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1240390654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240390649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1318098355
 GameObject:
   m_ObjectHideFlags: 0
@@ -3791,6 +4407,7 @@ GameObject:
   - component: {fileID: 1318098358}
   - component: {fileID: 1318098357}
   - component: {fileID: 1318098356}
+  - component: {fileID: 1318098360}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0514)
   m_TagString: Untagged
@@ -3893,12 +4510,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1318098355}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.83, y: -6.29, z: 0}
+  m_LocalPosition: {x: 3.89, y: -6.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 45
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1318098360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1318098355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1393799962
 GameObject:
   m_ObjectHideFlags: 0
@@ -3911,6 +4548,7 @@ GameObject:
   - component: {fileID: 1393799965}
   - component: {fileID: 1393799964}
   - component: {fileID: 1393799963}
+  - component: {fileID: 1393799967}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0511)
   m_TagString: Untagged
@@ -4013,12 +4651,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393799962}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.02, y: -6.99, z: 0}
+  m_LocalPosition: {x: 7.13, y: -6.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 42
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393799967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393799962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1413882086
 GameObject:
   m_ObjectHideFlags: 0
@@ -4132,12 +4790,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1413882086}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.78, y: 6.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 40
+  m_Father: {fileID: 277666203}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1613387027
 GameObject:
@@ -4151,6 +4809,7 @@ GameObject:
   - component: {fileID: 1613387030}
   - component: {fileID: 1613387029}
   - component: {fileID: 1613387028}
+  - component: {fileID: 1613387032}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0030)
   m_TagString: Untagged
@@ -4259,6 +4918,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1613387032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613387027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1639869129
 GameObject:
   m_ObjectHideFlags: 0
@@ -4271,6 +4950,7 @@ GameObject:
   - component: {fileID: 1639869132}
   - component: {fileID: 1639869131}
   - component: {fileID: 1639869130}
+  - component: {fileID: 1639869134}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0048)
   m_TagString: Untagged
@@ -4379,6 +5059,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1639869134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639869129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1760027210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4391,6 +5091,7 @@ GameObject:
   - component: {fileID: 1760027213}
   - component: {fileID: 1760027212}
   - component: {fileID: 1760027211}
+  - component: {fileID: 1760027215}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0044)
   m_TagString: Untagged
@@ -4499,6 +5200,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1760027215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760027210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1788310128
 GameObject:
   m_ObjectHideFlags: 0
@@ -4511,6 +5232,7 @@ GameObject:
   - component: {fileID: 1788310131}
   - component: {fileID: 1788310130}
   - component: {fileID: 1788310129}
+  - component: {fileID: 1788310133}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0133)
   m_TagString: Untagged
@@ -4617,8 +5339,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 32
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1788310133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788310128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1788366774
 GameObject:
   m_ObjectHideFlags: 0
@@ -4631,6 +5373,7 @@ GameObject:
   - component: {fileID: 1788366777}
   - component: {fileID: 1788366776}
   - component: {fileID: 1788366775}
+  - component: {fileID: 1788366779}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0069)
   m_TagString: Untagged
@@ -4733,12 +5476,32 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788366774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.35, y: -1.65, z: 0}
+  m_LocalPosition: {x: -5.65, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1788366779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788366774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1817778900
 GameObject:
   m_ObjectHideFlags: 0
@@ -4751,6 +5514,7 @@ GameObject:
   - component: {fileID: 1817778903}
   - component: {fileID: 1817778902}
   - component: {fileID: 1817778901}
+  - component: {fileID: 1817778905}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0028)
   m_TagString: Untagged
@@ -4859,6 +5623,157 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1817778905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1817778900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
+--- !u!1 &1828868198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1828868199}
+  - component: {fileID: 1828868200}
+  - component: {fileID: 1828868201}
+  m_Layer: 0
+  m_Name: AllCookieController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1828868199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828868198}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 43
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1828868200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828868198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc48c34d0f5d9b64fae5cde95b103e12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookies:
+  - {fileID: 1841076476}
+  - {fileID: 393882298}
+  - {fileID: 370540097}
+  - {fileID: 711291836}
+  - {fileID: 128572422}
+  - {fileID: 460409959}
+  - {fileID: 705350226}
+  - {fileID: 962328099}
+  - {fileID: 986588301}
+  - {fileID: 1817778905}
+  - {fileID: 1613387032}
+  - {fileID: 775181609}
+  - {fileID: 1983686376}
+  - {fileID: 1240390654}
+  - {fileID: 1832566738}
+  - {fileID: 690618267}
+  - {fileID: 1760027215}
+  - {fileID: 2045516892}
+  - {fileID: 1639869134}
+  - {fileID: 40442980}
+  - {fileID: 1108391359}
+  - {fileID: 236921535}
+  - {fileID: 1788366779}
+  - {fileID: 2132536518}
+  - {fileID: 56604735}
+  - {fileID: 990627395}
+  - {fileID: 1171078857}
+  - {fileID: 142300560}
+  - {fileID: 1135837213}
+  - {fileID: 1788310133}
+  - {fileID: 769865487}
+  - {fileID: 500245964}
+  - {fileID: 1038783870}
+  - {fileID: 2026059480}
+  - {fileID: 1393799967}
+  - {fileID: 664247556}
+  - {fileID: 652534649}
+  - {fileID: 1318098360}
+  - {fileID: 91631436}
+  - {fileID: 952258485}
+--- !u!114 &1828868201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828868198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: f62a6a9c526029c4380479225dd3b13d, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1828868200}
+        m_TargetAssemblyTypeName: AllCookieController, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e46c2dde-9917-4648-ab5c-2a5bf16d89a4
+    m_ActionName: GamePlay/Click[/Mouse/leftButton]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: GamePlay
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1832566733
 GameObject:
   m_ObjectHideFlags: 0
@@ -4871,6 +5786,7 @@ GameObject:
   - component: {fileID: 1832566736}
   - component: {fileID: 1832566735}
   - component: {fileID: 1832566734}
+  - component: {fileID: 1832566738}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0040)
   m_TagString: Untagged
@@ -4979,6 +5895,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1832566738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832566733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1841076471
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,6 +5927,7 @@ GameObject:
   - component: {fileID: 1841076474}
   - component: {fileID: 1841076473}
   - component: {fileID: 1841076472}
+  - component: {fileID: 1841076476}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0001)
   m_TagString: Untagged
@@ -5099,6 +6036,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841076476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841076471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1983686371
 GameObject:
   m_ObjectHideFlags: 0
@@ -5111,6 +6068,7 @@ GameObject:
   - component: {fileID: 1983686374}
   - component: {fileID: 1983686373}
   - component: {fileID: 1983686372}
+  - component: {fileID: 1983686376}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0035)
   m_TagString: Untagged
@@ -5219,6 +6177,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1983686376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983686371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &1988928299
 GameObject:
   m_ObjectHideFlags: 0
@@ -5332,12 +6310,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988928299}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.86, y: 6.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 38
+  m_Father: {fileID: 277666203}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2007032389
 GameObject:
@@ -5452,12 +6430,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007032389}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.5, y: -1.99, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.4, y: 9.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_Father: {fileID: 277666203}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026059475
 GameObject:
@@ -5471,6 +6449,7 @@ GameObject:
   - component: {fileID: 2026059478}
   - component: {fileID: 2026059477}
   - component: {fileID: 2026059476}
+  - component: {fileID: 2026059480}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0503)
   m_TagString: Untagged
@@ -5577,8 +6556,28 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 36
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2026059480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026059475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &2045516887
 GameObject:
   m_ObjectHideFlags: 0
@@ -5591,6 +6590,7 @@ GameObject:
   - component: {fileID: 2045516890}
   - component: {fileID: 2045516889}
   - component: {fileID: 2045516888}
+  - component: {fileID: 2045516892}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0046)
   m_TagString: Untagged
@@ -5699,6 +6699,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2045516892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2045516887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1
 --- !u!1 &2132536513
 GameObject:
   m_ObjectHideFlags: 0
@@ -5711,6 +6731,7 @@ GameObject:
   - component: {fileID: 2132536516}
   - component: {fileID: 2132536515}
   - component: {fileID: 2132536514}
+  - component: {fileID: 2132536518}
   m_Layer: 0
   m_Name: Spine GameObject (cookie0103)
   m_TagString: Untagged
@@ -5817,5 +6838,25 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2132536518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2132536513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd73d0b2f6ba4ef469704c97923c4ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim:
+  - skill2
+  - skill1
+  - axe
+  - standard
+  - run
+  - run_back
+  - personal1

@@ -11,7 +11,7 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private BaseUI _kingdomManagerUI;
     [SerializeField] private KingdomEditUI _kingdomEditUI;
     [SerializeField] private GameObject _backGroundUI;
-    [SerializeField] private CraftUI _kingdomCraftUI;
+    [SerializeField] private KingdomCraftUI _kingdomCraftUI;
     [SerializeField] private KingdomPlayUI _kingdomPlayUI;
 
     [SerializeField] private KingdomAdventureUI _kingdomAdventureUI;
@@ -33,7 +33,7 @@ public class KingdomManager : MonoBehaviour
     public BaseUI KingdomManagerUI => _kingdomManagerUI;
     public KingdomEditUI KingdomEditUI => _kingdomEditUI;
     public GameObject KingdomBackGroundUI => _backGroundUI;
-    public CraftUI KingdomCraftUI => _kingdomCraftUI;
+    public KingdomCraftUI KingdomCraftUI => _kingdomCraftUI;
     public KingdomPlayUI KingdomPlayUI => _kingdomPlayUI;
 
     public KingdomAdventureUI KingdomAdventureUI => _kingdomAdventureUI;
