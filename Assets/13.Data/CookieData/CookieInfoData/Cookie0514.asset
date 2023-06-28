@@ -17,3 +17,6 @@ MonoBehaviour:
   cookieType: 5
   cookiePosition: 2
   cookieAnimationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
+  moveSpeed: 5
+  detectRange: 1
+  attackRange: 3

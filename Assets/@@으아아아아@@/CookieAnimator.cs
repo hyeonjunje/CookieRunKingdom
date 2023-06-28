@@ -19,7 +19,6 @@ public class CookieAnimator : MonoBehaviour
 {
     private CookieController _cookieController;
     private CookieAnimationData _data;
-    private bool _isTest;
 
     private SkeletonAnimation _animation;
     private Renderer _renderer;
@@ -29,11 +28,10 @@ public class CookieAnimator : MonoBehaviour
     private int _idx = 0;
 
 
-    public void Init(CookieController cookieController, CookieAnimationData data , bool isTest = false)
+    public void Init(CookieController cookieController, CookieAnimationData data)
     {
         _cookieController = cookieController;
         _data = data;
-        _isTest = isTest;
 
         _animation = GetComponentInChildren<SkeletonAnimation>();
         _renderer = _animation.GetComponent<Renderer>();
@@ -63,7 +61,18 @@ public class CookieAnimator : MonoBehaviour
 
     public void Act()
     {
-        if (_isTest)
+        try
+        {
+            _animation.AnimationState.SetAnimation(0, _animationNames[_idx++], true);
+
+            if (_idx == _animationNames.Length)
+                _idx = 0;
+        }
+        catch (Exception e)
+        {
+            Debug.Log(name);
+        }
+        /*if (_isTest)
         {
             _animation.AnimationState.SetAnimation(0, _allAnimationNames.Items[_idx++].Name, true);
 
@@ -83,7 +92,7 @@ public class CookieAnimator : MonoBehaviour
             {
                 Debug.Log(name);
             }
-        }
+        }*/
     }
 
     public void PlayAnimation(ECookieAnimation cookieAnimation)

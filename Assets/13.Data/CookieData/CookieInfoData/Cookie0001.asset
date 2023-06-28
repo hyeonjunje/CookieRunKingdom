@@ -15,4 +15,8 @@ MonoBehaviour:
   cookieName: "\uC6A9\uAC10\uD55C \uCFE0\uD0A4"
   cookieGrade: 0
   cookieType: 0
+  cookiePosition: 0
   cookieAnimationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
+  moveSpeed: 5
+  detectRange: 1
+  attackRange: 3

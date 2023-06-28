@@ -15,9 +15,16 @@ public class CookieData : ScriptableObject
     [SerializeField] private ECookiePosition cookiePosition;
     [SerializeField] private CookieAnimationData cookieAnimationData;
 
+    [SerializeField] private float moveSpeed;
+    [SerializeField] private float detectRange;
+    [SerializeField] private float attackRange;
+
     public string CookieName => cookieName;
     public ECookieGrade CookieGrade => cookieGrade;
     public ECookieType CookieType => cookieType;
     public ECookiePosition CookiePosition => cookiePosition;
     public CookieAnimationData CookieAnimationData => cookieAnimationData;
+    public float MoveSpeed => moveSpeed;
+    public float DetectRange => detectRange;
+    public float AttackRange => attackRange;
 }

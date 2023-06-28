@@ -10,26 +10,16 @@ public class CookieBundle : MonoBehaviour
     /// 8 9 7  후방
     /// </summary>
     [SerializeField] private Transform[] cookiePositions;
-
-    [Header("Test")]
     [SerializeField] private CookieController[] cookies;
-    [SerializeField] private Vector3 diffForPieces = new Vector3(7.72f, 3.86f, 0f);
-    [SerializeField] private float speed = 5f;
-
-    private List<CookieController> myCookies = new List<CookieController>();
 
     private CookieController[] isPosition;
+    private List<CookieController> myCookies = new List<CookieController>();
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
     // 원래는 start에서 하면 안됨
     private void Start()
     {
         StartBattle(cookies);
-    }
-
-    private void Update()
-    {
-        transform.position += diffForPieces.normalized * speed * Time.deltaTime;
     }
 
     public void StartBattle(CookieController[] cookies)
@@ -43,7 +33,6 @@ public class CookieBundle : MonoBehaviour
             ReArrange();
         }
     }
-
     private int CustomComparison(CookieController x, CookieController y)
     {
         int result = x.Data.CookiePosition.CompareTo(y.Data.CookiePosition);

@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CookieController : MonoBehaviour
 {
-    [Header("테스트")]
-    public bool isTest = false;
-
+    [Header("데이터")]
     [SerializeField] private CookieData _cookieData;
 
+    // 컴포넌트
     private CookieAnimator _cookieAnimator;
+    private CookieBattleController _cookieBattleController;
 
     public CookieData Data => _cookieData;
     public CookieAnimator CookieAnim => _cookieAnimator;
@@ -17,7 +17,9 @@ public class CookieController : MonoBehaviour
     private void Awake()
     {
         _cookieAnimator = GetComponent<CookieAnimator>();
-        _cookieAnimator.Init(this, _cookieData.CookieAnimationData, isTest);
+        _cookieBattleController = GetComponent<CookieBattleController>();
+        _cookieAnimator.Init(this, _cookieData.CookieAnimationData);
+        _cookieBattleController.Init(this, _cookieData);
     }
 
     public void Act()
