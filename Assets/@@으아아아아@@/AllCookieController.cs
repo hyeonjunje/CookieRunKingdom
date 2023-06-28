@@ -17,4 +17,11 @@ public class AllCookieController : MonoBehaviour
             }
         }
     }
+
+    [SerializeField] CookieAnimationData data;
+
+    public void Awake()
+    {
+        string[] animations =  data.Init();
+    }
 }
