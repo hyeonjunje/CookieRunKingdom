@@ -12,12 +12,6 @@ public class EnemySpawner : MonoBehaviour
     private StageData _stageData;
     private int _index = 0;
 
-    private void Start()
-    {
-        Init(stage);
-        SpawnEnemy();
-    }
-
     public void Init(StageData stageData)
     {
         _index = 0;

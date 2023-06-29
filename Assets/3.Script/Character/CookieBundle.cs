@@ -16,23 +16,17 @@ public class CookieBundle : MonoBehaviour
     private List<BaseController> myCookies = new List<BaseController>();
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
-    // 원래는 start에서 하면 안됨
-    private void Start()
-    {
-        StartBattle(cookies);
-    }
-
     private void Update()
     {
+        if (myCookies.Count == 0)
+            return;
+
         Vector3 pos = Vector3.zero;
 
         for(int i = 0; i < myCookies.Count; i++)
-        {
             pos += myCookies[i].transform.position;
-        }
 
         pos /= myCookies.Count;
-
         transform.position = pos;
     }
 
