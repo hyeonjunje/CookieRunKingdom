@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
-    public LayerMask targetLayer;
-
     [Header("ตฅภฬลอ")]
     [SerializeField] private CharacterData _data;
 

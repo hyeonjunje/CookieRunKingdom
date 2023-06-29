@@ -15,6 +15,8 @@ public class CharacterAnimator : MonoBehaviour
 
     private string[] _animationNames;
 
+    public string[] attackEvent;
+
     public void Init(BaseController baseController, CharacterData characterData)
     {
         _characterController = baseController;
@@ -83,10 +85,14 @@ public class CharacterAnimator : MonoBehaviour
 
     private void OnSpineEvent(TrackEntry trackEntry, Spine.Event e)
     {
-        Debug.Log(name + " " + e.Data.Name + "  " + GetAnimationName(ECookieAnimation.BattleAttack));
-        if(e.Data.Name == GetAnimationName(ECookieAnimation.BattleAttack))
+        // Debug.Log(name + " " + e.Data.Name);
+        for(int i = 0; i < attackEvent.Length; i++)
         {
-            Debug.Log(name+ " 이 공격!");
+            if(e.Data.Name == attackEvent[i])
+            {
+                _characterController.CharacterBattleController.Attack();
+                // Debug.Log(name + "이 공격");
+            }
         }
     }
 

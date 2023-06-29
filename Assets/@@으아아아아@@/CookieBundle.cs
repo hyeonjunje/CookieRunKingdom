@@ -50,7 +50,7 @@ public class CookieBundle : MonoBehaviour
         foreach(BaseController cookie in cookies)
         {
             cookie.CharacterBattleController.StartBattle(true);
-            cookie.targetLayer = 1 << LayerMask.NameToLayer("Enemy");
+            cookie.CharacterBattleController.SetEnemy(LayerMask.NameToLayer("Enemy"));
         }
     }
     private int CustomComparison(BaseController x, BaseController y)

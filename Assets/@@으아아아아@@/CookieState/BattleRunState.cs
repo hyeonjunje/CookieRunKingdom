@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class BattleRunState : BaseBattleState
 {
-    private Collider2D _col = null;
-
     public BattleRunState(BattleStateFactory factory, BaseController controller) : base(factory, controller)
     {
     }
 
     public override void Enter()
     {
-        _col = null;
         _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleRun);
     }
 
@@ -26,10 +23,10 @@ public class BattleRunState : BaseBattleState
         Vector3 dir = _controller.CharacterBattleController.IsForward ? new Vector3(7.72f, 3.68f, 0f).normalized : new Vector3(-7.72f, -3.68f, 0f).normalized;
         _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
 
-        _col = Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, _controller.targetLayer);
-        if (_col != null)
+        CharacterBattleController enemy = _controller.CharacterBattleController.DetectEnemy();
+        if (enemy != null)
         {
-            _factory.BattleAttack.SetTarget(_col);
+            _factory.BattleAttack.SetTarget(enemy);
             _factory.ChangeState(EBattleState.BattleAttackState);
         }
     }
