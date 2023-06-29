@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieBattleIdleState : CookieBattleBaseState
+public class BattleIdleState : BaseBattleState
 {
     private float _currentTime = 0f;
 
-    public CookieBattleIdleState(CookieBattleStateFactory factory, CookieController controller) : base(factory, controller)
+    public BattleIdleState(BattleStateFactory factory, BaseController controller) : base(factory, controller)
     {
     }
 
     public override void Enter()
     {
         _currentTime = 0f;
-        _controller.CookieAnim.PlayAnimation(ECookieAnimation.BattleIdle);
+        _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleIdle);
     }
 
     public override void Exit()
@@ -26,7 +26,7 @@ public class CookieBattleIdleState : CookieBattleBaseState
         _currentTime += Time.deltaTime;
         if(_currentTime > 2)
         {
-            _factory.ChangeState(ECookieBattleState.CookieBattleRunState);
+            _factory.ChangeState(EBattleState.BattleRunState);
         }
     }
 }

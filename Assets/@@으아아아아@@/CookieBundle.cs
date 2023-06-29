@@ -10,10 +10,10 @@ public class CookieBundle : MonoBehaviour
     /// 8 9 7  후방
     /// </summary>
     [SerializeField] private Transform[] cookiePositions;
-    [SerializeField] private CookieController[] cookies;
+    [SerializeField] private BaseController[] cookies;
 
-    private CookieController[] isPosition;
-    private List<CookieController> myCookies = new List<CookieController>();
+    private BaseController[] isPosition;
+    private List<BaseController> myCookies = new List<BaseController>();
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
     // 원래는 start에서 하면 안됨
@@ -22,9 +22,23 @@ public class CookieBundle : MonoBehaviour
         StartBattle(cookies);
     }
 
-    public void StartBattle(CookieController[] cookies)
+    private void Update()
     {
-        foreach (CookieController cookie in cookies)
+        Vector3 pos = Vector3.zero;
+
+        for(int i = 0; i < myCookies.Count; i++)
+        {
+            pos += myCookies[i].transform.position;
+        }
+
+        pos /= myCookies.Count;
+
+        transform.position = pos;
+    }
+
+    public void StartBattle(BaseController[] cookies)
+    {
+        foreach (BaseController cookie in cookies)
         {
             myCookies.Add(cookie);
             // 자리 기준으로 정렬
@@ -33,24 +47,24 @@ public class CookieBundle : MonoBehaviour
             ReArrange();
         }
     }
-    private int CustomComparison(CookieController x, CookieController y)
+    private int CustomComparison(BaseController x, BaseController y)
     {
-        int result = x.Data.CookiePosition.CompareTo(y.Data.CookiePosition);
+        int result = ((CookieData)x.Data).CookiePosition.CompareTo(((CookieData)y.Data).CookiePosition);
 
         // 같으면 이름순
         if(result == 0)
-            result = x.Data.CookieName.CompareTo(y.Data.CookieName); 
+            result = x.Data.CharacterName.CompareTo(y.Data.CharacterName); 
 
         return result;
     }
 
     private void ReArrange()
     {
-        isPosition = new CookieController[cookiePositions.Length];
+        isPosition = new BaseController[cookiePositions.Length];
 
         for (int i = 0; i < myCookies.Count; i++)
         {
-            int cookiePosition = (int)myCookies[i].Data.CookiePosition;
+            int cookiePosition = (int)((CookieData)myCookies[i].Data).CookiePosition;
             bool isArrange = false;
 
             for(int j = 0; j < priority.GetLength(1); j++)
@@ -110,6 +124,8 @@ public class CookieBundle : MonoBehaviour
     {
         isPosition[index].transform.SetParent(cookiePositions[index]);
         isPosition[index].transform.localPosition = Vector3.zero;
-        isPosition[index].CookieAnim.SettingOrder(index + 100);
+        isPosition[index].CharacterAnimator.SettingOrder(index + 100);
+
+        isPosition[index].transform.SetParent(null);
     }
 }

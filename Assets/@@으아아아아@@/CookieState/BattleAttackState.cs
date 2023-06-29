@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieBattleAttackState : CookieBattleBaseState
+public class BattleAttackState : BaseBattleState
 {
     private Collider2D target = null;
 
-    public CookieBattleAttackState(CookieBattleStateFactory factory, CookieController controller) : base(factory, controller)
+    public BattleAttackState(BattleStateFactory factory, BaseController controller) : base(factory, controller)
     {
     }
 
@@ -17,7 +17,7 @@ public class CookieBattleAttackState : CookieBattleBaseState
 
     public override void Enter()
     {
-        _controller.CookieAnim.PlayAnimation(ECookieAnimation.BattleAttack);
+        _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleAttack);
     }
 
     public override void Exit()
@@ -29,7 +29,7 @@ public class CookieBattleAttackState : CookieBattleBaseState
     {
         if(Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, 1 << LayerMask.NameToLayer("Enemy")) != target)
         {
-            _factory.ChangeState(ECookieBattleState.CookieBattleRunState);
+            _factory.ChangeState(EBattleState.BattleRunState);
         }
     }
 }

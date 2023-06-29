@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class CookieBattleBaseState
+public abstract class BaseBattleState
 {
-    protected CookieBattleStateFactory _factory;
-    protected CookieController _controller;
+    protected BattleStateFactory _factory;
+    protected BaseController _controller;
 
-    public CookieBattleBaseState(CookieBattleStateFactory factory, CookieController controller)
+    public BaseBattleState(BattleStateFactory factory, BaseController controller)
     {
         _factory = factory;
         _controller = controller;

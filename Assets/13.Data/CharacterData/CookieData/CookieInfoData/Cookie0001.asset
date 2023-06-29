@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32579f66ef5fd6445b68eaa005031d15, type: 3}
   m_Name: Cookie0001
   m_EditorClassIdentifier: 
-  cookieName: "\uC6A9\uAC10\uD55C \uCFE0\uD0A4"
-  cookieGrade: 0
-  cookieType: 0
-  cookiePosition: 0
-  cookieAnimationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
+  _characterName: 
+  _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
   moveSpeed: 5
-  detectRange: 1
-  attackRange: 3
+  attackRange: 1
+  _cookieGrade: 0
+  _cookieType: 0
+  _cookiePosition: 0

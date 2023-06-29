@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CookieBattleDeadState : CookieBattleBaseState
+public class BattleDeadState : BaseBattleState
 {
-    public CookieBattleDeadState(CookieBattleStateFactory factory, CookieController controller) : base(factory, controller)
+    public BattleDeadState(BattleStateFactory factory, BaseController controller) : base(factory, controller)
     {
     }
 
