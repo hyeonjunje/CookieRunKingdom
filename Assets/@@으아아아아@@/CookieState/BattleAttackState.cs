@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BattleAttackState : BaseBattleState
 {
-    private Collider2D target = null;
+    private BaseController target = null;
+    private Collider2D tar = null;
 
     public BattleAttackState(BattleStateFactory factory, BaseController controller) : base(factory, controller)
     {
@@ -12,7 +13,8 @@ public class BattleAttackState : BaseBattleState
 
     public void SetTarget(Collider2D col)
     {
-        target = col;
+        tar = col;
+        target = col.GetComponent<BaseController>();
     }
 
     public override void Enter()
@@ -27,7 +29,7 @@ public class BattleAttackState : BaseBattleState
 
     public override void Update()
     {
-        if(Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, _controller.targetLayer) != target)
+        if(Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, _controller.targetLayer) != tar)
         {
             _factory.ChangeState(EBattleState.BattleRunState);
         }

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class CharacterBattleController : MonoBehaviour
 {
+    public CharacterBattleController[] target = null;
+
     private BaseController _baseController;
     private CharacterData _characterData;
-
     private BattleStateFactory _factory;
     private Coroutine _coUpdate = null;
 

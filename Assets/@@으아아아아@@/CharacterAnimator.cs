@@ -25,6 +25,9 @@ public class CharacterAnimator : MonoBehaviour
 
         _animationNames = characterData.AnimationData.Init();
 
+        _animation.Initialize(false);
+        _animation.AnimationState.Event += OnSpineEvent;
+
         // AdjustmentAnimationName();
     }
 
@@ -76,5 +79,19 @@ public class CharacterAnimator : MonoBehaviour
     public void SettingOrder(int order)
     {
         _renderer.sortingOrder = order;
+    }
+
+    private void OnSpineEvent(TrackEntry trackEntry, Spine.Event e)
+    {
+        Debug.Log(name + " " + e.Data.Name + "  " + GetAnimationName(ECookieAnimation.BattleAttack));
+        if(e.Data.Name == GetAnimationName(ECookieAnimation.BattleAttack))
+        {
+            Debug.Log(name+ " ÀÌ °ø°Ý!");
+        }
+    }
+
+    private string GetAnimationName(ECookieAnimation cookieAnimation)
+    {
+        return _animationNames[(int)cookieAnimation];
     }
 }
