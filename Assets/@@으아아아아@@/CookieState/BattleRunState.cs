@@ -23,9 +23,10 @@ public class BattleRunState : BaseBattleState
 
     public override void Update()
     {
-        _controller.transform.position += new Vector3(7.72f, 3.68f, 0f).normalized * Time.deltaTime * _controller.Data.MoveSpeed;
+        Vector3 dir = _controller.CharacterBattleController.IsForward ? new Vector3(7.72f, 3.68f, 0f).normalized : new Vector3(-7.72f, -3.68f, 0f).normalized;
+        _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
 
-        _col = Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, 1 << LayerMask.NameToLayer("Enemy"));
+        _col = Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, _controller.targetLayer);
         if (_col != null)
         {
             _factory.BattleAttack.SetTarget(_col);

@@ -27,7 +27,7 @@ public class BattleAttackState : BaseBattleState
 
     public override void Update()
     {
-        if(Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, 1 << LayerMask.NameToLayer("Enemy")) != target)
+        if(Physics2D.OverlapCircle(_controller.transform.position, _controller.Data.AttackRange, _controller.targetLayer) != target)
         {
             _factory.ChangeState(EBattleState.BattleRunState);
         }

@@ -10,12 +10,12 @@ public class CharacterBattleController : MonoBehaviour
     private BattleStateFactory _factory;
     private Coroutine _coUpdate = null;
 
+    public bool IsForward { get; private set; }
+
     public void Init(BaseController baseController, CharacterData characterData)
     {
         _baseController = baseController;
         _characterData = characterData;
-
-        StartBattle();
     }
 
     /// <summary>
@@ -24,6 +24,9 @@ public class CharacterBattleController : MonoBehaviour
     /// <param name="isForward">앞을 향하고 있나</param>
     public void StartBattle(bool isForward = true)
     {
+        IsForward = isForward;
+        _baseController.CharacterAnimator.AdjustmentAnimationName(isForward);
+
         _factory = new BattleStateFactory(_baseController);
 
         if (_coUpdate != null)

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BaseController : MonoBehaviour
 {
+    public LayerMask targetLayer;
+
     [Header("ตฅภฬลอ")]
     [SerializeField] private CharacterData _data;
 
@@ -22,5 +24,11 @@ public class BaseController : MonoBehaviour
 
         _characterAnimator.Init(this, _data);
         _characterBattleController.Init(this, _data);
+    }
+
+    private void Update()
+    {
+        float zPos = (transform.position.x + transform.position.y) / 100000f;
+        transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
     }
 }

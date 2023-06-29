@@ -10,8 +10,8 @@ public class CharacterAnimator : MonoBehaviour
     private BaseController _characterController;
     private CharacterData _characterData;
 
-    [SerializeField] private SkeletonAnimation _animation;
-    [SerializeField] private Renderer _renderer;
+    private SkeletonAnimation _animation;
+    private Renderer _renderer;
 
     private string[] _animationNames;
 
@@ -20,9 +20,12 @@ public class CharacterAnimator : MonoBehaviour
         _characterController = baseController;
         _characterData = characterData;
 
+        _animation = GetComponentInChildren<SkeletonAnimation>();
+        _renderer = _animation.GetComponent<Renderer>();
+
         _animationNames = characterData.AnimationData.Init();
 
-        AdjustmentAnimationName();
+        // AdjustmentAnimationName();
     }
 
     // 쿠키마다 애니메이션 이름이 다른 경우가 있습니다.
@@ -35,6 +38,25 @@ public class CharacterAnimator : MonoBehaviour
         for (int i = 0; i < _animationNames.Length; i++)
             if (skeletonData.FindAnimation(_animationNames[i]) == null)
                 _animationNames[i] = _animationNames[i].Replace("_", "");
+    }
+
+    public void AdjustmentAnimationName(bool isForward)
+    {
+        if(!isForward)
+        {
+            for(int i = 0; i < _animationNames.Length; i++)
+            {
+                if(_animationNames[i].Contains("_back"))
+                {
+                    _animationNames[i] = _animationNames[i].Replace("_back", "");
+                }
+
+                else if(_animationNames[i].Contains("back"))
+                {
+                    _animationNames[i] = _animationNames[i].Replace("back", "");
+                }
+            }
+        }
     }
 
     public void PlayAnimation(ECookieAnimation cookieAnimation)
