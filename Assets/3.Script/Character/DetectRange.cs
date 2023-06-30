@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DetectRange : MonoBehaviour
-{
+{ 
     private LayerMask _enemyLayer;
     public List<CharacterBattleController> enemies = new List<CharacterBattleController>();
 
-    public void Init(LayerMask enemyLayer)
+    public void Init(LayerMask targetLayer)
     {
-        _enemyLayer = enemyLayer;
+        _enemyLayer = targetLayer;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.layer == _enemyLayer)
+        if (collision.gameObject.layer == _enemyLayer)
         {
             CharacterBattleController enemy = collision.GetComponent<CharacterBattleController>();
             if (enemy != null)

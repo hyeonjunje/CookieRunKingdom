@@ -13,10 +13,15 @@ public class Cookie0002Skill : BaseSkill
     private int _attackCount = 6;
     private float _duration = 3f;
 
-    public virtual void SetLater(LayerMask enemyLayer)
+    public override void Init(BaseController controller)
     {
-        base.SetLayer(enemyLayer);
-        _detectSkillRange.Init(enemyLayer);
+        base.Init(controller);
+    }
+
+    public override void SetLayer(LayerMask layer)
+    {
+        base.SetLayer(layer);
+        _detectSkillRange.Init(layer);
     }
 
     public override void NormalAttack()

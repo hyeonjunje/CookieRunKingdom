@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class Cookie0025Skill : BaseSkill
 {
+    [SerializeField] private ProjectileMagicCircle _projectile;
+
     private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
     private float _currentTime = 0;
+
+    public override void Init(BaseController controller)
+    {
+        base.Init(controller);
+    }
+
+    public override void SetLayer(LayerMask layer)
+    {
+        base.SetLayer(layer);
+        _projectile.Init(1500, layer, _controller.CharacterBattleController.IsForward, transform, new Vector3(3f, 1.5f, 0));
+    }
 
     public override void NormalAttack()
     {
@@ -18,6 +31,7 @@ public class Cookie0025Skill : BaseSkill
         if(index == 0)
         {
             // 투사체 발사!
+            _projectile.gameObject.SetActive(true);
         }
     }
 
@@ -34,6 +48,7 @@ public class Cookie0025Skill : BaseSkill
             if(_currentTime >= CurrentSkillTime)
             {
                 _currentTime = 0;
+                _skillIndex = 0;
                 return false;
             }
         }

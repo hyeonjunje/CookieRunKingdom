@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1496773369}
   - component: {fileID: 1496773370}
   - component: {fileID: 1496773371}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DetectedRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 5579123486309017496}
   - component: {fileID: 5579123486309017499}
   - component: {fileID: 5579123486309017498}
+  - component: {fileID: 858989687}
   m_Layer: 9
   m_Name: Cookie0514
   m_TagString: Untagged
@@ -314,4 +315,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66b0eb7132fba4b428f0337179ca7929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10000
+  maxHp: 1000000
+--- !u!114 &858989687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579123486309017477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03cc71ff8f89ce44abf72e0c0016dbb7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSkillUse: 0
+  animationName:
+  - skill2_back
+  attackEvent:
+  - skill1
+  skillEvent:
+  - skill2
+  _detectAttackRange: {fileID: 1496773370}

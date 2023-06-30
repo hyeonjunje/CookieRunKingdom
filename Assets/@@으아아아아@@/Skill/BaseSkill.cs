@@ -8,22 +8,20 @@ public abstract class BaseSkill : MonoBehaviour
 
     // 스킬의 애니메이션 이름
     public string[] animationName;
-
     public string[] attackEvent;
     public string[] skillEvent;
 
+    protected BaseController _controller;
     [SerializeField] protected DetectRange _detectAttackRange;
 
-    protected BaseController _controller;
-
-    public void Init(BaseController controller)
+    public virtual void Init(BaseController controller)
     {
         _controller = controller;
     }
 
-    public virtual void SetLayer(LayerMask enemyLayer)
+    public virtual void SetLayer(LayerMask layer)
     {
-        _detectAttackRange.Init(enemyLayer);
+        _detectAttackRange.Init(layer);
     }
 
     // 기본 공격

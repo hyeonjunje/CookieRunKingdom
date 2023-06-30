@@ -43,6 +43,7 @@ public class CookieBundle : MonoBehaviour
 
         foreach(BaseController cookie in cookies)
         {
+            cookie.gameObject.layer = LayerMask.NameToLayer("Cookie");
             cookie.CharacterBattleController.StartBattle(true);
             cookie.CharacterBattleController.SetEnemy(LayerMask.NameToLayer("Enemy"));
         }

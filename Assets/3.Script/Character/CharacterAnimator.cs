@@ -108,6 +108,7 @@ public class CharacterAnimator : MonoBehaviour
         {
             if (e.Data.Name == _baseSkill.skillEvent[i])
             {
+                Debug.Log(_baseSkill.skillEvent[i] + " djofdskfj");
                 _baseSkill.OnSkillEvent(i);
                 return;
             }

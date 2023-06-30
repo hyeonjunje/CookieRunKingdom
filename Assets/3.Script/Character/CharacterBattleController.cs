@@ -53,7 +53,7 @@ public class CharacterBattleController : MonoBehaviour
             myLayer = LayerMask.NameToLayer("Cookie");
             enemyLayer = LayerMask.NameToLayer("Enemy");
         }
-        else
+        else if(layer == LayerMask.NameToLayer("Cookie"))
         {
             myLayer = LayerMask.NameToLayer("Enemy");
             enemyLayer = LayerMask.NameToLayer("Cookie");
