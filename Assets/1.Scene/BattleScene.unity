@@ -2330,34 +2330,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &309040081 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7798499729685686388, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
+--- !u!114 &309040085 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7798499729685686385, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
   m_PrefabInstance: {fileID: 6951101165975243271}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &309040082
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 309040081}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c1a524983204694d81d359030ca82a5, type: 3}
+  m_Script: {fileID: 11500000, guid: a221e3f0dd9b2f041ac1b344c41e9aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSkillUse: 0
-  animationName:
-  - skill2_back
-  - skill2_loop_back
-  - skill2_end_back
-  attackEvent:
-  - skill1
-  - effect_default_skill1
-  skillEvent: []
-  _detectAttackRange: {fileID: 0}
-  _detectSkillRange: {fileID: 0}
 --- !u!1 &322163463
 GameObject:
   m_ObjectHideFlags: 0
@@ -8956,6 +8939,7 @@ MonoBehaviour:
   - {fileID: 2101926995}
   - {fileID: 1392330851}
   - {fileID: 2064161684}
+  - {fileID: 309040085}
   - {fileID: 858989690}
   _stageData: {fileID: 11400000, guid: da38af4d02268924a848f303b06c098e, type: 2}
 --- !u!1 &1016159666
@@ -20097,6 +20081,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 309040082, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
+      propertyPath: animationName.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 410383447287008722, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -20148,10 +20136,6 @@ PrefabInstance:
     - target: {fileID: 7798499729685686388, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
       propertyPath: m_Name
       value: Cookie0121
-      objectReference: {fileID: 0}
-    - target: {fileID: 7798499729685686388, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
@@ -20241,6 +20225,10 @@ PrefabInstance:
     - target: {fileID: 5579123486309017477, guid: 368494605e5ae2a4db9e5a6443dacea2, type: 3}
       propertyPath: m_Name
       value: Cookie0514
+      objectReference: {fileID: 0}
+    - target: {fileID: 5579123486309017477, guid: 368494605e5ae2a4db9e5a6443dacea2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368494605e5ae2a4db9e5a6443dacea2, type: 3}
