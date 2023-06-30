@@ -23,7 +23,7 @@ public class BattleRunState : BaseBattleState
         Vector3 dir = _controller.CharacterBattleController.IsForward ? new Vector3(7.72f, 3.68f, 0f).normalized : new Vector3(-7.72f, -3.68f, 0f).normalized;
         _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
 
-        CharacterBattleController enemy = _controller.CharacterBattleController.DetectEnemy();
+        CharacterBattleController enemy = _controller.BaseSkill.DetectTarget();
         if (enemy != null)
         {
             _factory.BattleAttack.SetTarget(enemy);

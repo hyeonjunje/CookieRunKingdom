@@ -28,7 +28,7 @@ public class BattleAttackState : BaseBattleState
 
     public override void Update()
     {
-        if(_target != _controller.CharacterBattleController.DetectEnemy())
+        if (_target != _controller.BaseSkill.DetectTarget())
         {
             _factory.ChangeState(EBattleState.BattleRunState);
         }

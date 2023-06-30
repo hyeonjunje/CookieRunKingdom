@@ -8,6 +8,7 @@ public enum EBattleState
     BattleRunState,
     BattleAttackState,
     BattleDeadState,
+    BattleSkillState,
 }
 
 public class BattleStateFactory
@@ -22,6 +23,7 @@ public class BattleStateFactory
     public BattleRunState BattleRun { get; private set; }
     public BattleAttackState BattleAttack { get; private set; }
     public BattleDeadState BattleDead { get; private set; }
+    public BattleSkillState BattleSkill { get; private set; }
 
     public BattleStateFactory(BaseController controller)
     {
@@ -35,11 +37,13 @@ public class BattleStateFactory
         BattleRun = new BattleRunState(this, _controller);
         BattleAttack = new BattleAttackState(this, _controller);
         BattleDead = new BattleDeadState(this, _controller);
+        BattleSkill = new BattleSkillState(this, _controller);
 
         _dictionary[EBattleState.BattleIdleState] = BattleIdle;
         _dictionary[EBattleState.BattleRunState] = BattleRun;
         _dictionary[EBattleState.BattleAttackState] = BattleAttack;
         _dictionary[EBattleState.BattleDeadState] = BattleDead;
+        _dictionary[EBattleState.BattleSkillState] = BattleSkill;
 
         ChangeState(EBattleState.BattleIdleState);
     }

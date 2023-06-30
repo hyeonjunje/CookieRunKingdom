@@ -10,18 +10,22 @@ public class BaseController : MonoBehaviour
     // ÄÄÆ÷³ÍÆ®
     protected CharacterAnimator _characterAnimator;
     protected CharacterBattleController _characterBattleController;
+    protected BaseSkill _baseSkill;
 
     public CharacterData Data => _data;
     public CharacterAnimator CharacterAnimator => _characterAnimator;
     public CharacterBattleController CharacterBattleController => _characterBattleController;
+    public BaseSkill BaseSkill => _baseSkill;
 
     protected virtual void Awake()
     {
         _characterAnimator = GetComponent<CharacterAnimator>();
         _characterBattleController = GetComponent<CharacterBattleController>();
+        _baseSkill = GetComponent<BaseSkill>();
 
         _characterAnimator.Init(this, _data);
         _characterBattleController.Init(this, _data);
+        _baseSkill.Init(this);
     }
 
     private void Update()

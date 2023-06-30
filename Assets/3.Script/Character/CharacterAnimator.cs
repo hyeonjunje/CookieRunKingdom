@@ -12,9 +12,9 @@ public class CharacterAnimator : MonoBehaviour
 
     private SkeletonAnimation _animation;
     private Renderer _renderer;
+    private BaseSkill _baseSkill;
 
     private string[] _animationNames;
-
     public string[] attackEvent;
 
     public void Init(BaseController baseController, CharacterData characterData)
@@ -24,26 +24,14 @@ public class CharacterAnimator : MonoBehaviour
 
         _animation = GetComponentInChildren<SkeletonAnimation>();
         _renderer = _animation.GetComponent<Renderer>();
+        _baseSkill = baseController.BaseSkill;
 
         _animationNames = characterData.AnimationData.Init();
 
         _animation.Initialize(false);
         _animation.AnimationState.Event += OnSpineEvent;
-
-        // AdjustmentAnimationName();
     }
 
-    // 쿠키마다 애니메이션 이름이 다른 경우가 있습니다.
-    // 이를 하나하나 다 적기에는 너무 부담입니다.
-    // 그래서 해당 이름이 있는지 확인하고
-    // 없으면 재조정합니다.
-    private void AdjustmentAnimationName()
-    {
-        SkeletonData skeletonData = _animation.skeletonDataAsset.GetSkeletonData(true);
-        for (int i = 0; i < _animationNames.Length; i++)
-            if (skeletonData.FindAnimation(_animationNames[i]) == null)
-                _animationNames[i] = _animationNames[i].Replace("_", "");
-    }
 
     public void AdjustmentAnimationName(bool isForward)
     {
@@ -64,18 +52,38 @@ public class CharacterAnimator : MonoBehaviour
         }
     }
 
-    public void PlayAnimation(ECookieAnimation cookieAnimation)
+    public void PlayAnimation(ECookieAnimation animationName)
     {
         try
         {
             _animation.Initialize(false);
-            _animation.AnimationState.SetAnimation(0, _animationNames[(int)cookieAnimation], true);
+            _animation.AnimationState.SetAnimation(0, _animationNames[(int)animationName], true);
         }
         catch (Exception e)
         {
             Debug.Log(e.Message);
-            Debug.LogError(name + " 에 " + _animationNames[(int)cookieAnimation] + " 애니메이션 없습니다.");
+            Debug.LogError(name + " 에 " + _animationNames[(int)animationName] + " 애니메이션 없습니다.");
         }
+    }
+
+    public void PlayAnimation(string animationName)
+    {
+        try
+        {
+            _animation.Initialize(false);
+            _animation.AnimationState.SetAnimation(0, animationName, true);
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e.Message);
+            Debug.LogError(name + " 에 " + animationName + " 애니메이션 없습니다.");
+        }
+    }
+
+    public float GetIntervalAnimation()
+    {
+        return _animation.AnimationState.GetCurrent(0).AnimationEnd -
+            _animation.AnimationState.GetCurrent(0).AnimationStart;
     }
 
     public void SettingOrder(int order)
@@ -85,13 +93,23 @@ public class CharacterAnimator : MonoBehaviour
 
     private void OnSpineEvent(TrackEntry trackEntry, Spine.Event e)
     {
-        // Debug.Log(name + " " + e.Data.Name);
-        for(int i = 0; i < attackEvent.Length; i++)
+        // 기본공격
+        for(int i = 0; i < _baseSkill.attackEvent.Length; i++)
         {
-            if(e.Data.Name == attackEvent[i])
+            if(e.Data.Name == _baseSkill.attackEvent[i])
             {
-                _characterController.CharacterBattleController.Attack();
-                // Debug.Log(name + "이 공격");
+                _baseSkill.NormalAttack();
+                return;
+            }
+        }
+
+        // 스킬 공격
+        for(int i = 0; i < _baseSkill.skillEvent.Length; i++)
+        {
+            if (e.Data.Name == _baseSkill.skillEvent[i])
+            {
+                _baseSkill.OnSkillEvent(i);
+                return;
             }
         }
     }

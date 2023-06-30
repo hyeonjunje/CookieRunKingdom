@@ -29,10 +29,12 @@ public class CharacterBattleController : MonoBehaviour
         }
     }
 
+    public LayerMask myLayer { get; private set; }
+    public LayerMask enemyLayer { get; private set; }
+
     private BaseController _baseController;
     private CharacterData _characterData;
     private BattleStateFactory _factory;
-    private DetectRange _detectRange;
     private Coroutine _coUpdate = null;
 
     public bool IsForward { get; private set; }
@@ -41,13 +43,23 @@ public class CharacterBattleController : MonoBehaviour
     {
         _baseController = baseController;
         _characterData = characterData;
-        _detectRange = GetComponentInChildren<DetectRange>();
         CurrentHp = maxHp;
     }
 
     public void SetEnemy(LayerMask layer)
     {
-        _detectRange.Init(layer);
+        if(layer == LayerMask.NameToLayer("Enemy"))
+        {
+            myLayer = LayerMask.NameToLayer("Cookie");
+            enemyLayer = LayerMask.NameToLayer("Enemy");
+        }
+        else
+        {
+            myLayer = LayerMask.NameToLayer("Enemy");
+            enemyLayer = LayerMask.NameToLayer("Cookie");
+        }
+
+        _baseController.BaseSkill.SetLayer(layer);
     }
 
     /// <summary>
@@ -66,19 +78,11 @@ public class CharacterBattleController : MonoBehaviour
         _coUpdate = StartCoroutine(CoUpdate());
     }
 
-    public void Attack()
+    public void ChangeSkillState()
     {
-        if (_detectRange.enemies.Count != 0)
-            _detectRange.enemies[0].CurrentHp -= 1000;
+        _factory.ChangeState(EBattleState.BattleSkillState);
     }
 
-    // 범위 내에 적이 있으면 true, 없으면 false
-    public CharacterBattleController DetectEnemy()
-    {
-        if (_detectRange.enemies.Count != 0)
-            return _detectRange.enemies[0];
-        return null;
-    }
 
     private void UpdateHpbar()
     {

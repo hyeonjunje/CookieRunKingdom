@@ -124,8 +124,6 @@ public class CookieBundle : MonoBehaviour
     {
         isPosition[index].transform.SetParent(cookiePositions[index]);
         isPosition[index].transform.localPosition = Vector3.zero;
-        // isPosition[index].CharacterAnimator.SettingOrder(index + 100);
-
         isPosition[index].transform.SetParent(null);
     }
 }

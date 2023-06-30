@@ -5,7 +5,6 @@ using UnityEngine;
 public class DetectRange : MonoBehaviour
 {
     private LayerMask _enemyLayer;
-
     public List<CharacterBattleController> enemies = new List<CharacterBattleController>();
 
     public void Init(LayerMask enemyLayer)
