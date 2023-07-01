@@ -18,6 +18,9 @@ public class BattleUI : BaseUI
     [Header("Time")]
     [SerializeField] private TextMeshProUGUI _timeText;
 
+    [Header("UI")]
+    [SerializeField] private BaseUI _pauseUI;
+
     // 한 스테이지당 3분
     private int CurrentTime = 0;
     private Coroutine _coUpdate = null;
@@ -67,5 +70,17 @@ public class BattleUI : BaseUI
             yield return wait;
             _timeText.text = Utils.GetTimeText(--CurrentTime, false);
         }
+    }
+
+    public void Pause()
+    {
+        UIManager.instance.ShowPopUpUI(_pauseUI);
+        Time.timeScale = 0;
+    }
+
+    public void Continue()
+    {
+        Time.timeScale = 1;
+        UIManager.instance.ExitPopUpUI();
     }
 }
