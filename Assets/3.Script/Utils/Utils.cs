@@ -4,6 +4,8 @@ using UnityEngine;
 
 public static class Utils
 {
+    public static readonly Vector3 Dir = new Vector3(7.72f, 3.86f, 0);
+
     /// <summary>
     /// 모든 자기의 자식들을 Destroy해주는 함수
     /// </summary>

@@ -5,12 +5,14 @@ using UnityEngine;
 public class MapScrolling : MonoBehaviour
 {
     [SerializeField] private MapPiece[] mapPieces;
-    [SerializeField] private Vector3 diffForPieces = new Vector3(7.72f, 3.86f, 0f);
+    private Vector3 diffForPieces;
 
     private LinkedList<Transform> mapList;
 
     private void Awake()
     {
+        diffForPieces = Utils.Dir;
+
         mapList = new LinkedList<Transform>();
 
         transform.position -= diffForPieces * 3;

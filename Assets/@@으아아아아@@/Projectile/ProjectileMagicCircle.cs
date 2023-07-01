@@ -12,8 +12,8 @@ public class ProjectileMagicCircle : MonoBehaviour
     [SerializeField] private float rotateSpeed = 5f;
     [SerializeField] private float timePerAttack = 1f;
     [SerializeField] private float duration = 6f;
-    [SerializeField] private Vector3 dir= new Vector3(7.72f, 3.86f,0f);
 
+    private Vector3 _dir;
     private float _currentTime = 0f;
     private float _entireTime = 0f;
     private Transform _parent = null;
@@ -21,7 +21,7 @@ public class ProjectileMagicCircle : MonoBehaviour
 
     public void Init(int damage, LayerMask targetLayer, bool isForward, Transform parent, Vector3 initPos)
     {
-        dir = isForward ? dir : -dir;
+        _dir = isForward ? Utils.Dir : -Utils.Dir;
         _parent = parent;
         _initPos = initPos;
         lighting.Init(damage, targetLayer);
@@ -40,7 +40,7 @@ public class ProjectileMagicCircle : MonoBehaviour
     {
         _currentTime += Time.deltaTime;
 
-        transform.position += dir.normalized * moveSpeed * Time.deltaTime;
+        transform.position += _dir.normalized * moveSpeed * Time.deltaTime;
         innerCircle.localEulerAngles += Vector3.forward * rotateSpeed * Time.deltaTime;
 
         if(_currentTime >= timePerAttack)

@@ -10,24 +10,34 @@ public class CookieBundle : MonoBehaviour
     /// 8 9 7  ÈÄ¹æ
     /// </summary>
     [SerializeField] private Transform[] cookiePositions;
-    [SerializeField] private BaseController[] cookies;
 
     private BaseController[] isPosition;
     private List<BaseController> myCookies = new List<BaseController>();
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
+
+    public int CookieRunStateCount { get; private set; }
+    private float currentSpeed = 0f;
+
+    public void ActiveMove(bool on)
+    {
+        if (on)
+            CookieRunStateCount++;
+        else
+            CookieRunStateCount--;
+
+
+        if(CookieRunStateCount == myCookies.Count)
+            currentSpeed = myCookies[0].Data.MoveSpeed;
+        else
+            currentSpeed = 0f;
+    }
 
     private void Update()
     {
         if (myCookies.Count == 0)
             return;
 
-        Vector3 pos = Vector3.zero;
-
-        for(int i = 0; i < myCookies.Count; i++)
-            pos += myCookies[i].transform.position;
-
-        pos /= myCookies.Count;
-        transform.position = pos;
+        transform.position += Utils.Dir.normalized * currentSpeed * Time.deltaTime;
     }
 
     public void StartBattle(BaseController[] cookies)
@@ -126,5 +136,7 @@ public class CookieBundle : MonoBehaviour
         isPosition[index].transform.SetParent(cookiePositions[index]);
         isPosition[index].transform.localPosition = Vector3.zero;
         isPosition[index].transform.SetParent(null);
+
+        isPosition[index].CharacterBattleController.SetPosition(this, cookiePositions[index]);
     }
 }

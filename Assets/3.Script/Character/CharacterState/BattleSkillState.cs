@@ -13,13 +13,17 @@ public class BattleSkillState : BaseBattleState
 
     public override void Enter()
     {
+        if (_controller.CharacterBattleController.CookieBundle != null)
+            _controller.CharacterBattleController.CookieBundle.ActiveMove(true);
+
         _currentTime = 0f;
         _controller.BaseSkill.UseSkill();
     }
 
     public override void Exit()
     {
-
+        if (_controller.CharacterBattleController.CookieBundle != null)
+            _controller.CharacterBattleController.CookieBundle.ActiveMove(false);
     }
 
     public override void Update()

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BattleRunState : BaseBattleState
 {
+    private bool isPos = false;
+
     public BattleRunState(BattleStateFactory factory, BaseController controller) : base(factory, controller)
     {
     }
@@ -11,17 +13,47 @@ public class BattleRunState : BaseBattleState
     public override void Enter()
     {
         _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleRun);
+
+        if (_controller.CharacterBattleController.CookieBundle != null)
+        {
+            isPos = false;
+            _controller.CharacterBattleController.CookieBundle.ActiveMove(true);
+        }
     }
 
     public override void Exit()
     {
-
+        if (_controller.CharacterBattleController.CookieBundle != null)
+            _controller.CharacterBattleController.CookieBundle.ActiveMove(false);
     }
 
     public override void Update()
     {
-        Vector3 dir = _controller.CharacterBattleController.IsForward ? new Vector3(7.72f, 3.68f, 0f).normalized : new Vector3(-7.72f, -3.68f, 0f).normalized;
-        _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
+        // 원위치가 있는 캐릭터라면 윈위치로 부드럽게 이동 후 자체적으로 이동해야 함
+        if (_controller.CharacterBattleController.OffsetPosition != null)
+        {
+            if(!isPos)
+            {
+                _controller.transform.position = Vector3.MoveTowards(_controller.transform.position, _controller.CharacterBattleController.OffsetPosition.position, 0.05f);
+
+                if(Vector3.Distance(_controller.CharacterBattleController.OffsetPosition.position, _controller.transform.position) < 0.1f)
+                {
+                    _controller.transform.position = _controller.CharacterBattleController.OffsetPosition.position;
+                    isPos = true;
+                }
+            }
+            else
+            {
+                Vector3 dir = _controller.CharacterBattleController.IsForward ? Utils.Dir.normalized : -Utils.Dir.normalized;
+                _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
+            }
+        }
+        // 아니면 그냥 움직임
+        else
+        {
+            Vector3 dir = _controller.CharacterBattleController.IsForward ? Utils.Dir.normalized : -Utils.Dir.normalized;
+            _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
+        }
 
         CharacterBattleController enemy = _controller.BaseSkill.DetectTarget();
         if (enemy != null)

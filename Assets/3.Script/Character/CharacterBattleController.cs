@@ -29,6 +29,9 @@ public class CharacterBattleController : MonoBehaviour
         }
     }
 
+    // 쿠키들 원래 위치 (전투중이 아닐 때는 이 위치를 고수해야 함)
+    public CookieBundle CookieBundle { get; private set; }
+    public Transform OffsetPosition { get; private set; }
     public LayerMask myLayer { get; private set; }
     public LayerMask enemyLayer { get; private set; }
 
@@ -60,6 +63,12 @@ public class CharacterBattleController : MonoBehaviour
         }
 
         _baseController.BaseSkill.SetLayer(layer);
+    }
+
+    public void SetPosition(CookieBundle cookieBundle, Transform pos)
+    {
+        CookieBundle = cookieBundle;
+        OffsetPosition = pos;
     }
 
     /// <summary>
