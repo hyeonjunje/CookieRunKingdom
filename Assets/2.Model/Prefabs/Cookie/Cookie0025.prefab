@@ -153,9 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d3f2e10f51dcbd4b98f65271cf62f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
   enemies: []
 --- !u!50 &99203617
 Rigidbody2D:
@@ -197,7 +194,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &984795027
 Transform:
   m_ObjectHideFlags: 0
@@ -275,9 +272,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c7822a5333a904ca3937cc73bd8d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!50 &5635181771492991986
 Rigidbody2D:
   serializedVersion: 4
@@ -414,12 +408,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   outerCircle: {fileID: 1671036080}
   innerCircle: {fileID: 74774825}
-  lighting: {fileID: 984795027}
+  lighting: {fileID: 984795029}
   moveSpeed: 1.5
   rotateSpeed: 20
   timePerAttack: 1
   duration: 6
-  dir: {x: 7.72, y: 3.86, z: 0}
 --- !u!1 &5272157618789135048
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,8 +545,8 @@ GameObject:
   - component: {fileID: 7534800518396697731}
   - component: {fileID: 7914786383827302616}
   - component: {fileID: 7914786383827302617}
-  - component: {fileID: 7914786383827302622}
   - component: {fileID: 2064161681}
+  - component: {fileID: 8689193198849750554}
   m_Layer: 9
   m_Name: Cookie0025
   m_TagString: Untagged
@@ -631,19 +624,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackEvent:
   - skill1
---- !u!114 &7914786383827302622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7914786383827302623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b0eb7132fba4b428f0337179ca7929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 1000000
 --- !u!114 &2064161681
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -665,3 +645,15 @@ MonoBehaviour:
   - skill2
   _detectAttackRange: {fileID: 99203616}
   _projectile: {fileID: 1671036081}
+--- !u!114 &8689193198849750554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914786383827302623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667f192711acf8a448a64f49d1990339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

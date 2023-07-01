@@ -49,9 +49,9 @@ public class BattleUI : BaseUI
 
     private void Init()
     {
-        BaseController[] cookies = BattleManager.instance.Cookies;
+        List<BaseController> cookies = BattleManager.instance.Cookies;
 
-        for(int i = 0; i < cookies.Length; i++)
+        for(int i = 0; i < cookies.Count; i++)
         {
             SkillButton skillButton = Instantiate(_skillButtonPrefab, _skillButtonParent);
             skillButton.Init(cookies[i]);

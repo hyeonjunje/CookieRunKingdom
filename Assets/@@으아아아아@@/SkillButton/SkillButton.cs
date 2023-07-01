@@ -83,7 +83,7 @@ public class SkillButton : MonoBehaviour
         {
             skillUseSeq.Restart();
             Debug.Log(_cookie + " 스킬 사용!");
-            _cookie.CharacterBattleController.ChangeSkillState();
+            _cookie.CharacterBattleController.ChangeState(EBattleState.BattleSkillState);
         }
     }
 

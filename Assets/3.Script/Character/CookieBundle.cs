@@ -16,9 +16,9 @@ public class CookieBundle : MonoBehaviour
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
     public int CookieRunStateCount { get; private set; }
-    private float currentSpeed = 0f;
 
-    private float currentTime = 0f;
+    private float _startSpeed;
+    private float _currentSpeed = 0f;
 
     public void ActiveMove(bool on)
     {
@@ -29,9 +29,9 @@ public class CookieBundle : MonoBehaviour
 
 
         if(CookieRunStateCount == myCookies.Count)
-            currentSpeed = myCookies[0].Data.MoveSpeed;
+            _currentSpeed = _startSpeed;
         else
-            currentSpeed = 0f;
+            _currentSpeed = 0f;
     }
 
     private void Update()
@@ -39,11 +39,13 @@ public class CookieBundle : MonoBehaviour
         if (myCookies.Count == 0)
             return;
 
-        transform.position += Utils.Dir.normalized * currentSpeed * Time.deltaTime;
+        transform.position += Utils.Dir.normalized * _currentSpeed * Time.deltaTime;
     }
 
-    public void StartBattle(BaseController[] cookies)
+    public void StartBattle(List<BaseController> cookies)
     {
+        _startSpeed = cookies[0].Data.MoveSpeed;
+
         foreach (BaseController cookie in cookies)
         {
             myCookies.Add(cookie);

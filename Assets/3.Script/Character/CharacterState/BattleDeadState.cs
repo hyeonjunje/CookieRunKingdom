@@ -29,7 +29,7 @@ public class BattleDeadState : BaseBattleState
 
         if (currentTime >= 2)
         {
-            GameObject.Destroy(_controller.gameObject);
+            _controller.CharacterBattleController.Disappear();
         }
     }
 }

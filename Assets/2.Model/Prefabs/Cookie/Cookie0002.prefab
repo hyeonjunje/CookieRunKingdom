@@ -198,8 +198,8 @@ GameObject:
   - component: {fileID: 5688084641513008335}
   - component: {fileID: 5499518573459451454}
   - component: {fileID: 5499518573459451455}
-  - component: {fileID: 5499518573459451440}
   - component: {fileID: 1993050354}
+  - component: {fileID: 425605293794019955}
   m_Layer: 9
   m_Name: Cookie0002
   m_TagString: Untagged
@@ -277,19 +277,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackEvent:
   - skill1
---- !u!114 &5499518573459451440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5499518573459451441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b0eb7132fba4b428f0337179ca7929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 1000000
 --- !u!114 &1993050354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,6 +297,18 @@ MonoBehaviour:
   skillEvent: []
   _detectAttackRange: {fileID: 1928400940}
   _detectSkillRange: {fileID: 1265769540}
+--- !u!114 &425605293794019955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5499518573459451441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 667f192711acf8a448a64f49d1990339, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6054888395540169887
 GameObject:
   m_ObjectHideFlags: 0

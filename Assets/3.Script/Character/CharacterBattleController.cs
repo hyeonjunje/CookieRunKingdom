@@ -5,10 +5,8 @@ using UnityEngine.UI;
 
 public class CharacterBattleController : MonoBehaviour
 {
+    [SerializeField] private int maxHp = 10000;
     private Slider _hpBar = null;
-
-    public int maxHp = 10000;
-
     private bool _isDead = false;
 
     private int _currentHp;
@@ -24,17 +22,8 @@ public class CharacterBattleController : MonoBehaviour
             UpdateHpbar();
 
             if (_currentHp <= 0)
-            {
                 if(!_isDead)
-                {
-                    BattleManager.instance.CheckGameClear();
-
-                    _factory.ChangeState(EBattleState.BattleDeadState);
-                    _hpBar.gameObject.SetActive(false);
-                    _hpBar = null;
-                    _isDead = true;
-                }
-            }
+                    Dead();
         }
     }
 
@@ -44,9 +33,9 @@ public class CharacterBattleController : MonoBehaviour
     public LayerMask myLayer { get; private set; }
     public LayerMask enemyLayer { get; private set; }
 
-    private BaseController _baseController;
-    private CharacterData _characterData;
-    private BattleStateFactory _factory;
+    protected BaseController _baseController;
+    protected CharacterData _characterData;
+    protected BattleStateFactory _factory;
     private Coroutine _coUpdate = null;
 
     public bool IsForward { get; private set; }
@@ -98,11 +87,10 @@ public class CharacterBattleController : MonoBehaviour
         _coUpdate = StartCoroutine(CoUpdate());
     }
 
-    public void ChangeSkillState()
+    public void ChangeState(EBattleState state)
     {
-        _factory.ChangeState(EBattleState.BattleSkillState);
+        _factory.ChangeState(state);
     }
-
 
     private void UpdateHpbar()
     {
@@ -131,5 +119,18 @@ public class CharacterBattleController : MonoBehaviour
             if(_hpBar != null)
                 _hpBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2);
         }
+    }
+
+    protected virtual void Dead()
+    {
+        _factory.ChangeState(EBattleState.BattleDeadState);
+        _hpBar.gameObject.SetActive(false);
+        _hpBar = null;
+        _isDead = true;
+    }
+
+    public virtual void Disappear()
+    {
+
     }
 }

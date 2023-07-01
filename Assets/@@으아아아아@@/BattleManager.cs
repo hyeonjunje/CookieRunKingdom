@@ -27,7 +27,7 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private BattleDefeatUI _battleDefeatUI;
 
     [Header("Test")]
-    [SerializeField] private BaseController[] _cookies;
+    [SerializeField] private List<BaseController> _cookies;
     [SerializeField] private StageData _stageData;
 
     private CookieBundle _cookieBundle;
@@ -37,10 +37,10 @@ public class BattleManager : MonoBehaviour
     private int _currentWaveIndex = 0;   // 현재 스테이지의 wave count
     private int _distanceIndex = 0;      // 현재 쿠키들이 달려온 거리를 int로 나타냄
 
-    public BaseController[] Cookies => _cookies;
+    public List<BaseController> Cookies => _cookies;
 
     // 전투 출정할 때 이거 해주고 씬 이동해서 얍얍하자
-    public void Init(BaseController[] cookies, StageData stageData)
+    public void Init(List<BaseController> cookies, StageData stageData)
     {
         _cookies = cookies;
         _stageData = stageData;
@@ -93,9 +93,12 @@ public class BattleManager : MonoBehaviour
     }
 
     // 적이 죽을 때마다 이 메소드를 실행
-    public void CheckGameOver()
+    public void CheckGameOver(BaseController cookie)
     {
+        _cookies.Remove(cookie);
 
+        if (_cookies.Count == 0)
+            GameOver();
     }
 
     // 우리 쿠키가 죽을 때마다 이 메소드를 실행
@@ -104,9 +107,7 @@ public class BattleManager : MonoBehaviour
         _enemyCountInStage--;
 
         if(_enemyCountInStage == 0)
-        {
             GameClear();
-        }
     }
 
     // 게임 오버 시 
@@ -118,6 +119,12 @@ public class BattleManager : MonoBehaviour
     // 게임 클리어 시
     private void GameClear()
     {
+        // 게임 종료 시 슬로우로 보여주고
+
+        // 몇 초 후 밑에 있는거 실행해주라
+        foreach (BaseController cookie in _cookies)
+            cookie.CharacterBattleController.ChangeState(EBattleState.BattleIdleState);
+
         ChangeUI(_battleVictoryUI);
     }
 }

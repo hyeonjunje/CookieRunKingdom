@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5684422519788947676}
   - component: {fileID: 5684422519788947672}
   - component: {fileID: 5684422519788947677}
+  - component: {fileID: 2739787545817387567}
   - component: {fileID: 5684422519788947674}
-  - component: {fileID: 5684422519788947675}
   m_Layer: 10
   m_Name: enemy10116
   m_TagString: Untagged
@@ -94,6 +94,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: 00bc03024528d2f44bd9dc3b38a6cae4, type: 2}
+--- !u!114 &2739787545817387567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5684422519788947670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 340f4103f6af6f146a9269892dec7dec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5684422519788947674
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,19 +119,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackEvent: []
---- !u!114 &5684422519788947675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5684422519788947670}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66b0eb7132fba4b428f0337179ca7929, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHp: 50000
 --- !u!1 &5684422520274647291
 GameObject:
   m_ObjectHideFlags: 0
