@@ -14567,6 +14567,7 @@ MonoBehaviour:
   _battleSpeedButton: {fileID: 1989140536}
   _autoBattleButton: {fileID: 818562100}
   _pauseButton: {fileID: 1821703477}
+  _battleSpeedText: {fileID: 1052944395}
   _timeText: {fileID: 1809230473}
   _pauseUI: {fileID: 65576470}
 --- !u!1 &1326178789
@@ -23454,7 +23455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 425605293794019955, guid: 70c519440a0106c44a81a0ac6ed39937, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 1000000
       objectReference: {fileID: 0}
     - target: {fileID: 5499518573459451441, guid: 70c519440a0106c44a81a0ac6ed39937, type: 3}
       propertyPath: m_Name
@@ -23631,7 +23632,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8689193198849750554, guid: 759059a82b87a4f49ab86272cc1c7d60, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 1000000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 759059a82b87a4f49ab86272cc1c7d60, type: 3}
@@ -24031,7 +24032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 846481518472870673, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 1000000
       objectReference: {fileID: 0}
     - target: {fileID: 4737691754896499271, guid: 7201c8efcbc15ea4ca0e98045bc6917a, type: 3}
       propertyPath: m_Mesh
@@ -24132,7 +24133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6081165020296045664, guid: 368494605e5ae2a4db9e5a6443dacea2, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 1000000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 368494605e5ae2a4db9e5a6443dacea2, type: 3}
@@ -24225,7 +24226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5913911964855900776, guid: 69670bb8c4a7c8948a574803e2ed7765, type: 3}
       propertyPath: maxHp
-      value: 100
+      value: 1000000
       objectReference: {fileID: 0}
     - target: {fileID: 7403580663071779719, guid: 69670bb8c4a7c8948a574803e2ed7765, type: 3}
       propertyPath: m_Name

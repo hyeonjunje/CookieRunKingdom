@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//1.2 1.5
+
 public class BattleUI : BaseUI
 {
     [Header("Cookie Skill UI")]
@@ -15,6 +17,8 @@ public class BattleUI : BaseUI
     [SerializeField] private Button _autoBattleButton;
     [SerializeField] private Button _pauseButton;
 
+    [SerializeField] private TextMeshProUGUI _battleSpeedText;
+
     [Header("Time")]
     [SerializeField] private TextMeshProUGUI _timeText;
 
@@ -24,6 +28,27 @@ public class BattleUI : BaseUI
     // 한 스테이지당 3분
     private int CurrentTime = 0;
     private Coroutine _coUpdate = null;
+
+    private float[] speedValues = new float[] { 1.0f, 1.2f, 1.5f };
+    private int _speedIndex;
+    private int SpeedIndex
+    {
+        get
+        {
+            return _speedIndex;
+        }
+
+        set
+        {
+            _speedIndex = value;
+
+            if (_speedIndex >= speedValues.Length)
+                _speedIndex = 0;
+
+            Time.timeScale = speedValues[_speedIndex];
+            _battleSpeedText.text = "x" + speedValues[_speedIndex].ToString("F1");
+        }
+    }
 
     public override void Show()
     {
@@ -59,6 +84,9 @@ public class BattleUI : BaseUI
             SkillButton skillButton = Instantiate(_skillButtonPrefab, _skillButtonParent);
             skillButton.Init(cookies[i]);
         }
+
+        SpeedIndex = 0;
+        _battleSpeedButton.onClick.AddListener(() => SpeedIndex++);
     }
 
     private IEnumerator CoUpdate()
