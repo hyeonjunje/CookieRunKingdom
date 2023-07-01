@@ -29,6 +29,7 @@ MonoBehaviour:
     - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
     - {fileID: 0}
+    distance: 1
   - enemies:
     - {fileID: 0}
     - {fileID: 0}
@@ -45,6 +46,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
+    distance: 5
   - enemies:
     - {fileID: 0}
     - {fileID: 0}
@@ -61,6 +63,7 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
+    distance: 9
   - enemies:
     - {fileID: 0}
     - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
@@ -77,3 +80,4 @@ MonoBehaviour:
     - {fileID: 5684422519788947677, guid: 38df12e6f94ed8344b1feebd189541d1, type: 3}
     - {fileID: 0}
     - {fileID: 0}
+    distance: 13

@@ -8,6 +8,9 @@ public class CharacterBattleController : MonoBehaviour
     private Slider _hpBar = null;
 
     public int maxHp = 10000;
+
+    private bool _isDead = false;
+
     private int _currentHp;
     public int CurrentHp
     {
@@ -22,9 +25,15 @@ public class CharacterBattleController : MonoBehaviour
 
             if (_currentHp <= 0)
             {
-                _factory.ChangeState(EBattleState.BattleDeadState);
-                _hpBar.gameObject.SetActive(false);
-                _hpBar = null;
+                if(!_isDead)
+                {
+                    BattleManager.instance.CheckGameClear();
+
+                    _factory.ChangeState(EBattleState.BattleDeadState);
+                    _hpBar.gameObject.SetActive(false);
+                    _hpBar = null;
+                    _isDead = true;
+                }
             }
         }
     }
@@ -44,6 +53,8 @@ public class CharacterBattleController : MonoBehaviour
 
     public void Init(BaseController baseController, CharacterData characterData)
     {
+        _isDead = false;
+
         _baseController = baseController;
         _characterData = characterData;
         CurrentHp = maxHp;

@@ -6,6 +6,7 @@ using UnityEngine;
 public class WaveInfo
 {
     public BaseController[] enemies = new BaseController[15];
+    public int distance = 0;
 }
 
 [CreateAssetMenu]

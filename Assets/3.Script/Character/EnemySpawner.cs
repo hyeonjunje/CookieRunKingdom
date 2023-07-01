@@ -14,6 +14,8 @@ public class EnemySpawner : MonoBehaviour
     {
         _index = 0;
         _stageData = stageData;
+
+        transform.position = Utils.Dir * 3;
     }
 
     public void SpawnEnemy()

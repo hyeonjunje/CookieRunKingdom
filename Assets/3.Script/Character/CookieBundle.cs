@@ -40,17 +40,6 @@ public class CookieBundle : MonoBehaviour
             return;
 
         transform.position += Utils.Dir.normalized * currentSpeed * Time.deltaTime;
-
-        if(currentSpeed == myCookies[0].Data.MoveSpeed)
-        {
-            currentTime += Time.deltaTime;
-
-            if(currentTime > 3f)
-            {
-                currentTime = 0;
-                FindObjectOfType<EnemySpawner>().SpawnEnemy();
-            }
-        }
     }
 
     public void StartBattle(BaseController[] cookies)
