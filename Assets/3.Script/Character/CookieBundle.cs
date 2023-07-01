@@ -18,6 +18,8 @@ public class CookieBundle : MonoBehaviour
     public int CookieRunStateCount { get; private set; }
     private float currentSpeed = 0f;
 
+    private float currentTime = 0f;
+
     public void ActiveMove(bool on)
     {
         if (on)
@@ -38,6 +40,17 @@ public class CookieBundle : MonoBehaviour
             return;
 
         transform.position += Utils.Dir.normalized * currentSpeed * Time.deltaTime;
+
+        if(currentSpeed == myCookies[0].Data.MoveSpeed)
+        {
+            currentTime += Time.deltaTime;
+
+            if(currentTime > 3f)
+            {
+                currentTime = 0;
+                FindObjectOfType<EnemySpawner>().SpawnEnemy();
+            }
+        }
     }
 
     public void StartBattle(BaseController[] cookies)

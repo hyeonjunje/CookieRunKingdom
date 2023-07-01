@@ -45,7 +45,7 @@ public static class Utils
     /// </summary>
     /// <param name="time">초</param>
     /// <returns>초를 변환한 시간 문자열</returns>
-    public static string GetTimeText(float time)
+    public static string GetTimeText(float time, bool isString = true)
     {
         float hour = (int)time / 3600;
         time %= 3600;
@@ -55,12 +55,29 @@ public static class Utils
 
         string result = "";
 
-        if (hour != 0)
-            result += hour + "시간 ";
-        if (min != 0)
-            result += min + "분 ";
+        if(isString)
+        {
+            if (hour != 0)
+                result += hour + "시간 ";
+            if (min != 0)
+                result += min + "분 ";
 
-        result += sec + "초";
+            result += sec + "초";
+        }
+        else
+        {
+            if (min < 10)
+                result += "0" + min;
+            else
+                result += min.ToString();
+
+            result += ":";
+
+            if (sec < 10)
+                result += "0" + sec;
+            else
+                result += sec.ToString();
+        }
 
         return result;
     }

@@ -5,8 +5,6 @@ using Spine.Unity;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] StageData stage;
-
     [SerializeField] private Transform[] positions;
 
     private StageData _stageData;
@@ -20,7 +18,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        BaseController[] enemies = _stageData.WaveInfo[_index].enemies;
+        BaseController[] enemies = _stageData.WaveInfo[_index++].enemies;
         for(int i = 0; i < enemies.Length; i++)
         {
             if(enemies[i] != null)
