@@ -33,6 +33,12 @@ public abstract class BaseSkill : MonoBehaviour
     // 스킬 이벤트
     public abstract void OnSkillEvent(int index);
 
+    // 스킬을 쓸 수 있으면 true, 아니면 false
+    public virtual bool IsReadyToUseSkill()
+    {
+        return true;
+    }
+
     public CharacterBattleController DetectTarget()
     {
         if (_detectAttackRange.enemies.Count != 0)

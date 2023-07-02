@@ -33,6 +33,12 @@ public class Cookie0121Skill : BaseSkill
 
     }
 
+    // 스킬 범위에 감지가 되면 그 때 사용할 수 있음
+    public override bool IsReadyToUseSkill()
+    {
+        return _detectedSkilRange.enemies.Count != 0;
+    }
+
     public override bool UseSkill()
     {
         if(_currentTime == 0)

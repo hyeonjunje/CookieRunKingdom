@@ -5,9 +5,11 @@ using UnityEngine.UI;
 
 public class CharacterBattleController : MonoBehaviour
 {
-    [SerializeField] private int maxHp = 10000;
     private Slider _hpBar = null;
     private bool _isDead = false;
+
+    [SerializeField] private int maxHp = 10000;
+    public int MaxHp => maxHp;
 
     private int _currentHp;
     public int CurrentHp

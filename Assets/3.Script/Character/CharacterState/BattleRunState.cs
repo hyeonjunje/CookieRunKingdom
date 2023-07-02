@@ -32,9 +32,10 @@ public class BattleRunState : BaseBattleState
         // 원위치가 있는 캐릭터라면 윈위치로 부드럽게 이동 후 자체적으로 이동해야 함
         if (_controller.CharacterBattleController.OffsetPosition != null)
         {
+            Vector3 dir = Vector3.zero;
             if(!isPos)
             {
-                _controller.transform.position = Vector3.MoveTowards(_controller.transform.position, _controller.CharacterBattleController.OffsetPosition.position, 0.05f);
+                dir = (_controller.CharacterBattleController.OffsetPosition.position - _controller.transform.position).normalized * 3;
 
                 if(Vector3.Distance(_controller.CharacterBattleController.OffsetPosition.position, _controller.transform.position) < 0.1f)
                 {
@@ -44,9 +45,9 @@ public class BattleRunState : BaseBattleState
             }
             else
             {
-                Vector3 dir = _controller.CharacterBattleController.IsForward ? Utils.Dir.normalized : -Utils.Dir.normalized;
-                _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
+                dir = _controller.CharacterBattleController.IsForward ? Utils.Dir.normalized : -Utils.Dir.normalized;
             }
+            _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed;
         }
         // 아니면 그냥 움직임
         else

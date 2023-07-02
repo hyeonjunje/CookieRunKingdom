@@ -35,6 +35,11 @@ public class Cookie0025Skill : BaseSkill
         }
     }
 
+    public override bool IsReadyToUseSkill()
+    {
+        return _detectAttackRange.enemies.Count != 0;
+    }
+
     public override bool UseSkill()
     {
         if(_skillIndex == 0)

@@ -5,9 +5,10 @@ using UnityEngine;
 public class Cookie0001Skill : BaseSkill
 {
     [SerializeField] protected DetectRange _detectSkillRange;
+    [SerializeField] protected DetectRange _detectSkillAttackRange;
 
     // 현재 실행되고 있는 애니메이션의 길이
-    private List<CharacterBattleController> targets => _detectSkillRange.enemies;
+    private List<CharacterBattleController> targets => _detectSkillAttackRange.enemies;
     private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
     private float _currentTime = 0;
@@ -21,6 +22,7 @@ public class Cookie0001Skill : BaseSkill
     {
         base.SetLayer(layer);
         _detectSkillRange.Init(layer);
+        _detectSkillAttackRange.Init(layer);
     }
 
     public override void NormalAttack()
@@ -33,6 +35,11 @@ public class Cookie0001Skill : BaseSkill
 
     }
 
+    public override bool IsReadyToUseSkill()
+    {
+        return _detectSkillRange.enemies.Count != 0;
+    }
+
     // false면 스킬 종료
     public override bool UseSkill()
     {
@@ -41,7 +48,7 @@ public class Cookie0001Skill : BaseSkill
         {
             PlayAnimation(animationName[_skillIndex++]);
         }
-        else if(_skillIndex == 1 && targets.Count == 0)
+        else if(_skillIndex == 1 && !DetectTarget())
         {
             // 달려가
             Vector3 dir = _controller.CharacterBattleController.IsForward ? new Vector3(7.72f, 3.68f, 0f).normalized : new Vector3(-7.72f, -3.68f, 0f).normalized;

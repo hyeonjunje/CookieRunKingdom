@@ -11,6 +11,8 @@ public class SkillButton : MonoBehaviour
     private Sprite _idleSprite;
     private Sprite _skillSprite;
 
+    private bool isSkillUse = false;
+
     [SerializeField] private Image _buttonImage;
     [SerializeField] private Image _coolTimeImage;
     [SerializeField] private TextMeshProUGUI _coolTimeText; 
@@ -34,6 +36,7 @@ public class SkillButton : MonoBehaviour
             }
             else
             {
+                isSkillUse = false;
                 _coolTimeText.gameObject.SetActive(false);
                 _coolTimeImage.gameObject.SetActive(false);
             }
@@ -79,10 +82,11 @@ public class SkillButton : MonoBehaviour
     {
         buttonClickSeq.Restart();
 
-        if(currentTime == 0)
+        // 쿨타임이 다 찼고, 스킬을 쓸 수 있는 경우 사용
+        if(!isSkillUse && _cookie.BaseSkill.IsReadyToUseSkill())
         {
+            isSkillUse = true;
             skillUseSeq.Restart();
-            Debug.Log(_cookie + " 스킬 사용!");
             _cookie.CharacterBattleController.ChangeState(EBattleState.BattleSkillState);
         }
     }

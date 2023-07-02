@@ -37,6 +37,18 @@ public class Cookie0514Skill : BaseSkill
         }
     }
 
+    // 우리 팀에 체력이 깎인 쿠키가 있으면 true
+    public override bool IsReadyToUseSkill()
+    {
+        List<BaseController> cookies = BattleManager.instance.Cookies;
+        foreach(BaseController cookie in cookies)
+        {
+            if (cookie.CharacterBattleController.CurrentHp != cookie.CharacterBattleController.MaxHp)
+                return true;
+        }
+        return false;
+    }
+
     public override bool UseSkill()
     {
         if(_skillIndex == 0)
