@@ -11,12 +11,12 @@ public class KingdomWishTreeState : KingdomBaseState
 
     public override void Enter()
     {
-        UIManager.instance.PushUI(_manager.KingdomWishTreeUI);
+        GameManager.UI.PushUI(_manager.KingdomWishTreeUI);
     }
 
     public override void Exit()
     {
-        UIManager.instance.ClearUI();
+        GameManager.UI.ClearUI();
     }
 
     public override void Update()

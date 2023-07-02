@@ -120,13 +120,13 @@ public class BattleUI : BaseUI
 
     public void Pause()
     {
-        UIManager.instance.ShowPopUpUI(_pauseUI);
+        GameManager.UI.ShowPopUpUI(_pauseUI);
         Time.timeScale = 0;
     }
 
     public void Continue()
     {
         Time.timeScale = 1;
-        UIManager.instance.ExitPopUpUI();
+        GameManager.UI.ExitPopUpUI();
     }
 }

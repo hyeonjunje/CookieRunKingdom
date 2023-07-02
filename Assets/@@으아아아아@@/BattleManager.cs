@@ -90,8 +90,8 @@ public class BattleManager : MonoBehaviour
 
     public void ChangeUI(BaseUI ui)
     {
-        UIManager.instance.ClearUI();
-        UIManager.instance.PushUI(ui);
+        GameManager.UI.ClearUI();
+        GameManager.UI.PushUI(ui);
     }
 
     // 적이 죽을 때마다 이 메소드를 실행

@@ -30,7 +30,7 @@ public class KingdomCraftState : KingdomBaseState
             {
                 _building.Highlighgt(true);
                 _manager.KingdomBackGroundUI.SetActive(true);
-                UIManager.instance.PushUI(_manager.KingdomCraftUI);
+                GameManager.UI.PushUI(_manager.KingdomCraftUI);
             });
     }
 
@@ -40,7 +40,7 @@ public class KingdomCraftState : KingdomBaseState
 
         _building = null;
         _manager.KingdomBackGroundUI.SetActive(false);
-        UIManager.instance.ClearUI();
+        GameManager.UI.ClearUI();
 
         Sequence seq = DOTween.Sequence();
         seq.Append(_camera.DOOrthoSize(prevOrthoSize, 0.5f));

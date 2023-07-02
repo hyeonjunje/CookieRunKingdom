@@ -11,12 +11,12 @@ public class KingdomStatueState : KingdomBaseState
 
     public override void Enter()
     {
-        UIManager.instance.PushUI(_manager.KingdomStatueUI);
+        GameManager.UI.PushUI(_manager.KingdomStatueUI);
     }
 
     public override void Exit()
     {
-        UIManager.instance.ClearUI();
+        GameManager.UI.ClearUI();
     }
 
     public override void Update()

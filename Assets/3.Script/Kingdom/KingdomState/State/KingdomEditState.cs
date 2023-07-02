@@ -23,13 +23,13 @@ public class KingdomEditState : KingdomBaseState
     public override void Enter()
     {
         Init();
-        UIManager.instance.PushUI(_manager.KingdomEditUI);
+        GameManager.UI.PushUI(_manager.KingdomEditUI);
     }
 
     public override void Exit()
     {
         _manager.BuildingSelectUI.HideUI();
-        UIManager.instance.ClearUI();
+        GameManager.UI.ClearUI();
     }
 
     public override void Update()

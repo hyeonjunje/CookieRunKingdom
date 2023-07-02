@@ -11,12 +11,12 @@ public class KingdomSelectMapState : KingdomBaseState
 
     public override void Enter()
     {
-        UIManager.instance.PushUI(_manager.KingdomSelectMapUI);
+        GameManager.UI.PushUI(_manager.KingdomSelectMapUI);
     }
 
     public override void Exit()
     {
-        UIManager.instance.ClearUI();
+        GameManager.UI.ClearUI();
     }
     public override void Update()
     {

@@ -23,12 +23,12 @@ public class KingdomManageState : KingdomBaseState
     public override void Enter()
     {
         Init();
-        UIManager.instance.PushUI(_manager.KingdomManagerUI);
+        GameManager.UI.PushUI(_manager.KingdomManagerUI);
     }
 
     public override void Exit()
     {
-        UIManager.instance.ClearUI();
+        GameManager.UI.ClearUI();
     }
 
     public override void OnClick(InputAction.CallbackContext value)

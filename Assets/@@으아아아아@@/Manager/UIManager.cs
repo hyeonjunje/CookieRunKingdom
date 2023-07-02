@@ -2,20 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager
 {
-    public static UIManager instance = null;
-
-    private void Awake()
+    public void Init()
     {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+
     }
 
     private Stack<BaseUI> uiStack = new Stack<BaseUI>();
