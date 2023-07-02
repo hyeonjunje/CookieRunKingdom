@@ -181,7 +181,7 @@ public class Building : MonoBehaviour
             if(craftingItemData[i].state == ECraftingState.complete)
             {
                 // Debug.Log(craftingItemData[i].craftData.CraftResult.ingredientItem.ItemName + " 을 " + craftingItemData[i].craftData.CraftResult.count + "개 얻었습니다.");
-                DataBaseManager.instance.AddItem(craftingItemData[i].craftData.CraftResult.ingredientItem, craftingItemData[i].craftData.CraftResult.count);
+                DataBaseManager.Instance.AddItem(craftingItemData[i].craftData.CraftResult.ingredientItem, craftingItemData[i].craftData.CraftResult.count);
                 craftingItemData[i].state = ECraftingState.empty;
             }
         }

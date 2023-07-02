@@ -26,10 +26,6 @@ public class BattleManager : MonoBehaviour
     [SerializeField] private BattleVictoryUI _battleVictoryUI;
     [SerializeField] private BattleDefeatUI _battleDefeatUI;
 
-    [Header("Test")]
-    [SerializeField] private List<BaseController> _cookies;
-    [SerializeField] private StageData _stageData;
-
     private CookieBundle _cookieBundle;
     private EnemySpawner _enemySpawner;
 
@@ -37,18 +33,26 @@ public class BattleManager : MonoBehaviour
     private int _currentWaveIndex = 0;   // 현재 스테이지의 wave count
     private int _distanceIndex = 0;      // 현재 쿠키들이 달려온 거리를 int로 나타냄
 
-    public List<BaseController> Cookies => _cookies;
+
+    private BaseController[] _cookies;
+
+    public List<BaseController> Cookies { get; private set; }
+    public StageData StageData { get; private set; }
 
     // 전투 출정할 때 이거 해주고 씬 이동해서 얍얍하자
-    public void Init(List<BaseController> cookies, StageData stageData)
+    public void Init(int[] cookiesData, StageData stageData)
     {
-        _cookies = cookies;
-        _stageData = stageData;
-    }
+        _cookies = new BaseController[cookiesData.Length];
+        Cookies = new List<BaseController>();
 
-    private void Start()
-    {
-        StartBattle();
+        for (int i = 0; i < cookiesData.Length; i++)
+            if(cookiesData[i] != -1)
+            {
+                _cookies[i] = Instantiate(DataBaseManager.Instance.AllCookies[cookiesData[i]]);
+                Cookies.Add(_cookies[i]);
+            }
+
+        StageData = stageData;
     }
 
     // 씬 이동 후 바로 이거 해주자
@@ -63,29 +67,27 @@ public class BattleManager : MonoBehaviour
         _enemySpawner = FindObjectOfType<EnemySpawner>();
 
         _cookieBundle.StartBattle(_cookies);
-        _enemySpawner.Init(_stageData);
+        _enemySpawner.Init(StageData);
 
         // 이번 스테이지의 모든 적 수를 센다.
-        for(int i = 0; i < _stageData.WaveInfo.Length; i++)
-            for(int j = 0; j < _stageData.WaveInfo[i].enemies.Length; j++)
-                if (_stageData.WaveInfo[i].enemies[j] != null)
+        for(int i = 0; i < StageData.WaveInfo.Length; i++)
+            for(int j = 0; j < StageData.WaveInfo[i].enemies.Length; j++)
+                if (StageData.WaveInfo[i].enemies[j] != null)
                     _enemyCountInStage++;
-
-        ChangeUI(_battleUI);
     }
 
     public void TrySpawnNextWave()
     {
-        if (_currentWaveIndex >= _stageData.WaveInfo.Length)
+        if (_currentWaveIndex >= StageData.WaveInfo.Length)
             return;
 
 
-        if (_distanceIndex++ == _stageData.WaveInfo[_currentWaveIndex].distance)
+        if (_distanceIndex++ == StageData.WaveInfo[_currentWaveIndex].distance)
         {
             _enemySpawner.SpawnEnemy();
             _currentWaveIndex++;
         }
-        _battleUI.SetBattleGauge((float)_distanceIndex / (_stageData.WaveInfo[_stageData.WaveInfo.Length - 1].distance + 2));
+        _battleUI.SetBattleGauge((float)_distanceIndex / (StageData.WaveInfo[StageData.WaveInfo.Length - 1].distance + 2));
     }
 
     public void ChangeUI(BaseUI ui)
@@ -97,9 +99,9 @@ public class BattleManager : MonoBehaviour
     // 적이 죽을 때마다 이 메소드를 실행
     public void CheckGameOver(BaseController cookie)
     {
-        _cookies.Remove(cookie);
+        Cookies.Remove(cookie);
 
-        if (_cookies.Count == 0)
+        if (Cookies.Count == 0)
             GameOver();
     }
 
@@ -123,7 +125,7 @@ public class BattleManager : MonoBehaviour
     {
         _battleUI.SetBattleGauge(1);
         // 게임 종료 시 슬로우로 보여주고
-        foreach (BaseController cookie in _cookies)
+        foreach (BaseController cookie in Cookies)
             cookie.CharacterBattleController.ChangeState(EBattleState.BattleIdleState);
         Invoke("s", 2f);
 

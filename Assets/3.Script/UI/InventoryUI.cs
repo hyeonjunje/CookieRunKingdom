@@ -55,7 +55,7 @@ public class InventoryUI : BaseUI
 
         // Test
         int index = 0;
-        foreach (var data in DataBaseManager.instance.MyDataBase.itemDataBase)
+        foreach (var data in DataBaseManager.Instance.MyDataBase.itemDataBase)
         {
             inventoryItems[index++].FillSlot(data.Key, data.Value);
         }

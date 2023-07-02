@@ -15,7 +15,6 @@ public class CharacterAnimator : MonoBehaviour
     private BaseSkill _baseSkill;
 
     private string[] _animationNames;
-    public string[] attackEvent;
 
     public void Init(BaseController baseController, CharacterData characterData)
     {
@@ -112,6 +111,19 @@ public class CharacterAnimator : MonoBehaviour
                 _baseSkill.OnSkillEvent(i);
                 return;
             }
+        }
+    }
+
+    public void SettingOrderLayer(bool isHighest)
+    {
+        if(isHighest)
+        {
+            _renderer.sortingLayerName = "UIUpper";
+
+        }
+        else
+        {
+            _renderer.sortingLayerName = "Default";
         }
     }
 

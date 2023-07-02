@@ -70,17 +70,9 @@ public class BattleUI : BaseUI
         base.Hide();
     }
 
-    private void Start()
-    {
-        Init();
-    }
-    
     // 전투가 끝나면 BattleUI는 비활성화 되니까 이건 실행안돼
     private void Update()
     {
-        /*_battleGague.sizeDelta += new Vector2(5 * Time.deltaTime, 0);
-        Debug.Log(_battleGague.sizeDelta.x + " 입니다.");*/
-
         _currentGague = Mathf.Lerp(_currentGague, _targetGauge, Time.deltaTime);
         _battleGague.sizeDelta = new Vector2(_currentGague, _battleGague.sizeDelta.y);
     }
@@ -91,7 +83,7 @@ public class BattleUI : BaseUI
         _targetGauge = Mathf.Clamp(_targetGauge, 30, 400);
     }
 
-    private void Init()
+    public void Init()
     {
         List<BaseController> cookies = BattleManager.instance.Cookies;
 

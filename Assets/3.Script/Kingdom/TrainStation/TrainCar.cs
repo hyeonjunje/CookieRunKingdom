@@ -42,7 +42,7 @@ public class TrainCar : MonoBehaviour
                 state = ETrainState.Done;
 
                 // æ∆¿Ã≈€ ∞≥ºˆ ª©¡÷∞Ì
-                DataBaseManager.instance.AddItem(_necessaryItemData, -_necessaryItemAmount);
+                DataBaseManager.Instance.AddItem(_necessaryItemData, -_necessaryItemAmount);
                 trainCarImage.sprite = checkSprite;
                 trainCarCapacity.text = "";
 
@@ -54,7 +54,7 @@ public class TrainCar : MonoBehaviour
             state = ETrainState.Empty;
 
             // æ∆¿Ã≈€ »πµÊ«œ∞Ì
-            DataBaseManager.instance.AddItem(_rewardItemData, _rewardItemAmount);
+            DataBaseManager.Instance.AddItem(_rewardItemData, _rewardItemAmount);
             trainCarImage.sprite = null;
 
             _train.TrySendTrain();
@@ -67,7 +67,7 @@ public class TrainCar : MonoBehaviour
         state = ETrainState.Reward;
 
         _necessaryItemData = null;
-        _rewardItemData = DataBaseManager.instance.AllItemData[Random.Range(0, DataBaseManager.instance.AllItemData.Length)];
+        _rewardItemData = DataBaseManager.Instance.AllItemData[Random.Range(0, DataBaseManager.Instance.AllItemData.Length)];
         _rewardItemAmount = Random.Range(1, 5);
 
         trainCarImage.sprite = _rewardItemData.ItemImage;
@@ -80,7 +80,7 @@ public class TrainCar : MonoBehaviour
         state = ETrainState.Waiting;
 
         _rewardItemData = null;
-        _necessaryItemData = DataBaseManager.instance.AllItemData[Random.Range(0, DataBaseManager.instance.AllItemData.Length)];
+        _necessaryItemData = DataBaseManager.Instance.AllItemData[Random.Range(0, DataBaseManager.Instance.AllItemData.Length)];
         _necessaryItemAmount = Random.Range(1, 5);
 
         int ownedCount = CheckMyItem(_necessaryItemData);
@@ -90,8 +90,8 @@ public class TrainCar : MonoBehaviour
 
     private int CheckMyItem(ItemData item)
     {
-        if (DataBaseManager.instance.MyDataBase.itemDataBase.ContainsKey(_necessaryItemData))
-            return DataBaseManager.instance.MyDataBase.itemDataBase[_necessaryItemData];
+        if (DataBaseManager.Instance.MyDataBase.itemDataBase.ContainsKey(_necessaryItemData))
+            return DataBaseManager.Instance.MyDataBase.itemDataBase[_necessaryItemData];
         return 0;
     }
 }

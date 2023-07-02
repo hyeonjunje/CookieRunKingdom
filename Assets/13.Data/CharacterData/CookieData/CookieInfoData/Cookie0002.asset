@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32579f66ef5fd6445b68eaa005031d15, type: 3}
   m_Name: Cookie0002
   m_EditorClassIdentifier: 
-  _characterName: 
+  _characterName: "\uB538\uAE30\uB9DB \uCFE0\uD0A4"
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
   moveSpeed: 5
   attackRange: 1

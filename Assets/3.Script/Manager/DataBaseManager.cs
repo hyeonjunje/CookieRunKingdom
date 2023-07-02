@@ -2,31 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DataBaseManager : MonoBehaviour
+public class DataBaseManager : Singleton<DataBaseManager>
 {
     // 데이터베이스에서 정보들을 가져와서 파싱 해주라...
 
-    public static DataBaseManager instance = null;
-
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    [Header("모든 쿠키의 데이터")]
+    [SerializeField] private BaseController[] allCookies;
 
     [Header("모든 아이템 데이터")]
     [SerializeField] private ItemData[] allItemData;
 
-
     [Header("Test")]
     [SerializeField] private ItemData[] testItem;
 
+    public BaseController[] AllCookies => allCookies;
     public ItemData[] AllItemData => allItemData;
     public DataBase MyDataBase { get; private set; }
 

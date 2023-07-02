@@ -10,7 +10,6 @@ public class CookieBundle : MonoBehaviour
     /// 8 9 7  후방
     /// </summary>
     [SerializeField] private Transform[] cookiePositions;
-
     private BaseController[] isPosition;
     private List<BaseController> myCookies = new List<BaseController>();
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
@@ -42,20 +41,34 @@ public class CookieBundle : MonoBehaviour
         transform.position += Utils.Dir.normalized * _currentSpeed * Time.deltaTime;
     }
 
-    public void StartBattle(List<BaseController> cookies)
+    public void StartBattle(BaseController[] cookies)
     {
-        _startSpeed = cookies[0].Data.MoveSpeed;
+        /*        _startSpeed = cookies[0].Data.MoveSpeed;
 
-        foreach (BaseController cookie in cookies)
+                foreach (BaseController cookie in cookies)
+                {
+                    myCookies.Add(cookie);
+                    // 자리 기준으로 정렬
+                    myCookies.Sort(CustomComparison);
+                    // 재배치
+                    ReArrange();
+                }*/
+
+        isPosition = cookies;
+
+        for (int i = 0; i < cookies.Length; i++)
         {
-            myCookies.Add(cookie);
-            // 자리 기준으로 정렬
-            myCookies.Sort(CustomComparison);
-            // 재배치
-            ReArrange();
+            if(cookies[i] != null)
+            {
+                MovePosition(i);
+                myCookies.Add(cookies[i]);
+            }
         }
 
-        foreach(BaseController cookie in cookies)
+        _startSpeed = myCookies[0].Data.MoveSpeed;
+
+
+        foreach (BaseController cookie in myCookies)
         {
             cookie.gameObject.layer = LayerMask.NameToLayer("Cookie");
             cookie.CharacterBattleController.StartBattle(true);
@@ -73,7 +86,7 @@ public class CookieBundle : MonoBehaviour
         return result;
     }
 
-    private void ReArrange()
+    /*private void ReArrange()
     {
         isPosition = new BaseController[cookiePositions.Length];
 
@@ -133,7 +146,7 @@ public class CookieBundle : MonoBehaviour
                 MovePosition(i);
             }
         }
-    }
+    }*/
 
     private void MovePosition(int index)
     {

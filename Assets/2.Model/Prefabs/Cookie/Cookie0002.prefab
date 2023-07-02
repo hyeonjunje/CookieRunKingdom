@@ -275,8 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f5df23c988c9b4e84033be2f8da5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackEvent:
-  - skill1
 --- !u!114 &1993050354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +307,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667f192711acf8a448a64f49d1990339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 1000000
 --- !u!1 &6054888395540169887
 GameObject:
   m_ObjectHideFlags: 0

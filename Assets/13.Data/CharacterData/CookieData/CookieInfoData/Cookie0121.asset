@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32579f66ef5fd6445b68eaa005031d15, type: 3}
   m_Name: Cookie0121
   m_EditorClassIdentifier: 
-  _characterName: 
+  _characterName: "\uCE60\uB9AC\uB9DB \uCFE0\uD0A4"
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
   moveSpeed: 5
   attackRange: 2
   _idleSprite: {fileID: 21300000, guid: 64d541730ea0b4740aad80549379b20b, type: 3}
   _skillSprite: {fileID: 21300000, guid: 07626ca8b9716e84da71b630b161ae8b, type: 3}
   _cookieGrade: 0
-  _cookieType: 0
+  _cookieType: 3
   _cookiePosition: 1
