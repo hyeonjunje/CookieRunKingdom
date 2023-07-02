@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01884f6f44279fd4e874c8ccf5d9acd7, type: 3}
   m_Name: 1Stage
   m_EditorClassIdentifier: 
+  _stageName: "1-1 \uB864\uCF00\uC774\uD06C \uB098\uBB34 \uC232"
+  _recommendedPower: 5836
   _waveInfo:
   - enemies:
     - {fileID: 0}

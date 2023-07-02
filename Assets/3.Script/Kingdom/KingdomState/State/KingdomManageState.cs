@@ -15,6 +15,8 @@ public class KingdomManageState : KingdomBaseState
 
     private void Init()
     {
+        _manager.CurrentCameraControllerData = _manager.CameraControllInKingdomData;
+
         _touchCount = 0;
         _currentBuilding = null;
         _isActiveCameraControll = true;

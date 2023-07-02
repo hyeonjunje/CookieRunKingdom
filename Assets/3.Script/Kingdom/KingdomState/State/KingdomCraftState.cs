@@ -24,8 +24,8 @@ public class KingdomCraftState : KingdomBaseState
         prevOrthoSize = _camera.orthographicSize;
 
         Sequence seq = DOTween.Sequence();
-        seq.Append(_camera.transform.DOMove(_building.transform.position + _manager.CameraControllData.CameraBuildingZoomOffset, 0.5f))
-            .Join(_camera.DOOrthoSize(_manager.CameraControllData.CameraBuildingZoom, 0.5f))
+        seq.Append(_camera.transform.DOMove(_building.transform.position + _manager.CurrentCameraControllerData.CameraBuildingZoomOffset, 0.5f))
+            .Join(_camera.DOOrthoSize(_manager.CurrentCameraControllerData.CameraBuildingZoom, 0.5f))
             .OnComplete(() =>
             {
                 _building.Highlighgt(true);

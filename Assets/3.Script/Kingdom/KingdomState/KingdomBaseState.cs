@@ -32,9 +32,9 @@ public abstract class KingdomBaseState
 
         if (value.performed)
         {
-            float increment = value.ReadValue<Vector2>().y * _manager.CameraControllData.CameraZoomSpeed;
+            float increment = value.ReadValue<Vector2>().y * _manager.CurrentCameraControllerData.CameraZoomSpeed;
             _camera.orthographicSize = Mathf.Clamp(_camera.orthographicSize + increment,
-                _manager.CameraControllData.CameraZoomMin, _manager.CameraControllData.CameraZoomMax);
+                _manager.CurrentCameraControllerData.CameraZoomMin, _manager.CurrentCameraControllerData.CameraZoomMax);
         }
     }
 
@@ -64,11 +64,11 @@ public abstract class KingdomBaseState
 
         Vector3 dir = (currentPos - prevPos).normalized;
 
-        Vector3 targetPos = _camera.transform.position - dir * _manager.CameraControllData.CameraMoveSpeed * Time.deltaTime;
+        Vector3 targetPos = _camera.transform.position - dir * _manager.CurrentCameraControllerData.CameraMoveSpeed * Time.deltaTime;
         float targetPosX = Mathf.Clamp(targetPos.x,
-            _manager.CameraControllData.CameraBorder.x, _manager.CameraControllData.CameraBorder.y);
+            _manager.CurrentCameraControllerData.CameraBorder.x, _manager.CurrentCameraControllerData.CameraBorder.y);
         float targetPosY = Mathf.Clamp(targetPos.y,
-            _manager.CameraControllData.CameraBorder.z, _manager.CameraControllData.CameraBorder.w);
+            _manager.CurrentCameraControllerData.CameraBorder.z, _manager.CurrentCameraControllerData.CameraBorder.w);
 
         _camera.transform.position = new Vector3(targetPosX, targetPosY, _camera.transform.position.z);
         prevPos = currentPos;

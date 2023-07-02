@@ -12,7 +12,11 @@ public class WaveInfo
 [CreateAssetMenu]
 public class StageData : ScriptableObject
 {
+    [SerializeField] private string _stageName;
+    [SerializeField] private float _recommendedPower;
     [SerializeField] private WaveInfo[] _waveInfo;
 
     public WaveInfo[] WaveInfo => _waveInfo;
+    public string StageName => _stageName;
+    public float RecommendedPower => _recommendedPower;
 }

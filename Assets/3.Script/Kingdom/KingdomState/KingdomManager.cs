@@ -27,7 +27,8 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private Grid _grid;
 
     [Header("Data")]
-    [SerializeField] private CameraControllData _cameraControllData;
+    [SerializeField] private CameraControllData _cameraControllInKingdomData;
+    [SerializeField] private CameraControllData _cameraControllInStageData;
 
     // 프로퍼티
     public BaseUI KingdomManagerUI => _kingdomManagerUI;
@@ -46,8 +47,12 @@ public class KingdomManager : MonoBehaviour
 
     public BuildingSelectUI BuildingSelectUI => _buildingSelectUI;
     public Grid Grid => _grid;
-    public CameraControllData CameraControllData => _cameraControllData;
+    public CameraControllData CameraControllInKingdomData => _cameraControllInKingdomData;
+    public CameraControllData CameraContrllInStageData => _cameraControllInStageData;
 
+    public CameraControllData CurrentCameraControllerData { get; set; }
+
+    public bool IsMoveCamera { get; set; } = true;
 
     private void Awake()
     {
