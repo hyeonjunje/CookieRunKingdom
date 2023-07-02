@@ -7,6 +7,7 @@ public class CharacterBattleController : MonoBehaviour
 {
     private Slider _hpBar = null;
     private bool _isDead = false;
+    public bool IsDead => _isDead;
 
     [SerializeField] private int maxHp = 10000;
     public int MaxHp => maxHp;

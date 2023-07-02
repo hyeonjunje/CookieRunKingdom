@@ -18,7 +18,6 @@ public class SkillButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _coolTimeText; 
     [SerializeField] private Slider _hpBar;
 
-
     [SerializeField] private float coolTime = 5f;
     private float currentTime;
     public float CurrentTime
@@ -83,12 +82,18 @@ public class SkillButton : MonoBehaviour
         buttonClickSeq.Restart();
 
         // 쿨타임이 다 찼고, 스킬을 쓸 수 있는 경우 사용
-        if(!isSkillUse && _cookie.BaseSkill.IsReadyToUseSkill())
+        if(IsReadyToUse())
         {
             isSkillUse = true;
             skillUseSeq.Restart();
             _cookie.CharacterBattleController.ChangeState(EBattleState.BattleSkillState);
         }
+    }
+
+    public bool IsReadyToUse()
+    {
+        // 쿨타임이 다 찼고, 스킬을 쓸 수 있고, 그 쿠키가 죽지 않았을 경우 true 반환
+        return !isSkillUse && _cookie.BaseSkill.IsReadyToUseSkill() && !_cookie.CharacterBattleController.IsDead;
     }
 
     private void Update()
