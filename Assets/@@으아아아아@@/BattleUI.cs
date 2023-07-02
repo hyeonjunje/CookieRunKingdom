@@ -18,6 +18,7 @@ public class BattleUI : BaseUI
     [SerializeField] private Button _pauseButton;
 
     [SerializeField] private TextMeshProUGUI _battleSpeedText;
+    [SerializeField] private RectTransform _battleGague;
 
     [Header("Time")]
     [SerializeField] private TextMeshProUGUI _timeText;
@@ -29,15 +30,14 @@ public class BattleUI : BaseUI
     private int CurrentTime = 0;
     private Coroutine _coUpdate = null;
 
+    private float _targetGauge;
+    private float _currentGague = 0;
+
     private float[] speedValues = new float[] { 1.0f, 1.2f, 1.5f };
     private int _speedIndex;
     private int SpeedIndex
     {
-        get
-        {
-            return _speedIndex;
-        }
-
+        get { return _speedIndex; }
         set
         {
             _speedIndex = value;
@@ -74,6 +74,22 @@ public class BattleUI : BaseUI
     {
         Init();
     }
+    
+    // 전투가 끝나면 BattleUI는 비활성화 되니까 이건 실행안돼
+    private void Update()
+    {
+        /*_battleGague.sizeDelta += new Vector2(5 * Time.deltaTime, 0);
+        Debug.Log(_battleGague.sizeDelta.x + " 입니다.");*/
+
+        _currentGague = Mathf.Lerp(_currentGague, _targetGauge, Time.deltaTime);
+        _battleGague.sizeDelta = new Vector2(_currentGague, _battleGague.sizeDelta.y);
+    }
+
+    public void SetBattleGauge(float ratio)
+    {
+        _targetGauge = 30 + 370 * ratio;
+        _targetGauge = Mathf.Clamp(_targetGauge, 30, 400);
+    }
 
     private void Init()
     {
@@ -85,6 +101,8 @@ public class BattleUI : BaseUI
             skillButton.Init(cookies[i]);
         }
 
+        _currentGague = 0f;
+        SetBattleGauge(0);
         SpeedIndex = 0;
         _battleSpeedButton.onClick.AddListener(() => SpeedIndex++);
     }

@@ -79,11 +79,13 @@ public class BattleManager : MonoBehaviour
         if (_currentWaveIndex >= _stageData.WaveInfo.Length)
             return;
 
-        if(_distanceIndex++ == _stageData.WaveInfo[_currentWaveIndex].distance)
+
+        if (_distanceIndex++ == _stageData.WaveInfo[_currentWaveIndex].distance)
         {
             _enemySpawner.SpawnEnemy();
             _currentWaveIndex++;
         }
+        _battleUI.SetBattleGauge((float)_distanceIndex / (_stageData.WaveInfo[_stageData.WaveInfo.Length - 1].distance + 2));
     }
 
     public void ChangeUI(BaseUI ui)
@@ -119,11 +121,19 @@ public class BattleManager : MonoBehaviour
     // 게임 클리어 시
     private void GameClear()
     {
+        _battleUI.SetBattleGauge(1);
         // 게임 종료 시 슬로우로 보여주고
-
-        // 몇 초 후 밑에 있는거 실행해주라
         foreach (BaseController cookie in _cookies)
             cookie.CharacterBattleController.ChangeState(EBattleState.BattleIdleState);
+        Invoke("s", 2f);
+
+        /*// 몇 초 후 밑에 있는거 실행해주라
+        ChangeUI(_battleVictoryUI);*/
+    }
+
+    private void s()
+    {
+        // 몇 초 후 밑에 있는거 실행해주라
 
         ChangeUI(_battleVictoryUI);
     }
