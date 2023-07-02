@@ -38,6 +38,15 @@ TextureImporter:
   - first:
       213: 9101484956355267131
     second: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_11
+  - first:
+      213: -2978186433041765584
+    second: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_12
+  - first:
+      213: 7814385318301129634
+    second: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_13
+  - first:
+      213: 653913772412173316
+    second: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_14
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -398,6 +407,69 @@ TextureImporter:
       bones: []
       spriteID: b3a0e189858fe4e70800000000000000
       internalID: 9101484956355267131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_12
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 0
+        width: 153
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03b68afd73b5ba6d0800000000000000
+      internalID: -2978186433041765584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_13
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 0
+        width: 152
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abdd5b6b06427c60800000000000000
+      internalID: 7814385318301129634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_14
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 403
+        width: 174
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40cfc568c1b231900800000000000000
+      internalID: 653913772412173316
       vertices: []
       indices: 
       edges: []
