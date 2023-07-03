@@ -73,7 +73,7 @@ public class KingdomStateFactory
     {
         if(!_dictionary.ContainsKey(newState))
         {
-            Debug.LogError("그런 상태는 없습니다.");
+            Debug.LogError("그런 상태는 없습니다!!!");
             return;
         }
 
