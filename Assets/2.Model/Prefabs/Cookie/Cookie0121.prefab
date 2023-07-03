@@ -510,6 +510,7 @@ MonoBehaviour:
   - effect_default_skill1
   skillEvent: []
   _detectAttackRange: {fileID: 2020184920}
+  _baseProjectilePrefab: {fileID: 4283867165463684643, guid: d3e3c73ae5cccce48868a67e482befc3, type: 3}
   _detectedSkilRange: {fileID: 1265454166}
   _skillRange: {fileID: 2076959025}
 --- !u!114 &846481518472870673

@@ -46,12 +46,6 @@ public abstract class BaseSkill : MonoBehaviour
         return null;
     }
 
-    protected void SingleAttack()
-    {
-        if(_detectAttackRange.enemies.Count != 0)
-            _detectAttackRange.enemies[0].CurrentHp -= 1000;
-    }
-
     protected void PlayAnimation(string animationName)
     {
         _controller.CharacterAnimator.PlayAnimation(animationName);

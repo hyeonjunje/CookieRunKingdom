@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cookie0001Skill : BaseSkill
+public class Cookie0001Skill : BaseMeleeSkill
 {
     [SerializeField] protected DetectRange _detectSkillRange;
     [SerializeField] protected DetectRange _detectSkillAttackRange;
@@ -27,7 +27,7 @@ public class Cookie0001Skill : BaseSkill
 
     public override void NormalAttack()
     {
-        SingleAttack();
+        base.NormalAttack();
     }
 
     public override void OnSkillEvent(int index)

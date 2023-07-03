@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cookie0025Skill : BaseSkill
+public class Cookie0025Skill : BaseRangeSkill
 {
-    [SerializeField] private ProjectileMagicCircle _projectile;
+    [SerializeField] private ProjectileMagicCircle _skillProjectile;
 
     private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
@@ -18,12 +18,12 @@ public class Cookie0025Skill : BaseSkill
     public override void SetLayer(LayerMask layer)
     {
         base.SetLayer(layer);
-        _projectile.Init(1500, layer, _controller.CharacterBattleController.IsForward, transform, new Vector3(3f, 1.5f, 0));
+        _skillProjectile.Init(1500, layer, transform, new Vector3(3f, 1.5f, 0));
     }
 
     public override void NormalAttack()
     {
-        SingleAttack();
+        base.NormalAttack();
     }
 
     public override void OnSkillEvent(int index)
@@ -31,7 +31,9 @@ public class Cookie0025Skill : BaseSkill
         if(index == 0)
         {
             // 투사체 발사!
-            _projectile.gameObject.SetActive(true);
+            Vector3 dir = _controller.CharacterBattleController.IsForward ? Utils.Dir : -Utils.Dir;
+            _skillProjectile.ShootProjectile(dir.normalized);
+            _skillProjectile.gameObject.SetActive(true);
         }
     }
 

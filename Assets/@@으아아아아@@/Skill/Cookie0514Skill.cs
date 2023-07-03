@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Cookie0514Skill : BaseSkill
+public class Cookie0514Skill : BaseHealSkill
 {
     private int _skillIndex = 0;
     private float _currentTime = 0;
@@ -13,7 +13,7 @@ public class Cookie0514Skill : BaseSkill
 
     public override void NormalAttack()
     {
-        SingleAttack();
+        base.NormalAttack();
     }
 
     public override void OnSkillEvent(int index)

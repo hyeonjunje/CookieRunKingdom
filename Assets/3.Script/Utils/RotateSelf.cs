@@ -9,7 +9,7 @@ public class RotateSelf : MonoBehaviour
 
     private void OnEnable()
     {
-        transform.DORotate(new Vector3(0, 0, -360), _rotateSpeed * Time.deltaTime, RotateMode.FastBeyond360)
+        transform.DOLocalRotate(new Vector3(0, 0, -360), _rotateSpeed * Time.deltaTime, RotateMode.FastBeyond360)
             .SetLoops(-1, LoopType.Incremental)
             .SetEase(Ease.Linear);
     }

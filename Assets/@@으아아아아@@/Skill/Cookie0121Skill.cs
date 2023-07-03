@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public class Cookie0121Skill : BaseSkill
+public class Cookie0121Skill : BaseRangeSkill
 {
     private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
@@ -18,7 +18,7 @@ public class Cookie0121Skill : BaseSkill
 
     public override void NormalAttack()
     {
-        SingleAttack();
+        base.NormalAttack();
     }
 
     public override void SetLayer(LayerMask layer)
