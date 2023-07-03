@@ -10,13 +10,9 @@ public class InventoryUI : BaseUI
     public int maxSlot = 80;
 
     private List<ItemSlot> inventoryItems = new List<ItemSlot>();
-    private bool isInit = false;
 
     public override void Show()
     {
-        if (!isInit)
-            IsInit();
-
         base.Show();
 
         UpdateInventory();
@@ -32,9 +28,14 @@ public class InventoryUI : BaseUI
         }
     }
 
-    private void IsInit()
+    public void ExitUI()
     {
-        isInit = true;
+        GameManager.UI.ExitPopUpUI();
+    }
+
+    public override void Init()
+    {
+        base.Init();
 
         itemSlotParent.sizeDelta = new Vector2(itemSlotParent.sizeDelta.x, 30 + (165 + 30) * (maxSlot / 8));
 

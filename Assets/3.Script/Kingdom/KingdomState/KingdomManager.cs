@@ -8,7 +8,7 @@ public class KingdomManager : MonoBehaviour
     private KingdomStateFactory _factory;
 
     [Header("UI")]
-    [SerializeField] private BaseUI _kingdomManagerUI;
+    [SerializeField] private KingdomManageUI _kingdomManagerUI;
     [SerializeField] private KingdomEditUI _kingdomEditUI;
     [SerializeField] private GameObject _backGroundUI;
     [SerializeField] private KingdomCraftUI _kingdomCraftUI;
@@ -31,7 +31,7 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private CameraControllData _cameraControllInStageData;
 
     // 프로퍼티
-    public BaseUI KingdomManagerUI => _kingdomManagerUI;
+    public KingdomManageUI KingdomManagerUI => _kingdomManagerUI;
     public KingdomEditUI KingdomEditUI => _kingdomEditUI;
     public GameObject KingdomBackGroundUI => _backGroundUI;
     public KingdomCraftUI KingdomCraftUI => _kingdomCraftUI;
