@@ -81,8 +81,9 @@ public class CookieInfoUI : BaseUI
         _cookieNameText.text = _data.CharacterName;
         _cookieLevelText.text = "60/75";
         _cookieTypeImage.sprite = _data.TypeSprite;
+        _cookieTypeText.text = _data.CookieTypeName;
 
-        for(int i = 0; i < _positionImages.Length; i++)
+        for (int i = 0; i < _positionImages.Length; i++)
         {
             if(i == (int)_data.CookiePosition)
             {
@@ -103,6 +104,7 @@ public class CookieInfoUI : BaseUI
         TouchCookie(cookie);
         cookie.transform.localScale = Vector3.one * 150;
 
+        _cookieInteractionButton.onClick.RemoveAllListeners();
         _cookieInteractionButton.onClick.AddListener(() => TouchCookie(cookie));
 
         // ¿À¸¥ÂÊ
