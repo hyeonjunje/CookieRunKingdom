@@ -11,6 +11,7 @@ public class KingdomManageUI : BaseUI
     [SerializeField] private Button _gachaButton;
 
     [Header("UI")]
+    [SerializeField] private MyCookieUI _myCookieUI;
     [SerializeField] private InventoryUI _inventoryUI;
 
     public override void Hide()
@@ -28,6 +29,7 @@ public class KingdomManageUI : BaseUI
         base.Init();
 
         // 버튼 초기화
+        _myCookiesButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_myCookieUI));
         _storageButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_inventoryUI));
     }
 }

@@ -573,7 +573,7 @@ TextureImporter:
         width: 67
         height: 65
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -581,6 +581,27 @@ TextureImporter:
       bones: []
       spriteID: ee5045e320aba2f00800000000000000
       internalID: 1092890378389161454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x2048-ETC2-BattleResultSpriteAtlas-1109e2d8_15
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 2
+        width: 90
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193e249ffd82daa10800000000000000
+      internalID: 1922237558381798289
       vertices: []
       indices: 
       edges: []

@@ -50,6 +50,12 @@ TextureImporter:
   - first:
       213: -2814813671513229532
     second: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_15
+  - first:
+      213: -3319376716067293927
+    second: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_16
+  - first:
+      213: 1791563674524616887
+    second: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_17
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -494,6 +500,48 @@ TextureImporter:
       bones: []
       spriteID: 4277a8811e5cfe8d0800000000000000
       internalID: -2814813671513229532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 341
+        width: 765
+        height: 53
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9153b1ba6743fe1d0800000000000000
+      internalID: -3319376716067293927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_17
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 829
+        width: 171
+        height: 3
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b8888c7ba9ecd810800000000000000
+      internalID: 1791563674524616887
       vertices: []
       indices: 
       edges: []

@@ -56,8 +56,6 @@ public class CookieSelectUI : BaseUI
 
         if(GameManager.Game.BattleCookies == null)
         {
-            Debug.Log("으아앙");
-
             BaseController[] allCookies = DataBaseManager.Instance.AllCookies;
             // 제일 처음 없으면 용쿠덱으로 초기화
             for (int i = 0; i < allCookies.Length; i++)
@@ -196,8 +194,6 @@ public class CookieSelectUI : BaseUI
                 int cookieIndex = 0;
                 for(int j = 0; j < DataBaseManager.Instance.AllCookies.Length; j++)
                 {
-                    Debug.Log(isPosition[i].Data.CharacterName + "  " + DataBaseManager.Instance.AllCookies[j].Data.CharacterName);
-
                     if(isPosition[i].Data.CharacterName == DataBaseManager.Instance.AllCookies[j].Data.CharacterName)
                     {
                         cookieIndex = j;

@@ -31,6 +31,14 @@ public class CharacterAnimator : MonoBehaviour
         _animation.AnimationState.Event += OnSpineEvent;
     }
 
+    /// <summary>
+    /// 애니메이션이 재생중인지 확인하는 메소드
+    /// </summary>
+    /// <returns>재생중이라면 true, 아니면 false</returns>
+    public bool IsPlayingAnimation()
+    {
+        return !_animation.AnimationState.GetCurrent(0).IsComplete;
+    }
 
     public void AdjustmentAnimationName(bool isForward)
     {
@@ -65,12 +73,12 @@ public class CharacterAnimator : MonoBehaviour
         }
     }
 
-    public void PlayAnimation(string animationName)
+    public void PlayAnimation(string animationName, bool isLoop = true)
     {
         try
         {
             _animation.Initialize(false);
-            _animation.AnimationState.SetAnimation(0, animationName, true);
+            _animation.AnimationState.SetAnimation(0, animationName, isLoop);
         }
         catch (Exception e)
         {
@@ -107,7 +115,6 @@ public class CharacterAnimator : MonoBehaviour
         {
             if (e.Data.Name == _baseSkill.skillEvent[i])
             {
-                Debug.Log(_baseSkill.skillEvent[i] + " djofdskfj");
                 _baseSkill.OnSkillEvent(i);
                 return;
             }

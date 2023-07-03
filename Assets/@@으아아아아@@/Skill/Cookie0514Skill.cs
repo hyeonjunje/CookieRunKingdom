@@ -20,7 +20,6 @@ public class Cookie0514Skill : BaseHealSkill
     {
         if(index == 0 && !_isSkillUse)
         {
-            Debug.Log(name + " ÀÌ°Å ÇØ??");
             _isSkillUse = true;
 
             BaseController[] cookies = BattleManager.instance.Cookies.OrderBy(cookie => cookie.CharacterBattleController.CurrentHp).ToArray();

@@ -18,6 +18,9 @@ MonoBehaviour:
   attackRange: 3
   _idleSprite: {fileID: 21300000, guid: 0ca5df53811901e4ca51defadf1af3ab, type: 3}
   _skillSprite: {fileID: 21300000, guid: 26fecea2b43b5c04e848d73c19f1a0a6, type: 3}
+  _typeSprite: {fileID: 21300000, guid: 3f541303e9c7ee945824a7839371c1d5, type: 3}
+  _evolutionSprite: {fileID: -5956607996014739129, guid: 183849bf2ef2bdd41aa5b4b5fbde72ee, type: 3}
+  _cookieGradeSprite: {fileID: 21300000, guid: 9b55d183b12486245adfdbdc2a19b493, type: 3}
   _cookieGrade: 0
   _cookieType: 5
   _cookiePosition: 2

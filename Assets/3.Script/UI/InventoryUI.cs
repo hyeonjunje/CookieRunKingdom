@@ -11,10 +11,18 @@ public class InventoryUI : BaseUI
 
     private List<ItemSlot> inventoryItems = new List<ItemSlot>();
 
+    private KingdomManager _manager;
+
+    public override void Hide()
+    {
+        base.Hide();
+        _manager.IsMoveCamera = true;
+    }
+
     public override void Show()
     {
         base.Show();
-
+        _manager.IsMoveCamera = false;
         UpdateInventory();
     }
 
@@ -36,6 +44,8 @@ public class InventoryUI : BaseUI
     public override void Init()
     {
         base.Init();
+
+        _manager = FindObjectOfType<KingdomManager>();
 
         itemSlotParent.sizeDelta = new Vector2(itemSlotParent.sizeDelta.x, 30 + (165 + 30) * (maxSlot / 8));
 

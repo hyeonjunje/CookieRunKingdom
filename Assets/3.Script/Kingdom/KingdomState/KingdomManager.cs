@@ -68,16 +68,25 @@ public class KingdomManager : MonoBehaviour
     #region InputAction에 넣을 메소드들!!
     public void OnWheel(InputAction.CallbackContext value)
     {
+        if (!IsMoveCamera)
+            return;
+
         _factory.CurrentKingdomState.OnWheel(value);
     }
 
     public void OnClick(InputAction.CallbackContext value)
     {
+        if (!IsMoveCamera)
+            return;
+
         _factory.CurrentKingdomState.OnClick(value);
     }
 
     public void OnDrag(InputAction.CallbackContext value)
     {
+        if (!IsMoveCamera)
+            return;
+
         _factory.CurrentKingdomState.OnDrag(value);
     }
     #endregion
