@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 //1.2 1.5
 
 public class BattleUI : BaseUI
 {
+    [Header("StageStartUI")]
+    [SerializeField] private CanvasGroup _stageStartUI;
+    [SerializeField] private TextMeshProUGUI _stageText;
+
     [Header("Cookie Skill UI")]
     [SerializeField] private Transform _skillButtonParent;
     [SerializeField] private SkillButton _skillButtonPrefab;
@@ -97,13 +102,6 @@ public class BattleUI : BaseUI
     public override void Show()
     {
         base.Show();
-        CurrentTime = 180;
-
-        _timeText.text = Utils.GetTimeText(CurrentTime, false);
-
-        if (_coUpdate != null)
-            StopCoroutine(_coUpdate);
-        _coUpdate = StartCoroutine(CoUpdate());
     }
 
     public override void Hide()
@@ -123,14 +121,23 @@ public class BattleUI : BaseUI
 
     public void SetBattleGauge(float ratio)
     {
+        Debug.Log("으아");
+
         _targetGauge = 30 + 370 * ratio;
         _targetGauge = Mathf.Clamp(_targetGauge, 30, 400);
     }
 
-    public void Init()
+    private void InitUI()
     {
+        // 시간 초기화
+        CurrentTime = 180;
+        _timeText.text = Utils.GetTimeText(CurrentTime, false);
+        if (_coUpdate != null)
+            StopCoroutine(_coUpdate);
+        _coUpdate = StartCoroutine(CoUpdate());
+
         // 스킬 버튼 초기화
-        List<BaseController> cookies = BattleManager.instance.Cookies;
+        List<BaseController> cookies = BattleManager.instance.CookiesInBattleList;
         _skillButtons = new SkillButton[cookies.Count];
         for (int i = 0; i < cookies.Count; i++)
         {
@@ -158,6 +165,10 @@ public class BattleUI : BaseUI
         while(true)
         {
             yield return wait;
+
+            if (BattleManager.instance.IsBattleOver)
+                break;
+
             _timeText.text = Utils.GetTimeText(--CurrentTime, false);
 
             // 자동 모드일 경우 1초마다 스킬을 굴림
@@ -173,6 +184,27 @@ public class BattleUI : BaseUI
                 }
             }
         }
+    }
+
+    public void StartBattle(StageData stageData, System.Action action = null)
+    {
+        Sequence seq = DOTween.Sequence();
+
+        _stageStartUI.gameObject.SetActive(true);
+        _stageStartUI.alpha = 0;
+        _stageText.text = stageData.StageName;
+
+        seq.Append(_stageStartUI.DOFade(1, 0.5f))
+            .AppendInterval(1f)
+            .Append(_stageStartUI.DOFade(0, 0.5f))
+            .AppendInterval(1f)
+            .OnComplete(() =>
+            {
+                action?.Invoke();
+                _stageStartUI.gameObject.SetActive(false);
+
+                InitUI();
+            });
     }
 
     public void Pause()

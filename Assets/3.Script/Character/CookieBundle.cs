@@ -41,19 +41,8 @@ public class CookieBundle : MonoBehaviour
         transform.position += Utils.Dir.normalized * _currentSpeed * Time.deltaTime;
     }
 
-    public void StartBattle(BaseController[] cookies)
+    public void Init(BaseController[] cookies)
     {
-        /*        _startSpeed = cookies[0].Data.MoveSpeed;
-
-                foreach (BaseController cookie in cookies)
-                {
-                    myCookies.Add(cookie);
-                    // 자리 기준으로 정렬
-                    myCookies.Sort(CustomComparison);
-                    // 재배치
-                    ReArrange();
-                }*/
-
         isPosition = cookies;
 
         for (int i = 0; i < cookies.Length; i++)
@@ -67,7 +56,6 @@ public class CookieBundle : MonoBehaviour
 
         _startSpeed = myCookies[0].Data.MoveSpeed;
 
-
         foreach (BaseController cookie in myCookies)
         {
             cookie.gameObject.layer = LayerMask.NameToLayer("Cookie");
@@ -75,78 +63,6 @@ public class CookieBundle : MonoBehaviour
             cookie.CharacterBattleController.SetEnemy(LayerMask.NameToLayer("Enemy"));
         }
     }
-    private int CustomComparison(BaseController x, BaseController y)
-    {
-        int result = ((CookieData)x.Data).CookiePosition.CompareTo(((CookieData)y.Data).CookiePosition);
-
-        // 같으면 이름순
-        if(result == 0)
-            result = x.Data.CharacterName.CompareTo(y.Data.CharacterName); 
-
-        return result;
-    }
-
-    /*private void ReArrange()
-    {
-        isPosition = new BaseController[cookiePositions.Length];
-
-        for (int i = 0; i < myCookies.Count; i++)
-        {
-            int cookiePosition = (int)((CookieData)myCookies[i].Data).CookiePosition;
-            bool isArrange = false;
-
-            for(int j = 0; j < priority.GetLength(1); j++)
-            {
-                int startIndex = priority[cookiePosition, j] * priority.GetLength(1);
-                int endIndex = startIndex + priority.GetLength(1) - 1;
-
-                for (int h = startIndex; h < endIndex; h++)
-                {
-                    if (isPosition[h] == null)
-                    {
-                        isPosition[h] = myCookies[i];
-                        isArrange = true;
-                        break;
-                    }
-                }
-                if (isArrange)
-                    break;
-            }
-        }
-
-
-        for(int i = 0; i < priority.GetLength(0); i++)
-        {
-            int count = 0;
-            int index = 0;
-
-            int startIndex = i * priority.GetLength(1);
-            int endIndex = startIndex + priority.GetLength(1) - 1;
-
-            for(int j = startIndex; j < endIndex; j++)
-            {
-                if (isPosition[j])
-                {
-                    index = j;
-                    count++;
-                }
-            }
-
-            if(count == 1)
-            {
-                isPosition[endIndex] = isPosition[index];
-                isPosition[index] = null;
-            }
-        }
-
-        for (int i = 0; i < isPosition.Length; i++)
-        {
-            if (isPosition[i] != null)
-            {
-                MovePosition(i);
-            }
-        }
-    }*/
 
     private void MovePosition(int index)
     {

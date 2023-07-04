@@ -23,10 +23,6 @@ public class BattleIdleState : BaseBattleState
 
     public override void Update()
     {
-        _currentTime += Time.deltaTime;
-        if(_currentTime > 2)
-        {
-            _factory.ChangeState(EBattleState.BattleRunState);
-        }
+
     }
 }

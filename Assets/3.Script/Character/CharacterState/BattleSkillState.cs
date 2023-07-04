@@ -30,7 +30,10 @@ public class BattleSkillState : BaseBattleState
     {
         if(!_controller.BaseSkill.UseSkill())
         {
-            _factory.ChangeState(EBattleState.BattleRunState);
+            if (BattleManager.instance.IsBattleOver)
+                _factory.ChangeState(EBattleState.BattleIdleState);
+            else
+                _factory.ChangeState(EBattleState.BattleRunState);
         }
     }
 }

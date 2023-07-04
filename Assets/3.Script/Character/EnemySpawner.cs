@@ -31,6 +31,7 @@ public class EnemySpawner : MonoBehaviour
 
                 enemy.gameObject.layer = LayerMask.NameToLayer("Enemy");
                 enemy.CharacterBattleController.StartBattle(false);
+                enemy.CharacterBattleController.ChangeState(EBattleState.BattleRunState);
                 enemy.CharacterBattleController.SetEnemy(LayerMask.NameToLayer("Cookie"));
 
                 SkeletonAnimation originalPrefab = enemies[i].GetComponentInChildren<SkeletonAnimation>();

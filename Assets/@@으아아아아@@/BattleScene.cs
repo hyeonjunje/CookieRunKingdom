@@ -13,10 +13,12 @@ public class BattleScene : MonoBehaviour
 
     private void Init()
     {
-        BattleManager.instance.Init(GameManager.Game.BattleCookies, GameManager.Game.StageData);
-        BattleManager.instance.StartBattle();
+        // battleManager 초기화 작업
+        BattleManager.instance.SetStage(GameManager.Game.BattleCookies, GameManager.Game.StageData);
+        BattleManager.instance.Init();
 
-        _battleUI.Init();
+        // UI 작업
         GameManager.UI.PushUI(_battleUI);
+        _battleUI.StartBattle(GameManager.Game.StageData, BattleManager.instance.StartBattle);
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BattleDefeatUI : BaseUI
 {
+    [SerializeField] private CookieBattleAward _award;
+
     public override void Hide()
     {
         base.Hide();
@@ -12,5 +14,12 @@ public class BattleDefeatUI : BaseUI
     public override void Show()
     {
         base.Show();
+    }
+
+    public override void Init()
+    {
+        base.Init();
+
+        _award.ShowResult();
     }
 }
