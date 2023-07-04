@@ -24,8 +24,13 @@ public abstract class BaseSkill : MonoBehaviour
         _detectAttackRange.Init(layer);
     }
 
+    public virtual void NormalAttack()
+    {
+        _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleAttack);
+    }
+
     // 기본 공격
-    public abstract void NormalAttack();
+    public abstract void NormalAttackEvent();
 
     // 스킬
     public abstract bool UseSkill();
@@ -46,8 +51,8 @@ public abstract class BaseSkill : MonoBehaviour
         return null;
     }
 
-    protected void PlayAnimation(string animationName)
+    protected void PlayAnimation(string animationName, bool isLoop = true)
     {
-        _controller.CharacterAnimator.PlayAnimation(animationName);
+        _controller.CharacterAnimator.PlayAnimation(animationName, isLoop);
     }
 }

@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(DamageBox))]
 public class BaseProjectile : MonoBehaviour
 {
+    public System.Action<BaseProjectile> OnDisableEvent = null;
+
+    [SerializeField] protected bool isRotate = true;
     [SerializeField] protected bool _isPersistence = false;  // 지속성이 있나?
     [SerializeField] protected bool _isTargetDir = false;    // 타겟을 향해 날아가나?
     [SerializeField] protected float moveSpeed;
@@ -15,8 +19,6 @@ public class BaseProjectile : MonoBehaviour
     protected Transform _parent = null;
     protected Rigidbody2D _rigid;
     protected DamageBox _damageBox;
-
-    private BaseRangeSkill _pool = null;
 
     /// <summary>
     /// 투사체의 정보를 초기화한다.
@@ -36,20 +38,19 @@ public class BaseProjectile : MonoBehaviour
             _damageBox.Init(damage, targetLayer, _isPersistence);
     }
 
-    public void SetPool(BaseRangeSkill pool)
-    {
-        _pool = pool;
-    }
-
     public void ShootProjectile(Vector3 dir)
     {
         _dir = dir;
+
+        if(isRotate)
+        {
+            transform.eulerAngles = Vector3.forward * (Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg - 90);
+        }
     }
 
     private void OnDisable()
     {
-        if(_pool != null)
-            _pool.ReturnProjectile(this);
+        OnDisableEvent?.Invoke(this);
     }
 
     protected virtual void OnEnable()

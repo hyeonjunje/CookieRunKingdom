@@ -21,9 +21,9 @@ public class Cookie0025Skill : BaseRangeSkill
         _skillProjectile.Init(1500, layer, transform, new Vector3(3f, 1.5f, 0));
     }
 
-    public override void NormalAttack()
+    public override void NormalAttackEvent()
     {
-        base.NormalAttack();
+        base.NormalAttackEvent();
     }
 
     public override void OnSkillEvent(int index)
@@ -39,7 +39,7 @@ public class Cookie0025Skill : BaseRangeSkill
 
     public override bool IsReadyToUseSkill()
     {
-        return _detectAttackRange.enemies.Count != 0;
+        return DetectTarget();
     }
 
     public override bool UseSkill()

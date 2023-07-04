@@ -25,9 +25,9 @@ public class Cookie0001Skill : BaseMeleeSkill
         _detectSkillAttackRange.Init(layer);
     }
 
-    public override void NormalAttack()
+    public override void NormalAttackEvent()
     {
-        base.NormalAttack();
+        base.NormalAttackEvent();
     }
 
     public override void OnSkillEvent(int index)

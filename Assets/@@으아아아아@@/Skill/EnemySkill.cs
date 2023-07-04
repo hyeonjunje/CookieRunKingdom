@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class EnemySkill : BaseMeleeSkill
 {
-    public override void NormalAttack()
+    public override void NormalAttackEvent()
     {
-        base.NormalAttack();
+        base.NormalAttackEvent();
     }
 
     public override void OnSkillEvent(int index)

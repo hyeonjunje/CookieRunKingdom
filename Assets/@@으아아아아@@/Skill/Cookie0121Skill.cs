@@ -16,9 +16,9 @@ public class Cookie0121Skill : BaseRangeSkill
     private CharacterBattleController _target;
     private int _skillAttackIndex = 0;
 
-    public override void NormalAttack()
+    public override void NormalAttackEvent()
     {
-        base.NormalAttack();
+        base.NormalAttackEvent();
     }
 
     public override void SetLayer(LayerMask layer)

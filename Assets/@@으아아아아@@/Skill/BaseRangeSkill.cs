@@ -18,7 +18,7 @@ public class BaseRangeSkill : BaseSkill
         {
             BaseProjectile projectile = Instantiate(_baseProjectilePrefab, transform);
             projectile.gameObject.SetActive(false);
-            projectile.SetPool(this);
+            projectile.OnDisableEvent += ((projectileObject) => ReturnProjectile(projectileObject));
             _pool.Enqueue(projectile);
         }
     }
@@ -47,7 +47,7 @@ public class BaseRangeSkill : BaseSkill
         }
     }
 
-    public override void NormalAttack()
+    public override void NormalAttackEvent()
     {
         CharacterBattleController target = DetectTarget();
         if (target != null)

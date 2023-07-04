@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BaseHealSkill : BaseSkill
 {
-    public override void NormalAttack()
+    public override void NormalAttackEvent()
     {
         // 가장 위급한 쿠키에게 회복을 해줍니다.
 

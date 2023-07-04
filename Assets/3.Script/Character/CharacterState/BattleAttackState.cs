@@ -18,7 +18,7 @@ public class BattleAttackState : BaseBattleState
 
     public override void Enter()
     {
-        _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleAttack);
+        _controller.BaseSkill.NormalAttack();
     }
 
     public override void Exit()

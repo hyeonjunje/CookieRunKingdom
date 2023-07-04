@@ -11,9 +11,9 @@ public class Cookie0514Skill : BaseHealSkill
     private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private bool _isSkillUse = false;
 
-    public override void NormalAttack()
+    public override void NormalAttackEvent()
     {
-        base.NormalAttack();
+        base.NormalAttackEvent();
     }
 
     public override void OnSkillEvent(int index)
