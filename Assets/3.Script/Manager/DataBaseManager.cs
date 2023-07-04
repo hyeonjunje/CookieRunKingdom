@@ -6,6 +6,9 @@ public class DataBaseManager : Singleton<DataBaseManager>
 {
     // 데이터베이스에서 정보들을 가져와서 파싱 해주라...
 
+    [Header("기본 쿠키")]
+    [SerializeField] private BaseController[] defaultCookie;
+
     [Header("모든 쿠키의 데이터")]
     [SerializeField] private BaseController[] allCookies;
 
@@ -15,6 +18,7 @@ public class DataBaseManager : Singleton<DataBaseManager>
     [Header("Test")]
     [SerializeField] private ItemData[] testItem;
 
+    public BaseController[] DefaultCookie => defaultCookie;
     public BaseController[] AllCookies => allCookies;
     public ItemData[] AllItemData => allItemData;
     public DataBase MyDataBase { get; private set; }

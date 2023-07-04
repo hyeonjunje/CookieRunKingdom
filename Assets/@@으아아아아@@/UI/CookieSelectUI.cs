@@ -56,11 +56,11 @@ public class CookieSelectUI : BaseUI
 
         if(GameManager.Game.BattleCookies == null)
         {
-            BaseController[] allCookies = DataBaseManager.Instance.AllCookies;
+            BaseController[] defaultCookies = DataBaseManager.Instance.DefaultCookie;
             // 제일 처음 없으면 용쿠덱으로 초기화
-            for (int i = 0; i < allCookies.Length; i++)
+            for (int i = 0; i < defaultCookies.Length; i++)
             {
-                AddCookie(allCookies[i]);
+                AddCookie(defaultCookies[i]);
             }
         }
         else
