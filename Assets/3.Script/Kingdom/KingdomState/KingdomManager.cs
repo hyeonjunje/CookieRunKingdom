@@ -57,6 +57,8 @@ public class KingdomManager : MonoBehaviour
     private void Awake()
     {
         _factory = new KingdomStateFactory(this);
+
+        ChangeState(GameManager.Game.StartKingdomState);
     }
 
     private void Update()

@@ -45,6 +45,12 @@ public class SkillButton : MonoBehaviour
     private Sequence buttonClickSeq;
     private Sequence skillUseSeq;
 
+    private void OnDestroy()
+    {
+        buttonClickSeq.Kill();
+        skillUseSeq.Kill();
+    }
+
     public void Init(BaseController cookie)
     {
         _cookie = cookie;

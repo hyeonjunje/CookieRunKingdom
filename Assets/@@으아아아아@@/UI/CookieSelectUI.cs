@@ -63,6 +63,12 @@ public class CookieSelectUI : BaseUI
                 AddCookie(allCookies[i]);
             }
         }
+        else
+        {
+            for(int i = 0; i < GameManager.Game.BattleCookies.Length; i++)
+                if (GameManager.Game.BattleCookies[i] != -1)
+                    AddCookie(DataBaseManager.Instance.AllCookies[GameManager.Game.BattleCookies[i]]);
+        }
     }
 
     #region ÄíÅ° ¹èÄ¡
