@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CharacterBattleController : MonoBehaviour
 {
+    public System.Action OnDeadEvent = null;
+    public System.Action OnHitEvent = null;
+
     private Slider _hpBar = null;
     private bool _isDead = false;
     public bool IsDead => _isDead;
@@ -23,6 +26,7 @@ public class CharacterBattleController : MonoBehaviour
             _currentHp = Mathf.Clamp(_currentHp, 0, maxHp);
 
             UpdateHpbar();
+            OnHitEvent?.Invoke();
 
             if (_currentHp <= 0)
                 if(!_isDead)
@@ -126,11 +130,14 @@ public class CharacterBattleController : MonoBehaviour
 
     protected virtual void Dead()
     {
+        OnDeadEvent?.Invoke();
+
         _factory.ChangeState(EBattleState.BattleDeadState);
         _hpBar.gameObject.SetActive(false);
         _hpBar = null;
         _isDead = true;
     }
+
 
     public virtual void Disappear()
     {

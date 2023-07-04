@@ -48,6 +48,9 @@ public class SkillButton : MonoBehaviour
     public void Init(BaseController cookie)
     {
         _cookie = cookie;
+        _cookie.CharacterBattleController.OnDeadEvent += DisabledButton;
+        _cookie.CharacterBattleController.OnHitEvent += UpdateHpBar;
+
         _idleSprite = ((CookieData)cookie.Data).IdleSprite;
         _skillSprite = ((CookieData)cookie.Data).SKillSprite;
 
@@ -102,5 +105,15 @@ public class SkillButton : MonoBehaviour
         {
             CurrentTime -= Time.deltaTime;
         }
+    }
+
+    private void DisabledButton()
+    {
+        _buttonImage.color = new Color(0.5f, 0.5f, 0.5f);
+    }
+
+    private void UpdateHpBar()
+    {
+        _hpBar.value = (float)_cookie.CharacterBattleController.CurrentHp / _cookie.CharacterBattleController.MaxHp;
     }
 }
