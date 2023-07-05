@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class CookieSelectUI : BaseUI
 {
+    [SerializeField] private CookieReadyAdventureUI _cookieReadyAdventureUI;
+
+
     /// <summary>
     /// 8 5 2
     /// 9 6 3
     /// 7 4 1
     /// </summary>
+    /// 
+
     [SerializeField] private Transform[] cookiePositions;
-    private List<BaseController> _cookies = new List<BaseController>();
+
     private BaseController[] isPosition;
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
@@ -20,6 +25,8 @@ public class CookieSelectUI : BaseUI
     private StageData _stageData;
     private Vector3 _prevCameraPos;
     private float _prevOrthosize;
+
+    public List<BaseController> SelectedCookies { get; private set; }
 
 
     private void Awake()
@@ -41,7 +48,7 @@ public class CookieSelectUI : BaseUI
         _camera.orthographicSize = _prevOrthosize;
         _camera.transform.position = _prevCameraPos;
 
-        _cookies.ForEach(cookie => Destroy(cookie.gameObject));
+        SelectedCookies.ForEach(cookie => Destroy(cookie.gameObject));
 
         base.Hide();
     }
@@ -49,7 +56,7 @@ public class CookieSelectUI : BaseUI
     public override void Show()
     {
         base.Show();
-        _cookies = new List<BaseController>();
+        SelectedCookies = new List<BaseController>();
         _manager.IsMoveCamera = false;
         _camera.transform.position = new Vector3(0, 0, _camera.transform.position.z);
 
@@ -69,29 +76,40 @@ public class CookieSelectUI : BaseUI
                 if (GameManager.Game.BattleCookies[i] != -1)
                     AddCookie(DataBaseManager.Instance.AllCookies[GameManager.Game.BattleCookies[i]]);
         }
+
+        // BattleCookies 다 설정하면 CookieReadyAdventure UI 켜주기
+        GameManager.UI.ShowPopUpUI(_cookieReadyAdventureUI);
     }
 
     #region 쿠키 배치
-    private void AddCookie(BaseController cookiePrefab)
+    public void AddCookie(BaseController cookiePrefab)
     {
-        if (_cookies.Count >= 5)
+        if (SelectedCookies.Count >= 5)
             return;
 
         BaseController cookie = Instantiate(cookiePrefab, transform);
         cookie.CharacterAnimator.SettingOrderLayer(true);
         cookie.CharacterAnimator.PlayAnimation("battle_idle");
 
-        _cookies.Add(cookie);
-        _cookies.Sort(CustomComparison);
+        SelectedCookies.Add(cookie);
+        SelectedCookies.Sort(CustomComparison);
         ReArrange();
     }
 
-    private void RemoveCookie(BaseController cookie)
+    public void RemoveCookie(BaseController cookie)
     {
-        _cookies.Remove(cookie);
-        Destroy(cookie.gameObject);
-        _cookies.Sort(CustomComparison);
-        ReArrange();
+        foreach(BaseController selectedCookie in SelectedCookies)
+        {
+            if(cookie.Data.CharacterName == selectedCookie.Data.CharacterName)
+            {
+                SelectedCookies.Remove(selectedCookie);
+                Destroy(selectedCookie.gameObject);
+                SelectedCookies.Sort(CustomComparison);
+                ReArrange();
+
+                return;
+            }
+        }
     }
 
     private int CustomComparison(BaseController x, BaseController y)
@@ -109,9 +127,9 @@ public class CookieSelectUI : BaseUI
     {
         isPosition = new BaseController[cookiePositions.Length];
 
-        for (int i = 0; i < _cookies.Count; i++)
+        for (int i = 0; i < SelectedCookies.Count; i++)
         {
-            int cookiePosition = (int)((CookieData)_cookies[i].Data).CookiePosition;
+            int cookiePosition = (int)((CookieData)SelectedCookies[i].Data).CookiePosition;
             bool isArrange = false;
 
             for (int j = 0; j < priority.GetLength(1); j++)
@@ -123,7 +141,7 @@ public class CookieSelectUI : BaseUI
                 {
                     if (isPosition[h] == null)
                     {
-                        isPosition[h] = _cookies[i];
+                        isPosition[h] = SelectedCookies[i];
                         isArrange = true;
                         break;
                     }
@@ -172,21 +190,13 @@ public class CookieSelectUI : BaseUI
 
 
     #region 버튼에 이벤트로 넣어줄 메소드
-    public void ExitUI()
-    {
-        GameManager.UI.PopUI();
-    }
-
     public void OnClickBattleStartButton()
     {
         // 고기 젤리 확인하고
 
         // 출전할 쿠키가 하나도 없으면 무시
-        if(_cookies.Count == 0)
-        {
-            Debug.Log("혹시 이거 해?");
+        if(SelectedCookies.Count == 0)
             return;
-        }
 
         // 초기화
         GameManager.Game.BattleCookies = new int[cookiePositions.Length];
