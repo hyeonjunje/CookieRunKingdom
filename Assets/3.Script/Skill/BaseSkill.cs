@@ -14,6 +14,8 @@ public abstract class BaseSkill : MonoBehaviour
     protected BaseController _controller;
     [SerializeField] protected DetectRange _detectAttackRange;
 
+    protected int AttackPower => _controller.CharacterStat.attackStat.ResultStat;
+
     public virtual void Init(BaseController controller)
     {
         _controller = controller;

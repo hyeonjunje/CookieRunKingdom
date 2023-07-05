@@ -358,6 +358,7 @@ GameObject:
   - component: {fileID: 4656654362986688269}
   - component: {fileID: 6821798627036959059}
   - component: {fileID: 1208732352}
+  - component: {fileID: 8274577193341400106}
   m_Layer: 9
   m_Name: Cookie0058
   m_TagString: Untagged
@@ -470,6 +471,18 @@ MonoBehaviour:
   _detectedSkillRange: {fileID: 341595187}
   _cryingEffect: {fileID: 274261226}
   _onionPower: 0
+--- !u!114 &8274577193341400106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4656654362986688265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868cb49097df3584f9dc6bca309d1af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4656654363365886285
 GameObject:
   m_ObjectHideFlags: 0

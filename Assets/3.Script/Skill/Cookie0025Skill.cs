@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// ¸¶¹ý»ç¸À ÄíÅ°
 public class Cookie0025Skill : BaseRangeSkill
 {
     [SerializeField] private ProjectileMagicCircle _skillProjectile;
@@ -18,7 +19,7 @@ public class Cookie0025Skill : BaseRangeSkill
     public override void SetLayer(LayerMask layer)
     {
         base.SetLayer(layer);
-        _skillProjectile.Init(1500, layer, transform, new Vector3(3f, 1.5f, 0));
+        _skillProjectile.Init(AttackPower, layer, transform, new Vector3(3f, 1.5f, 0));
     }
 
     public override void NormalAttackEvent()
@@ -50,9 +51,7 @@ public class Cookie0025Skill : BaseRangeSkill
         }
         else if(_skillIndex != 0)
         {
-            _currentTime += Time.deltaTime;
-
-            if(_currentTime >= CurrentSkillTime)
+            if(!_controller.CharacterAnimator.IsPlayingAnimation())
             {
                 _currentTime = 0;
                 _skillIndex = 0;

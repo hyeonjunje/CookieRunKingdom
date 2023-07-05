@@ -7,8 +7,7 @@ using Spine;
 
 public class CharacterAnimator : MonoBehaviour
 {
-    private BaseController _characterController;
-    private CharacterData _characterData;
+    private BaseController _controller;
 
     private SkeletonAnimation _animation;
     private Renderer _renderer;
@@ -16,16 +15,15 @@ public class CharacterAnimator : MonoBehaviour
 
     private string[] _animationNames;
 
-    public void Init(BaseController baseController, CharacterData characterData)
+    public void Init(BaseController baseController)
     {
-        _characterController = baseController;
-        _characterData = characterData;
+        _controller = baseController;
 
         _animation = GetComponentInChildren<SkeletonAnimation>();
         _renderer = _animation.GetComponent<Renderer>();
         _baseSkill = baseController.BaseSkill;
 
-        _animationNames = characterData.AnimationData.Init();
+        _animationNames = _controller.Data.AnimationData.Init();
 
         _animation.Initialize(false);
         _animation.AnimationState.Event += OnSpineEvent;

@@ -9,7 +9,7 @@ public class BaseMeleeSkill : BaseSkill
         // 범위에 있는 적 근접으로 때린다.
         CharacterBattleController target = DetectTarget();
         if (target != null)
-            target.CurrentHp -= 1000;
+            target.CurrentHp -= AttackPower;
     }
 
     public override void OnSkillEvent(int index)

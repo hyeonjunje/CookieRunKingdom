@@ -4,7 +4,7 @@ using UnityEngine;
 using Spine.Unity;
 using Spine;
 
-
+// ¹ìÆÄÀÌ¾î¸À ÄíÅ°
 public class Cookie0035Skill : BaseMeleeSkill
 {
     [SerializeField] private SkeletonAnimation _betSkeletonAnimation;
@@ -86,8 +86,8 @@ public class Cookie0035Skill : BaseMeleeSkill
                 transform.position = _prevPosition;
 
                 _betSkeletonAnimation.gameObject.SetActive(false);
-                _target.CurrentHp -= 10000;
-                _controller.CharacterBattleController.CurrentHp += 5000;
+                _target.CurrentHp -= AttackPower;
+                _controller.CharacterBattleController.CurrentHp += AttackPower;
 
                 PlayAnimation(animationName[_skillIndex++], false);
             }

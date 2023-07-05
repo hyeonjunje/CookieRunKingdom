@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 3484823580839505676}
   - component: {fileID: 3484823580839505677}
   - component: {fileID: -8775497461680287061}
+  - component: {fileID: 5854869214347567613}
   m_Layer: 9
   m_Name: Cookie0008
   m_TagString: Untagged
@@ -219,3 +220,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100000
+--- !u!114 &5854869214347567613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3484823580839505665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868cb49097df3584f9dc6bca309d1af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

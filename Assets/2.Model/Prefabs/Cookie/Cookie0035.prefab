@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 3687323459966467235}
   - component: {fileID: -1588097377983920405}
   - component: {fileID: 290316969}
+  - component: {fileID: -1263606336693670689}
   m_Layer: 9
   m_Name: Cookie0035
   m_TagString: Untagged
@@ -432,6 +433,18 @@ MonoBehaviour:
   _detectAttackRange: {fileID: 66350517}
   _betSkeletonAnimation: {fileID: 16510521}
   _detectSkillRange: {fileID: 1440742784}
+--- !u!114 &-1263606336693670689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3687323459966467247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868cb49097df3584f9dc6bca309d1af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3687323460460421555
 GameObject:
   m_ObjectHideFlags: 0

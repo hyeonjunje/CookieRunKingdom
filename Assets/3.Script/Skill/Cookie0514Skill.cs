@@ -6,9 +6,6 @@ using System.Linq;
 public class Cookie0514Skill : BaseHealSkill
 {
     private int _skillIndex = 0;
-    private float _currentTime = 0;
-
-    private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private bool _isSkillUse = false;
 
     public override void NormalAttackEvent()
@@ -29,7 +26,7 @@ public class Cookie0514Skill : BaseHealSkill
             {
                 if(i < cookies.Length)
                 {
-                    cookies[i].CharacterBattleController.CurrentHp += 1000;
+                    cookies[i].CharacterBattleController.CurrentHp += AttackPower;
                     Debug.Log(cookies[i] + " 회복합니다.");
                 }
             }
@@ -56,11 +53,8 @@ public class Cookie0514Skill : BaseHealSkill
         }
         else if(_skillIndex != 0)
         {
-            _currentTime += Time.deltaTime;
-
-            if(_currentTime >= CurrentSkillTime)
+            if(!_controller.CharacterAnimator.IsPlayingAnimation())
             {
-                _currentTime = 0;
                 _skillIndex = 0;
                 return false;
             }

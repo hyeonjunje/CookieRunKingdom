@@ -7,7 +7,7 @@ public class CookieBattleController : CharacterBattleController
     protected override void Dead()
     {
         base.Dead();
-        BattleManager.instance.CheckGameOver(_baseController);
+        BattleManager.instance.CheckGameOver(_controller);
     }
 
     public override void Disappear()

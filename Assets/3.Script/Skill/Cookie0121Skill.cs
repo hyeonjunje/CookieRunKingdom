@@ -8,13 +8,14 @@ public class Cookie0121Skill : BaseRangeSkill
     private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
     private float _currentTime = 0;
+    private int _attackCount = 0;
+    private bool _isSkill = false;
 
     [SerializeField] protected DetectRange _detectedSkilRange;
     [SerializeField] protected DetectRange _skillRange;
 
     private Vector3 _originPos = Vector3.zero;
     private CharacterBattleController _target;
-    private int _skillAttackIndex = 0;
 
     public override void NormalAttackEvent()
     {
@@ -41,66 +42,72 @@ public class Cookie0121Skill : BaseRangeSkill
 
     public override bool UseSkill()
     {
-        if(_currentTime == 0)
+        if (_skillIndex == 0)
         {
-            if (_skillIndex == 0)
-            {
-                PlayAnimation(animationName[_skillIndex]);
-                foreach(CharacterBattleController target in _detectedSkilRange.enemies)
-                {
-                    // 가장 먼 타겟 선택
-                    if (_target == null)
-                        _target = target;
-                    else
-                        if(Vector3.Distance(_target.transform.position, transform.position) < Vector3.Distance(target.transform.position, transform.position))
-                           _target = target;
-                }
-            }
-            else if (_skillIndex == 1)
-            {
-                PlayAnimation(animationName[_skillIndex]);
+            _originPos = transform.position;
 
-                if(_target != null)
+            PlayAnimation(animationName[_skillIndex++], false);
+
+            // 타겟 정하기
+            foreach (CharacterBattleController target in _detectedSkilRange.enemies)
+            {
+                if (_target == null)
+                    _target = target;
+                else
                 {
-                    _originPos = transform.position;
-                    transform.position = _target.transform.position;
+                    if (Vector3.Distance(transform.position, _target.transform.position) <
+                        Vector3.Distance(transform.position, target.transform.position))
+                    {
+                        _target = target;
+                    }
                 }
             }
         }
-
-        if(_skillIndex == 1)
+        else if (_skillIndex == 1 && !_isSkill)
         {
-            // 일정 시간 동안 적에게 피해를 줘야 함
-
-            if(_currentTime > (CurrentSkillTime / 4) * _skillAttackIndex )
+            if (!_controller.CharacterAnimator.IsPlayingAnimation())
             {
+                transform.position = _target.transform.position;
+                PlayAnimation(animationName[_skillIndex], false);
+                _isSkill = true;
+            }
+        }
+        else if(_skillIndex == 1 && _isSkill)
+        {
+            _currentTime += Time.deltaTime;
+            if (_currentTime >= CurrentSkillTime / 4)
+            {
+                _currentTime = 0;
+
                 foreach (CharacterBattleController target in _skillRange.enemies)
                 {
-                    target.CurrentHp -= 500;
-                    _skillAttackIndex++;
+                    target.CurrentHp -= AttackPower;
+                    _attackCount++;
                 }
+
+                if (_attackCount >= 4)
+                    _skillIndex++;
             }
         }
-
-        _currentTime += Time.deltaTime;
-
-        if(_currentTime >= CurrentSkillTime)
+        else if(_skillIndex == 2)
         {
-            _currentTime = 0;
-            _skillIndex++;
-
-            if(_skillIndex == animationName.Length)
+            if (!_controller.CharacterAnimator.IsPlayingAnimation())
             {
-                if (_originPos != Vector3.zero)
-                    transform.position = _originPos;
-
+                transform.position = _originPos;
+                PlayAnimation(animationName[_skillIndex++], false);
+            }
+        }
+        else
+        {
+            if (!_controller.CharacterAnimator.IsPlayingAnimation())
+            {
                 _currentTime = 0;
                 _skillIndex = 0;
-
+                _attackCount = 0;
+                _isSkill = false;
                 return false;
             }
         }
-
         return true;
     }
 }

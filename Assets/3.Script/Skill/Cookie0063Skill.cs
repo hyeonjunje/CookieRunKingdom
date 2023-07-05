@@ -28,8 +28,6 @@ public class Cookie0063Skill : BaseHealSkill
     public override void NormalAttackEvent()
     {
         base.NormalAttackEvent();
-
-        Debug.Log("이거 해요?? ");
     }
 
     public override void OnSkillEvent(int index)
@@ -37,15 +35,13 @@ public class Cookie0063Skill : BaseHealSkill
         base.OnSkillEvent(index);
 
         // 몇 초간 회복하는 새싹 밭 만들기 코루틴
-        Debug.Log("이거 해요?? " + index);
-
         if(index == 0)
         {
             if (_coSkill != null)
                 StopCoroutine(_coSkill);
             _coSkill = StartCoroutine(CoSKill());
 
-            BattleManager.instance.CookiesInBattleList.ForEach(cookie => cookie.CharacterBattleController.CurrentHp += 10000);
+            BattleManager.instance.CookiesInBattleList.ForEach(cookie => cookie.CharacterBattleController.CurrentHp += AttackPower);
         }
     }
 
@@ -95,7 +91,7 @@ public class Cookie0063Skill : BaseHealSkill
         {
             yield return new WaitForSeconds(1f);
 
-            _skillDetectRange.enemies.ForEach(cookie => cookie.CurrentHp += 1000);
+            _skillDetectRange.enemies.ForEach(cookie => cookie.CurrentHp += AttackPower);
         }
 
         // 새싹 짐

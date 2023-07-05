@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
+// 양파맛 쿠키
 public class Cookie0058Skill : BaseMeleeSkill
 {
     [SerializeField] private DetectRange _detectedSkillRange;
@@ -64,7 +65,7 @@ public class Cookie0058Skill : BaseMeleeSkill
             float time = CurrentAnimationTime;
             _cryingEffect.gameObject.SetActive(false);
             _cryingEffect.transform.localScale = Vector3.zero;
-            _cryingEffect.SetPower(100000 * _onionPower);
+            _cryingEffect.SetPower(AttackPower * _onionPower);
 
             // 투명하게 하기
             Color color = _cryingRenderer.color;

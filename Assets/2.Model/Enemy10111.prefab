@@ -107,6 +107,7 @@ GameObject:
   - component: {fileID: 8970758412375875551}
   - component: {fileID: 3429263302088287326}
   - component: {fileID: 3571935911569217290}
+  - component: {fileID: -2032890763912538573}
   m_Layer: 10
   m_Name: Enemy10111
   m_TagString: Untagged
@@ -181,8 +182,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4f5df23c988c9b4e84033be2f8da5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackEvent:
-  - skill1
 --- !u!114 &3429263302088287326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340f4103f6af6f146a9269892dec7dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHp: 10000
 --- !u!114 &3571935911569217290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +213,18 @@ MonoBehaviour:
   - skill1
   skillEvent: []
   _detectAttackRange: {fileID: 7743407987011205261}
+--- !u!114 &-2032890763912538573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8970758412375875538}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 868cb49097df3584f9dc6bca309d1af0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8970758412415090211
 GameObject:
   m_ObjectHideFlags: 0

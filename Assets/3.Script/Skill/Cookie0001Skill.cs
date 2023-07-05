@@ -9,9 +9,7 @@ public class Cookie0001Skill : BaseMeleeSkill
 
     // 현재 실행되고 있는 애니메이션의 길이
     private List<CharacterBattleController> targets => _detectSkillAttackRange.enemies;
-    private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
-    private float _currentTime = 0;
 
     public override void Init(BaseController controller)
     {
@@ -59,13 +57,12 @@ public class Cookie0001Skill : BaseMeleeSkill
             PlayAnimation(animationName[_skillIndex++]);
             for(int i = 0; i < targets.Count; i++)
             {
-                targets[i].CurrentHp -= 3000;
+                targets[i].CurrentHp -= AttackPower;
             }
         }
         else
         {
-            _currentTime += Time.deltaTime;
-            if(_currentTime >= CurrentSkillTime)
+            if(!_controller.CharacterAnimator.IsPlayingAnimation())
             {
                 _skillIndex = 0;
                 return false;

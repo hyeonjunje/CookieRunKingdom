@@ -79,7 +79,7 @@ public class Cookie0515Skill : BaseRangeSkill
         BaseProjectile[] projectiles = _pool.ToArray();
         for (int i = 0; i < projectiles.Length; i++)
         {
-            projectiles[i].Init(1000, layer, transform, Vector3.up * 0.8f);
+            projectiles[i].Init(AttackPower, layer, transform, Vector3.up * 0.8f);
         }
 
         _detectSkillRange.Init(layer);

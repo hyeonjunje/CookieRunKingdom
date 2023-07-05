@@ -12,8 +12,7 @@ public class CharacterBattleController : MonoBehaviour
     private bool _isDead = false;
     public bool IsDead => _isDead;
 
-    [SerializeField] private int maxHp = 10000;
-    public int MaxHp => maxHp;
+    public int MaxHp => _controller.CharacterStat.hpStat.ResultStat;
 
     private int _currentHp;
     public int CurrentHp
@@ -23,7 +22,7 @@ public class CharacterBattleController : MonoBehaviour
         {
             _currentHp = value;
 
-            _currentHp = Mathf.Clamp(_currentHp, 0, maxHp);
+            _currentHp = Mathf.Clamp(_currentHp, 0, MaxHp);
 
             UpdateHpbar();
             OnHitEvent?.Invoke();
@@ -40,20 +39,18 @@ public class CharacterBattleController : MonoBehaviour
     public LayerMask myLayer { get; private set; }
     public LayerMask enemyLayer { get; private set; }
 
-    protected BaseController _baseController;
-    protected CharacterData _characterData;
+    protected BaseController _controller;
     protected BattleStateFactory _factory;
     private Coroutine _coUpdate = null;
 
     public bool IsForward { get; private set; }
 
-    public void Init(BaseController baseController, CharacterData characterData)
+    public void Init(BaseController controller)
     {
         _isDead = false;
 
-        _baseController = baseController;
-        _characterData = characterData;
-        CurrentHp = maxHp;
+        _controller = controller;
+        CurrentHp = MaxHp;
     }
 
     public void SetEnemy(LayerMask layer)
@@ -69,7 +66,7 @@ public class CharacterBattleController : MonoBehaviour
             enemyLayer = LayerMask.NameToLayer("Cookie");
         }
 
-        _baseController.BaseSkill.SetLayer(layer);
+        _controller.BaseSkill.SetLayer(layer);
     }
 
     public void SetPosition(CookieBundle cookieBundle, Transform pos)
@@ -85,9 +82,9 @@ public class CharacterBattleController : MonoBehaviour
     public void StartBattle(bool isForward = true)
     {
         IsForward = isForward;
-        _baseController.CharacterAnimator.AdjustmentAnimationName(isForward);
+        _controller.CharacterAnimator.AdjustmentAnimationName(isForward);
 
-        _factory = new BattleStateFactory(_baseController);
+        _factory = new BattleStateFactory(_controller);
 
         if (_coUpdate != null)
             StopCoroutine(_coUpdate);
@@ -101,18 +98,18 @@ public class CharacterBattleController : MonoBehaviour
 
     private void UpdateHpbar()
     {
-        if (_hpBar == null && _currentHp < maxHp)
+        if (_hpBar == null && _currentHp < MaxHp)
         {
             _hpBar = FindObjectOfType<HpBarController>().GetHpBar(IsForward);
         }
-        else if (_hpBar != null && _currentHp == maxHp)
+        else if (_hpBar != null && _currentHp == MaxHp)
         {
             _hpBar.gameObject.SetActive(false);
             _hpBar = null;
         }
 
         if (_hpBar != null)
-            _hpBar.value = (float)_currentHp / maxHp;
+            _hpBar.value = (float)_currentHp / MaxHp;
     }
 
     private IEnumerator CoUpdate()
