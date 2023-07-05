@@ -27,6 +27,11 @@ public class CookieInfoUI : BaseUI
     [SerializeField] private Button _cookieInteractionButton;
 
     [Header("Left")]
+    [SerializeField] private TextMeshProUGUI _powerText;
+    [SerializeField] private TextMeshProUGUI _hpText;
+    [SerializeField] private TextMeshProUGUI _attackText;
+    [SerializeField] private TextMeshProUGUI _defenseText;
+    [SerializeField] private TextMeshProUGUI _criticalText;
     [SerializeField] private Image _cookieSKillImage;
 
     private BaseController _cookie;
@@ -108,6 +113,12 @@ public class CookieInfoUI : BaseUI
         _cookieInteractionButton.onClick.AddListener(() => TouchCookie(cookie));
 
         // ¿À¸¥ÂÊ
+        _powerText.text = cookie.CharacterStat.powerStat.ToString();
+        _hpText.text = cookie.CharacterStat.hpStat.ResultStat.ToString("#,##0");
+        _attackText.text = cookie.CharacterStat.attackStat.ResultStat.ToString("#,##0");
+        _defenseText.text = cookie.CharacterStat.defenseStat.ResultStat.ToString("#,##0");
+        _criticalText.text = cookie.CharacterStat.criticalStat.ResultStat.ToString("#,##0.00") + "%";
+
         _cookieSKillImage.sprite = _data.SKillSprite;
     }
 

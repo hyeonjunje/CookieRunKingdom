@@ -9,6 +9,9 @@ public class DataBaseManager : Singleton<DataBaseManager>
     [Header("기본 쿠키")]
     [SerializeField] private BaseController[] defaultCookie;
 
+    [Header("내가 가진 쿠키")]
+    [SerializeField] private List<BaseController> ownedCookies;
+
     [Header("모든 쿠키의 데이터")]
     [SerializeField] private BaseController[] allCookies;
 
@@ -19,6 +22,7 @@ public class DataBaseManager : Singleton<DataBaseManager>
     [SerializeField] private ItemData[] testItem;
 
     public BaseController[] DefaultCookie => defaultCookie;
+    public List<BaseController> OwnedCookies => ownedCookies;
     public BaseController[] AllCookies => allCookies;
     public ItemData[] AllItemData => allItemData;
     public DataBase MyDataBase { get; private set; }

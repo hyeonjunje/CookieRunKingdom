@@ -15,7 +15,6 @@ public class GameManager : Singleton<GameManager>
 
     public void Init()
     {
-
         if (!_isInit)
         {
             _isInit = true;
@@ -25,4 +24,8 @@ public class GameManager : Singleton<GameManager>
             _game.Init();
         }
     }
+
+    // 데이터 싹다 가져와야 해
+    // 데이터베이스에서 말야
+    // 그 오프닝 씬에서 해야겠네
 }

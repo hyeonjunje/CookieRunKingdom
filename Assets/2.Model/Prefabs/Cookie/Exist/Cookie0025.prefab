@@ -592,11 +592,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7003506198227256447}
   - component: {fileID: 7534800518396697731}
-  - component: {fileID: 7914786383827302616}
   - component: {fileID: 7914786383827302617}
   - component: {fileID: 2064161681}
   - component: {fileID: 8689193198849750554}
   - component: {fileID: -8090357539215296791}
+  - component: {fileID: 2102105244511033818}
+  - component: {fileID: 1738245932506128535}
+  - component: {fileID: 675272694882138304}
   m_Layer: 9
   m_Name: Cookie0025
   m_TagString: Untagged
@@ -647,19 +649,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
---- !u!114 &7914786383827302616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7914786383827302623}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a221e3f0dd9b2f041ac1b344c41e9aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: 94ad792667917344d90f4b1c6b80e380, type: 2}
 --- !u!114 &7914786383827302617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -706,7 +695,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 667f192711acf8a448a64f49d1990339, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 100000
 --- !u!114 &-8090357539215296791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,3 +707,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868cb49097df3584f9dc6bca309d1af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2102105244511033818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914786383827302623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7eec2cfd21028be4f89a679ad3ddc95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startMapPoint: {x: -100, y: -100}
+  endMapPoint: {x: 100, y: 100}
+  start: {x: 0, y: 0}
+  end: {x: 0, y: 0}
+  FinalNodeList: []
+  allowDiagonal: 1
+  dontCrossCorner: 0
+--- !u!114 &1738245932506128535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914786383827302623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84117c23d55a37d44812df74307e4eaa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &675272694882138304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914786383827302623}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02393ffce90f5f43a4e8949db0b5ea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: 94ad792667917344d90f4b1c6b80e380, type: 2}

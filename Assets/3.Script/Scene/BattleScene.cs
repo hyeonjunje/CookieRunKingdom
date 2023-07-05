@@ -2,16 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BattleScene : MonoBehaviour
+public class BattleScene : BaseScene
 {
     [SerializeField] private BattleUI _battleUI;
 
-    private void Awake()
+    protected override void Init()
     {
-        Init();
+        // 맵 만들기도 여기서 만들자
+
+        // 쿠키 만들자
+
+        StartBattle();
     }
 
-    private void Init()
+    private void StartBattle()
     {
         // battleManager 초기화 작업
         BattleManager.instance.SetStage(GameManager.Game.BattleCookies, GameManager.Game.StageData);

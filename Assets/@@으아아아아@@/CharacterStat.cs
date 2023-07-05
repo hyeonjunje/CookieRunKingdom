@@ -35,7 +35,7 @@ public class CharacterStat : MonoBehaviour
         _controller = controller;
 
         hpStat = new Stat(10000);
-        attackStat = new Stat(100);
+        attackStat = new Stat(10000);
         defenseStat = new Stat(20);
         criticalStat = new Stat(1);
 

@@ -54,16 +54,12 @@ public class KingdomManager : MonoBehaviour
 
     public bool IsMoveCamera { get; set; } = true;
 
-    private void Awake()
+
+    public void Init()
     {
         _factory = new KingdomStateFactory(this);
-
         ChangeState(GameManager.Game.StartKingdomState);
-    }
-
-    private void Update()
-    {
-        _factory.CurrentKingdomState.Update();
+        StartCoroutine(CoUpdate());
     }
 
 
@@ -105,4 +101,13 @@ public class KingdomManager : MonoBehaviour
         _factory.ChangeState(state);
     }
     #endregion
+
+    private IEnumerator CoUpdate()
+    {
+        while (true)
+        {
+            yield return null;
+            _factory.CurrentKingdomState.Update();
+        }
+    }
 }

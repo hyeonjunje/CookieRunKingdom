@@ -7,7 +7,7 @@ public class Tilemap : MonoBehaviour
     // À§Ä¡
     public float x { get; private set; }
     public float y { get; private set; }
-    
+
     // Order in Layer
     public int order { get; private set; }
 
