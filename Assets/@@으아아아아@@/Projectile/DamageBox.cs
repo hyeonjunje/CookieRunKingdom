@@ -15,6 +15,11 @@ public class DamageBox : MonoBehaviour
         _isPersistance = isPersistance;
     }
 
+    public void SetPower(int damage)
+    {
+        _damage = damage;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.layer == _targetLayer)

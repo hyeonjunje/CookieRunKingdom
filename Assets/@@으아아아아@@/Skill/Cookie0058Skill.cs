@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Cookie0058Skill : BaseMeleeSkill
 {
     [SerializeField] private DetectRange _detectedSkillRange;
+    [SerializeField] private DamageBox _cryingEffect;
+
+    private DetectRange _cryingDetectRange;
+    private SpriteRenderer _cryingRenderer;
+    private float CurrentAnimationTime => _controller.CharacterAnimator.GetIntervalAnimation();
 
     public int _onionPower = 0;
 
     private int _skillIndex = 0;
+
+    Sequence seq;
 
     public override void Init(BaseController controller)
     {
@@ -28,20 +36,69 @@ public class Cookie0058Skill : BaseMeleeSkill
     public override void NormalAttackEvent()
     {
         _onionPower++;
+
+        float time = CurrentAnimationTime / 2;
+        _cryingEffect.gameObject.SetActive(false);
+        _cryingEffect.SetPower(0);
+
+        // 투명하게 하기
+        Color color = _cryingRenderer.color;
+        color.a = 0;
+        _cryingRenderer.color = color;
+
+        // 효과
+        seq.Kill();
+        seq = DOTween.Sequence();
+        seq.OnStart(() => _cryingEffect.gameObject.SetActive(true))
+            .Append(_cryingRenderer.DOFade(1, time))
+            .Append(_cryingRenderer.DOFade(0, time))
+            .OnComplete(() => _cryingEffect.gameObject.SetActive(false));
     }
 
     public override void OnSkillEvent(int index)
     {
         base.OnSkillEvent(index);
 
-        _detectedSkillRange.enemies.ForEach(target => target.CurrentHp -= 1000 * _onionPower);
-        _onionPower = 0;
+        if(index == 0)
+        {
+            float time = CurrentAnimationTime;
+            _cryingEffect.gameObject.SetActive(false);
+            _cryingEffect.transform.localScale = Vector3.zero;
+            _cryingEffect.SetPower(100000 * _onionPower);
+
+            // 투명하게 하기
+            Color color = _cryingRenderer.color;
+            color.a = 0;
+            _cryingRenderer.color = color;
+
+
+            // 효과
+            seq.Kill();
+            seq = DOTween.Sequence();
+            seq.OnStart(() => _cryingEffect.gameObject.SetActive(true))
+                .Append(_cryingRenderer.DOFade(1, time / 3))
+                .Join(_cryingEffect.transform.DOScale(25, time))
+                .OnComplete(() =>
+                {
+                    _cryingEffect.gameObject.SetActive(false);
+                    _cryingEffect.transform.localScale = Vector3.one * 1.5f;
+                });
+
+
+            _onionPower = 0;
+        }
     }
 
     public override void SetLayer(LayerMask layer)
     {
         base.SetLayer(layer);
+
+        _cryingRenderer = _cryingEffect.GetComponent<SpriteRenderer>();
+        _cryingDetectRange = _cryingEffect.GetComponent<DetectRange>();
+
+        _cryingEffect.Init(0, layer, true);
         _detectedSkillRange.Init(layer);
+        _cryingDetectRange.Init(layer);
     }
 
     public override bool UseSkill()
