@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingSelectUI : MonoBehaviour
 {
-    private Building _currentBuilding;
+    private BuildingController _currentBuilding;
 
     [SerializeField] private GameObject buttonsParent;
 
@@ -26,7 +26,7 @@ public class BuildingSelectUI : MonoBehaviour
         infoButton.AddListener(ShowInfo);
     }
 
-    public void SetBuilding(Building currentBuilding, Transform parent, float cameraOrthographicSize = 10f)
+    public void SetBuilding(BuildingController currentBuilding, Transform parent, float cameraOrthographicSize = 10f)
     {
         _currentBuilding = currentBuilding;
 
@@ -70,6 +70,6 @@ public class BuildingSelectUI : MonoBehaviour
 
     public void CheckBuilding()
     {
-        _currentBuilding.PutBuilding();
+        _currentBuilding.BuildingEditor.PutBuilding();
     }
 }

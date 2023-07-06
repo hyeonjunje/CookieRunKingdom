@@ -16,9 +16,6 @@ public class KingdomScene : BaseScene
 
     [SerializeField] private KingdomManager _kingdomManager;
 
-    [SerializeField] private List<Building> _buildings = new List<Building>();
-    [SerializeField] private List<BaseController> _myCookies = new List<BaseController>();
-
     protected override void Init()
     {
         // 땅 만들기
@@ -40,14 +37,18 @@ public class KingdomScene : BaseScene
     private void ArrangeBuilding()
     {
         // 내가 가진 건물들 설치
-        List<Building> myBuildings = DataBaseManager.Instance.OwnedBuildings;
-        for(int i = 0; i < myBuildings.Count; i++)
+        List<BuildingController> myBuildings = DataBaseManager.Instance.OwnedBuildings;
+        _kingdomManager.buildings = new List<BuildingController>();
+
+        for (int i = 0; i < myBuildings.Count; i++)
         {
-            Building building = Instantiate(myBuildings[i], _buildingParent);
-            _buildings.Add(building);
+            BuildingController building = Instantiate(myBuildings[i], _buildingParent);
+            _kingdomManager.buildings.Add(building);
             building.transform.SetGridTransform();
-            building.OnClickEditMode();
-            building.PutBuilding();
+            building.BuildingWorker.WorkBuilding();
+
+            building.BuildingEditor.OnClickEditMode();
+            building.BuildingEditor.PutBuilding();
             _pool.ResetPreviewTile();
         }
 
@@ -56,17 +57,17 @@ public class KingdomScene : BaseScene
 
     private void ArrangeCookies()
     {
-        List<BaseController> myCookies = DataBaseManager.Instance.OwnedCookies;
-        _myCookies = new List<BaseController>();
+        List<CookieController> myCookies = DataBaseManager.Instance.OwnedCookies;
+        _kingdomManager.myCookies = new List<CookieController>();
 
         // 쿠키 무작위 둘 수 있는곳에 생성
         for (int i = 0; i < myCookies.Count; i++)
         {
-            BaseController cookie = Instantiate(myCookies[i], _cookieParent);
+            CookieController cookie = Instantiate(myCookies[i], _cookieParent);
             cookie.transform.position = GridManager.Instance.ReturnEmptyTilePosition();
-            _myCookies.Add(cookie);
+            _kingdomManager.myCookies.Add(cookie);
 
-            ((CookieController)cookie).CookieCitizeon.KingdomAI();
+            cookie.CookieCitizeon.KingdomAI();
         }
     }
 }

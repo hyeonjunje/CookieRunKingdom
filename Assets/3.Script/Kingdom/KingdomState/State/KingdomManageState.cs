@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class KingdomManageState : KingdomBaseState
 {
-    private Building _currentBuilding = null;
+    private BuildingController _currentBuilding = null;
 
 
     public KingdomManageState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
@@ -26,11 +26,28 @@ public class KingdomManageState : KingdomBaseState
     {
         Init();
         GameManager.UI.PushUI(_manager.KingdomManagerUI);
+
+        // 쿠키들이 등장함
+        _manager.myCookies.ForEach(cookie =>
+        {
+            cookie.gameObject.SetActive(true);
+            ((CookieController)cookie).CookieCitizeon.KingdomAI();
+        });
+
+        _manager.buildings.ForEach(building =>
+        {
+            building.gameObject.SetActive(true);
+            building.BuildingWorker.WorkBuilding();
+        });
     }
 
     public override void Exit()
     {
         GameManager.UI.ClearUI();
+
+        // 쿠키들이 사라짐
+        _manager.myCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
+        _manager.buildings.ForEach(building => building.gameObject.SetActive(false));
     }
 
     public override void OnClick(InputAction.CallbackContext value)
@@ -48,14 +65,14 @@ public class KingdomManageState : KingdomBaseState
             }
 
             // 제작 건물
-            _currentBuilding = rayHit.transform.GetComponent<Building>();
+            _currentBuilding = rayHit.transform.GetComponent<BuildingController>();
 
             if (_currentBuilding == null)
                 return;
 
             Debug.Log(_currentBuilding.name + " 을 누릅니다.");
 
-            if(!_currentBuilding.TryHarvest())
+            if(!_currentBuilding.BuildingWorker.TryHarvest())
             {
                 _factory.kingdomCraftState.SetBuilding(_currentBuilding);
                 _factory.ChangeState(EKingdomState.Craft);

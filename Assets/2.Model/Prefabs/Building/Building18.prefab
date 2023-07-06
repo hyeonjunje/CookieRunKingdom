@@ -10,7 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2189884849910448308}
   - component: {fileID: 2189884849910448309}
-  - component: {fileID: 2189884849910448306}
+  - component: {fileID: 2671169104622352450}
+  - component: {fileID: 2924798320564397921}
+  - component: {fileID: 6783492927294781597}
+  - component: {fileID: 5523851653912919559}
   m_Layer: 7
   m_Name: Building18
   m_TagString: Untagged
@@ -62,7 +65,7 @@ PolygonCollider2D:
       - {x: -0.019001007, y: 0.17901778}
       - {x: -3.8938382, y: -1.9123383}
       - {x: 0.015678406, y: -3.8433902}
---- !u!114 &2189884849910448306
+--- !u!114 &2671169104622352450
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,12 +74,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 2189884849910448311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69dd7cf9e02260e4c8df23f78f8ea68d, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc50565f62729643bac7ccc541b1a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingData: {fileID: 11400000, guid: 2915ea00c99f4964db8a7caf0edaccdf, type: 2}
-  craftingItemData: []
-  craftBubble: {fileID: 7922488602558417247}
+  _buildingData: {fileID: 11400000, guid: 2915ea00c99f4964db8a7caf0edaccdf, type: 2}
+--- !u!114 &2924798320564397921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2189884849910448311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9dad9400a177644b6c9a5233a37ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6783492927294781597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2189884849910448311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f9ba33a2a805f41a1bdabf5670735a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5523851653912919559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2189884849910448311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295ac514558a965449183fbbfe712c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _craftingItemData:
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  _craftBubble: {fileID: 7922488602558417247}
+  _workPlace: {fileID: 3419034860192233751}
+  _initAnimation: call_user
+  _workAnimationName: axe
 --- !u!1 &2189884850638864601
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,6 +165,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7922488602558417240}
+  - {fileID: 3419034860192233751}
   m_Father: {fileID: 2189884849910448308}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -198,6 +256,36 @@ MonoBehaviour:
   _animationName: loop_back
   loop: 1
   timeScale: 1
+--- !u!1 &3881898892761224194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3419034860192233751}
+  m_Layer: 0
+  m_Name: WorkerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3419034860192233751
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3881898892761224194}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -2.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2189884850638864581}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2189884850826120142
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,6 +10,8 @@ public class CookieCitizen : MonoBehaviour
 
     private Coroutine _coUpdate;
 
+    private bool _isWorking = false;
+
     private void OnDisable()
     {
         if(_coUpdate != null)
@@ -27,13 +29,14 @@ public class CookieCitizen : MonoBehaviour
     public void KingdomAI()
     {
         // 걷다가, 멈추다가, 인사하다가
-        StartCoroutine(CoUpdate());
+        _coUpdate = StartCoroutine(CoUpdate());
     }
 
 
     public void WalkInKingdom()
     {
-        _agent.MoveTo(new Vector3(3, -10, 0));
+
+
     }
 
     public void WalkInAdventure()
@@ -41,8 +44,23 @@ public class CookieCitizen : MonoBehaviour
 
     }
 
+    public void WorkInKingdom()
+    {
+        _controller.CharacterAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 100);
+        _isWorking = true;
+
+        // 일만 하자
+        _agent.StopPathFinding();
+
+        if (_coUpdate != null)
+            StopCoroutine(_coUpdate);
+    }
+
     private IEnumerator CoUpdate()
     {
+        if (_isWorking)
+            yield break;
+
         while(true)
         {
             // int act = Random.Range(0, 3);

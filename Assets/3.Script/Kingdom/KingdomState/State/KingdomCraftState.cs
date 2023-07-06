@@ -6,14 +6,14 @@ using DG.Tweening;
 
 public class KingdomCraftState : KingdomBaseState
 {
-    private Building _building;
+    private BuildingController _building;
     private float prevOrthoSize = 0;
 
     public KingdomCraftState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
     {
     }
 
-    public void SetBuilding(Building building)
+    public void SetBuilding(BuildingController building)
     {
         _building = building;
         _manager.KingdomCraftUI.SetCraft(building);
@@ -28,15 +28,30 @@ public class KingdomCraftState : KingdomBaseState
             .Join(_camera.DOOrthoSize(_manager.CurrentCameraControllerData.CameraBuildingZoom, 0.5f))
             .OnComplete(() =>
             {
-                _building.Highlighgt(true);
+                _building.BuildingWorker.Highlighgt(true);
                 _manager.KingdomBackGroundUI.SetActive(true);
                 GameManager.UI.PushUI(_manager.KingdomCraftUI);
             });
+
+
+        _manager.myCookies.ForEach(cookie =>
+        {
+            cookie.gameObject.SetActive(true);
+            cookie.CookieCitizeon.KingdomAI();
+        });
+
+        _manager.buildings.ForEach(building =>
+        {
+            building.gameObject.SetActive(true);
+            building.BuildingWorker.WorkBuilding();
+        });
     }
 
     public override void Exit()
     {
-        _building.Highlighgt(false);
+        _building.gameObject.SetActive(false);
+
+        _building.BuildingWorker.Highlighgt(false);
 
         _building = null;
         _manager.KingdomBackGroundUI.SetActive(false);
@@ -44,6 +59,9 @@ public class KingdomCraftState : KingdomBaseState
 
         Sequence seq = DOTween.Sequence();
         seq.Append(_camera.DOOrthoSize(prevOrthoSize, 0.5f));
+
+        _manager.myCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
+        _manager.buildings.ForEach(building => building.gameObject.SetActive(false));
     }
 
     public override void Update()

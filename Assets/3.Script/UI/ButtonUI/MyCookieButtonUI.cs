@@ -27,7 +27,7 @@ public class MyCookieButtonUI : MonoBehaviour
         _isOwned = false;
         _cookie = cookie;
 
-        List<BaseController> _ownedCookies = DataBaseManager.Instance.OwnedCookies;
+        List<CookieController> _ownedCookies = DataBaseManager.Instance.OwnedCookies;
         for(int i = 0; i < _ownedCookies.Count; i++)
         {
             if(cookie.Data.CharacterName == _ownedCookies[i].Data.CharacterName)

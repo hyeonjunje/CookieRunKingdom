@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2358629406347979050
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7005755824204298947}
+  m_Layer: 0
+  m_Name: WorkerPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7005755824204298947
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2358629406347979050}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -2.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6227583389738863207}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6227583389738863227
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,6 +61,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2736657892531632247}
+  - {fileID: 7005755824204298947}
   m_Father: {fileID: 6227583391292343763}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +162,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6227583391292343763}
   - component: {fileID: 6227583391292343762}
-  - component: {fileID: 6227583391292343761}
+  - component: {fileID: -5341628430822080057}
+  - component: {fileID: -5819618100031072062}
+  - component: {fileID: 1566172521712363440}
+  - component: {fileID: 2232313870370958301}
   m_Layer: 7
   m_Name: Building7
   m_TagString: Untagged
@@ -183,7 +217,7 @@ PolygonCollider2D:
       - {x: -0.019001007, y: 0.17901778}
       - {x: -3.8938382, y: -1.9123383}
       - {x: 0.015678406, y: -3.8433902}
---- !u!114 &6227583391292343761
+--- !u!114 &-5341628430822080057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -192,12 +226,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 6227583391292343764}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69dd7cf9e02260e4c8df23f78f8ea68d, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc50565f62729643bac7ccc541b1a7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildingData: {fileID: 11400000, guid: 62d47a6e43ac2f74491fad9ba728e660, type: 2}
-  craftingItemData: []
-  craftBubble: {fileID: 2736657892531632240}
+  _buildingData: {fileID: 11400000, guid: 62d47a6e43ac2f74491fad9ba728e660, type: 2}
+--- !u!114 &-5819618100031072062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227583391292343764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9dad9400a177644b6c9a5233a37ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1566172521712363440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227583391292343764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4f9ba33a2a805f41a1bdabf5670735a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2232313870370958301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6227583391292343764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 295ac514558a965449183fbbfe712c81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _craftingItemData:
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  - state: 0
+    craftData: {fileID: 0}
+    takingTime: 0
+  _craftBubble: {fileID: 2736657892531632240}
+  _workPlace: {fileID: 7005755824204298947}
+  _initAnimation: call_user
+  _workAnimationName: axe
 --- !u!1001 &6227583391174146785
 PrefabInstance:
   m_ObjectHideFlags: 0

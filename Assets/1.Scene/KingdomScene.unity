@@ -5126,7 +5126,7 @@ Canvas:
   m_GameObject: {fileID: 172660505}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1171909674}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -9288,34 +9288,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ownedBuildings:
-  - {fileID: 6383806918301093372, guid: e30c07f89297cba4e916dfe7ecd633f8, type: 3}
-  - {fileID: 3556978085018674695, guid: 3142e69752781a84e88caffc5514a208, type: 3}
-  - {fileID: 3738461623486691347, guid: 9f2db8c4edd2dd64f90f6ac9ee5700bd, type: 3}
-  - {fileID: 531048513790308800, guid: 2550bdfa8871e2f48b0ef69fd2e722b5, type: 3}
-  - {fileID: 2006674858360673877, guid: 2da7e1739ae0fe246a8a6101095ab888, type: 3}
-  - {fileID: 1261713755782547589, guid: 0104af00c8be1154cab9b96fa85124ef, type: 3}
-  - {fileID: 1540502730946475685, guid: ce1a4a6171700814ca1e4984dbb3643c, type: 3}
+  - {fileID: 7347288035724599769, guid: e30c07f89297cba4e916dfe7ecd633f8, type: 3}
+  - {fileID: 1808973095785159609, guid: 97f53d70aa8e6da4d9949b4727f4279e, type: 3}
+  - {fileID: -7112643136911324697, guid: a05b9c79834cd2a4fb1a7e9917953b6b, type: 3}
+  - {fileID: -375410320272039889, guid: 0104af00c8be1154cab9b96fa85124ef, type: 3}
+  - {fileID: 2416140820315766416, guid: 2550bdfa8871e2f48b0ef69fd2e722b5, type: 3}
   allBuildings:
-  - {fileID: 6383806918301093372, guid: e30c07f89297cba4e916dfe7ecd633f8, type: 3}
-  - {fileID: 8150933548797649208, guid: faab56f347dfd3540b5b1cb474780273, type: 3}
-  - {fileID: 3556978085018674695, guid: 3142e69752781a84e88caffc5514a208, type: 3}
-  - {fileID: 6234519957222836160, guid: 6deb399e559b31149a22ac06588dabb9, type: 3}
-  - {fileID: 8168730491829585779, guid: 97f53d70aa8e6da4d9949b4727f4279e, type: 3}
-  - {fileID: 1210173312507458231, guid: 6020ccc33991add4b8571b59aa064c89, type: 3}
-  - {fileID: 6227583391292343761, guid: 20372e3c42b32414ea594eb387432b03, type: 3}
-  - {fileID: 2006674858360673877, guid: 2da7e1739ae0fe246a8a6101095ab888, type: 3}
-  - {fileID: 8283051405556425375, guid: a05b9c79834cd2a4fb1a7e9917953b6b, type: 3}
-  - {fileID: 3738461623486691347, guid: 9f2db8c4edd2dd64f90f6ac9ee5700bd, type: 3}
-  - {fileID: 4027737194878820992, guid: bad27b84a3b6e2547b4e8bb56c36f57d, type: 3}
-  - {fileID: 7911638417709691447, guid: d9df5763aa746a6459009c90e4a767c3, type: 3}
-  - {fileID: 7589374806974247480, guid: 10c9b0b4cc7cec54991191629153cf77, type: 3}
-  - {fileID: 1261713755782547589, guid: 0104af00c8be1154cab9b96fa85124ef, type: 3}
-  - {fileID: 4643727926530460496, guid: 96c9d714e8a1f3f4d8cb014af2adb2be, type: 3}
-  - {fileID: 1315619464813907843, guid: 7f395977881792b43bc9c672ce19b8a5, type: 3}
-  - {fileID: 531048513790308800, guid: 2550bdfa8871e2f48b0ef69fd2e722b5, type: 3}
-  - {fileID: 2189884849910448306, guid: 0b2c8692efbda344d824ac6d0c7573c0, type: 3}
-  - {fileID: 6358695055948865511, guid: 3290f9e01c85cd54a824df3728bc5a58, type: 3}
-  - {fileID: 1540502730946475685, guid: ce1a4a6171700814ca1e4984dbb3643c, type: 3}
+  - {fileID: 7347288035724599769, guid: e30c07f89297cba4e916dfe7ecd633f8, type: 3}
+  - {fileID: -7679918343253122720, guid: faab56f347dfd3540b5b1cb474780273, type: 3}
+  - {fileID: -1003851153693505243, guid: 3142e69752781a84e88caffc5514a208, type: 3}
+  - {fileID: 805204488483196066, guid: 6deb399e559b31149a22ac06588dabb9, type: 3}
+  - {fileID: 1808973095785159609, guid: 97f53d70aa8e6da4d9949b4727f4279e, type: 3}
+  - {fileID: -5128400128180935703, guid: 6020ccc33991add4b8571b59aa064c89, type: 3}
+  - {fileID: -5341628430822080057, guid: 20372e3c42b32414ea594eb387432b03, type: 3}
+  - {fileID: 6979593285551586107, guid: 2da7e1739ae0fe246a8a6101095ab888, type: 3}
+  - {fileID: -7112643136911324697, guid: a05b9c79834cd2a4fb1a7e9917953b6b, type: 3}
+  - {fileID: -6725597001090893348, guid: 9f2db8c4edd2dd64f90f6ac9ee5700bd, type: 3}
+  - {fileID: -4717691884004562576, guid: bad27b84a3b6e2547b4e8bb56c36f57d, type: 3}
+  - {fileID: -5645935359550019804, guid: d9df5763aa746a6459009c90e4a767c3, type: 3}
+  - {fileID: 6453451889336666641, guid: 10c9b0b4cc7cec54991191629153cf77, type: 3}
+  - {fileID: -375410320272039889, guid: 0104af00c8be1154cab9b96fa85124ef, type: 3}
+  - {fileID: -5286931900337845316, guid: 96c9d714e8a1f3f4d8cb014af2adb2be, type: 3}
+  - {fileID: 7114032792323563831, guid: 7f395977881792b43bc9c672ce19b8a5, type: 3}
+  - {fileID: 2416140820315766416, guid: 2550bdfa8871e2f48b0ef69fd2e722b5, type: 3}
+  - {fileID: 2671169104622352450, guid: 0b2c8692efbda344d824ac6d0c7573c0, type: 3}
+  - {fileID: 8661464078128607116, guid: 3290f9e01c85cd54a824df3728bc5a58, type: 3}
+  - {fileID: -5585755941469138850, guid: ce1a4a6171700814ca1e4984dbb3643c, type: 3}
   defaultCookie:
   - {fileID: -2159259702791881672, guid: 69670bb8c4a7c8948a574803e2ed7765, type: 3}
   - {fileID: 5306437885611428041, guid: 70c519440a0106c44a81a0ac6ed39937, type: 3}
@@ -52605,8 +52603,6 @@ MonoBehaviour:
   _buildingParent: {fileID: 201082618}
   _cookieParent: {fileID: 1369260538}
   _kingdomManager: {fileID: 1792660215}
-  _buildings: []
-  _myCookies: []
 --- !u!1 &1561051154
 GameObject:
   m_ObjectHideFlags: 0
@@ -60890,6 +60886,8 @@ MonoBehaviour:
   _grid: {fileID: 768403708}
   _cameraControllInKingdomData: {fileID: 11400000, guid: 1fcb2011135daf24191bb1b28f641eca, type: 2}
   _cameraControllInStageData: {fileID: 11400000, guid: 3eee40b32fd4fbd4db425c16153ef54f, type: 2}
+  buildings: []
+  myCookies: []
 --- !u!114 &1792660216
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66862,7 +66860,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002328840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -4320}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 21.800001, y: 21.800001, z: 21.800001}
   m_Children: []
   m_Father: {fileID: 172660506}
@@ -71341,7 +71339,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20, y: 20}
+  m_AnchoredPosition: {x: 20.000061, y: 20}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &2137469697

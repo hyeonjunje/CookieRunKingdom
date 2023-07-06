@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 
 public class KingdomEditState : KingdomBaseState
 {
-    private Building _currentBuilding = null;
+    private BuildingController _currentBuilding = null;
     private Vector3 _lastPos = Vector3.zero;
 
     public KingdomEditState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
@@ -24,6 +24,8 @@ public class KingdomEditState : KingdomBaseState
     {
         Init();
         GameManager.UI.PushUI(_manager.KingdomEditUI);
+
+        _manager.buildings.ForEach(building => building.gameObject.SetActive(true));
     }
 
     public override void Exit()
@@ -33,6 +35,8 @@ public class KingdomEditState : KingdomBaseState
 
         // 나갈 때 previewTile 없애줘야 해
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
+
+        _manager.buildings.ForEach(building => building.gameObject.SetActive(false));
     }
 
     public override void Update()
@@ -79,12 +83,12 @@ public class KingdomEditState : KingdomBaseState
                     return;
                 }
 
-                _currentBuilding = rayHit.transform.GetComponent<Building>();
+                _currentBuilding = rayHit.transform.GetComponent<BuildingController>();
 
                 if (_currentBuilding == null)
                     return;
 
-                _currentBuilding.OnClickEditMode();
+                _currentBuilding.BuildingEditor.OnClickEditMode();
                 _manager.BuildingSelectUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
             }
         }
@@ -111,7 +115,7 @@ public class KingdomEditState : KingdomBaseState
             _currentBuilding.transform.localPosition = _manager.Grid.CellToWorld(gridPos);
             _lastPos = _currentBuilding.transform.localPosition;
 
-            _currentBuilding.UpdatePreviewTile();
+            _currentBuilding.BuildingEditor.UpdatePreviewTile();
         }
     }
 

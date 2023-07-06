@@ -62,7 +62,12 @@ public class PathFindingAgent : MonoBehaviour
         if (_coMove != null)
             StopCoroutine(_coMove);
         _coMove = StartCoroutine(CoMove());
+    }
 
+    public void StopPathFinding()
+    {
+        if (_coMove != null)
+            StopCoroutine(_coMove);
     }
 
     private void PathFinding(Vector3 target)

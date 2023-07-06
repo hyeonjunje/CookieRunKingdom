@@ -147,9 +147,4 @@ public class CharacterAnimator : MonoBehaviour
             _renderer.sortingLayerName = "Default";
         }
     }
-
-    private string GetAnimationName(ECookieAnimation cookieAnimation)
-    {
-        return _animationNames[(int)cookieAnimation];
-    }
 }

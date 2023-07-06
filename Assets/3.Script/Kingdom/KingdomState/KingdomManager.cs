@@ -54,6 +54,9 @@ public class KingdomManager : MonoBehaviour
 
     public bool IsMoveCamera { get; set; } = true;
 
+    public List<BuildingController> buildings = new List<BuildingController>();
+    public List<CookieController> myCookies = new List<CookieController>();
+    public List<CookieController> workingCookies = new List<CookieController>();
 
     public void Init()
     {
