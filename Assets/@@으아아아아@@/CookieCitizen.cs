@@ -7,10 +7,13 @@ public class CookieCitizen : MonoBehaviour
 {
     private CookieController _controller;
     private PathFindingAgent _agent;
+    private KingdomManager _kingdomManager;
+
 
     private Coroutine _coUpdate;
-
+    private Transform _originParent = null;
     private bool _isWorking = false;
+    [SerializeField] private string _greetingAnimation = "call_user";
 
     private void OnDisable()
     {
@@ -22,12 +25,16 @@ public class CookieCitizen : MonoBehaviour
     {
         _controller = controller;
         _agent = GetComponent<PathFindingAgent>();
+        _kingdomManager = FindObjectOfType<KingdomManager>();
 
         _agent.Init(_controller);
     }
 
     public void KingdomAI()
     {
+        if (_isWorking)
+            return;
+
         // 걷다가, 멈추다가, 인사하다가
         _coUpdate = StartCoroutine(CoUpdate());
     }
@@ -44,23 +51,55 @@ public class CookieCitizen : MonoBehaviour
 
     }
 
-    public void WorkInKingdom()
+    // 출근
+    public void GoToWork(Transform parent)
     {
-        _controller.CharacterAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 100);
         _isWorking = true;
-
-        // 일만 하자
+        
+        // 하고 있던 AI동작 중지
         _agent.StopPathFinding();
-
         if (_coUpdate != null)
             StopCoroutine(_coUpdate);
+
+        // 출석부 등록하고
+        _kingdomManager.workingCookies.Add(_controller);
+
+        // 위치 조정하고
+        _originParent = transform.parent;
+        transform.SetParent(parent);
+        transform.localPosition = Vector3.zero;
+        _controller.CharacterAnimator.FlipX(false);
+        _controller.CharacterAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 100);
+
+        // 인사하고
+        _controller.CharacterAnimator.PlayAnimation(_greetingAnimation);
     }
+
+    public void EndWork()
+    {
+        // 인사
+        _controller.CharacterAnimator.PlayAnimation(_greetingAnimation);
+    }
+
+    // 퇴근
+    public void LeaveWork()
+    {
+        _isWorking = false;
+
+        // 출석부에 빼고
+        _kingdomManager.workingCookies.Remove(_controller);
+
+        // 위치 조정하고
+        transform.SetParent(_originParent);
+        transform.position = GridManager.Instance.ReturnEmptyTilePosition();
+        
+        // 다시 일상생활로
+        KingdomAI();
+    }
+
 
     private IEnumerator CoUpdate()
     {
-        if (_isWorking)
-            yield break;
-
         while(true)
         {
             // int act = Random.Range(0, 3);

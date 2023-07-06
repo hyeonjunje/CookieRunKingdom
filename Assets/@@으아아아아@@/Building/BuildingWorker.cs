@@ -11,16 +11,14 @@ public class BuildingWorker : MonoBehaviour
 
     [Header("일할 쿠키 정보")]
     [SerializeField] private Transform _workPlace;
-    [SerializeField] private string _initAnimation;
     [SerializeField] private string _workAnimationName;
 
     private List<SpriteRenderer> _craftBubbleUnit = new List<SpriteRenderer>();
-
-    public List<CraftingItemData> CraftingItemData => _craftingItemData;
     private BuildingData _data;
     private KingdomManager _kingdomManager;
 
-    public CookieController Worker;
+    public CookieController Worker { get; private set; }
+    public List<CraftingItemData> CraftingItemData => _craftingItemData;
 
     public void Init(BuildingController controller)
     {
@@ -63,10 +61,14 @@ public class BuildingWorker : MonoBehaviour
 
         if (Worker == null)
         {
-            Worker = _kingdomManager.myCookies[Random.Range(0, _kingdomManager.myCookies.Count)];
-            Worker.CharacterAnimator.PlayAnimation(_initAnimation);
-            Worker.transform.position = _workPlace.position;
-            Worker.CookieCitizeon.WorkInKingdom();
+            while(Worker == null)
+            {
+                CookieController cookie = _kingdomManager.myCookies[Random.Range(0, _kingdomManager.myCookies.Count)];
+                if (!_kingdomManager.workingCookies.Contains(cookie))
+                    Worker = cookie;
+            }
+
+            Worker.CookieCitizeon.GoToWork(_workPlace);
         }
 
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
@@ -128,8 +130,7 @@ public class BuildingWorker : MonoBehaviour
         // 전부 다 수확하면 애니메이션 꺼주기
         if(_craftingItemData[0].state == ECraftingState.empty)
         {
-            _controller.BuildingAnimator.PlayAnimation("off");
-            Worker.CharacterAnimator.PlayAnimation(_initAnimation);
+            Worker.CookieCitizeon.EndWork();
         }
     }
 
