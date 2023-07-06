@@ -18,51 +18,66 @@ public class Node
 
 public class PathFindingAgent : MonoBehaviour
 {
-    // 맵의 크기
-    [SerializeField] private Vector2 startMapPoint;  // -100 -100
-    [SerializeField] private Vector2 endMapPoint;    //  100  100
+    private CookieController _controller;
 
-    private Vector2Int start, end;
-    public List<Node> FinalNodeList;
+    [Header("Test")]
+    [SerializeField] private List<Node> FinalNodeList;
 
-    private Node[,] NodeArray;
-    private Node StartNode, TargetNode, CurNode;
-    private List<Node> OpenList, ClosedList;
+    [Header("이동 관련")]
+    [SerializeField] private float _moveSpeed = 1f;
 
-    private Grid _grid => GridManager.instance.Grid;
-    private Tilemap[,] _map => GridManager.instance.buildingGridData.gridData;
+    private Vector2Int _start, _end;
+    private Node[,] _nodeArray;
+    private Node _startNode, _targetNode, _curNode;
+    private List<Node> _openList, _closedList;
 
-    public void Init()
+    private Coroutine _coMove = null;
+
+    private Grid _grid => GridManager.Instance.Grid;                      
+    private Tilemap[,] _map => GridManager.Instance.buildingGridData.gridData;
+
+    public void Init(CookieController controller)
     {
-        // 맵 읽기
+        _controller = controller;
 
-        Vector3Int start1 = _grid.WorldToCell(startMapPoint);
-        Vector3Int end1 = _grid.WorldToCell(endMapPoint);
+        // 맵 읽기
+        Vector3Int start1 = _grid.WorldToCell(Utils.MapStartPoint);
+        Vector3Int end1 = _grid.WorldToCell(Utils.MapEndPoint);
 
         int minX = start1.x > end1.x ? end1.x : start1.x;
         int maxX = start1.x > end1.x ? start1.x : end1.x;
         int minY = start1.y > end1.y ? end1.y : start1.y;
         int maxY = start1.y > end1.y ? start1.y : end1.y;
 
-        start = new Vector2Int(minX, minY);
-        end = new Vector2Int(maxX, maxY);
+        _start = new Vector2Int(minX, minY);
+        _end = new Vector2Int(maxX, maxY);
     }
 
-
-    public void PathFinding(Vector3 target)
+    public void MoveTo(Vector3 target)
     {
+        // 경로 찾고
+        PathFinding(target);
 
+        // _finalNodeList 대로 이동한다.
+        if (_coMove != null)
+            StopCoroutine(_coMove);
+        _coMove = StartCoroutine(CoMove());
+
+    }
+
+    private void PathFinding(Vector3 target)
+    {
         // NodeArray의 크기 정해주고, isWall, x, y 대입
-        int sizeX = end.x - start.x + 1;
-        int sizeY = end.y - start.y + 1;
-        NodeArray = new Node[sizeY, sizeX];
+        int sizeX = _end.x - _start.x + 1;
+        int sizeY = _end.y - _start.y + 1;
+        _nodeArray = new Node[sizeY, sizeX];
 
-        for (int y = end.y; y >= start.y; y--)
+        for (int y = _end.y; y >= _start.y; y--)
         {
-            for (int x = end.x; x >= start.x; x--)
+            for (int x = _end.x; x >= _start.x; x--)
             {
-                bool isWall = _map[y - start.y, x - start.x] == null || !_map[y - start.y, x - start.x].isEmpty;
-                NodeArray[y - start.y, x - start.x] = new Node(isWall, x, y);
+                bool isWall = _map[y - _start.y, x - _start.x] == null || !_map[y - _start.y, x - _start.x].isEmpty;
+                _nodeArray[y - _start.y, x - _start.x] = new Node(isWall, x, y);
             }
         }
 
@@ -70,78 +85,74 @@ public class PathFindingAgent : MonoBehaviour
         Vector3Int endPoint = _grid.WorldToCell(target);
 
         // 시작과 끝 노드, 열린리스트와 닫힌리스트, 마지막리스트 초기화
-        StartNode = NodeArray[startPoint.y - start.y, startPoint.x - start.x];
-        TargetNode = NodeArray[endPoint.y - start.y, endPoint.x - start.x];
+        _startNode = _nodeArray[startPoint.y - _start.y, startPoint.x - _start.x];
+        _targetNode = _nodeArray[endPoint.y - _start.y, endPoint.x - _start.x];
 
-
-
-        OpenList = new List<Node>() { StartNode };
-        ClosedList = new List<Node>();
+        _openList = new List<Node>() { _startNode };
+        _closedList = new List<Node>();
         FinalNodeList = new List<Node>();
 
 
-        while (OpenList.Count > 0)
+        while (_openList.Count > 0)
         {
             // 열린리스트 중 가장 F가 작고 F가 같다면 H가 작은 걸 현재노드로 하고 열린리스트에서 닫힌리스트로 옮기기
-            CurNode = OpenList[0];
-            for (int i = 1; i < OpenList.Count; i++)
-                if (OpenList[i].F <= CurNode.F && OpenList[i].H < CurNode.H) CurNode = OpenList[i];
+            _curNode = _openList[0];
+            for (int i = 1; i < _openList.Count; i++)
+                if (_openList[i].F <= _curNode.F && _openList[i].H < _curNode.H) _curNode = _openList[i];
 
-            OpenList.Remove(CurNode);
-            ClosedList.Add(CurNode);
+            _openList.Remove(_curNode);
+            _closedList.Add(_curNode);
 
 
             // 마지막
-            if (CurNode == TargetNode)
+            if (_curNode == _targetNode)
             {
-                Node TargetCurNode = TargetNode;
-                while (TargetCurNode != StartNode)
+                Node TargetCurNode = _targetNode;
+                while (TargetCurNode != _startNode)
                 {
                     FinalNodeList.Add(TargetCurNode);
                     TargetCurNode = TargetCurNode.ParentNode;
                 }
-                FinalNodeList.Add(StartNode);
+                FinalNodeList.Add(_startNode);
                 FinalNodeList.Reverse();
 
-                for (int i = 0; i < FinalNodeList.Count; i++) print(i + "번째는 " + FinalNodeList[i].x + ", " + FinalNodeList[i].y);
                 return;
             }
 
 
-            OpenListAdd(CurNode.x + 1, CurNode.y + 1);
-            OpenListAdd(CurNode.x - 1, CurNode.y + 1);
-            OpenListAdd(CurNode.x - 1, CurNode.y - 1);
-            OpenListAdd(CurNode.x + 1, CurNode.y - 1);
+            OpenListAdd(_curNode.x + 1, _curNode.y + 1);
+            OpenListAdd(_curNode.x - 1, _curNode.y + 1);
+            OpenListAdd(_curNode.x - 1, _curNode.y - 1);
+            OpenListAdd(_curNode.x + 1, _curNode.y - 1);
 
-            // ↑ → ↓ ←
-            OpenListAdd(CurNode.x, CurNode.y + 1);
-            OpenListAdd(CurNode.x + 1, CurNode.y);
-            OpenListAdd(CurNode.x, CurNode.y - 1);
-            OpenListAdd(CurNode.x - 1, CurNode.y);
+            OpenListAdd(_curNode.x, _curNode.y + 1);
+            OpenListAdd(_curNode.x + 1, _curNode.y);
+            OpenListAdd(_curNode.x, _curNode.y - 1);
+            OpenListAdd(_curNode.x - 1, _curNode.y);
         }
     }
 
     private void OpenListAdd(int checkX, int checkY)
     {
         // 상하좌우 범위를 벗어나지 않고, 벽이 아니면서, 닫힌리스트에 없다면
-        if (checkX >= start.x && checkX < end.x + 1 && checkY >= start.y && checkY < end.y + 1 && !NodeArray[checkY - start.y, checkX - start.x].isWall 
-            && !ClosedList.Contains(NodeArray[checkY - start.y, checkX - start.x]))
+        if (checkX >= _start.x && checkX < _end.x + 1 && checkY >= _start.y && checkY < _end.y + 1 && !_nodeArray[checkY - _start.y, checkX - _start.x].isWall 
+            && !_closedList.Contains(_nodeArray[checkY - _start.y, checkX - _start.x]))
         {
-            if (NodeArray[checkY - start.y, checkX - start.x].isWall && NodeArray[checkY - start.y, checkX - start.x].isWall) 
+            if (_nodeArray[checkY - _start.y, checkX - _start.x].isWall && _nodeArray[checkY - _start.y, checkX - _start.x].isWall) 
                 return;
 
             // 이웃노드에 넣고, 일직선 거리
-            Node NeighborNode = NodeArray[checkY - start.y, checkX - start.x];
-            int MoveCost = CurNode.G + (int)Mathf.Sqrt(Mathf.Pow(TargetNode.x - CurNode.x, 2) + Mathf.Pow(TargetNode.y - CurNode.y, 2));
+            Node NeighborNode = _nodeArray[checkY - _start.y, checkX - _start.x];
+            int MoveCost = _curNode.G + (int)Mathf.Sqrt(Mathf.Pow(_targetNode.x - _curNode.x, 2) + Mathf.Pow(_targetNode.y - _curNode.y, 2));
 
             // 이동비용이 이웃노드G보다 작거나 또는 열린리스트에 이웃노드가 없다면 G, H, ParentNode를 설정 후 열린리스트에 추가
-            if (MoveCost < NeighborNode.G || !OpenList.Contains(NeighborNode))
+            if (MoveCost < NeighborNode.G || !_openList.Contains(NeighborNode))
             {
                 NeighborNode.G = MoveCost;
-                NeighborNode.H = (Mathf.Abs(NeighborNode.x - TargetNode.x) + Mathf.Abs(NeighborNode.y - TargetNode.y)) * 10;
-                NeighborNode.ParentNode = CurNode;
+                NeighborNode.H = (Mathf.Abs(NeighborNode.x - _targetNode.x) + Mathf.Abs(NeighborNode.y - _targetNode.y)) * 10;
+                NeighborNode.ParentNode = _curNode;
 
-                OpenList.Add(NeighborNode);
+                _openList.Add(NeighborNode);
             }
         }
     }
@@ -159,5 +170,46 @@ public class PathFindingAgent : MonoBehaviour
                 Gizmos.DrawLine(s, d);
             }
         }
+    }
+
+    private IEnumerator CoMove()
+    {
+        if(FinalNodeList.Count == 0)
+        {
+            Debug.LogWarning("그곳으로 갈 경로가 없습니다.");
+            yield break;
+        }
+
+        bool isFlip = false;
+        bool isBack = false;
+
+        for(int i = 0; i < FinalNodeList.Count; i++)
+        {
+            Vector3 s = transform.position;
+            Vector3 d = _grid.CellToWorld(new Vector3Int(FinalNodeList[i].x, FinalNodeList[i].y, 0));
+            float currentTime = 0;
+
+            isBack = s.y > d.y;
+            if(s.x != d.x)
+                isFlip = s.x > d.x;
+
+            _controller.CharacterAnimator.FlipX(isFlip);
+
+            string animationName = isBack ? "walk" : "walk_back";
+
+            _controller.CharacterAnimator.PlayAnimation(isBack ? "walk" : "walk_back");
+
+            while(Vector3.Distance(transform.position, d) > 0.01f)
+            {
+                currentTime += Time.deltaTime;
+                transform.position = Vector3.Lerp(s, d, currentTime * _moveSpeed);
+                yield return null;
+            }
+
+            _controller.CharacterAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 100);
+            transform.position = d;
+        }
+
+        _controller.CharacterAnimator.PlayAnimation(isBack ? "idle" : "idle_back");
     }
 }

@@ -61,6 +61,10 @@ public class CharacterAnimator : MonoBehaviour
     {
         try
         {
+            // 이전 이름과 같으면 return;
+            if (_animationNames[(int)animationName] == _animation.AnimationState.GetCurrent(0).Animation.Name)
+                return;
+
             _animation.Initialize(false);
             _animation.AnimationState.SetAnimation(0, _animationNames[(int)animationName], true);
         }
@@ -75,6 +79,10 @@ public class CharacterAnimator : MonoBehaviour
     {
         try
         {
+            // 이전 이름과 같으면 return;
+            if (animationName == _animation.AnimationState.GetCurrent(0).Animation.Name)
+                return;
+
             _animation.Initialize(false);
             _animation.AnimationState.SetAnimation(0, animationName, isLoop);
         }
@@ -83,6 +91,12 @@ public class CharacterAnimator : MonoBehaviour
             Debug.Log(e.Message);
             Debug.LogError(name + " 에 " + animationName + " 애니메이션 없습니다.");
         }
+    }
+
+    public void FlipX(bool isFlip)
+    {
+        _animation.initialFlipX = isFlip;
+        _animation.Initialize(true);
     }
 
     public float GetIntervalAnimation()

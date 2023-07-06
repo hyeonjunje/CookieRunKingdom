@@ -9,6 +9,8 @@ public static class Utils
     public static readonly float LevelUpInterest = 1.045f;
     public static readonly float EvolutionInterest = 1.05f;
 
+    public static readonly Vector2 MapStartPoint = new Vector2(-100, -100);
+    public static readonly Vector2 MapEndPoint = new Vector2(100, 100);
 
     /// <summary>
     /// 모든 자기의 자식들을 Destroy해주는 함수
@@ -84,5 +86,16 @@ public static class Utils
         }
 
         return result;
+    }
+
+
+    /// <summary>
+    /// 해당 트랜스폼의 위치를 그리드에 맞춰서 이동시킵니다.
+    /// </summary>
+    /// <param name="transform">이동시킬 트랜스폼</param>
+    public static void SetGridTransform(this Transform transform)
+    {
+        Vector3Int pos = GridManager.Instance.Grid.WorldToCell(transform.position);
+        transform.position = GridManager.Instance.Grid.CellToWorld(pos);
     }
 }

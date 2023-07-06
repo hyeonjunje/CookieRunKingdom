@@ -514,13 +514,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eec2cfd21028be4f89a679ad3ddc95c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMapPoint: {x: -100, y: -100}
-  endMapPoint: {x: 100, y: 100}
-  start: {x: 0, y: 0}
-  end: {x: 0, y: 0}
   FinalNodeList: []
-  allowDiagonal: 1
-  dontCrossCorner: 0
+  _moveSpeed: 0.5
 --- !u!114 &4622738826203419894
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -40,4 +40,12 @@ public class Tilemap : MonoBehaviour
     {
         spriteRenderer.sprite = sprite;
     }
+
+    public void Visualize()
+    {
+        if (isEmpty)
+            spriteRenderer.color = Color.blue;
+        else
+            spriteRenderer.color = Color.red;
+    }
 }

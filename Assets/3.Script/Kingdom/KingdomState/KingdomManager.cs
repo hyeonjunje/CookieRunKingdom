@@ -69,6 +69,9 @@ public class KingdomManager : MonoBehaviour
         if (!IsMoveCamera)
             return;
 
+        if (_factory == null)
+            return;
+
         _factory.CurrentKingdomState.OnWheel(value);
     }
 
@@ -77,12 +80,18 @@ public class KingdomManager : MonoBehaviour
         if (!IsMoveCamera)
             return;
 
+        if (_factory == null)
+            return;
+
         _factory.CurrentKingdomState.OnClick(value);
     }
 
     public void OnDrag(InputAction.CallbackContext value)
     {
         if (!IsMoveCamera)
+            return;
+
+        if (_factory == null)
             return;
 
         _factory.CurrentKingdomState.OnDrag(value);

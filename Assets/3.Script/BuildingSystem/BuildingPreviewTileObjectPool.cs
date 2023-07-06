@@ -17,8 +17,6 @@ public class BuildingPreviewTileObjectPool : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        Init();
     }
 
     #endregion
@@ -28,7 +26,7 @@ public class BuildingPreviewTileObjectPool : MonoBehaviour
 
     private SpriteRenderer[] previewTilemaps;
 
-    private void Init()
+    public void Init()
     {
         previewTilemaps = new SpriteRenderer[maxCount];
 

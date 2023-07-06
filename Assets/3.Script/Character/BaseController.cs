@@ -31,10 +31,4 @@ public class BaseController : MonoBehaviour
         _characterBattleController.Init(this);
         _baseSkill.Init(this);
     }
-
-    private void Update()
-    {
-        float zPos = (transform.position.x + transform.position.y) / 100000f;
-        transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
-    }
 }

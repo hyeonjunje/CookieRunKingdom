@@ -15,5 +15,13 @@ public class GridMapData
     {
         return gridData[y, x].isEmpty;
     }
+
+    public void VisualizeGridMapData()
+    {
+        for(int i = 0; i < gridData.GetLength(1); i++)
+            for(int j = 0; j < gridData.GetLength(0); j++)
+                if(gridData[j, i] != null)
+                    gridData[j, i].Visualize();
+    }
 }
 

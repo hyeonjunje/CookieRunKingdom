@@ -45,6 +45,11 @@ public class CharacterBattleController : MonoBehaviour
 
     public bool IsForward { get; private set; }
 
+    private void OnDisable()
+    {
+        StopAllCoroutines();
+    }
+
     public void Init(BaseController controller)
     {
         _isDead = false;
@@ -120,7 +125,10 @@ public class CharacterBattleController : MonoBehaviour
 
             _factory.CurrentState.Update();
 
-            if(_hpBar != null)
+            float zPos = (transform.position.x + transform.position.y) / 100000f;
+            transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
+
+            if (_hpBar != null)
                 _hpBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2);
         }
     }

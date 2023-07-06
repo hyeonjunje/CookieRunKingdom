@@ -6,6 +6,9 @@ using Spine;
 
 public class Building : MonoBehaviour
 {
+    private SkeletonAnimation _animation;
+    private Renderer _renderer;
+
     [SerializeField] private BuildingData buildingData;
     [SerializeField] private List<CraftingItemData> craftingItemData = new List<CraftingItemData>();
     [SerializeField] private GameObject craftBubble;
@@ -14,7 +17,7 @@ public class Building : MonoBehaviour
     private List<SpriteRenderer> craftBubbleUnit = new List<SpriteRenderer>();
 
     // 프로퍼티
-    private Grid grid => GridManager.instance.Grid;
+    private Grid grid => GridManager.Instance.Grid;
     public List<CraftingItemData> CraftingItemData => craftingItemData;
     public BuildingData Data => buildingData;
 
@@ -22,7 +25,10 @@ public class Building : MonoBehaviour
     {
         StartCoroutine(CoSecond());
 
-        for(int i = 0; i < craftBubble.transform.childCount; i++)
+        _animation = GetComponentInChildren<SkeletonAnimation>();
+        _renderer = _animation.GetComponent<Renderer>();
+
+        for (int i = 0; i < craftBubble.transform.childCount; i++)
         {
             craftBubbleUnit.Add(craftBubble.transform.GetChild(i).GetComponent<SpriteRenderer>());
         }
@@ -51,7 +57,7 @@ public class Building : MonoBehaviour
         for(int i = 0; i < buildingPreviewTiles.Count; i++)
         {
             Vector3Int gridPos = grid.WorldToCell(buildingPreviewTiles[i].transform.position);
-            bool check = GridManager.instance.UpdateTileColor(gridPos.x, gridPos.y);
+            bool check = GridManager.Instance.InvalidTileCheck(gridPos.x, gridPos.y);
 
             Color color = Color.white;
 
@@ -72,8 +78,10 @@ public class Building : MonoBehaviour
         for(int i = 0; i < buildingPreviewTiles.Count; i++)
         {
             Vector3Int gridPos = grid.WorldToCell(buildingPreviewTiles[i].transform.position);
-            GridManager.instance.UpdateTile(gridPos.x, gridPos.y, false);
+            GridManager.Instance.UpdateTile(gridPos.x, gridPos.y, false);
         }
+
+        _renderer.sortingOrder = -Mathf.RoundToInt(transform.position.y) + 102;
 
         UpdatePreviewTile();
     }

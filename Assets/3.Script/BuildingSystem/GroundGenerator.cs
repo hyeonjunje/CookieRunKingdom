@@ -7,19 +7,16 @@ public class GroundGenerator : MonoBehaviour
     [SerializeField] private Tilemap tilemapPrefab;
     [SerializeField] private Transform parent;
 
-    [SerializeField] private Vector2 startPoint;
-    [SerializeField] private Vector2 endPoint;
-
     [SerializeField] private Grid grid;
     [SerializeField] private LayerMask detectedLayer;
     
     private Tilemap[,] mapData;
     private int startOrder;
 
-    private void Start()
+    public void Generate()
     {
-        Vector3Int start = grid.WorldToCell(startPoint);
-        Vector3Int end = grid.WorldToCell(endPoint);
+        Vector3Int start = grid.WorldToCell(Utils.MapStartPoint);
+        Vector3Int end = grid.WorldToCell(Utils.MapEndPoint);
 
         int minX = start.x > end.x ? end.x : start.x;
         int maxX = start.x > end.x ? start.x : end.x;
@@ -51,6 +48,6 @@ public class GroundGenerator : MonoBehaviour
         GridMapData tileGridData = new GridMapData(mapData);
         GridMapData buildingGridData = new GridMapData(mapData);
 
-        GridManager.instance.SetGridMapData(tileGridData, buildingGridData, new Vector2Int(start.x, start.y));
+        GridManager.Instance.SetGridMapData(tileGridData, buildingGridData, new Vector2Int(start.x, start.y));
     }
 }

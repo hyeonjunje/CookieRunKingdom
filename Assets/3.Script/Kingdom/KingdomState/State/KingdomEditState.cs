@@ -30,6 +30,9 @@ public class KingdomEditState : KingdomBaseState
     {
         _manager.BuildingSelectUI.HideUI();
         GameManager.UI.ClearUI();
+
+        // 나갈 때 previewTile 없애줘야 해
+        BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
     }
 
     public override void Update()

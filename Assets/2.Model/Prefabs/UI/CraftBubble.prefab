@@ -256,13 +256,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8328947657063219862}
   - component: {fileID: 8328947657063219863}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: CraftBubble
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8328947657063219862
 Transform:
   m_ObjectHideFlags: 0
