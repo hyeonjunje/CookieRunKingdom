@@ -42,10 +42,14 @@ public class CookieInfoUI : BaseUI
     private Vector3 _prevCameraPosition;
     private Coroutine _coTouch = null;
 
-    public void SetCookie(BaseController cookie)
+    private bool _isOwned = false;
+
+    public void SetCookie(BaseController cookie, bool isOwned)
     {
         _cookie = cookie;
         _data = (CookieData)(_cookie.Data);
+
+        _isOwned = isOwned;
     }
 
     public override void Hide()
@@ -84,7 +88,7 @@ public class CookieInfoUI : BaseUI
         // ¿ÞÂÊ
         _cookieGradeImage.sprite = _data.CookieGradeSprite;
         _cookieNameText.text = _data.CharacterName;
-        _cookieLevelText.text = "60/75";
+        _cookieLevelText.text = _isOwned ? "60/75" : "¹ÌÈ¹µæ";
         _cookieTypeImage.sprite = _data.TypeSprite;
         _cookieTypeText.text = _data.CookieTypeName;
 
@@ -107,17 +111,30 @@ public class CookieInfoUI : BaseUI
         BaseController cookie = Instantiate(_cookie, _instantiateParent);
         cookie.CharacterAnimator.SettingOrderLayer(true);
         TouchCookie(cookie);
-        cookie.transform.localScale = Vector3.one * 150;
+        cookie.transform.localPosition = Vector3.zero;
+        cookie.transform.localScale = Vector3.one;
 
         _cookieInteractionButton.onClick.RemoveAllListeners();
         _cookieInteractionButton.onClick.AddListener(() => TouchCookie(cookie));
 
         // ¿À¸¥ÂÊ
-        _powerText.text = cookie.CharacterStat.powerStat.ToString();
-        _hpText.text = cookie.CharacterStat.hpStat.ResultStat.ToString("#,##0");
-        _attackText.text = cookie.CharacterStat.attackStat.ResultStat.ToString("#,##0");
-        _defenseText.text = cookie.CharacterStat.defenseStat.ResultStat.ToString("#,##0");
-        _criticalText.text = cookie.CharacterStat.criticalStat.ResultStat.ToString("#,##0.00") + "%";
+        if(_isOwned)
+        {
+            _powerText.text = cookie.CharacterStat.powerStat.ToString();
+            _hpText.text = cookie.CharacterStat.hpStat.ResultStat.ToString("#,##0");
+            _attackText.text = cookie.CharacterStat.attackStat.ResultStat.ToString("#,##0");
+            _defenseText.text = cookie.CharacterStat.defenseStat.ResultStat.ToString("#,##0");
+            _criticalText.text = cookie.CharacterStat.criticalStat.ResultStat.ToString("#,##0.00") + "%";
+        }
+        else
+        {
+            _powerText.text = "-";
+            _hpText.text = "-";
+            _attackText.text = "-";
+            _defenseText.text = "-";
+            _criticalText.text = "-";
+        }
+        
 
         _cookieSKillImage.sprite = _data.SKillSprite;
     }

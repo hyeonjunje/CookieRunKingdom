@@ -16,6 +16,7 @@ MonoBehaviour:
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
   moveSpeed: 5
   attackRange: 1
+  _idleBlackMaterial: {fileID: 2100000, guid: 19aa6cff3e4a2714e97d8cac3d6d911d, type: 2}
   _idleSprite: {fileID: 21300000, guid: 0f8a673555d80ec4cb919314798aac91, type: 3}
   _skillSprite: {fileID: 21300000, guid: 74c3af0cd5ef2f245bd96b8c7ab0caed, type: 3}
   _typeSprite: {fileID: 21300000, guid: 1ef3c4d47a7a84d4a99611b25020c976, type: 3}

@@ -6,7 +6,7 @@ public class MyCookieUI : BaseUI
 {
     [SerializeField] private CookieInfoUI _cookieInfoUI;
 
-    [SerializeField] private MyCookieButtonUI _cookieButtonUI;
+    [SerializeField] private MyCookieButtonUI _cookieButtonUIPrefab;
     [SerializeField] private RectTransform _cookieButtonTransform;
 
     private MyCookieButtonUI[] allCookieButton;
@@ -31,11 +31,11 @@ public class MyCookieUI : BaseUI
 
         for (int i = 0; i < allCookies.Length; i++)
         {
-            MyCookieButtonUI cookieButtonUI = Instantiate(_cookieButtonUI, _cookieButtonTransform);
+            MyCookieButtonUI cookieButtonUI = Instantiate(_cookieButtonUIPrefab, _cookieButtonTransform);
             int index = i;
-            cookieButtonUI.InifInfo(allCookies[index], (cookie) =>
+            cookieButtonUI.InifInfo(allCookies[index], (cookie, isOwned) =>
             {
-                _cookieInfoUI.SetCookie(cookie);
+                _cookieInfoUI.SetCookie(cookie, isOwned);
                 GameManager.UI.ShowPopUpUI(_cookieInfoUI);
             });
             allCookieButton[i] = cookieButtonUI;

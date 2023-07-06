@@ -98,4 +98,27 @@ public static class Utils
         Vector3Int pos = GridManager.Instance.Grid.WorldToCell(transform.position);
         transform.position = GridManager.Instance.Grid.CellToWorld(pos);
     }
+
+    /// <summary>
+    /// 스프라이트를 텍스쳐2D로 변환해주는 메소드
+    /// </summary>
+    /// <param name="sprite">변환할 스프라이트</param>
+    /// <returns>변환된 텍스쳐2D</returns>
+    public static Texture2D TextureFromSprite(Sprite sprite)
+    {
+        if (sprite.rect.width != sprite.texture.width)
+        {
+            Texture2D newText = new Texture2D((int)sprite.rect.width, (int)sprite.rect.height);
+            Color[] newColors = sprite.texture.GetPixels((int)sprite.textureRect.x,
+                                                         (int)sprite.textureRect.y,
+                                                         (int)sprite.textureRect.width,
+                                                         (int)sprite.textureRect.height);
+            newText.SetPixels(newColors);
+            newText.Apply();
+            return newText;
+        }
+        else
+            return sprite.texture;
+    }
+
 }
