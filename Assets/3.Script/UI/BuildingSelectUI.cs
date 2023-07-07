@@ -117,6 +117,10 @@ public class BuildingSelectUI : MonoBehaviour
             BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
             buttonsParent.SetActive(false);
         }
+        else
+        {
+            GuideDisplayer.Instance.ShowGuide("팔 수 없는 건물입니다.");
+        }
     }
 
     #endregion
