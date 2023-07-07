@@ -28,8 +28,36 @@ public class KingdomCraftUI: BaseUI
     [Header("SelectCookie")]
     [SerializeField] private CraftCookieSelectUI _craftCookieSelectUI;
 
+    private Camera _camera;
+    private KingdomManager _kingdomManager;
     private BuildingController _currentBuilding;
     private List<CraftingItemUI> _craftList = new List<CraftingItemUI>();
+
+
+    private int _buildingIndex;
+    private int BuildingIndex
+    {
+        get { return _buildingIndex; }
+        set
+        {
+            _buildingIndex = value;
+
+            if(_buildingIndex < 0)
+                _buildingIndex = _kingdomManager.buildings.Count - 1;
+            else if(_buildingIndex >= _kingdomManager.buildings.Count)
+                _buildingIndex = 0;
+
+            _currentBuilding.BuildingWorker.Highlighgt(false);
+            _currentBuilding = _kingdomManager.buildings[_buildingIndex];
+            _currentBuilding.BuildingWorker.Highlighgt(true);
+
+            _camera.transform.position = _currentBuilding.transform.position +
+                _kingdomManager.CurrentCameraControllerData.CameraBuildingZoomOffset;
+
+            // 카메라도 옮겨야 하나??
+            SetCraft(_kingdomManager.buildings[_buildingIndex]);
+        }
+    }
 
     private void OnEnable()
     {
@@ -51,6 +79,8 @@ public class KingdomCraftUI: BaseUI
     {
         base.Init();
 
+        _camera = Camera.main;
+
         selectCookieButton.onClick.AddListener(() =>
         {
             GameManager.UI.ShowPopUpUI(_craftCookieSelectUI);
@@ -60,12 +90,27 @@ public class KingdomCraftUI: BaseUI
                 _currentBuilding.BuildingWorker.ChangeWorker(cookie);
             };
         });
+
+        leftArrow.onClick.AddListener(() => BuildingIndex--);
+        rightArrow.onClick.AddListener(() => BuildingIndex++);
     }
 
     // 빌딩에 따라 UI가 수정된다.
     public void SetCraft(BuildingController building)
     {
         _currentBuilding = building;
+
+        if(_kingdomManager == null)
+            _kingdomManager = FindObjectOfType<KingdomManager>();
+
+        for (int i = 0; i < _kingdomManager.buildings.Count; i++)
+        {
+            if(_currentBuilding.Data.BuildingName == _kingdomManager.buildings[i].Data.BuildingName)
+            {
+                _buildingIndex = i;
+                break;
+            }
+        }
 
         // center
         buildingName.text = building.Data.BuildingName;
