@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467e03254e97021468009c4a075941dd, type: 3}
   m_Name: Building18
   m_EditorClassIdentifier: 
+  _skeletonData: {fileID: 11400000, guid: 754f79b39864acc4e85d501fed512409, type: 2}
   buildingName: "\uC624\uD06C\uD1B5 \uC27C\uD130"
+  buildingExplain: 
   buildingSize: {x: 3, y: 3}
+  buildingScore: 0
   craftItems:
   - {fileID: 11400000, guid: 18ffaedc04a7e9a428c6889b522c7153, type: 2}
   - {fileID: 11400000, guid: c0495311af746fb4b83696174536db73, type: 2}

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public class BuildingData : ScriptableObject
 {
+    [SerializeField] private SkeletonDataAsset _skeletonData;
+
     [SerializeField] protected string buildingName;
     [Multiline(5)] [SerializeField] protected string buildingExplain;
     [SerializeField] protected Vector2Int buildingSize;
@@ -11,6 +14,7 @@ public class BuildingData : ScriptableObject
     [SerializeField] protected CraftData[] craftItems;
 
     // 프로퍼티
+    public SkeletonDataAsset SkeletonData => _skeletonData;
     public string BuildingName => buildingName;
     public string BuildingExplain => buildingExplain;
     public Vector2Int BuildingSize => buildingSize;
