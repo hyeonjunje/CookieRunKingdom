@@ -44,8 +44,8 @@ public class BuildingInfoUI : BaseUI
         _buildingScoreText.text = _building.Data.BuildingScore.ToString();
         _buildingExplain.text = _building.Data.BuildingExplain;
 
-        _skeletonGraphic.Initialize(true);
         _skeletonGraphic.skeletonDataAsset = _building.Data.SkeletonData;
+        _skeletonGraphic.Initialize(true);
         _skeletonGraphic.AnimationState.SetAnimation(0, "loop_back", true);
     }
 }
