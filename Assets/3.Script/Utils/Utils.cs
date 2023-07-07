@@ -51,13 +51,13 @@ public static class Utils
     /// </summary>
     /// <param name="time">초</param>
     /// <returns>초를 변환한 시간 문자열</returns>
-    public static string GetTimeText(float time, bool isString = true)
+    public static string GetTimeText(int time, bool isString = true)
     {
-        float hour = (int)time / 3600;
+        int hour = time / 3600;
         time %= 3600;
-        float min = (int)time / 60;
+        int min = time / 60;
         time %= 60;
-        float sec = time;
+        int sec = time;
 
         string result = "";
 

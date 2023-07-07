@@ -62,6 +62,8 @@ public class KingdomCraftState : KingdomBaseState
 
         _manager.myCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
         _manager.buildings.ForEach(building => building.gameObject.SetActive(false));
+
+        GameManager.Game.PrevCraftTime = System.DateTime.Now;
     }
 
     public override void Update()

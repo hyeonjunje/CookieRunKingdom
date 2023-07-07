@@ -61,8 +61,12 @@ public class KingdomCraftUI: BaseUI
 
     private void OnEnable()
     {
-        StopAllCoroutines();
         StartCoroutine(CoSecond());
+    }
+
+    private void OnDisable()
+    {
+        StopAllCoroutines();
     }
 
     public override void Hide()
@@ -139,6 +143,7 @@ public class KingdomCraftUI: BaseUI
         craftProgressBar.SetActive(false);
         // left
         craftItemParent.DestroyAllChild();
+
         _craftList = new List<CraftingItemUI>();
         for (int i = 0; i < building.BuildingWorker.CraftingItemData.Count; i++)
         {
@@ -152,6 +157,9 @@ public class KingdomCraftUI: BaseUI
             {
                 craftProgressBar.SetActive(true);
                 craftProgressBar.transform.SetParent(_craftList[i].transform, false);
+
+                craftProgressTime.text = Utils.GetTimeText(_currentBuilding.BuildingWorker.CraftingItemData[i].craftData.CraftTime
+                    - _currentBuilding.BuildingWorker.CraftingItemData[i].takingTime);
             }
         }
     }
@@ -191,12 +199,14 @@ public class KingdomCraftUI: BaseUI
         // 처음 만드는 거라면
         if(emptyIndex == makingIndex)
         {
-            Debug.Log("으오아아아아아ㅏ앙 이거 나중에 해라아라라ㅏ");
             _currentBuilding.BuildingWorker.SelectedWorker();
 
             _currentBuilding.BuildingWorker.CraftingItemData[emptyIndex] = new CraftingItemData(ECraftingState.making, craftData);
             craftProgressBar.SetActive(true);
             craftProgressBar.transform.SetParent(_craftList[emptyIndex].transform, false);
+
+            craftProgressTime.text = Utils.GetTimeText(_currentBuilding.BuildingWorker.CraftingItemData[emptyIndex].craftData.CraftTime
+                    - _currentBuilding.BuildingWorker.CraftingItemData[emptyIndex].takingTime);
         }
         else
             _currentBuilding.BuildingWorker.CraftingItemData[emptyIndex] = new CraftingItemData(ECraftingState.waiting, craftData);
@@ -241,10 +251,12 @@ public class KingdomCraftUI: BaseUI
             if (_currentBuilding.BuildingWorker.CraftingItemData[i].craftData == null)
                 return;
 
+             _craftList[i].UpdateCraft(_currentBuilding.BuildingWorker.CraftingItemData[i]);
+
             // 만들고 있다면  progressbar 갱신
             if (_currentBuilding.BuildingWorker.CraftingItemData[i].state == ECraftingState.making)
             {
-                if(!craftProgressBar.transform.parent.Equals(_craftList[i]))
+                if (!craftProgressBar.transform.parent.Equals(_craftList[i]))
                 {
                     craftProgressBar.SetActive(true);
                     craftProgressBar.transform.SetParent(_craftList[i].transform, false);
@@ -253,8 +265,6 @@ public class KingdomCraftUI: BaseUI
                 craftProgressTime.text = Utils.GetTimeText(_currentBuilding.BuildingWorker.CraftingItemData[i].craftData.CraftTime 
                     - _currentBuilding.BuildingWorker.CraftingItemData[i].takingTime);
             }
-
-            _craftList[i].UpdateCraft(_currentBuilding.BuildingWorker.CraftingItemData[i]);
         }
     }
 }

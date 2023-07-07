@@ -27,6 +27,6 @@ public class CraftData : ScriptableObject
     public bool IsResource => isResource;
     public ResultItem CraftResult => craftResult;
     public ResultItem[] Ingredients => ingredients;
-    public float CraftTime => craftTime;
-    public float CraftCost => craftCost;
+    public int CraftTime => (int)craftTime;
+    public int CraftCost => (int)craftCost;
 }

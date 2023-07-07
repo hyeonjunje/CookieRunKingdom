@@ -190,7 +190,58 @@ public class BuildingWorker : MonoBehaviour
                         _craftingItemData[i + 1].state == ECraftingState.waiting)
                     {
                         _craftingItemData[i + 1].state = ECraftingState.making;
+                        return;
                     }
+                }
+            }
+        }
+    }
+
+
+    /// <summary>
+    /// 다른 상태나 씬에서 KingdomManageState로 돌아올 때 GameManagerEx의 PrevCraftTime과 현재 시간을 계산해서
+    /// 제작품의 정보를 최신화한다.
+    /// </summary>
+    public void UpdateCraftingItem()
+    {
+        int diffTime = (int)((System.DateTime.Now - GameManager.Game.PrevCraftTime).TotalSeconds);
+
+        for (int i = 0; i < _craftingItemData.Count; i++)
+        {
+            if (_craftingItemData[i].craftData == null)
+                return;
+
+            // 만들고 있다면
+            if (_craftingItemData[i].state == ECraftingState.making)
+            {
+                int remainTime = _craftingItemData[i].craftData.CraftTime - _craftingItemData[i].takingTime;
+
+                // 시간의 차이가 제작품의 남은 시간보다 많으면 만든걸로 한다.
+                if(diffTime >= remainTime)
+                {
+                    diffTime -= remainTime;
+                    _craftingItemData[i].state = ECraftingState.complete;
+
+                    // 버블
+                    _craftBubble.SetActive(true);
+                    foreach (SpriteRenderer sr in _craftBubbleUnit)
+                    {
+                        if (sr.sprite == null)
+                        {
+                            sr.sprite = _craftingItemData[i].craftData.CraftImage;
+                            break;
+                        }
+                    }
+
+                    if (i + 1 < _craftingItemData.Count && _craftingItemData[i + 1].craftData != null &&
+                        _craftingItemData[i + 1].state == ECraftingState.waiting)
+                    {
+                        _craftingItemData[i + 1].state = ECraftingState.making;
+                    }
+                }
+                else
+                {
+                    _craftingItemData[i].takingTime += diffTime;
                 }
             }
         }
