@@ -6,61 +6,79 @@ public class BuildingSelectUI : MonoBehaviour
 {
     private BuildingController _currentBuilding;
 
-    [SerializeField] private GameObject buttonsParent;
+    [SerializeField] private GameObject _buttonsParent;
 
     [Header("MyButtons")]
-    [SerializeField] private MyButton exitButton;
-    [SerializeField] private MyButton storeButton;
-    [SerializeField] private MyButton checkButton;
-    [SerializeField] private MyButton sellButton;
-    [SerializeField] private MyButton rotateButton;
-    [SerializeField] private MyButton infoButton;
+    [SerializeField] private MyButton _exitButton;
+    [SerializeField] private MyButton _storeButton;
+    [SerializeField] private MyButton _checkButton;
+    [SerializeField] private MyButton _sellButton;
+    [SerializeField] private MyButton _rotateButton;
+    [SerializeField] private MyButton _infoButton;
+
+    [SerializeField] private BuildingInfoUI _buildingInfoUI;
 
     private Vector3 _originPos;
+    private bool _originFlip;
+
+    private bool _currentFlip;
 
     private void Awake()
     {
-        exitButton.AddListener(ExitUI);
-        storeButton.AddListener(StoreBuilding);
-        checkButton.AddListener(CheckBuilding);
-        sellButton.AddListener(SellBuilding);
-        rotateButton.AddListener(RotateBuilding);
-        infoButton.AddListener(ShowInfo);
+        _exitButton.AddListener(ExitUI);
+        _storeButton.AddListener(StoreBuilding);
+        _checkButton.AddListener(CheckBuilding);
+        _sellButton.AddListener(SellBuilding);
+        _rotateButton.AddListener(RotateBuilding);
+        _infoButton.AddListener(ShowInfo);
     }
 
-    public void SetPrevBuilding()
+    public void SetEmpty()
     {
-        if(_currentBuilding != null)
+        _currentBuilding = null;
+    }
+
+    public void SetPrevBuilding(BuildingController currentBuilding)
+    {
+        // 이전 건물 원상태로 돌리기
+        if(_currentBuilding != null && _currentBuilding != currentBuilding)
         {
             _currentBuilding.transform.position = _originPos;
             _currentBuilding.BuildingEditor.PutBuilding();
+            _currentBuilding.BuildingAnimator.FlipX(_originFlip);
         }
     }
 
     public void SetBuilding(BuildingController currentBuilding, Transform parent, float cameraOrthographicSize = 10f)
     {
-        _currentBuilding = currentBuilding;
+        if(currentBuilding != _currentBuilding)
+        {
+            _currentBuilding = currentBuilding;
+            _buttonsParent.SetActive(true);
+            transform.SetParent(parent);
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
 
-        buttonsParent.SetActive(true);
-        transform.SetParent(parent);
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
-        transform.localScale = Vector3.one * (cameraOrthographicSize) / 10;
+            // 여기서 빌딩 UI가 나오니까 
+            // 여기서 초기값 넣어주면 됨
+            _originPos = _currentBuilding.transform.position;
+            _originFlip = _currentBuilding.BuildingEditor.IsFlip;
+            _currentFlip = _originFlip;
+        }
 
-
-        // 여기서 빌딩 UI가 나오니까 
-        // 여기서 초기값 넣어주면 됨
-        _originPos = _currentBuilding.transform.position;
+        _buttonsParent.SetActive(true);
 
         // 키면 내 자리 해제해줘야 해
         _currentBuilding.BuildingEditor.UnInstallBuilding();
+        transform.localScale = Vector3.one * (cameraOrthographicSize) / 10;
     }
 
     public void HideUI()
     {
-        buttonsParent.SetActive(false);
+        _buttonsParent.SetActive(false);
 
-        ExitUI();
+        if(_currentBuilding != null)
+            ExitUI();
     }
 
 
@@ -76,30 +94,35 @@ public class BuildingSelectUI : MonoBehaviour
     #region 버튼 OnClick 메소드
     public void ShowInfo()
     {
-        Debug.Log(_currentBuilding.name);
+        _buildingInfoUI.SetBuilding(_currentBuilding);
+        GameManager.UI.ShowPopUpUI(_buildingInfoUI);
     }
 
     public void ExitUI()
     {
         // 원래대로 위치시킴
         _currentBuilding.transform.position = _originPos;
+        _currentBuilding.BuildingAnimator.FlipX(_originFlip);
         _currentBuilding.BuildingEditor.PutBuilding();
 
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
-        buttonsParent.SetActive(false);
+        _buttonsParent.SetActive(false);
+
+        _currentBuilding = null;
     }
 
     public void StoreBuilding()
     {
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
-        buttonsParent.SetActive(false);
+        _buttonsParent.SetActive(false);
 
         Debug.Log("주머니에 넣기");
     }
 
     public void RotateBuilding()
     {
-        Debug.Log("회전!");
+        _currentFlip = !_currentFlip;
+        _currentBuilding.BuildingAnimator.FlipX(_currentFlip);
     }
 
     public void SellBuilding()
@@ -115,7 +138,12 @@ public class BuildingSelectUI : MonoBehaviour
             _currentBuilding.BuildingEditor.PutBuilding();
 
             BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
-            buttonsParent.SetActive(false);
+            _buttonsParent.SetActive(false);
+
+            _currentBuilding.BuildingAnimator.FlipX(_currentFlip);
+            _currentBuilding.BuildingEditor.IsFlip = _currentFlip;
+
+            _currentBuilding = null;
         }
         else
         {

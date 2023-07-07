@@ -9,7 +9,8 @@ public class BuildingEditor : MonoBehaviour
     private BuildingData _data;
     
     public List<SpriteRenderer> buildingPreviewTiles { get; private set; }
-    
+
+    public bool IsFlip { get; set; } = false;
 
     public void Init(BuildingController controller)
     {

@@ -88,7 +88,7 @@ public class KingdomEditState : KingdomBaseState
                 if (_currentBuilding == null)
                     return;
 
-                _manager.BuildingSelectUI.SetPrevBuilding();
+                _manager.BuildingSelectUI.SetPrevBuilding(_currentBuilding);
                 _currentBuilding.BuildingEditor.OnClickEditMode();
                 _manager.BuildingSelectUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
             }
