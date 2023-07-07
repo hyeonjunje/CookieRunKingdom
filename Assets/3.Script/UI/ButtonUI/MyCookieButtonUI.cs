@@ -19,13 +19,15 @@ public class MyCookieButtonUI : MonoBehaviour
     [SerializeField] private GameObject _levelUI;
     [SerializeField] private GameObject _lockedUI;
 
-    private BaseController _cookie;
+    private CookieController _cookie;
+    private CookieData _data;
     private bool _isOwned = false;
 
-    public void InifInfo(BaseController cookie, System.Action<BaseController, bool> action = null)
+    public void InitInfo(CookieController cookie, System.Action<CookieController, bool> action = null)
     {
         _isOwned = false;
         _cookie = cookie;
+        _data = ((CookieData)_cookie.Data);
 
         List<CookieController> _ownedCookies = DataBaseManager.Instance.OwnedCookies;
         for(int i = 0; i < _ownedCookies.Count; i++)
@@ -38,7 +40,7 @@ public class MyCookieButtonUI : MonoBehaviour
             }
         }
 
-        _portraitImage.material = ((CookieData)_cookie.Data).IdleBlackMaterial;
+        _portraitImage.material = _data.IdleBlackMaterial;
         UpdateInfo();
 
         myCookieButton.onClick.AddListener(() => action(_cookie, _isOwned));
@@ -49,13 +51,13 @@ public class MyCookieButtonUI : MonoBehaviour
         // 보유하고 있다면
         if(_isOwned)
         {
-            _portraitImage.sprite = ((CookieData)_cookie.Data).IdleSprite;
-            _typeImage.sprite = ((CookieData)_cookie.Data).TypeSprite;
+            _portraitImage.sprite = _data.IdleSprite;
+            _typeImage.sprite = _data.TypeSprite;
             _levelText.text = 60.ToString();
 
             _evolutionGauge.value = (float)11 / 20;
             _evolutionGaugeText.text = "11/20";
-            _evolutionImage.sprite = ((CookieData)_cookie.Data).EvolutionSprite;
+            _evolutionImage.sprite = _data.EvolutionSprite;
 
             _portraitImage.material.SetFloat("_Saturation", 1);
 
@@ -65,14 +67,14 @@ public class MyCookieButtonUI : MonoBehaviour
         // 보유하고 있지 않다면
         else
         {
-            _portraitImage.sprite = ((CookieData)_cookie.Data).IdleSprite;
-            _typeImage.sprite = ((CookieData)_cookie.Data).TypeSprite;
+            _portraitImage.sprite = _data.IdleSprite;
+            _typeImage.sprite = _data.TypeSprite;
             _levelText.text = "";
 
 
             _evolutionGauge.value = (float)0 / 20;
             _evolutionGaugeText.text = "0/20";
-            _evolutionImage.sprite = ((CookieData)_cookie.Data).EvolutionSprite;
+            _evolutionImage.sprite = _data.EvolutionSprite;
 
             _portraitImage.material.SetFloat("_Saturation", 0);
 

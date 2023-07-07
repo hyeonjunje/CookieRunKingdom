@@ -5,15 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(PathFindingAgent))]
 public class CookieCitizen : MonoBehaviour
 {
+    [SerializeField] private string _greetingAnimation = "call_user";
+    
     private CookieController _controller;
     private PathFindingAgent _agent;
     private KingdomManager _kingdomManager;
 
-
     private Coroutine _coUpdate;
     private Transform _originParent = null;
-    private bool _isWorking = false;
-    [SerializeField] private string _greetingAnimation = "call_user";
+    
+    public bool IsWorking { get; private set; }
 
     private void OnDisable()
     {
@@ -32,7 +33,7 @@ public class CookieCitizen : MonoBehaviour
 
     public void KingdomAI()
     {
-        if (_isWorking)
+        if (IsWorking)
             return;
 
         // 걷다가, 멈추다가, 인사하다가
@@ -54,7 +55,7 @@ public class CookieCitizen : MonoBehaviour
     // 출근
     public void GoToWork(Transform parent)
     {
-        _isWorking = true;
+        IsWorking = true;
         
         // 하고 있던 AI동작 중지
         _agent.StopPathFinding();
@@ -73,6 +74,8 @@ public class CookieCitizen : MonoBehaviour
 
         // 인사하고
         _controller.CharacterAnimator.PlayAnimation(_greetingAnimation);
+
+        _controller.CharacterAnimator.SettingOrderLayer(true);
     }
 
     public void EndWork()
@@ -84,7 +87,7 @@ public class CookieCitizen : MonoBehaviour
     // 퇴근
     public void LeaveWork()
     {
-        _isWorking = false;
+        IsWorking = false;
 
         // 출석부에 빼고
         _kingdomManager.workingCookies.Remove(_controller);
@@ -95,6 +98,8 @@ public class CookieCitizen : MonoBehaviour
         
         // 다시 일상생활로
         KingdomAI();
+
+        _controller.CharacterAnimator.SettingOrderLayer(false);
     }
 
 

@@ -25,6 +25,9 @@ public class KingdomCraftUI: BaseUI
     [SerializeField] private Button leftArrow;
     [SerializeField] private Button rightArrow;
 
+    [Header("SelectCookie")]
+    [SerializeField] private CraftCookieSelectUI _craftCookieSelectUI;
+
     private BuildingController _currentBuilding;
     private List<CraftingItemUI> _craftList = new List<CraftingItemUI>();
 
@@ -34,6 +37,32 @@ public class KingdomCraftUI: BaseUI
         StartCoroutine(CoSecond());
     }
 
+    public override void Hide()
+    {
+        base.Hide();
+    }
+
+    public override void Show()
+    {
+        base.Show();
+    }
+
+    public override void Init()
+    {
+        base.Init();
+
+        selectCookieButton.onClick.AddListener(() =>
+        {
+            GameManager.UI.ShowPopUpUI(_craftCookieSelectUI);
+            _craftCookieSelectUI.changeWorkerAction = (cookie) =>
+            {
+                _currentBuilding.BuildingWorker.Worker.CookieCitizeon.LeaveWork();
+                _currentBuilding.BuildingWorker.ChangeWorker(cookie);
+            };
+        });
+    }
+
+    // 빌딩에 따라 UI가 수정된다.
     public void SetCraft(BuildingController building)
     {
         _currentBuilding = building;
@@ -82,6 +111,7 @@ public class KingdomCraftUI: BaseUI
         }
     }
 
+    // 아이템 만들기 메소드
     private void CraftItem(CraftData craftData)
     {
         if(!_currentBuilding.BuildingAnimator.IsAnimationExist("working"))
@@ -105,6 +135,8 @@ public class KingdomCraftUI: BaseUI
             Debug.Log("대기열이 꽉 찼습니다.");
             return;
         }
+
+        _currentBuilding.BuildingWorker.isWorking = true;
 
         int makingIndex = 0;
         for(int i = 0; i < _currentBuilding.BuildingWorker.CraftingItemData.Count; i++)

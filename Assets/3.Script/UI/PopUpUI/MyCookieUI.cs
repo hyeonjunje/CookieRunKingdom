@@ -26,14 +26,14 @@ public class MyCookieUI : BaseUI
 
         _manager = FindObjectOfType<KingdomManager>();
 
-        BaseController[] allCookies = DataBaseManager.Instance.AllCookies;
+        CookieController[] allCookies = DataBaseManager.Instance.AllCookies;
         allCookieButton = new MyCookieButtonUI[allCookies.Length];
 
         for (int i = 0; i < allCookies.Length; i++)
         {
             MyCookieButtonUI cookieButtonUI = Instantiate(_cookieButtonUIPrefab, _cookieButtonTransform);
             int index = i;
-            cookieButtonUI.InifInfo(allCookies[index], (cookie, isOwned) =>
+            cookieButtonUI.InitInfo(allCookies[index], (cookie, isOwned) =>
             {
                 _cookieInfoUI.SetCookie(cookie, isOwned);
                 GameManager.UI.ShowPopUpUI(_cookieInfoUI);

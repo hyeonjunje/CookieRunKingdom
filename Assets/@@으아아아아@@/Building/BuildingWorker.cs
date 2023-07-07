@@ -13,6 +13,9 @@ public class BuildingWorker : MonoBehaviour
     [SerializeField] private Transform _workPlace;
     [SerializeField] private string _workAnimationName;
 
+    // 해당 건물이 작업중인가, 아닌가?
+    public bool isWorking = false;
+
     private List<SpriteRenderer> _craftBubbleUnit = new List<SpriteRenderer>();
     private BuildingData _data;
     private KingdomManager _kingdomManager;
@@ -75,9 +78,18 @@ public class BuildingWorker : MonoBehaviour
         {
             renderer.sortingLayerID = flag ?
             SortingLayer.NameToID("GridUpper") : SortingLayer.NameToID("Default");
-
-            Worker.CharacterAnimator.SettingOrderLayer(flag);
         }
+        Worker.CharacterAnimator.SettingOrderLayer(flag);
+    }
+
+    public void ChangeWorker(CookieController newWorker)
+    {
+        Worker.CookieCitizeon.LeaveWork();
+        Worker = newWorker;
+        Worker.CookieCitizeon.GoToWork(_workPlace);
+
+        if (isWorking)
+            Worker.CharacterAnimator.PlayAnimation(_workAnimationName);
     }
 
     /// <summary>
@@ -130,6 +142,7 @@ public class BuildingWorker : MonoBehaviour
         // 전부 다 수확하면 애니메이션 꺼주기
         if(_craftingItemData[0].state == ECraftingState.empty)
         {
+            isWorking = false;
             Worker.CookieCitizeon.EndWork();
         }
     }
