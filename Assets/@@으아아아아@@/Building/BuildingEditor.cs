@@ -5,11 +5,11 @@ using UnityEngine;
 public class BuildingEditor : MonoBehaviour
 {
     private BuildingController _controller;
-
-    private List<SpriteRenderer> buildingPreviewTiles;
-
     private Grid _grid;
     private BuildingData _data;
+    
+    public List<SpriteRenderer> buildingPreviewTiles { get; private set; }
+    
 
     public void Init(BuildingController controller)
     {
@@ -46,6 +46,26 @@ public class BuildingEditor : MonoBehaviour
             color.a = 0.5f;
             buildingPreviewTiles[i].color = color;
         }
+
+        _controller.BuildingAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 101);
+    }
+
+    // 해당 장소에 설치할 수 있으면 true 아니면 false
+    public bool IsInstallable()
+    {
+        for (int i = 0; i < buildingPreviewTiles.Count; i++)
+        {
+            Vector3Int gridPos = _grid.WorldToCell(buildingPreviewTiles[i].transform.position);
+            bool check = GridManager.Instance.InvalidTileCheck(gridPos.x, gridPos.y);
+
+            if (!check)
+            {
+                Debug.Log("이곳엔 설치할 수 없습니다.");
+                return false;
+            }
+        }
+
+        return true;
     }
 
     // 건물 설치
@@ -58,6 +78,18 @@ public class BuildingEditor : MonoBehaviour
         }
 
         _controller.BuildingAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 101);
+
+        UpdatePreviewTile();
+    }
+
+    // 건물 철수
+    public void UnInstallBuilding()
+    {
+        for(int i = 0; i < buildingPreviewTiles.Count; i++)
+        {
+            Vector3Int gridPos = _grid.WorldToCell(buildingPreviewTiles[i].transform.position);
+            GridManager.Instance.UpdateTile(gridPos.x, gridPos.y, true);
+        }
 
         UpdatePreviewTile();
     }

@@ -12,18 +12,16 @@ public class KingdomEditState : KingdomBaseState
     {
     }
 
-    private void Init()
+    public override void Enter()
     {
         _touchCount = 0;
         _currentBuilding = null;
         _lastPos = Vector3.zero;
         _isActiveCameraControll = true;
-    }
 
-    public override void Enter()
-    {
-        Init();
         GameManager.UI.PushUI(_manager.KingdomEditUI);
+
+        _manager.KingdomGrid.gameObject.SetActive(true);
 
         _manager.buildings.ForEach(building => building.gameObject.SetActive(true));
     }
@@ -32,6 +30,8 @@ public class KingdomEditState : KingdomBaseState
     {
         _manager.BuildingSelectUI.HideUI();
         GameManager.UI.ClearUI();
+
+        _manager.KingdomGrid.gameObject.SetActive(false);
 
         // 나갈 때 previewTile 없애줘야 해
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
@@ -88,6 +88,7 @@ public class KingdomEditState : KingdomBaseState
                 if (_currentBuilding == null)
                     return;
 
+                _manager.BuildingSelectUI.SetPrevBuilding();
                 _currentBuilding.BuildingEditor.OnClickEditMode();
                 _manager.BuildingSelectUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
             }
