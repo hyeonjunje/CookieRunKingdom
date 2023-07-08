@@ -6,6 +6,10 @@ using TMPro;
 
 public class KingdomCraftUI: BaseUI
 {
+    [Header("Top")]
+    [SerializeField] private TextMeshProUGUI _diaText;
+    [SerializeField] private TextMeshProUGUI _moneyText;
+
     [Header("Right")]
     [SerializeField] private Transform craftTypeParent;
     [SerializeField] private CraftTypeProductUI craftTypeProductPrefab;
@@ -82,6 +86,10 @@ public class KingdomCraftUI: BaseUI
     public override void Init()
     {
         base.Init();
+
+        GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
+        GameManager.Game.OnChangeMoney += (() => _moneyText.text = GameManager.Game.Money.ToString("#,##0"));
+        GameManager.Game.UpdateGoods();
 
         _camera = Camera.main;
 

@@ -14,9 +14,11 @@ public class StageData : ScriptableObject
 {
     [SerializeField] private string _stageName;
     [SerializeField] private float _recommendedPower;
+    [SerializeField] private int _jelly;
     [SerializeField] private WaveInfo[] _waveInfo;
 
     public WaveInfo[] WaveInfo => _waveInfo;
     public string StageName => _stageName;
     public float RecommendedPower => _recommendedPower;
+    public int Jelly => _jelly;
 }

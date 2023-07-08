@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class CookieReadyAdventureUI : BaseUI
 {
     [Header("UI")]
@@ -10,7 +10,11 @@ public class CookieReadyAdventureUI : BaseUI
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _startBattleButton;
     [SerializeField] private Button _settingTeamButton;
-    
+
+    [Header("Text")]
+    [SerializeField] private TextMeshProUGUI _diaText;
+    [SerializeField] private TextMeshProUGUI _jellyText;
+    [SerializeField] private TextMeshProUGUI _jellyCountText; // 필요한 젤리 개수
 
     [SerializeField] private Transform _cookiePosition;
 
@@ -26,6 +30,9 @@ public class CookieReadyAdventureUI : BaseUI
     {
         base.Init();
 
+        GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
+        GameManager.Game.OnChangeJelly += (() => _jellyText.text = GameManager.Game.Jelly + "/" + GameManager.Game.MaxJelly);
+
         _cookieSelectUI = FindObjectOfType<CookieSelectUI>();
 
         _cookiePositionOrigin = _cookiePosition.position;
@@ -37,6 +44,9 @@ public class CookieReadyAdventureUI : BaseUI
         base.Show();
 
         _cookiePosition.position = _cookiePositionOrigin;
+        _jellyCountText.text = (-GameManager.Game.StageData.Jelly).ToString();
+
+        GameManager.Game.UpdateGoods();
     }
 
     private void BindingButton()

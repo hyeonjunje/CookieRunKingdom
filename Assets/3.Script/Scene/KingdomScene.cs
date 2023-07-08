@@ -30,10 +30,14 @@ public class KingdomScene : BaseScene
         // 쿠키 생성
         ArrangeCookies();
 
+        // 내 정보 불러오기
+        LoadData();
+
         // 왕국 상태패턴
         _kingdomManager.Init();
     }
 
+    // 왕국배치
     private void ArrangeBuilding()
     {
         // 내가 가진 모든 건물 생성
@@ -79,6 +83,7 @@ public class KingdomScene : BaseScene
         // GridManager.Instance.buildingGridData.VisualizeGridMapData();
     }
 
+    // 쿠키 생성
     private void ArrangeCookies()
     {
         List<CookieController> myCookies = DataBaseManager.Instance.OwnedCookies;
@@ -93,5 +98,19 @@ public class KingdomScene : BaseScene
 
             cookie.CookieCitizeon.KingdomAI();
         }
+    }
+
+    // 내 정보 불러오기
+    private void LoadData()
+    {
+        /*GameManager.Game.Dia = 50737;
+        GameManager.Game.Money = 8711280;
+        GameManager.Game.MaxJelly = 170;
+        GameManager.Game.Jelly = 558;*/
+
+        GameManager.Game.Dia = 1234;
+        GameManager.Game.Money = 5678910;
+        GameManager.Game.MaxJelly = 85;
+        GameManager.Game.Jelly = 5;
     }
 }

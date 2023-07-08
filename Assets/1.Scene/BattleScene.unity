@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -18999,6 +18999,7 @@ MonoBehaviour:
   _exitButton: {fileID: 121685182}
   _reStartButton: {fileID: 638606050}
   _goKingdomButtom: {fileID: 1388525844}
+  _restartJellyCount: {fileID: 1805850744}
 --- !u!114 &1415657779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21168,6 +21169,7 @@ MonoBehaviour:
   _exitButton: {fileID: 310883161}
   _reStartButton: {fileID: 1773697740}
   _goKingdomButtom: {fileID: 588675212}
+  _restartJellyCount: {fileID: 2122766042}
 --- !u!114 &1650507577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27665,7 +27667,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.34256253, y: 0.39955336}
   m_AnchorMax: {x: 0.6556667, y: 1}
-  m_AnchoredPosition: {x: 0, y: 75.00002}
+  m_AnchoredPosition: {x: 0, y: 75.000015}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2098706482

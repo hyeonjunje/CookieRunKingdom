@@ -10,6 +10,11 @@ public class CookieInfoUI : BaseUI
     [SerializeField] private GameObject _kingdomManageUI;
     [SerializeField] private GameObject _myCookieUI;
 
+    [Header("TopRight")]
+    [SerializeField] private TextMeshProUGUI _diaText;
+    [SerializeField] private TextMeshProUGUI _moneyText;
+    [SerializeField] private Button _exitButton;
+
     [Header("Right")]
     [SerializeField] private Image _cookieGradeImage;
     [SerializeField] private TextMeshProUGUI _cookieNameText;
@@ -68,6 +73,12 @@ public class CookieInfoUI : BaseUI
     public override void Init()
     {
         base.Init();
+
+        GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
+        GameManager.Game.OnChangeMoney += (() => _moneyText.text = GameManager.Game.Money.ToString("#,##0"));
+        GameManager.Game.UpdateGoods();
+
+        _exitButton.onClick.AddListener(() => GameManager.UI.ExitPopUpUI());
 
         _camera = Camera.main;
     }
@@ -138,12 +149,6 @@ public class CookieInfoUI : BaseUI
 
         _cookieSKillImage.sprite = _data.SKillSprite;
     }
-
-    public void Exit()
-    {
-        GameManager.UI.ExitPopUpUI();
-    }
-
 
     private void TouchCookie(BaseController cookie)
     {

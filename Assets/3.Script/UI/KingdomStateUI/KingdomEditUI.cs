@@ -9,7 +9,8 @@ using Spine.Unity;
 public class KingdomEditUI : BaseUI
 {
     [Header("RightTop")]
-    public int i;
+    [SerializeField] private TextMeshProUGUI _diaText;
+    [SerializeField] private TextMeshProUGUI _moneyText;
 
     [Header("LeftTop")]
     public int h;
@@ -63,6 +64,10 @@ public class KingdomEditUI : BaseUI
     public override void Init()
     {
         base.Init();
+
+        GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
+        GameManager.Game.OnChangeMoney += (() => _moneyText.text = GameManager.Game.Money.ToString("#,##0"));
+        GameManager.Game.UpdateGoods();
 
         _camera = Camera.main;
         _kindomManager = FindObjectOfType<KingdomManager>();

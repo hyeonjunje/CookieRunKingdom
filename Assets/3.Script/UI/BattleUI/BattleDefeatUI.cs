@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class BattleDefeatUI : BaseUI
 {
@@ -16,6 +17,7 @@ public class BattleDefeatUI : BaseUI
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _reStartButton;
     [SerializeField] private Button _goKingdomButtom;
+    [SerializeField] private TextMeshProUGUI _restartJellyCount;
 
     private bool _isGainReward = false;
 
@@ -30,6 +32,11 @@ public class BattleDefeatUI : BaseUI
         _isGainReward = false;
         _touchText.SetActive(true);
         _buttons.SetActive(false);
+
+        _restartJellyCount.text = (-GameManager.Game.StageData.Jelly).ToString();
+
+        // 여기서 젤리계산
+        CalculateJelly();
     }
 
     public override void Init()
@@ -71,12 +78,61 @@ public class BattleDefeatUI : BaseUI
 
     private void OnClickReStartButton()
     {
-        GameManager.Scene.LoadScene(ESceneName.Battle);
+        if (GameManager.Game.Jelly >= GameManager.Game.StageData.Jelly)
+        {
+            GameManager.Game.Jelly -= GameManager.Game.StageData.Jelly;
+            GameManager.Scene.LoadScene(ESceneName.Battle);
+        }
+        else
+        {
+            Debug.Log("젤리가 모자랍니다.");
+        }
     }
 
     private void OnClickGoKingdomButton()
     {
         GameManager.Game.StartKingdomState = EKingdomState.Manage;
         GameManager.Scene.LoadScene(ESceneName.Kingdom);
+    }
+
+    private void CalculateJelly()
+    {
+        int diffTime = (int)((System.DateTime.Now - GameManager.Game.prevJellyTime).TotalSeconds);
+
+        if (diffTime >= GameManager.Game.jellyTime)
+        {
+            diffTime -= GameManager.Game.jellyTime;
+            int count = diffTime / Utils.JellyTime;
+            GameManager.Game.Jelly += 1 + count;
+            GameManager.Game.jellyTime = diffTime % Utils.JellyTime;
+        }
+        else
+        {
+            GameManager.Game.jellyTime -= diffTime;
+        }
+
+        if (GameManager.Game.Jelly < GameManager.Game.MaxJelly)
+        {
+            StartCoroutine(CoUpdate());
+        }
+    }
+
+    private IEnumerator CoUpdate()
+    {
+        WaitForSeconds wait = new WaitForSeconds(1f);
+
+        while (true)
+        {
+            yield return wait;
+            GameManager.Game.jellyTime--;
+
+            if (GameManager.Game.jellyTime <= 0)
+            {
+                GameManager.Game.Jelly++;
+                GameManager.Game.jellyTime = Utils.JellyTime;
+                if (GameManager.Game.Jelly >= GameManager.Game.MaxJelly)
+                    break;
+            }
+        }
     }
 }

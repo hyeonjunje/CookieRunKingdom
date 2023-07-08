@@ -38,6 +38,7 @@ public class CookieSelectUI : BaseUI
     public void InitStageData(StageData stageData, Vector3 prevCameraPos, float prevOrthoSize)
     {
         _stageData = stageData;
+        GameManager.Game.StageData = _stageData;
         _prevCameraPos = prevCameraPos;
         _prevOrthosize = prevOrthoSize;
     }
@@ -193,6 +194,16 @@ public class CookieSelectUI : BaseUI
     public void OnClickBattleStartButton()
     {
         // 고기 젤리 확인하고
+        if(GameManager.Game.Jelly >= _stageData.Jelly)
+        {
+            GameManager.Game.Jelly -= _stageData.Jelly;
+        }
+        else
+        {
+            Debug.Log("젤리가 부족합니다.");
+            return;
+        }
+
 
         // 출전할 쿠키가 하나도 없으면 무시
         if(SelectedCookies.Count == 0)
@@ -221,7 +232,7 @@ public class CookieSelectUI : BaseUI
             }
         }
 
-        GameManager.Game.StageData = _stageData;
+        // GameManager.Game.StageData = _stageData;
 
         GameManager.Scene.LoadScene(ESceneName.Battle);
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class KingdomManageUI : BaseUI
 {
@@ -9,6 +10,11 @@ public class KingdomManageUI : BaseUI
     [SerializeField] private Button _myCookiesButton;
     [SerializeField] private Button _storageButton;
     [SerializeField] private Button _gachaButton;
+
+    [Header("Text")]
+    [SerializeField] private TextMeshProUGUI _jellyText;
+    [SerializeField] private TextMeshProUGUI _moneyText;
+    [SerializeField] private TextMeshProUGUI _diaText;
 
     [Header("UI")]
     [SerializeField] private MyCookieUI _myCookieUI;
@@ -22,11 +28,21 @@ public class KingdomManageUI : BaseUI
     public override void Show()
     {
         base.Show();
+
+        GameManager.Game.UpdateGoods();
     }
 
     public override void Init()
     {
         base.Init();
+
+        GameManager.Game.OnChangeDia = null;
+        GameManager.Game.OnChangeMoney = null;
+        GameManager.Game.OnChangeJelly = null;
+
+        GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
+        GameManager.Game.OnChangeMoney += (() => _moneyText.text = GameManager.Game.Money.ToString("#,##0"));
+        GameManager.Game.OnChangeJelly += (() => _jellyText.text = GameManager.Game.Jelly + "/" + GameManager.Game.MaxJelly);
 
         // 버튼 초기화
         _myCookiesButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_myCookieUI));
