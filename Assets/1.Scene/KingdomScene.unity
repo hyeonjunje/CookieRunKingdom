@@ -19107,6 +19107,7 @@ MonoBehaviour:
   _rotateButton: {fileID: 1602461455}
   _infoButton: {fileID: 284463341}
   _buildingInfoUI: {fileID: 683015202}
+  _kingdomEditUI: {fileID: 813671611}
 --- !u!1 &579387594
 GameObject:
   m_ObjectHideFlags: 0
@@ -47564,6 +47565,7 @@ MonoBehaviour:
   _rotateButton: {fileID: 452707616}
   _infoButton: {fileID: 168685213}
   _buildingInfoUI: {fileID: 683015202}
+  _kingdomEditUI: {fileID: 813671611}
 --- !u!4 &1391087077
 Transform:
   m_ObjectHideFlags: 0

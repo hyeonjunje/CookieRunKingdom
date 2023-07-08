@@ -37,6 +37,8 @@ public class BuildingCircleEditUIInPreview : BuildingCircleEditUI
     {
         if (_currentBuilding.BuildingEditor.IsInstallable())
         {
+            _kingdomManager.buildingsInKingdom.Add(_currentBuilding);
+
             _currentBuilding.BuildingEditor.IsInstance = true;
 
             _originPos = _currentBuilding.transform.position;

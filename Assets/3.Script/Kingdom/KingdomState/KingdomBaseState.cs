@@ -47,24 +47,16 @@ public abstract class KingdomBaseState
         if (value.started)
         {
             if(DetectUI())
-            {
                 _isOverUI = true;
-            }
             else
-            {
                 _touchCount++;
-            }
         }
         else if (value.canceled)
         {
             if(_isOverUI)
-            {
                 _isOverUI = false;
-            }
             else
-            {
                 _touchCount--;
-            }
         }
     }
 

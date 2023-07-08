@@ -43,19 +43,19 @@ public class KingdomCraftUI: BaseUI
             _buildingIndex = value;
 
             if(_buildingIndex < 0)
-                _buildingIndex = _kingdomManager.buildings.Count - 1;
-            else if(_buildingIndex >= _kingdomManager.buildings.Count)
+                _buildingIndex = _kingdomManager.buildingsInKingdom.Count - 1;
+            else if(_buildingIndex >= _kingdomManager.buildingsInKingdom.Count)
                 _buildingIndex = 0;
 
             _currentBuilding.BuildingWorker.Highlighgt(false);
-            _currentBuilding = _kingdomManager.buildings[_buildingIndex];
+            _currentBuilding = _kingdomManager.buildingsInKingdom[_buildingIndex];
             _currentBuilding.BuildingWorker.Highlighgt(true);
 
             _camera.transform.position = _currentBuilding.transform.position +
                 _kingdomManager.CurrentCameraControllerData.CameraBuildingZoomOffset;
 
             // 카메라도 옮겨야 하나??
-            SetCraft(_kingdomManager.buildings[_buildingIndex]);
+            SetCraft(_kingdomManager.buildingsInKingdom[_buildingIndex]);
         }
     }
 
@@ -107,9 +107,9 @@ public class KingdomCraftUI: BaseUI
         if(_kingdomManager == null)
             _kingdomManager = FindObjectOfType<KingdomManager>();
 
-        for (int i = 0; i < _kingdomManager.buildings.Count; i++)
+        for (int i = 0; i < _kingdomManager.buildingsInKingdom.Count; i++)
         {
-            if(_currentBuilding.Data.BuildingName == _kingdomManager.buildings[i].Data.BuildingName)
+            if(_currentBuilding.Data.BuildingName == _kingdomManager.buildingsInKingdom[i].Data.BuildingName)
             {
                 _buildingIndex = i;
                 break;

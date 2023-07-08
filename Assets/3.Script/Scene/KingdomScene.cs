@@ -36,21 +36,44 @@ public class KingdomScene : BaseScene
 
     private void ArrangeBuilding()
     {
-        // 내가 가진 건물들 설치
-        List<BuildingController> myBuildings = DataBaseManager.Instance.OwnedBuildings;
-        _kingdomManager.buildings = new List<BuildingController>();
+        // 내가 가진 모든 건물 생성
+        BuildingController[] ownedBuilding = DataBaseManager.Instance.AllBuildings;
+        _kingdomManager.ownedBuilding = new List<BuildingController>();
 
-        for (int i = 0; i < myBuildings.Count; i++)
+        for(int i = 0; i < ownedBuilding.Length; i++)
         {
-            BuildingController building = Instantiate(myBuildings[i], _buildingParent);
-            _kingdomManager.buildings.Add(building);
-            building.transform.SetGridTransform();
-            building.BuildingWorker.WorkBuilding();
+            BuildingController building = Instantiate(ownedBuilding[i], _buildingParent);
+            _kingdomManager.ownedBuilding.Add(building);
+            building.gameObject.SetActive(false);
+        }
 
-            building.BuildingEditor.IsInstance = true;
-            building.BuildingEditor.OnClickEditMode();
-            building.BuildingEditor.PutBuilding();
-            _pool.ResetPreviewTile();
+
+        // 왕국에 있는 건물 설정
+        List<BuildingController> buildingInKingdom = DataBaseManager.Instance.OwnedBuildings;
+        _kingdomManager.buildingsInKingdom = new List<BuildingController>();
+
+        for(int i = 0; i < buildingInKingdom.Count; i++)
+        {
+            for(int j = 0; j < _kingdomManager.ownedBuilding.Count; j++)
+            {
+                // 해당 건물이 비활성화이고 이름이 같으면 => 나중에는 id로 해야 할듯
+                if(!_kingdomManager.ownedBuilding[j].gameObject.activeSelf 
+                    && buildingInKingdom[i].Data.BuildingName == _kingdomManager.ownedBuilding[j].Data.BuildingName)
+                {
+                    BuildingController building = _kingdomManager.ownedBuilding[j];
+                    building.gameObject.SetActive(true);
+                    _kingdomManager.buildingsInKingdom.Add(building);
+
+                    building.transform.SetGridTransform();
+                    building.BuildingWorker.WorkBuilding();
+
+                    building.BuildingEditor.IsInstance = true;
+                    building.BuildingEditor.OnClickEditMode();
+                    building.BuildingEditor.PutBuilding();
+                    _pool.ResetPreviewTile();
+                    break;
+                }
+            }
         }
 
         // GridManager.Instance.buildingGridData.VisualizeGridMapData();

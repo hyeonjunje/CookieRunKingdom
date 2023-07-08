@@ -16,7 +16,12 @@ public class BuildingCircleEditUI : MonoBehaviour
     [SerializeField] protected MyButton _rotateButton;
     [SerializeField] protected MyButton _infoButton;
 
-    [SerializeField] protected BuildingInfoUI _buildingInfoUI;
+    [Header("UI")]
+    [SerializeField] private BuildingInfoUI _buildingInfoUI;
+    [SerializeField] private KingdomEditUI _kingdomEditUI;
+    
+    // 다른건 비활성화되어 있는데 얘만 활성화되어 있기 때문에 얘는 그냥 코드로 찾아줌
+    protected KingdomManager _kingdomManager;  
 
     protected Vector3 _originPos;
     protected bool _originFlip;
@@ -26,6 +31,8 @@ public class BuildingCircleEditUI : MonoBehaviour
 
     private void Awake()
     {
+        _kingdomManager = FindObjectOfType<KingdomManager>();
+
         _exitButton.AddListener(ExitUI);
         _storeButton.AddListener(StoreBuilding);
         _checkButton.AddListener(CheckBuilding);
@@ -115,6 +122,18 @@ public class BuildingCircleEditUI : MonoBehaviour
         _buttonsParent.SetActive(false);
 
         Debug.Log("주머니에 넣기");
+        _kingdomEditUI.AddBuilding(_currentBuilding);
+
+        // kingdomManager에 빼고
+        // 안에 있는 일하는 쿠키 빼고
+        // 안에 있는 UI 빼고
+        // 파괴시킨다.
+        _kingdomManager.buildingsInKingdom.Remove(_currentBuilding);
+        if(_currentBuilding.BuildingWorker.Worker != null)
+            _currentBuilding.BuildingWorker.Worker.CookieCitizeon.LeaveWork();
+        transform.SetParent(null);
+
+        _currentBuilding.gameObject.SetActive(false);
     }
 
     public virtual void RotateBuilding()

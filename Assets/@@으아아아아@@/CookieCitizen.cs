@@ -11,10 +11,20 @@ public class CookieCitizen : MonoBehaviour
     private PathFindingAgent _agent;
     private KingdomManager _kingdomManager;
 
+    private bool _isReadyToAI; // 행동할 준비가 됐다는 변수 이게 true면 활성화될 시 ai 시작
     private Coroutine _coUpdate;
     private Transform _originParent = null;
     
     public bool IsWorking { get; private set; }
+
+    private void OnEnable()
+    {
+        if(_isReadyToAI)
+        {
+            _isReadyToAI = false;
+            KingdomAI();
+        }
+    }
 
     private void OnDisable()
     {
@@ -95,11 +105,17 @@ public class CookieCitizen : MonoBehaviour
         // 위치 조정하고
         transform.SetParent(_originParent);
         transform.position = GridManager.Instance.ReturnEmptyTilePosition();
-        
-        // 다시 일상생활로
-        KingdomAI();
 
         _controller.CharacterAnimator.SettingOrderLayer(false);
+
+        if (!gameObject.activeSelf)
+        {
+            _isReadyToAI = true;
+            return;
+        }
+
+        // 다시 일상생활로
+        KingdomAI();
     }
 
 

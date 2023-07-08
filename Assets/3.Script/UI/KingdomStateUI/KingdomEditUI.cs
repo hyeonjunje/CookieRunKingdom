@@ -34,16 +34,14 @@ public class KingdomEditUI : BaseUI
     [SerializeField] private Sprite _foldButtonOff;
 
     private Camera _camera;
-    private HousingItemData[] _allTiles;
     private HousingItemData _currentHousingItemData;
-    private BuildingController[] _allBuildingData;
+
+    private List<Button> _ownedBuilding;  // 내가 소유하고 있는 건물
 
     private KingdomManager _kindomManager;
     private bool _isBottomHide;
 
-    public BuildingController CurrentBuilding { get; set; }
-
-    public bool IsSelected => _currentHousingItemData != null || CurrentBuilding != null; 
+    // public BuildingController CurrentBuilding { get; set; }
     public HousingItemData CurrentHousingItemData => _currentHousingItemData;
 
 
@@ -71,31 +69,57 @@ public class KingdomEditUI : BaseUI
 
         foldButton.onClick.AddListener(OnClickFoldButton);
 
-        _allTiles = DataBaseManager.Instance.AllTiles;
-        _allBuildingData = DataBaseManager.Instance.AllBuildings;
+        _ownedBuilding = new List<Button>();
 
-        for (int i = 0; i < _allTiles.Length; i++)
+        HousingItemData[] allTiles = DataBaseManager.Instance.AllTiles;
+        List<BuildingController> ownedBuilding = _kindomManager.ownedBuilding;  // 내가 소유한 전체 건물
+        List<BuildingController> buildingsInKingdom = _kindomManager.buildingsInKingdom;  // 왕국에 설치된 건물
+
+        for (int i = 0; i < allTiles.Length; i++)
         {
             int index = i;
             Button editItemButton = Instantiate(editItemPrefab, editItemParent);
-            editItemButton.image.sprite = _allTiles[i].HousingItemImage;
-            editItemButton.onClick.AddListener(() => OnClickEditItemButton(_allTiles[index]));
+            editItemButton.image.sprite = allTiles[i].HousingItemImage;
+            editItemButton.onClick.AddListener(() => OnClickEditItemButton(allTiles[index]));
+
+            _ownedBuilding.Add(editItemButton);
         }
 
-        for(int i = 0; i < _allBuildingData.Length; i++)
+        for(int i = 0; i < ownedBuilding.Count; i++)
         {
-            int index = i;
-            Button editItemButton = Instantiate(editItemSkeletonPrefab, editItemParent);
-            SkeletonGraphic skeletonGraphic = editItemButton.GetComponentInChildren<SkeletonGraphic>();
-            skeletonGraphic.skeletonDataAsset = _allBuildingData[i].Data.SkeletonData;
-            skeletonGraphic.Initialize(true);
-            editItemButton.onClick.AddListener(() => OnClickEditBuildingButton(_allBuildingData[index], editItemButton.gameObject));
+            // 왕국에 설치되지 않은것만 버튼으로 만든다.
+            if (!buildingsInKingdom.Contains(ownedBuilding[i]))
+            {
+                AddBuilding(ownedBuilding[i]);
+            }
         }
-
-        editItemParent.sizeDelta = new Vector2(20 + 120 * (_allTiles.Length + _allBuildingData.Length), editItemParent.sizeDelta.y);
 
         editExitButton.onClick.AddListener(() => OnClickEditExitButton());
     }
+
+    // 인벤토리에 추가
+    public void AddBuilding(BuildingController building)
+    {
+        Button editItemButton = Instantiate(editItemSkeletonPrefab, editItemParent);
+        SkeletonGraphic skeletonGraphic = editItemButton.GetComponentInChildren<SkeletonGraphic>();
+
+        _ownedBuilding.Add(editItemButton);
+
+        skeletonGraphic.skeletonDataAsset = building.Data.SkeletonData;
+        skeletonGraphic.Initialize(true);
+        editItemButton.onClick.AddListener(() => OnClickEditBuildingButton(building, editItemButton));
+
+        editItemParent.sizeDelta = new Vector2(20 + 120 * (_ownedBuilding.Count), editItemParent.sizeDelta.y);
+    }
+
+
+    // 인벤토리에 제거
+    public void RemoveBuilding(Button removeButton)
+    {
+        _ownedBuilding.Remove(removeButton);
+        Destroy(removeButton.gameObject);
+    }
+
 
     private void OnClickEditExitButton()
     {
@@ -105,7 +129,7 @@ public class KingdomEditUI : BaseUI
         editSelected.gameObject.SetActive(false);
     }
 
-    private void OnClickEditBuildingButton(BuildingController currentBuildingPrefab, GameObject button)
+    private void OnClickEditBuildingButton(BuildingController currentBuildingPrefab, Button button)
     {
         OnClickFoldButton();
 
@@ -113,7 +137,7 @@ public class KingdomEditUI : BaseUI
 
         // 카메라가 보고 있는 중간에 해당 건물을 생성하고 editUI도 넣어준다.
         // 건물은 투명하게 생김
-        CurrentBuilding = Instantiate(currentBuildingPrefab, _buildingParent);
+        currentBuildingPrefab.gameObject.SetActive(true);
 
         float screenWidth = Screen.width;
         float screenHeight = Screen.height;
@@ -121,14 +145,15 @@ public class KingdomEditUI : BaseUI
         Vector3 centerWorldPosition = _camera.ScreenToWorldPoint(new Vector3(screenCenter.x, screenCenter.y, _camera.nearClipPlane));
         centerWorldPosition = new Vector3(centerWorldPosition.x, centerWorldPosition.y, 0f);
 
-        CurrentBuilding.transform.position = centerWorldPosition;
-        CurrentBuilding.transform.SetGridTransform();
+        currentBuildingPrefab.transform.position = centerWorldPosition;
+        currentBuildingPrefab.transform.SetGridTransform();
 
-        _kindomManager.BuildingCircleEditUIInPreview.SetPrevBuilding(CurrentBuilding);
-        CurrentBuilding.BuildingEditor.OnClickEditMode();
-        _kindomManager.BuildingCircleEditUIInPreview.SetBuilding(CurrentBuilding, CurrentBuilding.transform, _camera.orthographicSize);
+        _kindomManager.BuildingCircleEditUIInPreview.SetPrevBuilding(currentBuildingPrefab);
+        currentBuildingPrefab.BuildingEditor.OnClickEditMode();
+        _kindomManager.BuildingCircleEditUIInPreview.SetBuilding(currentBuildingPrefab, currentBuildingPrefab.transform, _camera.orthographicSize);
 
-        Destroy(button);
+        // 타일은 없어지지 않음
+        RemoveBuilding(button);
     }
 
     private void OnClickEditItemButton(HousingItemData currentHousingItemData)
@@ -136,7 +161,6 @@ public class KingdomEditUI : BaseUI
         editInventory.gameObject.SetActive(false);
         editSelected.gameObject.SetActive(true);
 
-        CurrentBuilding = null;
         _currentHousingItemData = currentHousingItemData;
 
         editItemImage.sprite = currentHousingItemData.HousingItemImage;

@@ -21,7 +21,7 @@ public class KingdomEditState : KingdomBaseState
 
         _manager.KingdomGrid.gameObject.SetActive(true);
 
-        _manager.buildings.ForEach(building => building.gameObject.SetActive(true));
+        _manager.buildingsInKingdom.ForEach(building => building.gameObject.SetActive(true));
     }
 
     public override void Exit()
@@ -36,7 +36,7 @@ public class KingdomEditState : KingdomBaseState
         // 나갈 때 previewTile 없애줘야 해
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
 
-        _manager.buildings.ForEach(building => building.gameObject.SetActive(false));
+        _manager.buildingsInKingdom.ForEach(building => building.gameObject.SetActive(false));
     }
 
     public override void Update()

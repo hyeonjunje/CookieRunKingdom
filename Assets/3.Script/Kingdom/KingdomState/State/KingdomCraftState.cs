@@ -40,7 +40,7 @@ public class KingdomCraftState : KingdomBaseState
             cookie.CookieCitizeon.KingdomAI();
         });
 
-        _manager.buildings.ForEach(building =>
+        _manager.buildingsInKingdom.ForEach(building =>
         {
             building.gameObject.SetActive(true);
             building.BuildingWorker.WorkBuilding();
@@ -61,7 +61,7 @@ public class KingdomCraftState : KingdomBaseState
         seq.Append(_camera.DOOrthoSize(prevOrthoSize, 0.5f));
 
         _manager.myCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
-        _manager.buildings.ForEach(building => building.gameObject.SetActive(false));
+        _manager.buildingsInKingdom.ForEach(building => building.gameObject.SetActive(false));
 
         GameManager.Game.PrevCraftTime = System.DateTime.Now;
     }
