@@ -58,6 +58,9 @@ public class KingdomManageState : KingdomBaseState
     {
         base.OnClick(value);
 
+        if (DetectUI())
+            return;
+
         if (value.started)
         {
             var rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));

@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class KingdomEditState : KingdomBaseState
 {
     private BuildingController _currentBuilding = null;
-    private Vector3 _lastPos = Vector3.zero;
 
     public KingdomEditState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
     {
@@ -16,7 +15,6 @@ public class KingdomEditState : KingdomBaseState
     {
         _touchCount = 0;
         _currentBuilding = null;
-        _lastPos = Vector3.zero;
         _isActiveCameraControll = true;
 
         GameManager.UI.PushUI(_manager.KingdomEditUI);
@@ -28,7 +26,9 @@ public class KingdomEditState : KingdomBaseState
 
     public override void Exit()
     {
-        _manager.BuildingSelectUI.HideUI();
+        _manager.BuildingCircleEditUI.HideUI();
+        _manager.BuildingCircleEditUIInPreview.HideUI();
+
         GameManager.UI.ClearUI();
 
         _manager.KingdomGrid.gameObject.SetActive(false);
@@ -48,28 +48,20 @@ public class KingdomEditState : KingdomBaseState
     {
         base.OnClick(value);
 
+        if (DetectUI())
+            return;
+
         if (value.started)
         {
-            // 현재 선택된 하우징 아이템이 있으면 그걸 설치해야 함
-            if(_manager.KingdomEditUI.CurrentHousingItemData)
+            // 선택된게 타일이라면
+            if (_manager.KingdomEditUI.CurrentHousingItemData != null)
             {
-                _currentBuilding = null;
-
                 var rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Ground"));
-
                 if (!rayHit.collider)
                     return;
 
-                // 선택된 하우징 아이템이 타일이라면
-                if(_manager.KingdomEditUI.CurrentHousingItemData.IsTile)
-                {
-                    Tilemap tile = rayHit.transform.GetComponent<Tilemap>();
-                    tile.SetSprite(_manager.KingdomEditUI.CurrentHousingItemData.HousingItemImage);
-                }
-                else
-                {
-                    Debug.Log("나중에 할 일~~");
-                }
+                Tilemap tile = rayHit.transform.GetComponent<Tilemap>();
+                tile.SetSprite(_manager.KingdomEditUI.CurrentHousingItemData.HousingItemImage);
             }
             // 현재 선택된 하우징 아이템이 없다면
             else
@@ -88,9 +80,16 @@ public class KingdomEditState : KingdomBaseState
                 if (_currentBuilding == null)
                     return;
 
-                _manager.BuildingSelectUI.SetPrevBuilding(_currentBuilding);
+                _manager.BuildingCircleEditUI.ButtonParent.SetActive(false);
+                _manager.BuildingCircleEditUIInPreview.ButtonParent.SetActive(false);
+                _manager.BuildingCircleEditUI.SetPrevBuilding(_currentBuilding);
+                _manager.BuildingCircleEditUIInPreview.SetPrevBuilding(_currentBuilding);
                 _currentBuilding.BuildingEditor.OnClickEditMode();
-                _manager.BuildingSelectUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
+
+                if (_currentBuilding.BuildingEditor.IsInstance)
+                    _manager.BuildingCircleEditUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
+                else
+                    _manager.BuildingCircleEditUIInPreview.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
             }
         }
 
@@ -114,7 +113,6 @@ public class KingdomEditState : KingdomBaseState
             Vector2 pos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
             Vector3Int gridPos = _manager.Grid.WorldToCell(pos);
             _currentBuilding.transform.localPosition = _manager.Grid.CellToWorld(gridPos);
-            _lastPos = _currentBuilding.transform.localPosition;
 
             _currentBuilding.BuildingEditor.UpdatePreviewTile();
         }

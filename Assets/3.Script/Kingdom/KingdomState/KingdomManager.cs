@@ -26,7 +26,8 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private Transform _kingdomGrid;
 
     [Header("ÄÄÆ÷³ÍÆ®")]
-    [SerializeField] private BuildingSelectUI _buildingSelectUI;
+    [SerializeField] private BuildingCircleEditUI _buildingCircleEditUI;
+    [SerializeField] private BuildingCircleEditUIInPreview _buildingCircleEditUIInPreview;
     [SerializeField] private Grid _grid;
 
     [Header("Data")]
@@ -50,7 +51,8 @@ public class KingdomManager : MonoBehaviour
 
     public Transform KingdomGrid => _kingdomGrid;
 
-    public BuildingSelectUI BuildingSelectUI => _buildingSelectUI;
+    public BuildingCircleEditUI BuildingCircleEditUI => _buildingCircleEditUI;
+    public BuildingCircleEditUIInPreview BuildingCircleEditUIInPreview => _buildingCircleEditUIInPreview;
     public Grid Grid => _grid;
     public CameraControllData CameraControllInKingdomData => _cameraControllInKingdomData;
     public CameraControllData CameraContrllInStageData => _cameraControllInStageData;

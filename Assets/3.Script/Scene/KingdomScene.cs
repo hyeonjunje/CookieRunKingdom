@@ -47,6 +47,7 @@ public class KingdomScene : BaseScene
             building.transform.SetGridTransform();
             building.BuildingWorker.WorkBuilding();
 
+            building.BuildingEditor.IsInstance = true;
             building.BuildingEditor.OnClickEditMode();
             building.BuildingEditor.PutBuilding();
             _pool.ResetPreviewTile();

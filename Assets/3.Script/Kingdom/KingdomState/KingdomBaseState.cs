@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public abstract class KingdomBaseState
 {
@@ -72,5 +74,42 @@ public abstract class KingdomBaseState
 
         _camera.transform.position = new Vector3(targetPosX, targetPosY, _camera.transform.position.z);
         prevPos = currentPos;
+    }
+
+    private GameObject ui_canvas;
+    private GraphicRaycaster ui_raycaster;
+    private PointerEventData click_data;
+    List<RaycastResult> click_results;
+
+    private bool isinit = false;
+
+    protected bool DetectUI()
+    {
+        if (!isinit)
+        {
+            ui_canvas = GameObject.Find("KingdomCanvas");
+            isinit = true;
+            ui_raycaster = ui_canvas.GetComponent<GraphicRaycaster>();
+            click_data = new PointerEventData(EventSystem.current);
+            click_results = new List<RaycastResult>();
+        }
+
+        click_data.position = Mouse.current.position.ReadValue();
+        click_results.Clear();
+
+        ui_raycaster.Raycast(click_data, click_results);
+
+        if (click_results.Count != 0)
+            return true;
+        return false;
+
+        /*foreach (RaycastResult result in click_results)
+        {
+            GameObject ui_element = result.gameObject;
+            Debug.Log(ui_element.name);
+            return true;
+        }
+
+        return false;*/
     }
 }

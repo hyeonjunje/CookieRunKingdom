@@ -24,6 +24,9 @@ public class DataBaseManager : Singleton<DataBaseManager>
     [Header("모든 아이템 데이터")]
     [SerializeField] private ItemData[] allItemData;
 
+    [Header("하우징 데이터")]
+    [SerializeField] private HousingItemData[] allTills;
+
     [Header("Test")]
     [SerializeField] private ItemData[] testItem;
 
@@ -33,6 +36,7 @@ public class DataBaseManager : Singleton<DataBaseManager>
     public List<CookieController> OwnedCookies => ownedCookies;
     public CookieController[] AllCookies => allCookies;
     public ItemData[] AllItemData => allItemData;
+    public HousingItemData[] AllTiles => allTills;
     public DataBase MyDataBase { get; private set; }
 
     private void Start()

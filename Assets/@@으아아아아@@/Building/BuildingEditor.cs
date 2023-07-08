@@ -12,6 +12,9 @@ public class BuildingEditor : MonoBehaviour
 
     public bool IsFlip { get; set; } = false;
 
+    public bool IsInstance { get; set; } = false;
+
+
     public void Init(BuildingController controller)
     {
         _controller = controller;
