@@ -89,7 +89,7 @@ public class KingdomEditUI : BaseUI
             SkeletonGraphic skeletonGraphic = editItemButton.GetComponentInChildren<SkeletonGraphic>();
             skeletonGraphic.skeletonDataAsset = _allBuildingData[i].Data.SkeletonData;
             skeletonGraphic.Initialize(true);
-            editItemButton.onClick.AddListener(() => OnClickEditBuildingButton(_allBuildingData[index]));
+            editItemButton.onClick.AddListener(() => OnClickEditBuildingButton(_allBuildingData[index], editItemButton.gameObject));
         }
 
         editItemParent.sizeDelta = new Vector2(20 + 120 * (_allTiles.Length + _allBuildingData.Length), editItemParent.sizeDelta.y);
@@ -105,7 +105,7 @@ public class KingdomEditUI : BaseUI
         editSelected.gameObject.SetActive(false);
     }
 
-    private void OnClickEditBuildingButton(BuildingController currentBuildingPrefab)
+    private void OnClickEditBuildingButton(BuildingController currentBuildingPrefab, GameObject button)
     {
         OnClickFoldButton();
 
@@ -128,6 +128,7 @@ public class KingdomEditUI : BaseUI
         CurrentBuilding.BuildingEditor.OnClickEditMode();
         _kindomManager.BuildingCircleEditUIInPreview.SetBuilding(CurrentBuilding, CurrentBuilding.transform, _camera.orthographicSize);
 
+        Destroy(button);
     }
 
     private void OnClickEditItemButton(HousingItemData currentHousingItemData)

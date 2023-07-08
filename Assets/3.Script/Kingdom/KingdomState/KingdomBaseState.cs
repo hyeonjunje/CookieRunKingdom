@@ -15,6 +15,8 @@ public abstract class KingdomBaseState
 
     private Vector2 prevPos = Vector3.zero;
 
+    private bool _isOverUI = false;
+
     public KingdomBaseState(KingdomStateFactory factory, KingdomManager manager)
     {
         _factory = factory;
@@ -43,9 +45,27 @@ public abstract class KingdomBaseState
     public virtual void OnClick(InputAction.CallbackContext value)
     {
         if (value.started)
-            _touchCount++;
+        {
+            if(DetectUI())
+            {
+                _isOverUI = true;
+            }
+            else
+            {
+                _touchCount++;
+            }
+        }
         else if (value.canceled)
-            _touchCount--;
+        {
+            if(_isOverUI)
+            {
+                _isOverUI = false;
+            }
+            else
+            {
+                _touchCount--;
+            }
+        }
     }
 
     public virtual void OnDrag(InputAction.CallbackContext value)
@@ -102,14 +122,5 @@ public abstract class KingdomBaseState
         if (click_results.Count != 0)
             return true;
         return false;
-
-        /*foreach (RaycastResult result in click_results)
-        {
-            GameObject ui_element = result.gameObject;
-            Debug.Log(ui_element.name);
-            return true;
-        }
-
-        return false;*/
     }
 }
