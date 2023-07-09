@@ -5,6 +5,8 @@ using Spine.Unity;
 
 public class BuildingData : ScriptableObject
 {
+    [SerializeField] private int _buildingIndex;
+
     [SerializeField] private SkeletonDataAsset _skeletonData;
 
     [SerializeField] protected string buildingName;
@@ -14,6 +16,8 @@ public class BuildingData : ScriptableObject
     [SerializeField] protected CraftData[] craftItems;
 
     // 프로퍼티
+    public int BuildingIndex => _buildingIndex;
+
     public SkeletonDataAsset SkeletonData => _skeletonData;
     public string BuildingName => buildingName;
     public string BuildingExplain => buildingExplain;

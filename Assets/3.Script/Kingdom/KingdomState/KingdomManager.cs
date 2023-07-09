@@ -62,10 +62,12 @@ public class KingdomManager : MonoBehaviour
     public bool IsMoveCamera { get; set; } = true;
 
     // 내가 소유한 실질적인 건물
-    public List<BuildingController> ownedBuilding = new List<BuildingController>();  
+    public List<BuildingController> buildingsInInventory = new List<BuildingController>();  
     
     // 내 왕국에 있는 실질적인 건물(설치되어있는 건물이란 말이죠)
     public List<BuildingController> buildingsInKingdom = new List<BuildingController>();
+    
+    
     public List<CookieController> myCookies = new List<CookieController>();
     public List<CookieController> workingCookies = new List<CookieController>();
 

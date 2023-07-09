@@ -30,8 +30,8 @@ public class KingdomScene : BaseScene
         // 쿠키 생성
         ArrangeCookies();
 
-        // 내 정보 불러오기
-        LoadData();
+        // 건물들 제작
+        CraftItem();
 
         // 왕국 상태패턴
         _kingdomManager.Init();
@@ -40,43 +40,34 @@ public class KingdomScene : BaseScene
     // 왕국배치
     private void ArrangeBuilding()
     {
-        // 내가 가진 모든 건물 생성
-        BuildingController[] ownedBuilding = DataBaseManager.Instance.AllBuildings;
-        _kingdomManager.ownedBuilding = new List<BuildingController>();
+        BuildingController[] allBuildingsData = DataBaseManager.Instance.AllBuildings;
+        List<BuildingInfo> ownedBuildings = GameManager.Game.ownedBuildings;
 
-        for(int i = 0; i < ownedBuilding.Length; i++)
+        for(int i = 0; i < ownedBuildings.Count; i++)
         {
-            BuildingController building = Instantiate(ownedBuilding[i], _buildingParent);
-            _kingdomManager.ownedBuilding.Add(building);
-            building.gameObject.SetActive(false);
-        }
+            BuildingInfo buildingInfo = ownedBuildings[i];
+            BuildingController building = Instantiate(allBuildingsData[buildingInfo.buildingIndex], _buildingParent);
 
-
-        // 왕국에 있는 건물 설정
-        List<BuildingController> buildingInKingdom = DataBaseManager.Instance.OwnedBuildings;
-        _kingdomManager.buildingsInKingdom = new List<BuildingController>();
-
-        for(int i = 0; i < buildingInKingdom.Count; i++)
-        {
-            for(int j = 0; j < _kingdomManager.ownedBuilding.Count; j++)
+            // 설치되어 있는 건물일 경우
+            if (buildingInfo.isInstall)
             {
-                // 해당 건물이 비활성화이고 이름이 같으면 => 나중에는 id로 해야 할듯
-                if(!_kingdomManager.ownedBuilding[j].gameObject.activeSelf 
-                    && buildingInKingdom[i].Data.BuildingName == _kingdomManager.ownedBuilding[j].Data.BuildingName)
-                {
-                    BuildingController building = _kingdomManager.ownedBuilding[j];
-                    building.gameObject.SetActive(true);
-                    _kingdomManager.buildingsInKingdom.Add(building);
+                _kingdomManager.buildingsInKingdom.Add(building);
+                building.transform.position = buildingInfo.installationPosition;
+                building.transform.SetGridTransform();
+                building.gameObject.SetActive(true);
 
-                    building.transform.SetGridTransform();
-                    building.BuildingWorker.WorkBuilding();
-
-                    building.BuildingEditor.IsInstance = true;
-                    building.BuildingEditor.OnClickEditMode();
-                    building.BuildingEditor.PutBuilding();
-                    _pool.ResetPreviewTile();
-                    break;
-                }
+                // 왕국 설치
+                building.BuildingWorker.WorkBuilding();
+                building.BuildingEditor.IsInstance = true;
+                building.BuildingEditor.OnClickEditMode();
+                building.BuildingEditor.PutBuilding();
+                _pool.ResetPreviewTile();
+            }
+            // 설치되지 않은 건물일 경우
+            else
+            {
+                _kingdomManager.buildingsInInventory.Add(building);
+                building.gameObject.SetActive(false);
             }
         }
 
@@ -86,31 +77,52 @@ public class KingdomScene : BaseScene
     // 쿠키 생성
     private void ArrangeCookies()
     {
-        List<CookieController> myCookies = DataBaseManager.Instance.OwnedCookies;
-        _kingdomManager.myCookies = new List<CookieController>();
+        CookieController[] allCookiesData = DataBaseManager.Instance.AllCookies;
+        List<CookieInfo> ownedCookies = GameManager.Game.ownedCookies;
 
-        // 쿠키 무작위 둘 수 있는곳에 생성
-        for (int i = 0; i < myCookies.Count; i++)
+        for(int i = 0; i < ownedCookies.Count; i++)
         {
-            CookieController cookie = Instantiate(myCookies[i], _cookieParent);
-            cookie.transform.position = GridManager.Instance.ReturnEmptyTilePosition();
-            _kingdomManager.myCookies.Add(cookie);
+            CookieInfo cookieInfo = ownedCookies[i];
+            CookieController cookie = Instantiate(allCookiesData[cookieInfo.cookieIndex], _cookieParent);
 
+            // 정보 넣기
+            cookie.CookieStat.cookieLevel = cookieInfo.cookieLevel;
+            cookie.CookieStat.skillLevel = cookieInfo.skillLevel;
+            cookie.CookieStat.evolutionCount = cookieInfo.evolutionCount;
+            cookie.CookieStat.isBattleMember = cookieInfo.isBattleMember;
+
+            if (cookieInfo.lastKingdomPosition == Vector3.zero)
+                cookie.transform.position = GridManager.Instance.ReturnEmptyTilePosition();
+            else
+                cookie.transform.position = cookieInfo.lastKingdomPosition;
+
+            _kingdomManager.myCookies.Add(cookie);
             cookie.CookieCitizeon.KingdomAI();
         }
     }
 
-    // 내 정보 불러오기
-    private void LoadData()
+    // 건물들 제작
+    private void CraftItem()
     {
-        /*GameManager.Game.Dia = 50737;
-        GameManager.Game.Money = 8711280;
-        GameManager.Game.MaxJelly = 170;
-        GameManager.Game.Jelly = 558;*/
+        List<BuildingController> buildingsInKingdom = _kingdomManager.buildingsInKingdom;
+        List<BuildingInfo> ownedBuildings = GameManager.Game.ownedBuildings;
+        int buildingCount = 0;
+        for (int i = 0; i < ownedBuildings.Count; i++)
+        {
+            BuildingInfo buildingInfo = ownedBuildings[i];
+            if(buildingInfo.isInstall)
+            {
+                if(buildingInfo.cookieWorkerIndex != -1)
+                {
+                    BuildingController building = buildingsInKingdom[buildingCount];
+                    // 일꾼설정
+                    foreach (CookieController cookie in _kingdomManager.myCookies)
+                        if (((CookieData)cookie.Data).CookieIndex == buildingInfo.cookieWorkerIndex)
+                            building.BuildingWorker.LoadBuilding(cookie, buildingInfo.craftingItemData);
+                }
 
-        GameManager.Game.Dia = 1234;
-        GameManager.Game.Money = 5678910;
-        GameManager.Game.MaxJelly = 85;
-        GameManager.Game.Jelly = 5;
+                buildingCount++;
+            }
+        }
     }
 }

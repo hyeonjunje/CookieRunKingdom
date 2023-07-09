@@ -35,8 +35,42 @@ public class BuildingWorker : MonoBehaviour
         }
 
         _kingdomManager = FindObjectOfType<KingdomManager>();
-
         _controller.BuildingAnimator.PlayAnimation("off");
+    }
+
+    // 건물의 정보를 최신화해줌
+    public void LoadBuilding(CookieController worker, List<CraftingItemData> craftingItemData)
+    {
+        Worker = worker;
+        _craftingItemData = craftingItemData;
+        Worker.CookieCitizeon.GoToWork(_workPlace);
+        // 일하는 중이 아님
+        if (_craftingItemData[0].state == ECraftingState.empty)
+        {
+            _controller.BuildingAnimator.PlayAnimation("off");
+        }
+        else
+        {
+            if (!_controller.BuildingAnimator.IsAnimationExist("working"))
+                _controller.BuildingAnimator.PlayAnimation("loop_back");
+            else
+                _controller.BuildingAnimator.PlayAnimation("working");
+            Worker.CharacterAnimator.PlayAnimation(_workAnimationName);
+        }
+    }
+
+    public void SaveBuilding()
+    {
+        BuildingInfo buildingInfo = GameManager.Game.ownedBuildings[_controller.Data.BuildingIndex];
+        buildingInfo.craftingItemData = _craftingItemData;
+
+        if (Worker != null)
+            buildingInfo.cookieWorkerIndex = ((CookieData)Worker.Data).CookieIndex;
+        else
+            buildingInfo.cookieWorkerIndex = -1;
+
+        buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
+        buildingInfo.installationPosition = transform.position;
     }
 
     private void OnDisable()
@@ -84,7 +118,8 @@ public class BuildingWorker : MonoBehaviour
 
     public void ChangeWorker(CookieController newWorker)
     {
-        Worker.CookieCitizeon.LeaveWork();
+        if(Worker != null)
+            Worker.CookieCitizeon.LeaveWork();
         Worker = newWorker;
         Worker.CookieCitizeon.GoToWork(_workPlace);
 

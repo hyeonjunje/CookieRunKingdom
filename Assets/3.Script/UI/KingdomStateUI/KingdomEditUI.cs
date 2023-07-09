@@ -77,7 +77,7 @@ public class KingdomEditUI : BaseUI
         _ownedBuilding = new List<Button>();
 
         HousingItemData[] allTiles = DataBaseManager.Instance.AllTiles;
-        List<BuildingController> ownedBuilding = _kindomManager.ownedBuilding;  // 내가 소유한 전체 건물
+        List<BuildingController> ownedBuilding = _kindomManager.buildingsInInventory;  // 내가 소유한 전체 건물
         List<BuildingController> buildingsInKingdom = _kindomManager.buildingsInKingdom;  // 왕국에 설치된 건물
 
         for (int i = 0; i < allTiles.Length; i++)

@@ -49,6 +49,8 @@ public class KingdomManageState : KingdomBaseState
 
         // ÄíÅ°µéÀÌ »ç¶óÁü
         _manager.myCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
+
+        _manager.buildingsInKingdom.ForEach(building => building.BuildingWorker.SaveBuilding());
         _manager.buildingsInKingdom.ForEach(building => building.gameObject.SetActive(false));
 
         GameManager.Game.PrevCraftTime = System.DateTime.Now;

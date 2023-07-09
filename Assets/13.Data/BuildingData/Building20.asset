@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 467e03254e97021468009c4a075941dd, type: 3}
   m_Name: Building20
   m_EditorClassIdentifier: 
+  _buildingIndex: 19
   _skeletonData: {fileID: 11400000, guid: e4e99cb5ba747fc4b8f6f77bf3220527, type: 2}
   buildingName: "\uC0EC\uB871 \uB4DC \uC96C\uC5BC\uB9AC"
   buildingExplain: 

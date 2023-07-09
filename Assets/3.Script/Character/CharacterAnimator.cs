@@ -25,7 +25,7 @@ public class CharacterAnimator : MonoBehaviour
 
         _animationNames = _controller.Data.AnimationData.Init();
 
-        _animation.Initialize(false);
+        _animation.Initialize(true);
         _animation.AnimationState.Event += OnSpineEvent;
     }
 
@@ -65,7 +65,6 @@ public class CharacterAnimator : MonoBehaviour
             if (_animationNames[(int)animationName] == _animation.AnimationState.GetCurrent(0).Animation.Name)
                 return;
 
-            _animation.Initialize(false);
             _animation.AnimationState.SetAnimation(0, _animationNames[(int)animationName], true);
         }
         catch (Exception e)
@@ -83,7 +82,6 @@ public class CharacterAnimator : MonoBehaviour
             if (animationName == _animation.AnimationState.GetCurrent(0).Animation.Name)
                 return;
 
-            _animation.Initialize(false);
             _animation.AnimationState.SetAnimation(0, animationName, isLoop);
         }
         catch (Exception e)
@@ -96,7 +94,6 @@ public class CharacterAnimator : MonoBehaviour
     public void FlipX(bool isFlip)
     {
         _animation.initialFlipX = isFlip;
-        _animation.Initialize(true);
     }
 
     public float GetIntervalAnimation()

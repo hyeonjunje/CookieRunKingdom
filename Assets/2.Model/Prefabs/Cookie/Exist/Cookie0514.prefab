@@ -230,6 +230,7 @@ GameObject:
   - component: {fileID: -310580995679319843}
   - component: {fileID: -3389802141001073952}
   - component: {fileID: -4087226656768525483}
+  - component: {fileID: 3203079068293578299}
   m_Layer: 9
   m_Name: Cookie0514
   m_TagString: Untagged
@@ -361,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84117c23d55a37d44812df74307e4eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _greetingAnimation: call_user
 --- !u!114 &-4087226656768525483
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,3 +376,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: df5744f1917b5754498b6081b45c7eed, type: 2}
+--- !u!114 &3203079068293578299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579123486309017477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a3757e25ab28244f95f201371a8d98a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cookieLevel: 0
+  skillLevel: 0
+  evolutionCount: 0
+  isBattleMember: 0

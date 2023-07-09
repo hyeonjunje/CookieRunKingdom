@@ -8,6 +8,8 @@ public enum ECookiePosition { Front, Center, Rear }
 
 public class CookieData : CharacterData
 {
+    [SerializeField] private int _cookieIndex;
+
     [SerializeField] private Material _idleBlackMaterial;
 
     [SerializeField] private Sprite _idleSprite;
@@ -21,6 +23,8 @@ public class CookieData : CharacterData
     [SerializeField] private ECookieGrade _cookieGrade;
     [SerializeField] private ECookieType _cookieType;
     [SerializeField] private ECookiePosition _cookiePosition;
+
+    public int CookieIndex => _cookieIndex;
 
     public Material IdleBlackMaterial => _idleBlackMaterial;
 
