@@ -38,6 +38,15 @@ public class BuildingWorker : MonoBehaviour
         _controller.BuildingAnimator.PlayAnimation("off");
     }
 
+    // 건물의 제작슬롯을 초기화해줌
+    public void InitCraftSlot()
+    {
+        BuildingInfo buildingInfo = GameManager.Game.ownedBuildings[_controller.Data.BuildingIndex];
+        _craftingItemData = new List<CraftingItemData>();
+        for (int i = 0; i < buildingInfo.slotCount; i++)
+            _craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
+    }
+
     // 건물의 정보를 최신화해줌
     public void LoadBuilding(List<CraftingItemData> craftingItemData, CookieController worker = null)
     {
@@ -77,8 +86,8 @@ public class BuildingWorker : MonoBehaviour
         else
             buildingInfo.cookieWorkerIndex = -1;
 
-        buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
         buildingInfo.installationPosition = transform.position;
+        buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
     }
 
     private void OnDisable()

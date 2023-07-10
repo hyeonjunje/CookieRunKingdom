@@ -17,8 +17,8 @@ public class BuildingCircleEditUI : MonoBehaviour
     [SerializeField] protected MyButton _infoButton;
 
     [Header("UI")]
-    [SerializeField] private BuildingInfoUI _buildingInfoUI;
-    [SerializeField] private KingdomEditUI _kingdomEditUI;
+    [SerializeField] protected BuildingInfoUI _buildingInfoUI;
+    [SerializeField] protected KingdomEditUI _kingdomEditUI;
     
     // 다른건 비활성화되어 있는데 얘만 활성화되어 있기 때문에 얘는 그냥 코드로 찾아줌
     protected KingdomManager _kingdomManager;  
@@ -126,13 +126,18 @@ public class BuildingCircleEditUI : MonoBehaviour
 
         // kingdomManager에 빼고
         // 안에 있는 일하는 쿠키 빼고
+        // 안에 제작되고 있던 물건도 다 빼고
         // 안에 있는 UI 빼고
         // 파괴시킨다.
+        _currentBuilding.BuildingEditor.IsInstance = false;
         _kingdomManager.buildingsInKingdom.Remove(_currentBuilding);
         if(_currentBuilding.BuildingWorker.Worker != null)
             _currentBuilding.BuildingWorker.Worker.CookieCitizeon.LeaveWork();
-        transform.SetParent(null);
+        _currentBuilding.BuildingWorker.InitCraftSlot();
 
+        _currentBuilding.BuildingWorker.SaveBuilding();
+
+        transform.SetParent(null);
         _currentBuilding.gameObject.SetActive(false);
     }
 

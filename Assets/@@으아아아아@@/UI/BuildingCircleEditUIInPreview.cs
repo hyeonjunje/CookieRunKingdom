@@ -60,12 +60,11 @@ public class BuildingCircleEditUIInPreview : BuildingCircleEditUI
 
     public override void ExitUI()
     {
-        Debug.Log("이거 해요??");
-
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
         _buttonsParent.SetActive(false);
         transform.SetParent(null);
-        Destroy(_currentBuilding.gameObject);
+        _currentBuilding.gameObject.SetActive(false);
+        _kingdomEditUI.AddBuilding(_currentBuilding);
         _currentBuilding = null;
     }
 

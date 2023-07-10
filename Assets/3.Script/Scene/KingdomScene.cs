@@ -49,10 +49,7 @@ public class KingdomScene : BaseScene
             BuildingController building = Instantiate(allBuildingsData[buildingInfo.buildingIndex], _buildingParent);
 
             // 제작 슬롯 초기화
-            List<CraftingItemData> craftingItemData = new List<CraftingItemData>();
-            for(int j = 0; j < buildingInfo.slotCount; j++)
-                craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
-            building.BuildingWorker.LoadBuilding(craftingItemData);
+            building.BuildingWorker.InitCraftSlot();
 
             // 설치되어 있는 건물일 경우
             if (buildingInfo.isInstall)
