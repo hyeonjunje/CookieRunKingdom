@@ -80,7 +80,7 @@ public class CookieCitizen : MonoBehaviour
         transform.SetParent(parent);
         transform.localPosition = Vector3.zero;
         _controller.CharacterAnimator.FlipX(false);
-        _controller.CharacterAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 100);
+        _controller.CharacterAnimator.SettingOrder();
 
         // 인사하고
         _controller.CharacterAnimator.PlayAnimation(_greetingAnimation);

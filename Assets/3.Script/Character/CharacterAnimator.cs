@@ -102,9 +102,9 @@ public class CharacterAnimator : MonoBehaviour
             _animation.AnimationState.GetCurrent(0).AnimationStart;
     }
 
-    public void SettingOrder(int order)
+    public void SettingOrder()
     {
-        _renderer.sortingOrder = order;
+        _renderer.sortingOrder = -Mathf.RoundToInt(transform.position.y) + 100;
     }
 
     private void OnSpineEvent(TrackEntry trackEntry, Spine.Event e)

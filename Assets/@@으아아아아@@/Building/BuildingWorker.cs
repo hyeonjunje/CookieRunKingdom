@@ -39,11 +39,17 @@ public class BuildingWorker : MonoBehaviour
     }
 
     // 건물의 정보를 최신화해줌
-    public void LoadBuilding(CookieController worker, List<CraftingItemData> craftingItemData)
+    public void LoadBuilding(List<CraftingItemData> craftingItemData, CookieController worker = null)
     {
         Worker = worker;
         _craftingItemData = craftingItemData;
-        Worker.CookieCitizeon.GoToWork(_workPlace);
+
+        if(Worker != null)
+        {
+            Worker.CookieCitizeon.GoToWork(_workPlace);
+            Worker.CharacterAnimator.SettingOrderLayer(false);
+        }
+
         // 일하는 중이 아님
         if (_craftingItemData[0].state == ECraftingState.empty)
         {
@@ -55,7 +61,9 @@ public class BuildingWorker : MonoBehaviour
                 _controller.BuildingAnimator.PlayAnimation("loop_back");
             else
                 _controller.BuildingAnimator.PlayAnimation("working");
-            Worker.CharacterAnimator.PlayAnimation(_workAnimationName);
+
+            if(Worker != null)
+                Worker.CharacterAnimator.PlayAnimation(_workAnimationName);
         }
     }
 

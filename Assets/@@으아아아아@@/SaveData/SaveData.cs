@@ -110,6 +110,10 @@ public class BuildingInfo
         this.installationPosition = Vector3.zero;
         this.isInstall = false;
         this.cookieWorkerIndex = -1;
-        this.craftingItemData = new List<CraftingItemData>(slotCount);
+        this.craftingItemData = new List<CraftingItemData>();
+        for(int i = 0; i < slotCount; i++)
+        {
+            this.craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
+        }
     }
 }

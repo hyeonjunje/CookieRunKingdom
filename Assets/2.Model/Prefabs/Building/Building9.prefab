@@ -144,26 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 295ac514558a965449183fbbfe712c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _craftingItemData:
-  - state: 0
-    craftData: {fileID: 0}
-    takingTime: 0
-  - state: 0
-    craftData: {fileID: 0}
-    takingTime: 0
-  - state: 0
-    craftData: {fileID: 0}
-    takingTime: 0
-  - state: 0
-    craftData: {fileID: 0}
-    takingTime: 0
-  - state: 0
-    craftData: {fileID: 0}
-    takingTime: 0
+  _craftingItemData: []
   _craftBubble: {fileID: 100507035277465390}
   _workPlace: {fileID: 5700064997131123210}
-  _initAnimation: call_user
   _workAnimationName: axe
+  isWorking: 0
 --- !u!1 &8283051406758603608
 GameObject:
   m_ObjectHideFlags: 0

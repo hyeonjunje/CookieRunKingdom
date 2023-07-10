@@ -211,7 +211,7 @@ public class PathFindingAgent : MonoBehaviour
                 yield return null;
             }
 
-            _controller.CharacterAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 100);
+            _controller.CharacterAnimator.SettingOrder();
             transform.position = d;
         }
 

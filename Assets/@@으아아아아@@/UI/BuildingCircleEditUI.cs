@@ -160,6 +160,11 @@ public class BuildingCircleEditUI : MonoBehaviour
             _currentBuilding.BuildingAnimator.FlipX(_currentFlip);
             _currentBuilding.BuildingEditor.IsFlip = _currentFlip;
 
+            if(_currentBuilding.BuildingWorker.Worker != null)
+            {
+                _currentBuilding.BuildingWorker.Worker.CharacterAnimator.SettingOrder();
+            }
+
             _currentBuilding = null;
         }
         else

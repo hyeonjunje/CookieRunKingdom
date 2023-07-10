@@ -51,7 +51,7 @@ public class BuildingEditor : MonoBehaviour
             buildingPreviewTiles[i].color = color;
         }
 
-        _controller.BuildingAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 101);
+        _controller.BuildingAnimator.SettingOrder();
     }
 
     // 해당 장소에 설치할 수 있으면 true 아니면 false
@@ -81,7 +81,7 @@ public class BuildingEditor : MonoBehaviour
             GridManager.Instance.UpdateTile(gridPos.x, gridPos.y, false);
         }
 
-        _controller.BuildingAnimator.SettingOrder(-Mathf.RoundToInt(transform.position.y) + 101);
+        _controller.BuildingAnimator.SettingOrder();
 
         UpdatePreviewTile();
     }

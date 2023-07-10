@@ -48,6 +48,12 @@ public class KingdomScene : BaseScene
             BuildingInfo buildingInfo = ownedBuildings[i];
             BuildingController building = Instantiate(allBuildingsData[buildingInfo.buildingIndex], _buildingParent);
 
+            // 제작 슬롯 초기화
+            List<CraftingItemData> craftingItemData = new List<CraftingItemData>();
+            for(int j = 0; j < buildingInfo.slotCount; j++)
+                craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
+            building.BuildingWorker.LoadBuilding(craftingItemData);
+
             // 설치되어 있는 건물일 경우
             if (buildingInfo.isInstall)
             {
@@ -107,18 +113,19 @@ public class KingdomScene : BaseScene
         List<BuildingController> buildingsInKingdom = _kingdomManager.buildingsInKingdom;
         List<BuildingInfo> ownedBuildings = GameManager.Game.ownedBuildings;
         int buildingCount = 0;
+
         for (int i = 0; i < ownedBuildings.Count; i++)
         {
             BuildingInfo buildingInfo = ownedBuildings[i];
             if(buildingInfo.isInstall)
             {
-                if(buildingInfo.cookieWorkerIndex != -1)
+                BuildingController building = buildingsInKingdom[buildingCount];
+                if (buildingInfo.cookieWorkerIndex != -1)
                 {
-                    BuildingController building = buildingsInKingdom[buildingCount];
                     // 일꾼설정
                     foreach (CookieController cookie in _kingdomManager.myCookies)
                         if (((CookieData)cookie.Data).CookieIndex == buildingInfo.cookieWorkerIndex)
-                            building.BuildingWorker.LoadBuilding(cookie, buildingInfo.craftingItemData);
+                            building.BuildingWorker.LoadBuilding(buildingInfo.craftingItemData, cookie);
                 }
 
                 buildingCount++;
