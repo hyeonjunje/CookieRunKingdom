@@ -6,17 +6,8 @@ public class DataBaseManager : Singleton<DataBaseManager>
 {
     // 데이터베이스에서 정보들을 가져와서 파싱 해주라...
 
-    [Header("내가 가진 건물")]
-    [SerializeField] private List<BuildingController> ownedBuildings;
-
     [Header("모든 건물")]
     [SerializeField] private BuildingController[] allBuildings;
-
-    [Header("기본 쿠키")]
-    [SerializeField] private CookieController[] defaultCookie;
-
-    [Header("내가 가진 쿠키")]
-    [SerializeField] private List<CookieController> ownedCookies;
 
     [Header("모든 쿠키의 데이터")]
     [SerializeField] private CookieController[] allCookies;
@@ -30,10 +21,7 @@ public class DataBaseManager : Singleton<DataBaseManager>
     [Header("Test")]
     [SerializeField] private ItemData[] testItem;
 
-    public List<BuildingController> OwnedBuildings => ownedBuildings;
     public BuildingController[] AllBuildings => allBuildings;
-    public CookieController[] DefaultCookie => defaultCookie;
-    public List<CookieController> OwnedCookies => ownedCookies;
     public CookieController[] AllCookies => allCookies;
     public ItemData[] AllItemData => allItemData;
     public HousingItemData[] AllTiles => allTills;

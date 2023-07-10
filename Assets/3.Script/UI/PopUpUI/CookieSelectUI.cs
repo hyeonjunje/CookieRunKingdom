@@ -66,9 +66,9 @@ public class CookieSelectUI : BaseUI
 
         List<CookieController> allCookies = _manager.allCookies;
 
-        for(int i = 0; i < allCookies.Count; i++)
+        for (int i = 0; i < allCookies.Count; i++)
             if (allCookies[i].CookieStat.IsBattleMember)
-                AddCookie(DataBaseManager.Instance.AllCookies[i]);
+                AddCookie(allCookies[i]);
 
         // BattleCookies 다 설정하면 CookieReadyAdventure UI 켜주기
         GameManager.UI.ShowPopUpUI(_cookieReadyAdventureUI);
