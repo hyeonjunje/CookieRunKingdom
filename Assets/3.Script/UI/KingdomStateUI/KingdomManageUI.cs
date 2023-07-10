@@ -19,15 +19,22 @@ public class KingdomManageUI : BaseUI
     [Header("UI")]
     [SerializeField] private MyCookieUI _myCookieUI;
     [SerializeField] private InventoryUI _inventoryUI;
+    [SerializeField] private GachaUI _gachaUI;
+
+    private KingdomManager _manager;
 
     public override void Hide()
     {
         base.Hide();
+
+        _manager.IsMoveCamera = true;
     }
 
     public override void Show()
     {
         base.Show();
+
+        _manager.IsMoveCamera = false;
 
         GameManager.Game.UpdateGoods();
     }
@@ -35,6 +42,8 @@ public class KingdomManageUI : BaseUI
     public override void Init()
     {
         base.Init();
+
+        _manager = FindObjectOfType<KingdomManager>();
 
         GameManager.Game.OnChangeDia = null;
         GameManager.Game.OnChangeMoney = null;
@@ -47,5 +56,6 @@ public class KingdomManageUI : BaseUI
         // 버튼 초기화
         _myCookiesButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_myCookieUI));
         _storageButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_inventoryUI));
+        _gachaButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_gachaUI));
     }
 }

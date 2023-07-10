@@ -6,6 +6,7 @@ using System;
 public class SaveData
 {
     public int money, dia, jelly, maxJelly;
+    public int cookieCutter, specialCookieCutter, treasureTicket;
 
     public string prevCraftTime; 
 
@@ -20,6 +21,10 @@ public class SaveData
         dia = 0;
         maxJelly = 40;
         jelly = maxJelly;
+
+        cookieCutter = 0;
+        specialCookieCutter = 0;
+        treasureTicket = 0;
 
         prevCraftTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 

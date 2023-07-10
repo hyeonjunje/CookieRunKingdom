@@ -10,6 +10,9 @@ public class GameManagerEx
     public int jellyTime = Utils.JellyTime;
     public Action OnChangeDia, OnChangeMoney, OnChangeJelly;
     private int _dia, _money, _jelly, _maxJelly;
+    public Action OnChangeCookieCutter, OnChangeSpecialCookieCutter, onChangeTreasureTicket;
+    private int _cookieCutter, _specialCookieCutter, _treasureTicket;
+
     public int Dia
     {
         get { return _dia; }
@@ -34,11 +37,31 @@ public class GameManagerEx
         set { _maxJelly = value; Jelly += _maxJelly; }
     }
 
+    public int CookieCutter
+    {
+        get { return _cookieCutter; }
+        set { _cookieCutter = value; OnChangeCookieCutter?.Invoke(); }
+    }
+    public int SpecialCookieCutter
+    {
+        get { return _specialCookieCutter; }
+        set { _specialCookieCutter = value; OnChangeSpecialCookieCutter?.Invoke(); }
+    }
+    public int TreasureTicket
+    {
+        get { return _treasureTicket; }
+        set { _treasureTicket = value; onChangeTreasureTicket?.Invoke(); }
+    }
+
     public void UpdateGoods()
     {
         OnChangeDia?.Invoke();
         OnChangeMoney?.Invoke();
         OnChangeJelly?.Invoke();
+
+        OnChangeCookieCutter?.Invoke();
+        OnChangeSpecialCookieCutter?.Invoke();
+        onChangeTreasureTicket?.Invoke();
     }
 
     #endregion
@@ -64,6 +87,10 @@ public class GameManagerEx
         _jelly = saveData.jelly;
         _maxJelly = saveData.maxJelly;
 
+        _cookieCutter = saveData.cookieCutter;
+        _specialCookieCutter = saveData.specialCookieCutter;
+        _treasureTicket = saveData.treasureTicket;
+
         PrevCraftTime = DateTime.ParseExact(saveData.prevCraftTime, "yyyyMMddHHmmss",
         System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
 
@@ -79,6 +106,10 @@ public class GameManagerEx
         saveData.money = _money;
         saveData.jelly = _jelly;
         saveData.maxJelly = _maxJelly;
+
+        saveData.cookieCutter = _cookieCutter;
+        saveData.specialCookieCutter = _specialCookieCutter;
+        saveData.treasureTicket = _treasureTicket;
 
         saveData.allCookies = allCookies;
         saveData.ownedBuildings = ownedBuildings;
