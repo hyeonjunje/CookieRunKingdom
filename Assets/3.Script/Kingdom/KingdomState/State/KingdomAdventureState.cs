@@ -5,8 +5,12 @@ using UnityEngine.InputSystem;
 
 public class KingdomAdventureState : KingdomBaseState
 {
+    // 들어올 시 배틀쿠키들 생성해주고 이동해주기
+    // 
+
     public KingdomAdventureState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
     {
+
     }
 
     public override void Enter()

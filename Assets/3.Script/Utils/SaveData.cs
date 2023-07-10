@@ -6,7 +6,7 @@ using System;
 public class SaveData
 {
     public int money, dia, jelly, maxJelly;
-    public int cookieCutter, specialCookieCutter, treasureTicket;
+    public int cookieCutter, specialCookieCutter;
 
     public string prevCraftTime; 
 
@@ -24,7 +24,6 @@ public class SaveData
 
         cookieCutter = 0;
         specialCookieCutter = 0;
-        treasureTicket = 0;
 
         prevCraftTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
@@ -44,11 +43,11 @@ public class SaveData
             allCookies.Add(new CookieInfo(i, false, false));
         }
 
-        allCookies[0] = new CookieInfo(0, true, true);
-        allCookies[1] = new CookieInfo(1, true, true);
-        allCookies[2] = new CookieInfo(2, true, true);
-        allCookies[6] = new CookieInfo(6, true, true);
-        allCookies[8] = new CookieInfo(8, true, true);
+        allCookies[0] = new CookieInfo(0, true, true, 0);
+        allCookies[1] = new CookieInfo(1, true, true, 1);
+        allCookies[2] = new CookieInfo(2, true, true, 4);
+        allCookies[6] = new CookieInfo(6, true, true, 5);
+        allCookies[8] = new CookieInfo(8, true, true, 8);
 
 
         // 처음하면 주어지는 건물은
@@ -80,13 +79,12 @@ public class CookieInfo
     public bool isBattleMember;
     public bool isHave;
 
-    public CookieInfo(int cookieIndex, bool isBattleMember, bool isHave)
+    public CookieInfo(int cookieIndex, bool isBattleMember, bool isHave, int battlePosition = -1)
     {
         this.cookieIndex = cookieIndex;
         this.isBattleMember = isBattleMember;
         this.isHave = isHave;
-
-        battlePosition = -1;
+        this.battlePosition = battlePosition;
 
         cookieLevel = 1;
         skillLevel = 1;

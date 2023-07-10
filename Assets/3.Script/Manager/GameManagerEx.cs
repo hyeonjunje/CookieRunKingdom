@@ -10,8 +10,8 @@ public class GameManagerEx
     public int jellyTime = Utils.JellyTime;
     public Action OnChangeDia, OnChangeMoney, OnChangeJelly;
     private int _dia, _money, _jelly, _maxJelly;
-    public Action OnChangeCookieCutter, OnChangeSpecialCookieCutter, onChangeTreasureTicket;
-    private int _cookieCutter, _specialCookieCutter, _treasureTicket;
+    public Action OnChangeCookieCutter, OnChangeSpecialCookieCutter;
+    private int _cookieCutter, _specialCookieCutter;
 
     public int Dia
     {
@@ -47,11 +47,6 @@ public class GameManagerEx
         get { return _specialCookieCutter; }
         set { _specialCookieCutter = value; OnChangeSpecialCookieCutter?.Invoke(); }
     }
-    public int TreasureTicket
-    {
-        get { return _treasureTicket; }
-        set { _treasureTicket = value; onChangeTreasureTicket?.Invoke(); }
-    }
 
     public void UpdateGoods()
     {
@@ -61,7 +56,6 @@ public class GameManagerEx
 
         OnChangeCookieCutter?.Invoke();
         OnChangeSpecialCookieCutter?.Invoke();
-        onChangeTreasureTicket?.Invoke();
     }
 
     #endregion
@@ -89,7 +83,6 @@ public class GameManagerEx
 
         _cookieCutter = saveData.cookieCutter;
         _specialCookieCutter = saveData.specialCookieCutter;
-        _treasureTicket = saveData.treasureTicket;
 
         PrevCraftTime = DateTime.ParseExact(saveData.prevCraftTime, "yyyyMMddHHmmss",
         System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
@@ -109,7 +102,6 @@ public class GameManagerEx
 
         saveData.cookieCutter = _cookieCutter;
         saveData.specialCookieCutter = _specialCookieCutter;
-        saveData.treasureTicket = _treasureTicket;
 
         saveData.allCookies = allCookies;
         saveData.ownedBuildings = ownedBuildings;

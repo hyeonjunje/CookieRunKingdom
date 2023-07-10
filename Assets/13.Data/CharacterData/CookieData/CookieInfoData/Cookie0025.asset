@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: "\uB9C8\uBC95\uC0AC\uB9DB \uCFE0\uD0A4"
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
+  _skeletonDataAsset: {fileID: 11400000, guid: b4421b3eb13d66848a721eff5708e2d3, type: 2}
   moveSpeed: 5
   attackRange: 2
   _hpStat: 10000

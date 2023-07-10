@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 [CreateAssetMenu]
 public class CharacterData : ScriptableObject
 {
     [SerializeField] private string _characterName;
     [SerializeField] private AnimationData _animationData;
+
+    [SerializeField] private SkeletonDataAsset _skeletonDataAsset;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float attackRange;
@@ -19,6 +22,7 @@ public class CharacterData : ScriptableObject
 
     public string CharacterName => _characterName;
     public AnimationData AnimationData => _animationData;
+    public SkeletonDataAsset SkeletonDataAsset => _skeletonDataAsset;
     public float MoveSpeed => moveSpeed;
     public float AttackRange => attackRange;
 
