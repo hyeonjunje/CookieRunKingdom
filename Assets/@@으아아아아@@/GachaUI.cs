@@ -38,14 +38,20 @@ public class GachaUI : BaseUI
     [SerializeField] private Sprite _specialCookieCutterSprite;
     [SerializeField] private Sprite _cookieCutterSprite;
 
+    private KingdomManager _manager;
+
     public override void Hide()
     {
         base.Hide();
+
+        _manager.IsMoveCamera = true;
     }
 
     public override void Init()
     {
         base.Init();
+
+        _manager = FindObjectOfType<KingdomManager>();
 
         _specialGachaButton.onClick.AddListener(() => SpecialGacha());
         _epicGachaButton.onClick.AddListener(() => EpicGacha());
@@ -61,6 +67,8 @@ public class GachaUI : BaseUI
     public override void Show()
     {
         base.Show();
+
+        _manager.IsMoveCamera = false;
 
         InitSetting();
         SpecialGacha();

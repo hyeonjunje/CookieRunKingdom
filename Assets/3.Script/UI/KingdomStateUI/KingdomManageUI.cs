@@ -26,15 +26,11 @@ public class KingdomManageUI : BaseUI
     public override void Hide()
     {
         base.Hide();
-
-        _manager.IsMoveCamera = true;
     }
 
     public override void Show()
     {
         base.Show();
-
-        _manager.IsMoveCamera = false;
 
         GameManager.Game.UpdateGoods();
     }
