@@ -35,29 +35,17 @@ public class BattleManager : MonoBehaviour
     private int _distanceIndex = 0;      // 현재 쿠키들이 달려온 거리를 int로 나타냄
 
 
-    private BaseController[] _cookiePosArray;
-
-    public List<BaseController> CookieInStartList { get; private set; }
-    public List<BaseController> CookiesInBattleList { get; private set; } 
+    public List<CookieController> CookieInStartList { get; private set; }
+    public List<CookieController> CookiesInBattleList { get; private set; } 
     public StageData StageData { get; private set; }
-
     public bool IsBattleOver { get; private set; } = false;
 
+
     // 전투 출정할 때 이거 해주고 씬 이동해서 얍얍하자
-    public void SetStage(int[] cookiesData, StageData stageData)
+    public void SetStage(List<CookieController> cookies, StageData stageData)
     {
-        _cookiePosArray = new BaseController[cookiesData.Length];
-
-        CookieInStartList = new List<BaseController>();
-        CookiesInBattleList = new List<BaseController>();
-
-        for (int i = 0; i < cookiesData.Length; i++)
-            if(cookiesData[i] != -1)
-            {
-                _cookiePosArray[i] = Instantiate(DataBaseManager.Instance.AllCookies[cookiesData[i]]);
-                CookieInStartList.Add(_cookiePosArray[i]);
-                CookiesInBattleList.Add(_cookiePosArray[i]);
-            }
+        CookieInStartList = cookies;
+        CookiesInBattleList = cookies;
 
         StageData = stageData;
     }
@@ -75,7 +63,7 @@ public class BattleManager : MonoBehaviour
         _cookieBundle = FindObjectOfType<CookieBundle>();
         _enemySpawner = FindObjectOfType<EnemySpawner>();
 
-        _cookieBundle.Init(_cookiePosArray);
+        _cookieBundle.Init();
         _enemySpawner.Init(StageData);
 
         // 이번 스테이지의 모든 적 수를 센다.
@@ -108,8 +96,8 @@ public class BattleManager : MonoBehaviour
             _battleUI.SetBattleGauge((float)_distanceIndex / (StageData.WaveInfo[StageData.WaveInfo.Length - 1].distance + 2));
     }
 
-    // 적이 죽을 때마다 이 메소드를 실행
-    public void CheckGameOver(BaseController cookie)
+    // 우리 쿠키가 죽을 때마다 이 메소드를 실행
+    public void CheckGameOver(CookieController cookie)
     {
         CookiesInBattleList.Remove(cookie);
 
@@ -117,7 +105,7 @@ public class BattleManager : MonoBehaviour
             GameOver();
     }
 
-    // 우리 쿠키가 죽을 때마다 이 메소드를 실행
+    // 적이 죽을 때마다 이 메소드를 실행
     public void CheckGameClear()
     {
         _enemyCountInStage--;

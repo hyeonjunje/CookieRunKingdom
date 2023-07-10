@@ -16,7 +16,7 @@ public class CookieSelectUI : BaseUI
 
     [SerializeField] private Transform[] cookiePositions;
 
-    private BaseController[] isPosition;
+    private CookieController[] isPosition;
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
     private KingdomManager _manager;
@@ -26,14 +26,17 @@ public class CookieSelectUI : BaseUI
     private Vector3 _prevCameraPos;
     private float _prevOrthosize;
 
-    public List<BaseController> SelectedCookies { get; private set; }
+    public List<CookieController> SelectedTempCookies { get; private set; }
 
 
-    private void Awake()
+    public override void Init()
     {
+        base.Init();
+
         _manager = FindObjectOfType<KingdomManager>();
         _camera = Camera.main;
     }
+
 
     public void InitStageData(StageData stageData, Vector3 prevCameraPos, float prevOrthoSize)
     {
@@ -49,7 +52,7 @@ public class CookieSelectUI : BaseUI
         _camera.orthographicSize = _prevOrthosize;
         _camera.transform.position = _prevCameraPos;
 
-        SelectedCookies.ForEach(cookie => Destroy(cookie.gameObject));
+        SelectedTempCookies.ForEach(cookie => Destroy(cookie.gameObject));
 
         base.Hide();
     }
@@ -57,80 +60,81 @@ public class CookieSelectUI : BaseUI
     public override void Show()
     {
         base.Show();
-        SelectedCookies = new List<BaseController>();
+        SelectedTempCookies = new List<CookieController>();
         _manager.IsMoveCamera = false;
         _camera.transform.position = new Vector3(0, 0, _camera.transform.position.z);
 
+        List<CookieController> allCookies = _manager.allCookies;
 
-        if(GameManager.Game.BattleCookies == null)
-        {
-            BaseController[] defaultCookies = DataBaseManager.Instance.DefaultCookie;
-            // 제일 처음 없으면 용쿠덱으로 초기화
-            for (int i = 0; i < defaultCookies.Length; i++)
-            {
-                AddCookie(defaultCookies[i]);
-            }
-        }
-        else
-        {
-            for(int i = 0; i < GameManager.Game.BattleCookies.Length; i++)
-                if (GameManager.Game.BattleCookies[i] != -1)
-                    AddCookie(DataBaseManager.Instance.AllCookies[GameManager.Game.BattleCookies[i]]);
-        }
+        for(int i = 0; i < allCookies.Count; i++)
+            if (allCookies[i].CookieStat.IsBattleMember)
+                AddCookie(DataBaseManager.Instance.AllCookies[i]);
 
         // BattleCookies 다 설정하면 CookieReadyAdventure UI 켜주기
         GameManager.UI.ShowPopUpUI(_cookieReadyAdventureUI);
     }
 
     #region 쿠키 배치
-    public void AddCookie(BaseController cookiePrefab)
+    public void AddCookie(CookieController cookiePrefab)
     {
-        if (SelectedCookies.Count >= 5)
+        if (SelectedTempCookies.Count >= 5)
             return;
 
-        BaseController cookie = Instantiate(cookiePrefab, transform);
-        cookie.CharacterAnimator.SettingOrderLayer(true);
-        cookie.CharacterAnimator.PlayAnimation("battle_idle");
+        CookieController cookie = Instantiate(cookiePrefab, transform);
+        cookie.gameObject.SetActive(true);
 
-        SelectedCookies.Add(cookie);
-        SelectedCookies.Sort(CustomComparison);
+        cookie.CharacterAnimator.PlayAnimation("battle_idle");
+        cookie.CharacterAnimator.SettingOrderLayer(true);
+
+        SelectedTempCookies.Add(cookie);
+        SelectedTempCookies.Sort(CustomComparison);
+
+        foreach (CookieController realCookie in _manager.allCookies)
+            if (realCookie.Data.CharacterName == cookie.Data.CharacterName)
+                realCookie.CookieStat.SetBattle(true, -1);
+
         ReArrange();
     }
 
-    public void RemoveCookie(BaseController cookie)
+    public void RemoveCookie(CookieController cookie)
     {
-        foreach(BaseController selectedCookie in SelectedCookies)
+        foreach(CookieController selectedCookie in SelectedTempCookies)
         {
             if(cookie.Data.CharacterName == selectedCookie.Data.CharacterName)
             {
-                SelectedCookies.Remove(selectedCookie);
+                SelectedTempCookies.Remove(selectedCookie);
                 Destroy(selectedCookie.gameObject);
-                SelectedCookies.Sort(CustomComparison);
+                SelectedTempCookies.Sort(CustomComparison);
                 ReArrange();
+
+                foreach (CookieController realCookie in _manager.allCookies)
+                    if (realCookie.Data.CharacterName == cookie.Data.CharacterName)
+                        realCookie.CookieStat.SetBattle(false, -1);
 
                 return;
             }
         }
     }
 
-    private int CustomComparison(BaseController x, BaseController y)
+    private int CustomComparison(CookieController x, CookieController y)
     {
+        // 후방, 중앙, 전방
         int result = ((CookieData)x.Data).CookiePosition.CompareTo(((CookieData)y.Data).CookiePosition);
 
-        // 같으면 이름순
+        // 같으면 index 순
         if (result == 0)
-            result = x.Data.CharacterName.CompareTo(y.Data.CharacterName);
+            result = ((CookieData)x.Data).CookieIndex.CompareTo(((CookieData)x.Data).CookieIndex);
 
         return result;
     }
 
     private void ReArrange()
     {
-        isPosition = new BaseController[cookiePositions.Length];
+        isPosition = new CookieController[cookiePositions.Length];
 
-        for (int i = 0; i < SelectedCookies.Count; i++)
+        for (int i = 0; i < SelectedTempCookies.Count; i++)
         {
-            int cookiePosition = (int)((CookieData)SelectedCookies[i].Data).CookiePosition;
+            int cookiePosition = (int)((CookieData)SelectedTempCookies[i].Data).CookiePosition;
             bool isArrange = false;
 
             for (int j = 0; j < priority.GetLength(1); j++)
@@ -142,7 +146,7 @@ public class CookieSelectUI : BaseUI
                 {
                     if (isPosition[h] == null)
                     {
-                        isPosition[h] = SelectedCookies[i];
+                        isPosition[h] = SelectedTempCookies[i];
                         isArrange = true;
                         break;
                     }
@@ -186,6 +190,17 @@ public class CookieSelectUI : BaseUI
                 isPosition[i].transform.localScale = Vector3.one * 100f;
             }
         }
+
+        SetPosition();
+    }
+
+    private void SetPosition()
+    {
+        for(int i = 0; i < isPosition.Length; i++)
+            if (isPosition[i] != null)
+                foreach(CookieController cookie in _manager.allCookies)
+                    if(cookie.Data.CharacterName == isPosition[i].Data.CharacterName)
+                        cookie.CookieStat.SetBattle(true, i);
     }
     #endregion
 
@@ -204,35 +219,12 @@ public class CookieSelectUI : BaseUI
             return;
         }
 
-
         // 출전할 쿠키가 하나도 없으면 무시
-        if(SelectedCookies.Count == 0)
+        if(SelectedTempCookies.Count == 0)
             return;
 
-        // 초기화
-        GameManager.Game.BattleCookies = new int[cookiePositions.Length];
-        for (int i = 0; i < GameManager.Game.BattleCookies.Length; i++)
-            GameManager.Game.BattleCookies[i] = -1;
-
-        for (int i = 0; i < isPosition.Length; i++)
-        {
-            if(isPosition[i] != null)
-            {
-                int cookieIndex = 0;
-                for(int j = 0; j < DataBaseManager.Instance.AllCookies.Length; j++)
-                {
-                    if(isPosition[i].Data.CharacterName == DataBaseManager.Instance.AllCookies[j].Data.CharacterName)
-                    {
-                        cookieIndex = j;
-                        break;
-                    }
-                }
-
-                GameManager.Game.BattleCookies[i] = cookieIndex;
-            }
-        }
-
-        // GameManager.Game.StageData = _stageData;
+        // 씬전환시 데이터 저장
+        _manager.allCookies.ForEach(cookie => cookie.CookieStat.SaveCookie());
 
         GameManager.Scene.LoadScene(ESceneName.Battle);
     }

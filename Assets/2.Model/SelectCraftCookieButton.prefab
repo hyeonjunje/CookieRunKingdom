@@ -206,7 +206,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8087677893236968779
 CanvasRenderer:
@@ -281,7 +281,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8087677893639758942
 CanvasRenderer:
@@ -435,8 +435,8 @@ RectTransform:
   m_Father: {fileID: 8087677893729324186}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0.2}
+  m_AnchorMin: {x: 0.5, y: 0.055000003}
+  m_AnchorMax: {x: 0.5, y: 0.26000002}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
@@ -604,6 +604,13 @@ MonoBehaviour:
   _portraitImage: {fileID: 8087677893729324185}
   _typeImage: {fileID: 8087677895147568168}
   _levelText: {fileID: 8087677894960993904}
+  _starParent: {fileID: 8087677893771941333}
+  _stars:
+  - {fileID: 8087677893236968821}
+  - {fileID: 8087677894544012759}
+  - {fileID: 8087677893639758936}
+  - {fileID: 8087677894306691676}
+  - {fileID: 8087677894736376607}
 --- !u!1 &8087677894306691677
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +646,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8087677894306691666
 CanvasRenderer:
@@ -714,7 +721,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8087677894544012757
 CanvasRenderer:
@@ -789,7 +796,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 40, y: 40}
+  m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8087677894736376605
 CanvasRenderer:

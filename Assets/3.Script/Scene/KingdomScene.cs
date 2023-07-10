@@ -81,25 +81,23 @@ public class KingdomScene : BaseScene
     private void ArrangeCookies()
     {
         CookieController[] allCookiesData = DataBaseManager.Instance.AllCookies;
-        List<CookieInfo> ownedCookies = GameManager.Game.ownedCookies;
+        List<CookieInfo> ownedCookies = GameManager.Game.allCookies;
 
         for(int i = 0; i < ownedCookies.Count; i++)
         {
             CookieInfo cookieInfo = ownedCookies[i];
+
             CookieController cookie = Instantiate(allCookiesData[cookieInfo.cookieIndex], _cookieParent);
 
             // 정보 넣기
-            cookie.CookieStat.cookieLevel = cookieInfo.cookieLevel;
-            cookie.CookieStat.skillLevel = cookieInfo.skillLevel;
-            cookie.CookieStat.evolutionCount = cookieInfo.evolutionCount;
-            cookie.CookieStat.isBattleMember = cookieInfo.isBattleMember;
+            cookie.CookieStat.LoadCookie();
 
             if (cookieInfo.lastKingdomPosition == Vector3.zero)
                 cookie.transform.position = GridManager.Instance.ReturnEmptyTilePosition();
             else
                 cookie.transform.position = cookieInfo.lastKingdomPosition;
 
-            _kingdomManager.myCookies.Add(cookie);
+            _kingdomManager.allCookies.Add(cookie);
             cookie.CookieCitizeon.KingdomAI();
         }
     }
@@ -120,7 +118,7 @@ public class KingdomScene : BaseScene
                 if (buildingInfo.cookieWorkerIndex != -1)
                 {
                     // 일꾼설정
-                    foreach (CookieController cookie in _kingdomManager.myCookies)
+                    foreach (CookieController cookie in _kingdomManager.allCookies)
                         if (((CookieData)cookie.Data).CookieIndex == buildingInfo.cookieWorkerIndex)
                             building.BuildingWorker.LoadBuilding(buildingInfo.craftingItemData, cookie);
                 }

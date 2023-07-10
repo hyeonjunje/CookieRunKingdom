@@ -16,12 +16,12 @@ public class CookieReadyEditUI : BaseUI
 
     [SerializeField] private Transform _cookiePosition;
 
-    
+    private KingdomManager _manager;
     private CookieSelectUI _cookieSelectUI;
     private Vector3 _cookiePositionArrange;
     private List<EditCookieButton> _editCookieButtons;
 
-    private List<BaseController> SelectedCookies => _cookieSelectUI.SelectedCookies;
+    private List<CookieController> SelectedCookies => _cookieSelectUI.SelectedTempCookies;
 
     public override void Hide()
     {
@@ -33,7 +33,7 @@ public class CookieReadyEditUI : BaseUI
         base.Init();
 
         _cookieSelectUI = FindObjectOfType<CookieSelectUI>();
-
+        _manager = FindObjectOfType<KingdomManager>();
         _cookiePositionArrange = _cookiePosition.position + Vector3.right * 7.5f;
         BindingButton();
     }
@@ -47,14 +47,20 @@ public class CookieReadyEditUI : BaseUI
         _cookieButtonTransform.DestroyAllChild();
         _editCookieButtons = new List<EditCookieButton>();
 
-        BaseController[] cookies = DataBaseManager.Instance.AllCookies;
-        _cookieButtonTransform.sizeDelta = new Vector2(20 + cookies.Length * 200, _cookieButtonTransform.sizeDelta.y);
-        for(int i = 0; i < cookies.Length; i++)
+        List<CookieController> cookies = _manager.allCookies;
+        int ownedCookieCount = 0;
+        for(int i = 0; i < cookies.Count; i++)
         {
-            EditCookieButton cookieButton = Instantiate(_cookieButton, _cookieButtonTransform);
-            _editCookieButtons.Add(cookieButton);
-            cookieButton.UpdateUI(cookies[i]);
+            if(cookies[i].CookieStat.IsHave)
+            {
+                EditCookieButton cookieButton = Instantiate(_cookieButton, _cookieButtonTransform);
+                _editCookieButtons.Add(cookieButton);
+                cookieButton.UpdateUI(cookies[i]);
+
+                ownedCookieCount++;
+            }
         }
+        _cookieButtonTransform.sizeDelta = new Vector2(20 + ownedCookieCount * 200, _cookieButtonTransform.sizeDelta.y);
     }
 
     private void BindingButton()

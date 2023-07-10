@@ -11,6 +11,10 @@ public class StageSelectUI : BaseUI
     private Vector3 _touchPos;
     private int _starCount;
 
+    [SerializeField] private TextMeshProUGUI _powerAmountText;
+    [SerializeField] private BattleCookieButton _battleCookieButtonPrefab;
+    [SerializeField] private Transform _cookieParent;
+
     [SerializeField] private TextMeshProUGUI _stageNameText;
     [SerializeField] private TextMeshProUGUI _stageRecommandPowerText;
     [SerializeField] private GameObject[] _starObjects;
@@ -23,8 +27,10 @@ public class StageSelectUI : BaseUI
 
     private KingdomManager _manager;
 
-    private void Awake()
+
+    public override void Init()
     {
+        base.Init();
         _manager = FindObjectOfType<KingdomManager>();
         _camera = Camera.main;
     }
@@ -50,6 +56,7 @@ public class StageSelectUI : BaseUI
     {
         base.Show();
 
+        // 카메라 조정
         _manager.IsMoveCamera = false;
 
         _prevOrthoSize = _camera.orthographicSize;
@@ -58,6 +65,28 @@ public class StageSelectUI : BaseUI
         Sequence seq = DOTween.Sequence();
         seq.Append(_camera.transform.DOMove(_touchPos + _manager.CurrentCameraControllerData.CameraBuildingZoomOffset, 0.5f))
             .Join(_camera.DOOrthoSize(_manager.CurrentCameraControllerData.CameraBuildingZoom, 0.5f));
+
+        // 쿠키 보여주자
+        _cookieParent.DestroyAllChild();
+        List<CookieController> cookies = _manager.allCookies;
+        List<BattleCookieButton> buttons = new List<BattleCookieButton>();
+        for(int i = 0; i < 5; i++)
+        {
+            buttons.Add(Instantiate(_battleCookieButtonPrefab, _cookieParent));
+            buttons[i].UpdateInfo(null);
+        }
+
+        int count = 0;
+        int power = 0;
+        for (int i = 0; i < cookies.Count; i++)
+        {
+            if (cookies[i].CookieStat.IsBattleMember)
+            {
+                buttons[count++].UpdateInfo(cookies[i]);
+                power += cookies[i].CharacterStat.powerStat;
+            }
+        }
+        _powerAmountText.text = power.ToString();
     }
 
     public override void Hide()

@@ -38,12 +38,18 @@ public class CookieCitizen : MonoBehaviour
         _agent = GetComponent<PathFindingAgent>();
         _kingdomManager = FindObjectOfType<KingdomManager>();
 
+        if (GameManager.Scene.CurrentScene == ESceneName.Battle)
+            return;
+
         _agent.Init(_controller);
     }
 
     public void KingdomAI()
     {
         if (IsWorking)
+            return;
+
+        if (GameManager.Scene.CurrentScene == ESceneName.Battle)
             return;
 
         // 걷다가, 멈추다가, 인사하다가

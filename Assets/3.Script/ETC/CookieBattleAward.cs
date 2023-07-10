@@ -12,7 +12,7 @@ public class CookieBattleAward : MonoBehaviour
     {
         _hpBarController.DestroyAllChild();
 
-        List<BaseController> cookies = BattleManager.instance.CookieInStartList;
+        List<CookieController> cookies = BattleManager.instance.CookieInStartList;
 
         SetPosition(cookies);
 
@@ -32,7 +32,7 @@ public class CookieBattleAward : MonoBehaviour
         }
     }
 
-    private void SetPosition(List<BaseController> cookies)
+    private void SetPosition(List<CookieController> cookies)
     {
         Vector3 startPoint = Vector3.zero;
 

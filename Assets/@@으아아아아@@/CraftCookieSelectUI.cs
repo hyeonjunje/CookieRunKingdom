@@ -25,7 +25,7 @@ public class CraftCookieSelectUI : BaseUI
 
         _buttonList = new List<SelectCraftCookieButton>();
         _kingdomManager = FindObjectOfType<KingdomManager>();
-        List<CookieController> cookies = _kingdomManager.myCookies;
+        List<CookieController> cookies = _kingdomManager.allCookies;
 
         for (int i = 0; i < cookies.Count; i++)
         {
@@ -45,7 +45,7 @@ public class CraftCookieSelectUI : BaseUI
     {
         base.Show();
 
-        List<CookieController> cookies = _kingdomManager.myCookies;
+        List<CookieController> cookies = _kingdomManager.allCookies;
         int cookieCount = 0;
         // 일할 수 있는 쿠키만 보여주기
         for (int i = 0; i < _buttonList.Count; i++)

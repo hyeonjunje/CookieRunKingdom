@@ -16,6 +16,10 @@ MonoBehaviour:
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
   moveSpeed: 5
   attackRange: 3
+  _hpStat: 10000
+  _attackStat: 100
+  _defenseStat: 10
+  _criticalStat: 1
   _cookieIndex: 4
   _idleBlackMaterial: {fileID: 2100000, guid: 0acd0ee866f9fff46b711f374bf08016, type: 2}
   _idleSprite: {fileID: 21300000, guid: 229cc90b3727eca49a9e64633fee2ca4, type: 3}

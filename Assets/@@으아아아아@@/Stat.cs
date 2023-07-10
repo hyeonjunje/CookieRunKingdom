@@ -35,6 +35,11 @@ public class Stat
         _baseStat *= Utils.EvolutionInterest;
     }
 
+    public void SkillLevelUpStat()
+    {
+        _baseStat *= Utils.SKillLevelUpInterest;
+    }
+
     // Ã³¸® ÈÄ ½ºÅÈ
     public int ResultStat => Mathf.RoundToInt((_baseStat + _kangStats) * (1 + ((_percentStats + _tempPercentStats) / 100)));
 }

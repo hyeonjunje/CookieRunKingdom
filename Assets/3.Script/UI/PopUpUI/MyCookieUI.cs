@@ -26,22 +26,25 @@ public class MyCookieUI : BaseUI
 
         _manager = FindObjectOfType<KingdomManager>();
 
-        CookieController[] allCookies = DataBaseManager.Instance.AllCookies;
-        allCookieButton = new MyCookieButtonUI[allCookies.Length];
+        List<CookieController> allCookies = _manager.allCookies;
+        allCookieButton = new MyCookieButtonUI[allCookies.Count];
 
-        for (int i = 0; i < allCookies.Length; i++)
+        List<CookieInfo> allCookieInfo = GameManager.Game.allCookies;
+        for (int i = 0; i < allCookieInfo.Count; i++)
         {
             MyCookieButtonUI cookieButtonUI = Instantiate(_cookieButtonUIPrefab, _cookieButtonTransform);
             int index = i;
-            cookieButtonUI.InitInfo(allCookies[index], (cookie, isOwned) =>
+
+            cookieButtonUI.InitInfo(allCookies[allCookieInfo[i].cookieIndex], (cookie, isOwned) =>
             {
                 _cookieInfoUI.SetCookie(cookie, isOwned);
-                GameManager.UI.ShowPopUpUI(_cookieInfoUI);
+                GameManager.UI.PushUI(_cookieInfoUI);
+                // GameManager.UI.ShowPopUpUI(_cookieInfoUI);
             });
             allCookieButton[i] = cookieButtonUI;
         }
 
-        _cookieButtonTransform.sizeDelta = new Vector2(_cookieButtonTransform.sizeDelta.x, 20 + 310 * (allCookies.Length / 5 + 1));
+        _cookieButtonTransform.sizeDelta = new Vector2(_cookieButtonTransform.sizeDelta.x, 20 + 310 * (allCookies.Count / 5 + 1));
     }
 
     public override void Show()
@@ -52,6 +55,7 @@ public class MyCookieUI : BaseUI
 
         for (int i = 0; i < allCookieButton.Length; i++)
         {
+            Debug.Log("ÀÌ°ÍÁ»");
             allCookieButton[i].UpdateInfo();
         }
     }

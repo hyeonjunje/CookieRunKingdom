@@ -93,7 +93,7 @@ public class CharacterAnimator : MonoBehaviour
 
     public void FlipX(bool isFlip)
     {
-        _animation.initialFlipX = isFlip;
+        transform.localScale = new Vector3(isFlip ? -1 : 1, 1, 1);
     }
 
     public float GetIntervalAnimation()

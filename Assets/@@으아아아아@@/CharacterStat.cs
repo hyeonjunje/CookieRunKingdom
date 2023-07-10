@@ -18,6 +18,7 @@ public class CharacterStat : MonoBehaviour
     // 쿨타임, 피해감소, 치명타 피해감소,
     // 이로운 효과 증가, 해로운 효과 감소
 
+    // 스킬레벨업하면 약 4% 복리 증가
     // 레벨업하면 약 4.5% 복리 증가
     // 승급하면 약 5% 복리 증가
 
@@ -34,10 +35,10 @@ public class CharacterStat : MonoBehaviour
     {
         _controller = controller;
 
-        hpStat = new Stat(10000);
-        attackStat = new Stat(10000);
-        defenseStat = new Stat(20);
-        criticalStat = new Stat(1);
+        hpStat = new Stat(_controller.Data.HpStat);
+        attackStat = new Stat(_controller.Data.AttackStat);
+        defenseStat = new Stat(_controller.Data.DefenseStat);
+        criticalStat = new Stat(_controller.Data.CriticalStat);
 
         _stats = new Stat[(int)EStat.size];
         _stats[0] = hpStat;
@@ -59,6 +60,15 @@ public class CharacterStat : MonoBehaviour
         for(int i = 0; i < _stats.Length; i++)
         {
             _stats[i].EvolutionStat();
+        }
+    }
+
+    public void SkillLevelUp()
+    {
+        // 크리티컬 빼고
+        for (int i = 0; i < _stats.Length - 1; i++)
+        {
+            _stats[i].SkillLevelUpStat();
         }
     }
 }

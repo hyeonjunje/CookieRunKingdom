@@ -9,7 +9,7 @@ public class SaveData
 
     public string prevCraftTime; 
 
-    public List<CookieInfo> ownedCookies;
+    public List<CookieInfo> allCookies;
     public List<BuildingInfo> ownedBuildings;
 
 
@@ -23,7 +23,7 @@ public class SaveData
 
         prevCraftTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
-        ownedCookies = new List<CookieInfo>();
+        allCookies = new List<CookieInfo>();
         ownedBuildings = new List<BuildingInfo>();
 
         // 처음하면 주어지는 쿠키들과 건물들은 정해주자
@@ -33,11 +33,18 @@ public class SaveData
         // 2 : 마법사맛 쿠키
         // 6 : 칠리맛 쿠키
         // 8 : 커스터드 3세맛 쿠키
-        ownedCookies.Add(new CookieInfo(0, 1, 1, 0, true));
-        ownedCookies.Add(new CookieInfo(1, 1, 1, 0, true));
-        ownedCookies.Add(new CookieInfo(2, 1, 1, 0, true));
-        ownedCookies.Add(new CookieInfo(6, 1, 1, 0, true));
-        ownedCookies.Add(new CookieInfo(8, 1, 1, 0, true));
+
+        for(int i = 0; i < 10; i++)
+        {
+            allCookies.Add(new CookieInfo(i, false, false));
+        }
+
+        allCookies[0] = new CookieInfo(0, true, true);
+        allCookies[1] = new CookieInfo(1, true, true);
+        allCookies[2] = new CookieInfo(2, true, true);
+        allCookies[6] = new CookieInfo(6, true, true);
+        allCookies[8] = new CookieInfo(8, true, true);
+
 
         // 처음하면 주어지는 건물은
         // 0 : 나무꾼의 집
@@ -59,18 +66,28 @@ public class CookieInfo
     public int cookieLevel;
     public int skillLevel;
     public int evolutionCount;
+    public int evolutionGauge;
+    public int evolutionMaxGauge;
 
     // 상태
     public Vector3 lastKingdomPosition;
+    public int battlePosition;
     public bool isBattleMember;
+    public bool isHave;
 
-    public CookieInfo(int cookieIndex, int cookieLevel, int skillLevel, int evolutionCount, bool isBattleMember)
+    public CookieInfo(int cookieIndex, bool isBattleMember, bool isHave)
     {
         this.cookieIndex = cookieIndex;
-        this.cookieLevel = cookieLevel;
-        this.skillLevel = skillLevel;
-        this.evolutionCount = evolutionCount;
         this.isBattleMember = isBattleMember;
+        this.isHave = isHave;
+
+        battlePosition = -1;
+
+        cookieLevel = 1;
+        skillLevel = 1;
+        evolutionCount = 0;
+        evolutionGauge = 0;
+        evolutionMaxGauge = 20;
     }
 }
 

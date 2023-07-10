@@ -12,7 +12,7 @@ public class EditCookieButton : MonoBehaviour
 
     public System.Action<BaseController> onClickButton = null;
 
-    private BaseController _cookie;
+    private CookieController _cookie;
     private CookieData _data;
 
     [Header("정보")]
@@ -49,17 +49,17 @@ public class EditCookieButton : MonoBehaviour
         _cookieSelectUI = FindObjectOfType<CookieSelectUI>();
     }
 
-    public void UpdateUI(BaseController cookie)
+    public void UpdateUI(CookieController cookie)
     {
         _cookie = cookie;
         _data = (CookieData)(_cookie.Data);
 
         _portraitImage.sprite = _data.IdleSprite;
         _typeImage.sprite = _data.TypeSprite;
-        _levelText.text = 60.ToString();
+        _levelText.text = _cookie.CookieStat.CookieLevel.ToString();
 
         // 중복되있는 쿠키라면
-        foreach(BaseController selectedCookie in _cookieSelectUI.SelectedCookies)
+        foreach(BaseController selectedCookie in _cookieSelectUI.SelectedTempCookies)
             if(selectedCookie.Data.CharacterName == _data.CharacterName)
             {
                 CurrentIndex = 1;

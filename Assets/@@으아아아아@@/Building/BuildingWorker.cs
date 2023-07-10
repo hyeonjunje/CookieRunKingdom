@@ -117,7 +117,7 @@ public class BuildingWorker : MonoBehaviour
         {
             while(Worker == null)
             {
-                CookieController cookie = _kingdomManager.myCookies[Random.Range(0, _kingdomManager.myCookies.Count)];
+                CookieController cookie = _kingdomManager.allCookies[Random.Range(0, _kingdomManager.allCookies.Count)];
                 if (!_kingdomManager.workingCookies.Contains(cookie))
                     Worker = cookie;
             }

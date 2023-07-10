@@ -10,11 +10,10 @@ public class CookieBundle : MonoBehaviour
     /// 8 9 7  ÈÄ¹æ
     /// </summary>
     [SerializeField] private Transform[] cookiePositions;
-    private BaseController[] isPosition;
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
-    private List<BaseController> Cookies => BattleManager.instance.CookiesInBattleList;
-    public int CookieRunStateCount { get; private set; }
+    private List<CookieController> Cookies => BattleManager.instance.CookiesInBattleList;
+    private int _cookieRunStateCount; 
 
     private float _startSpeed;
     private float _currentSpeed = 0f;
@@ -22,12 +21,12 @@ public class CookieBundle : MonoBehaviour
     public void ActiveMove(bool on)
     {
         if (on)
-            CookieRunStateCount++;
+            _cookieRunStateCount++;
         else
-            CookieRunStateCount--;
+            _cookieRunStateCount--;
 
 
-        if(CookieRunStateCount == Cookies.Count)
+        if(_cookieRunStateCount == Cookies.Count)
             _currentSpeed = _startSpeed;
         else
             _currentSpeed = 0f;
@@ -41,13 +40,10 @@ public class CookieBundle : MonoBehaviour
         transform.position += Utils.Dir.normalized * _currentSpeed * Time.deltaTime;
     }
 
-    public void Init(BaseController[] cookies)
+    public void Init()
     {
-        isPosition = cookies;
-
-        for (int i = 0; i < cookies.Length; i++)
-            if(cookies[i] != null)
-                MovePosition(i);
+        for(int i= 0; i < Cookies.Count; i++)
+            MovePosition(Cookies[i]);
 
         _startSpeed = Cookies[0].Data.MoveSpeed;
 
@@ -59,12 +55,13 @@ public class CookieBundle : MonoBehaviour
         }
     }
 
-    private void MovePosition(int index)
+    private void MovePosition(CookieController cookie)
     {
-        isPosition[index].transform.SetParent(cookiePositions[index]);
-        isPosition[index].transform.localPosition = Vector3.zero;
-        isPosition[index].transform.SetParent(null);
+        int battlePosition = cookie.CookieStat.BattlePosition;
 
-        isPosition[index].CharacterBattleController.SetPosition(this, cookiePositions[index]);
+        cookie.transform.SetParent(cookiePositions[battlePosition]);
+        cookie.transform.localPosition = Vector3.zero;
+        cookie.transform.SetParent(null);
+        cookie.CharacterBattleController.SetPosition(this, cookiePositions[battlePosition]);
     }
 }

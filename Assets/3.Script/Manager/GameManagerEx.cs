@@ -44,7 +44,7 @@ public class GameManagerEx
     #endregion
 
     #region 쿠키정보
-    public List<CookieInfo> ownedCookies { get; set; }
+    public List<CookieInfo> allCookies { get; set; }
     #endregion
 
     #region 건물정보
@@ -52,7 +52,6 @@ public class GameManagerEx
     #endregion
 
     public DateTime PrevCraftTime { get; set; } // kingdomManageState를 나간 시간
-    public int[] BattleCookies { get; set; }
     public StageData StageData { get; set; }
 
     public EKingdomState StartKingdomState { get; set; }
@@ -68,7 +67,7 @@ public class GameManagerEx
         PrevCraftTime = DateTime.ParseExact(saveData.prevCraftTime, "yyyyMMddHHmmss",
         System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
 
-        ownedCookies = saveData.ownedCookies;
+        allCookies = saveData.allCookies;
         ownedBuildings = saveData.ownedBuildings;
     }
 
@@ -81,7 +80,7 @@ public class GameManagerEx
         saveData.jelly = _jelly;
         saveData.maxJelly = _maxJelly;
 
-        saveData.ownedCookies = ownedCookies;
+        saveData.allCookies = allCookies;
         saveData.ownedBuildings = ownedBuildings;
 
         GameManager.File.SetSaveData(saveData);

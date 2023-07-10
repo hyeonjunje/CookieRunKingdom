@@ -16,9 +16,11 @@ public class SceneManagerEx
     public delegate void OnMoveOtherScene();
     public OnMoveOtherScene onMoveOtherScene;
 
+    public ESceneName CurrentScene { get; private set; }
+
     public void Init()
     {
-
+        CurrentScene = ESceneName.Title;
     }
 
 
@@ -26,6 +28,8 @@ public class SceneManagerEx
     {
         onMoveOtherScene?.Invoke();
         SceneManager.LoadScene((int)sceneName);
+
+        CurrentScene = sceneName;
 
         // 씬 이동 시 UI들 제거
         GameManager.UI.ClearUI();

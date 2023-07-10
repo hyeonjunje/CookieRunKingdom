@@ -36,8 +36,8 @@ public class Cookie0514Skill : BaseHealSkill
     // 우리 팀에 체력이 깎인 쿠키가 있으면 true
     public override bool IsReadyToUseSkill()
     {
-        List<BaseController> cookies = BattleManager.instance.CookiesInBattleList;
-        foreach(BaseController cookie in cookies)
+        List<CookieController> cookies = BattleManager.instance.CookiesInBattleList;
+        foreach(CookieController cookie in cookies)
         {
             if (cookie.CharacterBattleController.CurrentHp != cookie.CharacterBattleController.MaxHp)
                 return true;

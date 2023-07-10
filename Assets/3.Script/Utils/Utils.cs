@@ -8,6 +8,7 @@ public static class Utils
 
     public static readonly Vector3 Dir = new Vector3(7.72f, 3.86f, 0);
 
+    public static readonly float SKillLevelUpInterest = 1.04f;
     public static readonly float LevelUpInterest = 1.045f;
     public static readonly float EvolutionInterest = 1.05f;
 

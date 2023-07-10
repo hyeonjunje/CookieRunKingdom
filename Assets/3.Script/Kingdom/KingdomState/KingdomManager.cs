@@ -68,7 +68,9 @@ public class KingdomManager : MonoBehaviour
     public List<BuildingController> buildingsInKingdom = new List<BuildingController>();
     
     
-    public List<CookieController> myCookies = new List<CookieController>();
+    public List<CookieController> allCookies = new List<CookieController>();
+
+
     public List<CookieController> workingCookies = new List<CookieController>();
 
     public void Init()
