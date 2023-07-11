@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class MyCookieUI : BaseUI
 {
@@ -8,6 +9,8 @@ public class MyCookieUI : BaseUI
 
     [SerializeField] private MyCookieButtonUI _cookieButtonUIPrefab;
     [SerializeField] private RectTransform _cookieButtonTransform;
+
+    [SerializeField] private TextMeshProUGUI _cookieText;
 
     private MyCookieButtonUI[] allCookieButton;
 
@@ -58,6 +61,14 @@ public class MyCookieUI : BaseUI
             Debug.Log("이것좀");
             allCookieButton[i].UpdateInfo();
         }
+
+        int count = 0;
+        _manager.allCookies.ForEach(cookie =>
+        {
+            if (cookie.CookieStat.IsHave)
+                count++;
+        });
+        _cookieText.text = "쿠키 " + count + "/" + _manager.allCookies.Count;
     }
 
     public void Exit()

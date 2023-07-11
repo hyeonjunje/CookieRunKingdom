@@ -6,13 +6,11 @@ using System;
 public class SaveData
 {
     public int money, dia, jelly, maxJelly;
-    public int cookieCutter, specialCookieCutter;
 
     public string prevCraftTime; 
 
     public List<CookieInfo> allCookies;
     public List<BuildingInfo> ownedBuildings;
-
 
     public SaveData()
     {
@@ -21,9 +19,6 @@ public class SaveData
         dia = 0;
         maxJelly = 40;
         jelly = maxJelly;
-
-        cookieCutter = 0;
-        specialCookieCutter = 0;
 
         prevCraftTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
@@ -38,7 +33,7 @@ public class SaveData
         // 6 : Ä¥¸®¸À ÄíÅ°
         // 8 : Ä¿½ºÅÍµå 3¼¼¸À ÄíÅ°
 
-        for(int i = 0; i < 10; i++)
+        for (int i = 0; i < 10; i++)
         {
             allCookies.Add(new CookieInfo(i, false, false));
         }

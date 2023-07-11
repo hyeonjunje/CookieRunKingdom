@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public enum ECookieGrade { Common, Rare, Epic, SuperEpic, Ancient, Legendary, Dragon, Enemy }
 public enum ECookieType { Assault, Defense, Magic, Infiltration, Ranged, Headling, Explosion, Support, Enemy }
@@ -10,8 +11,14 @@ public class CookieData : CharacterData
 {
     [SerializeField] private int _cookieIndex;
 
+    [SerializeField] private string _appearSpeech;
+    [SerializeField] private string _bubbleSpeech;
+
+    [SerializeField] private SkeletonDataAsset _cookiePortraitSkeleton;
+
     [SerializeField] private Material _idleBlackMaterial;
 
+    [SerializeField] private Sprite _cookieHeadSprite;
     [SerializeField] private Sprite _idleSprite;
     [SerializeField] private Sprite _skillSprite;
 
@@ -26,8 +33,12 @@ public class CookieData : CharacterData
 
     public int CookieIndex => _cookieIndex;
 
-    public Material IdleBlackMaterial => _idleBlackMaterial;
+    public string AppearSpeech => _appearSpeech;
+    public string BubbleSpeech => _bubbleSpeech;
 
+    public SkeletonDataAsset CookiePortrait => _cookiePortraitSkeleton;
+    public Material IdleBlackMaterial => _idleBlackMaterial;
+    public Sprite CookieHeadSprite => _cookieHeadSprite;
     public Sprite IdleSprite => _idleSprite;
     public Sprite SKillSprite => _skillSprite;
     public Sprite TypeSprite => _typeSprite;
@@ -38,6 +49,22 @@ public class CookieData : CharacterData
     public ECookieType CookieType => _cookieType;
     public ECookiePosition CookiePosition => _cookiePosition;
 
+    public string CookieGradeName
+    {
+        get
+        {
+            switch (CookieGrade)
+            {
+                case ECookieGrade.Common:
+                    return "COMMON";
+                case ECookieGrade.Rare:
+                    return "RARE";
+                case ECookieGrade.Epic:
+                    return "EPIC";
+            }
+            return "";
+        }
+    }
 
     public string CookieTypeName
     {

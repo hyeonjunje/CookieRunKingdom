@@ -24,6 +24,7 @@ MonoBehaviour:
   _criticalStat: 1
   _cookieIndex: 0
   _idleBlackMaterial: {fileID: 2100000, guid: 5864676e1cdaded439d1e0cb7e4e8819, type: 2}
+  _cookieHeadSprite: {fileID: -4553151646470416720, guid: 9d4a6d23348f2be40adb640568dc0c06, type: 3}
   _idleSprite: {fileID: 21300000, guid: 7cfbfca9c79170e4bb08d9309f534ba8, type: 3}
   _skillSprite: {fileID: 21300000, guid: 8e3a95ee9405f4741b47b59e80a98b89, type: 3}
   _typeSprite: {fileID: 21300000, guid: 1ef3c4d47a7a84d4a99611b25020c976, type: 3}

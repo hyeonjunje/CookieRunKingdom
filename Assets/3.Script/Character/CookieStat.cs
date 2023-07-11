@@ -9,8 +9,8 @@ public class CookieStat : MonoBehaviour
     private int _evolutionCount;
     private int _battlePosition;
     private bool _isBattleMember;
-    private bool _isHave;
 
+    private bool _isHave;
     private int _evolutionGauge;
     private int _evolutionMaxGague;
 
@@ -23,9 +23,11 @@ public class CookieStat : MonoBehaviour
     public int EvolutionCount => _evolutionCount;
     public int BattlePosition => _battlePosition;
     public bool IsBattleMember => _isBattleMember;
-    public bool IsHave => _isHave;
-    public int EvolutionGauge => _evolutionGauge;
-    public int EvolutionMaxGauge => _evolutionMaxGague;
+
+    public bool IsHave { get { return _isHave; } set { _isHave = value; } }
+    public int EvolutionGauge { get { return _evolutionGauge; } set { _evolutionGauge = value; } }
+    public int EvolutionMaxGauge { get { return _evolutionMaxGague; } set { _evolutionMaxGague = value; } }
+
 
     public void Init(CookieController controller)
     {

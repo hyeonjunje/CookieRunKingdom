@@ -52,6 +52,6 @@ public class KingdomManageUI : BaseUI
         // 버튼 초기화
         _myCookiesButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_myCookieUI));
         _storageButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_inventoryUI));
-        _gachaButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_gachaUI));
+        _gachaButton.onClick.AddListener(() => GameManager.UI.PushUI(_gachaUI));
     }
 }

@@ -29,6 +29,9 @@ TextureImporter:
   - first:
       213: 3107363263608683159
     second: sactx-1024x2048-ETC2-GuildSpriteAtlas-a5cf15d4_8
+  - first:
+      213: -3555415745750836610
+    second: sactx-1024x2048-ETC2-GuildSpriteAtlas-a5cf15d4_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -326,6 +329,27 @@ TextureImporter:
       bones: []
       spriteID: 79a7e7bbc629f1b20800000000000000
       internalID: 3107363263608683159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sactx-1024x2048-ETC2-GuildSpriteAtlas-a5cf15d4_9
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 1679
+        width: 225
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 40, y: 32, z: 48, w: 23}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ad0b57730a8aec0800000000000000
+      internalID: -3555415745750836610
       vertices: []
       indices: 
       edges: []

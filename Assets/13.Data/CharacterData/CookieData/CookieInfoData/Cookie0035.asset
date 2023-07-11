@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterName: "\uBC40\uD30C\uC774\uC5B4\uB9DB \uCFE0\uD0A4"
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
-  _spineMaterial: {fileID: 2100000, guid: 643543f3dd16f5d498ae7cc133e6fb88, type: 2}
   _skeletonDataAsset: {fileID: 11400000, guid: b844f54b5e65b78408d2d3e61b7728a1, type: 2}
+  _spinePrefab: {fileID: 0}
   moveSpeed: 5
   attackRange: 3
   _hpStat: 10000
@@ -23,7 +23,12 @@ MonoBehaviour:
   _defenseStat: 10
   _criticalStat: 1
   _cookieIndex: 3
+  _appearSpeech: "\uB098\uB791 \uD3EC\uB3C4\uC8FC\uC2A4 \uD55C \uC794 \uC5B4\uB54C?"
+  _bubbleSpeech: "\uBB50\uAC00 \uADF8\uB807\uAC8C \uC2EC\uAC01\uD574? \uD3EC\uB3C4\uC8FC\uC2A4
+    \uD55C \uC794 \uD558\uBA70 \uC990\uAE30\uB77C\uAD6C~"
+  _cookiePortraitSkeleton: {fileID: 11400000, guid: c36c3308d163f6642a6938ddf62e8008, type: 2}
   _idleBlackMaterial: {fileID: 2100000, guid: 7f776aa61eab41f45aff17b1dfa5db2a, type: 2}
+  _cookieHeadSprite: {fileID: 8356410264679009044, guid: 9d4a6d23348f2be40adb640568dc0c06, type: 3}
   _idleSprite: {fileID: 21300000, guid: 6f69505e061af9f4cbdf97cfc3b2d45a, type: 3}
   _skillSprite: {fileID: 21300000, guid: 068b8903a1bc7b14e88eb74089a0ec92, type: 3}
   _typeSprite: {fileID: 21300000, guid: d917490da2af72e4d81e53f92425bfc4, type: 3}

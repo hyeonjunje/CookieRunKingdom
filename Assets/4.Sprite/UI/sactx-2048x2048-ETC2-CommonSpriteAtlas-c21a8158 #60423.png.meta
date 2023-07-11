@@ -2115,7 +2115,7 @@ TextureImporter:
         width: 123
         height: 108
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -3370,13 +3370,13 @@ TextureImporter:
       name: sactx-2048x2048-ETC2-CommonSpriteAtlas-c21a8158 #60423_135
       rect:
         serializedVersion: 2
-        x: 790
-        y: 0
-        width: 265
-        height: 152
+        x: 808
+        y: 19
+        width: 238
+        height: 112
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 59, y: 37, z: 46, w: 43}
       outline: []
       physicsShape: []
       tessellationDetail: 0

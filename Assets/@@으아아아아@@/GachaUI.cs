@@ -10,11 +10,11 @@ public class GachaUI : BaseUI
     [SerializeField] private GameObject _specialGacha;
     [SerializeField] private GameObject _epicGacha;
 
+    [SerializeField] private GachaPercentageUI _gachaPercentageUI;
+
     [Header("UI")]
     [SerializeField] private TextMeshProUGUI _diaText;
     [SerializeField] private TextMeshProUGUI _moneyText;
-    [SerializeField] private TextMeshProUGUI _speicalCookieCutterText;
-    [SerializeField] private TextMeshProUGUI _cookieCutterText;
 
     [SerializeField] private Button _specialGachaButton;
     [SerializeField] private Button _epicGachaButton;
@@ -29,6 +29,10 @@ public class GachaUI : BaseUI
     [SerializeField] private TextMeshProUGUI _gachaText;
     [SerializeField] private TextMeshProUGUI _gacha10Text;
 
+    [SerializeField] private Button _detailedProbabilityButton;
+
+    [SerializeField] private GachaResultUI _gachaResultUI;
+
     [Header("색깔")]
     [SerializeField] private Color _selectedColor;
     [SerializeField] private Color _idleColor;
@@ -38,40 +42,50 @@ public class GachaUI : BaseUI
     [SerializeField] private Sprite _specialCookieCutterSprite;
     [SerializeField] private Sprite _cookieCutterSprite;
 
-    private KingdomManager _manager;
+    [Header("Gacha Data")]
+    [SerializeField] private GachaData _pickUpGachaData;
+    [SerializeField] private GachaData _epicGachaData;
+
+    private GachaCalculator _gachaCalculator;
+    private KingdomManager _kingdomManager;
+
+    private List<Vector2> _pickUpGachaPercentage;
+    private List<Vector2> _epicGachaPercentage;
 
     public override void Hide()
     {
         base.Hide();
 
-        _manager.IsMoveCamera = true;
+        _kingdomManager.IsMoveCamera = true;
     }
 
     public override void Init()
     {
         base.Init();
 
-        _manager = FindObjectOfType<KingdomManager>();
+        _gachaCalculator = GetComponent<GachaCalculator>();
+        _kingdomManager = FindObjectOfType<KingdomManager>();
 
-        _specialGachaButton.onClick.AddListener(() => SpecialGacha());
+        _specialGachaButton.onClick.AddListener(() => PickUpGacha());
         _epicGachaButton.onClick.AddListener(() => EpicGacha());
 
-        _exitButton.onClick.AddListener(() => GameManager.UI.ExitPopUpUI());
+        _exitButton.onClick.AddListener(() => GameManager.UI.PopUI());
 
         GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
         GameManager.Game.OnChangeMoney += (() => _moneyText.text = GameManager.Game.Money.ToString("#,##0"));
-        GameManager.Game.OnChangeSpecialCookieCutter += (() => _speicalCookieCutterText.text = GameManager.Game.SpecialCookieCutter.ToString("#,##0"));
-        GameManager.Game.OnChangeCookieCutter += (() => _cookieCutterText.text = GameManager.Game.CookieCutter.ToString("#,##0"));
+
+        _pickUpGachaPercentage = _gachaCalculator.CalculateGacha(_pickUpGachaData);
+        _epicGachaPercentage = _gachaCalculator.CalculateGacha(_epicGachaData);
     }
 
     public override void Show()
     {
         base.Show();
 
-        _manager.IsMoveCamera = false;
+        _kingdomManager.IsMoveCamera = false;
 
         InitSetting();
-        SpecialGacha();
+        PickUpGacha();
 
         GameManager.Game.UpdateGoods();
     }
@@ -85,33 +99,39 @@ public class GachaUI : BaseUI
         _epicGachaButton.image.color = _idleColor;
     }
 
-    private void SpecialGacha()
+    private void PickUpGacha()
     {
         InitSetting();
         _specialGacha.SetActive(true);
         _specialGachaButton.image.color = _selectedColor;
 
-        if (GameManager.Game.SpecialCookieCutter > 0)
-        {
-            _gachaImage.sprite = _specialCookieCutterSprite;
-            _gachaText.text = GameManager.Game.SpecialCookieCutter + "/1";
-        }
-        else
-        {
-            _gachaImage.sprite = _diaSprite;
-            _gachaText.text = GameManager.Game.Dia + "/300";
-        }
+        _gachaImage.sprite = _diaSprite;
+        _gachaText.text = GameManager.Game.Dia + "/300";
+        _gacha10Image.sprite = _diaSprite;
+        _gacha10Text.text = GameManager.Game.Dia + "/3000";
 
-        if(GameManager.Game.SpecialCookieCutter >= 10)
+        _detailedProbabilityButton.onClick.RemoveAllListeners();
+        _detailedProbabilityButton.onClick.AddListener(() =>
         {
-            _gacha10Image.sprite = _specialCookieCutterSprite;
-            _gacha10Text.text = GameManager.Game.SpecialCookieCutter + "/10";
-        }
-        else
+            _gachaPercentageUI.InitData(_pickUpGachaPercentage, _pickUpGachaData);
+            GameManager.UI.ShowPopUpUI(_gachaPercentageUI);
+        });
+
+        _gachaButton.onClick.RemoveAllListeners();
+        _gachaButton.onClick.AddListener(() =>
         {
-            _gacha10Image.sprite = _diaSprite;
-            _gacha10Text.text = GameManager.Game.Dia + "/3000";
-        }
+            // 여기에 다이아 추가 로직
+
+            GameManager.UI.PushUI(_gachaResultUI);
+            _gachaResultUI.Gacha1(_pickUpGachaPercentage);
+        });
+
+        _gacha10Button.onClick.RemoveAllListeners();
+        _gacha10Button.onClick.AddListener(() => 
+        {
+            GameManager.UI.PushUI(_gachaResultUI);
+            _gachaResultUI.Gacha10(_pickUpGachaPercentage);
+        });
     }
 
     private void EpicGacha()
@@ -120,26 +140,30 @@ public class GachaUI : BaseUI
         _epicGacha.SetActive(true);
         _epicGachaButton.image.color = _selectedColor;
 
-        if (GameManager.Game.SpecialCookieCutter > 0)
-        {
-            _gachaImage.sprite = _cookieCutterSprite;
-            _gachaText.text = GameManager.Game.CookieCutter + "/1";
-        }
-        else
-        {
-            _gachaImage.sprite = _diaSprite;
-            _gachaText.text = GameManager.Game.Dia + "/300";
-        }
+        _gachaImage.sprite = _diaSprite;
+        _gachaText.text = GameManager.Game.Dia + "/300";
+        _gacha10Image.sprite = _diaSprite;
+        _gacha10Text.text = GameManager.Game.Dia + "/3000";
 
-        if (GameManager.Game.SpecialCookieCutter >= 10)
+        _detailedProbabilityButton.onClick.RemoveAllListeners();
+        _detailedProbabilityButton.onClick.AddListener(() =>
         {
-            _gacha10Image.sprite = _cookieCutterSprite;
-            _gacha10Text.text = GameManager.Game.CookieCutter + "/10";
-        }
-        else
+            _gachaPercentageUI.InitData(_epicGachaPercentage, _epicGachaData);
+            GameManager.UI.ShowPopUpUI(_gachaPercentageUI);
+        });
+
+        _gachaButton.onClick.RemoveAllListeners();
+        _gachaButton.onClick.AddListener(() =>
         {
-            _gacha10Image.sprite = _diaSprite;
-            _gacha10Text.text = GameManager.Game.Dia + "/3000";
-        }
+            GameManager.UI.PushUI(_gachaResultUI);
+            _gachaResultUI.Gacha1(_epicGachaPercentage);
+        });
+
+        _gacha10Button.onClick.RemoveAllListeners();
+        _gacha10Button.onClick.AddListener(() =>
+        {
+            GameManager.UI.PushUI(_gachaResultUI);
+            _gachaResultUI.Gacha10(_epicGachaPercentage);
+        });
     }
 }
