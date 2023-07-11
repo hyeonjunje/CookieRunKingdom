@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CookieSelectUI : BaseUI
 {
+    public System.Action OnChangeBattleCookie = null;
+
     [SerializeField] private CookieReadyAdventureUI _cookieReadyAdventureUI;
 
 
@@ -79,7 +81,7 @@ public class CookieSelectUI : BaseUI
     {
         if (SelectedTempCookies.Count >= 5)
             return;
-
+            
         CookieController cookie = Instantiate(cookiePrefab, transform);
         cookie.gameObject.SetActive(true);
 
@@ -94,6 +96,8 @@ public class CookieSelectUI : BaseUI
                 realCookie.CookieStat.SetBattle(true, -1);
 
         ReArrange();
+
+        OnChangeBattleCookie?.Invoke();
     }
 
     public void RemoveCookie(CookieController cookie)
@@ -111,6 +115,7 @@ public class CookieSelectUI : BaseUI
                     if (realCookie.Data.CharacterName == cookie.Data.CharacterName)
                         realCookie.CookieStat.SetBattle(false, -1);
 
+                OnChangeBattleCookie?.Invoke();
                 return;
             }
         }

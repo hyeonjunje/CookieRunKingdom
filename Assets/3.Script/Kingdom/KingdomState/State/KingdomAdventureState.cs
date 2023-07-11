@@ -6,7 +6,6 @@ using UnityEngine.InputSystem;
 public class KingdomAdventureState : KingdomBaseState
 {
     // 들어올 시 배틀쿠키들 생성해주고 이동해주기
-    // 
 
     public KingdomAdventureState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
     {
@@ -16,6 +15,8 @@ public class KingdomAdventureState : KingdomBaseState
     public override void Enter()
     {
         _manager.CurrentCameraControllerData = _manager.CameraContrllInStageData;
+        _camera.transform.position = Vector3.forward * -10;
+        _camera.orthographicSize = 10;
 
         GameManager.UI.PushUI(_manager.KingdomAdventureUI);
     }

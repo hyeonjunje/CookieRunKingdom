@@ -16,11 +16,17 @@ public class CookieBundleInAdventure : MonoBehaviour
     private Path _path;
     private Seeker _seeker;
 
+    private bool isInit = false;
+
     public void Init()
     {
-        _manager = FindObjectOfType<KingdomManager>();
-        _seeker = GetComponent<Seeker>();
-        _cam = Camera.main;
+        if(!isInit)
+        {
+            _manager = FindObjectOfType<KingdomManager>();
+            _seeker = GetComponent<Seeker>();
+            _cam = Camera.main;
+            isInit = true;
+        }
 
         List<CookieController> allCookies = _manager.allCookies;
 
@@ -62,6 +68,9 @@ public class CookieBundleInAdventure : MonoBehaviour
             Vector3 prevPos = _path.vectorPath[_path.vectorPath.Count - 2];
 
             float theta = Mathf.Atan((lastPos.y - prevPos.y) / (lastPos.x - prevPos.x)) * Mathf.Rad2Deg;
+            if (lastPos.x == prevPos.x)
+                theta = 90;
+
             transform.position = lastPos;
             transform.localEulerAngles = Vector3.forward * theta + Vector3.forward * 90;
 

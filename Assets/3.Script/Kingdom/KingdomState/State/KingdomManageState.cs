@@ -27,15 +27,22 @@ public class KingdomManageState : KingdomBaseState
         Init();
         GameManager.UI.PushUI(_manager.KingdomManagerUI);
 
+        _camera.transform.position = new Vector3(4.6f, 9f, -10f);
+        _camera.orthographicSize = 13;
+
         // ÄíÅ°µéÀÌ µîÀåÇÔ
         _manager.allCookies.ForEach(cookie =>
         {
+            cookie.CookieStat.SaveCookie();
+
             cookie.gameObject.SetActive(true);
             cookie.CookieCitizeon.KingdomAI();
         });
 
         _manager.buildingsInKingdom.ForEach(building =>
         {
+            building.BuildingWorker.SaveBuilding();
+
             building.BuildingWorker.UpdateCraftingItem();
 
             building.gameObject.SetActive(true);
@@ -48,11 +55,10 @@ public class KingdomManageState : KingdomBaseState
         GameManager.UI.ClearUI();
 
         // ÄíÅ°µéÀÌ »ç¶óÁü
+        _manager.allCookies.ForEach(cookie => cookie.CookieStat.SaveCookie());
         _manager.allCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
 
         _manager.buildingsInKingdom.ForEach(building => building.BuildingWorker.SaveBuilding());
-
-
         _manager.buildingsInKingdom.ForEach(building => building.gameObject.SetActive(false));
 
         GameManager.Game.PrevCraftTime = System.DateTime.Now;

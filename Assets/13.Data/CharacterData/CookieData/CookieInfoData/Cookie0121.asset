@@ -15,6 +15,7 @@ MonoBehaviour:
   _characterName: "\uCE60\uB9AC\uB9DB \uCFE0\uD0A4"
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
   _skeletonDataAsset: {fileID: 11400000, guid: 6ce338752963d5743bff0fe764526d73, type: 2}
+  _spinePrefab: {fileID: 1814032828752717864, guid: df12296e2066d3a41b6c0ad5425fce15, type: 3}
   moveSpeed: 5
   attackRange: 2
   _hpStat: 10000

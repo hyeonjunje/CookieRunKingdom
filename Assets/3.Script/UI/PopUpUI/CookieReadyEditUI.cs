@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CookieReadyEditUI : BaseUI
 {
@@ -9,6 +10,7 @@ public class CookieReadyEditUI : BaseUI
     [SerializeField] private CookieReadyAdventureUI _cookieReadyAdventrueUI;
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _allOffCookiesButton;
+    [SerializeField] private TextMeshProUGUI _powerValueText;
 
     [Header("Prefab")]
     [SerializeField] private RectTransform _cookieButtonTransform;
@@ -36,6 +38,17 @@ public class CookieReadyEditUI : BaseUI
         _manager = FindObjectOfType<KingdomManager>();
         _cookiePositionArrange = _cookiePosition.position + Vector3.right * 7.5f;
         BindingButton();
+
+        _cookieSelectUI.OnChangeBattleCookie += (() =>
+         {
+             List<CookieController> cookies = _manager.allCookies;
+
+             int power = 0;
+             for (int i = 0; i < cookies.Count; i++)
+                 if (cookies[i].CookieStat.IsBattleMember)
+                     power += cookies[i].CharacterStat.powerStat;
+             _powerValueText.text = power.ToString();
+         });
     }
 
     public override void Show()
@@ -61,6 +74,7 @@ public class CookieReadyEditUI : BaseUI
             }
         }
         _cookieButtonTransform.sizeDelta = new Vector2(20 + ownedCookieCount * 200, _cookieButtonTransform.sizeDelta.y);
+        _cookieSelectUI.OnChangeBattleCookie?.Invoke();
     }
 
     private void BindingButton()
@@ -82,6 +96,8 @@ public class CookieReadyEditUI : BaseUI
             {
                 button.InitUI();
             }
+
+            _powerValueText.text = "0";
         });
     }
 }

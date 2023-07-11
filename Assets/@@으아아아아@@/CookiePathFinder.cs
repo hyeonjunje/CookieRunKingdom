@@ -16,29 +16,35 @@ public class CookiePathFinder : MonoBehaviour
     private Coroutine _coPathFinding;
     private Transform _target;
 
+    private bool _isInit = false;
+
     public void Init(CharacterData data, Transform target)
     {
-        _animation = GetComponentInChildren<SkeletonAnimation>();
-        _renderer = _animation.GetComponentInChildren<Renderer>();
-        _seeker = GetComponent<Seeker>();
-
         if (data == null)
         {
-            _animation.skeletonDataAsset = null;
+            transform.DestroyAllChild();
+            _animation = null;
             return;
         }
+        else
+        {
+            _animation = Instantiate(data.SpinePrefab, transform);
+            _renderer = _animation.GetComponentInChildren<Renderer>();
+            if(_seeker == null)
+                _seeker = GetComponent<Seeker>();
 
-        _target = target;
-        transform.position = _target.position;
+            _target = target;
+            transform.position = _target.position;
 
-        _animation.skeletonDataAsset = data.SkeletonDataAsset;
-        _animation.Initialize(true);
-        _animation.AnimationState.SetAnimation(0, "idle", true);
+            _animation.Initialize(true);
+            _animation.AnimationState.SetAnimation(0, "idle", true);
+        }
     }
 
     public void StartPathFinding()
     {
-        _seeker.StartPath(transform.position, _target.position, OnPathComplete);
+        if(_animation != null)
+            _seeker.StartPath(transform.position, _target.position, OnPathComplete);
     }
 
     private void OnPathComplete(Path p)
@@ -69,7 +75,7 @@ public class CookiePathFinder : MonoBehaviour
             else
                 _animation.AnimationState.SetAnimation(0, "run", true);
 
-            _renderer.sortingOrder = -Mathf.RoundToInt(transform.position.y);
+            _renderer.sortingOrder = -Mathf.RoundToInt(transform.position.y * 5);
 
             while (Vector3.Distance(transform.position, _path.vectorPath[i]) > 0.01f)
             {

@@ -15,9 +15,11 @@ public class CookieReadyAdventureUI : BaseUI
     [SerializeField] private TextMeshProUGUI _diaText;
     [SerializeField] private TextMeshProUGUI _jellyText;
     [SerializeField] private TextMeshProUGUI _jellyCountText; // 필요한 젤리 개수
+    [SerializeField] private TextMeshProUGUI _powerValueText;
 
     [SerializeField] private Transform _cookiePosition;
 
+    private KingdomManager _manager;
     private CookieSelectUI _cookieSelectUI;
     private Vector3 _cookiePositionOrigin;
 
@@ -33,6 +35,7 @@ public class CookieReadyAdventureUI : BaseUI
         GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
         GameManager.Game.OnChangeJelly += (() => _jellyText.text = GameManager.Game.Jelly + "/" + GameManager.Game.MaxJelly);
 
+        _manager = FindObjectOfType<KingdomManager>();
         _cookieSelectUI = FindObjectOfType<CookieSelectUI>();
 
         _cookiePositionOrigin = _cookiePosition.position;
@@ -45,6 +48,13 @@ public class CookieReadyAdventureUI : BaseUI
 
         _cookiePosition.position = _cookiePositionOrigin;
         _jellyCountText.text = (-GameManager.Game.StageData.Jelly).ToString();
+
+        int power = 0;
+        List<CookieController> cookies = _manager.allCookies;
+        for (int i = 0; i < cookies.Count; i++)
+            if (cookies[i].CookieStat.IsBattleMember)
+                power += cookies[i].CharacterStat.powerStat;
+        _powerValueText.text = power.ToString();
 
         GameManager.Game.UpdateGoods();
     }

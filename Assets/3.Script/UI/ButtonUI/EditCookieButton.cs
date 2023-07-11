@@ -21,6 +21,9 @@ public class EditCookieButton : MonoBehaviour
     [SerializeField] private Image _typeImage;
     [SerializeField] private TextMeshProUGUI _levelText;
 
+    [SerializeField] private RectTransform _starParent;
+    [SerializeField] private RectTransform[] _stars;
+
     [Header("상태")]
     [SerializeField] private GameObject _selectedImage;
     [SerializeField] private Button _infoButton;
@@ -68,6 +71,13 @@ public class EditCookieButton : MonoBehaviour
 
         _editCookieButton.onClick.RemoveAllListeners();
         _editCookieButton.onClick.AddListener(() => OnClickEditCookieButton(CurrentIndex++));
+
+        // 별 동기화
+        for (int i = 0; i < _stars.Length; i++)
+            _stars[i].gameObject.SetActive(false);
+        for (int i = 0; i < _cookie.CookieStat.EvolutionCount; i++)
+            _stars[i].gameObject.SetActive(true);
+        _starParent.anchoredPosition = -(Vector3.right * _stars[0].sizeDelta.x * _cookie.CookieStat.EvolutionCount * 0.5f);
     }
 
     public void InitUI()

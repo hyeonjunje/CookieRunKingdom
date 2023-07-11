@@ -10,6 +10,7 @@ public class CharacterData : ScriptableObject
     [SerializeField] private AnimationData _animationData;
 
     [SerializeField] private SkeletonDataAsset _skeletonDataAsset;
+    [SerializeField] private SkeletonAnimation _spinePrefab;
 
     [SerializeField] private float moveSpeed;
     [SerializeField] private float attackRange;
@@ -23,6 +24,7 @@ public class CharacterData : ScriptableObject
     public string CharacterName => _characterName;
     public AnimationData AnimationData => _animationData;
     public SkeletonDataAsset SkeletonDataAsset => _skeletonDataAsset;
+    public SkeletonAnimation SpinePrefab => _spinePrefab;
     public float MoveSpeed => moveSpeed;
     public float AttackRange => attackRange;
 
