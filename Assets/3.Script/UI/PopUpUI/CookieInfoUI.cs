@@ -30,6 +30,10 @@ public class CookieInfoUI : BaseUI
     [Header("Center")]
     [SerializeField] private Transform _instantiateParent;
     [SerializeField] private Button _cookieInteractionButton;
+    [SerializeField] private Image _cookieEvolutionImage;
+    [SerializeField] private TextMeshProUGUI _cookieEvolutionText;
+    [SerializeField] private Slider _cookieEvolutionGauge;
+    [SerializeField] private Image[] _stars;
 
     [Header("Right")]
     [SerializeField] private TextMeshProUGUI _powerText;
@@ -152,9 +156,7 @@ public class CookieInfoUI : BaseUI
         _cookiePositionText.text = _data.CookiePositionName;
 
         // 중앙
-
-        // 생성은 얘로 일단 하고...
-        CookieController tempCookie = Instantiate(_cookie, _instantiateParent);
+        CookieController tempCookie = Instantiate(_cookie, _instantiateParent);  // 생성은 얘로 일단 하고...
         tempCookie.CharacterAnimator.SettingOrderLayer(true);
         TouchCookie(tempCookie);
         tempCookie.transform.localPosition = Vector3.zero;
@@ -162,6 +164,17 @@ public class CookieInfoUI : BaseUI
 
         _cookieInteractionButton.onClick.RemoveAllListeners();
         _cookieInteractionButton.onClick.AddListener(() => TouchCookie(tempCookie));
+
+        _cookieEvolutionImage.sprite = _data.EvolutionSprite;
+        _cookieEvolutionText.text = _cookie.CookieStat.EvolutionGauge + "/" + _cookie.CookieStat.EvolutionMaxGauge;
+        _cookieEvolutionGauge.value = (float)_cookie.CookieStat.EvolutionGauge / _cookie.CookieStat.EvolutionMaxGauge;
+        for(int i = 0; i < _stars.Length; i++)
+        {
+            if(i < _cookie.CookieStat.EvolutionCount)
+                _stars[i].color = Color.white;
+            else
+                _stars[i].color = new Color(0, 0, 0, 0.5f);
+        }
 
 
         // 오른쪽
@@ -200,6 +213,18 @@ public class CookieInfoUI : BaseUI
             _criticalText.text = _cookie.CharacterStat.criticalStat.ResultStat.ToString("#,##0.00") + "%";
 
             _cookieSKillText.text = "레벨 " + _cookie.CookieStat.SkillLevel.ToString();
+
+
+            _cookieEvolutionImage.sprite = _data.EvolutionSprite;
+            _cookieEvolutionText.text = _cookie.CookieStat.EvolutionGauge + "/" + _cookie.CookieStat.EvolutionMaxGauge;
+            _cookieEvolutionGauge.value = (float)_cookie.CookieStat.EvolutionGauge / _cookie.CookieStat.EvolutionMaxGauge;
+            for (int i = 0; i < _stars.Length; i++)
+            {
+                if (i < _cookie.CookieStat.EvolutionCount)
+                    _stars[i].color = Color.white;
+                else
+                    _stars[i].color = new Color(0, 0, 0, 0.5f);
+            }
         }
     }
 
