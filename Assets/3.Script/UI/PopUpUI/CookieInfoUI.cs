@@ -155,7 +155,8 @@ public class CookieInfoUI : BaseUI
 
         _cookiePositionText.text = _data.CookiePositionName;
 
-        // Áß¾Ó
+        // Áß¾Ó3
+
         CookieController tempCookie = Instantiate(_cookie, _instantiateParent);  // »ý¼ºÀº ¾ê·Î ÀÏ´Ü ÇÏ°í...
         tempCookie.CharacterAnimator.SettingOrderLayer(true);
         TouchCookie(tempCookie);

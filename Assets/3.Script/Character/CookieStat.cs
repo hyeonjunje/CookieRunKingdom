@@ -14,6 +14,7 @@ public class CookieStat : MonoBehaviour
     private int _evolutionGauge;
     private int _evolutionMaxGague;
 
+    private int _maxExpValue = 100;
 
     private CookieController _controller;
     private CookieData _data;
@@ -43,7 +44,7 @@ public class CookieStat : MonoBehaviour
 
     public void SaveCookie()
     {
-        CookieInfo cookieInfo = GameManager.Game.allCookies[_data.CookieIndex];
+        CookieInfo cookieInfo = GameManager.Game.AllCookies[_data.CookieIndex];
         cookieInfo.cookieLevel = _cookieLevel;
         cookieInfo.skillLevel = _skillLevel;
         cookieInfo.evolutionCount = _evolutionCount;
@@ -56,7 +57,7 @@ public class CookieStat : MonoBehaviour
 
     public void LoadCookie()
     {
-        CookieInfo cookieInfo = GameManager.Game.allCookies[_data.CookieIndex];
+        CookieInfo cookieInfo = GameManager.Game.AllCookies[_data.CookieIndex];
         _cookieLevel = cookieInfo.cookieLevel;
         _skillLevel = cookieInfo.skillLevel;
         _evolutionCount = cookieInfo.evolutionCount;
@@ -79,10 +80,24 @@ public class CookieStat : MonoBehaviour
 
     public void LevelUp()
     {
-        if(_cookieLevel < 60)
+        if(GameManager.Game.ExpCandy * 14 >= _maxExpValue)
+        {
+            GameManager.Game.ExpCandy -= (int)Mathf.Ceil((float)_maxExpValue / 14);
+        }
+        else
+        {
+            GuideDisplayer.Instance.ShowGuide("별사탕이 부족합니다!");
+            return;
+        }
+
+        if (_cookieLevel < 60)
         {
             _cookieLevel++;
             _controller.CharacterStat.LevelUP();
+        }
+        else
+        {
+            GuideDisplayer.Instance.ShowGuide("최대 레벨입니다!");
         }
     }
 
@@ -90,7 +105,7 @@ public class CookieStat : MonoBehaviour
     {
         if(_evolutionGauge < _evolutionMaxGague)
         {
-            Debug.Log("소울이 부족합니다.");
+            GuideDisplayer.Instance.ShowGuide("소울이 부족합니다!");
             return;
         }
 
@@ -101,14 +116,24 @@ public class CookieStat : MonoBehaviour
             _evolutionCount++;
             _controller.CharacterStat.Evolution();
         }
+        else
+        {
+            GuideDisplayer.Instance.ShowGuide("최대 등급입니다!");
+        }
     }
 
     public void SkillLevelUp()
     {
-        if(_skillLevel < 60)
+        GuideDisplayer.Instance.ShowGuide("파우더가 부족합니다!");
+
+        if (_skillLevel < 60)
         {
             _skillLevel++;
             _controller.CharacterStat.SkillLevelUp();
+        }
+        else
+        {
+            GuideDisplayer.Instance.ShowGuide("최대 스킬레벨입니다!");
         }
     }
 }

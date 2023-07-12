@@ -41,7 +41,7 @@ public class BuildingWorker : MonoBehaviour
     // 건물의 제작슬롯을 초기화해줌
     public void InitCraftSlot()
     {
-        BuildingInfo buildingInfo = GameManager.Game.ownedBuildings[_controller.Data.BuildingIndex];
+        BuildingInfo buildingInfo = GameManager.Game.OwnedBuildings[_controller.Data.BuildingIndex];
         _craftingItemData = new List<CraftingItemData>();
         for (int i = 0; i < buildingInfo.slotCount; i++)
             _craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
@@ -78,7 +78,7 @@ public class BuildingWorker : MonoBehaviour
 
     public void SaveBuilding()
     {
-        BuildingInfo buildingInfo = GameManager.Game.ownedBuildings[_controller.Data.BuildingIndex];
+        BuildingInfo buildingInfo = GameManager.Game.OwnedBuildings[_controller.Data.BuildingIndex];
         buildingInfo.craftingItemData = _craftingItemData;
 
         if (Worker != null)

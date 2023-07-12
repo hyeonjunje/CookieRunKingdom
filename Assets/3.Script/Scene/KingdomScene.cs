@@ -41,7 +41,7 @@ public class KingdomScene : BaseScene
     private void ArrangeBuilding()
     {
         BuildingController[] allBuildingsData = DataBaseManager.Instance.AllBuildings;
-        List<BuildingInfo> ownedBuildings = GameManager.Game.ownedBuildings;
+        List<BuildingInfo> ownedBuildings = GameManager.Game.OwnedBuildings;
 
         for(int i = 0; i < ownedBuildings.Count; i++)
         {
@@ -81,7 +81,7 @@ public class KingdomScene : BaseScene
     private void ArrangeCookies()
     {
         CookieController[] allCookiesData = DataBaseManager.Instance.AllCookies;
-        List<CookieInfo> ownedCookies = GameManager.Game.allCookies;
+        List<CookieInfo> ownedCookies = GameManager.Game.AllCookies;
 
         for(int i = 0; i < ownedCookies.Count; i++)
         {
@@ -106,7 +106,7 @@ public class KingdomScene : BaseScene
     private void CraftItem()
     {
         List<BuildingController> buildingsInKingdom = _kingdomManager.buildingsInKingdom;
-        List<BuildingInfo> ownedBuildings = GameManager.Game.ownedBuildings;
+        List<BuildingInfo> ownedBuildings = GameManager.Game.OwnedBuildings;
         int buildingCount = 0;
 
         for (int i = 0; i < ownedBuildings.Count; i++)

@@ -29,7 +29,7 @@ public class BattleScene : BaseScene
     private void CreateCookie()
     {
         CookieController[] allCookiesPrefab = DataBaseManager.Instance.AllCookies;
-        List<CookieInfo> allCookieInfo = GameManager.Game.allCookies;
+        List<CookieInfo> allCookieInfo = GameManager.Game.AllCookies;
 
         _battleCookies = new List<CookieController>();
 
