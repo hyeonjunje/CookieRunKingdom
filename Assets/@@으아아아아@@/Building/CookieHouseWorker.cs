@@ -29,6 +29,10 @@ public class CookieHouseWorker : BuildingWorker
 
         if (buildingInfo.isInstall)
         {
+            _controller.BuildingEditor.IsFlip = buildingInfo.isFlip;
+            _controller.BuildingAnimator.FlipX(_controller.BuildingEditor.IsFlip);
+
+
             transform.position = buildingInfo.installationPosition;
             transform.SetGridTransform();
 
@@ -44,7 +48,8 @@ public class CookieHouseWorker : BuildingWorker
         CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
 
         buildingInfo.isCraftable = IsCraftable;
-        buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
         buildingInfo.installationPosition = transform.position;
+        buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
+        buildingInfo.isFlip = _controller.BuildingEditor.IsFlip;
     }
 }

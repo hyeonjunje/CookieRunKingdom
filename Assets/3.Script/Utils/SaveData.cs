@@ -136,6 +136,8 @@ public class CraftableBuildingInfo
     // 마지막으로 확인된 제작시간
     public string lastTime;
 
+    public bool isFlip;
+
     public CraftableBuildingInfo(int buildingIndex, int slotCount, bool isCraftable)
     {
         this.buildingIndex = buildingIndex;
@@ -146,7 +148,8 @@ public class CraftableBuildingInfo
         this.isInstall = false;
         this.cookieWorkerIndex = -1;
         this.craftingItemData = new List<CraftingItemData>();
-        for(int i = 0; i < slotCount; i++)
+        this.isFlip = false;
+        for (int i = 0; i < slotCount; i++)
         {
             this.craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
         }

@@ -107,7 +107,7 @@ public class KingdomScene : BaseScene
                     // ¿œ≤€º≥¡§
                     foreach (CookieController cookie in _kingdomManager.allCookies)
                         if (((CookieData)cookie.Data).CookieIndex == buildingInfo.cookieWorkerIndex)
-                            building.BuildingWorker.LoadBuilding(cookie);
+                            building.BuildingWorker.LoadWorker(cookie);
                 }
 
                 buildingCount++;

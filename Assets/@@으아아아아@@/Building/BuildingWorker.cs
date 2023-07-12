@@ -52,13 +52,16 @@ public class BuildingWorker : MonoBehaviour
     {
         CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
 
-
+        _slotCount = buildingInfo.slotCount;
+        InitCraftSlot();
         IsCraftable = buildingInfo.isCraftable;
         _craftingItemData = buildingInfo.craftingItemData;
-        _slotCount = buildingInfo.slotCount;
 
-        if(buildingInfo.isInstall)
+        if (buildingInfo.isInstall)
         {
+            _controller.BuildingEditor.IsFlip = buildingInfo.isFlip;
+            _controller.BuildingAnimator.FlipX(_controller.BuildingEditor.IsFlip);
+
             transform.position = buildingInfo.installationPosition;
             transform.SetGridTransform();
 
@@ -68,8 +71,6 @@ public class BuildingWorker : MonoBehaviour
             _controller.BuildingEditor.PutBuilding();
             BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
         }
-
-        InitCraftSlot();
     }
 
     public virtual void SaveBuilding()
@@ -79,6 +80,7 @@ public class BuildingWorker : MonoBehaviour
         buildingInfo.isCraftable = IsCraftable;
         buildingInfo.installationPosition = transform.position;
         buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
+        buildingInfo.isFlip = _controller.BuildingEditor.IsFlip;
 
         buildingInfo.craftingItemData = _craftingItemData;
 
@@ -89,10 +91,8 @@ public class BuildingWorker : MonoBehaviour
     }
 
     // 건물의 정보를 최신화해줌
-    public void LoadBuilding(CookieController worker = null)
+    public void LoadWorker(CookieController worker)
     {
-        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
-
         Worker = worker;
 
         if(Worker != null)
