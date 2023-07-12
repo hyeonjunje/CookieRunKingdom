@@ -85,7 +85,47 @@ public class KingdomManager : MonoBehaviour
         _factory.CurrentKingdomState.OnWheel(value);
     }
 
-    public void OnClick(InputAction.CallbackContext value)
+/*    public void OnDrag(InputAction.CallbackContext value)
+    {
+        if (!IsMoveCamera)
+            return;
+        if (_factory == null)
+            return;
+
+        if (value.started)
+            Debug.Log("시작!");
+        else if (value.performed)
+            Debug.Log("하는 중");
+        else if (value.canceled)
+            Debug.Log("끝");
+    }*/
+
+    public void OnTouch(InputAction.CallbackContext value)
+    {
+        if (!IsMoveCamera)
+            return;
+        if (_factory == null)
+            return;
+
+        // Utils.touchTIme을 잘 사용하도록 해..
+
+        if (value.started)
+            Debug.Log("시작!");
+        if (value.canceled)
+            Debug.Log("끝");
+    }
+
+    private Coroutine _coTouch;
+
+    private IEnumerator CoTouch()
+    {
+        while(true)
+        {
+
+        }
+    }
+
+    /*public void OnClick(InputAction.CallbackContext value)
     {
         if (!IsMoveCamera)
             return;
@@ -105,7 +145,7 @@ public class KingdomManager : MonoBehaviour
             return;
 
         _factory.CurrentKingdomState.OnDrag(value);
-    }
+    }*/
     #endregion
 
 

@@ -59696,7 +59696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 67708ca3613c35e4193f95c1237ac6cb, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: f62a6a9c526029c4380479225dd3b13d, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
@@ -59711,25 +59711,13 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 7d0248a5-1170-4c24-8a70-b1af5d9b3bbc
-    m_ActionName: New action map/Touch0Contact
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: ce08273c-f98d-4bc4-92d8-fda8e8321a4b
-    m_ActionName: New action map/Touch1Contact
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 2eba8a1b-1d52-469d-8dbf-3443cb58914d
-    m_ActionName: New action map/Touch0Pos
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: aedd85a1-0885-451f-8659-61931e7fc479
-    m_ActionName: New action map/Touch1Pos
+    m_ActionId: e46c2dde-9917-4648-ab5c-2a5bf16d89a4
+    m_ActionName: GamePlay/Click[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1792660215}
         m_TargetAssemblyTypeName: KingdomManager, Assembly-CSharp
-        m_MethodName: OnWheel
+        m_MethodName: OnTouch
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -59739,43 +59727,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: 1966e07b-0c43-4140-8564-abfdd8fdc0f2
-    m_ActionName: New action map/Wheel[/Mouse/scroll]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1792660215}
-        m_TargetAssemblyTypeName: KingdomManager, Assembly-CSharp
-        m_MethodName: OnDrag
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: e1832357-00ec-400c-b4bf-e017b8953640
-    m_ActionName: New action map/DragPC[/Mouse/position]
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1792660215}
-        m_TargetAssemblyTypeName: KingdomManager, Assembly-CSharp
-        m_MethodName: OnClick
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: 56fa4d56-2625-42f2-a0aa-7c33f0cea65e
-    m_ActionName: New action map/TouchPC[/Mouse/press]
+    m_ActionId: 660f4be9-9cba-4c6e-a58a-1424a7d8cbbb
+    m_ActionName: GamePlay/Touch[/Mouse/press]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: New action map
+  m_DefaultActionMap: GamePlay
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!1 &1794459851
