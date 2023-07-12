@@ -6,6 +6,7 @@ public class Cookie0515Skill : BaseRangeSkill
 {
     [SerializeField] private DetectRange _detectSkillRange;
     [SerializeField] private BaseProjectile _skillProjectilePrafab;
+    [SerializeField] private Transform _firePoint;
 
     private int _skillIndex = 0;
 
@@ -54,20 +55,27 @@ public class Cookie0515Skill : BaseRangeSkill
         base.NormalAttackEvent();
     }
 
+    private bool isShoot = false;
+
     public override void OnSkillEvent(int index)
     {
         base.OnSkillEvent(index);
 
-        CharacterBattleController target = null;
+        isShoot = !isShoot;
 
-        if (_detectSkillRange.enemies.Count != 0)
+        if (isShoot)
         {
-            target = _detectSkillRange.enemies[0];
-            BaseProjectile baseProjectile = GetSkillProjectile();
-            if (baseProjectile != null)
+            CharacterBattleController target = null;
+
+            if (_detectSkillRange.enemies.Count != 0)
             {
-                baseProjectile.ShootProjectile(((target.transform.position + Vector3.up * 0.8f) - transform.position).normalized);
-                baseProjectile.gameObject.SetActive(true);
+                target = _detectSkillRange.enemies[0];
+                BaseProjectile baseProjectile = GetSkillProjectile();
+                if (baseProjectile != null)
+                {
+                    baseProjectile.ShootProjectile(((target.transform.position + Vector3.up * 0.8f) - _firePoint.position).normalized);
+                    baseProjectile.gameObject.SetActive(true);
+                }
             }
         }
     }
@@ -79,11 +87,13 @@ public class Cookie0515Skill : BaseRangeSkill
         BaseProjectile[] projectiles = _pool.ToArray();
         for (int i = 0; i < projectiles.Length; i++)
         {
-            projectiles[i].Init(AttackPower, layer, transform, Vector3.up * 0.8f);
+            projectiles[i].Init(AttackPower, layer, _firePoint, Vector3.zero);
         }
 
         _detectSkillRange.Init(layer);
     }
+
+    private int _animationCount = 0;
 
     public override bool UseSkill()
     {
@@ -96,21 +106,18 @@ public class Cookie0515Skill : BaseRangeSkill
             if(!_controller.CharacterAnimator.IsPlayingAnimation())
             {
                 PlayAnimation(animationName[1], false);
-                _skillIndex++;
+                PlayAnimation(animationName[0], false);
+                PlayAnimation(animationName[1], false);
+                _animationCount++;
+                if (_animationCount >= 4)
+                    _skillIndex++;
             }
         }
         else if(_skillIndex == 2)
         {
             if (!_controller.CharacterAnimator.IsPlayingAnimation())
             {
-                PlayAnimation(animationName[1], false);
-                _skillIndex++;
-            }
-        }
-        else
-        {
-            if (!_controller.CharacterAnimator.IsPlayingAnimation())
-            {
+                _animationCount = 0;
                 _skillIndex = 0;
                 return false;
             }

@@ -97,5 +97,6 @@ public class Cookie0063Skill : BaseHealSkill
         // »õ½Ï Áü
         _skillDetectRange.gameObject.SetActive(false);
         _skillDetectRange.transform.SetParent(transform);
+        _skillDetectRange.transform.localPosition = Vector3.zero;
     }
 }

@@ -113,7 +113,7 @@ MonoBehaviour:
   isRotate: 1
   _isPersistence: 0
   _isTargetDir: 1
-  moveSpeed: 12
+  moveSpeed: 8
   _duration: 5
 --- !u!50 &2353076403565286736
 Rigidbody2D:

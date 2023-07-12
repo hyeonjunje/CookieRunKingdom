@@ -19,7 +19,7 @@ MonoBehaviour:
   moveSpeed: 5
   attackRange: 2
   _hpStat: 10000
-  _attackStat: 100
+  _attackStat: 3000
   _defenseStat: 10
   _criticalStat: 1
   _cookieIndex: 6

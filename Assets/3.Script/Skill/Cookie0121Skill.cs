@@ -8,7 +8,7 @@ public class Cookie0121Skill : BaseRangeSkill
     private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
     private float _currentTime = 0;
-    private int _attackCount = 0;
+    private int _attackCount = 4;
     private bool _isSkill = false;
 
     [SerializeField] protected DetectRange _detectedSkilRange;
@@ -74,19 +74,20 @@ public class Cookie0121Skill : BaseRangeSkill
         }
         else if(_skillIndex == 1 && _isSkill)
         {
-            _currentTime += Time.deltaTime;
-            if (_currentTime >= CurrentSkillTime / 4)
+            if(_controller.CharacterAnimator.IsPlayingAnimation())
             {
-                _currentTime = 0;
-
-                foreach (CharacterBattleController target in _skillRange.enemies)
+                _currentTime += Time.deltaTime;
+                if (_currentTime >= CurrentSkillTime / _attackCount)
                 {
-                    target.CurrentHp -= AttackPower;
-                    _attackCount++;
-                }
+                    _currentTime = 0;
 
-                if (_attackCount >= 4)
-                    _skillIndex++;
+                    foreach (CharacterBattleController target in _skillRange.enemies)
+                        target.CurrentHp -= AttackPower;
+                }
+            }
+            else
+            {
+                _skillIndex++;
             }
         }
         else if(_skillIndex == 2)
@@ -97,13 +98,12 @@ public class Cookie0121Skill : BaseRangeSkill
                 PlayAnimation(animationName[_skillIndex++], false);
             }
         }
-        else
+        else if(_skillIndex == 3)
         {
             if (!_controller.CharacterAnimator.IsPlayingAnimation())
             {
                 _currentTime = 0;
                 _skillIndex = 0;
-                _attackCount = 0;
                 _isSkill = false;
                 return false;
             }
