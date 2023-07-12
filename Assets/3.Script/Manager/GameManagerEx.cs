@@ -54,7 +54,7 @@ public class GameManagerEx
     #endregion
 
     #region 건물정보
-    public List<BuildingInfo> OwnedBuildings { get; set; }
+    public List<CraftableBuildingInfo> OwnedCraftableBuildings { get; set; }
     #endregion
 
     public DateTime PrevCraftTime { get; set; } // kingdomManageState를 나간 시간
@@ -76,7 +76,7 @@ public class GameManagerEx
         System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
 
         AllCookies = saveData.allCookies;
-        OwnedBuildings = saveData.ownedBuildings;
+        OwnedCraftableBuildings = saveData.ownedCraftableBuildings;
     }
 
 
@@ -91,7 +91,7 @@ public class GameManagerEx
         saveData.expCandy = ExpCandy;
 
         saveData.allCookies = AllCookies;
-        saveData.ownedBuildings = OwnedBuildings;
+        saveData.ownedCraftableBuildings = OwnedCraftableBuildings;
 
         GameManager.File.SetSaveData(saveData);
         GameManager.File.SaveGame();

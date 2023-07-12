@@ -131,9 +131,13 @@ public class BuildingCircleEditUI : MonoBehaviour
         // ÆÄ±«½ÃÅ²´Ù.
         _currentBuilding.BuildingEditor.IsInstance = false;
         _kingdomManager.buildingsInKingdom.Remove(_currentBuilding);
-        if(_currentBuilding.BuildingWorker.Worker != null)
-            _currentBuilding.BuildingWorker.Worker.CookieCitizeon.LeaveWork();
-        _currentBuilding.BuildingWorker.InitCraftSlot();
+
+        if(_currentBuilding.BuildingWorker.IsCraftable)
+        {
+            if (_currentBuilding.BuildingWorker.Worker != null)
+                _currentBuilding.BuildingWorker.Worker.CookieCitizeon.LeaveWork();
+            _currentBuilding.BuildingWorker.InitCraftSlot();
+        }
 
         _currentBuilding.BuildingWorker.SaveBuilding();
 

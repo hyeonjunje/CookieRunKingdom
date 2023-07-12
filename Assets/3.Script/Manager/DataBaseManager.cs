@@ -8,6 +8,8 @@ public class DataBaseManager : Singleton<DataBaseManager>
 
     [Header("모든 건물")]
     [SerializeField] private BuildingController[] allBuildings;
+    [SerializeField] private BuildingController[] landmarks;
+    [SerializeField] private BuildingController cookieHouse;
 
     [Header("모든 쿠키의 데이터")]
     [SerializeField] private CookieController[] allCookies;

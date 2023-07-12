@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BuildingWorker : MonoBehaviour
 {
-    private BuildingController _controller;
+    protected BuildingController _controller;
 
     [SerializeField] private List<CraftingItemData> _craftingItemData = new List<CraftingItemData>();
     [SerializeField] private GameObject _craftBubble;
@@ -16,17 +16,19 @@ public class BuildingWorker : MonoBehaviour
     // 해당 건물이 작업중인가, 아닌가?
     public bool isWorking = false;
 
+    private int _slotCount = 0;
+
     private List<SpriteRenderer> _craftBubbleUnit = new List<SpriteRenderer>();
     private BuildingData _data;
     private KingdomManager _kingdomManager;
 
+    public bool IsCraftable { get; protected set; }
     public CookieController Worker { get; private set; }
     public List<CraftingItemData> CraftingItemData => _craftingItemData;
 
-    public void Init(BuildingController controller)
+    public virtual void Init(BuildingController controller)
     {
         _controller = controller;
-
         _data = _controller.Data;
 
         for(int i = 0; i < _craftBubble.transform.childCount; i++)
@@ -41,17 +43,57 @@ public class BuildingWorker : MonoBehaviour
     // 건물의 제작슬롯을 초기화해줌
     public void InitCraftSlot()
     {
-        BuildingInfo buildingInfo = GameManager.Game.OwnedBuildings[_controller.Data.BuildingIndex];
         _craftingItemData = new List<CraftingItemData>();
-        for (int i = 0; i < buildingInfo.slotCount; i++)
+        for (int i = 0; i < _slotCount; i++)
             _craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
     }
 
-    // 건물의 정보를 최신화해줌
-    public void LoadBuilding(List<CraftingItemData> craftingItemData, CookieController worker = null)
+    public virtual void LoadBuilding()
     {
+        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
+
+
+        IsCraftable = buildingInfo.isCraftable;
+        _craftingItemData = buildingInfo.craftingItemData;
+        _slotCount = buildingInfo.slotCount;
+
+        if(buildingInfo.isInstall)
+        {
+            transform.position = buildingInfo.installationPosition;
+            transform.SetGridTransform();
+
+            WorkBuilding();
+            _controller.BuildingEditor.IsInstance = true;
+            _controller.BuildingEditor.OnClickEditMode();
+            _controller.BuildingEditor.PutBuilding();
+            BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
+        }
+
+        InitCraftSlot();
+    }
+
+    public virtual void SaveBuilding()
+    {
+        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
+
+        buildingInfo.isCraftable = IsCraftable;
+        buildingInfo.installationPosition = transform.position;
+        buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
+
+        buildingInfo.craftingItemData = _craftingItemData;
+
+        if (Worker != null)
+            buildingInfo.cookieWorkerIndex = ((CookieData)Worker.Data).CookieIndex;
+        else
+            buildingInfo.cookieWorkerIndex = -1;
+    }
+
+    // 건물의 정보를 최신화해줌
+    public void LoadBuilding(CookieController worker = null)
+    {
+        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
+
         Worker = worker;
-        _craftingItemData = craftingItemData;
 
         if(Worker != null)
         {
@@ -74,20 +116,6 @@ public class BuildingWorker : MonoBehaviour
             if(Worker != null)
                 Worker.CharacterAnimator.PlayAnimation(_workAnimationName);
         }
-    }
-
-    public void SaveBuilding()
-    {
-        BuildingInfo buildingInfo = GameManager.Game.OwnedBuildings[_controller.Data.BuildingIndex];
-        buildingInfo.craftingItemData = _craftingItemData;
-
-        if (Worker != null)
-            buildingInfo.cookieWorkerIndex = ((CookieData)Worker.Data).CookieIndex;
-        else
-            buildingInfo.cookieWorkerIndex = -1;
-
-        buildingInfo.installationPosition = transform.position;
-        buildingInfo.isInstall = _controller.BuildingEditor.IsInstance;
     }
 
     private void OnDisable()
@@ -150,7 +178,7 @@ public class BuildingWorker : MonoBehaviour
     /// 수확할 수 없으면 그냥 false 반환
     /// </summary>
     /// <returns>수확할 수 있나?</returns>
-    public bool TryHarvest()
+    public virtual bool TryHarvest()
     {
         for (int i = 0; i < _craftingItemData.Count; i++)
         {
@@ -164,7 +192,7 @@ public class BuildingWorker : MonoBehaviour
     }
 
     // 실질적으로 수확하는 메소드
-    private void Harvest()
+    protected virtual void Harvest()
     {
         // 버블에 떠다니는 수확물 다 없애기
         _craftBubble.SetActive(false);

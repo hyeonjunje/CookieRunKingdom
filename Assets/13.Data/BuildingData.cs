@@ -15,6 +15,8 @@ public class BuildingData : ScriptableObject
     [SerializeField] protected int buildingScore;
     [SerializeField] protected CraftData[] craftItems;
 
+    [SerializeField] protected bool isCraftable = true;
+
     // 프로퍼티
     public int BuildingIndex => _buildingIndex;
 
@@ -24,4 +26,5 @@ public class BuildingData : ScriptableObject
     public Vector2Int BuildingSize => buildingSize;
     public int BuildingScore => buildingScore;
     public CraftData[] CraftItems => craftItems;
+    public bool IsCraftable => isCraftable;
 }

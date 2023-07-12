@@ -42,7 +42,6 @@ public class MyCookieUI : BaseUI
             {
                 _cookieInfoUI.SetCookie(cookie);
                 GameManager.UI.PushUI(_cookieInfoUI);
-                // GameManager.UI.ShowPopUpUI(_cookieInfoUI);
             });
             allCookieButton[i] = cookieButtonUI;
         }
@@ -58,7 +57,6 @@ public class MyCookieUI : BaseUI
 
         for (int i = 0; i < allCookieButton.Length; i++)
         {
-            Debug.Log("ÀÌ°ÍÁ»");
             allCookieButton[i].UpdateInfo();
         }
 

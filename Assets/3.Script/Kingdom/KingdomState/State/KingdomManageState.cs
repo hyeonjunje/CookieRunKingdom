@@ -91,8 +91,11 @@ public class KingdomManageState : KingdomBaseState
 
             if(!_currentBuilding.BuildingWorker.TryHarvest())
             {
-                _factory.kingdomCraftState.SetBuilding(_currentBuilding);
-                _factory.ChangeState(EKingdomState.Craft);
+                if(_currentBuilding.Data.IsCraftable)
+                {
+                    _factory.kingdomCraftState.SetBuilding(_currentBuilding);
+                    _factory.ChangeState(EKingdomState.Craft);
+                }
             }
         }
 

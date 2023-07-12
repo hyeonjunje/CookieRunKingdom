@@ -9045,6 +9045,9 @@ MonoBehaviour:
   - {fileID: 2671169104622352450, guid: 0b2c8692efbda344d824ac6d0c7573c0, type: 3}
   - {fileID: 8661464078128607116, guid: 3290f9e01c85cd54a824df3728bc5a58, type: 3}
   - {fileID: -5585755941469138850, guid: ce1a4a6171700814ca1e4984dbb3643c, type: 3}
+  - {fileID: 171305454896225715, guid: 2e39620056e65e94db266b97cdf2a861, type: 3}
+  landmarks: []
+  cookieHouse: {fileID: 171305454896225715, guid: 2e39620056e65e94db266b97cdf2a861, type: 3}
   allCookies:
   - {fileID: -2159259702791881672, guid: 69670bb8c4a7c8948a574803e2ed7765, type: 3}
   - {fileID: 5306437885611428041, guid: 70c519440a0106c44a81a0ac6ed39937, type: 3}

@@ -7,9 +7,6 @@ public class KingdomScene : BaseScene
     [Header("몰라")]
     [SerializeField] private GroundGenerator _groundGenerator;
 
-    [Header("오브젝트 풀")]
-    [SerializeField] private BuildingPreviewTileObjectPool _pool;
-
     [Header("부모 Transform")]
     [SerializeField] private Transform _buildingParent;
     [SerializeField] private Transform _cookieParent;
@@ -22,7 +19,7 @@ public class KingdomScene : BaseScene
         _groundGenerator.Generate();
 
         // 생성할건 다 생성하고...
-        _pool.Init();
+        BuildingPreviewTileObjectPool.instance.Init();
 
         // 왕국 배치
         ArrangeBuilding();
@@ -41,39 +38,26 @@ public class KingdomScene : BaseScene
     private void ArrangeBuilding()
     {
         BuildingController[] allBuildingsData = DataBaseManager.Instance.AllBuildings;
-        List<BuildingInfo> ownedBuildings = GameManager.Game.OwnedBuildings;
+        List<CraftableBuildingInfo> ownedBuildings = GameManager.Game.OwnedCraftableBuildings;
 
         for(int i = 0; i < ownedBuildings.Count; i++)
         {
-            BuildingInfo buildingInfo = ownedBuildings[i];
+            CraftableBuildingInfo buildingInfo = ownedBuildings[i];
             BuildingController building = Instantiate(allBuildingsData[buildingInfo.buildingIndex], _buildingParent);
+            
+            building.BuildingWorker.LoadBuilding();
 
-            // 제작 슬롯 초기화
-            building.BuildingWorker.InitCraftSlot();
-
-            // 설치되어 있는 건물일 경우
-            if (buildingInfo.isInstall)
+            if(buildingInfo.isInstall)
             {
-                _kingdomManager.buildingsInKingdom.Add(building);
-                building.transform.position = buildingInfo.installationPosition;
-                building.transform.SetGridTransform();
                 building.gameObject.SetActive(true);
-
-                // 왕국 설치
-                building.BuildingWorker.WorkBuilding();
-                building.BuildingEditor.IsInstance = true;
-                building.BuildingEditor.OnClickEditMode();
-                building.BuildingEditor.PutBuilding();
-                _pool.ResetPreviewTile();
+                _kingdomManager.buildingsInKingdom.Add(building);
             }
-            // 설치되지 않은 건물일 경우
             else
             {
-                _kingdomManager.buildingsInInventory.Add(building);
                 building.gameObject.SetActive(false);
+                _kingdomManager.buildingsInInventory.Add(building);
             }
         }
-
         // GridManager.Instance.buildingGridData.VisualizeGridMapData();
     }
 
@@ -106,12 +90,15 @@ public class KingdomScene : BaseScene
     private void CraftItem()
     {
         List<BuildingController> buildingsInKingdom = _kingdomManager.buildingsInKingdom;
-        List<BuildingInfo> ownedBuildings = GameManager.Game.OwnedBuildings;
+        List<CraftableBuildingInfo> ownedBuildings = GameManager.Game.OwnedCraftableBuildings;
         int buildingCount = 0;
 
         for (int i = 0; i < ownedBuildings.Count; i++)
         {
-            BuildingInfo buildingInfo = ownedBuildings[i];
+            if (!ownedBuildings[i].isCraftable)
+                continue;
+
+            CraftableBuildingInfo buildingInfo = ownedBuildings[i];
             if(buildingInfo.isInstall)
             {
                 BuildingController building = buildingsInKingdom[buildingCount];
@@ -120,7 +107,7 @@ public class KingdomScene : BaseScene
                     // 일꾼설정
                     foreach (CookieController cookie in _kingdomManager.allCookies)
                         if (((CookieData)cookie.Data).CookieIndex == buildingInfo.cookieWorkerIndex)
-                            building.BuildingWorker.LoadBuilding(buildingInfo.craftingItemData, cookie);
+                            building.BuildingWorker.LoadBuilding(cookie);
                 }
 
                 buildingCount++;

@@ -15,7 +15,7 @@ public class SaveData
     public int expCandy;
 
     public List<CookieInfo> allCookies;
-    public List<BuildingInfo> ownedBuildings;
+    public List<CraftableBuildingInfo> ownedCraftableBuildings;
 
     public SaveData()
     {
@@ -30,7 +30,7 @@ public class SaveData
         prevCraftTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
         allCookies = new List<CookieInfo>();
-        ownedBuildings = new List<BuildingInfo>();
+        ownedCraftableBuildings = new List<CraftableBuildingInfo>();
 
         // 처음하면 주어지는 쿠키들과 건물들은 정해주자
         // 처음하면 주어지는 쿠키는
@@ -56,9 +56,18 @@ public class SaveData
         // 0 : 나무꾼의 집
         // 1 : 젤리빈 농장
         // 2 : 각설탕 채석장
-        ownedBuildings.Add(new BuildingInfo(0, 4));
-        ownedBuildings.Add(new BuildingInfo(1, 4));
-        ownedBuildings.Add(new BuildingInfo(2, 4));
+        ownedCraftableBuildings.Add(new CraftableBuildingInfo(0, 4, true));
+        ownedCraftableBuildings.Add(new CraftableBuildingInfo(1, 4, true));
+        ownedCraftableBuildings.Add(new CraftableBuildingInfo(2, 4, true));
+
+        for(int i = 3; i <= 19; i++)
+        {
+            ownedCraftableBuildings.Add(new CraftableBuildingInfo(i, 4, true));
+        }
+
+
+        // 처음하면 주어지는 건물들
+        ownedCraftableBuildings.Add(new CraftableBuildingInfo(20, 0, true));  // 쿠키하우스
     }
 }
 
@@ -101,7 +110,7 @@ public class CookieInfo
 /// https://boxwitch.tistory.com/entry/%EC%9C%A0%EB%8B%88%ED%8B%B0%EC%97%90%EC%84%9C-DateTime-%EC%8B%9C%EA%B0%84%EC%9D%84-string%EC%9C%BC%EB%A1%9C-%EB%B3%80%ED%99%98-%EB%B9%84%EA%B5%90
 /// </summary>
 [System.Serializable]
-public class BuildingInfo
+public class CraftableBuildingInfo
 {
     // 건물 인덱스
     public int buildingIndex;
@@ -115,6 +124,9 @@ public class BuildingInfo
     // 일하는 쿠키의 인덱스
     public int cookieWorkerIndex;
 
+    // 제작할 수 있는가?
+    public bool isCraftable;
+
     // 설치가 되었는가?
     public bool isInstall;
 
@@ -124,10 +136,11 @@ public class BuildingInfo
     // 마지막으로 확인된 제작시간
     public string lastTime;
 
-    public BuildingInfo(int buildingIndex, int slotCount)
+    public CraftableBuildingInfo(int buildingIndex, int slotCount, bool isCraftable)
     {
         this.buildingIndex = buildingIndex;
         this.slotCount = slotCount;
+        this.isCraftable = isCraftable;
 
         this.installationPosition = Vector3.zero;
         this.isInstall = false;
