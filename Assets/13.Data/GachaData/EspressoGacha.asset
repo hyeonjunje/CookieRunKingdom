@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isPickUp: 1
   _pickUpCookie: 6
-  _epicPercentage: 20
-  _rarePercentage: 30
-  _commonPercentage: 50
+  _epicPercentage: 80
+  _rarePercentage: 10
+  _commonPercentage: 10
   _ratioBetweenCookieToSoul: 0.25
