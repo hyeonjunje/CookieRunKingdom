@@ -4,19 +4,26 @@ using UnityEngine;
 
 public class BattleScene : BaseScene
 {
+    [SerializeField] private BattleMapGenerator _mapGenerator;
+    [SerializeField] private MapScrolling _mapScrolling;
     [SerializeField] private BattleUI _battleUI;
 
     private List<CookieController> _battleCookies;
 
     protected override void Init()
     {
+        // 스테이지를 읽어와
+        StageData stageData = GameManager.Game.StageData;
+
         // 맵 만들기도 여기서 만들자
+        _mapGenerator.GenerateBattleMap(stageData);
+        _mapScrolling.Init();
 
         // 쿠키 만들자
         CreateCookie();
 
         // 배틀 시작
-        StartBattle();
+        StartBattle(stageData);
     }
 
     private void CreateCookie()
@@ -40,10 +47,8 @@ public class BattleScene : BaseScene
         }
     }
 
-    private void StartBattle()
+    private void StartBattle(StageData stageData)
     {
-        StageData stageData = GameManager.Game.StageData;
-
         // battleManager 초기화 작업
         BattleManager.instance.SetStage(_battleCookies, stageData);
         BattleManager.instance.Init();

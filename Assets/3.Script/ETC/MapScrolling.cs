@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class MapScrolling : MonoBehaviour
 {
-    [SerializeField] private MapPiece[] mapPieces;
-    private Vector3 diffForPieces;
+    [Header("테스트입니다.")]
+    public MapPiece[] mapPieces;
 
+    private Vector3 diffForPieces;
     private LinkedList<Transform> mapList;
 
-    private void Awake()
+    public void Init()
     {
+        mapPieces = GetComponentsInChildren<MapPiece>();
         diffForPieces = Utils.Dir;
 
         mapList = new LinkedList<Transform>();
@@ -24,6 +26,8 @@ public class MapScrolling : MonoBehaviour
             mapList.AddLast(mapPieces[i].transform);
             mapPieces[i].transform.localPosition += diffForPieces * i;
         }
+
+        ReArrangeZOrder();
     }
 
     /// <summary>
@@ -58,5 +62,15 @@ public class MapScrolling : MonoBehaviour
 
             mapList.AddFirst(mapPiece);
         }
+    }
+
+    private void ReArrangeZOrder()
+    {
+        for (int i = 0; i < mapPieces.Length; i++)
+            foreach (Transform tile in mapPieces[i].transform)
+                if (tile.childCount != 0)
+                    foreach (Transform child in tile)
+                        if (child != tile)
+                            child.position = new Vector3(child.position.x, child.position.y, -child.position.y / 1000);
     }
 }
