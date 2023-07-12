@@ -38,9 +38,9 @@ public class MyCookieUI : BaseUI
             MyCookieButtonUI cookieButtonUI = Instantiate(_cookieButtonUIPrefab, _cookieButtonTransform);
             int index = i;
 
-            cookieButtonUI.InitInfo(allCookies[allCookieInfo[i].cookieIndex], (cookie, isOwned) =>
+            cookieButtonUI.InitInfo(allCookies[allCookieInfo[i].cookieIndex], (cookie) =>
             {
-                _cookieInfoUI.SetCookie(cookie, isOwned);
+                _cookieInfoUI.SetCookie(cookie);
                 GameManager.UI.PushUI(_cookieInfoUI);
                 // GameManager.UI.ShowPopUpUI(_cookieInfoUI);
             });

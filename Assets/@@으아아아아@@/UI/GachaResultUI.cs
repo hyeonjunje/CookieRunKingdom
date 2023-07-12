@@ -44,6 +44,12 @@ public class GachaResultUI : BaseUI
             _isGacha = false;
     }
 
+    /// <summary>
+    /// 실질적인 가챠의 결과를 처리합니다.
+    /// </summary>
+    /// <param name="index">해당 쿠키의 인덱스</param>
+    /// <param name="isCookie">쿠키인가 소울인가</param>
+    /// <param name="count">소울이라면 개수 (1~3)</param>
     private void Gacha(int index, bool isCookie, int count = 0)
     {
         if(!_isGacha)
@@ -55,10 +61,27 @@ public class GachaResultUI : BaseUI
         GachaResultUnit unit = Instantiate(_gachaResultUnitPrefab, _gachaResultUnitParent);
         unit.Init(index, isCookie, count);
 
-
         List<CookieController> cookies = _manager.allCookies;
         CookieData cookieData = ((CookieData)cookies[index].Data);
 
+        CookieStat realCookie = cookies[index].CookieStat;
+
+        if(isCookie)
+        {
+            // 이미 있는거라면
+            if(realCookie.IsHave)
+            {
+                realCookie.EvolutionGauge += 20;
+            }
+            else
+            {
+                realCookie.IsHave = true;
+            }
+        }
+        else
+        {
+            realCookie.EvolutionGauge += count;
+        }
 
         if(isCookie && ((CookieData)cookies[index].Data).CookieGrade == ECookieGrade.Epic)
         {

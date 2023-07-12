@@ -55,12 +55,12 @@ public class CookieInfoUI : BaseUI
 
     private bool _isOwned = false;
 
-    public void SetCookie(CookieController cookie, bool isOwned)
+    public void SetCookie(CookieController cookie)
     {
         _cookie = cookie;
         _data = (CookieData)(_cookie.Data);
 
-        _isOwned = isOwned;
+        _isOwned = _cookie.CookieStat.IsHave;
     }
 
     public override void Hide()

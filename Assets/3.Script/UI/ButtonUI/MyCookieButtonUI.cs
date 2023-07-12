@@ -24,22 +24,18 @@ public class MyCookieButtonUI : MonoBehaviour
 
     private CookieController _cookie;
     private CookieData _data;
-    private CookieInfo _cookieInfo;
-    private bool _isOwned = false;
 
     private Vector3 _originStarsPosition;
 
-    public void InitInfo(CookieController cookie, System.Action<CookieController, bool> action = null)
+    public void InitInfo(CookieController cookie, System.Action<CookieController> action = null)
     {
         _cookie = cookie;
         _data = ((CookieData)_cookie.Data);
-        _cookieInfo = GameManager.Game.allCookies[_data.CookieIndex];
-        _isOwned = _cookieInfo.isHave;
 
         _portraitImage.material = _data.IdleBlackMaterial;
         UpdateInfo();
 
-        myCookieButton.onClick.AddListener(() => action(_cookie, _isOwned));
+        myCookieButton.onClick.AddListener(() => action(_cookie));
 
         _originStarsPosition = Vector2.zero;
     }
@@ -50,7 +46,7 @@ public class MyCookieButtonUI : MonoBehaviour
             _stars[i].gameObject.SetActive(false);
 
         // 보유하고 있다면
-        if (_isOwned)
+        if (_cookie.CookieStat.IsHave)
         {
             _portraitImage.sprite = _data.IdleSprite;
             _typeImage.sprite = _data.TypeSprite;

@@ -88,8 +88,16 @@ public class CookieStat : MonoBehaviour
 
     public void Evolution()
     {
+        if(_evolutionGauge < _evolutionMaxGague)
+        {
+            Debug.Log("소울이 부족합니다.");
+            return;
+        }
+
         if(_evolutionCount < 5)
         {
+            _evolutionGauge -= _evolutionMaxGague;
+
             _evolutionCount++;
             _controller.CharacterStat.Evolution();
         }
