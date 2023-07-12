@@ -16,10 +16,7 @@ public class KingdomManager : MonoBehaviour
 
     [SerializeField] private KingdomAdventureUI _kingdomAdventureUI;
     [SerializeField] private KingdomDailyDungeonUI _kingdomDailyDungeonUI;
-    [SerializeField] private KingdomHotAirBalloonUI _kingdomHotAirBalloonUI;
     [SerializeField] private KingdomStatueUI _kingdomStatueUI;
-    [SerializeField] private KingdomTrainStationUI _kingdomTrainStationUI;
-    [SerializeField] private KingdomWishTreeUI _kingdomWishTreeUi;
 
     [Header("Æ®·£½ºÆû")]
     [SerializeField] private Transform _kingdomGrid;
@@ -42,10 +39,7 @@ public class KingdomManager : MonoBehaviour
 
     public KingdomAdventureUI KingdomAdventureUI => _kingdomAdventureUI;
     public KingdomDailyDungeonUI KingdomDailyDungeonUI => _kingdomDailyDungeonUI;
-    public KingdomHotAirBalloonUI KingdomHotAirBalloonUI => _kingdomHotAirBalloonUI;
     public KingdomStatueUI KingdomStatueUI => _kingdomStatueUI;
-    public KingdomTrainStationUI KingdomTrainStationUI => _kingdomTrainStationUI;
-    public KingdomWishTreeUI KingdomWishTreeUI => _kingdomWishTreeUi;
 
     public Transform KingdomGrid => _kingdomGrid;
 

@@ -76,10 +76,10 @@ public class KingdomEditUI : BaseUI
 
         _ownedBuilding = new List<Button>();
 
-        HousingItemData[] allTiles = DataBaseManager.Instance.AllTiles;
         List<BuildingController> ownedBuilding = _kindomManager.buildingsInInventory;  // 내가 소유한 전체 건물
         List<BuildingController> buildingsInKingdom = _kindomManager.buildingsInKingdom;  // 왕국에 설치된 건물
 
+/*        HousingItemData[] allTiles = DataBaseManager.Instance.AllTiles;
         for (int i = 0; i < allTiles.Length; i++)
         {
             int index = i;
@@ -88,7 +88,7 @@ public class KingdomEditUI : BaseUI
             editItemButton.onClick.AddListener(() => OnClickEditItemButton(allTiles[index]));
 
             _ownedBuilding.Add(editItemButton);
-        }
+        }*/
 
         for(int i = 0; i < ownedBuilding.Count; i++)
         {
@@ -114,7 +114,7 @@ public class KingdomEditUI : BaseUI
         skeletonGraphic.Initialize(true);
         editItemButton.onClick.AddListener(() => OnClickEditBuildingButton(building, editItemButton));
 
-        editItemParent.sizeDelta = new Vector2(20 + 120 * (_ownedBuilding.Count), editItemParent.sizeDelta.y);
+        editItemParent.sizeDelta = new Vector2(20 + 220 * (_ownedBuilding.Count), editItemParent.sizeDelta.y);
     }
 
 

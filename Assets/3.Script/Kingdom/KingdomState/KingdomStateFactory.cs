@@ -11,9 +11,6 @@ public enum EKingdomState
     Adventure,
     Statue,
     DailyDungeon,
-    WishTree,
-    TrainStation,
-    AirBalloon,
 }
 
 public class KingdomStateFactory
@@ -30,9 +27,6 @@ public class KingdomStateFactory
     public KingdomAdventureState kingdomAdventureState { get; private set; }
     public KingdomStatueState kingdomStatueState { get; private set; }
     public KingdomDailyDungeonState kingdomDailyDungeonState { get; private set; }
-    public KingdomWishTreeState kingdomWishTreeState { get; private set; }
-    public KingdomTrainStationState kingdomTrainStationState { get; private set; }
-    public KingdomHotAirBalloonState kingdomHotAirBalloonState { get; private set; }
 
     public KingdomStateFactory(KingdomManager kingdomManager)
     {
@@ -44,10 +38,6 @@ public class KingdomStateFactory
         kingdomAdventureState = new KingdomAdventureState(this, kingdomManager);
         kingdomStatueState = new KingdomStatueState(this, kingdomManager);
         kingdomDailyDungeonState = new KingdomDailyDungeonState(this, kingdomManager);
-        kingdomWishTreeState = new KingdomWishTreeState(this, kingdomManager);
-        kingdomTrainStationState = new KingdomTrainStationState(this, kingdomManager);
-        kingdomHotAirBalloonState = new KingdomHotAirBalloonState(this, kingdomManager);
-
 
         _dictionary[EKingdomState.Manage] = kingdomManageState;
         _dictionary[EKingdomState.Edit] = kingdomEditState;
@@ -57,9 +47,6 @@ public class KingdomStateFactory
         _dictionary[EKingdomState.Adventure] = kingdomAdventureState;
         _dictionary[EKingdomState.Statue] = kingdomStatueState;
         _dictionary[EKingdomState.DailyDungeon] = kingdomDailyDungeonState;
-        _dictionary[EKingdomState.WishTree] = kingdomWishTreeState;
-        _dictionary[EKingdomState.TrainStation] = kingdomTrainStationState;
-        _dictionary[EKingdomState.AirBalloon] = kingdomHotAirBalloonState;
 
         // 처음에는 관리 상태로 초기화
         ChangeState(EKingdomState.Manage);
