@@ -7,6 +7,7 @@ public enum ECookieGrade { Common, Rare, Epic, SuperEpic, Ancient, Legendary, Dr
 public enum ECookieType { Assault, Defense, Magic, Infiltration, Ranged, Headling, Explosion, Support, Enemy }
 public enum ECookiePosition { Front, Center, Rear }
 
+[CreateAssetMenu]
 public class CookieData : CharacterData
 {
     [SerializeField] private int _cookieIndex;

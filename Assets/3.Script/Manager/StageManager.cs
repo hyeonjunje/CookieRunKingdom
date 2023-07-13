@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Spine.Unity;
 
 public class StageManager : MonoBehaviour
 {
@@ -31,6 +32,18 @@ public class StageManager : MonoBehaviour
             stageButton.Init(_stageData[i], 0);
             int index = i;
             stageButton.GetComponent<Button>().onClick.AddListener(() => OnClickStageButton(_stageData[index], stageButton.transform.position));
+
+            if(_stageData[i].IsBoss)
+            {
+                SkeletonAnimation animation = Instantiate(_stageData[i].BossSkeletonAnimation, _stagePoses[i]);
+                animation.transform.localPosition = Vector3.zero;
+                animation.Initialize(true);
+                animation.AnimationState.SetAnimation(0, "battle_idle", true);
+
+                Renderer renderer = animation.GetComponent<Renderer>();
+                renderer.sortingLayerName = "GridLower";
+                renderer.sortingOrder = -100;
+            }
         }
     }
 

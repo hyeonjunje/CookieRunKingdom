@@ -28,6 +28,7 @@ public class CharacterData : ScriptableObject
     public float MoveSpeed => moveSpeed;
     public float AttackRange => attackRange;
 
+    public int Power => AttackStat + DefenseStat;
     public int HpStat => _hpStat;
     public int AttackStat => _attackStat;
     public int DefenseStat => _defenseStat;

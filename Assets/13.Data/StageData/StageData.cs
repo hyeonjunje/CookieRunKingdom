@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 [System.Serializable]
 public class WaveInfo
@@ -13,6 +14,10 @@ public class WaveInfo
 public class StageData : ScriptableObject
 {
     [Header("스테이지의 정보")]
+    [SerializeField] private bool _isBoss;
+    [SerializeField] private SkeletonAnimation _bossSkeletonAnimation;
+
+
     [SerializeField] private string _stageName;
     [SerializeField] private float _recommendedPower;
     [SerializeField] private int _jelly;
@@ -37,7 +42,8 @@ public class StageData : ScriptableObject
     [SerializeField] private ItemBundle[] _victoryRewardItems;
     [SerializeField] private ItemBundle[] _defeatRewardItems;
 
-
+    public bool IsBoss => _isBoss;
+    public SkeletonAnimation BossSkeletonAnimation => _bossSkeletonAnimation;
     public string StageName => _stageName;
     public float RecommendedPower => _recommendedPower;
     public int Jelly => _jelly;
