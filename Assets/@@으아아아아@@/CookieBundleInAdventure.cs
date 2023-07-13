@@ -11,21 +11,20 @@ public class CookieBundleInAdventure : MonoBehaviour
 
     private KingdomManager _manager;
     private Camera _cam;
-    private bool _isCompletePosition;  // bundle이 제대로 위치했는지
 
     private Path _path;
     private Seeker _seeker;
 
-    private bool isInit = false;
+    private bool _isInit = false;
 
     public void Init()
     {
-        if(!isInit)
+        if(!_isInit)
         {
             _manager = FindObjectOfType<KingdomManager>();
             _seeker = GetComponent<Seeker>();
             _cam = Camera.main;
-            isInit = true;
+            _isInit = true;
         }
 
         List<CookieController> allCookies = _manager.allCookies;
@@ -44,18 +43,10 @@ public class CookieBundleInAdventure : MonoBehaviour
         }
     }
 
-    public void OnClick(InputAction.CallbackContext value)
+    public void OnMove()
     {
-        if (value.started)
-        {
-            if (!_manager.IsMoveCamera)
-                return;
-
-            _isCompletePosition = false;
-
-            Vector3 targetPos = _cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            _seeker.StartPath(transform.position, targetPos, OnPathComplete);
-        }
+        Vector3 targetPos = _cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        _seeker.StartPath(transform.position, targetPos, OnPathComplete);
     }
 
     private void OnPathComplete(Path p)

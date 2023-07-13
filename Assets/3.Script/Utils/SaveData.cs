@@ -47,8 +47,8 @@ public class SaveData
 
         allCookies[0] = new CookieInfo(0, true, true, 0);
         allCookies[1] = new CookieInfo(1, true, true, 1);
-        allCookies[2] = new CookieInfo(2, true, true, 4);
-        allCookies[6] = new CookieInfo(6, true, true, 5);
+        allCookies[2] = new CookieInfo(2, true, true, 3);
+        allCookies[6] = new CookieInfo(6, true, true, 4);
         allCookies[8] = new CookieInfo(8, true, true, 8);
 
 

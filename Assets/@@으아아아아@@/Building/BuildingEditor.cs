@@ -37,7 +37,7 @@ public class BuildingEditor : MonoBehaviour
         for (int i = 0; i < buildingPreviewTiles.Count; i++)
         {
             Vector3Int gridPos = _grid.WorldToCell(buildingPreviewTiles[i].transform.position);
-            bool check = GridManager.Instance.InvalidTileCheck(gridPos.x, gridPos.y);
+            bool check = GridManager.Instance.ValidTileCheck(gridPos.x, gridPos.y);
 
             Color color = Color.white;
 
@@ -60,7 +60,7 @@ public class BuildingEditor : MonoBehaviour
         for (int i = 0; i < buildingPreviewTiles.Count; i++)
         {
             Vector3Int gridPos = _grid.WorldToCell(buildingPreviewTiles[i].transform.position);
-            bool check = GridManager.Instance.InvalidTileCheck(gridPos.x, gridPos.y);
+            bool check = GridManager.Instance.ValidTileCheck(gridPos.x, gridPos.y);
 
             if (!check)
             {

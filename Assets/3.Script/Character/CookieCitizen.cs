@@ -12,8 +12,9 @@ public class CookieCitizen : MonoBehaviour
     private KingdomManager _kingdomManager;
 
     private bool _isReadyToAI; // 행동할 준비가 됐다는 변수 이게 true면 활성화될 시 ai 시작
-    private Coroutine _coUpdate;
     private Transform _originParent = null;
+    private Coroutine _coUpdate = null;
+    private Coroutine _coHello = null;
     
     public bool IsWorking { get; private set; }
 
@@ -22,14 +23,13 @@ public class CookieCitizen : MonoBehaviour
         if(_isReadyToAI)
         {
             _isReadyToAI = false;
-            KingdomAI();
+            StartKingdomAI();
         }
     }
 
     private void OnDisable()
     {
-        if(_coUpdate != null)
-            StopCoroutine(_coUpdate);
+        StopKingdomAI();
     }
 
     public void Init(CookieController controller)
@@ -44,7 +44,21 @@ public class CookieCitizen : MonoBehaviour
         _agent.Init(_controller);
     }
 
-    public void KingdomAI()
+    public void Hello()
+    {
+        if (_coHello != null)
+            StopCoroutine(_coHello);
+        _coHello = StartCoroutine(CoHello());
+    }
+
+    public void StopKingdomAI()
+    {
+        _agent.StopPathFinding();
+        if (_coUpdate != null)
+            StopCoroutine(_coUpdate);
+    }
+
+    public void StartKingdomAI()
     {
         if (IsWorking)
             return;
@@ -53,20 +67,11 @@ public class CookieCitizen : MonoBehaviour
             return;
 
         // 걷다가, 멈추다가, 인사하다가
+        StopKingdomAI();
         _coUpdate = StartCoroutine(CoUpdate());
     }
 
 
-    public void WalkInKingdom()
-    {
-
-
-    }
-
-    public void WalkInAdventure()
-    {
-
-    }
 
     // 출근
     public void GoToWork(Transform parent)
@@ -90,7 +95,6 @@ public class CookieCitizen : MonoBehaviour
 
         // 인사하고
         _controller.CharacterAnimator.PlayAnimation(_greetingAnimation);
-
         _controller.CharacterAnimator.SettingOrderLayer(true);
     }
 
@@ -121,7 +125,7 @@ public class CookieCitizen : MonoBehaviour
         }
 
         // 다시 일상생활로
-        KingdomAI();
+        StartKingdomAI();
     }
 
 
@@ -146,17 +150,82 @@ public class CookieCitizen : MonoBehaviour
         }
     }
 
+    private IEnumerator CoHello()
+    {
+        StopKingdomAI();
+        _controller.CharacterAnimator.PlayAnimation("idle_back", false);
+        _controller.CharacterAnimator.PlayAnimation("call_user", false);
+
+        yield return new WaitUntil(() => !_controller.CharacterAnimator.IsPlayingAnimation());
+
+        StartKingdomAI();
+    }
+
     private void MoveRandomPosition()
     {
         while (true)
         {
             Vector3 targetPosition = Random.insideUnitCircle * 5;
             Vector3Int cellTargetPosition = GridManager.Instance.Grid.WorldToCell(transform.position + targetPosition);
-            if(GridManager.Instance.InvalidTileCheck(cellTargetPosition.x, cellTargetPosition.y))
+            if(GridManager.Instance.ValidTileCheck(cellTargetPosition.x, cellTargetPosition.y))
             {
                 _agent.MoveTo(GridManager.Instance.Grid.CellToWorld(cellTargetPosition));
                 break;
             }
         }
+    }
+
+
+    private Vector3Int[] dirs = new Vector3Int[] { Vector3Int.down, Vector3Int.right, Vector3Int.left, Vector3Int.up };
+    private bool[,] dp = new bool[200, 200];
+
+    /// <summary>
+    /// 이상한 곳으로 이동할 경우 유효한 위치로 순간이동하는 메소드
+    /// </summary>
+    public bool TeleportValidPosition()
+    {
+        Vector3Int startGridPos = GridManager.Instance.Grid.WorldToCell(transform.position);
+        Queue<Vector3Int> queue = new Queue<Vector3Int>();
+        queue.Enqueue(startGridPos);
+        int limitCount = 200;
+        int currentCount = 0;
+        dp = new bool[200, 200];
+        while (queue.Count != 0)
+        {
+            InfiniteLoopDetector.Run();
+
+            Vector3Int currentGridPos = queue.Dequeue();
+
+            dp[currentGridPos.y + 100, currentGridPos.x + 100] = true;
+
+            if (currentCount++ > limitCount)
+            {
+                GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
+                return false;
+            }
+
+            if (GridManager.Instance.ValidTileCheck(currentGridPos.x, currentGridPos.y))
+            {
+                GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
+                transform.position = GridManager.Instance.Grid.CellToWorld(currentGridPos);
+                return true;
+            }
+
+
+            for(int i = 0; i < dirs.Length; i++)
+            {
+                if (currentGridPos.y + dirs[i].y >= 100 || currentGridPos.y + dirs[i].y <= -100)
+                    continue;
+                if (currentGridPos.x + dirs[i].x >= 100 || currentGridPos.x + dirs[i].x <= -100)
+                    continue;
+                if (dp[currentGridPos.y + dirs[i].y + 100, currentGridPos.x + dirs[i].x + 100])
+                    continue;
+
+                queue.Enqueue(currentGridPos + dirs[i]);
+            }
+        }
+
+        GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
+        return false;
     }
 }

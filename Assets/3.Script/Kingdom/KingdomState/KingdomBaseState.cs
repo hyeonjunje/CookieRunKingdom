@@ -10,12 +10,17 @@ public abstract class KingdomBaseState
     protected KingdomStateFactory _factory;
     protected KingdomManager _manager;
     protected Camera _camera;
-    protected bool _isActiveCameraControll = true;
-    protected int _touchCount = 0;
 
     private Vector2 prevPos = Vector3.zero;
 
-    private bool _isOverUI = false;
+
+    private GameObject _ui_canvas;
+    private GraphicRaycaster _ui_raycaster;
+    private PointerEventData _click_data;
+    private List<RaycastResult> _click_results;
+    private bool _isinit = false;
+
+
 
     public KingdomBaseState(KingdomStateFactory factory, KingdomManager manager)
     {
@@ -31,9 +36,6 @@ public abstract class KingdomBaseState
 
     public virtual void OnWheel(InputAction.CallbackContext value)
     {
-        if (!_isActiveCameraControll)
-            return;
-
         if (value.performed)
         {
             float increment = value.ReadValue<Vector2>().y * _manager.CurrentCameraControllerData.CameraZoomSpeed;
@@ -42,37 +44,21 @@ public abstract class KingdomBaseState
         }
     }
 
-    public virtual void OnClick(InputAction.CallbackContext value)
+    public virtual void OnClickStart()
     {
-        if (value.started)
-        {
-            if(DetectUI())
-                _isOverUI = true;
-            else
-                _touchCount++;
-        }
-        else if (value.canceled)
-        {
-            if(_isOverUI)
-                _isOverUI = false;
-            else
-                _touchCount--;
-        }
+        if (DetectUI()) return;
     }
 
-    public virtual void OnDrag(InputAction.CallbackContext value)
+    public virtual void OnClick()
     {
-        if (!_isActiveCameraControll)
-            return;
+        if (DetectUI()) return; 
+    }
 
-        if (!value.performed)
-            return;
-
-        if (_touchCount < 1)
-            return;
+    public virtual void OnDrag()
+    {
+        if (DetectUI()) return;
 
         Vector2 currentPos = Mouse.current.position.ReadValue();
-
         if (currentPos.Equals(prevPos))
             return;
 
@@ -88,30 +74,29 @@ public abstract class KingdomBaseState
         prevPos = currentPos;
     }
 
-    private GameObject ui_canvas;
-    private GraphicRaycaster ui_raycaster;
-    private PointerEventData click_data;
-    List<RaycastResult> click_results;
+    public virtual void OnDragEnd()
+    {
+        if (DetectUI()) return;
+    }
 
-    private bool isinit = false;
 
     protected bool DetectUI()
     {
-        if (!isinit)
+        if (!_isinit)
         {
-            ui_canvas = GameObject.Find("KingdomCanvas");
-            isinit = true;
-            ui_raycaster = ui_canvas.GetComponent<GraphicRaycaster>();
-            click_data = new PointerEventData(EventSystem.current);
-            click_results = new List<RaycastResult>();
+            _ui_canvas = GameObject.Find("KingdomCanvas");
+            _isinit = true;
+            _ui_raycaster = _ui_canvas.GetComponent<GraphicRaycaster>();
+            _click_data = new PointerEventData(EventSystem.current);
+            _click_results = new List<RaycastResult>();
         }
 
-        click_data.position = Mouse.current.position.ReadValue();
-        click_results.Clear();
+        _click_data.position = Mouse.current.position.ReadValue();
+        _click_results.Clear();
 
-        ui_raycaster.Raycast(click_data, click_results);
+        _ui_raycaster.Raycast(_click_data, _click_results);
 
-        if (click_results.Count != 0)
+        if (_click_results.Count != 0)
             return true;
         return false;
     }

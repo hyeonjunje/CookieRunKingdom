@@ -85,26 +85,85 @@ public class KingdomManager : MonoBehaviour
         _factory.CurrentKingdomState.OnWheel(value);
     }
 
-    public void OnClick(InputAction.CallbackContext value)
+    public void OnTouch(InputAction.CallbackContext value)
     {
         if (!IsMoveCamera)
             return;
-
         if (_factory == null)
             return;
 
-        _factory.CurrentKingdomState.OnClick(value);
+        // Utils.touchTIme을 잘 사용하도록 해..
+
+        if (value.started)
+        {
+            OnClickStart();
+            if (_coTouch != null)
+                StopCoroutine(_coTouch);
+            _coTouch = StartCoroutine(CoTouch());
+        }
+        if (value.canceled)
+        {
+            StopCoroutine(_coTouch);
+
+            if (_isTouch)
+                OnClick();
+            else
+                OnDragEnd();
+        }
     }
 
-    public void OnDrag(InputAction.CallbackContext value)
+    private Coroutine _coTouch;
+    private bool _isTouch;
+
+    private IEnumerator CoTouch()
     {
-        if (!IsMoveCamera)
-            return;
+        // Utils.TouchTime이 지나면
+        float currentTime = 0;
+        _isTouch = true;
 
-        if (_factory == null)
-            return;
+        while (true)
+        {
+            currentTime += Time.deltaTime;
 
-        _factory.CurrentKingdomState.OnDrag(value);
+            if(currentTime >= Utils.TouchTime)
+            {
+                _isTouch = false;
+                OnDrag();
+            }
+            yield return null;
+        }
+    }
+    
+    public void OnClickStart()
+    {
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
+
+        _factory.CurrentKingdomState.OnClickStart();
+    }
+
+    public void OnClick()
+    {
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
+
+        _factory.CurrentKingdomState.OnClick();
+    }
+
+    public void OnDrag()
+    {
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
+
+        _factory.CurrentKingdomState.OnDrag();
+    }
+
+    public void OnDragEnd()
+    {
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
+
+        _factory.CurrentKingdomState.OnDragEnd();
     }
     #endregion
 
