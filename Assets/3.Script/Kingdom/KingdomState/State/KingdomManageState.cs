@@ -5,8 +5,9 @@ using UnityEngine.InputSystem;
 
 public class KingdomManageState : KingdomBaseState
 {
-    private BuildingController _currentBuilding = null;
-
+    private CookieController _currentCookie = null;
+    private bool _isDrag = false;
+    private Vector3 _cookieOffsetPosition = Vector3.zero;
 
     public KingdomManageState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
     {
@@ -16,10 +17,7 @@ public class KingdomManageState : KingdomBaseState
     private void Init()
     {
         _manager.CurrentCameraControllerData = _manager.CameraControllInKingdomData;
-
-        _touchCount = 0;
-        _currentBuilding = null;
-        _isActiveCameraControll = true;
+        _manager.IsMoveCamera = true;
     }
 
     public override void Enter()
@@ -36,7 +34,7 @@ public class KingdomManageState : KingdomBaseState
             cookie.CookieStat.SaveCookie();
 
             cookie.gameObject.SetActive(true);
-            cookie.CookieCitizeon.KingdomAI();
+            cookie.CookieCitizeon.StartKingdomAI();
         });
 
         _manager.buildingsInKingdom.ForEach(building =>
@@ -64,50 +62,114 @@ public class KingdomManageState : KingdomBaseState
         GameManager.Game.PrevCraftTime = System.DateTime.Now;
     }
 
-    public override void OnClick(InputAction.CallbackContext value)
+    public override void OnClickStart()
     {
-        base.OnClick(value);
+        base.OnClickStart();
 
-        if (DetectUI())
-            return;
-
-        if (value.started)
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Cookie"));
+        if (rayHit.collider)
         {
-            var rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
-
-            if (!rayHit.collider)
+            CookieController currentCookie = rayHit.transform.GetComponent<CookieController>();
+            if (currentCookie != null)
             {
-                _currentBuilding = null;
-                return;
-            }
-
-            // 제작 건물
-            _currentBuilding = rayHit.transform.GetComponent<BuildingController>();
-
-            if (_currentBuilding == null)
-                return;
-
-            Debug.Log(_currentBuilding.name + " 을 누릅니다.");
-
-            if(!_currentBuilding.BuildingWorker.TryHarvest())
-            {
-                if(_currentBuilding.Data.IsCraftable)
+                if (!currentCookie.CookieCitizeon.IsWorking)
                 {
-                    _factory.kingdomCraftState.SetBuilding(_currentBuilding);
-                    _factory.ChangeState(EKingdomState.Craft);
+                    _currentCookie = currentCookie;
                 }
             }
         }
+    }
 
-        else if (value.canceled)
+    public override void OnClick()
+    {
+        base.OnClick();
+
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
+
+        // 제작 건물이라면 수확한다.
+        if (rayHit.collider)
         {
-            _isActiveCameraControll = true;
+            BuildingController currentBuilding = rayHit.transform.GetComponent<BuildingController>();
+            if (currentBuilding != null)
+            {
+                if (!currentBuilding.BuildingWorker.TryHarvest())
+                {
+                    if (currentBuilding.Data.IsCraftable)
+                    {
+                        _factory.kingdomCraftState.SetBuilding(currentBuilding);
+                        _factory.ChangeState(EKingdomState.Craft);
+                    }
+                }
+            }
+
+            return;
+        }
+
+        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Cookie"));
+        // 쿠키라면 인사한다.
+        if(rayHit.collider)
+        {
+            _currentCookie = rayHit.transform.GetComponent<CookieController>();
+            if(_currentCookie != null)
+            {
+                if(!_currentCookie.CookieCitizeon.IsWorking)
+                {
+                    _currentCookie.CookieCitizeon.Hello();
+                }
+            }
+            return;
+        }
+        _currentCookie = null;
+    }
+
+    public override void OnDrag()
+    {
+        if(_currentCookie != null)
+        {
+            if (DetectUI()) return;
+
+            if (!_isDrag)
+            {
+                _cookieOffsetPosition = _currentCookie.transform.position;
+                _currentCookie.CookieCitizeon.StopKingdomAI();
+                _currentCookie.CharacterAnimator.PlayAnimation("hang");
+                _currentCookie.transform.GetChild(0).localPosition += Vector3.up * 3f;
+                _isDrag = true;
+            }
+
+            Vector3 pos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            _currentCookie.transform.localPosition = new Vector3(pos.x, pos.y, 0);
+        }
+        else
+        {
+            base.OnDrag();
         }
     }
 
-    public override void OnDrag(InputAction.CallbackContext value)
+    public override void OnDragEnd()
     {
-        base.OnDrag(value);
+        base.OnDragEnd();
+
+        if(_currentCookie != null)
+        {
+            _isDrag = false;
+
+            // 내려놓을 수 없는 곳이라면 bfs로 최단거리를 파악하여 거기로 떨궈준다.
+            Vector3Int gridPos = _manager.Grid.WorldToCell(_currentCookie.transform.position);
+            if (!GridManager.Instance.ValidTileCheck(gridPos.x, gridPos.y))
+            {
+                if (!_currentCookie.CookieCitizeon.TeleportValidPosition())
+                {
+                    _currentCookie.transform.position = _cookieOffsetPosition;
+                }
+            }
+
+            _currentCookie.transform.GetChild(0).localPosition -= Vector3.up * 3f;
+            _currentCookie.CookieCitizeon.StartKingdomAI();
+
+            _currentCookie = null;
+        }
+
     }
 
     public override void OnWheel(InputAction.CallbackContext value)

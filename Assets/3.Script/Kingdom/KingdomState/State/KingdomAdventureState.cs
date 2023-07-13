@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class KingdomAdventureState : KingdomBaseState
 {
     // 들어올 시 배틀쿠키들 생성해주고 이동해주기
+    private CookieBundleInAdventure _cookieBundle = null;
 
     public KingdomAdventureState(KingdomStateFactory factory, KingdomManager manager) : base(factory, manager)
     {
@@ -19,6 +20,11 @@ public class KingdomAdventureState : KingdomBaseState
         _camera.orthographicSize = 10;
 
         GameManager.UI.PushUI(_manager.KingdomAdventureUI);
+        if (_cookieBundle == null)
+        {
+            _cookieBundle = GameObject.FindObjectOfType<CookieBundleInAdventure>();
+            _cookieBundle.Init();
+        }
     }
 
     public override void Exit()
@@ -33,21 +39,19 @@ public class KingdomAdventureState : KingdomBaseState
 
     }
 
-    public override void OnClick(InputAction.CallbackContext value)
+    public override void OnClick()
     {
-        if(_manager.IsMoveCamera)
-            base.OnClick(value);
+        base.OnClick();
+        _cookieBundle.OnMove();
     }
 
-    public override void OnDrag(InputAction.CallbackContext value)
+    public override void OnDrag()
     {
-        if (_manager.IsMoveCamera)
-            base.OnDrag(value);
+        base.OnDrag();
     }
 
     public override void OnWheel(InputAction.CallbackContext value)
     {
-        if (_manager.IsMoveCamera)
-            base.OnWheel(value);
+        base.OnWheel(value);
     }
 }

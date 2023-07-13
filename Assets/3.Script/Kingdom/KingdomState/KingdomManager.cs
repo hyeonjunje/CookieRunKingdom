@@ -85,21 +85,6 @@ public class KingdomManager : MonoBehaviour
         _factory.CurrentKingdomState.OnWheel(value);
     }
 
-/*    public void OnDrag(InputAction.CallbackContext value)
-    {
-        if (!IsMoveCamera)
-            return;
-        if (_factory == null)
-            return;
-
-        if (value.started)
-            Debug.Log("시작!");
-        else if (value.performed)
-            Debug.Log("하는 중");
-        else if (value.canceled)
-            Debug.Log("끝");
-    }*/
-
     public void OnTouch(InputAction.CallbackContext value)
     {
         if (!IsMoveCamera)
@@ -110,42 +95,76 @@ public class KingdomManager : MonoBehaviour
         // Utils.touchTIme을 잘 사용하도록 해..
 
         if (value.started)
-            Debug.Log("시작!");
-        if (value.canceled)
-            Debug.Log("끝");
-    }
-
-    private Coroutine _coTouch;
-
-    private IEnumerator CoTouch()
-    {
-        while(true)
         {
+            OnClickStart();
+            if (_coTouch != null)
+                StopCoroutine(_coTouch);
+            _coTouch = StartCoroutine(CoTouch());
+        }
+        if (value.canceled)
+        {
+            StopCoroutine(_coTouch);
 
+            if (_isTouch)
+                OnClick();
+            else
+                OnDragEnd();
         }
     }
 
-    /*public void OnClick(InputAction.CallbackContext value)
+    private Coroutine _coTouch;
+    private bool _isTouch;
+
+    private IEnumerator CoTouch()
     {
-        if (!IsMoveCamera)
-            return;
+        // Utils.TouchTime이 지나면
+        float currentTime = 0;
+        _isTouch = true;
 
-        if (_factory == null)
-            return;
+        while (true)
+        {
+            currentTime += Time.deltaTime;
 
-        _factory.CurrentKingdomState.OnClick(value);
+            if(currentTime >= Utils.TouchTime)
+            {
+                _isTouch = false;
+                OnDrag();
+            }
+            yield return null;
+        }
+    }
+    
+    public void OnClickStart()
+    {
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
+
+        _factory.CurrentKingdomState.OnClickStart();
     }
 
-    public void OnDrag(InputAction.CallbackContext value)
+    public void OnClick()
     {
-        if (!IsMoveCamera)
-            return;
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
 
-        if (_factory == null)
-            return;
+        _factory.CurrentKingdomState.OnClick();
+    }
 
-        _factory.CurrentKingdomState.OnDrag(value);
-    }*/
+    public void OnDrag()
+    {
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
+
+        _factory.CurrentKingdomState.OnDrag();
+    }
+
+    public void OnDragEnd()
+    {
+        if (!IsMoveCamera) return;
+        if (_factory == null) return;
+
+        _factory.CurrentKingdomState.OnDragEnd();
+    }
     #endregion
 
 

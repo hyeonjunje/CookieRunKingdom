@@ -128,7 +128,7 @@ public class GachaCookieAppear : BaseUI
 
     public void OnClick(InputAction.CallbackContext value)
     {
-        if(value.started && _isSkip)
+        if(value.canceled && _isSkip)
         {
             ClickCount++;
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class Utils
 {
-    public static readonly float TouchTime = 0.3f;  // 터치로 인식되는 시간
+    public static readonly float TouchTime = 0.15f;  // 터치로 인식되는 시간
 
     public static readonly int JellyTime = 5;
 

@@ -46,10 +46,14 @@ public class GridManager : MonoBehaviour
         this.startPoint = startPoint;
     }
 
-    public bool InvalidTileCheck(int gridX, int gridY)
+    public bool ValidTileCheck(int gridX, int gridY)
     {
         gridX -= startPoint.x;
         gridY -= startPoint.y;
+
+        if (gridY >= buildingGridData.gridData.GetLength(0) || gridY < 0 ||
+            gridX >= buildingGridData.gridData.GetLength(1) || gridX < 0)
+            return false;
 
         Tilemap tile = buildingGridData.gridData[gridY, gridX];
 

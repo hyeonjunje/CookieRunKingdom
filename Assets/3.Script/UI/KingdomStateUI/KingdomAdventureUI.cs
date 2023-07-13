@@ -24,7 +24,6 @@ public class KingdomAdventureUI : BaseUI
     [Header("World")]
     [SerializeField] private GameObject _cookigKingdom;
     [SerializeField] private GameObject _world1;
-    [SerializeField] private CookieBundleInAdventure _cookieBundle;
 
     public override void Init()
     {
@@ -47,8 +46,6 @@ public class KingdomAdventureUI : BaseUI
         _cookigKingdom.SetActive(false);
         _world1.SetActive(true);
         // 월드 보이게
-
-        _cookieBundle.Init();
 
         GameManager.Game.UpdateGoods();
     }

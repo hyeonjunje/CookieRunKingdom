@@ -24,12 +24,12 @@ public class KingdomPlayState : KingdomBaseState
 
     }
 
-    public override void OnClick(InputAction.CallbackContext value)
+    public override void OnClick()
     {
 
     }
 
-    public override void OnDrag(InputAction.CallbackContext value)
+    public override void OnDrag()
     {
 
     }

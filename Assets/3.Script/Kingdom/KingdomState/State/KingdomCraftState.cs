@@ -37,7 +37,7 @@ public class KingdomCraftState : KingdomBaseState
         _manager.allCookies.ForEach(cookie =>
         {
             cookie.gameObject.SetActive(true);
-            cookie.CookieCitizeon.KingdomAI();
+            cookie.CookieCitizeon.StartKingdomAI();
         });
 
         _manager.buildingsInKingdom.ForEach(building =>
@@ -71,12 +71,12 @@ public class KingdomCraftState : KingdomBaseState
 
     }
 
-    public override void OnClick(InputAction.CallbackContext value)
+    public override void OnClick()
     {
 
     }
 
-    public override void OnDrag(InputAction.CallbackContext value)
+    public override void OnDrag()
     {
 
     }
