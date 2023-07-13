@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Enemy11
   m_EditorClassIdentifier: 
   _characterName: "\uCD08\uCF54\uD06C\uB9BC \uB291\uB300 \uB9DD\uCE58\uB9E8"
-  _animationData: {fileID: 0}
+  _animationData: {fileID: 11400000, guid: 788b8079e2cc3014db2a2c35c74714cf, type: 2}
   _skeletonDataAsset: {fileID: 0}
   _spinePrefab: {fileID: 0}
   moveSpeed: 5

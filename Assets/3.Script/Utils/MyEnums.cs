@@ -11,11 +11,3 @@ public enum ECookieAnimation
     Victory,
     Defeat,
 }
-
-public enum EEnemyAnimation
-{
-    BattleIdle,
-    BattleRun,
-    BattleAttack,
-    Dead,
-}

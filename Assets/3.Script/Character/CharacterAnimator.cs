@@ -59,10 +59,11 @@ public class CharacterAnimator : MonoBehaviour
 
     public void PlayAnimation(ECookieAnimation animationName)
     {
+        // 이전 이름과 같으면 return;
         try
         {
             // 이전 이름과 같으면 return;
-            if (_animationNames[(int)animationName] == _animation.AnimationState.GetCurrent(0).Animation.Name)
+            if (_animation.AnimationState.GetCurrent(0) != null && _animationNames[(int)animationName] == _animation.AnimationState.GetCurrent(0).Animation.Name)
                 return;
 
             _animation.AnimationState.SetAnimation(0, _animationNames[(int)animationName], true);
@@ -79,7 +80,7 @@ public class CharacterAnimator : MonoBehaviour
         try
         {
             // 이전 이름과 같으면 return;
-            if (animationName == _animation.AnimationState.GetCurrent(0).Animation.Name)
+            if (_animation.AnimationState.GetCurrent(0) != null && animationName == _animation.AnimationState.GetCurrent(0).Animation.Name)
                 return;
 
             _animation.AnimationState.SetAnimation(0, animationName, isLoop);

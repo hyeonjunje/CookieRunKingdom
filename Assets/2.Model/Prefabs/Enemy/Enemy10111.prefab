@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7751556377153860432}
   - component: {fileID: 7743407987011205261}
   - component: {fileID: 4656535952995128583}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DetectedAttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a221e3f0dd9b2f041ac1b344c41e9aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _data: {fileID: 11400000, guid: 00bc03024528d2f44bd9dc3b38a6cae4, type: 2}
+  _data: {fileID: 11400000, guid: 11504054023703f4c88947294aadaf06, type: 2}
 --- !u!114 &8970758412375875551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340f4103f6af6f146a9269892dec7dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 10000
 --- !u!114 &3571935911569217290
 MonoBehaviour:
   m_ObjectHideFlags: 0
