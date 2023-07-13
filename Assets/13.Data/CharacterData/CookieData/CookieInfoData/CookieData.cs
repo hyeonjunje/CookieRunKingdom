@@ -31,6 +31,10 @@ public class CookieData : CharacterData
     [SerializeField] private ECookieType _cookieType;
     [SerializeField] private ECookiePosition _cookiePosition;
 
+    [Header("¾ÆÀÌÅÛ")]
+    [SerializeField] private ItemData _expCandyItemData;
+    [SerializeField] private ItemData _powderItemData;
+
     public int CookieIndex => _cookieIndex;
 
     public string AppearSpeech => _appearSpeech;
@@ -48,6 +52,10 @@ public class CookieData : CharacterData
     public ECookieGrade CookieGrade => _cookieGrade;
     public ECookieType CookieType => _cookieType;
     public ECookiePosition CookiePosition => _cookiePosition;
+
+    public ItemData ExpCandyItemData => _expCandyItemData;
+    public ItemData PowderItemData => _powderItemData;
+
 
     public string CookieGradeName
     {

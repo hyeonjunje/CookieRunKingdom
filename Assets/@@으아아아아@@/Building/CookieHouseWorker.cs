@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CookieHouseWorker : BuildingWorker
 {
+    [SerializeField] private ItemData _expCandyData;
+
     public override void Init(BuildingController controller)
     {
         _controller = controller;
@@ -17,7 +19,7 @@ public class CookieHouseWorker : BuildingWorker
 
     protected override void Harvest()
     {
-        GameManager.Game.ExpCandy += 10;
+        DataBaseManager.Instance.AddItem(_expCandyData, 10);
         GuideDisplayer.Instance.ShowGuide("∫∞ªÁ≈¡ " + 10 + "∞≥ »πµÊ");
     }
 

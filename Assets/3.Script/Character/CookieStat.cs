@@ -29,7 +29,6 @@ public class CookieStat : MonoBehaviour
     public int EvolutionGauge { get { return _evolutionGauge; } set { _evolutionGauge = value; } }
     public int EvolutionMaxGauge { get { return _evolutionMaxGague; } set { _evolutionMaxGague = value; } }
 
-
     public void Init(CookieController controller)
     {
         _controller = controller;
@@ -80,9 +79,10 @@ public class CookieStat : MonoBehaviour
 
     public void LevelUp()
     {
-        if(GameManager.Game.ExpCandy * 14 >= _maxExpValue)
+        int expAmount = DataBaseManager.Instance.MyDataBase.itemDataBase[_data.ExpCandyItemData];
+        if(expAmount * 14 >= _maxExpValue)
         {
-            GameManager.Game.ExpCandy -= (int)Mathf.Ceil((float)_maxExpValue / 14);
+            DataBaseManager.Instance.AddItem(_data.ExpCandyItemData, -(int)Mathf.Ceil((float)_maxExpValue / 14));
         }
         else
         {

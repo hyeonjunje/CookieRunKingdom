@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class InventoryUI : BaseUI
 {
+    [SerializeField] private ItemData _emptyItemData;
     [SerializeField] private ItemSlot itemSlot;
     [SerializeField] private RectTransform itemSlotParent;
 
@@ -54,6 +55,7 @@ public class InventoryUI : BaseUI
         {
             ItemSlot slot = Instantiate(itemSlot, itemSlotParent);
             inventoryItems.Add(slot);
+            inventoryItems[i].FillSlot(_emptyItemData, 0);
             slot.ClearSlot();
         }
 
@@ -66,9 +68,15 @@ public class InventoryUI : BaseUI
 
         // Test
         int index = 0;
-        foreach (var data in DataBaseManager.Instance.MyDataBase.itemDataBase)
+        foreach (KeyValuePair<ItemData, int> data in DataBaseManager.Instance.MyDataBase.itemDataBase)
         {
             inventoryItems[index++].FillSlot(data.Key, data.Value);
+        }
+
+        inventoryItems.Sort((item1, item2) => (item1.Data.ItemType).CompareTo(item2.Data.ItemType));
+        for(int i = 0; i < inventoryItems.Count; i++)
+        {
+            inventoryItems[i].transform.SetSiblingIndex(i);
         }
     }
 }

@@ -135,3 +135,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 44e77857f04ea2742ad79f8e52039bf0, type: 3}
   - {fileID: 21300000, guid: 721c7b0be35bb454fbe6e98f2d2b6065, type: 3}
   - {fileID: 21300000, guid: 798eae74704565f4f82ef1b4677812f5, type: 3}
+  _victoryRewardItems:
+  - ingredientItem: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
+    count: 6
+  - ingredientItem: {fileID: 11400000, guid: 9b26c7b51c7eeac43852f427dfce50b0, type: 2}
+    count: 30
+  - ingredientItem: {fileID: 11400000, guid: 1eeed9897d9dd37438ec302481873902, type: 2}
+    count: 10
+  _defeatRewardItems:
+  - ingredientItem: {fileID: 11400000, guid: 9b26c7b51c7eeac43852f427dfce50b0, type: 2}
+    count: 15

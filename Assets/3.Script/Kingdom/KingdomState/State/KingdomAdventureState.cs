@@ -42,6 +42,10 @@ public class KingdomAdventureState : KingdomBaseState
     public override void OnClick()
     {
         base.OnClick();
+
+        if(DetectUI())
+            return;
+
         _cookieBundle.OnMove();
     }
 

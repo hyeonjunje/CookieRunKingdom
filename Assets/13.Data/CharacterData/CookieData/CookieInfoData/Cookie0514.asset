@@ -23,6 +23,9 @@ MonoBehaviour:
   _defenseStat: 10
   _criticalStat: 1
   _cookieIndex: 8
+  _appearSpeech: 
+  _bubbleSpeech: 
+  _cookiePortraitSkeleton: {fileID: 0}
   _idleBlackMaterial: {fileID: 2100000, guid: ca0786af4e6f6164b850352bd21b9d81, type: 2}
   _cookieHeadSprite: {fileID: -5869559486932283116, guid: 9d4a6d23348f2be40adb640568dc0c06, type: 3}
   _idleSprite: {fileID: 21300000, guid: 0ca5df53811901e4ca51defadf1af3ab, type: 3}
@@ -33,3 +36,5 @@ MonoBehaviour:
   _cookieGrade: 1
   _cookieType: 5
   _cookiePosition: 2
+  _expCandyItemData: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
+  _powderItemData: {fileID: 0}

@@ -21,6 +21,11 @@ public class StageSelectUI : BaseUI
 
     [SerializeField] private CookieSelectUI _cookieSelectUI;
 
+    [SerializeField] private ItemSlot _itemSlotPrefab;
+    [SerializeField] private Transform _itemSlotParent;
+
+    private ItemSlot[] _itemSlotArray = new ItemSlot[10];
+
     private float _prevOrthoSize;
     private Vector3 _prevCameraPos;
     private Camera _camera;
@@ -33,6 +38,12 @@ public class StageSelectUI : BaseUI
         base.Init();
         _manager = FindObjectOfType<KingdomManager>();
         _camera = Camera.main;
+
+        for(int i = 0; i < _itemSlotArray.Length; i++)
+        {
+            _itemSlotArray[i] = Instantiate(_itemSlotPrefab, _itemSlotParent);
+            _itemSlotArray[i].gameObject.SetActive(false);
+        }
     }
 
     public void InitStageData(StageData stageData, Vector3 touchPos, int starCount = 3)
@@ -87,6 +98,17 @@ public class StageSelectUI : BaseUI
             }
         }
         _powerAmountText.text = power.ToString();
+
+
+        for(int i = 0; i < _itemSlotArray.Length; i++)
+        {
+            _itemSlotArray[i].gameObject.SetActive(false);
+            if(i < _stageData.VictoryRewardItems.Length)
+            {
+                _itemSlotArray[i].gameObject.SetActive(true);
+                _itemSlotArray[i].FillSlot(_stageData.VictoryRewardItems[i].ingredientItem, _stageData.VictoryRewardItems[i].count);
+            }
+        }
     }
 
     public override void Hide()

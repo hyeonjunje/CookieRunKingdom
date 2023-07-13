@@ -239,3 +239,4 @@ MonoBehaviour:
   _workPlace: {fileID: 0}
   _workAnimationName: 
   isWorking: 0
+  _expCandyData: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}

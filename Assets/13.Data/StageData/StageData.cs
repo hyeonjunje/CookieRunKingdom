@@ -32,14 +32,20 @@ public class StageData : ScriptableObject
     [SerializeField] private Sprite[] _middleObjectSprites;  // 2
     [SerializeField] private Sprite[] _farObjectSprites;     // 3
 
+    [Header("보상 정보")]
+    [Space(10)]
+    [SerializeField] private ItemBundle[] _victoryRewardItems;
+    [SerializeField] private ItemBundle[] _defeatRewardItems;
+
 
     public string StageName => _stageName;
     public float RecommendedPower => _recommendedPower;
     public int Jelly => _jelly;
     public WaveInfo[] WaveInfo => _waveInfo;
     public Sprite[] MapSprites => _mapSprites;
-
     public Sprite[] CloseObjectSprites => _closeObjectSprites;
     public Sprite[] MiddleObjectSprites => _middleObjectSprites;
     public Sprite[] FarObjectSprites => _farObjectSprites;
+    public ItemBundle[] VictoryRewardItems => _victoryRewardItems;
+    public ItemBundle[] DefeatRewardItems => _defeatRewardItems;
 }

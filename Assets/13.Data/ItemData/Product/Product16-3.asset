@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8be9e078ec57eb4ba7e3422e1e8098b, type: 3}
   m_Name: Product16-3
   m_EditorClassIdentifier: 
+  itemType: 3
   itemImage: {fileID: 21300000, guid: d837c70c49df8234c9c47a621f828a92, type: 3}
   itemName: "\uC2A4\uC704\uBCA0\uB9AC \uC5D0\uC774\uB4DC"
-  itemType: "\uC0DD\uC0B0\uD488"
   itemExplain: "\uC544\uC774\uC154"
+  itemValue: 0

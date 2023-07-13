@@ -17,16 +17,12 @@ public class DataBaseManager : Singleton<DataBaseManager>
     [Header("모든 아이템 데이터")]
     [SerializeField] private ItemData[] allItemData;
 
-    [Header("하우징 데이터")]
-    [SerializeField] private HousingItemData[] allTills;
-
     [Header("Test")]
     [SerializeField] private ItemData[] testItem;
 
     public BuildingController[] AllBuildings => allBuildings;
     public CookieController[] AllCookies => allCookies;
     public ItemData[] AllItemData => allItemData;
-    public HousingItemData[] AllTiles => allTills;
     public DataBase MyDataBase { get; private set; }
 
     private void Start()
@@ -42,7 +38,19 @@ public class DataBaseManager : Singleton<DataBaseManager>
 
     public void AddItem(ItemData item, int count)
     {
-        if(MyDataBase.itemDataBase.ContainsKey(item))
+        // 재화라면 바로 그 자리에서 데이터 업데이트
+        if (item.ItemType == EItemType.dia)
+        {
+            GameManager.Game.Dia += count;
+            return;
+        }
+        else if (item.ItemType == EItemType.money)
+        {
+            GameManager.Game.Money += count;
+            return;
+        }
+
+        if (MyDataBase.itemDataBase.ContainsKey(item))
         {
             MyDataBase.itemDataBase[item] += count;
         }

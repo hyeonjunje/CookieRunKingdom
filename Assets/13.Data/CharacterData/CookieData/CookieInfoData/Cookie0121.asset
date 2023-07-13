@@ -36,3 +36,5 @@ MonoBehaviour:
   _cookieGrade: 2
   _cookieType: 3
   _cookiePosition: 1
+  _expCandyItemData: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
+  _powderItemData: {fileID: 0}

@@ -11,9 +11,6 @@ public class SaveData
     // 제작시간
     public string prevCraftTime; 
 
-    // 아이템
-    public int expCandy;
-
     public List<CookieInfo> allCookies;
     public List<CraftableBuildingInfo> ownedCraftableBuildings;
 
@@ -24,8 +21,6 @@ public class SaveData
         dia = 0;
         maxJelly = 40;
         jelly = maxJelly;
-
-        expCandy = 0;
 
         prevCraftTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 

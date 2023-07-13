@@ -45,10 +45,6 @@ public class GameManagerEx
 
     #endregion
 
-    #region 아이템
-    public int ExpCandy { get; set; }
-    #endregion
-
     #region 쿠키정보
     public List<CookieInfo> AllCookies { get; set; }
     #endregion
@@ -70,8 +66,6 @@ public class GameManagerEx
         _jelly = saveData.jelly;
         _maxJelly = saveData.maxJelly;
 
-        ExpCandy = saveData.expCandy;
-
         PrevCraftTime = DateTime.ParseExact(saveData.prevCraftTime, "yyyyMMddHHmmss",
         System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
 
@@ -87,8 +81,6 @@ public class GameManagerEx
         saveData.money = _money;
         saveData.jelly = _jelly;
         saveData.maxJelly = _maxJelly;
-
-        saveData.expCandy = ExpCandy;
 
         saveData.allCookies = AllCookies;
         saveData.ownedCraftableBuildings = OwnedCraftableBuildings;

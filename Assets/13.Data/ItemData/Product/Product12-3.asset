@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8be9e078ec57eb4ba7e3422e1e8098b, type: 3}
   m_Name: Product12-3
   m_EditorClassIdentifier: 
+  itemType: 3
   itemImage: {fileID: 21300000, guid: 9b915df7788cdd84a8cd375b5b1548f8, type: 3}
   itemName: "\uCE94\uB514\uD06C\uB9BC \uD30C\uC2A4\uD0C0"
-  itemType: "\uC0DD\uC0B0\uD488"
   itemExplain: "\uC801\uB2F9\uD788 \uC0C8\uCF64\uD55C \uB9DB\uC774 \uB098\uB294 \uC824\uB9AC\uB97C
     \uACC1\uB4E4\uC5EC \uB3C5\uD2B9\uD55C \uB9DB\uC774\n\uB09C\uB2E4. \uB458\uC774\uC11C
     \uD55C \uC811\uC2DC\uB97C \uBA39\uB2E4\uBCF4\uBA74 \uB85C\uB9E8\uD2F1\uD55C \uC0C1\uD669\uC774
     \n\uC0DD\uAE38\uC9C0\uB3C4?"
+  itemValue: 0
