@@ -80,18 +80,7 @@ public class GameManagerEx
 
     public void Init()
     {
-        /*SaveData saveData = GameManager.File.SaveData;
-
-        _dia = saveData.dia;
-        _money = saveData.money;
-        _jelly = saveData.jelly;
-        _maxJelly = saveData.maxJelly;
-
-        PrevCraftTime = DateTime.ParseExact(saveData.prevCraftTime, "yyyyMMddHHmmss",
-        System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
-
-        AllCookies = saveData.allCookies;
-        OwnedCraftableBuildings = saveData.ownedCraftableBuildings;*/
+        
     }
 
     /// <summary>
@@ -108,6 +97,18 @@ public class GameManagerEx
         _dia = userInfo.Dia;
         _jelly = userInfo.Jelly;
         _maxJelly = userInfo.MaxJelly;
+
+        AllCookies = userInfo.AllCookies;
+        OwnedCraftableBuildings = userInfo.OwnedCraftableBuildings;
+
+        for(int i = 0; i < AllCookies.Count; i++)
+        {
+            Debug.Log(AllCookies[i]);
+        }
+        for(int i = 0; i < OwnedCraftableBuildings.Count; i++)
+        {
+            Debug.Log(OwnedCraftableBuildings[i]);
+        }
     }
 
     public void SaveData()
@@ -118,22 +119,6 @@ public class GameManagerEx
         if (!_isFirst)
             isFirst = 1;
 
-        userInfo.SetData(_kingdomName, isFirst, _money, _dia, _jelly, _maxJelly);
+        userInfo.SetData(_kingdomName, isFirst, _money, _dia, _jelly, _maxJelly, AllCookies, OwnedCraftableBuildings);
     }
-
-
-/*    public void SetSaveData()
-    {
-        SaveData saveData = new SaveData();
-        saveData.dia = _dia;
-        saveData.money = _money;
-        saveData.jelly = _jelly;
-        saveData.maxJelly = _maxJelly;
-
-        saveData.allCookies = AllCookies;
-        saveData.ownedCraftableBuildings = OwnedCraftableBuildings;
-
-        GameManager.File.SetSaveData(saveData);
-        GameManager.File.SaveGame();
-    }*/
 }

@@ -18,16 +18,69 @@ public class UserInfo
     public int Jelly { get; private set; }
     public int MaxJelly { get; private set; }
 
-    public UserInfo(string id, string pw, string name = "", int isFirst = 0, int money = 0, int dia = 0, int jelly = 0, int maxJelly = 0)
+    public List<CookieInfo> AllCookies { get; private set; }
+    public List<CraftableBuildingInfo> OwnedCraftableBuildings { get; private set; }
+
+    public UserInfo(string id, string pw, string name = "", int isFirst = 0, int money = 0, int dia = 0, int jelly = 0, int maxJelly = 0, string allCookies = "", string ownedCraftableBuildings = "")
     {
         Id = id;
         Pw = pw;
 
-        SetData(name, isFirst, money, dia, jelly, maxJelly);
+        SetData(name, isFirst, money, dia, jelly, maxJelly, allCookies, ownedCraftableBuildings);
     }
 
-    public void SetData(string name, int isFirst, int money, int dia, int jelly, int maxJelly)
+    public void SetData(string name, int isFirst, int money, int dia, int jelly, int maxJelly, string allCookies, string ownedCraftableBuildings)
     {
+        // 저장하자
+        KingdomName = name;
+        IsFirst = isFirst;
+        Money = money;
+        Dia = dia;
+
+        // 처음이 아니면 그대로 읽는다.
+        if(isFirst != 0)
+        {
+            Debug.Log("처음이 아니구ㅡㄴ");
+
+            Jelly = jelly;
+            MaxJelly = maxJelly;
+
+            // 복잡한건 json으로 저장하자
+            AllCookies = JsonUtility.FromJson<List<CookieInfo>>(allCookies);
+            OwnedCraftableBuildings = JsonUtility.FromJson<List<CraftableBuildingInfo>>(ownedCraftableBuildings);
+        }
+        // 처음이라면 설정해준다.
+        else
+        {
+            Debug.Log("처음하는군");
+
+            Jelly = 45;
+            MaxJelly = 45;
+
+            AllCookies = new List<CookieInfo>();
+            OwnedCraftableBuildings = new List<CraftableBuildingInfo>();
+
+            for (int i = 0; i < 10; i++)
+            {
+                AllCookies.Add(new CookieInfo(i, false, false));
+            }
+
+            AllCookies[0] = new CookieInfo(0, true, true, 0);
+            AllCookies[1] = new CookieInfo(1, true, true, 1);
+            AllCookies[2] = new CookieInfo(2, true, true, 3);
+            AllCookies[6] = new CookieInfo(6, true, true, 4);
+            AllCookies[8] = new CookieInfo(8, true, true, 8);
+
+            for(int i = 0; i < 21; i++)
+            {
+                OwnedCraftableBuildings.Add(new CraftableBuildingInfo(i, 4, true));
+            }
+        }
+    }
+
+    public void SetData(string name, int isFirst, int money, int dia, int jelly, int maxJelly, List<CookieInfo> allCookies, List<CraftableBuildingInfo> ownedCraftableBuildings)
+    {
+        // 저장하자
         KingdomName = name;
         IsFirst = isFirst;
         Money = money;
@@ -35,7 +88,9 @@ public class UserInfo
         Jelly = jelly;
         MaxJelly = maxJelly;
 
-        // 저장하자
+        // 복잡한건 json으로 저장하자
+        AllCookies = allCookies;
+        OwnedCraftableBuildings = ownedCraftableBuildings;
     }
 }
 
@@ -114,7 +169,7 @@ public class SQLManager
             return false;
         }
         string SQLCommand =
-            string.Format(@"SELECT Id,Pw,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly  FROM user_login_info
+            string.Format(@"SELECT Id,Pw,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly,Cookies,Buildings  FROM user_login_info
                             WHERE Id = '{0}' AND Pw = '{1}';", inputId, inputPw);
         MySqlCommand cmd = new MySqlCommand(SQLCommand, _connection);
         _reader = cmd.ExecuteReader();
@@ -132,7 +187,11 @@ public class SQLManager
                 int jelly = (_reader.IsDBNull(6)) ? 0 : int.Parse(_reader["Jelly"].ToString());
                 int maxJelly = (_reader.IsDBNull(7)) ? 0 : int.Parse(_reader["MaxJelly"].ToString());
 
-                UserInfo = new UserInfo(id, pw, kingdomName, isFirst, money, dia, jelly, maxJelly);
+                // json
+                string cookies = (_reader.IsDBNull(8)) ? string.Empty : (string)_reader["Cookies"].ToString();
+                string buildings = (_reader.IsDBNull(9)) ? string.Empty : (string)_reader["Buildings"].ToString();
+
+                UserInfo = new UserInfo(id, pw, kingdomName, isFirst, money, dia, jelly, maxJelly, cookies, buildings);
 
                 if (!_reader.IsClosed)
                 _reader.Close();
@@ -159,7 +218,6 @@ public class SQLManager
         {
             command.ExecuteNonQuery();
         }
-        Debug.Log("생성~");
         UserInfo = new UserInfo(id, pw);
     }
 
@@ -172,7 +230,7 @@ public class SQLManager
         string SQLCommand = string.Empty;
 
         // 첫번째와 두번째는 id와 pw
-        for (int i = 2; i < properties.Length; i++)
+        for (int i = 2; i < properties.Length - 2; i++)
         {
             SQLCommand = string.Format(@"UPDATE user_login_info SET {0}= '{1}' WHERE  Id= '{2}' AND Pw= '{3}';",
                 properties[i].Name, properties[i].GetValue(UserInfo), properties[0].GetValue(UserInfo), properties[1].GetValue(UserInfo));
@@ -180,6 +238,24 @@ public class SQLManager
             {
                 command.ExecuteNonQuery();
             }
+        }
+
+        // 쿠키 정보
+        string allCookies = JsonUtility.ToJson(UserInfo.AllCookies);
+        SQLCommand = string.Format(@"UPDATE user_login_info SET {0}= '{1}' WHERE  Id= '{2}' AND Pw= '{3}';",
+                "Cookies", allCookies, properties[0].GetValue(UserInfo), properties[1].GetValue(UserInfo));
+        using (MySqlCommand command = new MySqlCommand(SQLCommand, _connection))
+        {
+            command.ExecuteNonQuery();
+        }
+
+        // 건물 정보
+        string allBuildings = JsonUtility.ToJson(UserInfo.OwnedCraftableBuildings);
+        SQLCommand = string.Format(@"UPDATE user_login_info SET {0}= '{1}' WHERE  Id= '{2}' AND Pw= '{3}';",
+                "Buildings", allBuildings, properties[0].GetValue(UserInfo), properties[1].GetValue(UserInfo));
+        using (MySqlCommand command = new MySqlCommand(SQLCommand, _connection))
+        {
+            command.ExecuteNonQuery();
         }
     }
 }
