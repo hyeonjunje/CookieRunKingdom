@@ -51,6 +51,9 @@ public class CreateNameUI : BaseUI
         else
         {
             // 이름 저장해줘
+
+            GameManager.Game.KingdomName = _kingdomNameField.text;
+
             GameManager.UI.ExitPopUpUI();
         }
     }

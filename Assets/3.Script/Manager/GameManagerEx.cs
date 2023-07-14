@@ -101,7 +101,7 @@ public class GameManagerEx
     {
         UserInfo userInfo = GameManager.SQL.UserInfo;
 
-        _kingdomName = userInfo.Name;
+        _kingdomName = userInfo.KingdomName;
         _dia = userInfo.Dia;
         _isFirst = userInfo.IsFirst == 0;
         _money = userInfo.Money;

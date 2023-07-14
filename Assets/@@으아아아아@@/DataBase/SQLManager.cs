@@ -5,12 +5,13 @@ using System;
 using System.IO;
 using LitJson;
 using MySql.Data.MySqlClient;
+using System.Reflection;
 
 public class UserInfo
 {
     public string Id { get; private set; }
     public string Pw { get; private set; }
-    public string Name { get; private set; }
+    public string KingdomName { get; private set; }
     public int IsFirst { get; private set; }
     public int Money { get; private set; }
     public int Dia { get; private set; }
@@ -27,7 +28,7 @@ public class UserInfo
 
     public void SetData(string name, int isFirst, int money, int dia, int jelly, int maxJelly)
     {
-        Name = name;
+        KingdomName = name;
         IsFirst = isFirst;
         Money = money;
         Dia = dia;
@@ -166,7 +167,19 @@ public class SQLManager
     // 데이터베이스에 저장한다.
     public void SaveDataBase()
     {
-        // id와 pw로 데이터를 조회해
-        // userInfo로 데이터를 덧씌운다.
+        // userInfo의 데이터를 id와 pw를 읽어서 그에 맞는 데이터에 다 저장한다.
+        PropertyInfo[] properties = UserInfo.GetType().GetProperties();
+        string SQLCommand = string.Empty;
+
+        // 첫번째와 두번째는 id와 pw
+        for (int i = 2; i < properties.Length; i++)
+        {
+            SQLCommand = string.Format(@"UPDATE user_login_info SET {0}= '{1}' WHERE  Id= '{2}' AND Pw= '{3}';",
+                properties[i].Name, properties[i].GetValue(UserInfo), properties[0].GetValue(UserInfo), properties[1].GetValue(UserInfo));
+            using(MySqlCommand command = new MySqlCommand(SQLCommand, _connection))
+            {
+                command.ExecuteNonQuery();
+            }
+        }
     }
 }

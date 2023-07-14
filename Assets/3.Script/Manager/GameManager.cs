@@ -45,6 +45,7 @@ public class GameManager : Singleton<GameManager>
         // Game.SetSaveData();
 
         Game.SaveData();
+        SQL.SaveDataBase();
 
         base.OnApplicationQuit();
     }
