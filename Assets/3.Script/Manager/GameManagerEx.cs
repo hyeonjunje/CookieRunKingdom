@@ -5,6 +5,21 @@ using System;
 
 public class GameManagerEx
 {
+    #region 유저정보
+    private string _kingdomName;
+    public string KingdomName
+    {
+        get { return _kingdomName; }
+        set { _kingdomName = value; }
+    }
+    private bool _isFirst;
+    public bool IsFirst
+    {
+        get { return _isFirst; }
+        set { _isFirst = value; }
+    }
+    #endregion
+
     #region 재화
     public DateTime prevJellyTime = System.DateTime.Now;
     public int jellyTime = Utils.JellyTime;
@@ -54,13 +69,19 @@ public class GameManagerEx
     #endregion
 
     public DateTime PrevCraftTime { get; set; } // kingdomManageState를 나간 시간
+
+    // 저장할 데이터
+    // ==============================================
+    // 저장안하는 데이터
+
     public StageData StageData { get; set; }
 
     public EKingdomState StartKingdomState { get; set; }
 
     public void Init()
     {
-        SaveData saveData = GameManager.File.SaveData;
+        /*SaveData saveData = GameManager.File.SaveData;
+
         _dia = saveData.dia;
         _money = saveData.money;
         _jelly = saveData.jelly;
@@ -70,11 +91,38 @@ public class GameManagerEx
         System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
 
         AllCookies = saveData.allCookies;
-        OwnedCraftableBuildings = saveData.ownedCraftableBuildings;
+        OwnedCraftableBuildings = saveData.ownedCraftableBuildings;*/
+    }
+
+    /// <summary>
+    /// 로그인 되면 호출
+    /// </summary>
+    public void LoadData()
+    {
+        UserInfo userInfo = GameManager.SQL.UserInfo;
+
+        _kingdomName = userInfo.Name;
+        _dia = userInfo.Dia;
+        _isFirst = userInfo.IsFirst == 0;
+        _money = userInfo.Money;
+        _dia = userInfo.Dia;
+        _jelly = userInfo.Jelly;
+        _maxJelly = userInfo.MaxJelly;
+    }
+
+    public void SaveData()
+    {
+        UserInfo userInfo = GameManager.SQL.UserInfo;
+
+        int isFirst = 0;
+        if (!_isFirst)
+            isFirst = 1;
+
+        userInfo.SetData(_kingdomName, isFirst, _money, _dia, _jelly, _maxJelly);
     }
 
 
-    public void SetSaveData()
+/*    public void SetSaveData()
     {
         SaveData saveData = new SaveData();
         saveData.dia = _dia;
@@ -87,5 +135,5 @@ public class GameManagerEx
 
         GameManager.File.SetSaveData(saveData);
         GameManager.File.SaveGame();
-    }
+    }*/
 }
