@@ -99,12 +99,13 @@ public class LoginUI : BaseUI
         {
             ShowStatus("아이디 비밀번호를 입력해 주세요.");
         }
-        else if (!GameManager.SQL.Login(_idField.text, _pwField.text))
+        else if (GameManager.SQL.Login(_idField.text, _pwField.text))
         {
             ShowStatus("이미 존재하는 계정입니다.");
         }
         else
         {
+            GameManager.SQL.SignUp(_idField.text, _pwField.text);
             ShowStatus("계정이 생성되었습니다.");
             BackEvent();
         }

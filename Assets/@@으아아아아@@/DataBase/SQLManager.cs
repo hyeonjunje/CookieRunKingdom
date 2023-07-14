@@ -17,7 +17,7 @@ public class UserInfo
     public int Jelly { get; private set; }
     public int MaxJelly { get; private set; }
 
-    public UserInfo(string id, string pw, string name, int isFirst, int money, int dia, int jelly, int maxJelly)
+    public UserInfo(string id, string pw, string name = "", int isFirst = 0, int money = 0, int dia = 0, int jelly = 0, int maxJelly = 0)
     {
         Id = id;
         Pw = pw;
@@ -108,79 +108,58 @@ public class SQLManager
 
     public bool Login(string inputId, string inputPw)
     {
-/*        try
-        {*/
-            if (!ConnectCheck(_connection))
-            {
-                return false;
-            }
-            string SQLCommand =
-                string.Format(@"SELECT Id,Pw,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly  FROM user_login_info
-                                WHERE Id = '{0}' AND Pw = '{1}';", inputId, inputPw);
-            MySqlCommand cmd = new MySqlCommand(SQLCommand, _connection);
-            _reader = cmd.ExecuteReader();
-
-            if (_reader.HasRows)
-            {
-                while (_reader.Read())
-                {
-                    string id = (_reader.IsDBNull(0)) ? string.Empty : (string)_reader["Id"].ToString();
-                    string pw = (_reader.IsDBNull(1)) ? string.Empty : (string)_reader["Pw"].ToString();
-                    string kingdomName = (_reader.IsDBNull(2)) ? string.Empty : (string)_reader["KingdomName"].ToString();
-                    int isFirst = (_reader.IsDBNull(3)) ? 0 : int.Parse(_reader["IsFirst"].ToString());
-                    int money = (_reader.IsDBNull(4)) ? 0 : int.Parse(_reader["Money"].ToString());
-                    int dia = (_reader.IsDBNull(5)) ? 0 : int.Parse(_reader["Dia"].ToString());
-                    int jelly = (_reader.IsDBNull(6)) ? 0 : int.Parse(_reader["Jelly"].ToString());
-                    int maxJelly = (_reader.IsDBNull(7)) ? 0 : int.Parse(_reader["MaxJelly"].ToString());
-
-                    UserInfo = new UserInfo(id, pw, kingdomName, isFirst, money, dia, jelly, maxJelly);
-
-                if (!_reader.IsClosed)
-                    _reader.Close();
-
-                    return true;
-
-                    /*if (!name.Equals(string.Empty) || !password.Equals(string.Empty))
-                    {
-                        // UserInfo = new UserInfo(name, password);
-
-                        if (!_reader.IsClosed)
-                            _reader.Close();
-                        return true;
-                    }
-                    else
-                    {
-                        break;
-                    }*/
-                }
-
-                if (!_reader.IsClosed)
-                    _reader.Close();
-                return false;
-            }
-            else
-            {
-                if (!_reader.IsClosed)
-                    _reader.Close();
-                return false;
-            }
-/*        }
-        catch (Exception e)
+        if (!ConnectCheck(_connection))
         {
-            Debug.Log(e.Message);
-            if (_reader != null && !_reader.IsClosed)
+            return false;
+        }
+        string SQLCommand =
+            string.Format(@"SELECT Id,Pw,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly  FROM user_login_info
+                            WHERE Id = '{0}' AND Pw = '{1}';", inputId, inputPw);
+        MySqlCommand cmd = new MySqlCommand(SQLCommand, _connection);
+        _reader = cmd.ExecuteReader();
+
+        if (_reader.HasRows)
+        {
+            while (_reader.Read())
+            {
+                string id = (_reader.IsDBNull(0)) ? string.Empty : (string)_reader["Id"].ToString();
+                string pw = (_reader.IsDBNull(1)) ? string.Empty : (string)_reader["Pw"].ToString();
+                string kingdomName = (_reader.IsDBNull(2)) ? string.Empty : (string)_reader["KingdomName"].ToString();
+                int isFirst = (_reader.IsDBNull(3)) ? 0 : int.Parse(_reader["IsFirst"].ToString());
+                int money = (_reader.IsDBNull(4)) ? 0 : int.Parse(_reader["Money"].ToString());
+                int dia = (_reader.IsDBNull(5)) ? 0 : int.Parse(_reader["Dia"].ToString());
+                int jelly = (_reader.IsDBNull(6)) ? 0 : int.Parse(_reader["Jelly"].ToString());
+                int maxJelly = (_reader.IsDBNull(7)) ? 0 : int.Parse(_reader["MaxJelly"].ToString());
+
+                UserInfo = new UserInfo(id, pw, kingdomName, isFirst, money, dia, jelly, maxJelly);
+
+                if (!_reader.IsClosed)
+                _reader.Close();
+
+                return true;
+            }
+
+            if (!_reader.IsClosed)
                 _reader.Close();
             return false;
-        }*/
+        }
+        else
+        {
+            if (!_reader.IsClosed)
+                _reader.Close();
+            return false;
+        }
     }
 
     public void SignUp(string id, string pw)
     {
-        string query = string.Format("INSERT INTO user_login_info (U_name, U_Password, U_Birthday) VALUES ('{0}', '{1}', '{2}');", id, pw, "1102");
-        using (MySqlCommand command = new MySqlCommand(query, _connection))
+        string SQLCommand = string.Format(@"INSERT INTO user_login_info (Id, Pw) VALUES ('{0}', '{1}');", id, pw);
+        using (MySqlCommand command = new MySqlCommand(SQLCommand, _connection))
         {
             command.ExecuteNonQuery();
         }
+        Debug.Log("»ý¼º~");
+        UserInfo = new UserInfo(id, pw);
     }
 
 
