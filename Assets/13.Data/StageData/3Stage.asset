@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isBoss: 1
   _bossSkeletonAnimation: {fileID: 681801666857949394, guid: ee5b53fa2d0041640bb748e072810061, type: 3}
-  _stageName: "1-5 \uB85C\uC584\uC824\uB9AC \uCC44\uC9D1\uC7A5"
+  _stageName: "1-3 \uB85C\uC584\uC824\uB9AC \uCC44\uC9D1\uC7A5"
   _recommendedPower: 5836
-  _jelly: 2
+  _jelly: 4
   _waveInfo:
   - enemies:
     - {fileID: 0}
