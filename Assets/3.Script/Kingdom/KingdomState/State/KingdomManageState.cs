@@ -39,6 +39,7 @@ public class KingdomManageState : KingdomBaseState
 
         _manager.buildingsInKingdom.ForEach(building =>
         {
+            building.BuildingWorker.isRepresentative = false;
             building.BuildingWorker.SaveBuilding();
 
             building.BuildingWorker.UpdateCraftingItem();
@@ -46,6 +47,9 @@ public class KingdomManageState : KingdomBaseState
             building.gameObject.SetActive(true);
             building.BuildingWorker.WorkBuilding();
         });
+
+        if (_manager.buildingsInKingdom.Count != 0)
+            _manager.buildingsInKingdom[0].BuildingWorker.isRepresentative = true;
     }
 
     public override void Exit()
@@ -53,13 +57,18 @@ public class KingdomManageState : KingdomBaseState
         GameManager.UI.ClearUI();
 
         // ÄíÅ°µéÀÌ »ç¶óÁü
-        _manager.allCookies.ForEach(cookie => cookie.CookieStat.SaveCookie());
-        _manager.allCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
+        _manager.allCookies.ForEach(cookie =>
+        {
+            cookie.CookieStat.SaveCookie();
+            cookie.gameObject.SetActive(false);
+        });
 
-        _manager.buildingsInKingdom.ForEach(building => building.BuildingWorker.SaveBuilding());
-        _manager.buildingsInKingdom.ForEach(building => building.gameObject.SetActive(false));
-
-        GameManager.Game.PrevCraftTime = System.DateTime.Now;
+        _manager.buildingsInKingdom.ForEach(building =>
+        {
+            building.BuildingWorker.isRepresentative = true;
+            building.BuildingWorker.SaveBuilding();
+            building.gameObject.SetActive(false);
+        });
     }
 
     public override void OnClickStart()

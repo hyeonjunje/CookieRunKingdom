@@ -7,31 +7,81 @@ using LitJson;
 using MySql.Data.MySqlClient;
 using System.Reflection;
 
+public class CookiesJson
+{
+    public List<CookieInfo> allCookies;
+
+    public CookiesJson()
+    {
+        // 처음하면 용감한 쿠키, 딸기맛 쿠키, 마법사맛 쿠키, 칠리맛 쿠키, 커스타드3세맛 쿠키가 주어진다.
+        allCookies = new List<CookieInfo>();
+
+        for (int i = 0; i < 10; i++)
+        {
+            allCookies.Add(new CookieInfo(i, false, false));
+        }
+
+        allCookies[0] = new CookieInfo(0, true, true, 0);
+        allCookies[1] = new CookieInfo(1, true, true, 1);
+        allCookies[2] = new CookieInfo(2, true, true, 3);
+        allCookies[6] = new CookieInfo(6, true, true, 4);
+        allCookies[8] = new CookieInfo(8, true, true, 8);
+    }
+}
+
+public class BuildingJson
+{
+    public List<BuildingInfo> allBuildings;
+
+    public BuildingJson()
+    {
+        allBuildings = new List<BuildingInfo>();
+
+        for (int i = 0; i < 21; i++)
+        {
+            allBuildings.Add(new BuildingInfo(i, 4, true));
+        }
+    }
+}
+
+
 public class UserInfo
 {
     public string Id { get; private set; }
     public string Pw { get; private set; }
+    public int KingdomIndex { get; private set; }
     public string KingdomName { get; private set; }
     public int IsFirst { get; private set; }
     public int Money { get; private set; }
     public int Dia { get; private set; }
     public int Jelly { get; private set; }
     public int MaxJelly { get; private set; }
+    public string Cookies { get; private set; }
+    public string Buildings { get; private set; }
+    public string LastTime { get; private set; }
 
-    public List<CookieInfo> AllCookies { get; private set; }
-    public List<CraftableBuildingInfo> OwnedCraftableBuildings { get; private set; }
+    private CookiesJson _cookieJson;
+    private BuildingJson _buildingJson;
 
-    public UserInfo(string id, string pw, string name = "", int isFirst = 0, int money = 0, int dia = 0, int jelly = 0, int maxJelly = 0, string allCookies = "", string ownedCraftableBuildings = "")
+    public UserInfo(string id, string pw, int kingdomIndex = 0, string name = "", int isFirst = 0, int money = 0, 
+        int dia = 0, int jelly = 0, int maxJelly = 0, string cookies = "", string buildings = "", string lastTime = "")
     {
         Id = id;
         Pw = pw;
 
-        SetData(name, isFirst, money, dia, jelly, maxJelly, allCookies, ownedCraftableBuildings);
+        LoadData(kingdomIndex, name, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime);
     }
 
-    public void SetData(string name, int isFirst, int money, int dia, int jelly, int maxJelly, string allCookies, string ownedCraftableBuildings)
+    public void GetJsonData(ref List<CookieInfo> allCookies, ref List<BuildingInfo> allBuildings)
     {
-        // 저장하자
+        allCookies = _cookieJson.allCookies;
+        allBuildings = _buildingJson.allBuildings;
+    }
+
+    // 게임 불러올 때
+    public void LoadData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, string cookies, string buildings, string lastTime)
+    {
+        KingdomIndex = kingdomIndex;
         KingdomName = name;
         IsFirst = isFirst;
         Money = money;
@@ -44,10 +94,12 @@ public class UserInfo
 
             Jelly = jelly;
             MaxJelly = maxJelly;
+            Cookies = cookies;
+            Buildings = buildings;
+            LastTime = lastTime;
 
-            // 복잡한건 json으로 저장하자
-            AllCookies = JsonUtility.FromJson<List<CookieInfo>>(allCookies);
-            OwnedCraftableBuildings = JsonUtility.FromJson<List<CraftableBuildingInfo>>(ownedCraftableBuildings);
+            _cookieJson = JsonUtility.FromJson<CookiesJson>(Cookies);
+            _buildingJson = JsonUtility.FromJson<BuildingJson>(Buildings);
         }
         // 처음이라면 설정해준다.
         else
@@ -56,31 +108,18 @@ public class UserInfo
 
             Jelly = 45;
             MaxJelly = 45;
+            LastTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
-            AllCookies = new List<CookieInfo>();
-            OwnedCraftableBuildings = new List<CraftableBuildingInfo>();
-
-            for (int i = 0; i < 10; i++)
-            {
-                AllCookies.Add(new CookieInfo(i, false, false));
-            }
-
-            AllCookies[0] = new CookieInfo(0, true, true, 0);
-            AllCookies[1] = new CookieInfo(1, true, true, 1);
-            AllCookies[2] = new CookieInfo(2, true, true, 3);
-            AllCookies[6] = new CookieInfo(6, true, true, 4);
-            AllCookies[8] = new CookieInfo(8, true, true, 8);
-
-            for(int i = 0; i < 21; i++)
-            {
-                OwnedCraftableBuildings.Add(new CraftableBuildingInfo(i, 4, true));
-            }
+            _cookieJson = new CookiesJson();
+            _buildingJson = new BuildingJson();
         }
     }
 
-    public void SetData(string name, int isFirst, int money, int dia, int jelly, int maxJelly, List<CookieInfo> allCookies, List<CraftableBuildingInfo> ownedCraftableBuildings)
+    // 게임 저장할 때
+    public void SaveData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, List<CookieInfo> cookiesInfo, List<BuildingInfo> buildingsInfo, DateTime lastTime)
     {
         // 저장하자
+        KingdomIndex = kingdomIndex;
         KingdomName = name;
         IsFirst = isFirst;
         Money = money;
@@ -89,8 +128,13 @@ public class UserInfo
         MaxJelly = maxJelly;
 
         // 복잡한건 json으로 저장하자
-        AllCookies = allCookies;
-        OwnedCraftableBuildings = ownedCraftableBuildings;
+        _cookieJson.allCookies = cookiesInfo;
+        _buildingJson.allBuildings = buildingsInfo;
+
+        LastTime = lastTime.ToString("yyyyMMddHHmmss");
+
+        Cookies = JsonUtility.ToJson(_cookieJson);
+        Buildings = JsonUtility.ToJson(_buildingJson);
     }
 }
 
@@ -169,7 +213,7 @@ public class SQLManager
             return false;
         }
         string SQLCommand =
-            string.Format(@"SELECT Id,Pw,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly,Cookies,Buildings  FROM user_login_info
+            string.Format(@"SELECT Id,Pw,KingdomIndex,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly,Cookies,Buildings,LastTime  FROM user_login_info
                             WHERE Id = '{0}' AND Pw = '{1}';", inputId, inputPw);
         MySqlCommand cmd = new MySqlCommand(SQLCommand, _connection);
         _reader = cmd.ExecuteReader();
@@ -180,18 +224,22 @@ public class SQLManager
             {
                 string id = (_reader.IsDBNull(0)) ? string.Empty : (string)_reader["Id"].ToString();
                 string pw = (_reader.IsDBNull(1)) ? string.Empty : (string)_reader["Pw"].ToString();
-                string kingdomName = (_reader.IsDBNull(2)) ? string.Empty : (string)_reader["KingdomName"].ToString();
-                int isFirst = (_reader.IsDBNull(3)) ? 0 : int.Parse(_reader["IsFirst"].ToString());
-                int money = (_reader.IsDBNull(4)) ? 0 : int.Parse(_reader["Money"].ToString());
-                int dia = (_reader.IsDBNull(5)) ? 0 : int.Parse(_reader["Dia"].ToString());
-                int jelly = (_reader.IsDBNull(6)) ? 0 : int.Parse(_reader["Jelly"].ToString());
-                int maxJelly = (_reader.IsDBNull(7)) ? 0 : int.Parse(_reader["MaxJelly"].ToString());
+                int kingdomIndex = (_reader.IsDBNull(2)) ? 0 : int.Parse(_reader["KingdomIndex"].ToString());
+                string kingdomName = (_reader.IsDBNull(3)) ? string.Empty : (string)_reader["KingdomName"].ToString();
+                int isFirst = (_reader.IsDBNull(4)) ? 0 : int.Parse(_reader["IsFirst"].ToString());
+                int money = (_reader.IsDBNull(5)) ? 0 : int.Parse(_reader["Money"].ToString());
+                int dia = (_reader.IsDBNull(6)) ? 0 : int.Parse(_reader["Dia"].ToString());
+                int jelly = (_reader.IsDBNull(7)) ? 0 : int.Parse(_reader["Jelly"].ToString());
+                int maxJelly = (_reader.IsDBNull(8)) ? 0 : int.Parse(_reader["MaxJelly"].ToString());
 
                 // json
-                string cookies = (_reader.IsDBNull(8)) ? string.Empty : (string)_reader["Cookies"].ToString();
-                string buildings = (_reader.IsDBNull(9)) ? string.Empty : (string)_reader["Buildings"].ToString();
+                string cookies = (_reader.IsDBNull(9)) ? string.Empty : (string)_reader["Cookies"].ToString();
+                string buildings = (_reader.IsDBNull(10)) ? string.Empty : (string)_reader["Buildings"].ToString();
 
-                UserInfo = new UserInfo(id, pw, kingdomName, isFirst, money, dia, jelly, maxJelly, cookies, buildings);
+                // DataTime
+                string lastTime = (_reader.IsDBNull(11)) ? string.Empty : (string)_reader["LastTime"].ToString();
+
+                UserInfo = new UserInfo(id, pw, kingdomIndex, kingdomName, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime);
 
                 if (!_reader.IsClosed)
                 _reader.Close();
@@ -230,32 +278,14 @@ public class SQLManager
         string SQLCommand = string.Empty;
 
         // 첫번째와 두번째는 id와 pw
-        for (int i = 2; i < properties.Length - 2; i++)
+        for (int i = 2; i < properties.Length ; i++)
         {
             SQLCommand = string.Format(@"UPDATE user_login_info SET {0}= '{1}' WHERE  Id= '{2}' AND Pw= '{3}';",
                 properties[i].Name, properties[i].GetValue(UserInfo), properties[0].GetValue(UserInfo), properties[1].GetValue(UserInfo));
             using(MySqlCommand command = new MySqlCommand(SQLCommand, _connection))
             {
-                command.ExecuteNonQuery();
+                command.ExecuteNonQuery();  
             }
-        }
-
-        // 쿠키 정보
-        string allCookies = JsonUtility.ToJson(UserInfo.AllCookies);
-        SQLCommand = string.Format(@"UPDATE user_login_info SET {0}= '{1}' WHERE  Id= '{2}' AND Pw= '{3}';",
-                "Cookies", allCookies, properties[0].GetValue(UserInfo), properties[1].GetValue(UserInfo));
-        using (MySqlCommand command = new MySqlCommand(SQLCommand, _connection))
-        {
-            command.ExecuteNonQuery();
-        }
-
-        // 건물 정보
-        string allBuildings = JsonUtility.ToJson(UserInfo.OwnedCraftableBuildings);
-        SQLCommand = string.Format(@"UPDATE user_login_info SET {0}= '{1}' WHERE  Id= '{2}' AND Pw= '{3}';",
-                "Buildings", allBuildings, properties[0].GetValue(UserInfo), properties[1].GetValue(UserInfo));
-        using (MySqlCommand command = new MySqlCommand(SQLCommand, _connection))
-        {
-            command.ExecuteNonQuery();
         }
     }
 }

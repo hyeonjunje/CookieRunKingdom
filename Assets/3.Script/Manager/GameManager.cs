@@ -42,7 +42,6 @@ public class GameManager : Singleton<GameManager>
     protected override void OnApplicationQuit()
     {
         Debug.Log("꺼지고 저장합니다.");
-        // Game.SetSaveData();
 
         Game.SaveData();
         SQL.SaveDataBase();

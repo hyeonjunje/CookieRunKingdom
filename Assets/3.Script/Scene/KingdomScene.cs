@@ -38,11 +38,11 @@ public class KingdomScene : BaseScene
     private void ArrangeBuilding()
     {
         BuildingController[] allBuildingsData = DataBaseManager.Instance.AllBuildings;
-        List<CraftableBuildingInfo> ownedBuildings = GameManager.Game.OwnedCraftableBuildings;
+        List<BuildingInfo> ownedBuildings = GameManager.Game.OwnedCraftableBuildings;
 
         for(int i = 0; i < ownedBuildings.Count; i++)
         {
-            CraftableBuildingInfo buildingInfo = ownedBuildings[i];
+            BuildingInfo buildingInfo = ownedBuildings[i];
             BuildingController building = Instantiate(allBuildingsData[buildingInfo.buildingIndex], _buildingParent);
             
             building.BuildingWorker.LoadBuilding();
@@ -65,7 +65,7 @@ public class KingdomScene : BaseScene
     private void ArrangeCookies()
     {
         CookieController[] allCookiesData = DataBaseManager.Instance.AllCookies;
-        List<CookieInfo> ownedCookies = GameManager.Game.AllCookies;
+        List<CookieInfo> ownedCookies = GameManager.Game.allCookies;
 
         for(int i = 0; i < ownedCookies.Count; i++)
         {
@@ -90,7 +90,7 @@ public class KingdomScene : BaseScene
     private void CraftItem()
     {
         List<BuildingController> buildingsInKingdom = _kingdomManager.buildingsInKingdom;
-        List<CraftableBuildingInfo> ownedBuildings = GameManager.Game.OwnedCraftableBuildings;
+        List<BuildingInfo> ownedBuildings = GameManager.Game.OwnedCraftableBuildings;
         int buildingCount = 0;
 
         for (int i = 0; i < ownedBuildings.Count; i++)
@@ -98,7 +98,7 @@ public class KingdomScene : BaseScene
             if (!ownedBuildings[i].isCraftable)
                 continue;
 
-            CraftableBuildingInfo buildingInfo = ownedBuildings[i];
+            BuildingInfo buildingInfo = ownedBuildings[i];
             if(buildingInfo.isInstall)
             {
                 BuildingController building = buildingsInKingdom[buildingCount];

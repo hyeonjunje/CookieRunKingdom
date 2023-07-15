@@ -43,7 +43,7 @@ public class CookieStat : MonoBehaviour
 
     public void SaveCookie()
     {
-        CookieInfo cookieInfo = GameManager.Game.AllCookies[_data.CookieIndex];
+        CookieInfo cookieInfo = GameManager.Game.allCookies[_data.CookieIndex];
         cookieInfo.cookieLevel = _cookieLevel;
         cookieInfo.skillLevel = _skillLevel;
         cookieInfo.evolutionCount = _evolutionCount;
@@ -56,7 +56,7 @@ public class CookieStat : MonoBehaviour
 
     public void LoadCookie()
     {
-        CookieInfo cookieInfo = GameManager.Game.AllCookies[_data.CookieIndex];
+        CookieInfo cookieInfo = GameManager.Game.allCookies[_data.CookieIndex];
         _cookieLevel = cookieInfo.cookieLevel;
         _skillLevel = cookieInfo.skillLevel;
         _evolutionCount = cookieInfo.evolutionCount;

@@ -6,6 +6,13 @@ using System;
 public class GameManagerEx
 {
     #region 유저정보
+    private int _kingdomIndex;
+    public int KingdomIndex
+    {
+        get { return _kingdomIndex; }
+        set { _kingdomIndex = value; }
+    }
+
     private string _kingdomName;
     public string KingdomName
     {
@@ -61,11 +68,11 @@ public class GameManagerEx
     #endregion
 
     #region 쿠키정보
-    public List<CookieInfo> AllCookies { get; set; }
+    public List<CookieInfo> allCookies;
     #endregion
 
     #region 건물정보
-    public List<CraftableBuildingInfo> OwnedCraftableBuildings { get; set; }
+    public List<BuildingInfo> OwnedCraftableBuildings;
     #endregion
 
     public DateTime PrevCraftTime { get; set; } // kingdomManageState를 나간 시간
@@ -98,17 +105,12 @@ public class GameManagerEx
         _jelly = userInfo.Jelly;
         _maxJelly = userInfo.MaxJelly;
 
-        AllCookies = userInfo.AllCookies;
-        OwnedCraftableBuildings = userInfo.OwnedCraftableBuildings;
+        Debug.Log(userInfo.LastTime);
 
-        for(int i = 0; i < AllCookies.Count; i++)
-        {
-            Debug.Log(AllCookies[i]);
-        }
-        for(int i = 0; i < OwnedCraftableBuildings.Count; i++)
-        {
-            Debug.Log(OwnedCraftableBuildings[i]);
-        }
+        PrevCraftTime = DateTime.ParseExact(userInfo.LastTime, "yyyyMMddHHmmss",
+            System.Globalization.CultureInfo.InvariantCulture);
+
+        userInfo.GetJsonData(ref allCookies, ref OwnedCraftableBuildings);
     }
 
     public void SaveData()
@@ -119,6 +121,6 @@ public class GameManagerEx
         if (!_isFirst)
             isFirst = 1;
 
-        userInfo.SetData(_kingdomName, isFirst, _money, _dia, _jelly, _maxJelly, AllCookies, OwnedCraftableBuildings);
+        userInfo.SaveData(_kingdomIndex, _kingdomName, isFirst, _money, _dia, _jelly, _maxJelly, allCookies, OwnedCraftableBuildings, PrevCraftTime);
     }
 }

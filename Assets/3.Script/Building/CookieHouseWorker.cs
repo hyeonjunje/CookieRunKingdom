@@ -25,7 +25,7 @@ public class CookieHouseWorker : BuildingWorker
 
     public override void LoadBuilding()
     {
-        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
+        BuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
 
         IsCraftable = buildingInfo.isCraftable;
 
@@ -47,7 +47,7 @@ public class CookieHouseWorker : BuildingWorker
 
     public override void SaveBuilding()
     {
-        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
+        BuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
 
         buildingInfo.isCraftable = IsCraftable;
         buildingInfo.installationPosition = transform.position;

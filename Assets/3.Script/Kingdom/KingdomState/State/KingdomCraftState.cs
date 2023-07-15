@@ -42,9 +42,13 @@ public class KingdomCraftState : KingdomBaseState
 
         _manager.buildingsInKingdom.ForEach(building =>
         {
+            building.BuildingWorker.isRepresentative = false;
             building.gameObject.SetActive(true);
             building.BuildingWorker.WorkBuilding();
         });
+
+        if (_manager.buildingsInKingdom.Count != 0)
+            _manager.buildingsInKingdom[0].BuildingWorker.isRepresentative = true;
     }
 
     public override void Exit()
@@ -61,9 +65,11 @@ public class KingdomCraftState : KingdomBaseState
         seq.Append(_camera.DOOrthoSize(prevOrthoSize, 0.5f));
 
         _manager.allCookies.ForEach(cookie => cookie.gameObject.SetActive(false));
-        _manager.buildingsInKingdom.ForEach(building => building.gameObject.SetActive(false));
-
-        GameManager.Game.PrevCraftTime = System.DateTime.Now;
+        _manager.buildingsInKingdom.ForEach(building =>
+        {
+            building.BuildingWorker.isRepresentative = false;
+            building.gameObject.SetActive(false);
+        });
     }
 
     public override void Update()

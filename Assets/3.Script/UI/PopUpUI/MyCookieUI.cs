@@ -32,7 +32,7 @@ public class MyCookieUI : BaseUI
         List<CookieController> allCookies = _manager.allCookies;
         allCookieButton = new MyCookieButtonUI[allCookies.Count];
 
-        List<CookieInfo> allCookieInfo = GameManager.Game.AllCookies;
+        List<CookieInfo> allCookieInfo = GameManager.Game.allCookies;
         for (int i = 0; i < allCookieInfo.Count; i++)
         {
             MyCookieButtonUI cookieButtonUI = Instantiate(_cookieButtonUIPrefab, _cookieButtonTransform);
