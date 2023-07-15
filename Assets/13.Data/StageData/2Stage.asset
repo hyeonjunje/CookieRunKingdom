@@ -21,8 +21,8 @@ MonoBehaviour:
   - enemies:
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 0}
     - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -35,23 +35,6 @@ MonoBehaviour:
     - {fileID: 3845897827278865402, guid: 840bb3b63e04938478c8e440f1631a36, type: 3}
     - {fileID: 0}
     distance: 1
-  - enemies:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
-    - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
-    - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 5948300616551661578, guid: df4b6fd84c3dee248bb0e3ef71fe5c32, type: 3}
-    - {fileID: 423337786166003941, guid: 9a156ff518a400745bc67dd0f0c95a8f, type: 3}
-    - {fileID: 5948300616551661578, guid: df4b6fd84c3dee248bb0e3ef71fe5c32, type: 3}
-    - {fileID: 0}
-    distance: 9
   - enemies:
     - {fileID: 8449429943820295725, guid: 3184e9f7e85231d48b9ec9fb5bf42040, type: 3}
     - {fileID: 0}
@@ -70,12 +53,29 @@ MonoBehaviour:
     - {fileID: 5948300616551661578, guid: df4b6fd84c3dee248bb0e3ef71fe5c32, type: 3}
     distance: 5
   - enemies:
+    - {fileID: 0}
+    - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
+    - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
     - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 5948300616551661578, guid: df4b6fd84c3dee248bb0e3ef71fe5c32, type: 3}
+    - {fileID: 423337786166003941, guid: 9a156ff518a400745bc67dd0f0c95a8f, type: 3}
+    - {fileID: 5948300616551661578, guid: df4b6fd84c3dee248bb0e3ef71fe5c32, type: 3}
+    - {fileID: 0}
+    distance: 9
+  - enemies:
     - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 2377727317304456039, guid: 9d73875fe8f39c54fa05b3c8dc53c82a, type: 3}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
