@@ -57,7 +57,7 @@ public class CharacterAnimator : MonoBehaviour
         }
     }
 
-    public void PlayAnimation(ECookieAnimation animationName)
+    public void PlayAnimation(ECookieAnimation animationName, bool isLoop = true)
     {
         // 이전 이름과 같으면 return;
         try
@@ -66,7 +66,7 @@ public class CharacterAnimator : MonoBehaviour
             if (_animation.AnimationState.GetCurrent(0) != null && _animationNames[(int)animationName] == _animation.AnimationState.GetCurrent(0).Animation.Name)
                 return;
 
-            _animation.AnimationState.SetAnimation(0, _animationNames[(int)animationName], true);
+            _animation.AnimationState.SetAnimation(0, _animationNames[(int)animationName], isLoop);
         }
         catch (Exception e)
         {

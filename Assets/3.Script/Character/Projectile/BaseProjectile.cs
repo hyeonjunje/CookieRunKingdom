@@ -1,16 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 [RequireComponent(typeof(DamageBox))]
 public class BaseProjectile : MonoBehaviour
 {
     public System.Action<BaseProjectile> OnDisableEvent = null;
 
-    [SerializeField] protected bool isRotate = true;
+    [SerializeField] protected bool isSelfRotate = false;  // 스스로 회전하면서 날아가냐?
+    [SerializeField] protected bool isRotate = true;  // 타겟을 향하냐?
     [SerializeField] protected bool _isPersistence = false;  // 지속성이 있나?
     [SerializeField] protected bool _isTargetDir = false;    // 타겟을 향해 날아가나?
-    [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float _rotateSpeed = 3f;
+    [SerializeField] protected float _moveSpeed = 8f;
     [SerializeField] protected float _duration;
 
     protected float _currentTime = 0f;
@@ -19,6 +22,8 @@ public class BaseProjectile : MonoBehaviour
     protected Transform _parent = null;
     protected Rigidbody2D _rigid;
     protected DamageBox _damageBox;
+
+    private Tweener _tween;
 
     /// <summary>
     /// 투사체의 정보를 초기화한다.
@@ -34,13 +39,20 @@ public class BaseProjectile : MonoBehaviour
         _parent = parent;
         _initPos = initPos;
 
-        if(_damageBox != null)
+        if (_damageBox != null)
             _damageBox.Init(damage, targetLayer, _isPersistence);
     }
 
     public void ShootProjectile(Vector3 dir)
     {
         _dir = dir;
+
+        if(isSelfRotate)
+        {
+            _tween = transform.DORotate(new Vector3(0, 0, -360), _rotateSpeed, RotateMode.FastBeyond360)
+                .SetLoops(-1, LoopType.Incremental)
+                .SetEase(Ease.Linear);
+        }
 
         if(isRotate)
         {
@@ -50,6 +62,7 @@ public class BaseProjectile : MonoBehaviour
 
     private void OnDisable()
     {
+        _tween.Pause();
         OnDisableEvent?.Invoke(this);
     }
 
@@ -61,7 +74,7 @@ public class BaseProjectile : MonoBehaviour
         transform.localPosition = _initPos;
         transform.SetParent(null);
 
-        _rigid.velocity = _dir * moveSpeed;
+        _rigid.velocity = _dir * _moveSpeed;
     }
 
     private void Update()

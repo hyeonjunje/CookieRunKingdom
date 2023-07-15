@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2925701775389997019}
   - component: {fileID: 2925701775389996960}
-  - component: {fileID: 2925701775389996964}
   - component: {fileID: 2925701775389996967}
   - component: {fileID: 6313614733128014953}
   - component: {fileID: 2925701775389996966}
   - component: {fileID: -3715433223385532744}
+  - component: {fileID: 7982533837528362506}
   m_Layer: 10
-  m_Name: enemy10115
+  m_Name: Enemy10115
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -64,24 +64,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &2925701775389996964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2925701775389997018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a514e1337928eb04eb2f15addbc89fab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSkillUse: 0
-  animationName: []
-  attackEvent:
-  - skill1
-  skillEvent: []
-  _detectAttackRange: {fileID: 2925701775529102153}
 --- !u!114 &2925701775389996967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,6 +113,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868cb49097df3584f9dc6bca309d1af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7982533837528362506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2925701775389997018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e61aeae1c3bdc44bf2b43a367797ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSkillUse: 0
+  animationName: []
+  attackEvent:
+  - skill1
+  skillEvent: []
+  _detectAttackRange: {fileID: 2925701775529102153}
 --- !u!1 &2925701775529102158
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ GameObject:
   - component: {fileID: 2925701775529102154}
   - component: {fileID: 2925701775529102153}
   - component: {fileID: 2925701775529102152}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: DetectedAttackRange
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ Transform:
   m_GameObject: {fileID: 2925701776126340563}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2925701775389997019}
   m_RootOrder: 0
@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   skeletonDataAsset: {fileID: 11400000, guid: ee228cbb178f6bb4f975b44decfb3fd9, type: 2}
   initialSkinName: m10115
-  initialFlipX: 1
+  initialFlipX: 0
   initialFlipY: 0
   updateMode: 3
   updateWhenInvisible: 3

@@ -28,6 +28,11 @@ public class BattleAttackState : BaseBattleState
 
     public override void Update()
     {
+        if(!_controller.CharacterAnimator.IsPlayingAnimation())
+        {
+            _factory.ChangeState(EBattleState.BattleRunState);
+        }
+
         if (_target != _controller.BaseSkill.DetectTarget())
         {
             _factory.ChangeState(EBattleState.BattleRunState);

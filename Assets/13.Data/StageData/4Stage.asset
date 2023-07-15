@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: 4Stage
   m_EditorClassIdentifier: 
   _isBoss: 0
+  _bossSkeletonAnimation: {fileID: 0}
   _stageName: "1-4 \uB85C\uC584\uC824\uB9AC \uAF43\uBC2D"
   _recommendedPower: 5836
   _jelly: 2
@@ -24,13 +25,13 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
-    - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     distance: 1
@@ -40,15 +41,15 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
-    - {fileID: 2925701775389996967, guid: 83d3f1a18663e434689ceffe924baa2e, type: 3}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     distance: 5
   - enemies:
@@ -57,22 +58,19 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     distance: 9
   - enemies:
     - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
-    - {fileID: 0}
-    - {fileID: 8970758412375875550, guid: 8e6b8f5f1486b3e4b98c1afa5feb531b, type: 3}
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
@@ -81,7 +79,10 @@ MonoBehaviour:
     - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
-    - {fileID: 5684422519788947677, guid: 38df12e6f94ed8344b1feebd189541d1, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
     - {fileID: 0}
     - {fileID: 0}
     distance: 13

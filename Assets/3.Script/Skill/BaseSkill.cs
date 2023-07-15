@@ -28,7 +28,7 @@ public abstract class BaseSkill : MonoBehaviour
 
     public virtual void NormalAttack()
     {
-        _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleAttack);
+        _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleAttack, false);
     }
 
     // 기본 공격
