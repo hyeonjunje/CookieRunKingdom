@@ -5,6 +5,28 @@ using System;
 
 public class GameManagerEx
 {
+    #region 유저정보
+    private int _kingdomIndex;
+    public int KingdomIndex
+    {
+        get { return _kingdomIndex; }
+        set { _kingdomIndex = value; }
+    }
+
+    private string _kingdomName;
+    public string KingdomName
+    {
+        get { return _kingdomName; }
+        set { _kingdomName = value; }
+    }
+    private bool _isFirst;
+    public bool IsFirst
+    {
+        get { return _isFirst; }
+        set { _isFirst = value; }
+    }
+    #endregion
+
     #region 재화
     public DateTime prevJellyTime = System.DateTime.Now;
     public int jellyTime = Utils.JellyTime;
@@ -46,46 +68,59 @@ public class GameManagerEx
     #endregion
 
     #region 쿠키정보
-    public List<CookieInfo> AllCookies { get; set; }
+    public List<CookieInfo> allCookies;
     #endregion
 
     #region 건물정보
-    public List<CraftableBuildingInfo> OwnedCraftableBuildings { get; set; }
+    public List<BuildingInfo> OwnedCraftableBuildings;
     #endregion
 
     public DateTime PrevCraftTime { get; set; } // kingdomManageState를 나간 시간
+
+    // 저장할 데이터
+    // ==============================================
+    // 저장안하는 데이터
+
     public StageData StageData { get; set; }
 
     public EKingdomState StartKingdomState { get; set; }
 
     public void Init()
     {
-        SaveData saveData = GameManager.File.SaveData;
-        _dia = saveData.dia;
-        _money = saveData.money;
-        _jelly = saveData.jelly;
-        _maxJelly = saveData.maxJelly;
-
-        PrevCraftTime = DateTime.ParseExact(saveData.prevCraftTime, "yyyyMMddHHmmss",
-        System.Globalization.CultureInfo.InvariantCulture); // DateTime 으로 변환
-
-        AllCookies = saveData.allCookies;
-        OwnedCraftableBuildings = saveData.ownedCraftableBuildings;
+        
     }
 
-
-    public void SetSaveData()
+    /// <summary>
+    /// 로그인 되면 호출
+    /// </summary>
+    public void LoadData()
     {
-        SaveData saveData = new SaveData();
-        saveData.dia = _dia;
-        saveData.money = _money;
-        saveData.jelly = _jelly;
-        saveData.maxJelly = _maxJelly;
+        UserInfo userInfo = GameManager.SQL.UserInfo;
 
-        saveData.allCookies = AllCookies;
-        saveData.ownedCraftableBuildings = OwnedCraftableBuildings;
+        _kingdomName = userInfo.KingdomName;
+        _dia = userInfo.Dia;
+        _isFirst = userInfo.IsFirst == 0;
+        _money = userInfo.Money;
+        _dia = userInfo.Dia;
+        _jelly = userInfo.Jelly;
+        _maxJelly = userInfo.MaxJelly;
 
-        GameManager.File.SetSaveData(saveData);
-        GameManager.File.SaveGame();
+        Debug.Log(userInfo.LastTime);
+
+        PrevCraftTime = DateTime.ParseExact(userInfo.LastTime, "yyyyMMddHHmmss",
+            System.Globalization.CultureInfo.InvariantCulture);
+
+        userInfo.GetJsonData(ref allCookies, ref OwnedCraftableBuildings);
+    }
+
+    public void SaveData()
+    {
+        UserInfo userInfo = GameManager.SQL.UserInfo;
+
+        int isFirst = 0;
+        if (!_isFirst)
+            isFirst = 1;
+
+        userInfo.SaveData(_kingdomIndex, _kingdomName, isFirst, _money, _dia, _jelly, _maxJelly, allCookies, OwnedCraftableBuildings, PrevCraftTime);
     }
 }

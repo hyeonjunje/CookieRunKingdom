@@ -6,20 +6,25 @@ using TMPro;
 
 public class KingdomManageUI : BaseUI
 {
-    [Header("Buttons")]
-    [SerializeField] private Button _myCookiesButton;
-    [SerializeField] private Button _storageButton;
-    [SerializeField] private Button _gachaButton;
-
-    [Header("Text")]
+    [Header("RightTop")]
     [SerializeField] private TextMeshProUGUI _jellyText;
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private TextMeshProUGUI _diaText;
 
-    [Header("UI")]
+    [Header("RightBottom")]
+    [SerializeField] private Button _myCookiesButton;
+    [SerializeField] private Button _storageButton;
+    [SerializeField] private Button _gachaButton;
     [SerializeField] private MyCookieUI _myCookieUI;
     [SerializeField] private InventoryUI _inventoryUI;
     [SerializeField] private GachaUI _gachaUI;
+
+    [Header("LeftTop")]
+    [SerializeField] private Button _kingdomInfoButton;
+    [SerializeField] private TextMeshProUGUI _kingdomNameText;
+    [SerializeField] private Image _kingdomImage;
+    [SerializeField] private RepresentKingdomUI _representKingdomUI;
+
 
     private KingdomManager _manager;
 
@@ -53,5 +58,10 @@ public class KingdomManageUI : BaseUI
         _myCookiesButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_myCookieUI));
         _storageButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_inventoryUI));
         _gachaButton.onClick.AddListener(() => GameManager.UI.PushUI(_gachaUI));
+
+
+        _kingdomNameText.text = GameManager.Game.KingdomName;
+        _kingdomInfoButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_representKingdomUI));
+        _representKingdomUI.InitImage(_kingdomImage);
     }
 }

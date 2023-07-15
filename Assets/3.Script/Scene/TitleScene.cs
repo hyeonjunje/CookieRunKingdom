@@ -2,34 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
-using Spine;
 using UnityEngine.InputSystem;
 
 public class TitleScene : BaseScene
 {
     [SerializeField] private SkeletonAnimation _titleAnimation;
     [SerializeField] private SkeletonAnimation _titleLogoAnimation;
-
-    private bool _isReadyToStart = false;
+    [SerializeField] private TitleSceneUI _titleSceneUI;
 
     protected override void Init()
     {
-        _isReadyToStart = false;
-
         StartCoroutine(CoTitle());
     }
 
-    public void OnClick(InputAction.CallbackContext value)
-    {
-        if(value.started)
-        {
-            if(_isReadyToStart)
-            {
-                Debug.Log("넘어가자!");
-                GameManager.Scene.LoadScene(ESceneName.Kingdom);
-            }
-        }
-    }
 
     private IEnumerator CoTitle()
     {
@@ -43,6 +28,6 @@ public class TitleScene : BaseScene
 
         yield return new WaitUntil(() => _titleLogoAnimation.AnimationState.GetCurrent(0).IsComplete);
 
-        _isReadyToStart = true;
+        GameManager.UI.PushUI(_titleSceneUI);
     }
 }

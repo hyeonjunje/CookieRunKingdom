@@ -16,6 +16,10 @@ public class BuildingWorker : MonoBehaviour
     // 해당 건물이 작업중인가, 아닌가?
     public bool isWorking = false;
 
+    // 해당 건물이 대표 건물인가? 대표건물이면 책임지고 GameManagerEX의 시간을 현재시간으로 업데이트해준다.
+    public bool isRepresentative = false;
+
+
     private int _slotCount = 0;
 
     private List<SpriteRenderer> _craftBubbleUnit = new List<SpriteRenderer>();
@@ -48,9 +52,10 @@ public class BuildingWorker : MonoBehaviour
             _craftingItemData.Add(new CraftingItemData(ECraftingState.empty, null));
     }
 
+
     public virtual void LoadBuilding()
     {
-        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
+        BuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
 
         _slotCount = buildingInfo.slotCount;
         InitCraftSlot();
@@ -75,7 +80,7 @@ public class BuildingWorker : MonoBehaviour
 
     public virtual void SaveBuilding()
     {
-        CraftableBuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
+        BuildingInfo buildingInfo = GameManager.Game.OwnedCraftableBuildings[_controller.Data.BuildingIndex];
 
         buildingInfo.isCraftable = IsCraftable;
         buildingInfo.installationPosition = transform.position;
@@ -234,6 +239,13 @@ public class BuildingWorker : MonoBehaviour
         while (true)
         {
             yield return second;
+
+            // 대표건물이 PrevcraftTime시간을 측정한다. 
+            if (isRepresentative)
+            {
+                GameManager.Game.PrevCraftTime = System.DateTime.Now;
+            }
+
             ManageCraftingItemData();
         }
     }

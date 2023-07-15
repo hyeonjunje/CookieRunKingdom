@@ -29,9 +29,7 @@ public class DataBaseManager : Singleton<DataBaseManager>
     {
         Dictionary<ItemData, int> itemDataBase = new Dictionary<ItemData, int>();
         for(int i = 0; i < testItem.Length; i++)
-        {
             itemDataBase[testItem[i]] = 100;
-        }
 
         MyDataBase = new DataBase(itemDataBase);
     }

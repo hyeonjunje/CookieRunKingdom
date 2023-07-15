@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
+    private SQLManager _sql = new SQLManager();
+
     private FileManager _file = new FileManager();
     private SceneManagerEx _scene = new SceneManagerEx();
     private UIManager _ui = new UIManager();
     private GameManagerEx _game = new GameManagerEx();
 
+    public static SQLManager SQL => Instance._sql;
     public static FileManager File => Instance._file;
     public static SceneManagerEx Scene => Instance._scene;
     public static UIManager UI => Instance._ui;
@@ -21,6 +24,8 @@ public class GameManager : Singleton<GameManager>
         if (!_isInit)
         {
             _isInit = true;
+
+            _sql.Init();   // 데이터베이스
 
             _file.Init();
             _scene.Init();
@@ -37,7 +42,9 @@ public class GameManager : Singleton<GameManager>
     protected override void OnApplicationQuit()
     {
         Debug.Log("꺼지고 저장합니다.");
-        Game.SetSaveData();
+
+        Game.SaveData();
+        SQL.SaveDataBase();
 
         base.OnApplicationQuit();
     }

@@ -26,6 +26,9 @@ TextureImporter:
   - first:
       213: 5401865659808399041
     second: PopUPUI_7
+  - first:
+      213: 8283044760036891577
+    second: PopUPUI_8
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -294,7 +297,7 @@ TextureImporter:
         width: 102
         height: 103
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 38, y: 42, z: 39, w: 39}
       outline: []
       physicsShape: []
@@ -302,6 +305,27 @@ TextureImporter:
       bones: []
       spriteID: 1ceb241823847fa40800000000000000
       internalID: 5401865659808399041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PopUPUI_8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 304
+        width: 199
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 56, y: 81, z: 57, w: 105}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bbd8a4e25943f270800000000000000
+      internalID: 8283044760036891577
       vertices: []
       indices: 
       edges: []
