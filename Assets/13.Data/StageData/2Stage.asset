@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _isBoss: 0
   _bossSkeletonAnimation: {fileID: 0}
-  _stageName: "1-2 \uC0B0\uB538\uAE30 \uB364\uBD88 \uC232"
+  _stageName: "1-4 \uB85C\uC584\uC824\uB9AC \uAF43\uBC2D"
   _recommendedPower: 5836
   _jelly: 2
   _waveInfo:

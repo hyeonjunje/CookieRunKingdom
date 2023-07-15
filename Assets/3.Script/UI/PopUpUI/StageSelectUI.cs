@@ -9,7 +9,6 @@ public class StageSelectUI : BaseUI
 {
     private StageData _stageData;
     private Vector3 _touchPos;
-    private int _starCount;
 
     [SerializeField] private TextMeshProUGUI _powerAmountText;
     [SerializeField] private BattleCookieButton _battleCookieButtonPrefab;
@@ -17,7 +16,6 @@ public class StageSelectUI : BaseUI
 
     [SerializeField] private TextMeshProUGUI _stageNameText;
     [SerializeField] private TextMeshProUGUI _stageRecommandPowerText;
-    [SerializeField] private GameObject[] _starObjects;
 
     [SerializeField] private CookieSelectUI _cookieSelectUI;
 
@@ -46,21 +44,13 @@ public class StageSelectUI : BaseUI
         }
     }
 
-    public void InitStageData(StageData stageData, Vector3 touchPos, int starCount = 3)
+    public void InitStageData(StageData stageData, Vector3 touchPos)
     {
         _stageData = stageData;
         _touchPos = touchPos;
-        _starCount = starCount;
 
         _stageNameText.text = stageData.StageName;
         _stageRecommandPowerText.text = stageData.RecommendedPower.ToString("#,##0");
-
-        // 별 채우기
-        foreach (GameObject star in _starObjects)
-            star.SetActive(false);
-
-        for (int i = 0; i < starCount; i++)
-            _starObjects[i].SetActive(true);
     }
 
     public override void Show()

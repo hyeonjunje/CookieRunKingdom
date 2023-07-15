@@ -29,7 +29,7 @@ public class StageManager : MonoBehaviour
             StageButtonUI stageButton = Instantiate(_stageButtonPrefab, _buttonParent);
             stageButton.transform.position = _stagePoses[i].position;
 
-            stageButton.Init(_stageData[i], 0);
+            stageButton.Init(_stageData[i]);
             int index = i;
             stageButton.GetComponent<Button>().onClick.AddListener(() => OnClickStageButton(_stageData[index], stageButton.transform.position));
 
@@ -52,7 +52,7 @@ public class StageManager : MonoBehaviour
         // 카메라 이동
         // 쿠키 이동
 
-        _stageSelectUI.InitStageData(stageData, touchPos, 0);
+        _stageSelectUI.InitStageData(stageData, touchPos);
         GameManager.UI.ShowPopUpUI(_stageSelectUI);
     }
 }

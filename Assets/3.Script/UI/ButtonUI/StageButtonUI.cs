@@ -12,10 +12,10 @@ public class StageButtonUI : MonoBehaviour
     {
         _stageNameText.text = stageData.StageName;
 
-        foreach (GameObject star in _starObjects)
+        /*foreach (GameObject star in _starObjects)
             star.SetActive(false);
 
         for (int i = 0; i < starCount; i++)
-            _starObjects[i].SetActive(true);
+            _starObjects[i].SetActive(true);*/
     }
 }
