@@ -125,11 +125,13 @@ public class CharacterBattleController : MonoBehaviour
 
             _factory.CurrentState.Update();
 
-            float zPos = (transform.position.x + transform.position.y) / 100000f;
+            float zPos = (transform.position.x + transform.position.y) / 1000f;
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
 
             if (_hpBar != null)
+            {
                 _hpBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2);
+            }
         }
     }
 

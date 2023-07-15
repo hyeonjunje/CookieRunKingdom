@@ -220,4 +220,10 @@ public class BattleUI : BaseUI
         Time.timeScale = 1;
         GameManager.UI.ExitPopUpUI();
     }
+
+    public void ExitBattle()
+    {
+        Time.timeScale = 1;
+        GameManager.Scene.LoadScene(ESceneName.Kingdom);
+    }
 }

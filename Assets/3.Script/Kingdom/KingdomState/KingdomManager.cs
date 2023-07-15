@@ -68,6 +68,7 @@ public class KingdomManager : MonoBehaviour
     public void Init()
     {
         _factory = new KingdomStateFactory(this);
+        Debug.Log(GameManager.Game.StartKingdomState);
         ChangeState(GameManager.Game.StartKingdomState);
         StartCoroutine(CoUpdate());
     }
