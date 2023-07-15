@@ -9,9 +9,20 @@ public class CraftInGredientUI : MonoBehaviour
     [SerializeField] private Image ingredientImage;
     [SerializeField] private TextMeshProUGUI ingredientAmount;
 
+    private ItemBundle _ingredientItem;
+
     public void Init(ItemBundle ingredientItem)
     {
-        ingredientImage.sprite = ingredientItem.ingredientItem.ItemImage;
-        ingredientAmount.text = ingredientItem.count.ToString();
+        _ingredientItem = ingredientItem;
+
+        int count = DataBaseManager.Instance.MyDataBase.itemDataBase[_ingredientItem.ingredientItem];
+        ingredientImage.sprite = _ingredientItem.ingredientItem.ItemImage;
+        ingredientAmount.text = count + "/" + _ingredientItem.count.ToString();
+    }
+
+    public void SetText()
+    {
+        int count = DataBaseManager.Instance.MyDataBase.itemDataBase[_ingredientItem.ingredientItem];
+        ingredientAmount.text = count + "/" + _ingredientItem.count.ToString();
     }
 }

@@ -58,25 +58,24 @@ public class InventoryUI : BaseUI
             inventoryItems[i].FillSlot(_emptyItemData, 0);
             slot.ClearSlot();
         }
-
-        // 데이터베이스에서 가져와서 인벤토리에 적용해줘..
     }
 
     private void UpdateInventory()
     {
-        // 데이터베이스에서 가져와서 인벤토리에 적용해줘..
-
-        // Test
         int index = 0;
+        List<ItemSlot> itemList = new List<ItemSlot>();
         foreach (KeyValuePair<ItemData, int> data in DataBaseManager.Instance.MyDataBase.itemDataBase)
         {
-            inventoryItems[index++].FillSlot(data.Key, data.Value);
+            if(data.Value != 0)
+            {
+                itemList.Add(inventoryItems[index]);
+                inventoryItems[index++].FillSlot(data.Key, data.Value);
+            }
         }
 
-        inventoryItems.Sort((item1, item2) => (item1.Data.ItemType).CompareTo(item2.Data.ItemType));
-        for(int i = 0; i < inventoryItems.Count; i++)
-        {
-            inventoryItems[i].transform.SetSiblingIndex(i);
-        }
+        itemList.Sort((item1, item2) => (item1.Data.ItemType).CompareTo(item2.Data.ItemType));
+
+        for(int i = 0; i < itemList.Count; i++)
+            itemList[i].transform.SetSiblingIndex(i);
     }
 }

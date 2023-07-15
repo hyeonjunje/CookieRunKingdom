@@ -30,13 +30,11 @@ public class DataBaseManager : Singleton<DataBaseManager>
 
         if (itemInfoString == "")
         {
-            Debug.Log("처음이ㅜㄱㄴ");
             for (int i = 0; i < AllItemData.Length; i++)
                 itemDataBase[AllItemData[i]] = 10;
         }
         else
         {
-            Debug.Log("처음이 아니구만");
             int[] itemCountInfo = System.Array.ConvertAll(itemInfoString.Split(','), s => int.Parse(s));
 
             for (int i = 0; i < itemCountInfo.Length; i++)

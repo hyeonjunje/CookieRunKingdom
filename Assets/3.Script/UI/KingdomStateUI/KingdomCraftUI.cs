@@ -193,9 +193,40 @@ public class KingdomCraftUI: BaseUI
 
         if (emptyIndex == -1)
         {
-            Debug.Log("대기열이 꽉 찼습니다.");
+            GuideDisplayer.Instance.ShowGuide("대기열이 꽉 찼습니다.");
             return;
         }
+
+        // 재료 확인
+        if(craftData.IsResource)
+        {
+            if(GameManager.Game.Money < craftData.CraftCost)
+            {
+                GuideDisplayer.Instance.ShowGuide("재화가 부족합니다.");
+                return;
+            }
+            else
+            {
+                GameManager.Game.Money -= craftData.CraftCost;
+            }
+        }
+        else
+        {
+            // 재료가 없다면 여기서 막힘
+            for (int i = 0; i < craftData.Ingredients.Length; i++)
+            {
+                if(DataBaseManager.Instance.MyDataBase.itemDataBase[craftData.Ingredients[i].ingredientItem] < craftData.Ingredients[i].count)
+                {
+                    GuideDisplayer.Instance.ShowGuide("재료가 부족합니다.");
+                    return;
+                }
+            }
+
+            // 재료가 있다면 그만큼 소모하고 실행
+            for (int i = 0; i < craftData.Ingredients.Length; i++)
+                DataBaseManager.Instance.AddItem(craftData.Ingredients[i].ingredientItem, -craftData.Ingredients[i].count);
+        }
+
 
         _currentBuilding.BuildingWorker.isWorking = true;
 

@@ -7,14 +7,17 @@ using TMPro;
 public class CraftTypeUI : MonoBehaviour
 {
     [SerializeField] private Image craftItemImage;
+    [SerializeField] private TextMeshProUGUI craftItemCount;
     [SerializeField] private TextMeshProUGUI craftItemName;
     [SerializeField] private TextMeshProUGUI craftTime;
 
-    [SerializeField] private Button craftButton;
+    [SerializeField] protected Button craftButton;
 
     public virtual void Init(CraftData craftData, System.Action<CraftData> action = null)
     {
         craftItemImage.sprite = craftData.CraftImage;
+        craftItemCount.text = DataBaseManager.Instance.MyDataBase.itemDataBase[craftData.CraftResult.ingredientItem].ToString();
+
         craftItemName.text = craftData.CraftName;
 
         craftTime.text = Utils.GetTimeText(craftData.CraftTime);
