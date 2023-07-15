@@ -14,7 +14,7 @@ public class BattleUI : BaseUI
     [SerializeField] private TextMeshProUGUI _stageText;
 
     [Header("Cookie Skill UI")]
-    [SerializeField] private Transform _skillButtonParent;
+    [SerializeField] private RectTransform _skillButtonParent;
     [SerializeField] private SkillButton _skillButtonPrefab;
 
     [Header("BattleSpeedButton")]
@@ -145,6 +145,8 @@ public class BattleUI : BaseUI
             skillButton.Init(cookies[i]);
             _skillButtons[i] = skillButton;
         }
+        float skillButtonX = _skillButtons[0].GetComponent<RectTransform>().sizeDelta.x;
+        _skillButtonParent.anchoredPosition -= (Vector2.right * (skillButtonX + 20) * cookies.Count / 2);
 
         // 모험 게이지 초기화
         _currentGague = 0f;
