@@ -59,4 +59,9 @@ public class BattleStateFactory
 
         _currentState.Enter();
     }
+
+    public bool CheckState(EBattleState state)
+    {
+        return _currentState == _dictionary[state];
+    }
 }

@@ -50,13 +50,17 @@ public class EnemyRangeSkill : BaseRangeSkill
             if (_controller.CharacterBattleController.IsDead)
                 yield break;
 
+            if (!_controller.CharacterBattleController.CheckState(EBattleState.BattleAttackState))
+                yield break;
+
             currentTime += Time.deltaTime;
             if (currentTime >= AnimationTime / 2)
-                break;
+            {
+                currentTime = 0;
+                NormalAttackEvent();
+            }
 
             yield return null;
         }
-
-        NormalAttackEvent();
     }
 }

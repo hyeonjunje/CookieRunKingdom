@@ -96,6 +96,11 @@ public class CharacterBattleController : MonoBehaviour
         _coUpdate = StartCoroutine(CoUpdate());
     }
 
+    public bool CheckState(EBattleState state)
+    {
+        return _factory.CheckState(state);
+    }
+
     public void ChangeState(EBattleState state)
     {
         _factory.ChangeState(state);
