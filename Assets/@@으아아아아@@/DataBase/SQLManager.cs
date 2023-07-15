@@ -59,17 +59,18 @@ public class UserInfo
     public string Cookies { get; private set; }
     public string Buildings { get; private set; }
     public string LastTime { get; private set; }
+    public string ItemCount { get; private set; }
 
     private CookiesJson _cookieJson;
     private BuildingJson _buildingJson;
 
     public UserInfo(string id, string pw, int kingdomIndex = 0, string name = "", int isFirst = 0, int money = 0, 
-        int dia = 0, int jelly = 0, int maxJelly = 0, string cookies = "", string buildings = "", string lastTime = "")
+        int dia = 0, int jelly = 0, int maxJelly = 0, string cookies = "", string buildings = "", string lastTime = "", string ItemCount = "")
     {
         Id = id;
         Pw = pw;
 
-        LoadData(kingdomIndex, name, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime);
+        LoadData(kingdomIndex, name, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime, ItemCount);
     }
 
     public void GetJsonData(ref List<CookieInfo> allCookies, ref List<BuildingInfo> allBuildings)
@@ -79,16 +80,16 @@ public class UserInfo
     }
 
     // 게임 불러올 때
-    public void LoadData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, string cookies, string buildings, string lastTime)
+    public void LoadData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, string cookies, string buildings, string lastTime, string itemCount)
     {
         KingdomIndex = kingdomIndex;
         KingdomName = name;
         IsFirst = isFirst;
         Money = money;
         Dia = dia;
-
+        ItemCount = itemCount;
         // 처음이 아니면 그대로 읽는다.
-        if(isFirst != 0)
+        if (isFirst != 0)
         {
             Debug.Log("처음이 아니구ㅡㄴ");
 
@@ -116,7 +117,7 @@ public class UserInfo
     }
 
     // 게임 저장할 때
-    public void SaveData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, List<CookieInfo> cookiesInfo, List<BuildingInfo> buildingsInfo, DateTime lastTime)
+    public void SaveData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, List<CookieInfo> cookiesInfo, List<BuildingInfo> buildingsInfo, DateTime lastTime, string itemCount)
     {
         // 저장하자
         KingdomIndex = kingdomIndex;
@@ -135,6 +136,8 @@ public class UserInfo
 
         Cookies = JsonUtility.ToJson(_cookieJson);
         Buildings = JsonUtility.ToJson(_buildingJson);
+
+        ItemCount = itemCount;
     }
 }
 
@@ -213,7 +216,7 @@ public class SQLManager
             return false;
         }
         string SQLCommand =
-            string.Format(@"SELECT Id,Pw,KingdomIndex,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly,Cookies,Buildings,LastTime  FROM user_login_info
+            string.Format(@"SELECT Id,Pw,KingdomIndex,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly,Cookies,Buildings,LastTime,ItemCount  FROM user_login_info
                             WHERE Id = '{0}' AND Pw = '{1}';", inputId, inputPw);
         MySqlCommand cmd = new MySqlCommand(SQLCommand, _connection);
         _reader = cmd.ExecuteReader();
@@ -238,8 +241,9 @@ public class SQLManager
 
                 // DataTime
                 string lastTime = (_reader.IsDBNull(11)) ? string.Empty : (string)_reader["LastTime"].ToString();
+                string itemCount = (_reader.IsDBNull(12)) ? string.Empty : (string)_reader["ItemCount"].ToString();
 
-                UserInfo = new UserInfo(id, pw, kingdomIndex, kingdomName, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime);
+                UserInfo = new UserInfo(id, pw, kingdomIndex, kingdomName, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime, itemCount);
 
                 if (!_reader.IsClosed)
                 _reader.Close();

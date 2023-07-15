@@ -41,8 +41,9 @@ public class TitleSceneUI : BaseUI
     private void OnAfterLoginEvent()
     {
         GameManager.Game.LoadData();
+        DataBaseManager.Instance.LoadData();
 
-        if(GameManager.Game.IsFirst)
+        if (GameManager.Game.IsFirst)
         {
             GameManager.Game.IsFirst = false;
             GameManager.UI.ShowPopUpUI(_createNameUI);

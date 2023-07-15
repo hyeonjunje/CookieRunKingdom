@@ -17,21 +17,32 @@ public class DataBaseManager : Singleton<DataBaseManager>
     [Header("모든 아이템 데이터")]
     [SerializeField] private ItemData[] allItemData;
 
-    [Header("Test")]
-    [SerializeField] private ItemData[] testItem;
-
     public BuildingController[] AllBuildings => allBuildings;
     public CookieController[] AllCookies => allCookies;
     public ItemData[] AllItemData => allItemData;
-    public DataBase MyDataBase { get; private set; }
+    public DataBase MyDataBase => GameManager.Game.MyDataBase;
 
-    private void Start()
+    public void LoadData()
     {
-        Dictionary<ItemData, int> itemDataBase = new Dictionary<ItemData, int>();
-        for(int i = 0; i < testItem.Length; i++)
-            itemDataBase[testItem[i]] = 100;
+        string itemInfoString = GameManager.SQL.UserInfo.ItemCount;
 
-        MyDataBase = new DataBase(itemDataBase);
+        Dictionary<ItemData, int> itemDataBase = new Dictionary<ItemData, int>();
+
+        if (itemInfoString == "")
+        {
+            Debug.Log("처음이ㅜㄱㄴ");
+            for (int i = 0; i < AllItemData.Length; i++)
+                itemDataBase[AllItemData[i]] = 10;
+        }
+        else
+        {
+            Debug.Log("처음이 아니구만");
+            int[] itemCountInfo = System.Array.ConvertAll(itemInfoString.Split(','), s => int.Parse(s));
+
+            for (int i = 0; i < itemCountInfo.Length; i++)
+                itemDataBase[AllItemData[i]] = itemCountInfo[i];
+        }
+        GameManager.Game.MyDataBase = new DataBase(itemDataBase);
     }
 
     public void AddItem(ItemData item, int count)

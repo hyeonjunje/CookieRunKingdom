@@ -75,6 +75,10 @@ public class GameManagerEx
     public List<BuildingInfo> OwnedCraftableBuildings;
     #endregion
 
+    #region 아이템 정보
+    public DataBase MyDataBase { get; set; }
+    #endregion
+
     public DateTime PrevCraftTime { get; set; } // kingdomManageState를 나간 시간
 
     // 저장할 데이터
@@ -121,6 +125,22 @@ public class GameManagerEx
         if (!_isFirst)
             isFirst = 1;
 
-        userInfo.SaveData(_kingdomIndex, _kingdomName, isFirst, _money, _dia, _jelly, _maxJelly, allCookies, OwnedCraftableBuildings, PrevCraftTime);
+        userInfo.SaveData(_kingdomIndex, _kingdomName, isFirst, _money, _dia, _jelly, _maxJelly, allCookies, 
+            OwnedCraftableBuildings, PrevCraftTime, ReturnItemDataInfo());
+    }
+
+    private string ReturnItemDataInfo()
+    {
+        string result = "";
+
+        foreach(var itemInfo in MyDataBase.itemDataBase)
+        {
+            result += itemInfo.Value + ",";
+        }
+        result = result.TrimEnd(',');
+
+        Debug.Log(result);
+
+        return result;
     }
 }
