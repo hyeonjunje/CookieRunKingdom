@@ -31,10 +31,13 @@ public class KingdomManageState : KingdomBaseState
         // ÄíÅ°µéÀÌ µîÀåÇÔ
         _manager.allCookies.ForEach(cookie =>
         {
-            cookie.CookieStat.SaveCookie();
+            if(cookie.CookieStat.IsHave)
+            {
+                cookie.CookieStat.SaveCookie();
 
-            cookie.gameObject.SetActive(true);
-            cookie.CookieCitizeon.StartKingdomAI();
+                cookie.gameObject.SetActive(true);
+                cookie.CookieCitizeon.StartKingdomAI();
+            }
         });
 
         _manager.buildingsInKingdom.ForEach(building =>
@@ -59,8 +62,11 @@ public class KingdomManageState : KingdomBaseState
         // ÄíÅ°µéÀÌ »ç¶óÁü
         _manager.allCookies.ForEach(cookie =>
         {
-            cookie.CookieStat.SaveCookie();
-            cookie.gameObject.SetActive(false);
+            if(cookie.CookieStat.IsHave)
+            {
+                cookie.CookieStat.SaveCookie();
+                cookie.gameObject.SetActive(false);
+            }
         });
 
         _manager.buildingsInKingdom.ForEach(building =>

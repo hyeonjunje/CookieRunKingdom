@@ -25,6 +25,8 @@ public class KingdomAdventureUI : BaseUI
     [SerializeField] private GameObject _cookigKingdom;
     [SerializeField] private GameObject _world1;
 
+    private CookieBundleInAdventure _cookieBundle = null;
+
     public override void Init()
     {
         base.Init();
@@ -48,6 +50,10 @@ public class KingdomAdventureUI : BaseUI
         // 월드 보이게
 
         GameManager.Game.UpdateGoods();
+
+        if(_cookieBundle == null)
+            _cookieBundle = FindObjectOfType<CookieBundleInAdventure>();
+        _cookieBundle.Init();
     }
 
     public override void Hide()

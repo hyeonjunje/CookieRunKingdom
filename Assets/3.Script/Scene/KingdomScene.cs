@@ -82,7 +82,15 @@ public class KingdomScene : BaseScene
                 cookie.transform.position = cookieInfo.lastKingdomPosition;
 
             _kingdomManager.allCookies.Add(cookie);
-            cookie.CookieCitizeon.StartKingdomAI();
+
+            if(cookie.CookieStat.IsHave)
+            {
+                cookie.CookieCitizeon.StartKingdomAI();
+            }
+            else
+            {
+                cookie.gameObject.SetActive(false);
+            }
         }
     }
 

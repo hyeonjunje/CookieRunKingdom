@@ -76,6 +76,8 @@ public class GachaResultUI : BaseUI
             else
             {
                 realCookie.IsHave = true;
+                realCookie.gameObject.SetActive(true);
+                cookies[index].CookieCitizeon.StartKingdomAI();
             }
         }
         else

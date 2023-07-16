@@ -59,10 +59,7 @@ public class KingdomManager : MonoBehaviour
     // 내 왕국에 있는 실질적인 건물(설치되어있는 건물이란 말이죠)
     public List<BuildingController> buildingsInKingdom = new List<BuildingController>();
     
-    
     public List<CookieController> allCookies = new List<CookieController>();
-
-
     public List<CookieController> workingCookies = new List<CookieController>();
 
     public void Init()

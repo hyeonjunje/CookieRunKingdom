@@ -35,9 +35,10 @@ public class CookieBundleInAdventure : MonoBehaviour
         int cookieCount = 0;
         for(int i = 0; i < allCookies.Count; i++)
         {
-            if(allCookies[i].CookieStat.IsBattleMember)
+            if (allCookies[i].CookieStat.IsBattleMember)
             {
                 int positionIndex = allCookies[i].CookieStat.BattlePosition;
+                _cookiePathFinder[cookieCount].gameObject.SetActive(true);
                 _cookiePathFinder[cookieCount++].Init(allCookies[i].Data, _poses[positionIndex]);
             }
         }
@@ -66,7 +67,8 @@ public class CookieBundleInAdventure : MonoBehaviour
             transform.localEulerAngles = Vector3.forward * theta + Vector3.forward * 90;
 
             for(int i = 0; i < _cookiePathFinder.Length; i++)
-                _cookiePathFinder[i].StartPathFinding();
+                if(_cookiePathFinder[i].gameObject.activeSelf)
+                    _cookiePathFinder[i].StartPathFinding();
         }
     }
 }

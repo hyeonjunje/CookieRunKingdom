@@ -36,8 +36,11 @@ public class KingdomCraftState : KingdomBaseState
 
         _manager.allCookies.ForEach(cookie =>
         {
-            cookie.gameObject.SetActive(true);
-            cookie.CookieCitizeon.StartKingdomAI();
+            if(cookie.CookieStat.IsHave)
+            {
+                cookie.gameObject.SetActive(true);
+                cookie.CookieCitizeon.StartKingdomAI();
+            }
         });
 
         _manager.buildingsInKingdom.ForEach(building =>

@@ -20,31 +20,36 @@ public class CookiePathFinder : MonoBehaviour
 
     public void Init(CharacterData data, Transform target)
     {
+        if(!_isInit)
+        {
+            _animation = GetComponentInChildren<SkeletonAnimation>();
+            _renderer = _animation.GetComponent<Renderer>();
+            _seeker = GetComponent<Seeker>();
+            _isInit = true;
+        }
+
         if (data == null)
         {
-            transform.DestroyAllChild();
-            _animation = null;
+            gameObject.SetActive(false);
             return;
         }
         else
         {
-            _animation = Instantiate(data.SpinePrefab, transform);
-            _renderer = _animation.GetComponentInChildren<Renderer>();
-            if(_seeker == null)
-                _seeker = GetComponent<Seeker>();
-
             _target = target;
             transform.position = _target.position;
 
-            _animation.Initialize(true);
+            if (_animation.skeletonDataAsset != data.SkeletonDataAsset)
+            {
+                _animation.skeletonDataAsset = data.SkeletonDataAsset;
+                _animation.Initialize(true);
+            }
             _animation.AnimationState.SetAnimation(0, "idle", true);
         }
     }
 
     public void StartPathFinding()
     {
-        if(_animation != null)
-            _seeker.StartPath(transform.position, _target.position, OnPathComplete);
+        _seeker.StartPath(transform.position, _target.position, OnPathComplete);
     }
 
     private void OnPathComplete(Path p)

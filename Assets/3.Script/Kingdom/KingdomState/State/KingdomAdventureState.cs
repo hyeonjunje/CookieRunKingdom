@@ -23,7 +23,6 @@ public class KingdomAdventureState : KingdomBaseState
         if (_cookieBundle == null)
         {
             _cookieBundle = GameObject.FindObjectOfType<CookieBundleInAdventure>();
-            _cookieBundle.Init();
         }
     }
 
