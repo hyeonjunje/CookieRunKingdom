@@ -15,9 +15,12 @@ MonoBehaviour:
   _buildingIndex: 11
   _skeletonData: {fileID: 11400000, guid: 4d5389cb05d3e604a915630c4a8fa8b2, type: 2}
   buildingName: "\uC7BC\uD30C\uC774 \uB808\uC2A4\uD1A0\uB791"
-  buildingExplain: 
+  buildingExplain: "\uC9C0\uBD95\uC5D0 \uBA39\uC74C\uC9C1\uC2A4\uB7EC\uC6B4 \uC7BC\uC744
+    \uAC00\uB4DD \uBC1C\uB77C \uC190\uB2D8\uC744 \uC720\uD639\uD55C\uB2E4! \uBCF4\uAE30\uB9CC
+    \uC88B\uC740 \uAC83\uC774 \uC544\uB2C8\uB77C \uBA39\uAE30\uB3C4 \uC88B\uC740
+    \uCD5C\uACE0\uC758 \uB808\uC2A4\uD1A0\uB791!"
   buildingSize: {x: 3, y: 3}
-  buildingScore: 0
+  buildingScore: 1200
   craftItems:
   - {fileID: 11400000, guid: c4e884e38cd34e346b461110efaef2c0, type: 2}
   - {fileID: 11400000, guid: e8ceb94b117c5c6428ea3e010b70aa02, type: 2}

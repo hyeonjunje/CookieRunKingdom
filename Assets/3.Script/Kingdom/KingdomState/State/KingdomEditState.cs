@@ -49,6 +49,17 @@ public class KingdomEditState : KingdomBaseState
         if (rayHit.collider)
         {
             _currentBuilding = rayHit.transform.GetComponent<BuildingController>();
+            _manager.BuildingCircleEditUI.ButtonParent.SetActive(false);
+            _manager.BuildingCircleEditUIInPreview.ButtonParent.SetActive(false);
+            _manager.BuildingCircleEditUI.SetPrevBuilding(_currentBuilding);
+            _manager.BuildingCircleEditUIInPreview.SetPrevBuilding(_currentBuilding);
+            _currentBuilding.BuildingEditor.OnClickEditMode();
+
+            if (_currentBuilding.BuildingEditor.IsInstance)
+                _manager.BuildingCircleEditUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
+            else
+                _manager.BuildingCircleEditUIInPreview.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
+
             return;
         }
 
@@ -73,44 +84,30 @@ public class KingdomEditState : KingdomBaseState
             return;
         }
 
-        // 선택된게 타일이라면
-        if (_manager.KingdomEditUI.CurrentHousingItemData != null)
-        {
-            rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Ground"));
-            if (!rayHit.collider)
-                return;
+        // 왕국에 설치된 빌딩을 눌렀을 때
+        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
 
-            Tilemap tile = rayHit.transform.GetComponent<Tilemap>();
-            tile.SetSprite(_manager.KingdomEditUI.CurrentHousingItemData.HousingItemImage);
+        if (!rayHit.collider)
+        {
+            _currentBuilding = null;
+            return;
         }
-        // 현재 선택된 하우징 아이템이 없다면
+
+        _currentBuilding = rayHit.transform.GetComponent<BuildingController>();
+
+        if (_currentBuilding == null)
+            return;
+
+        _manager.BuildingCircleEditUI.ButtonParent.SetActive(false);
+        _manager.BuildingCircleEditUIInPreview.ButtonParent.SetActive(false);
+        _manager.BuildingCircleEditUI.SetPrevBuilding(_currentBuilding);
+        _manager.BuildingCircleEditUIInPreview.SetPrevBuilding(_currentBuilding);
+        _currentBuilding.BuildingEditor.OnClickEditMode();
+
+        if (_currentBuilding.BuildingEditor.IsInstance)
+            _manager.BuildingCircleEditUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
         else
-        {
-            // 왕국에 설치된 빌딩을 눌렀을 때
-            rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
-
-            if (!rayHit.collider)
-            {
-                _currentBuilding = null;
-                return;
-            }
-
-            _currentBuilding = rayHit.transform.GetComponent<BuildingController>();
-
-            if (_currentBuilding == null)
-                return;
-
-            _manager.BuildingCircleEditUI.ButtonParent.SetActive(false);
-            _manager.BuildingCircleEditUIInPreview.ButtonParent.SetActive(false);
-            _manager.BuildingCircleEditUI.SetPrevBuilding(_currentBuilding);
-            _manager.BuildingCircleEditUIInPreview.SetPrevBuilding(_currentBuilding);
-            _currentBuilding.BuildingEditor.OnClickEditMode();
-
-            if (_currentBuilding.BuildingEditor.IsInstance)
-                _manager.BuildingCircleEditUI.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
-            else
-                _manager.BuildingCircleEditUIInPreview.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
-        }
+            _manager.BuildingCircleEditUIInPreview.SetBuilding(_currentBuilding, rayHit.transform, _camera.orthographicSize);
     }
 
     public override void OnDrag()

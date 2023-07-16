@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BuildingEditor : MonoBehaviour
 {
+    public System.Action onInstallBuilding;
+    public System.Action onUnInstallBuilding;
+
     private BuildingController _controller;
     private Grid _grid;
     private BuildingData _data;
@@ -83,6 +86,7 @@ public class BuildingEditor : MonoBehaviour
 
         _controller.BuildingAnimator.SettingOrder();
 
+        onInstallBuilding?.Invoke();
         UpdatePreviewTile();
     }
 
@@ -94,7 +98,7 @@ public class BuildingEditor : MonoBehaviour
             Vector3Int gridPos = _grid.WorldToCell(buildingPreviewTiles[i].transform.position);
             GridManager.Instance.UpdateTile(gridPos.x, gridPos.y, true);
         }
-
+        onUnInstallBuilding?.Invoke();
         UpdatePreviewTile();
     }
 

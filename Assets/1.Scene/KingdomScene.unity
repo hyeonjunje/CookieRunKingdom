@@ -26068,7 +26068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _diaText: {fileID: 1179536343}
   _moneyText: {fileID: 703788114}
-  h: 0
+  _environmentScoreText: {fileID: 1380909140}
   editInventory: {fileID: 107809713}
   foldButton: {fileID: 1283971608}
   editSelected: {fileID: 1009750545}

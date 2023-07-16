@@ -25,6 +25,8 @@ public class GameManagerEx
         get { return _isFirst; }
         set { _isFirst = value; }
     }
+
+    public int EnvironmentScore { get; set; }
     #endregion
 
     #region ¿Á»≠

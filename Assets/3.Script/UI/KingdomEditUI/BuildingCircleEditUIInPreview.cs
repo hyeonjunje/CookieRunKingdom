@@ -37,6 +37,9 @@ public class BuildingCircleEditUIInPreview : BuildingCircleEditUI
     {
         if (_currentBuilding.BuildingEditor.IsInstallable())
         {
+            GameManager.Game.EnvironmentScore += _currentBuilding.Data.BuildingScore;
+            onUnInstallBuilding?.Invoke();
+
             _kingdomManager.buildingsInKingdom.Add(_currentBuilding);
 
             _currentBuilding.BuildingEditor.IsInstance = true;

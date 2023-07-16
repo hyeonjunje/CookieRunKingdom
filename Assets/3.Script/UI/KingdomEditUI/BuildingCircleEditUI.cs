@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BuildingCircleEditUI : MonoBehaviour
 {
+    public System.Action onInstallBuilding;
+    public System.Action onUnInstallBuilding;
+
     protected BuildingController _currentBuilding;
 
     [SerializeField] protected GameObject _buttonsParent;
@@ -118,6 +121,12 @@ public class BuildingCircleEditUI : MonoBehaviour
 
     public virtual void StoreBuilding()
     {
+        if(_currentBuilding.BuildingEditor.IsInstance)
+        {
+            GameManager.Game.EnvironmentScore -= _currentBuilding.Data.BuildingScore;
+            onUnInstallBuilding?.Invoke();
+        }
+
         BuildingPreviewTileObjectPool.instance.ResetPreviewTile();
         _buttonsParent.SetActive(false);
 

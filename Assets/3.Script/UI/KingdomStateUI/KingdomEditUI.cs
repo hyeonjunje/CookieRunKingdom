@@ -13,7 +13,7 @@ public class KingdomEditUI : BaseUI
     [SerializeField] private TextMeshProUGUI _moneyText;
 
     [Header("LeftTop")]
-    public int h;
+    [SerializeField] private TextMeshProUGUI _environmentScoreText;
 
     [Header("Bottom")]
     [SerializeField] private Transform editInventory;
@@ -35,16 +35,9 @@ public class KingdomEditUI : BaseUI
     [SerializeField] private Sprite _foldButtonOff;
 
     private Camera _camera;
-    private HousingItemData _currentHousingItemData;
-
     private List<Button> _ownedBuilding;  // 내가 소유하고 있는 건물
-
     private KingdomManager _kindomManager;
     private bool _isBottomHide;
-
-    // public BuildingController CurrentBuilding { get; set; }
-    public HousingItemData CurrentHousingItemData => _currentHousingItemData;
-
 
     public override void Show()
     {
@@ -65,40 +58,32 @@ public class KingdomEditUI : BaseUI
     {
         base.Init();
 
+        _camera = Camera.main;
+        _kindomManager = FindObjectOfType<KingdomManager>();
+
+        for (int i = 0; i < _kindomManager.buildingsInKingdom.Count; i++)
+            GameManager.Game.EnvironmentScore += _kindomManager.buildingsInKingdom[i].Data.BuildingScore;
+        _environmentScoreText.text = GameManager.Game.EnvironmentScore.ToString();
+
         GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
         GameManager.Game.OnChangeMoney += (() => _moneyText.text = GameManager.Game.Money.ToString("#,##0"));
         GameManager.Game.UpdateGoods();
 
-        _camera = Camera.main;
-        _kindomManager = FindObjectOfType<KingdomManager>();
-
-        foldButton.onClick.AddListener(OnClickFoldButton);
-
-        _ownedBuilding = new List<Button>();
+        _kindomManager.BuildingCircleEditUI.onInstallBuilding += () => _environmentScoreText.text = GameManager.Game.EnvironmentScore.ToString();
+        _kindomManager.BuildingCircleEditUI.onUnInstallBuilding += () => _environmentScoreText.text = GameManager.Game.EnvironmentScore.ToString();
+        _kindomManager.BuildingCircleEditUIInPreview.onInstallBuilding += () => _environmentScoreText.text = GameManager.Game.EnvironmentScore.ToString();
+        _kindomManager.BuildingCircleEditUIInPreview.onUnInstallBuilding += () => _environmentScoreText.text = GameManager.Game.EnvironmentScore.ToString();
 
         List<BuildingController> ownedBuilding = _kindomManager.buildingsInInventory;  // 내가 소유한 전체 건물
         List<BuildingController> buildingsInKingdom = _kindomManager.buildingsInKingdom;  // 왕국에 설치된 건물
 
-/*        HousingItemData[] allTiles = DataBaseManager.Instance.AllTiles;
-        for (int i = 0; i < allTiles.Length; i++)
-        {
-            int index = i;
-            Button editItemButton = Instantiate(editItemPrefab, editItemParent);
-            editItemButton.image.sprite = allTiles[i].HousingItemImage;
-            editItemButton.onClick.AddListener(() => OnClickEditItemButton(allTiles[index]));
+        _ownedBuilding = new List<Button>();
 
-            _ownedBuilding.Add(editItemButton);
-        }*/
-
-        for(int i = 0; i < ownedBuilding.Count; i++)
+        for (int i = 0; i < ownedBuilding.Count; i++)
         {
-            // 왕국에 설치되지 않은것만 버튼으로 만든다.
-            if (!buildingsInKingdom.Contains(ownedBuilding[i]))
-            {
-                AddBuilding(ownedBuilding[i]);
-            }
+            AddBuilding(ownedBuilding[i]);
         }
-
+        foldButton.onClick.AddListener(OnClickFoldButton);
         editExitButton.onClick.AddListener(() => OnClickEditExitButton());
     }
 
@@ -128,8 +113,6 @@ public class KingdomEditUI : BaseUI
 
     private void OnClickEditExitButton()
     {
-        _currentHousingItemData = null;
-
         editInventory.gameObject.SetActive(true);
         editSelected.gameObject.SetActive(false);
     }
@@ -137,8 +120,6 @@ public class KingdomEditUI : BaseUI
     private void OnClickEditBuildingButton(BuildingController currentBuildingPrefab, Button button)
     {
         OnClickFoldButton();
-
-        _currentHousingItemData = null;
 
         // 카메라가 보고 있는 중간에 해당 건물을 생성하고 editUI도 넣어준다.
         // 건물은 투명하게 생김
@@ -165,8 +146,6 @@ public class KingdomEditUI : BaseUI
     {
         editInventory.gameObject.SetActive(false);
         editSelected.gameObject.SetActive(true);
-
-        _currentHousingItemData = currentHousingItemData;
 
         editItemImage.sprite = currentHousingItemData.HousingItemImage;
         editItemNameText.text = currentHousingItemData.HousingItemName;
