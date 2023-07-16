@@ -62,13 +62,4 @@ public class CharacterStat : MonoBehaviour
             _stats[i].EvolutionStat();
         }
     }
-
-    public void SkillLevelUp()
-    {
-        // 크리티컬 빼고
-        for (int i = 0; i < _stats.Length - 1; i++)
-        {
-            _stats[i].SkillLevelUpStat();
-        }
-    }
 }

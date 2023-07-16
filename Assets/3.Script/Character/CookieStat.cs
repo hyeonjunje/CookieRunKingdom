@@ -5,7 +5,6 @@ using UnityEngine;
 public class CookieStat : MonoBehaviour
 {
     private int _cookieLevel;
-    private int _skillLevel;
     private int _evolutionCount;
     private int _battlePosition;
     private bool _isBattleMember;
@@ -20,7 +19,6 @@ public class CookieStat : MonoBehaviour
     private CookieData _data;
 
     public int CookieLevel => _cookieLevel;
-    public int SkillLevel => _skillLevel;
     public int EvolutionCount => _evolutionCount;
     public int BattlePosition => _battlePosition;
     public bool IsBattleMember => _isBattleMember;
@@ -45,7 +43,6 @@ public class CookieStat : MonoBehaviour
     {
         CookieInfo cookieInfo = GameManager.Game.allCookies[_data.CookieIndex];
         cookieInfo.cookieLevel = _cookieLevel;
-        cookieInfo.skillLevel = _skillLevel;
         cookieInfo.evolutionCount = _evolutionCount;
         cookieInfo.battlePosition = _battlePosition;
         cookieInfo.isHave = _isHave;
@@ -58,7 +55,6 @@ public class CookieStat : MonoBehaviour
     {
         CookieInfo cookieInfo = GameManager.Game.allCookies[_data.CookieIndex];
         _cookieLevel = cookieInfo.cookieLevel;
-        _skillLevel = cookieInfo.skillLevel;
         _evolutionCount = cookieInfo.evolutionCount;
         _battlePosition = cookieInfo.battlePosition;
         _isHave = cookieInfo.isHave;
@@ -69,9 +65,6 @@ public class CookieStat : MonoBehaviour
 
         for (int i = 1; i < _cookieLevel; i++)
             _controller.CharacterStat.LevelUP();
-
-        for (int i = 1; i < _skillLevel; i++)
-            _controller.CharacterStat.SkillLevelUp();
 
         for (int i = 0; i < _evolutionCount; i++)
             _controller.CharacterStat.Evolution();
@@ -119,21 +112,6 @@ public class CookieStat : MonoBehaviour
         else
         {
             GuideDisplayer.Instance.ShowGuide("최대 등급입니다!");
-        }
-    }
-
-    public void SkillLevelUp()
-    {
-        GuideDisplayer.Instance.ShowGuide("파우더가 부족합니다!");
-
-        if (_skillLevel < 60)
-        {
-            _skillLevel++;
-            _controller.CharacterStat.SkillLevelUp();
-        }
-        else
-        {
-            GuideDisplayer.Instance.ShowGuide("최대 스킬레벨입니다!");
         }
     }
 }

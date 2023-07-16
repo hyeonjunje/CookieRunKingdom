@@ -74,7 +74,6 @@ public class CookieInfo
     
     // ´É·ÂÄ¡
     public int cookieLevel;
-    public int skillLevel;
     public int evolutionCount;
     public int evolutionGauge;
     public int evolutionMaxGauge;
@@ -93,7 +92,6 @@ public class CookieInfo
         this.battlePosition = battlePosition;
 
         cookieLevel = 1;
-        skillLevel = 1;
         evolutionCount = 0;
         evolutionGauge = 0;
         evolutionMaxGauge = 20;

@@ -42,11 +42,10 @@ public class CookieInfoUI : BaseUI
     [SerializeField] private TextMeshProUGUI _defenseText;
     [SerializeField] private TextMeshProUGUI _criticalText;
     [SerializeField] private Image _cookieSKillImage;
-    [SerializeField] private TextMeshProUGUI _cookieSKillText;
 
     [SerializeField] private Button _cookieLevelUpButton;
     [SerializeField] private Button _cookieEvolutionButton;
-    [SerializeField] private Button _cookieSkillLevelUpButton;
+    [SerializeField] private TextMeshProUGUI _cookieSkillNameText;
 
     private CookieController _cookie;
     private CookieData _data;
@@ -107,13 +106,6 @@ public class CookieInfoUI : BaseUI
             if (!_isOwned) return;
 
             _cookie.CookieStat.Evolution();
-            UpdateUIInfo();
-        });
-        _cookieSkillLevelUpButton.onClick.AddListener(() =>
-        {
-            if (!_isOwned) return;
-
-            _cookie.CookieStat.SkillLevelUp();
             UpdateUIInfo();
         });
     }
@@ -197,7 +189,7 @@ public class CookieInfoUI : BaseUI
         }
         
         _cookieSKillImage.sprite = _data.SKillSprite;
-        _cookieSKillText.text = "레벨 " + _cookie.CookieStat.SkillLevel.ToString();
+        _cookieSkillNameText.text = _data.SKillName;
     }
 
     public void UpdateUIInfo()
@@ -213,7 +205,6 @@ public class CookieInfoUI : BaseUI
             _defenseText.text = _cookie.CharacterStat.defenseStat.ResultStat.ToString("#,##0");
             _criticalText.text = _cookie.CharacterStat.criticalStat.ResultStat.ToString("#,##0.00") + "%";
 
-            _cookieSKillText.text = "레벨 " + _cookie.CookieStat.SkillLevel.ToString();
 
 
             _cookieEvolutionImage.sprite = _data.EvolutionSprite;

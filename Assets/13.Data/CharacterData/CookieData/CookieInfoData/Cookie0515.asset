@@ -32,6 +32,7 @@ MonoBehaviour:
   _cookieHeadSprite: {fileID: 783378552271554183, guid: 9d4a6d23348f2be40adb640568dc0c06, type: 3}
   _idleSprite: {fileID: 21300000, guid: 2f251e0a2aceb4f46a044a5bed0d9393, type: 3}
   _skillSprite: {fileID: 21300000, guid: 6971ccb6b6babaa47aa915b056a477c8, type: 3}
+  _skillName: "\uACB0\uD22C\uC758 \uC21C\uAC04"
   _typeSprite: {fileID: 21300000, guid: 1408109c18d9b674e962afd8f3fe59a0, type: 3}
   _evolutionSprite: {fileID: -823961447135524358, guid: 183849bf2ef2bdd41aa5b4b5fbde72ee, type: 3}
   _cookieGradeSprite: {fileID: 21300000, guid: 66292ddd4d4687247a78bef600aad68a, type: 3}
@@ -39,4 +40,3 @@ MonoBehaviour:
   _cookieType: 4
   _cookiePosition: 2
   _expCandyItemData: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
-  _powderItemData: {fileID: 0}

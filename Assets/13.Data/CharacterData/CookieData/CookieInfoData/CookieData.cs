@@ -22,6 +22,7 @@ public class CookieData : CharacterData
     [SerializeField] private Sprite _cookieHeadSprite;
     [SerializeField] private Sprite _idleSprite;
     [SerializeField] private Sprite _skillSprite;
+    [SerializeField] private string _skillName;
 
     [SerializeField] private Sprite _typeSprite;
     [SerializeField] private Sprite _evolutionSprite;
@@ -34,7 +35,6 @@ public class CookieData : CharacterData
 
     [Header("¾ÆÀÌÅÛ")]
     [SerializeField] private ItemData _expCandyItemData;
-    [SerializeField] private ItemData _powderItemData;
 
     public int CookieIndex => _cookieIndex;
 
@@ -46,6 +46,7 @@ public class CookieData : CharacterData
     public Sprite CookieHeadSprite => _cookieHeadSprite;
     public Sprite IdleSprite => _idleSprite;
     public Sprite SKillSprite => _skillSprite;
+    public string SKillName => _skillName;
     public Sprite TypeSprite => _typeSprite;
     public Sprite EvolutionSprite => _evolutionSprite;
     public Sprite CookieGradeSprite => _cookieGradeSprite;
@@ -55,8 +56,6 @@ public class CookieData : CharacterData
     public ECookiePosition CookiePosition => _cookiePosition;
 
     public ItemData ExpCandyItemData => _expCandyItemData;
-    public ItemData PowderItemData => _powderItemData;
-
 
     public string CookieGradeName
     {
