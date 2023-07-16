@@ -26944,6 +26944,7 @@ MonoBehaviour:
   - {fileID: 1163540585}
   - {fileID: 309419540}
   - {fileID: 830792363}
+  SelectedTempCookies: []
 --- !u!1 &863014339
 GameObject:
   m_ObjectHideFlags: 0

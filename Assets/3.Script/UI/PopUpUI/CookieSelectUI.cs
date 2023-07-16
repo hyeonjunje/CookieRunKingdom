@@ -25,7 +25,8 @@ public class CookieSelectUI : BaseUI
     private KingdomManager _manager;
     private StageData _stageData;
 
-    public List<CookieController> SelectedTempCookies { get; private set; }
+    // public List<CookieController> SelectedTempCookies { get; private set; }
+    public List<CookieController> SelectedTempCookies;
 
 
     public override void Init()
@@ -80,18 +81,11 @@ public class CookieSelectUI : BaseUI
         OnChangeBattleCookie?.Invoke();
     }
 
-   public void RemoveAllCookie()
-    {
-        while(SelectedTempCookies.Count != 0)
-        {
-            Debug.Log(SelectedTempCookies.Count);
-            RemoveCookie(SelectedTempCookies[0]);
-            Debug.Log(SelectedTempCookies.Count);
-        }
-    }
 
     public void RemoveCookie(CookieController cookie)
     {
+        if (!cookie.CookieStat.IsBattleMember)
+            return;
         SelectedTempCookies.Remove(cookie);
         _cookiePositions[cookie.CookieStat.BattlePosition].enabled = false;
         SelectedTempCookies.Sort(CustomComparison);

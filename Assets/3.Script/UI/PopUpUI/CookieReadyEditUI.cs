@@ -23,8 +23,6 @@ public class CookieReadyEditUI : BaseUI
     private Vector3 _cookiePositionArrange;
     private List<EditCookieButton> _editCookieButtons;
 
-    private List<CookieController> SelectedCookies => _cookieSelectUI.SelectedTempCookies;
-
     public override void Hide()
     {
         base.Hide();
@@ -89,10 +87,6 @@ public class CookieReadyEditUI : BaseUI
         {
             foreach (EditCookieButton button in _editCookieButtons)
                 button.InitUI();
-
-            _powerValueText.text = "0";
-
-            _cookieSelectUI.RemoveAllCookie();
         });
     }
 }
