@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Spine.Unity;
 using TMPro;
 
 public class CookieInfoUI : BaseUI
@@ -28,7 +29,7 @@ public class CookieInfoUI : BaseUI
     [SerializeField] private TextMeshProUGUI _cookiePositionText;
 
     [Header("Center")]
-    [SerializeField] private Transform _instantiateParent;
+    [SerializeField] private SkeletonGraphic _skeletonGrapic;
     [SerializeField] private Button _cookieInteractionButton;
     [SerializeField] private Image _cookieEvolutionImage;
     [SerializeField] private TextMeshProUGUI _cookieEvolutionText;
@@ -51,8 +52,6 @@ public class CookieInfoUI : BaseUI
     private CookieData _data;
     private Camera _camera;
 
-    private float _prevCameraOrthoSize;
-    private Vector3 _prevCameraPosition;
     private Coroutine _coTouch = null;
     private KingdomManager _manager;
 
@@ -74,11 +73,6 @@ public class CookieInfoUI : BaseUI
 
         _myCookieUI.SetActive(true);
         _kingdomManageUI.SetActive(true);
-
-        _camera.orthographicSize = _prevCameraOrthoSize;
-        _camera.transform.position = _prevCameraPosition;
-
-        _instantiateParent.DestroyAllChild();
     }
 
     public override void Init()
@@ -115,15 +109,8 @@ public class CookieInfoUI : BaseUI
         base.Show();
 
         _manager.IsMoveCamera = false;
-
         _myCookieUI.SetActive(false);
         _kingdomManageUI.SetActive(false);
-
-        _prevCameraOrthoSize = _camera.orthographicSize;
-        _prevCameraPosition = _camera.transform.position;
-
-        _camera.orthographicSize = 12.3f;
-        _camera.transform.position = new Vector3(0, 0, -10);
 
         // 왼쪽
         _cookieGradeImage.sprite = _data.CookieGradeSprite;
@@ -148,15 +135,12 @@ public class CookieInfoUI : BaseUI
         _cookiePositionText.text = _data.CookiePositionName;
 
         // 중앙3
-
-        CookieController tempCookie = Instantiate(_cookie, _instantiateParent);  // 생성은 얘로 일단 하고...
-        tempCookie.CharacterAnimator.SettingOrderLayer(true);
-        TouchCookie(tempCookie);
-        tempCookie.transform.localPosition = Vector3.zero;
-        tempCookie.transform.localScale = Vector3.one;
+        _skeletonGrapic.skeletonDataAsset = _cookie.Data.SkeletonDataAsset;
+        _skeletonGrapic.Initialize(true);
+        TouchCookie();
 
         _cookieInteractionButton.onClick.RemoveAllListeners();
-        _cookieInteractionButton.onClick.AddListener(() => TouchCookie(tempCookie));
+        _cookieInteractionButton.onClick.AddListener(() => TouchCookie());
 
         _cookieEvolutionImage.sprite = _data.EvolutionSprite;
         _cookieEvolutionText.text = _cookie.CookieStat.EvolutionGauge + "/" + _cookie.CookieStat.EvolutionMaxGauge;
@@ -205,8 +189,6 @@ public class CookieInfoUI : BaseUI
             _defenseText.text = _cookie.CharacterStat.defenseStat.ResultStat.ToString("#,##0");
             _criticalText.text = _cookie.CharacterStat.criticalStat.ResultStat.ToString("#,##0.00") + "%";
 
-
-
             _cookieEvolutionImage.sprite = _data.EvolutionSprite;
             _cookieEvolutionText.text = _cookie.CookieStat.EvolutionGauge + "/" + _cookie.CookieStat.EvolutionMaxGauge;
             _cookieEvolutionGauge.value = (float)_cookie.CookieStat.EvolutionGauge / _cookie.CookieStat.EvolutionMaxGauge;
@@ -220,27 +202,19 @@ public class CookieInfoUI : BaseUI
         }
     }
 
-    private void TouchCookie(BaseController cookie)
+    private void TouchCookie()
     {
         // 터치하면 touch 애니메이션 실행하고 (대사까지 쳐주면 완벽)
         // 애니메이션이 끝나면 standard 애니메이션 무한재생
         if (_coTouch != null)
             StopCoroutine(_coTouch);
-        _coTouch = StartCoroutine(CoTouch(cookie));
+        _coTouch = StartCoroutine(CoTouch());
     }
 
-    private IEnumerator CoTouch(BaseController cookie)
+    private IEnumerator CoTouch()
     {
-        cookie.CharacterAnimator.PlayAnimation("touch", false);
-
-        while (true)
-        {
-            if(cookie.CharacterAnimator.IsPlayingAnimation())
-                yield return null;
-            else
-                break;
-        }
-
-        cookie.CharacterAnimator.PlayAnimation("standard");
+        _skeletonGrapic.AnimationState.SetAnimation(0, "touch", false);
+        yield return new WaitUntil(() => _skeletonGrapic.AnimationState.GetCurrent(0).IsComplete);
+        _skeletonGrapic.AnimationState.SetAnimation(0, "standard", true);
     }
 }

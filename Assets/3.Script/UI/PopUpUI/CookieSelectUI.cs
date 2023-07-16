@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public class CookieSelectUI : BaseUI
 {
@@ -17,16 +18,13 @@ public class CookieSelectUI : BaseUI
     /// 
 
     [SerializeField] private Transform[] cookiePositions;
+    [SerializeField] private SkeletonGraphic[] cookiePositionss;
 
     private CookieController[] isPosition;
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
     private KingdomManager _manager;
-
-    private Camera _camera;
     private StageData _stageData;
-    private Vector3 _prevCameraPos;
-    private float _prevOrthosize;
 
     public List<CookieController> SelectedTempCookies { get; private set; }
 
@@ -36,7 +34,6 @@ public class CookieSelectUI : BaseUI
         base.Init();
 
         _manager = FindObjectOfType<KingdomManager>();
-        _camera = Camera.main;
     }
 
 
@@ -44,18 +41,12 @@ public class CookieSelectUI : BaseUI
     {
         _stageData = stageData;
         GameManager.Game.StageData = _stageData;
-        _prevCameraPos = prevCameraPos;
-        _prevOrthosize = prevOrthoSize;
     }
 
     public override void Hide()
     {
         _manager.IsMoveCamera = true;
-        _camera.orthographicSize = _prevOrthosize;
-        _camera.transform.position = _prevCameraPos;
-
         SelectedTempCookies.ForEach(cookie => Destroy(cookie.gameObject));
-
         base.Hide();
     }
 
@@ -64,7 +55,6 @@ public class CookieSelectUI : BaseUI
         base.Show();
         SelectedTempCookies = new List<CookieController>();
         _manager.IsMoveCamera = false;
-        _camera.transform.position = new Vector3(0, 0, _camera.transform.position.z);
 
         List<CookieController> allCookies = _manager.allCookies;
 
