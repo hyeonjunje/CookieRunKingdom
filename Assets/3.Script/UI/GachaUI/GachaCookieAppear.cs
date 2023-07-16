@@ -22,9 +22,6 @@ public class GachaCookieAppear : BaseUI
     private CookieData _cookieData;
 
     private KingdomManager _manager;
-    private Camera _camera;
-    private Vector3 _originPos;
-    private float _orthographicSize;
 
     private Sequence _speechSeq;
     private Sequence _appearSeq;
@@ -81,15 +78,12 @@ public class GachaCookieAppear : BaseUI
         base.Hide();
 
         _manager.IsMoveCamera = true;
-        _camera.transform.position = _originPos;
-        _camera.orthographicSize = _orthographicSize;
     }
 
     public override void Init()
     {
         base.Init();
 
-        _camera = Camera.main;
         _manager = FindObjectOfType<KingdomManager>();
 
         _speechSeq = DOTween.Sequence();
@@ -119,11 +113,6 @@ public class GachaCookieAppear : BaseUI
         _isSkip = false;
 
         _manager.IsMoveCamera = false;
-        _originPos = _camera.transform.position;
-        _orthographicSize = _camera.orthographicSize;
-
-        _camera.transform.position = Vector3.forward * -10;
-        _camera.orthographicSize = 11;
     }
 
     public void OnClick(InputAction.CallbackContext value)

@@ -6,7 +6,7 @@ using System.IO;
 using LitJson;
 using MySql.Data.MySqlClient;
 using System.Reflection;
-
+using TMPro;
 public class CookiesJson
 {
     public List<CookieInfo> allCookies;
@@ -167,10 +167,12 @@ public class SQLManager
             }
             _connection = new MySqlConnection(serverInfo);
             _connection.Open();
+            GameObject.Find("TestText").GetComponent<TextMeshProUGUI>().text = "SQL OPEN Complete";
             Debug.Log("SQL OPEN Complete");
         }
         catch (Exception e)
         {
+            GameObject.Find("TestText").GetComponent<TextMeshProUGUI>().text = e.Message;
             Debug.Log(e.Message);
         }
     }

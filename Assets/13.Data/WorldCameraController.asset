@@ -15,7 +15,7 @@ MonoBehaviour:
   _cameraMoveSpeed: 100
   _cameraZoomSpeed: 0.01
   _cameraZoomMin: 6
-  _cameraZoomMax: 11
+  _cameraZoomMax: 12.3
   _cameraBorder: {x: -3.65, y: 52.3, z: -7.4, w: 20}
   _cameraBuildingZoom: 6
   _cameraBuildingZoomOffset: {x: 4.3764, y: 0, z: -10}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Spine.Unity;
 
 public class CookieSelectUI : BaseUI
 {
@@ -16,19 +17,16 @@ public class CookieSelectUI : BaseUI
     /// </summary>
     /// 
 
-    [SerializeField] private Transform[] cookiePositions;
+    [SerializeField] private SkeletonGraphic[] _cookiePositions;
 
     private CookieController[] isPosition;
     private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
     private KingdomManager _manager;
-
-    private Camera _camera;
     private StageData _stageData;
-    private Vector3 _prevCameraPos;
-    private float _prevOrthosize;
 
-    public List<CookieController> SelectedTempCookies { get; private set; }
+    // public List<CookieController> SelectedTempCookies { get; private set; }
+    public List<CookieController> SelectedTempCookies;
 
 
     public override void Init()
@@ -36,7 +34,6 @@ public class CookieSelectUI : BaseUI
         base.Init();
 
         _manager = FindObjectOfType<KingdomManager>();
-        _camera = Camera.main;
     }
 
 
@@ -44,18 +41,13 @@ public class CookieSelectUI : BaseUI
     {
         _stageData = stageData;
         GameManager.Game.StageData = _stageData;
-        _prevCameraPos = prevCameraPos;
-        _prevOrthosize = prevOrthoSize;
     }
 
     public override void Hide()
     {
         _manager.IsMoveCamera = true;
-        _camera.orthographicSize = _prevOrthosize;
-        _camera.transform.position = _prevCameraPos;
-
-        SelectedTempCookies.ForEach(cookie => Destroy(cookie.gameObject));
-
+        for (int i = 0; i < _cookiePositions.Length; i++)
+            _cookiePositions[i].enabled = false;
         base.Hide();
     }
 
@@ -64,7 +56,6 @@ public class CookieSelectUI : BaseUI
         base.Show();
         SelectedTempCookies = new List<CookieController>();
         _manager.IsMoveCamera = false;
-        _camera.transform.position = new Vector3(0, 0, _camera.transform.position.z);
 
         List<CookieController> allCookies = _manager.allCookies;
 
@@ -77,48 +68,30 @@ public class CookieSelectUI : BaseUI
     }
 
     #region 쿠키 배치
-    public void AddCookie(CookieController cookiePrefab)
+    public void AddCookie(CookieController cookie)
     {
         if (SelectedTempCookies.Count >= 5)
             return;
-            
-        CookieController cookie = Instantiate(cookiePrefab, transform);
-        cookie.gameObject.SetActive(true);
-
-        cookie.CharacterAnimator.PlayAnimation("battle_idle");
-        cookie.CharacterAnimator.SettingOrderLayer(true);
 
         SelectedTempCookies.Add(cookie);
         SelectedTempCookies.Sort(CustomComparison);
-
-        foreach (CookieController realCookie in _manager.allCookies)
-            if (realCookie.Data.CharacterName == cookie.Data.CharacterName)
-                realCookie.CookieStat.SetBattle(true, -1);
+        cookie.CookieStat.SetBattle(true, -1);
 
         ReArrange();
-
         OnChangeBattleCookie?.Invoke();
     }
 
+
     public void RemoveCookie(CookieController cookie)
     {
-        foreach(CookieController selectedCookie in SelectedTempCookies)
-        {
-            if(cookie.Data.CharacterName == selectedCookie.Data.CharacterName)
-            {
-                SelectedTempCookies.Remove(selectedCookie);
-                Destroy(selectedCookie.gameObject);
-                SelectedTempCookies.Sort(CustomComparison);
-                ReArrange();
-
-                foreach (CookieController realCookie in _manager.allCookies)
-                    if (realCookie.Data.CharacterName == cookie.Data.CharacterName)
-                        realCookie.CookieStat.SetBattle(false, -1);
-
-                OnChangeBattleCookie?.Invoke();
-                return;
-            }
-        }
+        if (!cookie.CookieStat.IsBattleMember)
+            return;
+        SelectedTempCookies.Remove(cookie);
+        _cookiePositions[cookie.CookieStat.BattlePosition].enabled = false;
+        SelectedTempCookies.Sort(CustomComparison);
+        ReArrange();
+        cookie.CookieStat.SetBattle(false, -1);
+        OnChangeBattleCookie?.Invoke();
     }
 
     private int CustomComparison(CookieController x, CookieController y)
@@ -135,7 +108,7 @@ public class CookieSelectUI : BaseUI
 
     private void ReArrange()
     {
-        isPosition = new CookieController[cookiePositions.Length];
+        isPosition = new CookieController[_cookiePositions.Length];
 
         for (int i = 0; i < SelectedTempCookies.Count; i++)
         {
@@ -186,26 +159,23 @@ public class CookieSelectUI : BaseUI
             }
         }
 
+        // 정렬이 되고 여기서 설정해줌
         for (int i = 0; i < isPosition.Length; i++)
         {
             if (isPosition[i] != null)
             {
-                isPosition[i].transform.SetParent(cookiePositions[i]);
-                isPosition[i].transform.localPosition = Vector3.zero;
-                isPosition[i].transform.localScale = Vector3.one * 100f;
+                _cookiePositions[i].enabled = true;
+                _cookiePositions[i].skeletonDataAsset = isPosition[i].Data.SkeletonDataAsset;
+                _cookiePositions[i].Initialize(true);
+                _cookiePositions[i].AnimationState.SetAnimation(0, "battle_idle", true);
+
+                isPosition[i].CookieStat.SetBattle(true, i);
+            }
+            else
+            {
+                _cookiePositions[i].enabled = false;
             }
         }
-
-        SetPosition();
-    }
-
-    private void SetPosition()
-    {
-        for(int i = 0; i < isPosition.Length; i++)
-            if (isPosition[i] != null)
-                foreach(CookieController cookie in _manager.allCookies)
-                    if(cookie.Data.CharacterName == isPosition[i].Data.CharacterName)
-                        cookie.CookieStat.SetBattle(true, i);
     }
     #endregion
 

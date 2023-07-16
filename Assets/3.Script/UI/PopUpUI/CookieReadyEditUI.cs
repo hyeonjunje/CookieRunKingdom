@@ -23,8 +23,6 @@ public class CookieReadyEditUI : BaseUI
     private Vector3 _cookiePositionArrange;
     private List<EditCookieButton> _editCookieButtons;
 
-    private List<CookieController> SelectedCookies => _cookieSelectUI.SelectedTempCookies;
-
     public override void Hide()
     {
         base.Hide();
@@ -36,7 +34,7 @@ public class CookieReadyEditUI : BaseUI
 
         _cookieSelectUI = FindObjectOfType<CookieSelectUI>();
         _manager = FindObjectOfType<KingdomManager>();
-        _cookiePositionArrange = _cookiePosition.position + Vector3.right * 7.5f;
+        _cookiePositionArrange = _cookiePosition.position + Vector3.right * 100f;
         BindingButton();
 
         _cookieSelectUI.OnChangeBattleCookie += (() =>
@@ -87,17 +85,8 @@ public class CookieReadyEditUI : BaseUI
 
         _allOffCookiesButton.onClick.AddListener(() =>
         {
-            while(SelectedCookies.Count != 0)
-            {
-                _cookieSelectUI.RemoveCookie(SelectedCookies[0]);
-            }
-
-            foreach(EditCookieButton button in _editCookieButtons)
-            {
+            foreach (EditCookieButton button in _editCookieButtons)
                 button.InitUI();
-            }
-
-            _powerValueText.text = "0";
         });
     }
 }
