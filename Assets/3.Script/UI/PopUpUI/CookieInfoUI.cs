@@ -122,7 +122,7 @@ public class CookieInfoUI : BaseUI
         _prevCameraOrthoSize = _camera.orthographicSize;
         _prevCameraPosition = _camera.transform.position;
 
-        _camera.orthographicSize = 11;
+        _camera.orthographicSize = 12.3f;
         _camera.transform.position = new Vector3(0, 0, -10);
 
         // ¿ÞÂÊ

@@ -123,7 +123,7 @@ public class GachaCookieAppear : BaseUI
         _orthographicSize = _camera.orthographicSize;
 
         _camera.transform.position = Vector3.forward * -10;
-        _camera.orthographicSize = 11;
+        _camera.orthographicSize = 12.3f;
     }
 
     public void OnClick(InputAction.CallbackContext value)
