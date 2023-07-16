@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CookieBundle : MonoBehaviour
 {
@@ -17,6 +18,9 @@ public class CookieBundle : MonoBehaviour
 
     private float _startSpeed;
     private float _currentSpeed = 0f;
+    private Camera _camera;
+
+    private Tweener _cameraTween;
 
     public void ActiveMove(bool on)
     {
@@ -27,9 +31,15 @@ public class CookieBundle : MonoBehaviour
 
 
         if(_cookieRunStateCount == Cookies.Count)
+        {
             _currentSpeed = _startSpeed;
+            _cameraTween.ChangeEndValue(6.5f, 1.5f, true).Restart();
+        }
         else
+        {
             _currentSpeed = 0f;
+            _cameraTween.ChangeEndValue(5.0f, 1.5f, true).Restart();
+        }
     }
 
     private void Update()
@@ -42,7 +52,10 @@ public class CookieBundle : MonoBehaviour
 
     public void Init()
     {
-        for(int i= 0; i < Cookies.Count; i++)
+        _camera = Camera.main;
+        _cameraTween = _camera.DOOrthoSize(5.5f, 1.5f).SetAutoKill(false);
+
+        for (int i= 0; i < Cookies.Count; i++)
             MovePosition(Cookies[i]);
 
         _startSpeed = Cookies[0].Data.MoveSpeed;

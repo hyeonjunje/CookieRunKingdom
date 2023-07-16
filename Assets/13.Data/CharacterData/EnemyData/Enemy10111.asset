@@ -18,7 +18,7 @@ MonoBehaviour:
   _spinePrefab: {fileID: 0}
   moveSpeed: 5
   attackRange: 1
-  _hpStat: 1000000
+  _hpStat: 1000
   _attackStat: 100
   _defenseStat: 20
   _criticalStat: 1
