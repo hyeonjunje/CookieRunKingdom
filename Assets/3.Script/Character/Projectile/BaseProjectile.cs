@@ -32,7 +32,7 @@ public class BaseProjectile : MonoBehaviour
     /// <param name="targetLayer">투사체의 타겟 레이어</param>
     /// <param name="parent">해당 투사체의 부모</param>
     /// <param name="initPos">해당 투사체가 등장할 위치</param>
-    public virtual void Init(int damage, LayerMask targetLayer, Transform parent, Vector3 initPos)
+    public virtual void Init(int damage, LayerMask targetLayer, Transform parent, Vector3 initPos, CharacterStat characterStat)
     {
         _rigid = GetComponent<Rigidbody2D>();
         _damageBox = GetComponent<DamageBox>();
@@ -40,7 +40,7 @@ public class BaseProjectile : MonoBehaviour
         _initPos = initPos;
 
         if (_damageBox != null)
-            _damageBox.Init(damage, targetLayer, _isPersistence);
+            _damageBox.Init(damage, targetLayer, characterStat, _isPersistence);
     }
 
     public void ShootProjectile(Vector3 dir)

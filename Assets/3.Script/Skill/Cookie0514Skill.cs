@@ -19,14 +19,15 @@ public class Cookie0514Skill : BaseHealSkill
         {
             _isSkillUse = true;
 
-            BaseController[] cookies = BattleManager.instance.CookiesInBattleList.OrderBy(cookie => cookie.CharacterBattleController.CurrentHp).ToArray();
+            BaseController[] cookies = BattleManager.instance.CookiesInBattleList.
+                OrderBy(cookie => cookie.CharacterBattleController.CurrentHp).ToArray();
 
             // Hp 제일 작은 2명 회복 및 보호막
             for(int i = 0; i < 2; i++)
             {
                 if(i < cookies.Length)
                 {
-                    cookies[i].CharacterBattleController.CurrentHp += AttackPower;
+                    cookies[i].CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
                     Debug.Log(cookies[i] + " 회복합니다.");
                 }
             }

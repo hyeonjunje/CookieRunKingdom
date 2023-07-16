@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
+using TMPro;
 
 public class CharacterBattleController : MonoBehaviour
 {
@@ -43,6 +45,12 @@ public class CharacterBattleController : MonoBehaviour
     protected BattleStateFactory _factory;
     private Coroutine _coUpdate = null;
 
+    private HpBarController _hpBarController;
+    private DamageTextController _damageTextController;
+    private Camera _camera;
+
+    private float _damageTextCount = 0;
+
     public bool IsForward { get; private set; }
 
     private void OnDisable()
@@ -53,6 +61,10 @@ public class CharacterBattleController : MonoBehaviour
     public void Init(BaseController controller)
     {
         _isDead = false;
+
+        _hpBarController = FindObjectOfType<HpBarController>();
+        _damageTextController = FindObjectOfType<DamageTextController>();
+        _camera = Camera.main;
 
         _controller = controller;
         CurrentHp = MaxHp;
@@ -110,7 +122,7 @@ public class CharacterBattleController : MonoBehaviour
     {
         if (_hpBar == null && _currentHp < MaxHp)
         {
-            _hpBar = FindObjectOfType<HpBarController>().GetHpBar(IsForward);
+            _hpBar = _hpBarController.GetHpBar(IsForward);
         }
         else if (_hpBar != null && _currentHp == MaxHp)
         {
@@ -135,7 +147,7 @@ public class CharacterBattleController : MonoBehaviour
 
             if (_hpBar != null)
             {
-                _hpBar.transform.position = Camera.main.WorldToScreenPoint(transform.position + Vector3.up * 2);
+                _hpBar.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2);
             }
         }
     }
@@ -150,6 +162,40 @@ public class CharacterBattleController : MonoBehaviour
         _isDead = true;
     }
 
+
+    public void ChangeCurrentHp(int value, CharacterStat _character)
+    {
+        if (_isDead)
+            return;
+
+        int critical = _character.criticalStat.ResultStat;
+        int random = Random.Range(0, 100);
+        if(random <= critical)
+            value *= 2;
+
+
+        if (value < 0)
+            value += _character.defenseStat.ResultStat;
+
+
+        TextMeshProUGUI damageText = _damageTextController.GetDamageText(value, random <= critical, value > 0);
+        if(random<=critical || value > 0)
+            damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2.2f);
+        else
+            damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2);
+
+        damageText.transform.SetAsFirstSibling();
+        Sequence seq = DOTween.Sequence();
+        seq.Append(damageText.transform.DOMoveY(damageText.transform.position.y + 10f, 0.5f))
+            .SetEase(Ease.OutQuart)
+            .Join(damageText.DOFade(0.5f, 0.5f))
+            .OnComplete(() =>
+            {
+                damageText.gameObject.SetActive(false);
+            });
+
+        CurrentHp += value;
+    }
 
     public virtual void Disappear()
     {

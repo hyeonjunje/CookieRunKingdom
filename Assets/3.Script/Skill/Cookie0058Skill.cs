@@ -97,7 +97,7 @@ public class Cookie0058Skill : BaseMeleeSkill
         _cryingRenderer = _cryingEffect.GetComponent<SpriteRenderer>();
         _cryingDetectRange = _cryingEffect.GetComponent<DetectRange>();
 
-        _cryingEffect.Init(0, layer, true);
+        _cryingEffect.Init(0, layer,_controller.CharacterStat, true);
         _detectedSkillRange.Init(layer);
         _cryingDetectRange.Init(layer);
     }

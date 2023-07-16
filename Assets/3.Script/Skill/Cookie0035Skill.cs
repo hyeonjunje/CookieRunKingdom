@@ -28,7 +28,7 @@ public class Cookie0035Skill : BaseMeleeSkill
     public override void NormalAttackEvent()
     {
         base.NormalAttackEvent();
-        _controller.CharacterBattleController.CurrentHp += 1000;
+        _controller.CharacterBattleController.ChangeCurrentHp(1000, _controller.CharacterStat);
     }
 
     public override void OnSkillEvent(int index)
@@ -86,8 +86,8 @@ public class Cookie0035Skill : BaseMeleeSkill
                 transform.position = _prevPosition;
 
                 _betSkeletonAnimation.gameObject.SetActive(false);
-                _target.CurrentHp -= AttackPower;
-                _controller.CharacterBattleController.CurrentHp += AttackPower;
+                _target.ChangeCurrentHp(-AttackPower, _controller.CharacterStat);
+                _controller.CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
 
                 PlayAnimation(animationName[_skillIndex++], false);
             }

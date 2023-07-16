@@ -43,7 +43,7 @@ public class BaseRangeSkill : BaseSkill
         BaseProjectile[] projectiles = _pool.ToArray();
         for(int i = 0; i < projectiles.Length; i++)
         {
-            projectiles[i].Init(AttackPower, layer, transform, Vector3.up * 0.8f);
+            projectiles[i].Init(AttackPower, layer, transform, Vector3.up * 0.8f, _controller.CharacterStat);
         }
     }
 

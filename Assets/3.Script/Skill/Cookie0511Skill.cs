@@ -58,7 +58,7 @@ public class Cookie0511Skill : BaseMeleeSkill
     public override void SetLayer(LayerMask layer)
     {
         base.SetLayer(layer);
-        _projectile.Init(AttackPower, layer, transform, Vector3.up * 0.8f);
+        _projectile.Init(AttackPower, layer, transform, Vector3.up * 0.8f, _controller.CharacterStat);
     }
 
     public override bool UseSkill()

@@ -82,7 +82,9 @@ public class Cookie0121Skill : BaseRangeSkill
                     _currentTime = 0;
 
                     foreach (CharacterBattleController target in _skillRange.enemies)
-                        target.CurrentHp -= AttackPower;
+                    {
+                        target.ChangeCurrentHp(-AttackPower, _controller.CharacterStat);
+                    }
                 }
             }
             else

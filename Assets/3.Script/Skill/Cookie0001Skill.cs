@@ -57,7 +57,7 @@ public class Cookie0001Skill : BaseMeleeSkill
             PlayAnimation(animationName[_skillIndex++]);
             for(int i = 0; i < targets.Count; i++)
             {
-                targets[i].CurrentHp -= AttackPower;
+                targets[i].ChangeCurrentHp(AttackPower, _controller.CharacterStat);
             }
         }
         else

@@ -54,7 +54,9 @@ public class Cookie0002Skill : BaseMeleeSkill
             if(_currentTime >= _duration * _currentCount / _attackCount)
             {
                 for (int i = 0; i < targets.Count; i++)
-                    targets[i].CurrentHp -= AttackPower;
+                {
+                    targets[i].ChangeCurrentHp(-AttackPower, _controller.CharacterStat);
+                }
                 _currentCount++;
             }
 

@@ -10,11 +10,11 @@ public class ProjectileMagicCircle : BaseProjectile
 
     private Sequence seq;
 
-    public override void Init(int damage, LayerMask targetLayer, Transform parent, Vector3 initPos)
+    public override void Init(int damage, LayerMask targetLayer, Transform parent, Vector3 initPos, CharacterStat characterStat)
     {
-        base.Init(damage, targetLayer, parent, initPos);
+        base.Init(damage, targetLayer, parent, initPos, characterStat);
 
-        lighting.Init(damage, targetLayer);
+        lighting.Init(damage, targetLayer, characterStat);
     }
 
     private void OnDisable()
