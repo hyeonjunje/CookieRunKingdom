@@ -46,7 +46,13 @@ public class CookieBundleInAdventure : MonoBehaviour
 
     public void OnMove()
     {
-        Vector3 targetPos = _cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Vector2 currentPos = Vector2.zero;
+        if (Mouse.current != null && Mouse.current.enabled)
+            currentPos = Mouse.current.position.ReadValue();
+        else if (Touchscreen.current != null && Touchscreen.current.enabled)
+            currentPos = Touchscreen.current.position.ReadValue();
+
+        Vector3 targetPos = _cam.ScreenToWorldPoint(currentPos);
         _seeker.StartPath(transform.position, targetPos, OnPathComplete);
     }
 

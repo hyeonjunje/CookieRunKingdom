@@ -28,44 +28,44 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
             ""id"": ""270a1412-b16e-45df-9a4b-f42eaf7dc879"",
             ""actions"": [
                 {
-                    ""name"": ""Click"",
-                    ""type"": ""Button"",
+                    ""name"": ""ClickPC"",
+                    ""type"": ""Value"",
                     ""id"": ""e46c2dde-9917-4648-ab5c-2a5bf16d89a4"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Touch"",
-                    ""type"": ""Value"",
-                    ""id"": ""660f4be9-9cba-4c6e-a58a-1424a7d8cbbb"",
-                    ""expectedControlType"": """",
+                    ""name"": ""ClickMobile"",
+                    ""type"": ""Button"",
+                    ""id"": ""b8fe3927-f06f-469e-b492-f82a10c38343"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": true
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
-                    ""id"": ""8db528d4-a197-42e4-9b00-8e1faf733352"",
+                    ""id"": ""2204e2cd-1bca-4cbe-954d-915479b1056b"",
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Click"",
+                    ""action"": ""ClickPC"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""281c590f-8db0-4ad0-a523-ffc45a273343"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""id"": ""eecd10a1-b2cf-4e61-89ca-3f55dc71d817"",
+                    ""path"": ""<Touchscreen>/touch*/Press"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Touch"",
+                    ""action"": ""ClickMobile"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -76,8 +76,8 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
 }");
         // GamePlay
         m_GamePlay = asset.FindActionMap("GamePlay", throwIfNotFound: true);
-        m_GamePlay_Click = m_GamePlay.FindAction("Click", throwIfNotFound: true);
-        m_GamePlay_Touch = m_GamePlay.FindAction("Touch", throwIfNotFound: true);
+        m_GamePlay_ClickPC = m_GamePlay.FindAction("ClickPC", throwIfNotFound: true);
+        m_GamePlay_ClickMobile = m_GamePlay.FindAction("ClickMobile", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -137,14 +137,14 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
     // GamePlay
     private readonly InputActionMap m_GamePlay;
     private IGamePlayActions m_GamePlayActionsCallbackInterface;
-    private readonly InputAction m_GamePlay_Click;
-    private readonly InputAction m_GamePlay_Touch;
+    private readonly InputAction m_GamePlay_ClickPC;
+    private readonly InputAction m_GamePlay_ClickMobile;
     public struct GamePlayActions
     {
         private @PlayerInput m_Wrapper;
         public GamePlayActions(@PlayerInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Click => m_Wrapper.m_GamePlay_Click;
-        public InputAction @Touch => m_Wrapper.m_GamePlay_Touch;
+        public InputAction @ClickPC => m_Wrapper.m_GamePlay_ClickPC;
+        public InputAction @ClickMobile => m_Wrapper.m_GamePlay_ClickMobile;
         public InputActionMap Get() { return m_Wrapper.m_GamePlay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -154,29 +154,29 @@ public partial class @PlayerInput : IInputActionCollection2, IDisposable
         {
             if (m_Wrapper.m_GamePlayActionsCallbackInterface != null)
             {
-                @Click.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClick;
-                @Click.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClick;
-                @Click.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClick;
-                @Touch.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTouch;
-                @Touch.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTouch;
-                @Touch.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnTouch;
+                @ClickPC.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClickPC;
+                @ClickPC.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClickPC;
+                @ClickPC.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClickPC;
+                @ClickMobile.started -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClickMobile;
+                @ClickMobile.performed -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClickMobile;
+                @ClickMobile.canceled -= m_Wrapper.m_GamePlayActionsCallbackInterface.OnClickMobile;
             }
             m_Wrapper.m_GamePlayActionsCallbackInterface = instance;
             if (instance != null)
             {
-                @Click.started += instance.OnClick;
-                @Click.performed += instance.OnClick;
-                @Click.canceled += instance.OnClick;
-                @Touch.started += instance.OnTouch;
-                @Touch.performed += instance.OnTouch;
-                @Touch.canceled += instance.OnTouch;
+                @ClickPC.started += instance.OnClickPC;
+                @ClickPC.performed += instance.OnClickPC;
+                @ClickPC.canceled += instance.OnClickPC;
+                @ClickMobile.started += instance.OnClickMobile;
+                @ClickMobile.performed += instance.OnClickMobile;
+                @ClickMobile.canceled += instance.OnClickMobile;
             }
         }
     }
     public GamePlayActions @GamePlay => new GamePlayActions(this);
     public interface IGamePlayActions
     {
-        void OnClick(InputAction.CallbackContext context);
-        void OnTouch(InputAction.CallbackContext context);
+        void OnClickPC(InputAction.CallbackContext context);
+        void OnClickMobile(InputAction.CallbackContext context);
     }
 }

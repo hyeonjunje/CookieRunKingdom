@@ -65,6 +65,6 @@ public class TitleSceneUI : BaseUI
     private void StartGame()
     {
         Debug.Log("넘어가자!");
-                GameManager.Scene.LoadScene(ESceneName.Kingdom);
+        GameManager.Scene.LoadScene(ESceneName.Kingdom);
     }
 }

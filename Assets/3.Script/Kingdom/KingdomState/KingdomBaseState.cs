@@ -58,7 +58,12 @@ public abstract class KingdomBaseState
     {
         if (DetectUI()) return;
 
-        Vector2 currentPos = Mouse.current.position.ReadValue();
+        Vector2 currentPos = Vector2.zero;
+        if(Mouse.current != null && Mouse.current.enabled)
+            currentPos = Mouse.current.position.ReadValue();
+        else if(Touchscreen.current != null && Touchscreen.current.enabled)
+            currentPos = Touchscreen.current.position.ReadValue();
+
         if (currentPos.Equals(prevPos))
             return;
 
@@ -91,7 +96,12 @@ public abstract class KingdomBaseState
             _click_results = new List<RaycastResult>();
         }
 
-        _click_data.position = Mouse.current.position.ReadValue();
+        _click_data.position = Vector2.zero;
+        if (Mouse.current != null && Mouse.current.enabled)
+            _click_data.position = Mouse.current.position.ReadValue();
+        else if (Touchscreen.current != null && Touchscreen.current.enabled)
+            _click_data.position = Touchscreen.current.position.ReadValue();
+
         _click_results.Clear();
 
         _ui_raycaster.Raycast(_click_data, _click_results);

@@ -41,11 +41,17 @@ public class KingdomEditState : KingdomBaseState
     {
         base.OnClickStart();
 
-        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("UI"));
+        Vector2 currentPos = Vector2.zero;
+        if (Mouse.current != null && Mouse.current.enabled)
+            currentPos = Mouse.current.position.ReadValue();
+        else if (Touchscreen.current != null && Touchscreen.current.enabled)
+            currentPos = Touchscreen.current.position.ReadValue();
+
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("UI"));
         if (rayHit.collider && rayHit.transform.gameObject.layer == LayerMask.NameToLayer("UI"))
             return;
 
-        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
+        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("Building"));
         if (rayHit.collider)
         {
             _currentBuilding = rayHit.transform.GetComponent<BuildingController>();
@@ -63,7 +69,7 @@ public class KingdomEditState : KingdomBaseState
             return;
         }
 
-        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Ground"));
+        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("Ground"));
         if (rayHit.collider)
         {
             _currentBuilding = null;
@@ -75,7 +81,13 @@ public class KingdomEditState : KingdomBaseState
     {
         base.OnClick();
 
-        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("UI"));
+        Vector2 currentPos = Vector2.zero;
+        if (Mouse.current != null && Mouse.current.enabled)
+            currentPos = Mouse.current.position.ReadValue();
+        else if (Touchscreen.current != null && Touchscreen.current.enabled)
+            currentPos = Touchscreen.current.position.ReadValue();
+
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("UI"));
         if (rayHit.collider && rayHit.transform.gameObject.layer == LayerMask.NameToLayer("UI"))
         {
             MyButton button = rayHit.transform.GetComponent<MyButton>();
@@ -85,7 +97,7 @@ public class KingdomEditState : KingdomBaseState
         }
 
         // ¿Õ±¹¿¡ ¼³Ä¡µÈ ºôµùÀ» ´­·¶À» ¶§
-        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
+        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("Building"));
 
         if (!rayHit.collider)
         {
@@ -118,7 +130,13 @@ public class KingdomEditState : KingdomBaseState
         }
         else
         {
-            Vector2 pos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 currentPos = Vector2.zero;
+            if (Mouse.current != null && Mouse.current.enabled)
+                currentPos = Mouse.current.position.ReadValue();
+            else if (Touchscreen.current != null && Touchscreen.current.enabled)
+                currentPos = Touchscreen.current.position.ReadValue();
+
+            Vector2 pos = _camera.ScreenToWorldPoint(currentPos);
             Vector3Int gridPos = _manager.Grid.WorldToCell(pos);
             _currentBuilding.transform.localPosition = _manager.Grid.CellToWorld(gridPos);
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8469,9 +8469,21 @@ MonoBehaviour:
     m_ActionId: e46c2dde-9917-4648-ab5c-2a5bf16d89a4
     m_ActionName: GamePlay/Click[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 660f4be9-9cba-4c6e-a58a-1424a7d8cbbb
-    m_ActionName: GamePlay/Touch[/Mouse/leftButton]
+      m_Calls:
+      - m_Target: {fileID: 1415657778}
+        m_TargetAssemblyTypeName: BattleDefeatUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b8fe3927-f06f-469e-b492-f82a10c38343
+    m_ActionName: GamePlay/ClickMobile
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay
@@ -9441,9 +9453,21 @@ MonoBehaviour:
     m_ActionId: e46c2dde-9917-4648-ab5c-2a5bf16d89a4
     m_ActionName: GamePlay/Click[/Mouse/leftButton]
   - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: 660f4be9-9cba-4c6e-a58a-1424a7d8cbbb
-    m_ActionName: GamePlay/Touch[/Mouse/leftButton]
+      m_Calls:
+      - m_Target: {fileID: 1650507576}
+        m_TargetAssemblyTypeName: BattleVictoryUI, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b8fe3927-f06f-469e-b492-f82a10c38343
+    m_ActionName: GamePlay/ClickMobile
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay

@@ -81,7 +81,13 @@ public class KingdomManageState : KingdomBaseState
     {
         base.OnClickStart();
 
-        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Cookie"));
+        Vector2 currentPos = Vector2.zero;
+        if (Mouse.current != null && Mouse.current.enabled)
+            currentPos = Mouse.current.position.ReadValue();
+        else if (Touchscreen.current != null && Touchscreen.current.enabled)
+            currentPos = Touchscreen.current.position.ReadValue();
+
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("Cookie"));
         if (rayHit.collider)
         {
             CookieController currentCookie = rayHit.transform.GetComponent<CookieController>();
@@ -99,7 +105,13 @@ public class KingdomManageState : KingdomBaseState
     {
         base.OnClick();
 
-        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Building"));
+        Vector2 currentPos = Vector2.zero;
+        if (Mouse.current != null && Mouse.current.enabled)
+            currentPos = Mouse.current.position.ReadValue();
+        else if (Touchscreen.current != null && Touchscreen.current.enabled)
+            currentPos = Touchscreen.current.position.ReadValue();
+
+        RaycastHit2D rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("Building"));
 
         // 제작 건물이라면 수확한다.
         if (rayHit.collider)
@@ -120,7 +132,7 @@ public class KingdomManageState : KingdomBaseState
             return;
         }
 
-        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(Mouse.current.position.ReadValue()), 100, 1 << LayerMask.NameToLayer("Cookie"));
+        rayHit = Physics2D.GetRayIntersection(_camera.ScreenPointToRay(currentPos), 100, 1 << LayerMask.NameToLayer("Cookie"));
         // 쿠키라면 인사한다.
         if(rayHit.collider)
         {
@@ -152,7 +164,13 @@ public class KingdomManageState : KingdomBaseState
                 _isDrag = true;
             }
 
-            Vector3 pos = _camera.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+            Vector2 currentPos = Vector2.zero;
+            if (Mouse.current != null && Mouse.current.enabled)
+                currentPos = Mouse.current.position.ReadValue();
+            else if (Touchscreen.current != null && Touchscreen.current.enabled)
+                currentPos = Touchscreen.current.position.ReadValue();
+
+            Vector3 pos = _camera.ScreenToWorldPoint(currentPos);
             _currentCookie.transform.localPosition = new Vector3(pos.x, pos.y, 0);
         }
         else

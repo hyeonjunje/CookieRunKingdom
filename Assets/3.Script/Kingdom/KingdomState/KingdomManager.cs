@@ -85,6 +85,15 @@ public class KingdomManager : MonoBehaviour
 
     public void OnTouch(InputAction.CallbackContext value)
     {
+        if(value.started)
+        {
+            Debug.Log("누르기 시작");
+        }
+        else if(value.canceled)
+        {
+            Debug.Log("누르기 끝");
+        }
+
         if (!IsMoveCamera)
             return;
         if (_factory == null)

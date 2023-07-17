@@ -6,7 +6,9 @@ using System.IO;
 using LitJson;
 using MySql.Data.MySqlClient;
 using System.Reflection;
-using TMPro;
+using UnityEngine.Networking;
+using Cysharp.Threading.Tasks;
+
 public class CookiesJson
 {
     public List<CookieInfo> allCookies;
@@ -156,47 +158,57 @@ public class SQLManager
 
     public void Init()
     {
-        _dbPath = Application.dataPath + "/DataBase";
-        string serverInfo = SetServer(_dbPath);
-        try
-        {
-            if (serverInfo == string.Empty)
-            {
-                Debug.Log("SQL_Server NULL! not connected");
-                return;
-            }
-            _connection = new MySqlConnection(serverInfo);
-            _connection.Open();
-            GameObject.Find("TestText").GetComponent<TextMeshProUGUI>().text = "SQL OPEN Complete";
-            Debug.Log("SQL OPEN Complete");
-        }
-        catch (Exception e)
-        {
-            GameObject.Find("TestText").GetComponent<TextMeshProUGUI>().text = e.Message;
-            Debug.Log(e.Message);
-        }
+        _dbPath = Application.streamingAssetsPath + "/config.json";
+        SetServers(_dbPath).Forget();
     }
 
-    private string SetServer(string path)
+
+    private async UniTaskVoid SetServers(string path)
     {
-        try
-        {
-            if (!File.Exists(path))
-            {
-                Directory.CreateDirectory(path);
-            }
-            string jsonString = File.ReadAllText(path + "/config.json");
-            JsonData itemData = JsonMapper.ToObject(jsonString);
-            string serverInfo = $"Server={itemData[0]["IP"]};Database={itemData[0]["TableName"]};Uid={itemData[0]["ID"]};Pwd={itemData[0]["PW"]}; Port={itemData[0]["PORT"]};CharSet=utf8;";
+        string json = string.Empty;
 
-            return serverInfo;
-        }
-        catch (Exception e)
+#if UNITY_EDITOR
+        json = File.ReadAllText(_dbPath);
+
+        JsonData itemData = JsonMapper.ToObject(json);
+        string serverInfo = $"Server={itemData[0]["IP"]};Database={itemData[0]["TableName"]};Uid={itemData[0]["ID"]};Pwd={itemData[0]["PW"]}; Port={itemData[0]["PORT"]};CharSet=utf8;";
+        if (serverInfo == string.Empty)
         {
-            Debug.Log(e.Message);
-            return string.Empty;
+            Debug.Log("SQL_Server NULL! not connected");
+            return;
         }
+        _connection = new MySqlConnection(serverInfo);
+        _connection.Open();
+        Debug.Log("SQL OPEN Complete");
+#else
+        Debug.Log("으다다");
+        using(UnityWebRequest request = UnityWebRequest.Get(path))
+        {
+            await request.SendWebRequest();
+
+            if (request.result == UnityWebRequest.Result.ConnectionError || request.result == UnityWebRequest.Result.ProtocolError)
+            {
+                Debug.LogError("파일 로딩 에러: " + request.error);
+            }
+            else
+            {
+                json = request.downloadHandler.text;
+
+                JsonData itemData = JsonMapper.ToObject(json);
+                string serverInfo = $"Server={itemData[0]["IP"]};Database={itemData[0]["TableName"]};Uid={itemData[0]["ID"]};Pwd={itemData[0]["PW"]}; Port={itemData[0]["PORT"]};CharSet=utf8;";
+                if (serverInfo == string.Empty)
+                {
+                    Debug.Log("SQL_Server NULL! not connected");
+                    return;
+                }
+                _connection = new MySqlConnection(serverInfo);
+                _connection.Open();
+                Debug.Log("SQL OPEN Complete");
+            }
+        }
+#endif
     }
+
 
     private bool ConnectCheck(MySqlConnection c)
     {
