@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -17,16 +18,26 @@ public class GameManager : Singleton<GameManager>
     public static UIManager UI => Instance._ui;
     public static GameManagerEx Game => Instance._game;
 
-    private bool _isInit = false;
+    private bool _isLoad = false;
 
-    public void Init()
+    public bool _isDone = false;
+
+    public async UniTask LoadData()
     {
-        if (!_isInit)
+        if(!_isLoad)
         {
-            _isInit = true;
+            _isLoad = true;
 
-            _sql.Init();   // 데이터베이스
+            await UniTask.SwitchToThreadPool();
+            _sql.Init().Forget();
+            await UniTask.SwitchToMainThread();
 
+            while (true)
+            {
+                await UniTask.Yield();
+                if (_isDone)
+                    break;
+            }
             _file.Init();
             _scene.Init();
             _ui.Init();

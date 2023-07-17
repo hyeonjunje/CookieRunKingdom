@@ -11,14 +11,14 @@ public class Cookie0515Skill : BaseRangeSkill
     private int _skillIndex = 0;
 
     private Queue<BaseProjectile> _pool;
-    private int _projectileCount = 12;
+    private int _projectileSkillCount = 12;
 
     public override void Init(BaseController controller)
     {
         base.Init(controller);
 
         _pool = new Queue<BaseProjectile>();
-        for (int i = 0; i < _projectileCount; i++)
+        for (int i = 0; i < _projectileSkillCount; i++)
         {
             BaseProjectile projectile = Instantiate(_skillProjectilePrafab, transform);
             projectile.gameObject.SetActive(false);
