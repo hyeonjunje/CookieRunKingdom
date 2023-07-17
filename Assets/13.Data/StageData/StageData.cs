@@ -25,17 +25,23 @@ public class StageData : ScriptableObject
     [Header("Wave 정보")]
     [Space(10)]
     [SerializeField] private WaveInfo[] _waveInfo;
-    
-    [Header("맵 정보")]
-    [Space(10)]
+
     // 순서는 center1 => left1 1~5 => right1 1~5
     //        center2 => left2 1~5 => right2 1~5
     //        center3 => left3 1~5 => right3 1~5
+    [Header("맵 정보")]
+    [Space(10)]
+    [Header("타일")]
     [SerializeField] private Sprite[] _mapSprites;
-
-    [SerializeField] private Sprite[] _closeObjectSprites;   // 1
-    [SerializeField] private Sprite[] _middleObjectSprites;  // 2
-    [SerializeField] private Sprite[] _farObjectSprites;     // 3
+    [SerializeField] private Transform _stagePos;
+    [Header("왼쪽 장애물")]
+    [SerializeField] private Sprite[] _closeLeftObjectSprites;
+    [SerializeField] private Sprite[] _middleLeftObjectSprites;
+    [SerializeField] private Sprite[] _farLeftObjectSprites;
+    [Header("오른쪽 장애물")]
+    [SerializeField] private Sprite[] _closeRightObjectSprites;
+    [SerializeField] private Sprite[] _middleRightObjectSprites;
+    [SerializeField] private Sprite[] _farRightObjectSprites;
 
     [Header("보상 정보")]
     [Space(10)]
@@ -49,9 +55,16 @@ public class StageData : ScriptableObject
     public int Jelly => _jelly;
     public WaveInfo[] WaveInfo => _waveInfo;
     public Sprite[] MapSprites => _mapSprites;
-    public Sprite[] CloseObjectSprites => _closeObjectSprites;
-    public Sprite[] MiddleObjectSprites => _middleObjectSprites;
-    public Sprite[] FarObjectSprites => _farObjectSprites;
+    public Transform StagePos => _stagePos;
+
+    public Sprite[] CloseLeftObjectSprites => _closeLeftObjectSprites;
+    public Sprite[] MiddleLeftObjectSprites => _middleLeftObjectSprites;
+    public Sprite[] FarLeftObjectSprites => _farLeftObjectSprites;
+
+    public Sprite[] CloseRightObjectSprites => _closeRightObjectSprites;
+    public Sprite[] MiddleRightObjectSprites => _middleRightObjectSprites;
+    public Sprite[] FarRightObjectSprites => _farRightObjectSprites;
+
     public ItemBundle[] VictoryRewardItems => _victoryRewardItems;
     public ItemBundle[] DefeatRewardItems => _defeatRewardItems;
 }

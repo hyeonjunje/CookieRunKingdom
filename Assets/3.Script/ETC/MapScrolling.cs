@@ -5,7 +5,7 @@ using UnityEngine;
 public class MapScrolling : MonoBehaviour
 {
     [Header("테스트입니다.")]
-    public MapPiece[] mapPieces;
+    [SerializeField] private MapPiece[] mapPieces;
 
     private Vector3 diffForPieces;
     private LinkedList<Transform> mapList;
