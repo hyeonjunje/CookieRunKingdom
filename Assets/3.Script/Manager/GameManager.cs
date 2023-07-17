@@ -20,14 +20,24 @@ public class GameManager : Singleton<GameManager>
 
     private bool _isLoad = false;
 
+    public bool _isDone = false;
+
     public async UniTask LoadData()
     {
         if(!_isLoad)
         {
             _isLoad = true;
 
-            await _sql.Init();
+            await UniTask.SwitchToThreadPool();
+            _sql.Init().Forget();
+            await UniTask.SwitchToMainThread();
 
+            while (true)
+            {
+                await UniTask.Yield();
+                if (_isDone)
+                    break;
+            }
             _file.Init();
             _scene.Init();
             _ui.Init();

@@ -172,6 +172,8 @@ public class SQLManager
         _connection = new MySqlConnection(serverInfo);
         _connection.Open();
         Debug.Log("SQL OPEN Complete");
+
+        GameManager.Instance._isDone = true;
     }
 
 
@@ -194,6 +196,7 @@ public class SQLManager
                 return request.downloadHandler.text;
             }
         }
+        return "";
 #endif
     }
 
