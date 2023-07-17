@@ -156,19 +156,11 @@ public class SQLManager
 
     }
 
-    public void Init()
+    public async UniTask Init()
     {
         _dbPath = Application.streamingAssetsPath + "/config.json";
-        SetServers(_dbPath).Forget();
-    }
 
-
-    private async UniTaskVoid SetServers(string path)
-    {
-        string json = string.Empty;
-
-#if UNITY_EDITOR
-        json = File.ReadAllText(_dbPath);
+        string json = await SetServers(_dbPath);
 
         JsonData itemData = JsonMapper.ToObject(json);
         string serverInfo = $"Server={itemData[0]["IP"]};Database={itemData[0]["TableName"]};Uid={itemData[0]["ID"]};Pwd={itemData[0]["PW"]}; Port={itemData[0]["PORT"]};CharSet=utf8;";
@@ -180,9 +172,16 @@ public class SQLManager
         _connection = new MySqlConnection(serverInfo);
         _connection.Open();
         Debug.Log("SQL OPEN Complete");
+    }
+
+
+    public async UniTask<string> SetServers(string path)
+    {
+#if UNITY_EDITOR
+        return File.ReadAllText(_dbPath);
 #else
         Debug.Log("À¸´Ù´Ù");
-        using(UnityWebRequest request = UnityWebRequest.Get(path))
+        using (UnityWebRequest request = UnityWebRequest.Get(path))
         {
             await request.SendWebRequest();
 
@@ -192,18 +191,7 @@ public class SQLManager
             }
             else
             {
-                json = request.downloadHandler.text;
-
-                JsonData itemData = JsonMapper.ToObject(json);
-                string serverInfo = $"Server={itemData[0]["IP"]};Database={itemData[0]["TableName"]};Uid={itemData[0]["ID"]};Pwd={itemData[0]["PW"]}; Port={itemData[0]["PORT"]};CharSet=utf8;";
-                if (serverInfo == string.Empty)
-                {
-                    Debug.Log("SQL_Server NULL! not connected");
-                    return;
-                }
-                _connection = new MySqlConnection(serverInfo);
-                _connection.Open();
-                Debug.Log("SQL OPEN Complete");
+                return request.downloadHandler.text;
             }
         }
 #endif
