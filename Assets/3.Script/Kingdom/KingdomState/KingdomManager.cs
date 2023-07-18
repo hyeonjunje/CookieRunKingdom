@@ -13,10 +13,7 @@ public class KingdomManager : MonoBehaviour
     [SerializeField] private GameObject _backGroundUI;
     [SerializeField] private KingdomCraftUI _kingdomCraftUI;
     [SerializeField] private KingdomPlayUI _kingdomPlayUI;
-
     [SerializeField] private KingdomAdventureUI _kingdomAdventureUI;
-    [SerializeField] private KingdomDailyDungeonUI _kingdomDailyDungeonUI;
-    [SerializeField] private KingdomStatueUI _kingdomStatueUI;
 
     [Header("Æ®·£½ºÆû")]
     [SerializeField] private Transform _kingdomGrid;
@@ -38,8 +35,6 @@ public class KingdomManager : MonoBehaviour
     public KingdomPlayUI KingdomPlayUI => _kingdomPlayUI;
 
     public KingdomAdventureUI KingdomAdventureUI => _kingdomAdventureUI;
-    public KingdomDailyDungeonUI KingdomDailyDungeonUI => _kingdomDailyDungeonUI;
-    public KingdomStatueUI KingdomStatueUI => _kingdomStatueUI;
 
     public Transform KingdomGrid => _kingdomGrid;
 

@@ -9,8 +9,6 @@ public enum EKingdomState
     Craft,
     Play,
     Adventure,
-    Statue,
-    DailyDungeon,
 }
 
 public class KingdomStateFactory
@@ -25,8 +23,6 @@ public class KingdomStateFactory
     public KingdomPlayState kingdomPlayState { get; private set; }
 
     public KingdomAdventureState kingdomAdventureState { get; private set; }
-    public KingdomStatueState kingdomStatueState { get; private set; }
-    public KingdomDailyDungeonState kingdomDailyDungeonState { get; private set; }
 
     public KingdomStateFactory(KingdomManager kingdomManager)
     {
@@ -36,17 +32,12 @@ public class KingdomStateFactory
         kingdomPlayState = new KingdomPlayState(this, kingdomManager);
 
         kingdomAdventureState = new KingdomAdventureState(this, kingdomManager);
-        kingdomStatueState = new KingdomStatueState(this, kingdomManager);
-        kingdomDailyDungeonState = new KingdomDailyDungeonState(this, kingdomManager);
 
         _dictionary[EKingdomState.Manage] = kingdomManageState;
         _dictionary[EKingdomState.Edit] = kingdomEditState;
         _dictionary[EKingdomState.Craft] = kingdomCraftState;
         _dictionary[EKingdomState.Play] = kingdomPlayState;
-
         _dictionary[EKingdomState.Adventure] = kingdomAdventureState;
-        _dictionary[EKingdomState.Statue] = kingdomStatueState;
-        _dictionary[EKingdomState.DailyDungeon] = kingdomDailyDungeonState;
 
         // 처음에는 관리 상태로 초기화
         ChangeState(EKingdomState.Manage);
