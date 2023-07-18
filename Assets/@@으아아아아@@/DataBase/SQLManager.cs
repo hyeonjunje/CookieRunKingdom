@@ -11,11 +11,13 @@ using Cysharp.Threading.Tasks;
 public class CookiesJson
 {
     public List<CookieInfo> allCookies;
+    public Vector3 battlePosition;
 
     public CookiesJson()
     {
         // 처음하면 용감한 쿠키, 딸기맛 쿠키, 마법사맛 쿠키, 칠리맛 쿠키, 커스타드3세맛 쿠키가 주어진다.
         allCookies = new List<CookieInfo>();
+        battlePosition = Vector3.zero;
 
         for (int i = 0; i < 10; i++)
         {
@@ -62,8 +64,8 @@ public class UserInfo
     public string LastTime { get; private set; }
     public string ItemCount { get; private set; }
 
-    private CookiesJson _cookieJson;
-    private BuildingJson _buildingJson;
+    public CookiesJson cookieJson;
+    public BuildingJson buildingJson;
 
     public UserInfo(string id, string pw, int kingdomIndex = 0, string name = "", int isFirst = 0, int money = 0, 
         int dia = 0, int jelly = 0, int maxJelly = 0, string cookies = "", string buildings = "", string lastTime = "", string ItemCount = "")
@@ -72,12 +74,6 @@ public class UserInfo
         Pw = pw;
 
         LoadData(kingdomIndex, name, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime, ItemCount);
-    }
-
-    public void GetJsonData(ref List<CookieInfo> allCookies, ref List<BuildingInfo> allBuildings)
-    {
-        allCookies = _cookieJson.allCookies;
-        allBuildings = _buildingJson.allBuildings;
     }
 
     // 게임 불러올 때
@@ -100,8 +96,8 @@ public class UserInfo
             Buildings = buildings;
             LastTime = lastTime;
 
-            _cookieJson = JsonUtility.FromJson<CookiesJson>(Cookies);
-            _buildingJson = JsonUtility.FromJson<BuildingJson>(Buildings);
+            cookieJson = JsonUtility.FromJson<CookiesJson>(Cookies);
+            buildingJson = JsonUtility.FromJson<BuildingJson>(Buildings);
         }
         // 처음이라면 설정해준다.
         else
@@ -112,13 +108,13 @@ public class UserInfo
             MaxJelly = 45;
             LastTime = DateTime.Now.ToString("yyyyMMddHHmmss");
 
-            _cookieJson = new CookiesJson();
-            _buildingJson = new BuildingJson();
+            cookieJson = new CookiesJson();
+            buildingJson = new BuildingJson();
         }
     }
 
     // 게임 저장할 때
-    public void SaveData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, List<CookieInfo> cookiesInfo, List<BuildingInfo> buildingsInfo, DateTime lastTime, string itemCount)
+    public void SaveData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, DateTime lastTime, string itemCount)
     {
         // 저장하자
         KingdomIndex = kingdomIndex;
@@ -130,13 +126,14 @@ public class UserInfo
         MaxJelly = maxJelly;
 
         // 복잡한건 json으로 저장하자
-        _cookieJson.allCookies = cookiesInfo;
-        _buildingJson.allBuildings = buildingsInfo;
+        cookieJson.allCookies = GameManager.Game.allCookies;
+        cookieJson.battlePosition = GameManager.Game.battlePosition;
+        buildingJson.allBuildings = GameManager.Game.OwnedCraftableBuildings;
 
         LastTime = lastTime.ToString("yyyyMMddHHmmss");
 
-        Cookies = JsonUtility.ToJson(_cookieJson);
-        Buildings = JsonUtility.ToJson(_buildingJson);
+        Cookies = JsonUtility.ToJson(cookieJson);
+        Buildings = JsonUtility.ToJson(buildingJson);
 
         ItemCount = itemCount;
     }

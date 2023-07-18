@@ -17519,7 +17519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578196350}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.3, y: 5.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1732446759}
@@ -67595,7 +67595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973936094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -29.3, y: 5.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 578196351}
@@ -71891,7 +71891,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102068789}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -29.3, y: 5.9, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 53291025}
@@ -71934,6 +71934,7 @@ MonoBehaviour:
   - {fileID: 1801068818}
   - {fileID: 375785314}
   - {fileID: 1986852603}
+  _cookieParent: {fileID: 578196351}
 --- !u!50 &2102068792
 Rigidbody2D:
   serializedVersion: 4
@@ -72042,8 +72043,8 @@ MonoBehaviour:
     m_ActionName: GamePlay/Click[/Mouse/leftButton]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 660f4be9-9cba-4c6e-a58a-1424a7d8cbbb
-    m_ActionName: GamePlay/Touch[/Mouse/leftButton]
+    m_ActionId: b8fe3927-f06f-469e-b492-f82a10c38343
+    m_ActionName: GamePlay/ClickMobile
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: GamePlay

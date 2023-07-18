@@ -70,6 +70,8 @@ public class GameManagerEx
     #endregion
 
     #region ÄíÅ°Á¤º¸
+    public Vector3 battlePosition;
+
     public List<CookieInfo> allCookies;
     #endregion
 
@@ -116,7 +118,9 @@ public class GameManagerEx
         PrevCraftTime = DateTime.ParseExact(userInfo.LastTime, "yyyyMMddHHmmss",
             System.Globalization.CultureInfo.InvariantCulture);
 
-        userInfo.GetJsonData(ref allCookies, ref OwnedCraftableBuildings);
+        allCookies = userInfo.cookieJson.allCookies;
+        OwnedCraftableBuildings = userInfo.buildingJson.allBuildings;
+        battlePosition = userInfo.cookieJson.battlePosition;
     }
 
     public void SaveData()
@@ -127,8 +131,8 @@ public class GameManagerEx
         if (!_isFirst)
             isFirst = 1;
 
-        userInfo.SaveData(_kingdomIndex, _kingdomName, isFirst, _money, _dia, _jelly, _maxJelly, allCookies, 
-            OwnedCraftableBuildings, PrevCraftTime, ReturnItemDataInfo());
+        userInfo.SaveData(_kingdomIndex, _kingdomName, isFirst, _money, _dia, _jelly, _maxJelly,
+            PrevCraftTime, ReturnItemDataInfo());
     }
 
     private string ReturnItemDataInfo()

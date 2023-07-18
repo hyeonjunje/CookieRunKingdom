@@ -8,6 +8,7 @@ public class CookieBundleInAdventure : MonoBehaviour
 {
     [SerializeField] private Transform[] _poses;
     [SerializeField] private CookiePathFinder[] _cookiePathFinder;
+    [SerializeField] private Transform _cookieParent;
 
     private KingdomManager _manager;
     private Camera _cam;
@@ -16,6 +17,8 @@ public class CookieBundleInAdventure : MonoBehaviour
     private Seeker _seeker;
 
     private bool _isInit = false;
+
+    public Transform CookieParent => _cookieParent;
 
     public void Init()
     {
@@ -70,6 +73,8 @@ public class CookieBundleInAdventure : MonoBehaviour
                 theta = 90;
 
             transform.position = lastPos;
+            GameManager.Game.battlePosition = transform.localPosition;
+
             transform.localEulerAngles = Vector3.forward * theta + Vector3.forward * 90;
 
             for(int i = 0; i < _cookiePathFinder.Length; i++)

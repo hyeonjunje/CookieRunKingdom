@@ -16,20 +16,25 @@ public class KingdomAdventureState : KingdomBaseState
     public override void Enter()
     {
         _manager.CurrentCameraControllerData = _manager.CameraContrllInStageData;
-        _camera.transform.position = Vector3.forward * -10;
-        _camera.orthographicSize = 10;
 
         GameManager.UI.PushUI(_manager.KingdomAdventureUI);
         if (_cookieBundle == null)
         {
             _cookieBundle = GameObject.FindObjectOfType<CookieBundleInAdventure>();
         }
+
+        Debug.Log(GameManager.Game.battlePosition + " ¿‘¥œ¥Ÿ.");
+
+        _cookieBundle.transform.localPosition = GameManager.Game.battlePosition;
+        _cookieBundle.CookieParent.localPosition = _cookieBundle.transform.localPosition;
+
+        _camera.orthographicSize = 10;
+        _camera.transform.position = new Vector3(_cookieBundle.transform.position.x, _cookieBundle.transform.position.y, -10f);
     }
 
     public override void Exit()
     {
         _manager.CurrentCameraControllerData = _manager.CameraControllInKingdomData;
-
         GameManager.UI.ClearUI();
     }
 
