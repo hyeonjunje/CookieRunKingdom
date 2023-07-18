@@ -37,7 +37,7 @@ public class BattleRunState : BaseBattleState
             {
                 dir = (_controller.CharacterBattleController.OffsetPosition.position - _controller.transform.position).normalized * 3;
 
-                if(Vector3.Distance(_controller.CharacterBattleController.OffsetPosition.position, _controller.transform.position) < 0.1f)
+                if(Vector2.Distance(_controller.CharacterBattleController.OffsetPosition.position, _controller.transform.position) < 0.1f)
                 {
                     _controller.transform.position = _controller.CharacterBattleController.OffsetPosition.position;
                     isPos = true;

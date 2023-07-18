@@ -121,18 +121,20 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1545958944eb89a47a1f5c189a8fe6ef, type: 3}
   - {fileID: 21300000, guid: 7bf3e6f6309cd364099a559d0925124a, type: 3}
   _stagePos: {fileID: 3426081291298407455, guid: 6bb035897536c8f48866033189456b2d, type: 3}
-  _closeLeftObjectSprites:
-  - {fileID: 21300000, guid: 1cdbad569694f404f95ace5d0a04eba1, type: 3}
+  _closeLeftObjectSprites: []
   _middleLeftObjectSprites:
-  - {fileID: 21300000, guid: 0289fe71e94458047a7a984008e88e05, type: 3}
+  - {fileID: 21300000, guid: 294266dfbd8eda74d9ffcc8b0b90561d, type: 3}
+  - {fileID: 21300000, guid: d6e68f8778643c3479155753c80c272c, type: 3}
+  - {fileID: 21300000, guid: 1f516a910a9833e4792be7ce365c79b4, type: 3}
   _farLeftObjectSprites:
-  - {fileID: 21300000, guid: 9842e63d4b8184e4d84f319c989ac61a, type: 3}
-  _closeRightObjectSprites:
-  - {fileID: 21300000, guid: 27e87d31c95bc1346a92ad6ee5994256, type: 3}
+  - {fileID: 21300000, guid: 6f1e609a29bc8bf4684f8d8f5dc0245f, type: 3}
+  - {fileID: 21300000, guid: d025b448cc08a874b9c33093cde3fcdd, type: 3}
+  - {fileID: 21300000, guid: a50ad21cd71ee4748ac12b213a6a3384, type: 3}
+  _closeRightObjectSprites: []
   _middleRightObjectSprites:
-  - {fileID: 21300000, guid: 697d50023a813eb47aa7761f975675a1, type: 3}
+  - {fileID: 21300000, guid: 0289fe71e94458047a7a984008e88e05, type: 3}
   _farRightObjectSprites:
-  - {fileID: 21300000, guid: 44e77857f04ea2742ad79f8e52039bf0, type: 3}
+  - {fileID: 21300000, guid: a50ad21cd71ee4748ac12b213a6a3384, type: 3}
   _victoryRewardItems:
   - ingredientItem: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
     count: 6

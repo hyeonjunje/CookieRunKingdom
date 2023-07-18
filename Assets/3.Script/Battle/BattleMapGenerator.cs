@@ -36,32 +36,6 @@ public class BattleMapGenerator : MonoBehaviour
             // 여기서 장애물을 해줌
             GenerateObject(tile.transform, i);
         }
-
-
-
-        /*for (int i = 0; i < _battleMapTile.Length; i++)
-        {
-            GameObject tile = new GameObject(_battleMapTile[i].name);
-            tile.transform.SetParent(pieceParent);
-            tile.transform.position = _battleMapTile[i].position;
-            SpriteRenderer tileSR = tile.AddComponent<SpriteRenderer>();
-            tileSR.sortingOrder = -i - 1000;
-            tileSR.sprite = _stageData.MapSprites[i];
-
-            if(i % 11 == 1 && _stageData.CloseObjectSprites.Length != 0) // 가깝다
-                CreateObject(_stageData.CloseObjectSprites[Random.Range(0, _stageData.CloseObjectSprites.Length)], tile.transform, Vector3.up, Vector3.one * 0.5f, true);
-            else if(i % 11 == 2 && _stageData.MiddleObjectSprites.Length != 0) // 중간
-            {
-                if (Random.Range(0, 3) == 0)
-                    CreateObject(_stageData.MiddleObjectSprites[Random.Range(0, _stageData.MiddleObjectSprites.Length)], tile.transform, Vector3.zero, Vector3.one * 0.5f);
-            }
-            else if (i % 11 == 3 && _stageData.FarObjectSprites.Length != 0) // 멀다
-                CreateObject(_stageData.FarObjectSprites[Random.Range(0, _stageData.FarObjectSprites.Length)], tile.transform, Vector3.up, Vector3.one);
-            else if(i % 11 == 6 && _stageData.CloseObjectSprites.Length != 0) // 가깝다
-                CreateObject(_stageData.CloseObjectSprites[Random.Range(0, _stageData.CloseObjectSprites.Length)], tile.transform, -Vector3.up, Vector3.one * 0.5f, true);
-            else if(i % 11 == 8 && _stageData.FarObjectSprites.Length != 0) // 멀다
-                CreateObject(_stageData.FarObjectSprites[Random.Range(0, _stageData.FarObjectSprites.Length)], tile.transform, -Vector3.up, Vector3.one);
-        }*/
     }
 
     private void GenerateObject(Transform parent, int index)
@@ -93,8 +67,8 @@ public class BattleMapGenerator : MonoBehaviour
             {
                 if (Random.Range(0, 3) == 0)
                 {
-                    randomIndex = Random.Range(0, _stageData.MiddleRightObjectSprites.Length);
-                    sprite = _stageData.MiddleRightObjectSprites[randomIndex];
+                    randomIndex = Random.Range(0, _stageData.MiddleLeftObjectSprites.Length);
+                    sprite = _stageData.MiddleLeftObjectSprites[randomIndex];
                     size = Vector3.one * 0.7f;
                     pos = -Vector3.up * 0.5f + (Vector3)(Random.insideUnitCircle * 0.5f);
                 }
@@ -106,7 +80,7 @@ public class BattleMapGenerator : MonoBehaviour
             {
                 randomIndex = Random.Range(0, _stageData.FarLeftObjectSprites.Length);
                 sprite = _stageData.FarLeftObjectSprites[randomIndex];
-                pos = Vector3.up * Random.Range(1.3f, 1.8f);
+                pos = Vector3.up * Random.Range(1f, 2f);
             }
         }
         else if (index % 11 == 6) // 오른쪽 가까운
@@ -139,23 +113,28 @@ public class BattleMapGenerator : MonoBehaviour
             {
                 randomIndex = Random.Range(0, _stageData.FarRightObjectSprites.Length);
                 sprite = _stageData.FarRightObjectSprites[randomIndex];
-                pos = -Vector3.up * Random.Range(1.3f, 1.8f);
+                pos = -Vector3.up * Random.Range(1f, 2f);
             }
         }
 
         if(sprite != null)
         {
-            CreateObject(sprite, parent, pos, size, isBoid);
+            CreateObject(sprite, parent, pos, size, isBoid, index);
         }
     }
 
-    private void CreateObject(Sprite sprite, Transform parent, Vector3 pos, Vector3 size, bool isBoid)
+    private void CreateObject(Sprite sprite, Transform parent, Vector3 pos, Vector3 size, bool isBoid, int index)
     {
+        if (index % 11 >= 6)
+            index = -index;
+
+        GameObject obj = null;
+
         if(isBoid)
         {
             for(int i = 0; i < 3; i++)
             {
-                GameObject obj = new GameObject();
+                obj = new GameObject();
                 obj.transform.SetParent(parent);
                 obj.transform.localPosition = pos + (Vector3)(Random.insideUnitCircle * 1.5f);
                 obj.transform.localScale = size;
@@ -166,7 +145,7 @@ public class BattleMapGenerator : MonoBehaviour
         }
         else
         {
-            GameObject obj = new GameObject();
+            obj = new GameObject();
             obj.transform.SetParent(parent);
             obj.transform.localPosition = pos;
             obj.transform.localScale = size;

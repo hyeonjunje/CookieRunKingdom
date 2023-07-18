@@ -71,6 +71,9 @@ public class MapScrolling : MonoBehaviour
                 if (tile.childCount != 0)
                     foreach (Transform child in tile)
                         if (child != tile)
-                            child.position = new Vector3(child.position.x, child.position.y, -child.position.y / 1000);
+                        {
+                            float height = child.GetComponent<SpriteRenderer>().sprite.rect.y / 2;
+                            child.position = new Vector3(child.position.x, child.position.y, (child.position.y + height) / 1000);
+                        }
     }
 }

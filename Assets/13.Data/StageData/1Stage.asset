@@ -123,16 +123,38 @@ MonoBehaviour:
   _stagePos: {fileID: 3426081291298407455, guid: d5daa7022898d2549925a0a66f47c935, type: 3}
   _closeLeftObjectSprites:
   - {fileID: 21300000, guid: 1cdbad569694f404f95ace5d0a04eba1, type: 3}
+  - {fileID: 21300000, guid: f9be0e30117694c4383b85a7a552910d, type: 3}
+  - {fileID: 21300000, guid: 60dd2825e9cfabc4d8ce57c7a02bbddf, type: 3}
+  - {fileID: 21300000, guid: 27e87d31c95bc1346a92ad6ee5994256, type: 3}
   _middleLeftObjectSprites:
   - {fileID: 21300000, guid: 611877572a61b264da118b21180ecc36, type: 3}
+  - {fileID: 21300000, guid: 0289fe71e94458047a7a984008e88e05, type: 3}
+  - {fileID: 21300000, guid: c843390e6a40f054ca21f26b1669a8d4, type: 3}
+  - {fileID: 21300000, guid: 2687dfeb34b429341b2c03da24b90985, type: 3}
+  - {fileID: 21300000, guid: 697d50023a813eb47aa7761f975675a1, type: 3}
   _farLeftObjectSprites:
+  - {fileID: 21300000, guid: 798eae74704565f4f82ef1b4677812f5, type: 3}
+  - {fileID: 21300000, guid: 721c7b0be35bb454fbe6e98f2d2b6065, type: 3}
+  - {fileID: 21300000, guid: 9842e63d4b8184e4d84f319c989ac61a, type: 3}
+  - {fileID: 21300000, guid: 5b2ad9ec92a443c4abc63f5c5bba15ad, type: 3}
   - {fileID: 21300000, guid: 44e77857f04ea2742ad79f8e52039bf0, type: 3}
   _closeRightObjectSprites:
   - {fileID: 21300000, guid: 27e87d31c95bc1346a92ad6ee5994256, type: 3}
+  - {fileID: 21300000, guid: f9be0e30117694c4383b85a7a552910d, type: 3}
+  - {fileID: 21300000, guid: 60dd2825e9cfabc4d8ce57c7a02bbddf, type: 3}
+  - {fileID: 21300000, guid: 1cdbad569694f404f95ace5d0a04eba1, type: 3}
   _middleRightObjectSprites:
+  - {fileID: 21300000, guid: 611877572a61b264da118b21180ecc36, type: 3}
   - {fileID: 21300000, guid: 0289fe71e94458047a7a984008e88e05, type: 3}
+  - {fileID: 21300000, guid: c843390e6a40f054ca21f26b1669a8d4, type: 3}
+  - {fileID: 21300000, guid: 2687dfeb34b429341b2c03da24b90985, type: 3}
+  - {fileID: 21300000, guid: 697d50023a813eb47aa7761f975675a1, type: 3}
   _farRightObjectSprites:
+  - {fileID: 21300000, guid: 798eae74704565f4f82ef1b4677812f5, type: 3}
+  - {fileID: 21300000, guid: 721c7b0be35bb454fbe6e98f2d2b6065, type: 3}
   - {fileID: 21300000, guid: 9842e63d4b8184e4d84f319c989ac61a, type: 3}
+  - {fileID: 21300000, guid: 5b2ad9ec92a443c4abc63f5c5bba15ad, type: 3}
+  - {fileID: 21300000, guid: 44e77857f04ea2742ad79f8e52039bf0, type: 3}
   _victoryRewardItems:
   - ingredientItem: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
     count: 6
