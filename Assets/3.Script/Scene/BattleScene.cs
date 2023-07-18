@@ -24,6 +24,9 @@ public class BattleScene : BaseScene
 
         // 배틀 시작
         StartBattle(stageData);
+
+        // 로딩 UI 풀어주자!
+        GameManager.Scene.EndLoading();
     }
 
     private void CreateCookie()

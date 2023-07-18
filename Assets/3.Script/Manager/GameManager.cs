@@ -38,9 +38,9 @@ public class GameManager : Singleton<GameManager>
                 if (_isDone)
                     break;
             }
+            _ui.Init();
             _file.Init();
             _scene.Init();
-            _ui.Init();
             _game.Init();
         }
     }

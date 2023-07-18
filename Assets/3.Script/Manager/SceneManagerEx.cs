@@ -16,16 +16,27 @@ public class SceneManagerEx
     public delegate void OnMoveOtherScene();
     public OnMoveOtherScene onMoveOtherScene;
 
+    private LoadingUI _loadingUI;
+
     public ESceneName CurrentScene { get; private set; }
 
     public void Init()
     {
+        _loadingUI = GameObject.FindObjectOfType<LoadingUI>();
+        _loadingUI.transform.SetParent(GameManager.Instance.transform);
         CurrentScene = ESceneName.Title;
+        GameManager.UI.InsertUI(_loadingUI.transform);
     }
 
+    public void EndLoading()
+    {
+        _loadingUI.EndLoading();
+    }
 
     public void LoadScene(ESceneName sceneName)
     {
+        _loadingUI.StartLoading();
+
         onMoveOtherScene?.Invoke();
         SceneManager.LoadScene((int)sceneName);
 

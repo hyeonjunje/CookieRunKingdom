@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class UIManager
 {
+    private Canvas _rootCanvas;
+
     public void Init()
     {
-
+        _rootCanvas = new GameObject("Canvas").AddComponent<Canvas>();
+        _rootCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        _rootCanvas.transform.SetParent(GameManager.Instance.transform);
     }
 
     private Stack<BaseUI> uiStack = new Stack<BaseUI>();
@@ -16,6 +20,11 @@ public class UIManager
         uiStack.Push(ui);
         uiStack.Peek().gameObject.SetActive(true);
         uiStack.Peek().Show();
+    }
+
+    public void InsertUI(Transform ui)
+    {
+        ui.SetParent(_rootCanvas.transform);
     }
 
     public void ExitPopUpUI()

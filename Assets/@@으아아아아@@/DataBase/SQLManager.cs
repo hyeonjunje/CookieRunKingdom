@@ -6,7 +6,6 @@ using System.IO;
 using LitJson;
 using MySql.Data.MySqlClient;
 using System.Reflection;
-using UnityEngine.Networking;
 using Cysharp.Threading.Tasks;
 
 public class CookiesJson

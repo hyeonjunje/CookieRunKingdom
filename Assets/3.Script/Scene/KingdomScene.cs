@@ -32,6 +32,9 @@ public class KingdomScene : BaseScene
 
         // 왕국 상태패턴
         _kingdomManager.Init();
+
+        // 로딩창 풀어준다.
+        GameManager.Scene.EndLoading();
     }
 
     // 왕국배치
