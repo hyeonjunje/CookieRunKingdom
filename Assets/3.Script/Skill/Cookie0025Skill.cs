@@ -7,9 +7,7 @@ public class Cookie0025Skill : BaseRangeSkill
 {
     [SerializeField] private ProjectileMagicCircle _skillProjectile;
 
-    private float CurrentSkillTime => _controller.CharacterAnimator.GetIntervalAnimation();
     private int _skillIndex = 0;
-    private float _currentTime = 0;
 
     public override void Init(BaseController controller)
     {
@@ -53,7 +51,6 @@ public class Cookie0025Skill : BaseRangeSkill
         {
             if(!_controller.CharacterAnimator.IsPlayingAnimation())
             {
-                _currentTime = 0;
                 _skillIndex = 0;
                 return false;
             }

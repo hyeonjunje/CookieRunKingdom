@@ -19,7 +19,7 @@ public class CookiesJson
         allCookies = new List<CookieInfo>();
         battlePosition = Vector3.zero;
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 11; i++)
         {
             allCookies.Add(new CookieInfo(i, false, false));
         }

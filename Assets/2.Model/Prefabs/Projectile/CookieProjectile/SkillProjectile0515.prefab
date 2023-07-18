@@ -110,10 +110,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e63fbbc3d40d3404ab752ea6e56d065b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isRotate: 1
+  isSelfRotate: 0
+  isRotate: 0
   _isPersistence: 0
   _isTargetDir: 1
-  moveSpeed: 8
+  _rotateSpeed: 3
+  _moveSpeed: 8
   _duration: 5
 --- !u!50 &2353076403565286736
 Rigidbody2D:

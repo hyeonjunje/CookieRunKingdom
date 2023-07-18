@@ -2116,6 +2116,7 @@ MonoBehaviour:
   - {fileID: -6778328324478643343, guid: d57e43d3f3cc34d4495b19fa3ff6dbc8, type: 3}
   - {fileID: -4087226656768525483, guid: 368494605e5ae2a4db9e5a6443dacea2, type: 3}
   - {fileID: -2794626620948569117, guid: 98e4885a1f38ed248a08b7755d72ade1, type: 3}
+  - {fileID: 3153652372999368618, guid: 585cd20047278eb42a9eaaf8946ceb77, type: 3}
   allItemData:
   - {fileID: 11400000, guid: 8e70a6fba54e1484e8bbf390752c6c2e, type: 2}
   - {fileID: 11400000, guid: a11649d9a035ca848a1fe5a83d27c2a3, type: 2}

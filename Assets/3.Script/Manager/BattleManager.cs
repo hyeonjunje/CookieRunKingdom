@@ -41,6 +41,13 @@ public class BattleManager : MonoBehaviour
     public bool IsBattleOver { get; private set; } = false;
 
 
+    private int _cookieCount = 0;
+
+    private void Update()
+    {
+        Debug.Log(CookieInStartList.Count + "   " + CookiesInBattleList.Count);
+    }
+
     // 전투 출정할 때 이거 해주고 씬 이동해서 얍얍하자
     public void SetStage(List<CookieController> cookies, StageData stageData)
     {
@@ -97,11 +104,11 @@ public class BattleManager : MonoBehaviour
     }
 
     // 우리 쿠키가 죽을 때마다 이 메소드를 실행
-    public void CheckGameOver(CookieController cookie)
+    public void CheckGameOver()
     {
-        CookiesInBattleList.Remove(cookie);
+        _cookieCount++;
 
-        if (CookiesInBattleList.Count == 0)
+        if (_cookieCount == CookiesInBattleList.Count)
             GameOver();
     }
 
