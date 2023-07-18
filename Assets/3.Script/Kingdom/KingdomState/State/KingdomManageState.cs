@@ -187,16 +187,7 @@ public class KingdomManageState : KingdomBaseState
         {
             _isDrag = false;
 
-            // 내려놓을 수 없는 곳이라면 bfs로 최단거리를 파악하여 거기로 떨궈준다.
-            Vector3Int gridPos = _manager.Grid.WorldToCell(_currentCookie.transform.position);
-            if (!GridManager.Instance.ValidTileCheck(gridPos.x, gridPos.y))
-            {
-                if (!_currentCookie.CookieCitizeon.TeleportValidPosition())
-                {
-                    _currentCookie.transform.position = _cookieOffsetPosition;
-                }
-            }
-
+            _currentCookie.CookieCitizeon.TeleportValidPosition(_cookieOffsetPosition);
             _currentCookie.transform.GetChild(0).localPosition -= Vector3.up * 3f;
             _currentCookie.CookieCitizeon.StartKingdomAI();
 

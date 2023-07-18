@@ -176,56 +176,61 @@ public class CookieCitizen : MonoBehaviour
     }
 
 
-    private Vector3Int[] dirs = new Vector3Int[] { Vector3Int.down, Vector3Int.right, Vector3Int.left, Vector3Int.up };
-    private bool[,] dp = new bool[200, 200];
-
-    /// <summary>
-    /// 이상한 곳으로 이동할 경우 유효한 위치로 순간이동하는 메소드
-    /// </summary>
-    public bool TeleportValidPosition()
+    public void TeleportValidPosition(Vector3 originPos)
     {
-        Vector3Int startGridPos = GridManager.Instance.Grid.WorldToCell(transform.position);
-        Queue<Vector3Int> queue = new Queue<Vector3Int>();
-        queue.Enqueue(startGridPos);
-        int limitCount = 200;
-        int currentCount = 0;
-        dp = new bool[200, 200];
-        while (queue.Count != 0)
+        // 플레이어를 드래그 하기 전 그리드 위치
+        Vector3Int playerOriginGridPos = GridManager.Instance.Grid.WorldToCell(originPos);
+
+        // 지금 플레이어의 그리드 위치
+        Vector3Int playerGridPos = GridManager.Instance.Grid.WorldToCell(transform.position);
+        
+
+        if (!GridManager.Instance.ValidTileCheck(playerGridPos.x, playerGridPos.y))
         {
-            InfiniteLoopDetector.Run();
+            // GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
 
-            Vector3Int currentGridPos = queue.Dequeue();
-
-            dp[currentGridPos.y + 100, currentGridPos.x + 100] = true;
-
-            if (currentCount++ > limitCount)
+            // 그리드의 범위 밖이라면 이전 위치로 이동
+            if (playerGridPos.y >= 100 || playerGridPos.y <= -100 || playerGridPos.x >= 100 || playerGridPos.x <= -100)
             {
-                GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
-                return false;
+                transform.position = originPos;
             }
-
-            if (GridManager.Instance.ValidTileCheck(currentGridPos.x, currentGridPos.y))
+            // 아니면 계산한 가장 가까운 유효한 위치로 이동
+            else
             {
-                GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
-                transform.position = GridManager.Instance.Grid.CellToWorld(currentGridPos);
-                return true;
-            }
+                Collider2D[] tilesCol = Physics2D.OverlapCircleAll(transform.position, 10f);
+                List<Transform> tiles = new List<Transform>();
 
+                for (int i = 0; i < tilesCol.Length; i++)
+                {
+                    if (tilesCol[i].gameObject.layer != LayerMask.NameToLayer("Ground"))
+                        continue;
+                    Vector3Int tilesGridPos = GridManager.Instance.Grid.WorldToCell(tilesCol[i].transform.position);
+                    if (!GridManager.Instance.ValidTileCheck(tilesGridPos.x, tilesGridPos.y))
+                        continue;
 
-            for(int i = 0; i < dirs.Length; i++)
-            {
-                if (currentGridPos.y + dirs[i].y >= 100 || currentGridPos.y + dirs[i].y <= -100)
-                    continue;
-                if (currentGridPos.x + dirs[i].x >= 100 || currentGridPos.x + dirs[i].x <= -100)
-                    continue;
-                if (dp[currentGridPos.y + dirs[i].y + 100, currentGridPos.x + dirs[i].x + 100])
-                    continue;
+                    tiles.Add(tilesCol[i].transform);
+                }
 
-                queue.Enqueue(currentGridPos + dirs[i]);
+                if (tiles.Count == 0)
+                {
+                    transform.position = originPos;
+                    return;
+                }
+
+                float distance = int.MaxValue;
+                Vector3 minTile = Vector3.zero;
+
+                for(int i = 0; i < tiles.Count; i++)
+                {
+                    float distanceTile = Mathf.Sqrt(Mathf.Pow(transform.position.x - tiles[i].position.x, 2) + Mathf.Pow(transform.position.y - tiles[i].position.y, 2));
+                    if (distance > distanceTile)
+                    {
+                        distance = distanceTile;
+                        minTile = tiles[i].transform.position;
+                    }
+                }
+                transform.position = minTile;
             }
         }
-
-        GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
-        return false;
     }
 }
