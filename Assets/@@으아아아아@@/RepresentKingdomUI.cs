@@ -13,7 +13,6 @@ public class RepresentKingdomUI : BaseUI
     [SerializeField] private RectTransform _portraitParent;
     [SerializeField] private PortraitSlot _portraitSlotPrefab;
 
-    private PortraitSlot _prevSlot = null;
     private int _currentIndex = 0;
     private Image _portraitImage;
     private PortraitSlot[] _slots;
@@ -32,6 +31,7 @@ public class RepresentKingdomUI : BaseUI
         _portraitImage = portraitImage;
 
         _portraitImage.sprite = _allPortraitSprite[GameManager.Game.KingdomIndex];
+        Debug.Log(GameManager.Game.KingdomIndex + " ÀÎµ¦½ºÀÌ´Ù.  " + _portraitImage.sprite);
     }
 
     public override void Init()
@@ -58,10 +58,10 @@ public class RepresentKingdomUI : BaseUI
             _slots[index] = slot;
             slot.onClickButton += (() =>
             {
-                if(_prevSlot != null)
-                    _prevSlot.SetActive(false);
-                _prevSlot = slot;
+                for (int j = 0; j < _allPortraitSprite.Length; j++)
+                    _slots[j].SetActive(false);
                 _currentIndex = index;
+                _slots[_currentIndex].SetActive(true);
             });
         }
 
@@ -80,7 +80,6 @@ public class RepresentKingdomUI : BaseUI
                 _slots[i].SetActive(true);
             else
                 _slots[i].SetActive(false);
-
         }
     }
 }

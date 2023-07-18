@@ -26,7 +26,6 @@ public class PortraitSlot : MonoBehaviour
 
     private void OnClickButton()
     {
-        SetActive(true);
         onClickButton?.Invoke();
     }
 }
