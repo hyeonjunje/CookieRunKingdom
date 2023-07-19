@@ -55,7 +55,7 @@ public class BaseRangeSkill : BaseSkill
             BaseProjectile baseProjectile = GetProjectile();
             if (baseProjectile != null)
             {
-                baseProjectile.ShootProjectile(((target.transform.position + Vector3.up * 0.8f) - transform.position).normalized);
+                baseProjectile.ShootProjectile(((target.transform.position) - transform.position).normalized);
                 baseProjectile.gameObject.SetActive(true);
             }
         }

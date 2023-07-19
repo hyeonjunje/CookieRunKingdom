@@ -134,6 +134,8 @@ public class GameManagerEx
     {
         UserInfo userInfo = GameManager.SQL.UserInfo;
 
+        UpdateJellyTime();
+
         int isFirst = 0;
         if (!_isFirst)
             isFirst = 1;
@@ -152,8 +154,29 @@ public class GameManagerEx
         }
         result = result.TrimEnd(',');
 
-        Debug.Log(result);
-
         return result;
+    }
+
+    public void UpdateJellyTime()
+    {
+        int diffTime = (int)((DateTime.Now - prevJellyTime).TotalSeconds);
+        prevJellyTime = DateTime.Now;
+        if (_jelly >= _maxJelly)
+            return;
+
+        if (diffTime >= jellyTime)
+        {
+            diffTime -= jellyTime;
+            int count = diffTime / Utils.JellyTime;
+            _jelly += 1 + count;
+            jellyTime = diffTime % Utils.JellyTime;
+
+            if (_jelly >= _maxJelly)
+                _jelly = _maxJelly;
+        }
+        else
+        {
+            jellyTime -= diffTime;
+        }
     }
 }

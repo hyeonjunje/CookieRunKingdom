@@ -56,7 +56,8 @@ public class BaseProjectile : MonoBehaviour
 
         if(isRotate)
         {
-            transform.eulerAngles = Vector3.forward * (Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg - 90);
+            transform.localEulerAngles = Vector3.forward * (Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg - 90);
+            Debug.Log("총알의 각도는 " + (Mathf.Atan2(_dir.y, _dir.x) * Mathf.Rad2Deg - 90));
         }
     }
 

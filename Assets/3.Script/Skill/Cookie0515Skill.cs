@@ -73,7 +73,7 @@ public class Cookie0515Skill : BaseRangeSkill
                 BaseProjectile baseProjectile = GetSkillProjectile();
                 if (baseProjectile != null)
                 {
-                    baseProjectile.ShootProjectile(((target.transform.position + Vector3.up * 0.8f) - _firePoint.position).normalized);
+                    baseProjectile.ShootProjectile(((target.transform.position) - _firePoint.position).normalized);
                     baseProjectile.gameObject.SetActive(true);
                 }
             }
