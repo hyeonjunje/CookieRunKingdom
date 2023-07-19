@@ -22,6 +22,9 @@ public class BattleScene : BaseScene
         // 쿠키 만들자
         CreateCookie();
 
+        // 쿠키 순서 조정
+
+
         // 배틀 시작
         StartBattle(stageData);
 
@@ -48,6 +51,19 @@ public class BattleScene : BaseScene
                 _battleCookies.Add(cookie);
             }
         }
+
+        _battleCookies.Sort(CustomComparison);
+    }
+    private int CustomComparison(CookieController x, CookieController y)
+    {
+        // 쿠키의 자리 순서대로 정렬
+        int result = (x.CookieStat.BattlePosition).CompareTo(y.CookieStat.BattlePosition);
+
+        // 같으면 index 순
+        if (result == 0)
+            result = ((CookieData)x.Data).CookieIndex.CompareTo(((CookieData)x.Data).CookieIndex);
+
+        return result;
     }
 
     private void StartBattle(StageData stageData)

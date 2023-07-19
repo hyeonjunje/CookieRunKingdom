@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+// 커스터드3세맛 쿠키
 public class Cookie0514Skill : BaseHealSkill
 {
     private int _skillIndex = 0;
@@ -19,30 +20,24 @@ public class Cookie0514Skill : BaseHealSkill
         {
             _isSkillUse = true;
 
-            BaseController[] cookies = BattleManager.instance.CookiesInBattleList.
-                OrderBy(cookie => cookie.CharacterBattleController.CurrentHp).ToArray();
+            CookieController[] cookies = BattleManager.instance.CookieList
+                .Where(cookie => !cookie.CharacterBattleController.IsDead)
+                .OrderBy(cookie => cookie.CharacterBattleController.CurrentHp).ToArray();
 
             // Hp 제일 작은 2명 회복 및 보호막
             for(int i = 0; i < 2; i++)
-            {
                 if(i < cookies.Length)
-                {
                     cookies[i].CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
-                    Debug.Log(cookies[i] + " 회복합니다.");
-                }
-            }
         }
     }
 
     // 우리 팀에 체력이 깎인 쿠키가 있으면 true
     public override bool IsReadyToUseSkill()
     {
-        List<CookieController> cookies = BattleManager.instance.CookiesInBattleList;
+        List<CookieController> cookies = BattleManager.instance.CookieList;
         foreach(CookieController cookie in cookies)
-        {
-            if (cookie.CharacterBattleController.CurrentHp != cookie.CharacterBattleController.MaxHp)
+            if (!cookie.CharacterBattleController.IsDead && cookie.CharacterBattleController.CurrentHp != cookie.CharacterBattleController.MaxHp)
                 return true;
-        }
         return false;
     }
 

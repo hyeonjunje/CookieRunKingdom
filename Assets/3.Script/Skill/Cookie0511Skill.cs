@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// ¸¶µé·» ÄíÅ°
 public class Cookie0511Skill : BaseMeleeSkill
 {
     [SerializeField] private BaseProjectile _projectile;

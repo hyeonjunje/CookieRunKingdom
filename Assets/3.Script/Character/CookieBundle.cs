@@ -11,43 +11,33 @@ public class CookieBundle : MonoBehaviour
     /// 8 9 7  후방
     /// </summary>
     [SerializeField] private Transform[] cookiePositions;
-    private int[,] priority = new int[,] { { 0, 1, 2 }, { 1, 2, 0 }, { 2, 1, 0 } };
 
-    private List<CookieController> Cookies => BattleManager.instance.CookiesInBattleList;
-    private int _cookieRunStateCount; 
-
-    private float _startSpeed;
-    private float _currentSpeed = 0f;
+    private List<CookieController> Cookies => BattleManager.instance.CookieList;
     private Camera _camera;
-
     private Tweener _cameraTween;
 
-    public void ActiveMove(bool on)
-    {
-        if (on)
-            _cookieRunStateCount++;
-        else
-            _cookieRunStateCount--;
-
-
-        if(_cookieRunStateCount == Cookies.Count)
-        {
-            _currentSpeed = _startSpeed;
-            _cameraTween.ChangeEndValue(6.5f, 1.5f, true).Restart();
-        }
-        else
-        {
-            _currentSpeed = 0f;
-            _cameraTween.ChangeEndValue(5.0f, 1.5f, true).Restart();
-        }
-    }
 
     private void Update()
     {
-        if (Cookies.Count == 0)
-            return;
+        // 살아있는 쿠키들이 다 뛰는 상태라면 이동하고 아니면 0
+       float  currentSpeed = 0;
 
-        transform.position += Utils.Dir.normalized * _currentSpeed * Time.deltaTime;
+        for (int i = 0; i < Cookies.Count; i++)
+        {
+            if(!Cookies[i].CharacterBattleController.IsDead)
+            {
+                if(!Cookies[i].CharacterBattleController.CheckState(EBattleState.BattleRunState))
+                    break;
+                currentSpeed = Cookies[i].Data.MoveSpeed;
+            }
+        }
+
+        if(currentSpeed == 0)
+            _cameraTween.ChangeEndValue(5.0f, 1.5f, true).Restart();
+        else
+            _cameraTween.ChangeEndValue(6.5f, 1.5f, true).Restart();
+
+        transform.position += Utils.Dir.normalized * currentSpeed * Time.deltaTime;
     }
 
     public void Init()
@@ -57,8 +47,6 @@ public class CookieBundle : MonoBehaviour
 
         for (int i= 0; i < Cookies.Count; i++)
             MovePosition(Cookies[i]);
-
-        _startSpeed = Cookies[0].Data.MoveSpeed;
 
         foreach (BaseController cookie in Cookies)
         {

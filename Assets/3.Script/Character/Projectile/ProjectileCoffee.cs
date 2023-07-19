@@ -74,6 +74,6 @@ public class ProjectileCoffee : BaseProjectile
         }
 
         for (int i = 0; i < _detectedRange.enemies.Count; i++)
-            _detectedRange.enemies[i].SetCC(ECCType.airborne, Vector3.up * 5f);
+            _detectedRange.enemies[i].SetCC(ECCType.airborne, Vector3.up * 3f);
     }
 }

@@ -41,8 +41,11 @@ public class Cookie0063Skill : BaseHealSkill
                 StopCoroutine(_coSkill);
             _coSkill = StartCoroutine(CoSKill());
 
-            BattleManager.instance.CookiesInBattleList.ForEach
-                (cookie => cookie.CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat));
+            List<CookieController> cookies = BattleManager.instance.CookieList;
+
+            for(int i = 0; i < cookies.Count; i++)
+                if (!cookies[i].CharacterBattleController.IsDead)
+                    cookies[i].CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
         }
     }
 

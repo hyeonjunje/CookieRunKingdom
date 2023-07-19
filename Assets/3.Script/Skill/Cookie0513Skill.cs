@@ -16,7 +16,7 @@ public class Cookie0513Skill : BaseRangeSkill
 
     public override bool IsReadyToUseSkill()
     {
-        return base.IsReadyToUseSkill();
+        return DetectTarget();
     }
 
     public override void NormalAttack()

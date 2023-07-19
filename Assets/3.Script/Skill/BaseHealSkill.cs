@@ -8,13 +8,13 @@ public class BaseHealSkill : BaseSkill
     {
         // 가장 위급한 쿠키에게 회복을 해줍니다.
 
-        List<CookieController> cookies = BattleManager.instance.CookiesInBattleList;
-        BaseController selectedCookie = cookies[0];
+        List<CookieController> cookies = BattleManager.instance.CookieList;
+        CharacterBattleController selectedCookie = cookies[0].CharacterBattleController;
         for (int i = 0; i < cookies.Count; i++)
-            if(selectedCookie.CharacterBattleController.CurrentHp >= cookies[i].CharacterBattleController.CurrentHp)
-                selectedCookie = cookies[i];
+            if(!selectedCookie.IsDead && selectedCookie.CurrentHp >= cookies[i].CharacterBattleController.CurrentHp)
+                selectedCookie = cookies[i].CharacterBattleController;
 
-        selectedCookie.CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
+        selectedCookie.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
     }
 
     public override void OnSkillEvent(int index)

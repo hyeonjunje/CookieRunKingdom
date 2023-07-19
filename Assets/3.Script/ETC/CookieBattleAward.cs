@@ -10,7 +10,7 @@ public class CookieBattleAward : MonoBehaviour
 
     public void ShowResult()
     {
-        List<CookieController> cookies = BattleManager.instance.CookieInStartList;
+        List<CookieController> cookies = BattleManager.instance.CookieList;
 
         SetPosition(cookies);
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BattleRunState : BaseBattleState
 {
-    private bool isPos = false;
+    private bool _isPos = false;
 
     public BattleRunState(BattleStateFactory factory, BaseController controller) : base(factory, controller)
     {
@@ -13,18 +13,11 @@ public class BattleRunState : BaseBattleState
     public override void Enter()
     {
         _controller.CharacterAnimator.PlayAnimation(ECookieAnimation.BattleRun);
-
-        if (_controller.CharacterBattleController.CookieBundle != null)
-        {
-            isPos = false;
-            _controller.CharacterBattleController.CookieBundle.ActiveMove(true);
-        }
+        _isPos = false;
     }
 
     public override void Exit()
     {
-        if (_controller.CharacterBattleController.CookieBundle != null)
-            _controller.CharacterBattleController.CookieBundle.ActiveMove(false);
     }
 
     public override void Update()
@@ -33,14 +26,14 @@ public class BattleRunState : BaseBattleState
         if (_controller.CharacterBattleController.OffsetPosition != null)
         {
             Vector3 dir = Vector3.zero;
-            if(!isPos)
+            if(!_isPos)
             {
                 dir = (_controller.CharacterBattleController.OffsetPosition.position - _controller.transform.position).normalized * 3;
 
                 if(Vector2.Distance(_controller.CharacterBattleController.OffsetPosition.position, _controller.transform.position) < 0.1f)
                 {
                     _controller.transform.position = _controller.CharacterBattleController.OffsetPosition.position;
-                    isPos = true;
+                    _isPos = true;
                 }
             }
             else

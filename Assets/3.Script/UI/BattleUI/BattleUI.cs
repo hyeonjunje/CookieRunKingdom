@@ -135,7 +135,7 @@ public class BattleUI : BaseUI
         _coUpdate = StartCoroutine(CoUpdate());
 
         // 스킬 버튼 초기화
-        List<CookieController> cookies = BattleManager.instance.CookiesInBattleList;
+        List<CookieController> cookies = BattleManager.instance.CookieList;
         _skillButtons = new SkillButton[cookies.Count];
         for (int i = 0; i < cookies.Count; i++)
         {
