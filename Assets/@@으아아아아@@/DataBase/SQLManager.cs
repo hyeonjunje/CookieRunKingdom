@@ -63,21 +63,26 @@ public class UserInfo
     public string Buildings { get; private set; }
     public string LastTime { get; private set; }
     public string ItemCount { get; private set; }
+    public string LastJellyTime { get; private set; }
+    public int JellyTime { get; private set; }
 
     public CookiesJson cookieJson;
     public BuildingJson buildingJson;
 
     public UserInfo(string id, string pw, int kingdomIndex = 0, string name = "", int isFirst = 0, int money = 0, 
-        int dia = 0, int jelly = 0, int maxJelly = 0, string cookies = "", string buildings = "", string lastTime = "", string ItemCount = "")
+        int dia = 0, int jelly = 0, int maxJelly = 0, string cookies = "", string buildings = "", string lastTime = "", string ItemCount = "",
+        string lastJellyTime = "", int jellyTime = 0)
     {
         Id = id;
         Pw = pw;
 
-        LoadData(kingdomIndex, name, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime, ItemCount);
+        LoadData(kingdomIndex, name, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime, ItemCount, lastJellyTime, jellyTime);
     }
 
     // 게임 불러올 때
-    public void LoadData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, string cookies, string buildings, string lastTime, string itemCount)
+    public void LoadData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly,
+        string cookies, string buildings, string lastTime, string itemCount,
+        string lastJellyTime, int jellyTime)
     {
         KingdomIndex = kingdomIndex;
         KingdomName = name;
@@ -85,6 +90,7 @@ public class UserInfo
         Money = money;
         Dia = dia;
         ItemCount = itemCount;
+
         // 처음이 아니면 그대로 읽는다.
         if (isFirst != 0)
         {
@@ -95,6 +101,8 @@ public class UserInfo
             Cookies = cookies;
             Buildings = buildings;
             LastTime = lastTime;
+            LastJellyTime = lastJellyTime;
+            JellyTime = jellyTime;
 
             cookieJson = JsonUtility.FromJson<CookiesJson>(Cookies);
             buildingJson = JsonUtility.FromJson<BuildingJson>(Buildings);
@@ -107,6 +115,8 @@ public class UserInfo
             Jelly = 45;
             MaxJelly = 45;
             LastTime = DateTime.Now.ToString("yyyyMMddHHmmss");
+            LastJellyTime = DateTime.Now.ToString("yyyyMMddHHmmss");
+            JellyTime = Utils.JellyTime;
 
             cookieJson = new CookiesJson();
             buildingJson = new BuildingJson();
@@ -114,7 +124,8 @@ public class UserInfo
     }
 
     // 게임 저장할 때
-    public void SaveData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly, DateTime lastTime, string itemCount)
+    public void SaveData(int kingdomIndex, string name, int isFirst, int money, int dia, int jelly, int maxJelly,
+        DateTime lastTime, string itemCount, DateTime lastJellyTime, int jellyTime)
     {
         // 저장하자
         KingdomIndex = kingdomIndex;
@@ -131,6 +142,9 @@ public class UserInfo
         buildingJson.allBuildings = GameManager.Game.OwnedCraftableBuildings;
 
         LastTime = lastTime.ToString("yyyyMMddHHmmss");
+
+        LastJellyTime = lastJellyTime.ToString("yyyyMMddHHmmss");
+        JellyTime = jellyTime;
 
         Cookies = JsonUtility.ToJson(cookieJson);
         Buildings = JsonUtility.ToJson(buildingJson);
@@ -217,7 +231,7 @@ public class SQLManager
             return false;
         }
         string SQLCommand =
-            string.Format(@"SELECT Id,Pw,KingdomIndex,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly,Cookies,Buildings,LastTime,ItemCount  FROM user_login_info
+            string.Format(@"SELECT Id,Pw,KingdomIndex,KingdomName,IsFirst,Money,Dia,Jelly,MaxJelly,Cookies,Buildings,LastTime,ItemCount,LastJellyTime,JellyTime  FROM user_login_info
                             WHERE Id = '{0}' AND Pw = '{1}';", inputId, inputPw);
         MySqlCommand cmd = new MySqlCommand(SQLCommand, _connection);
         _reader = cmd.ExecuteReader();
@@ -244,7 +258,11 @@ public class SQLManager
                 string lastTime = (_reader.IsDBNull(11)) ? string.Empty : (string)_reader["LastTime"].ToString();
                 string itemCount = (_reader.IsDBNull(12)) ? string.Empty : (string)_reader["ItemCount"].ToString();
 
-                UserInfo = new UserInfo(id, pw, kingdomIndex, kingdomName, isFirst, money, dia, jelly, maxJelly, cookies, buildings, lastTime, itemCount);
+                string lastJellyTime = (_reader.IsDBNull(13)) ? string.Empty : (string)_reader["LastJellyTime"].ToString();
+                int jellyTime = (_reader.IsDBNull(14)) ? 0 : int.Parse(_reader["JellyTime"].ToString());
+
+                UserInfo = new UserInfo(id, pw, kingdomIndex, kingdomName, isFirst, money, dia, jelly, maxJelly, 
+                    cookies, buildings, lastTime, itemCount, lastJellyTime, jellyTime);
 
                 if (!_reader.IsClosed)
                 _reader.Close();

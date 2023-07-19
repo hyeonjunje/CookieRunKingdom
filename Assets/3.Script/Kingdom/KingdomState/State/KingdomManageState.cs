@@ -25,9 +25,6 @@ public class KingdomManageState : KingdomBaseState
         Init();
         GameManager.UI.PushUI(_manager.KingdomManagerUI);
 
-        _camera.transform.position = new Vector3(4.6f, 9f, -10f);
-        _camera.orthographicSize = 13;
-
         // 쿠키들이 등장함
         _manager.allCookies.ForEach(cookie =>
         {

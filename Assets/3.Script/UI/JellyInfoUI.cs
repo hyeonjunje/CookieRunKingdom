@@ -20,14 +20,25 @@ public class JellyInfoUI : MonoBehaviour
 
     private void OnEnable()
     {
+        UpdateJellyTime();
+    }
+
+    public void UpdateJellyTime()
+    {
         int diffTime = (int)((System.DateTime.Now - GameManager.Game.prevJellyTime).TotalSeconds);
 
-        if(diffTime >= GameManager.Game.jellyTime)
+        if (GameManager.Game.Jelly >= GameManager.Game.MaxJelly)
+            return;
+
+        if (diffTime >= GameManager.Game.jellyTime)
         {
             diffTime -= GameManager.Game.jellyTime;
             int count = diffTime / Utils.JellyTime;
             GameManager.Game.Jelly += 1 + count;
             GameManager.Game.jellyTime = diffTime % Utils.JellyTime;
+
+            if (GameManager.Game.Jelly >= GameManager.Game.MaxJelly)
+                GameManager.Game.Jelly = GameManager.Game.MaxJelly;
         }
         else
         {
@@ -70,6 +81,8 @@ public class JellyInfoUI : MonoBehaviour
                     break;
                 }
             }
+
+            GameManager.Game.prevJellyTime = System.DateTime.Now;
         }
     }
 }

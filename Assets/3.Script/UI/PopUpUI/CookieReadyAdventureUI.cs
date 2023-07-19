@@ -14,6 +14,7 @@ public class CookieReadyAdventureUI : BaseUI
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _diaText;
     [SerializeField] private TextMeshProUGUI _jellyText;
+    [SerializeField] private JellyInfoUI _jellyInfo;
     [SerializeField] private TextMeshProUGUI _jellyCountText; // 필요한 젤리 개수
     [SerializeField] private TextMeshProUGUI _powerValueText;
 
@@ -37,6 +38,7 @@ public class CookieReadyAdventureUI : BaseUI
 
         GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
         GameManager.Game.OnChangeJelly += (() => _jellyText.text = GameManager.Game.Jelly + "/" + GameManager.Game.MaxJelly);
+        GameManager.Game.OnChangeJelly += (() => _jellyInfo.OnChangeJelly());
 
         _manager = FindObjectOfType<KingdomManager>();
         _cookieSelectUI = FindObjectOfType<CookieSelectUI>();

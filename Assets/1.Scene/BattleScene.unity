@@ -418,7 +418,7 @@ RectTransform:
   m_Children:
   - {fileID: 2056954438}
   m_Father: {fileID: 1325923572}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -4821,6 +4821,7 @@ MonoBehaviour:
   _battleUI: {fileID: 1325923573}
   _battleVictoryUI: {fileID: 1650507576}
   _battleDefeatUI: {fileID: 1415657778}
+  CurrentCookieCount: 0
 --- !u!1 &1014959994
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,7 +5048,7 @@ RectTransform:
   - {fileID: 687259684}
   - {fileID: 1779277605}
   m_Father: {fileID: 1325923572}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.31800002}
   m_AnchorMax: {x: 1, y: 0.68200004}
@@ -6776,8 +6777,8 @@ RectTransform:
   - {fileID: 1555954734}
   - {fileID: 1619352268}
   - {fileID: 1533114085}
-  - {fileID: 65576469}
   - {fileID: 1039371095}
+  - {fileID: 65576469}
   m_Father: {fileID: 470889009}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -50,7 +50,11 @@ public class GameManagerEx
     public int Jelly
     {
         get { return _jelly; }
-        set { _jelly = value; OnChangeJelly?.Invoke(); }
+        set 
+        { 
+            _jelly = value;
+            OnChangeJelly?.Invoke();
+        }
     }
 
     public int MaxJelly
@@ -114,10 +118,12 @@ public class GameManagerEx
         _jelly = userInfo.Jelly;
         _maxJelly = userInfo.MaxJelly;
 
-        Debug.Log(userInfo.LastTime);
-
         PrevCraftTime = DateTime.ParseExact(userInfo.LastTime, "yyyyMMddHHmmss",
             System.Globalization.CultureInfo.InvariantCulture);
+
+        prevJellyTime = DateTime.ParseExact(userInfo.LastJellyTime, "yyyyMMddHHmmss",
+            System.Globalization.CultureInfo.InvariantCulture);
+        jellyTime = userInfo.JellyTime;
 
         allCookies = userInfo.cookieJson.allCookies;
         OwnedCraftableBuildings = userInfo.buildingJson.allBuildings;
@@ -133,7 +139,7 @@ public class GameManagerEx
             isFirst = 1;
 
         userInfo.SaveData(_kingdomIndex, _kingdomName, isFirst, _money, _dia, _jelly, _maxJelly,
-            PrevCraftTime, ReturnItemDataInfo());
+            PrevCraftTime, ReturnItemDataInfo(), prevJellyTime, jellyTime);
     }
 
     private string ReturnItemDataInfo()

@@ -6,7 +6,7 @@ public static class Utils
 {
     public static readonly float TouchTime = 0.15f;  // 터치로 인식되는 시간
 
-    public static readonly int JellyTime = 5;
+    public static readonly int JellyTime = 60;
 
     public static readonly Vector3 Dir = new Vector3(7.72f, 3.86f, 0);
     public static readonly float KnockBackPower = 3f;

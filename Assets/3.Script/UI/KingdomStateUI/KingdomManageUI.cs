@@ -10,6 +10,7 @@ public class KingdomManageUI : BaseUI
     [SerializeField] private TextMeshProUGUI _jellyText;
     [SerializeField] private TextMeshProUGUI _moneyText;
     [SerializeField] private TextMeshProUGUI _diaText;
+    [SerializeField] private JellyInfoUI _jellyInfo;
 
     [Header("RightBottom")]
     [SerializeField] private Button _myCookiesButton;
@@ -53,6 +54,7 @@ public class KingdomManageUI : BaseUI
         GameManager.Game.OnChangeDia += (() => _diaText.text = GameManager.Game.Dia.ToString("#,##0"));
         GameManager.Game.OnChangeMoney += (() => _moneyText.text = GameManager.Game.Money.ToString("#,##0"));
         GameManager.Game.OnChangeJelly += (() => _jellyText.text = GameManager.Game.Jelly + "/" + GameManager.Game.MaxJelly);
+        GameManager.Game.OnChangeJelly += (() => _jellyInfo.OnChangeJelly());
 
         // 버튼 초기화
         _myCookiesButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_myCookieUI));

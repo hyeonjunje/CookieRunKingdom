@@ -2053,7 +2053,6 @@ MonoBehaviour:
   _cookieInfoUI: {fileID: 2138458038}
   _cookieButtonUIPrefab: {fileID: 7182130775136487001, guid: 3d3f66f8289c6b046996c4d2eab8d1e5, type: 3}
   _cookieButtonTransform: {fileID: 900758739}
-  _cookieText: {fileID: 0}
 --- !u!1 &79862042
 GameObject:
   m_ObjectHideFlags: 0
@@ -9771,6 +9770,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1091280493960494026, guid: 333c1b153eb6e944490193995ff0d172, type: 3}
   m_PrefabInstance: {fileID: 361822677}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &361822679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1091280493960494027, guid: 333c1b153eb6e944490193995ff0d172, type: 3}
+  m_PrefabInstance: {fileID: 361822677}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bb79bb4c71f5d48b6be7d8d5e27b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &364068645
 GameObject:
   m_ObjectHideFlags: 0
@@ -11539,6 +11549,7 @@ MonoBehaviour:
   _diaText: {fileID: 206482513}
   _moneyText: {fileID: 444650870}
   _jellyText: {fileID: 482908193}
+  _jellyInfo: {fileID: 1176980762}
   _myCookieUI: {fileID: 76422692}
   _inventoryUI: {fileID: 384354985}
   _gachaUI: {fileID: 525222391}
@@ -42014,6 +42025,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1091280493960494026, guid: 333c1b153eb6e944490193995ff0d172, type: 3}
   m_PrefabInstance: {fileID: 1176980760}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1176980762 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1091280493960494027, guid: 333c1b153eb6e944490193995ff0d172, type: 3}
+  m_PrefabInstance: {fileID: 1176980760}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bb79bb4c71f5d48b6be7d8d5e27b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1177374971
 GameObject:
   m_ObjectHideFlags: 0
@@ -44580,6 +44602,7 @@ MonoBehaviour:
   _settingTeamButton: {fileID: 2066373845}
   _diaText: {fileID: 925003298}
   _jellyText: {fileID: 947364066}
+  _jellyInfo: {fileID: 361822679}
   _jellyCountText: {fileID: 780276270}
   _powerValueText: {fileID: 2123891788}
   _enemySlots:
@@ -68135,6 +68158,7 @@ MonoBehaviour:
   _jellyText: {fileID: 587208072}
   _moneyText: {fileID: 1324991162}
   _diaText: {fileID: 2015057537}
+  _jellyInfo: {fileID: 1091280494390625413}
   _myCookiesButton: {fileID: 1081924184}
   _storageButton: {fileID: 623860360}
   _gachaButton: {fileID: 1442310695}
@@ -72887,6 +72911,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 333c1b153eb6e944490193995ff0d172, type: 3}
+--- !u!114 &1091280494390625413 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1091280493960494027, guid: 333c1b153eb6e944490193995ff0d172, type: 3}
+  m_PrefabInstance: {fileID: 1091280494390625412}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3bb79bb4c71f5d48b6be7d8d5e27b25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1669628286575525243
 Transform:
   m_ObjectHideFlags: 0

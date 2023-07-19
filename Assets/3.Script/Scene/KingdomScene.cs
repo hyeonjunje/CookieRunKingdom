@@ -13,6 +13,8 @@ public class KingdomScene : BaseScene
 
     [SerializeField] private KingdomManager _kingdomManager;
 
+    private Camera _camera;
+
     protected override void Init()
     {
         // 땅 만들기
@@ -35,6 +37,10 @@ public class KingdomScene : BaseScene
 
         // 로딩창 풀어준다.
         GameManager.Scene.EndLoading();
+
+        _camera = Camera.main;
+        _camera.transform.position = new Vector3(4.6f, 9f, -10f);
+        _camera.orthographicSize = 13;
     }
 
     // 왕국배치
