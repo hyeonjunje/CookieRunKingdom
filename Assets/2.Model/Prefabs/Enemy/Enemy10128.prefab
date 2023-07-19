@@ -106,8 +106,8 @@ GameObject:
   - component: {fileID: 3396708748316350491}
   - component: {fileID: 3396708748316350490}
   - component: {fileID: 3396708748316350693}
-  - component: {fileID: 4043154708697359651}
   - component: {fileID: 5464719719143034585}
+  - component: {fileID: 186513096545742555}
   m_Layer: 0
   m_Name: Enemy10128
   m_TagString: Untagged
@@ -194,24 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 340f4103f6af6f146a9269892dec7dec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4043154708697359651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3396708748316350689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40e61aeae1c3bdc44bf2b43a367797ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isSkillUse: 0
-  animationName: []
-  attackEvent:
-  - skill1
-  skillEvent: []
-  _detectAttackRange: {fileID: 3396708748059100175}
 --- !u!114 &5464719719143034585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +206,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868cb49097df3584f9dc6bca309d1af0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &186513096545742555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396708748316350689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55b8a43c91f1e1146a81adfe7b7aeede, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isSkillUse: 0
+  animationName:
+  - skill3
+  - skill4
+  attackEvent:
+  - skill1
+  skillEvent: []
+  _detectAttackRange: {fileID: 3396708748059100175}
 --- !u!1 &3396708748932824626
 GameObject:
   m_ObjectHideFlags: 0
