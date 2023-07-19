@@ -10,10 +10,7 @@ public class MyCookieUI : BaseUI
     [SerializeField] private MyCookieButtonUI _cookieButtonUIPrefab;
     [SerializeField] private RectTransform _cookieButtonTransform;
 
-    [SerializeField] private TextMeshProUGUI _cookieText;
-
     private MyCookieButtonUI[] allCookieButton;
-
     private KingdomManager _manager;
 
     public override void Hide()
@@ -59,14 +56,6 @@ public class MyCookieUI : BaseUI
         {
             allCookieButton[i].UpdateInfo();
         }
-
-        int count = 0;
-        _manager.allCookies.ForEach(cookie =>
-        {
-            if (cookie.CookieStat.IsHave)
-                count++;
-        });
-        _cookieText.text = "ÄíÅ° " + count + "/" + _manager.allCookies.Count;
     }
 
     public void Exit()

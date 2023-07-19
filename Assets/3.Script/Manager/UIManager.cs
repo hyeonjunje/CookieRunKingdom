@@ -8,9 +8,7 @@ public class UIManager
 
     public void Init()
     {
-        _rootCanvas = new GameObject("Canvas").AddComponent<Canvas>();
-        _rootCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        _rootCanvas.transform.SetParent(GameManager.Instance.transform);
+        _rootCanvas = GameObject.Instantiate(Resources.Load<Canvas>("LoadingScene/RootCanvas"), GameManager.Instance.transform);
     }
 
     private Stack<BaseUI> uiStack = new Stack<BaseUI>();

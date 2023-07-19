@@ -5,50 +5,61 @@ using DG.Tweening;
 
 public class ProjectileCoffee : BaseProjectile
 {
+    private DetectRange _detectedRange;
+
     [SerializeField] private float timePerAttack = 0.3f;
 
-    [SerializeField] private Transform outterCircle;
-    [SerializeField] private Transform innerCircle;
-    [SerializeField] private Transform coffeebean;
+    [SerializeField] private Transform _outterCircle;
+    [SerializeField] private Transform _innerCircle;
+    [SerializeField] private Transform _coffeeBean;
 
-    private Sequence seq;
+    private Coroutine _coRotate = null;
+    private int _damage;
+    private CharacterStat _character;
 
     public override void Init(int damage, LayerMask targetLayer, Transform parent, Vector3 initPos, CharacterStat characterStat)
     {
         base.Init(damage, targetLayer, parent, initPos, characterStat);
+        _damage = damage;
+        _character = characterStat;
+        _detectedRange = GetComponent<DetectRange>();
+        _detectedRange.Init(targetLayer);
     }
 
     private void OnDisable()
     {
-        seq.Kill();
+        if (_coRotate != null)
+            StopCoroutine(_coRotate);
     }
 
     protected override void OnEnable()
     {
         base.OnEnable();
 
-       /* _tween = transform.DORotate(new Vector3(0, 0, -360), _rotateSpeed, RotateMode.FastBeyond360)
-                .SetLoops(-1, LoopType.Incremental)
-                .SetEase(Ease.Linear);*/
+        _coRotate = StartCoroutine(CoRotate());
+    }
 
-        outterCircle.DORotate(new Vector3(0, 0, -360), _rotateSpeed, RotateMode.FastBeyond360)
-            .SetLoops(-1, LoopType.Incremental)
-            .SetEase(Ease.Linear);
+    private IEnumerator CoRotate()
+    {
+        float currentTime = 0f;
 
-        innerCircle.DORotate(new Vector3(0, 0, 360), _rotateSpeed / 2, RotateMode.FastBeyond360)
-            .SetLoops(-1, LoopType.Incremental)
-            .SetEase(Ease.Linear);
+        while (true)
+        {
+            currentTime += Time.deltaTime;
 
-        coffeebean.DORotate(new Vector3(0, 0, 360), _rotateSpeed / 3, RotateMode.FastBeyond360)
-            .SetLoops(-1, LoopType.Incremental)
-            .SetEase(Ease.Linear);
+            if(currentTime >= timePerAttack)
+            {
+                Debug.Log("¿Ã∞≈«‘");
+                for(int i = 0; i < _detectedRange.enemies.Count; i++)
+                    _detectedRange.enemies[i].ChangeCurrentHp(-_damage, _character);
+                currentTime = 0;
+            }
 
-        seq = DOTween.Sequence();
-        seq.AppendInterval(timePerAttack)
-           .AppendCallback(() => _damageBox.gameObject.SetActive(true))
-           .AppendInterval(0.2f)
-           .AppendCallback(() => _damageBox.gameObject.SetActive(false))
-           .SetLoops(-1, LoopType.Incremental)
-           .SetEase(Ease.Linear);
+            _outterCircle.eulerAngles += Vector3.forward * Time.deltaTime * 10f;
+            _innerCircle.eulerAngles += Vector3.forward * Time.deltaTime * -8f;
+            _coffeeBean.eulerAngles += Vector3.forward * Time.deltaTime * 16f;
+
+            yield return null;
+        }
     }
 }

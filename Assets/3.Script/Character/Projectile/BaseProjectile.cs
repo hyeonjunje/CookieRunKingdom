@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-[RequireComponent(typeof(DamageBox))]
+[RequireComponent(typeof(DamageBox), typeof(Rigidbody2D))]
 public class BaseProjectile : MonoBehaviour
 {
     public System.Action<BaseProjectile> OnDisableEvent = null;

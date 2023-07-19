@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EspressoGacha
   m_EditorClassIdentifier: 
   _isPickUp: 1
-  _pickUpCookie: 9
+  _pickUpCookie: 10
   _epicPercentage: 20
   _rarePercentage: 30
   _commonPercentage: 50
