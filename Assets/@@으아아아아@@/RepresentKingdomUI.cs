@@ -29,9 +29,7 @@ public class RepresentKingdomUI : BaseUI
     public void InitImage(Image portraitImage)
     {
         _portraitImage = portraitImage;
-
         _portraitImage.sprite = _allPortraitSprite[GameManager.Game.KingdomIndex];
-        Debug.Log(GameManager.Game.KingdomIndex + " ¿Œµ¶Ω∫¿Ã¥Ÿ.  " + _portraitImage.sprite);
     }
 
     public override void Init()

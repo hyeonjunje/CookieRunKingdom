@@ -35,10 +35,8 @@ public class TitleScene : BaseScene
 
 
         // 애니메이션 실행하면 GameManager Load할 때까지 통신UI 켜줌
-        Debug.Log("켜줌");
         _communicationUI.SetActive(true);
         await GameManager.Instance.LoadData();
-        Debug.Log("꺼줌");
         _communicationUI.SetActive(false);
 
 

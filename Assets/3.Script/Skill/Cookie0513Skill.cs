@@ -44,7 +44,7 @@ public class Cookie0513Skill : BaseRangeSkill
     {
         if(_skillIndex == 0)
         {
-            PlayAnimation(animationName[_skillIndex++]);
+            PlayAnimation(animationName[_skillIndex++], false);
         }
         else if(_skillIndex != 0)
         {
