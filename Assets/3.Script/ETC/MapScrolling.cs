@@ -40,8 +40,6 @@ public class MapScrolling : MonoBehaviour
         // 앞으로 가면서 부딪혔을 때
         if(isDirection)
         {
-            Debug.Log("방향이 같다.");
-
             Transform mapPiece = mapList.First.Value;
             mapList.RemoveFirst();
 
@@ -52,8 +50,6 @@ public class MapScrolling : MonoBehaviour
         }
         else
         {
-            Debug.Log("방향이 반대다.");
-
             Transform mapPiece = mapList.Last.Value;
             mapList.RemoveLast();
 

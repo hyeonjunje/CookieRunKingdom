@@ -49,8 +49,6 @@ public class CharacterBattleController : MonoBehaviour
     private DamageTextController _damageTextController;
     private Camera _camera;
 
-    private float _damageTextCount = 0;
-
     public bool IsForward { get; private set; }
 
     private void OnDisable()
@@ -118,6 +116,16 @@ public class CharacterBattleController : MonoBehaviour
         _factory.ChangeState(state);
     }
 
+    public void SetCC(ECCType ccType, Vector3 dir)
+    {
+        if (_isDead)
+            return;
+
+        _factory.BattleCC.SetCC(ccType, dir);
+        _factory.ChangeState(EBattleState.BattleCrowdControlState);
+    }
+
+
     private void UpdateHpbar()
     {
         if (_hpBar == null && _currentHp < MaxHp)
@@ -141,7 +149,6 @@ public class CharacterBattleController : MonoBehaviour
             yield return null;
 
             _factory.CurrentState.Update();
-
             float zPos = (transform.position.x + transform.position.y) / 1000f;
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
 

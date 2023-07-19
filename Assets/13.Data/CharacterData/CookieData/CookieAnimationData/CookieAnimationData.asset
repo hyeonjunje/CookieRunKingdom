@@ -15,6 +15,7 @@ MonoBehaviour:
   battleIdle: battle_idle_back
   battleRun: run_back
   battleAttack: skill1_back
+  battleInactive: inactive_back
   dead: die
   victory: call_user
   defeat: lose

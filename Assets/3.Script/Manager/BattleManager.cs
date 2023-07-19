@@ -43,11 +43,6 @@ public class BattleManager : MonoBehaviour
 
     private int _cookieCount = 0;
 
-    private void Update()
-    {
-        Debug.Log(CookieInStartList.Count + "   " + CookiesInBattleList.Count);
-    }
-
     // 전투 출정할 때 이거 해주고 씬 이동해서 얍얍하자
     public void SetStage(List<CookieController> cookies, StageData stageData)
     {

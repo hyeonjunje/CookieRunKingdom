@@ -20,6 +20,7 @@ public class ProjectileCoffee : BaseProjectile
     public override void Init(int damage, LayerMask targetLayer, Transform parent, Vector3 initPos, CharacterStat characterStat)
     {
         base.Init(damage, targetLayer, parent, initPos, characterStat);
+
         _damage = damage;
         _character = characterStat;
         _detectedRange = GetComponent<DetectRange>();
@@ -43,15 +44,25 @@ public class ProjectileCoffee : BaseProjectile
     {
         float currentTime = 0f;
 
+        int count = (int)(_duration / timePerAttack) - 1;
+        int currentCount = 0;
         while (true)
         {
             currentTime += Time.deltaTime;
 
             if(currentTime >= timePerAttack)
             {
-                Debug.Log("¿Ã∞≈«‘");
-                for(int i = 0; i < _detectedRange.enemies.Count; i++)
+                currentCount++;
+                if (currentCount == count)
+                    break;
+
+                for (int i = 0; i < _detectedRange.enemies.Count; i++)
+                {
+                    Vector3 dir = transform.position - _detectedRange.enemies[i].transform.position;
+                    dir = new Vector3(dir.x, dir.y, 0).normalized;
+                    _detectedRange.enemies[i].SetCC(ECCType.dragged, dir * 0.3f);
                     _detectedRange.enemies[i].ChangeCurrentHp(-_damage, _character);
+                }
                 currentTime = 0;
             }
 
@@ -61,5 +72,8 @@ public class ProjectileCoffee : BaseProjectile
 
             yield return null;
         }
+
+        for (int i = 0; i < _detectedRange.enemies.Count; i++)
+            _detectedRange.enemies[i].SetCC(ECCType.airborne, Vector3.up * 5f);
     }
 }

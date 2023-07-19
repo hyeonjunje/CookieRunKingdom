@@ -49,7 +49,7 @@ public class Cookie0001Skill : BaseMeleeSkill
         else if(_skillIndex == 1 && !DetectTarget())
         {
             // ´Þ·Á°¡
-            Vector3 dir = _controller.CharacterBattleController.IsForward ? new Vector3(7.72f, 3.68f, 0f).normalized : new Vector3(-7.72f, -3.68f, 0f).normalized;
+            Vector3 dir = _controller.CharacterBattleController.IsForward ? Utils.Dir.normalized : -Utils.Dir.normalized;
             _controller.transform.position += dir * Time.deltaTime * _controller.Data.MoveSpeed * 2;
         }
         else if(_skillIndex == 1 && targets.Count != 0)
@@ -57,6 +57,9 @@ public class Cookie0001Skill : BaseMeleeSkill
             PlayAnimation(animationName[_skillIndex++]);
             for(int i = 0; i < targets.Count; i++)
             {
+                if (targets[i].IsDead)
+                    continue;
+                targets[i].SetCC(ECCType.KnockBack, Utils.Dir.normalized * 3);
                 targets[i].ChangeCurrentHp(AttackPower, _controller.CharacterStat);
             }
         }

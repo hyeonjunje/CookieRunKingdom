@@ -12,6 +12,7 @@ public class AnimationData : ScriptableObject
     [SerializeField] private string battleIdle;
     [SerializeField] private string battleRun;
     [SerializeField] private string battleAttack;
+    [SerializeField] private string battleInactive;
     [SerializeField] private string dead;
     [SerializeField] private string victory;
     [SerializeField] private string defeat;
@@ -19,6 +20,7 @@ public class AnimationData : ScriptableObject
     public string BattleIdle { get => battleIdle; }
     public string BattleRun { get => battleRun; }
     public string BattleAttack { get => battleAttack; }
+    public string BattleInactive { get => battleInactive; }
     public string Dead { get => dead; }
     public string Victory { get => victory; }
     public string Defeat { get => defeat; }

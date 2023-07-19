@@ -7,6 +7,7 @@ public enum ECookieAnimation
     BattleIdle,
     BattleRun,
     BattleAttack,
+    BattleInactive,
     Dead,
     Victory,
     Defeat,

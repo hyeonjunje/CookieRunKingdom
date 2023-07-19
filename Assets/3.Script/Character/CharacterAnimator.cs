@@ -113,7 +113,6 @@ public class CharacterAnimator : MonoBehaviour
         // 기본공격
         for(int i = 0; i < _baseSkill.attackEvent.Length; i++)
         {
-            Debug.Log(name + e.Data.Name);
             if(e.Data.Name == _baseSkill.attackEvent[i])
             {
                 _baseSkill.NormalAttackEvent();
@@ -124,7 +123,6 @@ public class CharacterAnimator : MonoBehaviour
         // 스킬 공격
         for(int i = 0; i < _baseSkill.skillEvent.Length; i++)
         {
-            Debug.Log(name + e.Data.Name);
             if (e.Data.Name == _baseSkill.skillEvent[i])
             {
                 _baseSkill.OnSkillEvent(i);

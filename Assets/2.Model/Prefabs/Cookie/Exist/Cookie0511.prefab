@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 2730599604373695850}
   - component: {fileID: 5702098025984257268}
   - component: {fileID: 2024690177861334377}
-  - component: {fileID: 1124669619461240004}
+  - component: {fileID: 3476256450799213277}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -238,7 +238,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.78, y: 5.32}
   m_EdgeRadius: 0
---- !u!114 &1124669619461240004
+--- !u!114 &3476256450799213277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -247,13 +247,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6595594175751834285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e63fbbc3d40d3404ab752ea6e56d065b, type: 3}
+  m_Script: {fileID: 11500000, guid: b54a364f55fa8a247a50ccf3afd89114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isSelfRotate: 0
   isRotate: 1
   _isPersistence: 1
   _isTargetDir: 0
-  moveSpeed: 20
+  _rotateSpeed: 3
+  _moveSpeed: 10
   _duration: 10
 --- !u!1 &8433689170360004570
 GameObject:
@@ -573,7 +575,7 @@ MonoBehaviour:
   - skill2
   - skill3
   _detectAttackRange: {fileID: 1608202513058578126}
-  _projectile: {fileID: 1124669619461240004}
+  _projectile: {fileID: 3476256450799213277}
 --- !u!114 &-7168322330051003255
 MonoBehaviour:
   m_ObjectHideFlags: 0

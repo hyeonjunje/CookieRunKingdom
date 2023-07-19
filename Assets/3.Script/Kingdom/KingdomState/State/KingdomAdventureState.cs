@@ -23,8 +23,6 @@ public class KingdomAdventureState : KingdomBaseState
             _cookieBundle = GameObject.FindObjectOfType<CookieBundleInAdventure>();
         }
 
-        Debug.Log(GameManager.Game.battlePosition + " ¿‘¥œ¥Ÿ.");
-
         _cookieBundle.transform.localPosition = GameManager.Game.battlePosition;
         _cookieBundle.CookieParent.localPosition = _cookieBundle.transform.localPosition;
 

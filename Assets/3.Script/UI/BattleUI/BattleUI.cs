@@ -121,8 +121,6 @@ public class BattleUI : BaseUI
 
     public void SetBattleGauge(float ratio)
     {
-        Debug.Log("À¸¾Æ");
-
         _targetGauge = 30 + 370 * ratio;
         _targetGauge = Mathf.Clamp(_targetGauge, 30, 400);
     }

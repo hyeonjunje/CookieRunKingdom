@@ -187,7 +187,7 @@ public class CookieCitizen : MonoBehaviour
 
         if (!GridManager.Instance.ValidTileCheck(playerGridPos.x, playerGridPos.y))
         {
-            // GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
+            GuideDisplayer.Instance.ShowGuide("쿠키를 내려놓을 수 없는 곳입니다.");
 
             // 그리드의 범위 밖이라면 이전 위치로 이동
             if (playerGridPos.y >= 100 || playerGridPos.y <= -100 || playerGridPos.x >= 100 || playerGridPos.x <= -100)
