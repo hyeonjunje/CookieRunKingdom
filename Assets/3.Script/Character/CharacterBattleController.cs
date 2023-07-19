@@ -41,6 +41,8 @@ public class CharacterBattleController : MonoBehaviour
     public LayerMask myLayer { get; private set; }
     public LayerMask enemyLayer { get; private set; }
 
+    public ECCType CurrentCCType { get; set; }
+
     protected BaseController _controller;
     protected BattleStateFactory _factory;
     private Coroutine _coUpdate = null;

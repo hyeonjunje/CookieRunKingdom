@@ -21,6 +21,7 @@ public class KnockbackCommand : ICCCommand
         IsFinish = false;
 
         Vector3 endVector = _receiver.transform.position + dir;
+        BattleManager.instance.KnockBackPower = Mathf.RoundToInt(dir.x / Utils.Dir.normalized.x);
 
         _seq = DOTween.Sequence();
         _seq.Append(_receiver.transform.DOMove(endVector, 0.5f)).SetEase(Ease.OutQuart)

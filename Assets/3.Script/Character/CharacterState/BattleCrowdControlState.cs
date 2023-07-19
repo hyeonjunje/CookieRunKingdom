@@ -17,6 +17,7 @@ public class BattleCrowdControlState : BaseBattleState
 
     public void SetCC(ECCType ccType, Vector3 dir = default(Vector3))
     {
+        _controller.CharacterBattleController.CurrentCCType = ccType;
         _currentCC = ccType;
         _dir = dir;
     }
@@ -30,6 +31,7 @@ public class BattleCrowdControlState : BaseBattleState
     public override void Exit()
     {
         _ccDictionary[_currentCC].Undo();
+        _controller.CharacterBattleController.CurrentCCType = ECCType.none;
     }
 
     public override void Update()

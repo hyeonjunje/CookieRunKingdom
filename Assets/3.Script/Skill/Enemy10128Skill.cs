@@ -54,7 +54,7 @@ public class Enemy10128Skill : BaseMeleeSkill
             CharacterBattleController enemy = _detectAttackRange.enemies[i];
             if (!enemy.IsDead)
             {
-                enemy.SetCC(ECCType.KnockBack, -Utils.Dir);
+                enemy.SetCC(ECCType.KnockBack, -Utils.Dir * 2);
                 enemy.ChangeCurrentHp(-AttackPower * 3, _controller.CharacterStat);
             }
         }

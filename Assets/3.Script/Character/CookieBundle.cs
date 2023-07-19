@@ -15,29 +15,54 @@ public class CookieBundle : MonoBehaviour
     private List<CookieController> Cookies => BattleManager.instance.CookieList;
     private Camera _camera;
     private Tweener _cameraTween;
-
+    private float _moveSpeed;
 
     private void Update()
     {
-        // 살아있는 쿠키들이 다 뛰는 상태라면 이동하고 아니면 0
-       float  currentSpeed = 0;
+        float currentSpeed = GetMoveSpeed();
+        Debug.Log(currentSpeed);
 
-        for (int i = 0; i < Cookies.Count; i++)
-        {
-            if(!Cookies[i].CharacterBattleController.IsDead)
-            {
-                if(!Cookies[i].CharacterBattleController.CheckState(EBattleState.BattleRunState))
-                    break;
-                currentSpeed = Cookies[i].Data.MoveSpeed;
-            }
-        }
-
-        if(currentSpeed == 0)
+        if (currentSpeed == 0)
             _cameraTween.ChangeEndValue(5.0f, 1.5f, true).Restart();
         else
             _cameraTween.ChangeEndValue(6.5f, 1.5f, true).Restart();
 
         transform.position += Utils.Dir.normalized * currentSpeed * Time.deltaTime;
+    }
+
+    private float GetMoveSpeed()
+    {
+        /*
+         모든 쿠키들이 뛰고 있거나 스킬을 쓰고 있을때
+         다만 모든 쿠키가 스킬을 쓰면 안움직임
+         */
+        float currentSpeed = 0;
+        int maxCookie = BattleManager.instance.CurrentCookieCount;
+        int runCookie = 0;
+        int skillCookie = 0;
+        int knockbackCookie = 0;
+
+        for (int i = 0; i < Cookies.Count; i++)
+        {
+            CharacterBattleController cookie = Cookies[i].CharacterBattleController;
+
+            if (cookie.IsDead)
+                continue;
+
+            if (cookie.CheckState(EBattleState.BattleRunState))
+                runCookie++;
+            else if (cookie.CheckState(EBattleState.BattleSkillState))
+                skillCookie++;
+            else if (cookie.CheckState(EBattleState.BattleCrowdControlState) && cookie.CurrentCCType == ECCType.KnockBack)
+                knockbackCookie++;
+        }
+
+        if (runCookie + skillCookie == maxCookie && skillCookie != maxCookie)
+            currentSpeed = Cookies[0].Data.MoveSpeed;
+        else if(knockbackCookie == maxCookie)
+            currentSpeed = BattleManager.instance.KnockBackPower * 2;
+
+        return currentSpeed;
     }
 
     public void Init()

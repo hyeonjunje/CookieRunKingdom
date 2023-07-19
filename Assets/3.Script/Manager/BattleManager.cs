@@ -41,6 +41,8 @@ public class BattleManager : MonoBehaviour
 
     public int CurrentCookieCount = 0;
 
+    public int KnockBackPower { get; set; }
+
     // 전투 출정할 때 이거 해주고 씬 이동해서 얍얍하자
     public void SetStage(List<CookieController> cookies, StageData stageData)
     {
