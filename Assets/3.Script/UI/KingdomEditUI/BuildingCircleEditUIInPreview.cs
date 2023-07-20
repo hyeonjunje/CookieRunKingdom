@@ -53,6 +53,7 @@ public class BuildingCircleEditUIInPreview : BuildingCircleEditUI
             _currentBuilding.BuildingAnimator.FlipX(_currentFlip);
             _currentBuilding.BuildingEditor.IsFlip = _currentFlip;
 
+            _currentBuilding.BuildingEditor.OnInstallEffect();
             _currentBuilding = null;
         }
         else

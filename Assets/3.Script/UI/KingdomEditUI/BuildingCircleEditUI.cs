@@ -183,6 +183,7 @@ public class BuildingCircleEditUI : MonoBehaviour
                 _currentBuilding.BuildingWorker.Worker.CharacterAnimator.SettingOrder();
             }
 
+            _currentBuilding.BuildingEditor.OnInstallEffect();
             _currentBuilding = null;
         }
         else

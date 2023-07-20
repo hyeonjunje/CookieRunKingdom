@@ -10,6 +10,8 @@ public class BuildingEditor : MonoBehaviour
     private BuildingController _controller;
     private Grid _grid;
     private BuildingData _data;
+
+    [SerializeField] private GameObject _installEffect;
     
     public List<SpriteRenderer> buildingPreviewTiles { get; private set; }
 
@@ -57,6 +59,12 @@ public class BuildingEditor : MonoBehaviour
         _controller.BuildingAnimator.SettingOrder();
     }
 
+    public void OnInstallEffect()
+    {
+        Debug.Log("이거를 누르자!!");
+        _installEffect.SetActive(true);
+    }
+
     // 해당 장소에 설치할 수 있으면 true 아니면 false
     public bool IsInstallable()
     {
@@ -67,7 +75,7 @@ public class BuildingEditor : MonoBehaviour
 
             if (!check)
             {
-                Debug.Log("이곳엔 설치할 수 없습니다.");
+                GuideDisplayer.Instance.ShowGuide("이곳엔 설치할 수 없습니다.");
                 return false;
             }
         }
