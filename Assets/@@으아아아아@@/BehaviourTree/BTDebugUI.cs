@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
 public class BTDebugUI : MonoBehaviour
 {
-    [SerializeField] private BehaviorTree _tree;
-    [SerializeField] private Text _debugText;
+    public BehaviorTree _tree;
+    [SerializeField] private TextMeshProUGUI _debugText;
 
     private void Start()
     {
@@ -16,6 +16,9 @@ public class BTDebugUI : MonoBehaviour
 
     private void Update()
     {
+        if (_tree == null)
+            return;
+
         _debugText.text = _tree.GetDebugText();
     }
 

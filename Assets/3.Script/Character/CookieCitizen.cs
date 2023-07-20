@@ -3,26 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PathFindingAgent))]
-public class CookieCitizen : MonoBehaviour
+public class CookieCitizen : BehaviorTree
 {
-    [SerializeField] private string _greetingAnimation = "call_user";
-    
+    public class BlackBoardKey : BlackboardKeyBase
+    {
+        public static readonly BlackBoardKey GreetingCookies = new BlackBoardKey() { Name = "GreetingCookies" };
+        public static readonly BlackBoardKey GreetingTargetCookie = new BlackBoardKey() { Name = "GreetingTargetCookie" };
+        public string Name;
+    }
+
+    private Blackboard<BlackBoardKey> _localMemory;
+
+
+    [SerializeField] private string _callUserAnimation = "call_user";
+    [SerializeField] private string _touchAnimation = "touch";
+    [SerializeField] private string _personalAnimation = "personal1";
+
+    [SerializeField] private string _greetingAnimation = "greeting";
+    [SerializeField] private string _greetingBackAnimation = "greeting_back";
+
     private CookieController _controller;
     private PathFindingAgent _agent;
     private KingdomManager _kingdomManager;
 
-    private bool _isReadyToAI; // 행동할 준비가 됐다는 변수 이게 true면 활성화될 시 ai 시작
-    private Transform _originParent = null;
-    private Coroutine _coUpdate = null;
+    private Coroutine _coBT = null;
     private Coroutine _coHello = null;
-    
+    private Transform _originParent = null;
+    private bool _isKingdomScene = false;
+    private bool _isReadyToBT; // 행동할 준비가 됐다는 변수 이게 true면 활성화될 시 BT시작
+
     public bool IsWorking { get; private set; }
+
+    public void Init(CookieController controller)
+    {
+        _isKingdomScene = GameManager.Scene.CurrentScene == ESceneName.Kingdom;
+
+        if (!_isKingdomScene)
+            return;
+
+        _controller = controller;
+        _agent = GetComponent<PathFindingAgent>();
+        _kingdomManager = FindObjectOfType<KingdomManager>();
+        _agent.Init(_controller);
+
+        // BT 설정
+        SetBT();
+    }
 
     private void OnEnable()
     {
-        if(_isReadyToAI)
+        if (_isReadyToBT)
         {
-            _isReadyToAI = false;
+            _isReadyToBT = false;
             StartKingdomAI();
         }
     }
@@ -32,150 +64,94 @@ public class CookieCitizen : MonoBehaviour
         StopKingdomAI();
     }
 
-    public void Init(CookieController controller)
+    // AI시작
+    public void StartKingdomAI()
     {
-        _controller = controller;
-        _agent = GetComponent<PathFindingAgent>();
-        _kingdomManager = FindObjectOfType<KingdomManager>();
-
-        if (GameManager.Scene.CurrentScene == ESceneName.Battle)
+        // 킹덤씬에서만 AI행동
+        if (!_isKingdomScene)
             return;
 
-        _agent.Init(_controller);
+        // 일하고 있는 쿠키라면 AI안함
+        if (IsWorking)
+            return;
+
+        StopKingdomAI();
+        _coBT = StartCoroutine(CoBT());
     }
 
+    // AI종료
+    public void StopKingdomAI()
+    {
+        _agent.StopPathFinding();
+
+        if (_coBT != null)
+            StopCoroutine(_coBT);
+    }
+
+    // 하던 BT를 멈추고 인사함
     public void Hello()
     {
         if (_coHello != null)
             StopCoroutine(_coHello);
-        _coHello = StartCoroutine(CoHello());
-    }
-
-    public void StopKingdomAI()
-    {
-        _agent.StopPathFinding();
-        if (_coUpdate != null)
-            StopCoroutine(_coUpdate);
-    }
-
-    public void StartKingdomAI()
-    {
-        if (IsWorking)
-            return;
-
-        if (GameManager.Scene.CurrentScene == ESceneName.Battle)
-            return;
-
-        // 걷다가, 멈추다가, 인사하다가
+        // 하던 AI행동 그만!
         StopKingdomAI();
-        _coUpdate = StartCoroutine(CoUpdate());
+        _coHello = StartCoroutine(COHello());
     }
 
-
-
-    // 출근
+    // 출근하기
     public void GoToWork(Transform parent)
     {
         IsWorking = true;
-        
-        // 하고 있던 AI동작 중지
-        _agent.StopPathFinding();
-        if (_coUpdate != null)
-            StopCoroutine(_coUpdate);
 
-        // 출석부 등록하고
+        // 하고 있던 AI동장 중지
+        _agent.StopPathFinding();
+        if (_coBT != null)
+            StopCoroutine(_coBT);
+
+        // 출석부 등록하기
         _kingdomManager.workingCookies.Add(_controller);
 
-        // 위치 조정하고
+        // 위치 조정하기
         _originParent = transform.parent;
         transform.SetParent(parent);
         transform.localPosition = Vector3.zero;
         _controller.CharacterAnimator.FlipX(false);
         _controller.CharacterAnimator.SettingOrder();
 
-        // 인사하고
-        _controller.CharacterAnimator.PlayAnimation(_greetingAnimation);
+        // 인사하기
+        _controller.CharacterAnimator.PlayAnimation(_callUserAnimation);
         _controller.CharacterAnimator.SettingOrderLayer(true);
     }
 
+    // 일을 다했다면 인사함
     public void EndWork()
     {
-        // 인사
-        _controller.CharacterAnimator.PlayAnimation(_greetingAnimation);
+        _controller.CharacterAnimator.PlayAnimation(_callUserAnimation);
     }
 
-    // 퇴근
+    // 퇴근하기
     public void LeaveWork()
     {
         IsWorking = false;
 
-        // 출석부에 빼고
+        // 출석부에서 빼기
         _kingdomManager.workingCookies.Remove(_controller);
 
-        // 위치 조정하고
+        // 위치 조정하기
         transform.SetParent(_originParent);
         transform.position = GridManager.Instance.ReturnEmptyTilePosition();
-
         _controller.CharacterAnimator.SettingOrderLayer(false);
 
         if (!gameObject.activeSelf)
         {
-            _isReadyToAI = true;
+            _isReadyToBT = true;
             return;
         }
 
-        // 다시 일상생활로
         StartKingdomAI();
     }
 
-
-    private IEnumerator CoUpdate()
-    {
-        while(true)
-        {
-            // int act = Random.Range(0, 3);
-            int act = 0;
-            switch (act)
-            {
-                case 0:
-                    MoveRandomPosition();
-                    break;
-                case 1:
-                    break;
-                case 2:
-                    break;
-            }
-
-            yield return new WaitForSeconds(Random.Range(5, 10));
-        }
-    }
-
-    private IEnumerator CoHello()
-    {
-        StopKingdomAI();
-        _controller.CharacterAnimator.PlayAnimation("idle_back", false);
-        _controller.CharacterAnimator.PlayAnimation("call_user", false);
-
-        yield return new WaitUntil(() => !_controller.CharacterAnimator.IsPlayingAnimation());
-
-        StartKingdomAI();
-    }
-
-    private void MoveRandomPosition()
-    {
-        while (true)
-        {
-            Vector3 targetPosition = Random.insideUnitCircle * 5;
-            Vector3Int cellTargetPosition = GridManager.Instance.Grid.WorldToCell(transform.position + targetPosition);
-            if(GridManager.Instance.ValidTileCheck(cellTargetPosition.x, cellTargetPosition.y))
-            {
-                _agent.MoveTo(GridManager.Instance.Grid.CellToWorld(cellTargetPosition));
-                break;
-            }
-        }
-    }
-
-
+    // 땅에 내려놓았을 때 유효하지 않은 위치라면 가장 가까운 유효한 위치로 순간이동시킴
     public void TeleportValidPosition(Vector3 originPos)
     {
         // 지금 플레이어의 그리드 위치
@@ -216,9 +192,8 @@ public class CookieCitizen : MonoBehaviour
                 float distance = int.MaxValue;
                 Vector3 minTile = Vector3.zero;
 
-                for(int i = 0; i < tiles.Count; i++)
+                for (int i = 0; i < tiles.Count; i++)
                 {
-                    // float distanceTile = Mathf.Sqrt(Mathf.Pow(transform.position.x - tiles[i].position.x, 2) + Mathf.Pow(transform.position.y - tiles[i].position.y, 2));
                     float distanceTile = Mathf.Pow(transform.position.x - tiles[i].position.x, 2) + Mathf.Pow(transform.position.y - tiles[i].position.y, 2);
                     if (distance > distanceTile)
                     {
@@ -229,5 +204,185 @@ public class CookieCitizen : MonoBehaviour
                 transform.position = minTile;
             }
         }
+    }
+
+    private void SetBT()
+    {
+        _localMemory = BlackboardManager.Instance.GetIndividualBlackboard<BlackBoardKey>(this);
+        _localMemory.SetGeneric<List<int>>(BlackBoardKey.GreetingCookies, new List<int>());
+        _localMemory.SetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie, null);
+
+        BTNodeBase BTRoot = RootNode.Add<BTNodeSelector>("BT START");
+        BTRoot.AddService<BTServiceBase>("근처에 쿠키가 있나요?", (float deltaTime) =>
+        {
+            _localMemory.SetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie, null);
+            Collider2D[] cookieCollider = Physics2D.OverlapCircleAll(transform.position, 1.5f, 1 << LayerMask.NameToLayer("Cookie"));
+
+            if (cookieCollider.Length == 0)
+                return;
+
+            List<CookieController> cookieList = new List<CookieController>();
+
+            for(int i = 0; i < cookieCollider.Length; i++)
+            {
+                if(cookieCollider[i].transform != transform)
+                {
+                    CookieController cookie = cookieCollider[i].GetComponent<CookieController>();
+                    if (cookie != null)
+                        cookieList.Add(cookie);
+                }
+            }
+
+            if (cookieList.Count == 0)
+                return;
+
+            _localMemory.SetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie, cookieList[0]);
+
+            if(gameObject.name == "Cookie0001(Clone)")
+            {
+                Debug.Log(_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) + " 가 근처에 있습니다.");
+            }
+
+        });
+
+
+        BTNodeBase walkRoot = BTRoot.Add<BTNodeSequence>("움직임 시도");
+
+        walkRoot.AddDecorator<BTDecoratorBase>("움직임 시도 체크", () =>
+        {
+            if (_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) == null)
+                return true;
+            else
+                return false;
+        });
+
+        BTNodeBase cookieWalk = walkRoot.Add<BTNodeAction>("걷자!",
+            () =>
+            {
+                if (Random.Range(0, 2) == 0)
+                    return ENodeStatus.Failed;
+
+                if (MoveRandomPosition())
+                    return ENodeStatus.Succeeded;
+                else
+                    return ENodeStatus.Failed;
+            },
+            () =>
+            {
+                if (_agent.IsDestination)
+                    return ENodeStatus.Succeeded;
+                else
+                {
+                    if (_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) != null)
+                        return ENodeStatus.Failed;
+                    return ENodeStatus.InProgress;
+                }
+            });
+
+        BTNodeBase cookiePersonal = walkRoot.Add<BTNodeAction>("개인행동 노드", () =>
+        {
+                _controller.CharacterAnimator.PlayAnimation(_personalAnimation, false);
+                return ENodeStatus.Succeeded;
+        },
+        () =>
+        {
+            if (!_controller.CharacterAnimator.IsPlayingAnimation())
+                return ENodeStatus.Succeeded;
+            else
+            {
+                if (_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) != null)
+                    return ENodeStatus.Failed;
+                return ENodeStatus.InProgress;
+            }
+        });
+
+
+        BTNodeBase greetingRoot = BTRoot.Add<BTNodeSequence>("인사 시도");
+
+        greetingRoot.AddDecorator<BTDecoratorBase>("인사 시도 체크", () =>
+        {
+            if (_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) != null)
+                return true;
+            return false;
+        });
+
+        BTNodeBase cookieGreet = greetingRoot.Add<BTNodeAction>("인사한다.",
+            () =>
+            {
+                // BT를 멈추고 서로 인사하는 시간을 가진다.
+                CookieController otherCookie = _localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie);
+                StartCoroutine(CoGreeting(otherCookie));
+                return ENodeStatus.Succeeded;
+            },
+            () =>
+            {
+                return ENodeStatus.Succeeded;
+            });
+    }
+
+
+    private bool MoveRandomPosition()
+    {
+        Vector3 targetPosition = Random.insideUnitCircle * 5;
+        Vector3Int cellTargetPosition = GridManager.Instance.Grid.WorldToCell(transform.position + targetPosition);
+        if (GridManager.Instance.ValidTileCheck(cellTargetPosition.x, cellTargetPosition.y))
+        {
+            _agent.MoveTo(GridManager.Instance.Grid.CellToWorld(cellTargetPosition));
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public IEnumerator CoGreeting(CookieController otherCookie)
+    {
+        Greeting(otherCookie);
+        otherCookie.CookieCitizeon.Greeting(_controller);
+
+        yield return new WaitUntil(() => !_controller.CharacterAnimator.IsPlayingAnimation());
+
+        StartKingdomAI();
+        otherCookie.CookieCitizeon.StartKingdomAI();
+    }
+
+    // 인사 상호작용
+    public void Greeting(CookieController otherCookie)
+    {
+        StopKingdomAI();
+        _controller.CharacterAnimator.PlayAnimation("idle_back", false);
+
+        // 내가 위에 있으면 
+        if (otherCookie.transform.position.y < transform.position.y)
+            _controller.CharacterAnimator.PlayAnimation(_greetingAnimation, false);
+        else
+            _controller.CharacterAnimator.PlayAnimation(_greetingBackAnimation, false);
+
+        // 내가 오른쪽에 있으면
+        if (otherCookie.transform.position.x < transform.position.x)
+            _controller.CharacterAnimator.FlipX(true);
+        else
+            _controller.CharacterAnimator.FlipX(false);
+    }
+
+    private IEnumerator CoBT()
+    {
+        ResetRootNode();
+        Tick();
+        while (true)
+        {
+            Tick(0.2f);
+            yield return new WaitForSeconds(0.2f);
+        }
+    }
+
+    private IEnumerator COHello()
+    {
+        _controller.CharacterAnimator.PlayAnimation("idle_back", false);
+        _controller.CharacterAnimator.PlayAnimation(_touchAnimation, false);
+
+        yield return new WaitUntil(() => !_controller.CharacterAnimator.IsPlayingAnimation());
+        StartKingdomAI();
     }
 }

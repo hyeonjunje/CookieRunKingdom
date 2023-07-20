@@ -19,8 +19,11 @@ public class BehaviorTree : MonoBehaviour
         RootNode.Reset();
     }
 
-    protected void Tick()
+    protected void Tick(float time = 0)
     {
+        if (time == 0)
+            time = Time.deltaTime;
+
         RootNode.Tick(Time.deltaTime);
     }
 

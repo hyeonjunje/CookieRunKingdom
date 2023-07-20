@@ -30,8 +30,14 @@ public class PathFindingAgent : MonoBehaviour
     private Node[,] _nodeArray;
     private Node _startNode, _targetNode, _curNode;
     private List<Node> _openList, _closedList;
-
     private Coroutine _coMove = null;
+
+    // 목적지를 정했는가?
+    public bool SetDestination { get; private set; }
+
+    // 도착했는가?
+    public bool IsDestination { get; private set; }
+
 
     private Grid _grid => GridManager.Instance.Grid;                      
     private Tilemap[,] _map => GridManager.Instance.buildingGridData.gridData;
@@ -55,6 +61,8 @@ public class PathFindingAgent : MonoBehaviour
 
     public void MoveTo(Vector3 target)
     {
+        IsDestination = false;
+
         // 경로 찾고
         PathFinding(target);
 
@@ -216,5 +224,7 @@ public class PathFindingAgent : MonoBehaviour
         }
 
         _controller.CharacterAnimator.PlayAnimation(isBack ? "idle" : "idle_back");
+
+        IsDestination = true;
     }
 }

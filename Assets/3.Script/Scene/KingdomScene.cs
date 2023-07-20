@@ -101,6 +101,8 @@ public class KingdomScene : BaseScene
                 cookie.gameObject.SetActive(false);
             }
         }
+
+        FindObjectOfType<BTDebugUI>()._tree = _kingdomManager.allCookies[0].CookieCitizeon;
     }
 
     // 건물들 제작

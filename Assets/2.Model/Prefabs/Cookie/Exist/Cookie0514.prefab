@@ -447,7 +447,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84117c23d55a37d44812df74307e4eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _greetingAnimation: call_user
+  _callUserAnimation: call_user
+  _touchAnimation: touch
+  _personalAnimation: personal1
+  _greetingAnimation: greeting
+  _greetingBackAnimation: greeting_back
 --- !u!114 &-4087226656768525483
 MonoBehaviour:
   m_ObjectHideFlags: 0
