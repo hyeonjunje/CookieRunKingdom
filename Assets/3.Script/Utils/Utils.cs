@@ -6,7 +6,7 @@ public static class Utils
 {
     public static readonly float TouchTime = 0.15f;  // 터치로 인식되는 시간
 
-    public static readonly int JellyTime = 60;
+    public static readonly int JellyTime = 300;
 
     public static readonly Vector3 Dir = new Vector3(7.72f, 3.86f, 0);
     public static readonly float KnockBackPower = 3f;
@@ -128,4 +128,29 @@ public static class Utils
             return sprite.texture;
     }
 
+    
+    /// <summary>
+    /// 부모의 활성화 비활성화 상태를 판별하는 메소드
+    /// 부모가 없다면 자기자신의 상태를 반환
+    /// </summary>
+    /// <param name="recursion">true하면 부모를 계속 타고 올라가면서 체크</param>
+    /// <returns>활성화가 되어있으면 true, 아니면 false</returns>
+    public static bool CheckParentActive(this Transform transform, bool recursion = false)
+    {
+        if (transform.parent == null)
+            return transform.gameObject.activeSelf;
+
+        if(recursion)
+        {
+            if (!transform.parent.gameObject.activeSelf)
+                return false;
+            else
+                return CheckParentActive(transform.parent, recursion);
+        }
+        else
+        {
+            return transform.parent.gameObject.activeSelf;
+        }
+
+    }
 }

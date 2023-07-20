@@ -28,16 +28,16 @@ public class JellyInfoUI : MonoBehaviour
 
     public void OnChangeJelly()
     {
+        if (!transform.CheckParentActive(true))
+            return;
+
         _jellTimeText.gameObject.SetActive(false);
 
-        if(gameObject.activeSelf)
+        if (GameManager.Game.Jelly < GameManager.Game.MaxJelly)
         {
-            if (GameManager.Game.Jelly < GameManager.Game.MaxJelly)
-            {
-                if (_coUpdate != null)
-                    StopCoroutine(_coUpdate);
-                _coUpdate = StartCoroutine(CoUpdate());
-            }
+            if (_coUpdate != null)
+                StopCoroutine(_coUpdate);
+            _coUpdate = StartCoroutine(CoUpdate());
         }
     }
 

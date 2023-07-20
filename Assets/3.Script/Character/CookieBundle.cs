@@ -20,8 +20,6 @@ public class CookieBundle : MonoBehaviour
     private void Update()
     {
         float currentSpeed = GetMoveSpeed();
-        Debug.Log(currentSpeed);
-
         if (currentSpeed == 0)
             _cameraTween.ChangeEndValue(5.0f, 1.5f, true).Restart();
         else
