@@ -7,7 +7,6 @@ using System.Linq;
 public class Cookie0514Skill : BaseHealSkill
 {
     private int _skillIndex = 0;
-    private bool _isSkillUse = false;
 
     public override void NormalAttackEvent()
     {
@@ -16,13 +15,13 @@ public class Cookie0514Skill : BaseHealSkill
 
     public override void OnSkillEvent(int index)
     {
-        if(index == 0 && !_isSkillUse)
+        if(index == 0)
         {
-            _isSkillUse = true;
-
             CookieController[] cookies = BattleManager.instance.CookieList
                 .Where(cookie => !cookie.CharacterBattleController.IsDead)
                 .OrderBy(cookie => cookie.CharacterBattleController.CurrentHp).ToArray();
+
+            Debug.Log(cookies.Length + " 명 회복합니다.");
 
             // Hp 제일 작은 2명 회복 및 보호막
             for(int i = 0; i < 2; i++)

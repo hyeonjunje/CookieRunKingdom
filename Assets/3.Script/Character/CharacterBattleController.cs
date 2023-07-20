@@ -10,6 +10,8 @@ public class CharacterBattleController : MonoBehaviour
     public System.Action OnDeadEvent = null;
     public System.Action OnHitEvent = null;
 
+    [SerializeField] private HealEffect _healEffect;
+
     private Slider _hpBar = null;
     private bool _isDead = false;
     public bool IsDead => _isDead;
@@ -23,7 +25,6 @@ public class CharacterBattleController : MonoBehaviour
         set
         {
             _currentHp = value;
-
             _currentHp = Mathf.Clamp(_currentHp, 0, MaxHp);
 
             UpdateHpbar();
@@ -67,6 +68,7 @@ public class CharacterBattleController : MonoBehaviour
         _camera = Camera.main;
 
         _controller = controller;
+
         CurrentHp = MaxHp;
     }
 
@@ -179,7 +181,7 @@ public class CharacterBattleController : MonoBehaviour
 
         int critical = _character.criticalStat.ResultStat;
         int random = Random.Range(0, 100);
-        if(random <= critical)
+        if (random <= critical)
             value *= 2;
 
 
@@ -188,7 +190,7 @@ public class CharacterBattleController : MonoBehaviour
 
 
         TextMeshProUGUI damageText = _damageTextController.GetDamageText(value, random <= critical, value > 0);
-        if(random<=critical || value > 0)
+        if (random <= critical || value > 0)
             damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2.2f);
         else
             damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2);
@@ -202,6 +204,12 @@ public class CharacterBattleController : MonoBehaviour
             {
                 damageText.gameObject.SetActive(false);
             });
+
+        if (value > 0)
+        {
+            _healEffect.gameObject.SetActive(false);
+            _healEffect.gameObject.SetActive(true);
+        }
 
         CurrentHp += value;
     }
