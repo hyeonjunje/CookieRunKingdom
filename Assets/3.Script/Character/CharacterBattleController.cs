@@ -68,8 +68,6 @@ public class CharacterBattleController : MonoBehaviour
         _camera = Camera.main;
 
         _controller = controller;
-
-        CurrentHp = MaxHp;
     }
 
     public void SetEnemy(LayerMask layer)
@@ -100,6 +98,8 @@ public class CharacterBattleController : MonoBehaviour
     /// <param name="isForward">앞을 향하고 있나</param>
     public void StartBattle(bool isForward = true)
     {
+        CurrentHp = MaxHp;
+
         IsForward = isForward;
         _controller.CharacterAnimator.AdjustmentAnimationName(isForward);
 
@@ -143,7 +143,7 @@ public class CharacterBattleController : MonoBehaviour
         }
 
         if (_hpBar != null)
-            _hpBar.value = (float)_currentHp / MaxHp;
+            _hpBar.value = (float)CurrentHp / MaxHp;
     }
 
     private IEnumerator CoUpdate()
