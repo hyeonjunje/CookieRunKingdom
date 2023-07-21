@@ -72,6 +72,12 @@ public class CookieStat : MonoBehaviour
 
     public void LevelUp()
     {
+        if(!_isHave)
+        {
+            GuideDisplayer.Instance.ShowGuide("해당 쿠키를 소유하고 있지 않습니다!");
+            return;
+        }
+
         int expAmount = DataBaseManager.Instance.MyDataBase.itemDataBase[_data.ExpCandyItemData];
         if(expAmount * 14 >= _maxExpValue)
         {
@@ -96,7 +102,13 @@ public class CookieStat : MonoBehaviour
 
     public void Evolution()
     {
-        if(_evolutionGauge < _evolutionMaxGague)
+        if (!_isHave)
+        {
+            GuideDisplayer.Instance.ShowGuide("해당 쿠키를 소유하고 있지 않습니다!");
+            return;
+        }
+
+        if (_evolutionGauge < _evolutionMaxGague)
         {
             GuideDisplayer.Instance.ShowGuide("소울이 부족합니다!");
             return;

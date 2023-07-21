@@ -29,6 +29,7 @@ MonoBehaviour:
   _idleBlackMaterial: {fileID: 2100000, guid: 348c33e25ce3d424bbfbbbe510f6744f, type: 2}
   _cookieHeadSprite: {fileID: 1099090640111074778, guid: 9d4a6d23348f2be40adb640568dc0c06, type: 3}
   _idleSprite: {fileID: 21300000, guid: e962f3fc335272a489b6db861d72c598, type: 3}
+  _idleBlackAndWhiteSprite: {fileID: 21300000, guid: 21349e04cd0b76243b8c0fce87335312, type: 3}
   _skillSprite: {fileID: 21300000, guid: 4645ed07dd251ed46ad4536410d95b2a, type: 3}
   _skillName: " \uB530\uC2A4\uD55C \uC815\uC6D0"
   _typeSprite: {fileID: 21300000, guid: 3f541303e9c7ee945824a7839371c1d5, type: 3}

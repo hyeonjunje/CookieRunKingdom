@@ -427,7 +427,7 @@ MonoBehaviour:
   _isPersistence: 1
   _isTargetDir: 0
   _rotateSpeed: 3
-  _moveSpeed: 8
+  _moveSpeed: 1
   _duration: 6
   lighting: {fileID: 984795029}
   timePerAttack: 1
@@ -826,6 +826,8 @@ MonoBehaviour:
   _personalAnimation: personal1
   _greetingAnimation: greeting
   _greetingBackAnimation: greeting_back
+  _talkAnimation: talk
+  _talkBackAnimation: talk_back
 --- !u!114 &675272694882138304
 MonoBehaviour:
   m_ObjectHideFlags: 0

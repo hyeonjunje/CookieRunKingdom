@@ -32,7 +32,6 @@ public class MyCookieButtonUI : MonoBehaviour
         _cookie = cookie;
         _data = ((CookieData)_cookie.Data);
 
-        _portraitImage.material = _data.IdleBlackMaterial;
         UpdateInfo();
 
         myCookieButton.onClick.AddListener(() => action(_cookie));
@@ -56,8 +55,6 @@ public class MyCookieButtonUI : MonoBehaviour
             _evolutionGaugeText.text = _cookie.CookieStat.EvolutionGauge + "/" + _cookie.CookieStat.EvolutionMaxGauge;
             _evolutionImage.sprite = _data.EvolutionSprite;
 
-            _portraitImage.material.SetFloat("_Saturation", 1);
-
             _levelUI.SetActive(true);
             _lockedUI.SetActive(false);
 
@@ -69,16 +66,13 @@ public class MyCookieButtonUI : MonoBehaviour
         // 보유하고 있지 않다면
         else
         {
-            _portraitImage.sprite = _data.IdleSprite;
+            _portraitImage.sprite = _data.IdleBlackAndWhiteSprite;
             _typeImage.sprite = _data.TypeSprite;
             _levelText.text = "";
-
 
             _evolutionGauge.value = (float)_cookie.CookieStat.EvolutionGauge / _cookie.CookieStat.EvolutionMaxGauge;
             _evolutionGaugeText.text = _cookie.CookieStat.EvolutionGauge + "/" + _cookie.CookieStat.EvolutionMaxGauge;
             _evolutionImage.sprite = _data.EvolutionSprite;
-
-            _portraitImage.material.SetFloat("_Saturation", 0);
 
             _levelUI.SetActive(false);
             _lockedUI.SetActive(true);

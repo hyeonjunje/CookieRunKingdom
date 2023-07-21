@@ -19,10 +19,9 @@ public class CookieData : CharacterData
 
     [SerializeField] private SkeletonDataAsset _cookiePortraitSkeleton;
 
-    [SerializeField] private Material _idleBlackMaterial;
-
     [SerializeField] private Sprite _cookieHeadSprite;
     [SerializeField] private Sprite _idleSprite;
+    [SerializeField] private Sprite _idleBlackAndWhiteSprite;
     [SerializeField] private Sprite _skillSprite;
     [SerializeField] private string _skillName;
 
@@ -46,9 +45,9 @@ public class CookieData : CharacterData
     public string BubbleSpeech => _bubbleSpeech;
 
     public SkeletonDataAsset CookiePortrait => _cookiePortraitSkeleton;
-    public Material IdleBlackMaterial => _idleBlackMaterial;
     public Sprite CookieHeadSprite => _cookieHeadSprite;
     public Sprite IdleSprite => _idleSprite;
+    public Sprite IdleBlackAndWhiteSprite => _idleBlackAndWhiteSprite;
     public Sprite SKillSprite => _skillSprite;
     public string SKillName => _skillName;
     public Sprite TypeSprite => _typeSprite;
