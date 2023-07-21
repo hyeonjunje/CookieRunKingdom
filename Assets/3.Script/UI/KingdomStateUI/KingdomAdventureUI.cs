@@ -10,6 +10,7 @@ public class KingdomAdventureUI : BaseUI
     [SerializeField] private Button _myCookiesButton;
     [SerializeField] private Button _storageButton;
     [SerializeField] private Button _gachaButton;
+    [SerializeField] private Button _settingButton;
 
     [Header("Text")]
     [SerializeField] private TextMeshProUGUI _diaText;
@@ -21,6 +22,7 @@ public class KingdomAdventureUI : BaseUI
     [SerializeField] private MyCookieUI _myCookieUI;
     [SerializeField] private InventoryUI _inventoryUI;
     [SerializeField] private GachaUI _gachaUI;
+    [SerializeField] private SettingUI _settingUI;
 
     [Header("World")]
     [SerializeField] private GameObject _cookigKingdom;
@@ -41,6 +43,8 @@ public class KingdomAdventureUI : BaseUI
         _myCookiesButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_myCookieUI));
         _storageButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_inventoryUI));
         _gachaButton.onClick.AddListener(() => GameManager.UI.PushUI(_gachaUI));
+
+        _settingButton.onClick.AddListener(() => GameManager.UI.ShowPopUpUI(_settingUI));
     }
 
     public override void Show()

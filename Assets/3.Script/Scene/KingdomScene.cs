@@ -102,7 +102,7 @@ public class KingdomScene : BaseScene
             }
         }
 
-        FindObjectOfType<BTDebugUI>()._tree = _kingdomManager.allCookies[0].CookieCitizeon;
+        // FindObjectOfType<BTDebugUI>()._tree = _kingdomManager.allCookies[0].CookieCitizeon;
     }
 
     // 건물들 제작
