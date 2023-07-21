@@ -16,6 +16,8 @@ public class TitleScene : BaseScene
 
     protected override void Init()
     {
+        GameManager.Instance.Init();
+        GameManager.Sound.PlaySe(EBGM.start);
         TitleLogic().Forget();
     }
 
@@ -39,6 +41,8 @@ public class TitleScene : BaseScene
         await GameManager.Instance.LoadData();
         _communicationUI.SetActive(false);
 
+
+        GameManager.Sound.PlayBgm(EBGM.mainTitle);
 
         // 로그인 UI 보여주자
         GameManager.UI.PushUI(_titleSceneUI);

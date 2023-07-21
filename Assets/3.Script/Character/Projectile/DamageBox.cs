@@ -30,8 +30,6 @@ public class DamageBox : MonoBehaviour
     {
         if(collision.gameObject.layer == _targetLayer)
         {
-            Debug.Log("이거 가능??");
-
             CharacterBattleController target = collision.GetComponent<CharacterBattleController>();
 
             if(target != null)

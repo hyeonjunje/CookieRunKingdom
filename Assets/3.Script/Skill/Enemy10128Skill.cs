@@ -16,6 +16,7 @@ public class Enemy10128Skill : BaseMeleeSkill
     public override void Init(BaseController controller)
     {
         base.Init(controller);
+        GameManager.Sound.PlayBgm(EBGM.bossBattle);
     }
 
     public override bool IsReadyToUseSkill()

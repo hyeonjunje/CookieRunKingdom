@@ -36,6 +36,8 @@ public class GachaResultUI : BaseUI
     {
         base.Show();
 
+        GameManager.Sound.StopBgm();
+
         _manager.IsMoveCamera = false;
 
         if (_currentGachaCount != _maxGachaCount)

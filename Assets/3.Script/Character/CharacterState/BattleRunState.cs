@@ -30,8 +30,6 @@ public class BattleRunState : BaseBattleState
         {
             if(!_isPos)
             {
-                Debug.Log("여기가 계속 실행되는거야?");
-
                 if (Vector2.Distance(_controller.CharacterBattleController.OffsetPosition.position, _controller.transform.position) < 0.1f)
                 {
                     _controller.transform.position = _controller.CharacterBattleController.OffsetPosition.position;

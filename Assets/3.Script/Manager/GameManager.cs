@@ -10,17 +10,26 @@ public class GameManager : Singleton<GameManager>
     private FileManager _file = new FileManager();
     private SceneManagerEx _scene = new SceneManagerEx();
     private UIManager _ui = new UIManager();
+    private SoundManager _sound = new SoundManager();
     private GameManagerEx _game = new GameManagerEx();
 
     public static SQLManager SQL => Instance._sql;
     public static FileManager File => Instance._file;
     public static SceneManagerEx Scene => Instance._scene;
     public static UIManager UI => Instance._ui;
+    public static SoundManager Sound => Instance._sound;
     public static GameManagerEx Game => Instance._game;
 
     private bool _isLoad = false;
 
     public bool _isDone = false;
+
+    public void Init()
+    {
+        if(!_isLoad)
+            _sound.Init();
+    }
+
 
     public async UniTask LoadData()
     {

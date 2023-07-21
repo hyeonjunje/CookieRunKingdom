@@ -255,12 +255,6 @@ public class CookieCitizen : BehaviorTree
                 return;
 
             _localMemory.SetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie, cookieList[0]);
-
-            if(gameObject.name == "Cookie0001(Clone)")
-            {
-                Debug.Log(_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) + " 가 근처에 있습니다.");
-            }
-
         });
 
 

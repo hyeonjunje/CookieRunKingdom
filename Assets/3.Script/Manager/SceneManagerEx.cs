@@ -35,6 +35,8 @@ public class SceneManagerEx
 
     public void LoadScene(ESceneName sceneName)
     {
+        GameManager.Sound.StopBgm();
+
         _loadingUI.StartLoading();
 
         onMoveOtherScene?.Invoke();

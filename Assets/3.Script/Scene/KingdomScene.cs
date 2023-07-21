@@ -37,6 +37,7 @@ public class KingdomScene : BaseScene
 
         // 로딩창 풀어준다.
         GameManager.Scene.EndLoading();
+        GameManager.Sound.PlayBgm(EBGM.lobby);
 
         _camera = Camera.main;
         _camera.transform.position = new Vector3(4.6f, 9f, -10f);

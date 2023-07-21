@@ -30,6 +30,7 @@ public class BattleScene : BaseScene
 
         // 로딩 UI 풀어주자!
         GameManager.Scene.EndLoading();
+        GameManager.Sound.PlayBgm(EBGM.battle);
     }
 
     private void CreateCookie()

@@ -45,6 +45,8 @@ public class CookieSelectUI : BaseUI
 
     public override void Hide()
     {
+        GameManager.Sound.PlayBgm(EBGM.lobby);
+
         _manager.IsMoveCamera = true;
         for (int i = 0; i < _cookiePositions.Length; i++)
             _cookiePositions[i].enabled = false;
@@ -54,6 +56,9 @@ public class CookieSelectUI : BaseUI
     public override void Show()
     {
         base.Show();
+
+        GameManager.Sound.PlayBgm(EBGM.readyBattle);
+
         SelectedTempCookies = new List<CookieController>();
         _manager.IsMoveCamera = false;
 

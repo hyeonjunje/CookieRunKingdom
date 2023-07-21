@@ -57,6 +57,7 @@ public class GachaUI : BaseUI
         base.Hide();
 
         _kingdomManager.IsMoveCamera = true;
+        GameManager.Sound.PlayBgm(EBGM.lobby);
     }
 
     public override void Init()
@@ -82,12 +83,14 @@ public class GachaUI : BaseUI
     {
         base.Show();
 
+
         _kingdomManager.IsMoveCamera = false;
 
         InitSetting();
         PickUpGacha();
 
         GameManager.Game.UpdateGoods();
+        GameManager.Sound.PlayBgm(EBGM.gacha);
     }
 
     private void InitSetting()
