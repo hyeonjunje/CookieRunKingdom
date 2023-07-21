@@ -52,7 +52,7 @@ public class CraftCookieSelectUI : BaseUI
         {
             if(cookies[i].CookieStat.IsHave)
             {
-                if (cookies[i].CookieCitizeon.IsWorking)
+                if(cookies[i].CookieCitizeon.CookieState == ECookieCitizenState.working)
                 {
                     _buttonList[i].gameObject.SetActive(false);
                 }

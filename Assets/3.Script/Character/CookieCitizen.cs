@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ECookieCitizenState
+{
+    idle, working, greeting
+}
+
 [RequireComponent(typeof(PathFindingAgent))]
 public class CookieCitizen : BehaviorTree
 {
@@ -22,6 +27,9 @@ public class CookieCitizen : BehaviorTree
     [SerializeField] private string _greetingAnimation = "greeting";
     [SerializeField] private string _greetingBackAnimation = "greeting_back";
 
+    [SerializeField] private string _talkAnimation = "talk";
+    [SerializeField] private string _talkBackAnimation = "talk_back";
+
     private CookieController _controller;
     private PathFindingAgent _agent;
     private KingdomManager _kingdomManager;
@@ -32,7 +40,9 @@ public class CookieCitizen : BehaviorTree
     private bool _isKingdomScene = false;
     private bool _isReadyToBT; // 행동할 준비가 됐다는 변수 이게 true면 활성화될 시 BT시작
 
-    public bool IsWorking { get; private set; }
+
+    public ECookieCitizenState CookieState { get; private set; }
+
 
     public void Init(CookieController controller)
     {
@@ -48,6 +58,12 @@ public class CookieCitizen : BehaviorTree
 
         // BT 설정
         SetBT();
+    }
+
+    private void Update()
+    {
+        if (gameObject.name == "Cookie0001(Clone)")
+            Debug.Log(_localMemory.GetGeneric<string>(BlackBoardKey.GreetingCookies));
     }
 
     private void OnEnable()
@@ -72,8 +88,10 @@ public class CookieCitizen : BehaviorTree
             return;
 
         // 일하고 있는 쿠키라면 AI안함
-        if (IsWorking)
+        if (CookieState == ECookieCitizenState.working)
             return;
+
+        CookieState = ECookieCitizenState.idle;
 
         StopKingdomAI();
         _coBT = StartCoroutine(CoBT());
@@ -101,7 +119,7 @@ public class CookieCitizen : BehaviorTree
     // 출근하기
     public void GoToWork(Transform parent)
     {
-        IsWorking = true;
+        CookieState = ECookieCitizenState.working;
 
         // 하고 있던 AI동장 중지
         _agent.StopPathFinding();
@@ -132,7 +150,7 @@ public class CookieCitizen : BehaviorTree
     // 퇴근하기
     public void LeaveWork()
     {
-        IsWorking = false;
+        CookieState = ECookieCitizenState.idle;
 
         // 출석부에서 빼기
         _kingdomManager.workingCookies.Remove(_controller);
@@ -209,7 +227,7 @@ public class CookieCitizen : BehaviorTree
     private void SetBT()
     {
         _localMemory = BlackboardManager.Instance.GetIndividualBlackboard<BlackBoardKey>(this);
-        _localMemory.SetGeneric<List<int>>(BlackBoardKey.GreetingCookies, new List<int>());
+        _localMemory.SetGeneric<string>(BlackBoardKey.GreetingCookies, "");
         _localMemory.SetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie, null);
 
         BTNodeBase BTRoot = RootNode.Add<BTNodeSelector>("BT START");
@@ -250,10 +268,12 @@ public class CookieCitizen : BehaviorTree
 
         walkRoot.AddDecorator<BTDecoratorBase>("움직임 시도 체크", () =>
         {
-            if (_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) == null)
+            CookieController otherCookie = _localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie);
+            if (otherCookie == null)
                 return true;
-            else
-                return false;
+            if (CheckGreeting(otherCookie))
+                return true;
+            return false;
         });
 
         BTNodeBase cookieWalk = walkRoot.Add<BTNodeAction>("걷자!",
@@ -301,8 +321,11 @@ public class CookieCitizen : BehaviorTree
 
         greetingRoot.AddDecorator<BTDecoratorBase>("인사 시도 체크", () =>
         {
-            if (_localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie) != null)
+            CookieController otherCookie = _localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie);
+            if (otherCookie != null && otherCookie.CookieCitizeon.CookieState == ECookieCitizenState.idle && !CheckGreeting(otherCookie))
+            {
                 return true;
+            }
             return false;
         });
 
@@ -318,6 +341,26 @@ public class CookieCitizen : BehaviorTree
             {
                 return ENodeStatus.Succeeded;
             });
+        // BTNodeBase cookieCommunication = greetingRoot.Add<BTNodeAction>("얘기한다.",)
+
+
+        BTNodeBase cookieIdle = BTRoot.Add<BTNodeAction>("가만히 있는다.", () =>
+            {
+                _agent.StopPathFinding();
+                _controller.CharacterAnimator.PlayAnimation("idle", false);
+                return ENodeStatus.Succeeded;
+            },
+            () =>
+            {
+                CookieController otherCookie = _localMemory.GetGeneric<CookieController>(BlackBoardKey.GreetingTargetCookie);
+                if (otherCookie != null && !CheckGreeting(otherCookie))
+                    return ENodeStatus.Succeeded;
+
+                if (!_controller.CharacterAnimator.IsPlayingAnimation())
+                    return ENodeStatus.Succeeded;
+                return ENodeStatus.InProgress;
+            });
+            
     }
 
 
@@ -338,6 +381,9 @@ public class CookieCitizen : BehaviorTree
 
     public IEnumerator CoGreeting(CookieController otherCookie)
     {
+        otherCookie.CookieCitizeon.CookieState = ECookieCitizenState.greeting;
+        CookieState = ECookieCitizenState.greeting;
+
         Greeting(otherCookie);
         otherCookie.CookieCitizeon.Greeting(_controller);
 
@@ -353,6 +399,12 @@ public class CookieCitizen : BehaviorTree
         StopKingdomAI();
         _controller.CharacterAnimator.PlayAnimation("idle_back", false);
 
+        // 인사를 하면 인사를 했던 쿠키 목록에 넣어준다.
+        string greetedCookies = _localMemory.GetGeneric<string>(BlackBoardKey.GreetingCookies);
+        int cookieIndex = ((CookieData)otherCookie.Data).CookieIndex;
+        greetedCookies += cookieIndex.ToString();
+        _localMemory.SetGeneric<string>(BlackBoardKey.GreetingCookies, greetedCookies);
+
         // 내가 위에 있으면 
         if (otherCookie.transform.position.y < transform.position.y)
             _controller.CharacterAnimator.PlayAnimation(_greetingAnimation, false);
@@ -364,6 +416,17 @@ public class CookieCitizen : BehaviorTree
             _controller.CharacterAnimator.FlipX(true);
         else
             _controller.CharacterAnimator.FlipX(false);
+    }
+
+    // otherCookie와 인사를 했는지 체크
+    private bool CheckGreeting(CookieController otherCookie)
+    {
+        string greetedCookies = _localMemory.GetGeneric<string>(BlackBoardKey.GreetingCookies);
+        int cookieIndex = ((CookieData)otherCookie.Data).CookieIndex;
+
+        if (greetedCookies.Contains(cookieIndex.ToString()))
+            return true;
+        return false;
     }
 
     private IEnumerator CoBT()

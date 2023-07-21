@@ -90,7 +90,7 @@ public class KingdomManageState : KingdomBaseState
             CookieController currentCookie = rayHit.transform.GetComponent<CookieController>();
             if (currentCookie != null)
             {
-                if (!currentCookie.CookieCitizeon.IsWorking)
+                if(currentCookie.CookieCitizeon.CookieState != ECookieCitizenState.working)
                 {
                     _currentCookie = currentCookie;
                 }
@@ -136,7 +136,7 @@ public class KingdomManageState : KingdomBaseState
             _currentCookie = rayHit.transform.GetComponent<CookieController>();
             if(_currentCookie != null)
             {
-                if(!_currentCookie.CookieCitizeon.IsWorking)
+                if(_currentCookie.CookieCitizeon.CookieState != ECookieCitizenState.working)
                 {
                     _currentCookie.CookieCitizeon.Hello();
                 }
