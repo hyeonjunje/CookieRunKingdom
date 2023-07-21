@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b7e3e29578dd504eb1bf7706fa57e37, type: 3}
   m_Name: WorldCameraController
   m_EditorClassIdentifier: 
-  _cameraMoveSpeed: 100
+  _cameraMoveSpeed: 60
   _cameraZoomSpeed: 0.01
   _cameraZoomMin: 6
   _cameraZoomMax: 12.3

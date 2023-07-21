@@ -69,7 +69,7 @@ public abstract class KingdomBaseState
 
         Vector3 dir = (currentPos - prevPos).normalized;
 
-        Vector3 targetPos = (_camera.transform.position - dir).normalized * _manager.CurrentCameraControllerData.CameraMoveSpeed * Time.deltaTime;
+        Vector3 targetPos = _camera.transform.position - dir * _manager.CurrentCameraControllerData.CameraMoveSpeed * Time.deltaTime;
         float targetPosX = Mathf.Clamp(targetPos.x,
             _manager.CurrentCameraControllerData.CameraBorder.x, _manager.CurrentCameraControllerData.CameraBorder.y);
         float targetPosY = Mathf.Clamp(targetPos.y,
