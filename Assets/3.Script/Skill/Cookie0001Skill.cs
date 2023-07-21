@@ -60,7 +60,7 @@ public class Cookie0001Skill : BaseMeleeSkill
                 if (targets[i].IsDead)
                     continue;
                 targets[i].SetCC(ECCType.KnockBack, Utils.Dir.normalized * 3);
-                targets[i].ChangeCurrentHp(-AttackPower, _controller.CharacterStat);
+                targets[i].ChangeCurrentHp(-AttackPower * 3, _controller.CharacterStat);
             }
         }
         else

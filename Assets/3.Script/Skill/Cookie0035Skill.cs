@@ -86,8 +86,8 @@ public class Cookie0035Skill : BaseMeleeSkill
                 transform.position = _prevPosition;
 
                 _betSkeletonAnimation.gameObject.SetActive(false);
-                _target.ChangeCurrentHp(-AttackPower, _controller.CharacterStat);
-                _controller.CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
+                _target.ChangeCurrentHp(-AttackPower * 7, _controller.CharacterStat);
+                _controller.CharacterBattleController.ChangeCurrentHp(AttackPower * 2, _controller.CharacterStat);
 
                 PlayAnimation(animationName[_skillIndex++], false);
             }

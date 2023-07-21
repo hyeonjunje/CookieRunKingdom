@@ -12,6 +12,8 @@ public class CookieData : CharacterData
 {
     [SerializeField] private int _cookieIndex;
 
+    [SerializeField] private float _skillCoolTime;
+
     [SerializeField] private string _appearSpeech;
     [SerializeField] private string _bubbleSpeech;
 
@@ -37,6 +39,8 @@ public class CookieData : CharacterData
     [SerializeField] private ItemData _expCandyItemData;
 
     public int CookieIndex => _cookieIndex;
+
+    public float SkillCoolTime => _skillCoolTime;
 
     public string AppearSpeech => _appearSpeech;
     public string BubbleSpeech => _bubbleSpeech;

@@ -15,14 +15,14 @@ MonoBehaviour:
   _characterName: "\uC6A9\uAC10\uD55C \uCFE0\uD0A4"
   _animationData: {fileID: 11400000, guid: 1c1062a39bbeab445811170abea34473, type: 2}
   _skeletonDataAsset: {fileID: 11400000, guid: f47a014c9f4f4af42b9237caec4a4abf, type: 2}
-  _spinePrefab: {fileID: 8044800775775389930, guid: b266f5f6d62b2cf438d02112920aef5d, type: 3}
   moveSpeed: 5
   attackRange: 1
   _hpStat: 10000
-  _attackStat: 100
-  _defenseStat: 10
+  _attackStat: 200
+  _defenseStat: 100
   _criticalStat: 1
   _cookieIndex: 0
+  _skillCoolTime: 8
   _appearSpeech: 
   _bubbleSpeech: 
   _cookiePortraitSkeleton: {fileID: 0}

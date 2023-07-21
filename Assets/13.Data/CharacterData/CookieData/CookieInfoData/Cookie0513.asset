@@ -17,11 +17,12 @@ MonoBehaviour:
   _skeletonDataAsset: {fileID: 11400000, guid: 6d19b237ba98ff7478f3e18c7526880a, type: 2}
   moveSpeed: 5
   attackRange: 3
-  _hpStat: 10000
-  _attackStat: 100
-  _defenseStat: 20
-  _criticalStat: 1
+  _hpStat: 7000
+  _attackStat: 1000
+  _defenseStat: 50
+  _criticalStat: 5
   _cookieIndex: 10
+  _skillCoolTime: 15
   _appearSpeech: "\uCEE4\uD53C\uB9C8\uBC95\uC774\uB77C\uACE0 \uB2E4\uB97C \uAC83
     \uC5C6\uC2B5\uB2C8\uB2E4?"
   _bubbleSpeech: "\uBC14\uC05C \uC800\uB97C \uC774\uB9AC \uBD88\uB7EC\uC8FC\uC2DC\uB2C8

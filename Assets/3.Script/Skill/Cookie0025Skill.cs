@@ -17,7 +17,7 @@ public class Cookie0025Skill : BaseRangeSkill
     public override void SetLayer(LayerMask layer)
     {
         base.SetLayer(layer);
-        _skillProjectile.Init(AttackPower, layer, transform, new Vector3(3f, 1.5f, 0), _controller.CharacterStat);
+        _skillProjectile.Init(AttackPower / 2, layer, transform, new Vector3(3f, 1.5f, 0), _controller.CharacterStat);
     }
 
     public override void NormalAttackEvent()

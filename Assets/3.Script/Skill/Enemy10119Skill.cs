@@ -52,7 +52,7 @@ public class Enemy10119Skill : BaseMeleeSkill
             if(!enemy.IsDead)
             {
                 enemy.SetCC(ECCType.airborne, Vector3.up * 3f);
-                enemy.ChangeCurrentHp(-AttackPower, _controller.CharacterStat);
+                enemy.ChangeCurrentHp(-AttackPower * 2, _controller.CharacterStat);
             }
         }
     }

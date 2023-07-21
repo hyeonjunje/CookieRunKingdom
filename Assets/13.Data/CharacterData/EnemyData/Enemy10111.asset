@@ -17,9 +17,9 @@ MonoBehaviour:
   _skeletonDataAsset: {fileID: 0}
   moveSpeed: 5
   attackRange: 1
-  _hpStat: 1000
+  _hpStat: 5000
   _attackStat: 100
-  _defenseStat: 20
+  _defenseStat: 10
   _criticalStat: 1
   _isBig: 0
   _enemyPortrait: {fileID: -3701542830808707455, guid: 9cfe6a08df348414383b91c5e791cc12, type: 3}

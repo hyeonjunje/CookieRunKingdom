@@ -15,12 +15,11 @@ MonoBehaviour:
   _characterName: "\uC824\uB9AC \uC655\uAFC0\uBC8C"
   _animationData: {fileID: 11400000, guid: fcea7f77607b63341ab2a7907961f289, type: 2}
   _skeletonDataAsset: {fileID: 0}
-  _spinePrefab: {fileID: 0}
   moveSpeed: 5
   attackRange: 1
-  _hpStat: 1000
-  _attackStat: 100
-  _defenseStat: 20
+  _hpStat: 5000
+  _attackStat: 300
+  _defenseStat: 10
   _criticalStat: 1
   _isBig: 0
   _enemyPortrait: {fileID: 4154368656713327175, guid: 9cfe6a08df348414383b91c5e791cc12, type: 3}

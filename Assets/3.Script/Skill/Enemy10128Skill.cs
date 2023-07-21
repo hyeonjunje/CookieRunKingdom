@@ -81,7 +81,7 @@ public class Enemy10128Skill : BaseMeleeSkill
 
                 // È¸º¹
                 if (_skillPattern == 0)
-                    _controller.CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
+                    _controller.CharacterBattleController.ChangeCurrentHp(_controller.CharacterStat.hpStat.ResultStat / 5 * AttackPower, _controller.CharacterStat);
             }
         }
         else if(_skillIndex == 1)

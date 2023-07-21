@@ -18,7 +18,8 @@ public class SkillButton : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _coolTimeText; 
     [SerializeField] private Slider _hpBar;
 
-    [SerializeField] private float coolTime = 5f;
+    private float _coolTime = 5f;
+
     private float currentTime;
     public float CurrentTime
     {
@@ -31,7 +32,7 @@ public class SkillButton : MonoBehaviour
             if (currentTime != 0)
             {
                 _coolTimeText.text = ((int)currentTime).ToString();
-                _coolTimeImage.fillAmount = currentTime / coolTime;
+                _coolTimeImage.fillAmount = currentTime / _coolTime;
             }
             else
             {
@@ -45,6 +46,8 @@ public class SkillButton : MonoBehaviour
     private Sequence buttonClickSeq;
     private Sequence skillUseSeq;
 
+    private CookieData _data;
+
     private void OnDestroy()
     {
         buttonClickSeq.Kill();
@@ -57,8 +60,12 @@ public class SkillButton : MonoBehaviour
         _cookie.CharacterBattleController.OnDeadEvent += DisabledButton;
         _cookie.CharacterBattleController.OnHitEvent += UpdateHpBar;
 
-        _idleSprite = ((CookieData)cookie.Data).IdleSprite;
-        _skillSprite = ((CookieData)cookie.Data).SKillSprite;
+        _data = (CookieData)cookie.Data;
+
+        _coolTime = _data.SkillCoolTime;
+
+        _idleSprite = _data.IdleSprite;
+        _skillSprite = _data.SKillSprite;
 
         buttonClickSeq = DOTween.Sequence();
         buttonClickSeq.Pause().SetAutoKill(false).Append(transform.DOScale(1.07f, 0.08f))
@@ -78,12 +85,12 @@ public class SkillButton : MonoBehaviour
                 _coolTimeImage.gameObject.SetActive(true);
 
                 _buttonImage.sprite = _idleSprite;
-                CurrentTime = coolTime;
+                CurrentTime = _coolTime;
             });
 
 
         _buttonImage.sprite = _idleSprite;
-        CurrentTime = coolTime / 10f;
+        CurrentTime = _coolTime / 10f;
     }
 
     public void OnClickButton()

@@ -88,7 +88,7 @@ public class Cookie0511Skill : BaseMeleeSkill
     {
         _isRange = true;
 
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(7f);
 
         PlayAnimation(animationName[2], false);
         while(true)

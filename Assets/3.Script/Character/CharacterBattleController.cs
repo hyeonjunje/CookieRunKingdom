@@ -190,20 +190,23 @@ public class CharacterBattleController : MonoBehaviour
 
 
         TextMeshProUGUI damageText = _damageTextController.GetDamageText(value, random <= critical, value > 0);
-        if (random <= critical || value > 0)
-            damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2.2f);
-        else
-            damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2);
+        if(damageText != null)
+        {
+            if (random <= critical || value > 0)
+                damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2.2f);
+            else
+                damageText.transform.position = _camera.WorldToScreenPoint(transform.position + Vector3.up * 2);
 
-        damageText.transform.SetAsFirstSibling();
-        Sequence seq = DOTween.Sequence();
-        seq.Append(damageText.transform.DOMoveY(damageText.transform.position.y + 10f, 0.5f))
-            .SetEase(Ease.OutQuart)
-            .Join(damageText.DOFade(0.5f, 0.5f))
-            .OnComplete(() =>
-            {
-                damageText.gameObject.SetActive(false);
-            });
+            damageText.transform.SetAsFirstSibling();
+            Sequence seq = DOTween.Sequence();
+            seq.Append(damageText.transform.DOMoveY(damageText.transform.position.y + 10f, 0.5f))
+                .SetEase(Ease.OutQuart)
+                .Join(damageText.DOFade(0.5f, 0.5f))
+                .OnComplete(() =>
+                {
+                    damageText.gameObject.SetActive(false);
+                });
+        }
 
         if (value > 0)
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Çãºê¸À ÄíÅ°
 public class Cookie0063Skill : BaseHealSkill
 {
     [SerializeField] private DetectRange _skillDetectRange;
@@ -45,7 +46,7 @@ public class Cookie0063Skill : BaseHealSkill
 
             for(int i = 0; i < cookies.Count; i++)
                 if (!cookies[i].CharacterBattleController.IsDead)
-                    cookies[i].CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
+                    cookies[i].CharacterBattleController.ChangeCurrentHp(_controller.CharacterStat.hpStat.ResultStat / 10 + AttackPower, _controller.CharacterStat);
         }
     }
 
@@ -95,7 +96,7 @@ public class Cookie0063Skill : BaseHealSkill
         {
             yield return new WaitForSeconds(1f);
 
-            _skillDetectRange.enemies.ForEach(cookie => cookie.ChangeCurrentHp(AttackPower, _controller.CharacterStat));
+            _skillDetectRange.enemies.ForEach(cookie => cookie.ChangeCurrentHp((_controller.CharacterStat.hpStat.ResultStat / 10 + AttackPower) / 5, _controller.CharacterStat));
         }
 
         // »õ½Ï Áü

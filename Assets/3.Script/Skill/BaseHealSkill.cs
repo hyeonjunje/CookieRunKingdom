@@ -14,7 +14,7 @@ public class BaseHealSkill : BaseSkill
             if(!selectedCookie.IsDead && selectedCookie.CurrentHp >= cookies[i].CharacterBattleController.CurrentHp)
                 selectedCookie = cookies[i].CharacterBattleController;
 
-        selectedCookie.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
+        selectedCookie.ChangeCurrentHp(_controller.CharacterStat.hpStat.ResultStat / 10 + AttackPower, _controller.CharacterStat);
     }
 
     public override void OnSkillEvent(int index)

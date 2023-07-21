@@ -26,7 +26,7 @@ public class Cookie0514Skill : BaseHealSkill
             // Hp 제일 작은 2명 회복 및 보호막
             for(int i = 0; i < 2; i++)
                 if(i < cookies.Length)
-                    cookies[i].CharacterBattleController.ChangeCurrentHp(AttackPower, _controller.CharacterStat);
+                    cookies[i].CharacterBattleController.ChangeCurrentHp(_controller.CharacterStat.hpStat.ResultStat / 10 + AttackPower, _controller.CharacterStat);
         }
     }
 

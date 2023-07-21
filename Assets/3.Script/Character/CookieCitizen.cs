@@ -60,14 +60,11 @@ public class CookieCitizen : BehaviorTree
         SetBT();
     }
 
-    private void Update()
-    {
-        if (gameObject.name == "Cookie0001(Clone)")
-            Debug.Log(_localMemory.GetGeneric<string>(BlackBoardKey.GreetingCookies));
-    }
-
     private void OnEnable()
     {
+        if (!_isKingdomScene)
+            return;
+
         if (_isReadyToBT)
         {
             _isReadyToBT = false;
@@ -77,6 +74,9 @@ public class CookieCitizen : BehaviorTree
 
     private void OnDisable()
     {
+        if (!_isKingdomScene)
+            return;
+
         StopKingdomAI();
     }
 

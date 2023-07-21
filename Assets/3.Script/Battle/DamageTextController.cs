@@ -38,6 +38,9 @@ public class DamageTextController : MonoBehaviour
             return null;
         }
 
+        if (value == 0)
+            return null;
+
         TextMeshProUGUI text = _textQueue.Dequeue();
         text.alpha = 1;
         string result = "";
