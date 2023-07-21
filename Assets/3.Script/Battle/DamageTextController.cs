@@ -47,15 +47,6 @@ public class DamageTextController : MonoBehaviour
         value = Mathf.Abs(value);
         string valueToString = value.ToString();
 
-        if(isCritical)
-        {
-            result += string.Format("<sprite=20>");
-        }
-        else if(isHeal)
-        {
-            result += string.Format("<sprite=21>");
-        }
-
         for(int i = 0; i < valueToString.Length; i++)
         {
             if(isHeal)

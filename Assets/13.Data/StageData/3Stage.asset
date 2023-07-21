@@ -137,11 +137,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a50ad21cd71ee4748ac12b213a6a3384, type: 3}
   _victoryRewardItems:
   - ingredientItem: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
-    count: 6
+    count: 180
   - ingredientItem: {fileID: 11400000, guid: 9b26c7b51c7eeac43852f427dfce50b0, type: 2}
-    count: 30
+    count: 9000
   - ingredientItem: {fileID: 11400000, guid: 1eeed9897d9dd37438ec302481873902, type: 2}
-    count: 10
+    count: 9000
   _defeatRewardItems:
   - ingredientItem: {fileID: 11400000, guid: 9b26c7b51c7eeac43852f427dfce50b0, type: 2}
     count: 15

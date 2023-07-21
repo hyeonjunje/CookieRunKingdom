@@ -121,18 +121,33 @@ public class GachaUI : BaseUI
         _gachaButton.onClick.AddListener(() =>
         {
             // 여기에 다이아 추가 로직
-
-            GameManager.UI.PushUI(_gachaResultUI);
-            _gachaResultUI.Gacha1(_pickUpGachaPercentage);
+            if(TryGacha(300))
+                _gachaResultUI.Gacha1(_pickUpGachaPercentage);
         });
 
         _gacha10Button.onClick.RemoveAllListeners();
         _gacha10Button.onClick.AddListener(() => 
         {
-            GameManager.UI.PushUI(_gachaResultUI);
-            _gachaResultUI.Gacha10(_pickUpGachaPercentage);
+            if(TryGacha(3000))
+                _gachaResultUI.Gacha10(_pickUpGachaPercentage);
         });
     }
+
+    private bool TryGacha(int diaCount)
+    {
+        if(GameManager.Game.Dia >= diaCount)
+        {
+            GameManager.Game.Dia -= diaCount;
+            GameManager.UI.PushUI(_gachaResultUI);
+            return true;
+        }
+        else
+        {
+            GuideDisplayer.Instance.ShowGuide("다이아가 부족합니다!");
+            return false;
+        }
+    }
+
 
     private void EpicGacha()
     {
@@ -155,15 +170,15 @@ public class GachaUI : BaseUI
         _gachaButton.onClick.RemoveAllListeners();
         _gachaButton.onClick.AddListener(() =>
         {
-            GameManager.UI.PushUI(_gachaResultUI);
-            _gachaResultUI.Gacha1(_epicGachaPercentage);
+            if(TryGacha(300))
+                _gachaResultUI.Gacha1(_epicGachaPercentage);
         });
 
         _gacha10Button.onClick.RemoveAllListeners();
         _gacha10Button.onClick.AddListener(() =>
         {
-            GameManager.UI.PushUI(_gachaResultUI);
-            _gachaResultUI.Gacha10(_epicGachaPercentage);
+            if(TryGacha(3000))
+                _gachaResultUI.Gacha10(_epicGachaPercentage);
         });
     }
 }
