@@ -52,6 +52,11 @@ public class KingdomCraftUI: BaseUI
                 _buildingIndex = 0;
 
             _currentBuilding.BuildingWorker.Highlight(false);
+
+            BuildingController nextBuilding = _kingdomManager.buildingsInKingdom[_buildingIndex];
+            if (!nextBuilding.Data.IsCraftable)
+                _buildingIndex = 0;
+
             _currentBuilding = _kingdomManager.buildingsInKingdom[_buildingIndex];
             _currentBuilding.BuildingWorker.Highlight(true);
 
