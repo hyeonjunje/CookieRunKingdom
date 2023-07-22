@@ -31,7 +31,7 @@ public class DataBaseManager : Singleton<DataBaseManager>
         if (itemInfoString == "")
         {
             for (int i = 0; i < AllItemData.Length; i++)
-                itemDataBase[AllItemData[i]] = 10;
+                itemDataBase[AllItemData[i]] = 0;
         }
         else
         {
