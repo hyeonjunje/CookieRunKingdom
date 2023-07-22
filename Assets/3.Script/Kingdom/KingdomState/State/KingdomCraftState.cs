@@ -28,7 +28,7 @@ public class KingdomCraftState : KingdomBaseState
             .Join(_camera.DOOrthoSize(_manager.CurrentCameraControllerData.CameraBuildingZoom, 0.5f))
             .OnComplete(() =>
             {
-                _building.BuildingWorker.Highlighgt(true);
+                _building.BuildingWorker.Highlight(true);
                 _manager.KingdomBackGroundUI.SetActive(true);
                 GameManager.UI.PushUI(_manager.KingdomCraftUI);
             });
@@ -58,7 +58,7 @@ public class KingdomCraftState : KingdomBaseState
     {
         _building.gameObject.SetActive(false);
 
-        _building.BuildingWorker.Highlighgt(false);
+        _building.BuildingWorker.Highlight(false);
 
         _building = null;
         _manager.KingdomBackGroundUI.SetActive(false);

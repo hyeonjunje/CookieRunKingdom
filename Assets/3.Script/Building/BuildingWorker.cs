@@ -141,23 +141,23 @@ public class BuildingWorker : MonoBehaviour
         }
     }
 
-    public void Highlighgt(bool flag)
+    public void Highlight(bool flag)
     {
         // 아무나 쿠키 위치 시키고
         // 쿠키 등장 애니메이션 넣어주기
-
         if (Worker == null)
         {
-            while(Worker == null)
+            List<CookieController> cookies = _kingdomManager.allCookies;
+            foreach(CookieController cookie in cookies)
             {
-                CookieController cookie = _kingdomManager.allCookies[Random.Range(0, _kingdomManager.allCookies.Count)];
                 if (!cookie.CookieStat.IsHave)
                     continue;
                 if (!_kingdomManager.workingCookies.Contains(cookie))
                     Worker = cookie;
             }
 
-            Worker.CookieCitizeon.GoToWork(_workPlace);
+            if (Worker != null)
+                Worker.CookieCitizeon.GoToWork(_workPlace);
         }
 
         foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
@@ -165,7 +165,9 @@ public class BuildingWorker : MonoBehaviour
             renderer.sortingLayerID = flag ?
             SortingLayer.NameToID("GridUpper") : SortingLayer.NameToID("Default");
         }
-        Worker.CharacterAnimator.SettingOrderLayer(flag);
+
+        if (Worker != null)
+            Worker.CharacterAnimator.SettingOrderLayer(flag);
     }
 
     public void ChangeWorker(CookieController newWorker)

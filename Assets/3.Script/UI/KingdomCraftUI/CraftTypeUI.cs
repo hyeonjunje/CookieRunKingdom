@@ -13,7 +13,7 @@ public class CraftTypeUI : MonoBehaviour
 
     [SerializeField] protected Button craftButton;
 
-    public virtual void Init(CraftData craftData, System.Action<CraftData> action = null)
+    public virtual void Init(BuildingController building, CraftData craftData, System.Action<CraftData> action = null)
     {
         craftItemImage.sprite = craftData.CraftImage;
         craftItemCount.text = DataBaseManager.Instance.MyDataBase.itemDataBase[craftData.CraftResult.ingredientItem].ToString();
@@ -23,6 +23,16 @@ public class CraftTypeUI : MonoBehaviour
         craftTime.text = Utils.GetTimeText(craftData.CraftTime);
 
         craftButton.onClick.RemoveAllListeners();
-        craftButton.onClick.AddListener(() => action?.Invoke(craftData));
+        craftButton.onClick.AddListener(() =>
+        {
+            if(building.BuildingWorker.Worker == null)
+            {
+                GuideDisplayer.Instance.ShowGuide("작업할 쿠키가 없습니다!");
+            }
+            else
+            {
+                action?.Invoke(craftData);
+            }
+        });
     }
 }

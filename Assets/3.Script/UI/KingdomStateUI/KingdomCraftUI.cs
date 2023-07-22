@@ -51,9 +51,9 @@ public class KingdomCraftUI: BaseUI
             else if(_buildingIndex >= _kingdomManager.buildingsInKingdom.Count)
                 _buildingIndex = 0;
 
-            _currentBuilding.BuildingWorker.Highlighgt(false);
+            _currentBuilding.BuildingWorker.Highlight(false);
             _currentBuilding = _kingdomManager.buildingsInKingdom[_buildingIndex];
-            _currentBuilding.BuildingWorker.Highlighgt(true);
+            _currentBuilding.BuildingWorker.Highlight(true);
 
             _camera.transform.position = _currentBuilding.transform.position +
                 _kingdomManager.CurrentCameraControllerData.CameraBuildingZoomOffset;
@@ -144,7 +144,7 @@ public class KingdomCraftUI: BaseUI
             else
                 craftTypeUI = Instantiate(craftTypeProductPrefab, craftTypeParent);
 
-            craftTypeUI.Init(building.Data.CraftItems[i], CraftItem);
+            craftTypeUI.Init(building, building.Data.CraftItems[i], CraftItem);
         }
 
         craftProgressBar.transform.SetParent(transform, false);
