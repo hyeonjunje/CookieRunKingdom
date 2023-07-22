@@ -190,9 +190,9 @@ TextureImporter:
       name: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_0
       rect:
         serializedVersion: 2
-        x: 759
+        x: 765
         y: 504
-        width: 115
+        width: 105
         height: 106
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -505,9 +505,9 @@ TextureImporter:
       name: sactx-2048x1024-ETC2-BattleMainSpriteAtlas-64de5fd8_15
       rect:
         serializedVersion: 2
-        x: 247
-        y: 578
-        width: 115
+        x: 250
+        y: 579
+        width: 105
         height: 106
       alignment: 0
       pivot: {x: 0.5, y: 0.5}

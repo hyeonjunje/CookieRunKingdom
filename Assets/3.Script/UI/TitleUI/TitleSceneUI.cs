@@ -91,6 +91,8 @@ public class TitleSceneUI : BaseUI
 
     private void PlayVideo()
     {
+        GameManager.Sound.StopBgm();
+
         _cinematicPlayButton.gameObject.SetActive(false);
         _touchToStartText.gameObject.SetActive(false);
         _screenButton.gameObject.SetActive(false);
@@ -102,6 +104,8 @@ public class TitleSceneUI : BaseUI
 
     private void StopVideo()
     {
+        GameManager.Sound.PlayBgm(EBGM.mainTitle);
+
         _cinematicPlayButton.gameObject.SetActive(true);
         _touchToStartText.gameObject.SetActive(true);
         _screenButton.gameObject.SetActive(true);

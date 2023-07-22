@@ -60,7 +60,8 @@ public class SoundManager
 
         _audio.loop = true;
         StopBgm();
-        _audio.PlayOneShot(_clipDictionary[bgm]);
+        _audio.clip = _clipDictionary[bgm];
+        _audio.Play();
     }
 
     public void PlaySe(EBGM bgm)
@@ -73,7 +74,8 @@ public class SoundManager
 
         _audio.loop = false;
         StopBgm();
-        _audio.PlayOneShot(_clipDictionary[bgm]);
+        _audio.clip = _clipDictionary[bgm];
+        _audio.Play();
 
     }
 
