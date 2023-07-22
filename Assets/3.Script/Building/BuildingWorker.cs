@@ -160,11 +160,7 @@ public class BuildingWorker : MonoBehaviour
                 Worker.CookieCitizeon.GoToWork(_workPlace);
         }
 
-        foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
-        {
-            renderer.sortingLayerID = flag ?
-            SortingLayer.NameToID("GridUpper") : SortingLayer.NameToID("Default");
-        }
+        _controller.BuildingAnimator.SettingOrderHigher(flag);
 
         if (Worker != null)
             Worker.CharacterAnimator.SettingOrderLayer(flag);

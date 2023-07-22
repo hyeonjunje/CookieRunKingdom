@@ -72,6 +72,7 @@ public class KingdomCraftState : KingdomBaseState
         {
             building.BuildingWorker.isRepresentative = false;
             building.gameObject.SetActive(false);
+            building.BuildingAnimator.SettingOrderHigher(false);
         });
     }
 
