@@ -17,7 +17,6 @@ public class KingdomEditUI : BaseUI
 
     [Header("Bottom")]
     [SerializeField] private Transform editInventory;
-    [SerializeField] private Button foldButton;
     [SerializeField] private GameObject editSelected;
     [SerializeField] private Image editItemImage;
     [SerializeField] private TextMeshProUGUI editItemNameText;
@@ -30,14 +29,9 @@ public class KingdomEditUI : BaseUI
     [SerializeField] private Button editItemPrefab;
     [SerializeField] private Button editItemSkeletonPrefab;
 
-    [Header("Sprite")]
-    [SerializeField] private Sprite _foldButtonOn;
-    [SerializeField] private Sprite _foldButtonOff;
-
     private Camera _camera;
     private List<Button> _ownedBuilding;  // 내가 소유하고 있는 건물
     private KingdomManager _kindomManager;
-    private bool _isBottomHide;
 
     public override void Show()
     {
@@ -47,9 +41,6 @@ public class KingdomEditUI : BaseUI
     public override void Hide()
     {
         base.Hide();
-
-        if (_isBottomHide)
-            OnClickFoldButton();
 
         OnClickEditExitButton();
     }
@@ -83,7 +74,6 @@ public class KingdomEditUI : BaseUI
         {
             AddBuilding(ownedBuilding[i]);
         }
-        foldButton.onClick.AddListener(OnClickFoldButton);
         editExitButton.onClick.AddListener(() => OnClickEditExitButton());
     }
 
@@ -119,8 +109,6 @@ public class KingdomEditUI : BaseUI
 
     private void OnClickEditBuildingButton(BuildingController currentBuildingPrefab, Button button)
     {
-        OnClickFoldButton();
-
         // 카메라가 보고 있는 중간에 해당 건물을 생성하고 editUI도 넣어준다.
         // 건물은 투명하게 생김
         currentBuildingPrefab.gameObject.SetActive(true);
@@ -140,30 +128,5 @@ public class KingdomEditUI : BaseUI
 
         // 타일은 없어지지 않음
         RemoveBuilding(button);
-    }
-
-    private void OnClickEditItemButton(HousingItemData currentHousingItemData)
-    {
-        editInventory.gameObject.SetActive(false);
-        editSelected.gameObject.SetActive(true);
-
-        editItemImage.sprite = currentHousingItemData.HousingItemImage;
-        editItemNameText.text = currentHousingItemData.HousingItemName;
-    }
-
-    private void OnClickFoldButton()
-    {
-        _isBottomHide = !_isBottomHide;
-
-        if (_isBottomHide)
-        {
-            editInventory.DOMoveY(editInventory.position.y - 126, 0.3f);
-            foldButton.image.sprite = _foldButtonOn;
-        }
-        else
-        {
-            editInventory.DOMoveY(editInventory.position.y + 126, 0.3f);
-            foldButton.image.sprite = _foldButtonOff;
-        }
     }
 }
