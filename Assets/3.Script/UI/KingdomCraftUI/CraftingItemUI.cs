@@ -58,6 +58,10 @@ public class CraftingItemUI : MonoBehaviour
 
     private void EnterState(ECraftingState state, CraftingItemData craftingItemData)
     {
+        Debug.Log(state + "  " + craftingItemData);
+        Debug.Log(craftingItemData.craftData);
+        Debug.Log(craftingItemData.craftData.CraftImage);
+
         switch (state)
         {
             case ECraftingState.empty:

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6932,6 +6932,7 @@ MonoBehaviour:
   _buttons: {fileID: 1250700158}
   _exitButton: {fileID: 121685182}
   _goKingdomButtom: {fileID: 1388525844}
+  _stageText: {fileID: 1391816836}
   _rewardParent: {fileID: 1912320196}
   _itemSlotPrefab: {fileID: 8371032138663815961, guid: d8b153f71e654be4b9ba02a688aba29c, type: 3}
 --- !u!114 &1415657779
@@ -7763,6 +7764,7 @@ MonoBehaviour:
   _buttons: {fileID: 1895203599}
   _exitButton: {fileID: 310883161}
   _goKingdomButtom: {fileID: 588675212}
+  _stageText: {fileID: 1171938439}
   _rewardParent: {fileID: 2054609891}
   _itemSlotPrefab: {fileID: 8371032138663815961, guid: d8b153f71e654be4b9ba02a688aba29c, type: 3}
 --- !u!114 &1650507577

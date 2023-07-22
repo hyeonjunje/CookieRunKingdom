@@ -15,7 +15,7 @@ MonoBehaviour:
   _isBoss: 0
   _bossSkeletonAnimation: {fileID: 0}
   _stageName: "1-2 \uB85C\uC584\uC824\uB9AC \uAF43\uBC2D"
-  _recommendedPower: 5836
+  _recommendedPower: 3000
   _jelly: 3
   _waveInfo:
   - enemies:
@@ -134,9 +134,9 @@ MonoBehaviour:
   - ingredientItem: {fileID: 11400000, guid: 822f507d10c78c44dbe3f211887f95da, type: 2}
     count: 120
   - ingredientItem: {fileID: 11400000, guid: 9b26c7b51c7eeac43852f427dfce50b0, type: 2}
-    count: 6000
+    count: 12000
   - ingredientItem: {fileID: 11400000, guid: 1eeed9897d9dd37438ec302481873902, type: 2}
-    count: 6000
+    count: 12000
   _defeatRewardItems:
   - ingredientItem: {fileID: 11400000, guid: 9b26c7b51c7eeac43852f427dfce50b0, type: 2}
     count: 15
