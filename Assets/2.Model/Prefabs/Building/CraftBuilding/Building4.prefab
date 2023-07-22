@@ -118,7 +118,7 @@ MonoBehaviour:
   _craftingItemData: []
   _craftBubble: {fileID: 2671526409411098311}
   _workPlace: {fileID: 1843336521666323954}
-  _workAnimationName: axe
+  _workAnimationName: wash
   isWorking: 0
   isRepresentative: 0
 --- !u!1 &6234519958424816589
@@ -268,7 +268,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7914179599738877842}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: -2.8, z: 0}
+  m_LocalPosition: {x: 0.97, y: -2.83, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6234519958424816585}

@@ -95,6 +95,9 @@ public class Cookie0511Skill : BaseMeleeSkill
         {
             yield return null;
 
+            if (BattleManager.instance.IsBattleOver)
+                yield break;
+
             if (!_controller.CharacterAnimator.IsPlayingAnimation())
                 break;
         }

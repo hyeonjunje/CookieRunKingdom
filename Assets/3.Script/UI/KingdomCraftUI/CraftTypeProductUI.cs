@@ -9,9 +9,9 @@ public class CraftTypeProductUI : CraftTypeUI
 
     private List<CraftInGredientUI> _ingredientUIList;
 
-    public override void Init(CraftData craftData, System.Action<CraftData> action = null)
+    public override void Init(BuildingController building, CraftData craftData, System.Action<CraftData> action = null)
     {
-        base.Init(craftData, action);
+        base.Init(building, craftData, action);
 
         _ingredientParent.DestroyAllChild();
         _ingredientUIList = new List<CraftInGredientUI>();
