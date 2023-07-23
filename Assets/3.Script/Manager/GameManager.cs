@@ -59,13 +59,19 @@ public class GameManager : Singleton<GameManager>
     // 그 오프닝 씬에서 해야겠네
 
 
-    protected override void OnApplicationQuit()
+    protected async override void OnApplicationQuit()
     {
         Debug.Log("꺼지고 저장합니다.");
+        await SaveData(base.OnApplicationQuit);
+    }
 
-        Game.SaveData();
-        SQL.SaveDataBase();
 
-        base.OnApplicationQuit();
+    private async UniTask SaveData(System.Action quitEvent = null)
+    {
+        // 데이터 저장하는 부분
+        await Game.SaveData();
+        await SQL.SaveDataBase();
+
+        quitEvent?.Invoke();
     }
 }

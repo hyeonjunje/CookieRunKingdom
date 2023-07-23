@@ -295,7 +295,7 @@ public class SQLManager
 
 
     // 데이터베이스에 저장한다.
-    public void SaveDataBase()
+    public async UniTask SaveDataBase()
     {
         // userInfo의 데이터를 id와 pw를 읽어서 그에 맞는 데이터에 다 저장한다.
         PropertyInfo[] properties = UserInfo.GetType().GetProperties();
