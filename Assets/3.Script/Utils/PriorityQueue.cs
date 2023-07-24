@@ -59,4 +59,12 @@ public class PriorityQueue<T>
 
 		return result;
 	}
+
+	public bool Contains(T node)
+    {
+		for(int i = 0; i < _heap.Count; i++)
+			if (_heap[i].First.Equals(node))
+				return true;
+		return false;
+    }
 }

@@ -23,8 +23,6 @@ public class KingdomCraftUI: BaseUI
 
     [Header("Center")]
     [SerializeField] private TextMeshProUGUI buildingName;
-    [SerializeField] private TextMeshProUGUI buildingLevel;
-    [SerializeField] private Button levelUpButton;
     [SerializeField] private Button selectCookieButton;
     [SerializeField] private Button leftArrow;
     [SerializeField] private Button rightArrow;
@@ -36,6 +34,7 @@ public class KingdomCraftUI: BaseUI
     private KingdomManager _kingdomManager;
     private BuildingController _currentBuilding;
     private List<CraftingItemUI> _craftList = new List<CraftingItemUI>();
+    private List<CraftTypeUI> _craftTypeList = new List<CraftTypeUI>();
 
 
     private int _buildingIndex;
@@ -140,6 +139,8 @@ public class KingdomCraftUI: BaseUI
         parentTransform.sizeDelta = new Vector2(parentTransform.sizeDelta.x
             , (craftTypePrefabTransform.sizeDelta.y + 10) * building.Data.CraftItems.Length);
 
+        _craftTypeList = new List<CraftTypeUI>();
+
         for (int i = 0; i < building.Data.CraftItems.Length; i++)
         {
             CraftTypeUI craftTypeUI = null;
@@ -150,6 +151,7 @@ public class KingdomCraftUI: BaseUI
                 craftTypeUI = Instantiate(craftTypeProductPrefab, craftTypeParent);
 
             craftTypeUI.Init(building, building.Data.CraftItems[i], CraftItem);
+            _craftTypeList.Add(craftTypeUI);
         }
 
         craftProgressBar.transform.SetParent(transform, false);
@@ -232,6 +234,8 @@ public class KingdomCraftUI: BaseUI
                 DataBaseManager.Instance.AddItem(craftData.Ingredients[i].ingredientItem, -craftData.Ingredients[i].count);
         }
 
+        // 재료 소모한만큼 다른 UI에도 개수 조정
+        _craftTypeList.ForEach(craftTypeUI => craftTypeUI.UpdateUI());
 
         _currentBuilding.BuildingWorker.isWorking = true;
 

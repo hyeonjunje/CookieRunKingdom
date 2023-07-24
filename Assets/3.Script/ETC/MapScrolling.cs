@@ -26,7 +26,6 @@ public class MapScrolling : MonoBehaviour
             mapList.AddLast(mapPieces[i].transform);
             mapPieces[i].transform.localPosition += diffForPieces * i;
         }
-
         ReArrangeZOrder();
     }
 

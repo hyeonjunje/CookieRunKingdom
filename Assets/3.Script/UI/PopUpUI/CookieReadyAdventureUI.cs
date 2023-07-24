@@ -17,6 +17,7 @@ public class CookieReadyAdventureUI : BaseUI
     [SerializeField] private JellyInfoUI _jellyInfo;
     [SerializeField] private TextMeshProUGUI _jellyCountText; // 필요한 젤리 개수
     [SerializeField] private TextMeshProUGUI _powerValueText;
+    [SerializeField] private TextMeshProUGUI _enemyPowerValueText;
 
     [Header("EnemySlot")]
     [SerializeField] private EnemySlot[] _enemySlots; 
@@ -62,6 +63,8 @@ public class CookieReadyAdventureUI : BaseUI
             if (cookies[i].CookieStat.IsBattleMember)
                 power += cookies[i].CharacterStat.powerStat;
         _powerValueText.text = power.ToString();
+
+        _enemyPowerValueText.text = data.RecommendedPower.ToString();
 
         GameManager.Game.UpdateGoods();
 

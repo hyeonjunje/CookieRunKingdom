@@ -19,5 +19,5 @@ MonoBehaviour:
     ingredientItem: {fileID: 11400000, guid: a11649d9a035ca848a1fe5a83d27c2a3, type: 2}
     count: 3
   ingredients: []
-  craftTime: 60
+  craftTime: 5
   craftCost: 50

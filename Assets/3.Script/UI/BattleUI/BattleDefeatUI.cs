@@ -15,6 +15,7 @@ public class BattleDefeatUI : BaseUI
     [Header("UI")]
     [SerializeField] private Button _exitButton;
     [SerializeField] private Button _goKingdomButtom;
+    [SerializeField] private TextMeshProUGUI _stageText;
 
     [Header("Prefab")]
     [SerializeField] private RectTransform _rewardParent;
@@ -35,6 +36,8 @@ public class BattleDefeatUI : BaseUI
         base.Show();
 
         GameManager.Sound.PlaySe(EBGM.defeatBattle);
+
+        _stageText.text = _stageData.StageName.Substring(0, 3);
 
         _isGainReward = false;
         _touchText.SetActive(true);

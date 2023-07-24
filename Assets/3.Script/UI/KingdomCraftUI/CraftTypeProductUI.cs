@@ -29,4 +29,12 @@ public class CraftTypeProductUI : CraftTypeUI
                 _ingredientUIList[i].SetText();
         });
     }
+
+    public override void UpdateUI()
+    {
+        base.UpdateUI();
+
+        for (int i = 0; i < _ingredientUIList.Count; i++)
+            _ingredientUIList[i].SetText();
+    }
 }

@@ -12,12 +12,15 @@ public class BuildingAnimator : MonoBehaviour
     private SkeletonAnimation _animation;
     private Renderer _renderer;
 
+    private Renderer[] _renderersInChild;
+
     public void Init(BuildingController controller)
     {
         _controller = controller;
 
         _animation = GetComponentInChildren<SkeletonAnimation>();
         _renderer = _animation.GetComponent<Renderer>();
+        _renderersInChild = GetComponentsInChildren<Renderer>();
     }
 
     public bool IsPlayingAnimation()
@@ -58,4 +61,12 @@ public class BuildingAnimator : MonoBehaviour
         return _animation.SkeletonDataAsset.GetSkeletonData(true).FindAnimation(animationName) != null;
     }
 
+    public void SettingOrderHigher(bool flag)
+    {
+        foreach (Renderer renderer in GetComponentsInChildren<Renderer>())
+        {
+            renderer.sortingLayerID = flag ?
+            SortingLayer.NameToID("GridUpper") : SortingLayer.NameToID("Default");
+        }
+    }
 }

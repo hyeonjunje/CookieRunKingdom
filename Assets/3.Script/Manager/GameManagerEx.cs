@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using Cysharp.Threading.Tasks;
 
 public class GameManagerEx
 {
@@ -130,7 +131,7 @@ public class GameManagerEx
         battlePosition = userInfo.cookieJson.battlePosition;
     }
 
-    public void SaveData()
+    public async UniTask SaveData()
     {
         UserInfo userInfo = GameManager.SQL.UserInfo;
 

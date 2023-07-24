@@ -35,4 +35,9 @@ public class CraftTypeUI : MonoBehaviour
             }
         });
     }
+
+    public virtual void UpdateUI()
+    {
+
+    }
 }

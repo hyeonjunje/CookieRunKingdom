@@ -29,7 +29,8 @@ public class PathFindingAgent : MonoBehaviour
     private Vector2Int _start, _end;
     private Node[,] _nodeArray;
     private Node _startNode, _targetNode, _curNode;
-    private List<Node> _openList, _closedList;
+    private List<Node> _closedList;
+    private PriorityQueue<Node> _openPq;
     private Coroutine _coMove = null;
 
     // 목적지를 정했는가?
@@ -101,21 +102,18 @@ public class PathFindingAgent : MonoBehaviour
         _startNode = _nodeArray[startPoint.y - _start.y, startPoint.x - _start.x];
         _targetNode = _nodeArray[endPoint.y - _start.y, endPoint.x - _start.x];
 
-        _openList = new List<Node>() { _startNode };
         _closedList = new List<Node>();
         FinalNodeList = new List<Node>();
 
+        _openPq = new PriorityQueue<Node>();
+        _openPq.Enqueue(new Pair<Node, int>(_startNode, -_startNode.F));
 
-        while (_openList.Count > 0)
+        while (!_openPq.IsEmpty)
         {
+            InfiniteLoopDetector.Run();
             // 열린리스트 중 가장 F가 작고 F가 같다면 H가 작은 걸 현재노드로 하고 열린리스트에서 닫힌리스트로 옮기기
-            _curNode = _openList[0];
-            for (int i = 1; i < _openList.Count; i++)
-                if (_openList[i].F <= _curNode.F && _openList[i].H < _curNode.H) _curNode = _openList[i];
-
-            _openList.Remove(_curNode);
+            _curNode = _openPq.Dequeue().First;
             _closedList.Add(_curNode);
-
 
             // 마지막
             if (_curNode == _targetNode)
@@ -159,13 +157,13 @@ public class PathFindingAgent : MonoBehaviour
             int MoveCost = _curNode.G + (int)Mathf.Sqrt(Mathf.Pow(_targetNode.x - _curNode.x, 2) + Mathf.Pow(_targetNode.y - _curNode.y, 2));
 
             // 이동비용이 이웃노드G보다 작거나 또는 열린리스트에 이웃노드가 없다면 G, H, ParentNode를 설정 후 열린리스트에 추가
-            if (MoveCost < NeighborNode.G || !_openList.Contains(NeighborNode))
+            if (MoveCost < NeighborNode.G || !_openPq.Contains(NeighborNode))
             {
                 NeighborNode.G = MoveCost;
                 NeighborNode.H = (Mathf.Abs(NeighborNode.x - _targetNode.x) + Mathf.Abs(NeighborNode.y - _targetNode.y)) * 10;
                 NeighborNode.ParentNode = _curNode;
 
-                _openList.Add(NeighborNode);
+                _openPq.Enqueue(new Pair<Node, int>(NeighborNode, -NeighborNode.F));
             }
         }
     }
