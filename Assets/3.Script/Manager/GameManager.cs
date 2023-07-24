@@ -26,8 +26,7 @@ public class GameManager : Singleton<GameManager>
 
     public void Init()
     {
-        if(!_isLoad)
-            _sound.Init();
+        Sound.LoadStartBGM();
     }
 
 
@@ -47,9 +46,11 @@ public class GameManager : Singleton<GameManager>
                 if (_isDone)
                     break;
             }
+
             _ui.Init();
             _file.Init();
             _scene.Init();
+            _sound.Init();
             _game.Init();
         }
     }
