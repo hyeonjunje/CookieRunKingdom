@@ -10,15 +10,18 @@ public class PriorityQueue<T>
 	{
 		_heap.Add(node);
 
+		// 지금 추가한 노드의 인덱스
 		int now = _heap.Count - 1;
 
 		while (now > 0)
 		{
 			int next = (now - 1) / 2;
 
+			// 부모노드가 우선순위가 더 크면 종료
 			if (_heap[now].Second < _heap[next].Second)
 				break;
 
+			// 아니라면 올라가면서 교체
 			Pair<T, int> temp = _heap[now];
 			_heap[now] = _heap[next];
 			_heap[next] = temp;
