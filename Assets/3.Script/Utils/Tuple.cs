@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pair<T, U>
+public struct Pair<T, U>
 {
     public T First { get; set; }
     public U Second { get; set; }
@@ -14,7 +14,7 @@ public class Pair<T, U>
     }
 }
 
-public class Tuple<T, U, V>
+public struct Tuple<T, U, V>
 {
     public T First { get; set; }
     public U Second { get; set; }
